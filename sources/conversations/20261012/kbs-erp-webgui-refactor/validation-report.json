@@ -1,0 +1,180 @@
+{
+  "project_id": "kbs-erp-webgui-refactor",
+  "extraction_date": "2026-10-12",
+  "scope": "Package validation only; no ERP or browser functional test rerun.",
+  "counts": {
+    "threads": 1,
+    "messages": 41,
+    "roles": {
+      "user": 15,
+      "assistant": 26
+    },
+    "content_types": {
+      "verbatim": 35,
+      "excerpt": 6
+    },
+    "episodes": 8,
+    "assets": 62,
+    "included": 46,
+    "unavailable": 16
+  },
+  "checks": {
+    "json_parse": true,
+    "unique_ids": true,
+    "message_and_asset_references": true,
+    "all_messages_covered_by_episodes": true,
+    "included_files_exist": true,
+    "included_asset_inventory_exact": true,
+    "previous_26_files_byte_preserved": true,
+    "historical_13_files_byte_preserved": true,
+    "fresh_v3_report_matches": true,
+    "known_session_identifier_scan": true,
+    "relative_links": 53,
+    "nested_zip_crc": true
+  },
+  "limitations": [
+    "No full platform transcript export: manual transcription from visible text.",
+    "Historical sandbox links preserved as quotation, not portable download links.",
+    "13 images excluded for session identifiers; one actual image included.",
+    "Functional test counts are stored historical results, not rerun.",
+    "Source code reviewed selectively; archived bytes validated comprehensively."
+  ],
+  "archives_checked": [
+    {
+      "file": "assets/historical/SYSTEMGUI_Original.zip",
+      "members": 14
+    },
+    {
+      "file": "assets/historical/WEBGUI_Cursor_Fix.zip",
+      "members": 1
+    },
+    {
+      "file": "assets/historical/WEBGUI_Scroll_Patch.zip",
+      "members": 4
+    },
+    {
+      "file": "assets/historical/WEBGUI_Cursor_Rollback.zip",
+      "members": 1
+    },
+    {
+      "file": "assets/historical/WEBGUI_Original.zip",
+      "members": 67
+    },
+    {
+      "file": "assets/historical/WEBGUI_Scroll_Rollback.zip",
+      "members": 4
+    },
+    {
+      "file": "assets/historical/SYSTEMGUI_Review_Evidence.zip",
+      "members": 12
+    },
+    {
+      "file": "assets/historical/WEBGUI_Optimized.zip",
+      "members": 67
+    },
+    {
+      "file": "assets/historical/WEBGUI_Scroll_Evidence.zip",
+      "members": 5
+    },
+    {
+      "file": "assets/historical/SYSTEMGUI_Optimized.zip",
+      "members": 14
+    },
+    {
+      "file": "assets/historical/WEBGUI_Review_Evidence.zip",
+      "members": 8
+    },
+    {
+      "file": "assets/archives/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08.zip",
+      "members": 26
+    },
+    {
+      "file": "assets/archives/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08.zip!/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/attachments/ITS_Chrome_v3_Apply.zip",
+      "members": 33
+    },
+    {
+      "file": "assets/archives/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08.zip!/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/attachments/ITS_Chrome_v3_Evidence.zip",
+      "members": 316
+    },
+    {
+      "file": "assets/archives/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08.zip!/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/attachments/ITS_Chrome_v3_Full.zip",
+      "members": 100
+    },
+    {
+      "file": "assets/archives/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08.zip!/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/attachments/ITS_Chrome_v3_Original.zip",
+      "members": 100
+    },
+    {
+      "file": "assets/archives/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08.zip!/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/attachments/ITS_Chrome_v3_Rollback.zip",
+      "members": 100
+    },
+    {
+      "file": "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/attachments/ITS_Chrome_v3_Rollback.zip",
+      "members": 100
+    },
+    {
+      "file": "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/attachments/ITS_Chrome_v3_Apply.zip",
+      "members": 33
+    },
+    {
+      "file": "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/attachments/ITS_Chrome_v3_Original.zip",
+      "members": 100
+    },
+    {
+      "file": "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/attachments/ITS_Chrome_v3_Full.zip",
+      "members": 100
+    },
+    {
+      "file": "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/attachments/ITS_Chrome_v3_Evidence.zip",
+      "members": 316
+    }
+  ],
+  "sha256": {
+    "assets/archives/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08.zip": "e81dec3b5628fbcf41fc21a49bfd735dc47abf30174d6f167f5d526cf3792263",
+    "assets/historical/SYSTEMGUI_Optimized.zip": "ebbf7d79ea266afdfa4c4f9b30a0071aede7bd286e18775902fa16b5a8dd683b",
+    "assets/historical/SYSTEMGUI_Original.zip": "758a07d3b85b9bf102dbdeb50ed2ef97244e5706fbf6b6b16580262ea0825644",
+    "assets/historical/SYSTEMGUI_Review_Evidence.zip": "d140f41f9d59eae71fae7cce790bbcb662c6507a8bfde581124733b891dce549",
+    "assets/historical/WEBGUI_Analysis_Report.md": "b59a9e2a7f5508b2036726390504a72c4c966984c6fdffe7dfd7f2103408c135",
+    "assets/historical/WEBGUI_Cursor_Fix.zip": "348113b4fabe7c7240066caef54a5ba0240216c2ef06e9eb8f64733354b06d75",
+    "assets/historical/WEBGUI_Cursor_Rollback.zip": "fb461ded7b23ca19daef58bdbb370abbd34c0f46d5838d0d96b8e4e7fd63148f",
+    "assets/historical/WEBGUI_Optimized.zip": "7e9e40fbc1a70c10ac8923a39dbd3687151ee4ccef61a6cf18fef8583b5196f8",
+    "assets/historical/WEBGUI_Original.zip": "28a84e5d66c8b7315fef0ce47a9f4b82417b04daf692c9b1e3e6f3280b3be275",
+    "assets/historical/WEBGUI_Review_Evidence.zip": "29142c250090d78a2ea263c0814c4ba2968436cd136169793b6e086697f14e35",
+    "assets/historical/WEBGUI_Scroll_Evidence.zip": "76ae4bf48b16d3ec2ee5e66d58e4b0deecc56f5b516ec1abc815f091843808ff",
+    "assets/historical/WEBGUI_Scroll_Patch.zip": "45810f2c35e12aaa5abb4965f2e9faca9cbd68b74bede2231d609b1bb88e58d7",
+    "assets/historical/WEBGUI_Scroll_Report.md": "26020d8f9f75a50f20f660f92b067810f8bda2cf0a4d7fee039818333e724a24",
+    "assets/historical/WEBGUI_Scroll_Rollback.zip": "66402d4eb471e7b17fa33f0b6d53e954fd8da5e54460bf7bea79e5c5a5e0f70c",
+    "assets/images/f48a0de8-7432-4aa0-a79a-990044a05d1f.png": "6f5a70697b5d890af166f682016d57c6475760aa569741dbd70c5864ca4c59f5",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/00_README.md": "55e3bf51d11000e9cba7ae7fa35f12e902cfe10cbe6f181ede7a305a7d4154c9",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/01_프로젝트_맥락과설계.md": "13acb9b9112a6139a39b7dfd94e9ff4cddb16752b9095bd08b70b608962f60ce",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/02_교육과실습.md": "3f70eaccf170f753fd378aada6635791dafb81cea40fb41069c1cae7a2f7331a",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/03_자료목록과보완사항.md": "b759f4b40dba39c3f04eaf6154d99bcb3aaeb496a815bd4b7020cd50cb4530dc",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/attachments/ITS_Chrome_v3_Apply.zip": "b2b436460c55d17b71a47a11dbfa0d05c6d5a4920f2388d446b2c8a2700e4a1c",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/attachments/ITS_Chrome_v3_Evidence.zip": "69f52777fe9d88436ad0e2eabc2bbfa62561ea8993ee4240036f4bd0dc3122e5",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/attachments/ITS_Chrome_v3_Full.zip": "fc9e4f4a5e280d11649a89c68e70117c2926bb4a9953d2a930bd4bb0a03d389e",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/attachments/ITS_Chrome_v3_Original.zip": "87cc69a6b631c06c1547b8cbf29d5e1d5fdedb6f810db60351d42d8f0f44b9ac",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/attachments/ITS_Chrome_v3_Rollback.zip": "3caf2760a74490bf0c2af83440f8693baee7b2b4895bb71502a632d899d0aaa4",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/examples/inspect_package.py": "581697a8ac210f6fefeb9e9298ebd24eda1f0cb950bd9edbc5fdc74e278abf0e",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/examples/리뷰_프롬프트.md": "8696f58d057504060c29951f6320f4dce3c347049d2324c928ccc211a22ecf60",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/references/100개_소스목록.md": "c941ab2ae9d58af53f48c06c695d7c8d78834098b37c1cbb1c108f25dd061e9b",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/references/ITS_Chrome_v3_Report.md": "b0e30a18ce1856fb77a2429cec4f2994ffc9250084c119b5940a1843f0b3c8a3",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/references/SYSTEMGUI_Analysis_Report.md": "4224daaa73fb5bda78cd1f58f025cde2027dde9a660fff1540a48c446c7b518d",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/references/WEBGUI_Arrow_Error_Report.md": "1cdbc90da6a683c965844448ca2cd077fb10110af3849a0da3c8015bbe6f6ccd",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/references/drive_inventory_2026-10-08.json": "f05ca1a652139e93f934e1a54702cccc6b262c819e9de404d9f2adbe1e9f18a9",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/references/v3_evidence/README.md": "79231ad8025d9c447bca29f21166e6aae2cca938bc8d00d9dd44f4c70e319f11",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/references/v3_evidence/changes.diff": "644f21e21b4521b69394603c72d5baa86d63beefc929777bfd11d8bbde247378",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/references/v3_evidence/inline_validation.json": "c697bdeb021a91b2cab990643fa281b28cb7ee64bb3c492b6acf9d228cbb298f",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/references/v3_evidence/integration_validation.json": "a6eb3bc26e22ec518d6b1c6552a576a974b2c9ee4ca5c2f9b35a1fb478732c37",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/references/v3_evidence/manifest.json": "ce4462915ae1526b3e5253f0c7c842741257e3da4f1fd2d52bd6e95ce916e07c",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/references/v3_evidence/markup_validation.json": "ffa20f8a0a69540dc83419bba84639add5d901a86ccebe4fe6deb604be42cbc0",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/references/v3_evidence/validation.json": "3d74d56ef05603d6ac24c770054ea2616e1607ec78cfc41b60281f7bce16ef22",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/references/v3_evidence/zip_validation.json": "db3b8e711d8e462187a6584f19884ba00b2ba93f862ffc929e23a628c8536ad8",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/references/대화와자료_근거목록.md": "7ac287d59bd59a29113a52da2465e9139fdfec9872a355048282b56735e2af85",
+    "assets/previous_20261008/ERP_WebGUI_Refactoring_교육자료추출_2026-10-08/references/추출_검증결과.json": "b2c41e59327edcd3e9f4b6ae428b2e8b714fd9b6fc1ee83aeee58665a3f35a6d",
+    "assets/source_notes/console_attachment_note.md": "67478546e4b08083cd3b64c96420933ff3df94e448433f218668d014bca2f6de",
+    "assets/source_notes/conversation_transcript.md": "0d11eb2ad847503126a8e18c70f882bbc0e2ce7a121eb36d67d3cbf2ba716426",
+    "assets/source_notes/image_review.md": "4271a086e9d471d02138d0e05ed2f986b9098930083d0d69c7a98a6d102dead7",
+    "assets/source_notes/initial_instruction_fragment.md": "4212b4c4ce1c0511dd1a5f233328e280cc090e95f50bf4f5a00d426c7bcdf516",
+    "assets/source_notes/retrieved_context_summary.md": "9e1e9e1a6a79e6a00195183a79b4cb07928ed8e2f96e7d9dded814b9b3260b07"
+  }
+}

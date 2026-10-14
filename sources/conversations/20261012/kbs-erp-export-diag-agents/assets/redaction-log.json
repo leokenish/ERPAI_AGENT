@@ -1,0 +1,60 @@
+{
+  "policy": "인증값은 포함하지 않는다. 실제 비밀값은 발견되지 않았다. 불필요한 개인 식별 메타데이터·내부 주소는 교육 사본에서 제외/마스킹. 개인정보가 있는 화면 또는 전체 검토를 마치지 못한 화면은 배포 제외.",
+  "edits": [
+    {
+      "asset_id": "LOG-ICM",
+      "category": "network_address",
+      "count": 52,
+      "method": "교육 사본의 문자열 치환. 원본 수정 안 함."
+    },
+    {
+      "asset_id": "LOG-ICM",
+      "category": "sap_host",
+      "count": 2,
+      "method": "교육 사본의 문자열 치환. 원본 수정 안 함."
+    },
+    {
+      "asset_id": "LOG-ICM",
+      "category": "sap_path",
+      "count": 10,
+      "method": "교육 사본의 문자열 치환. 원본 수정 안 함."
+    },
+    {
+      "asset_id": "RESULT-RAWDATA",
+      "category": "Office_person_metadata",
+      "method": "셀 데이터만 발췌하여 작성자·최종편집자 메타데이터 제외. 원본 XLSX 변경 안 함."
+    }
+  ],
+  "excluded_asset_ids": [
+    "IMG-U006-1",
+    "IMG-U006-2",
+    "IMG-U006-3",
+    "IMG-U006-4",
+    "IMG-U006-5",
+    "IMG-U006-6",
+    "IMG-U006-7",
+    "IMG-U006-8",
+    "IMG-U006-9",
+    "IMG-U065-1",
+    "IMG-U068-1",
+    "IMG-U069-1",
+    "IMG-U069-2",
+    "IMG-U075-1",
+    "IMG-U077-1",
+    "IMG-U079-1",
+    "IMG-U080-1",
+    "IMG-U080-2",
+    "IMG-U080-3",
+    "IMG-U080-4",
+    "IMG-U081-1",
+    "IMG-U081-2",
+    "IMG-U083-1",
+    "IMG-U083-2",
+    "IMG-U083-3",
+    "IMG-U084-1",
+    "RESULT-XLSX-ORIGINAL",
+    "HISTORY-DIFF_RESULT",
+    "HISTORY-DIFF_RESULT_V2",
+    "PREVIOUS-BUNDLE"
+  ]
+}

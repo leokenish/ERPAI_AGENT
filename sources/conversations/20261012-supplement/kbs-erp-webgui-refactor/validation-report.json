@@ -1,0 +1,47 @@
+{
+  "project_id": "kbs-erp-webgui-refactor",
+  "date": "2026-10-12",
+  "scope": "답변 추출·원문 보존·패키지 검증; ERP 기능 테스트 아님",
+  "counts": {
+    "messages": 47,
+    "user_requests": 16,
+    "assistant_messages": 31,
+    "full_text": 30,
+    "excerpt_only": 1,
+    "summary_messages_in_conversation": 0,
+    "summary_only_retrieval_candidates": 7,
+    "missing_intervals": 4,
+    "requests_with_missing_body": 5,
+    "newly_added_assistant_full": 5,
+    "newly_recovered_historical_refactor_full": 0,
+    "missing_message_total": null
+  },
+  "checks": {
+    "json_parse": true,
+    "original_messages_unchanged": 41,
+    "original_user_text_unchanged": 15,
+    "original_asset_records_unchanged": 62,
+    "original_asset_bytes_unchanged": 46,
+    "all_requests_audited": true,
+    "all_assistant_messages_paired": true,
+    "phase_distinction": true,
+    "unique_ids": true,
+    "references_valid": true,
+    "included_paths_exist": 49,
+    "relative_links_checked": 70,
+    "ep08_new_refs": [
+      "wg-m051",
+      "wg-m052",
+      "wg-m053",
+      "wg-m054",
+      "wg-m055",
+      "wg-m056"
+    ],
+    "schema_unchanged": true
+  },
+  "limitations": [
+    "과거 리팩토링 답변 전문 신규 확보0개",
+    "수동 전사이며 플랫폼 원본 export 부재",
+    "검색 단서7개는 실제 원문이 아니며 발화에 넣지 않음"
+  ]
+}

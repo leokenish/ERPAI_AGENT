@@ -1,0 +1,92 @@
+{
+  "project": "KBS ERP WebGUI·SYSTEMGUI HTML·JavaScript·CSS 리팩토링",
+  "extraction_date": "2026-10-08",
+  "scope": "Artifact byte validation and source metadata comparison only. Historical functional suites were NOT re-executed. No browser/ERP/server/GitHub changes.",
+  "archives": {
+    "Full": 100,
+    "Rollback": 100,
+    "Original": 100,
+    "Apply": 33
+  },
+  "evidence_members": 316,
+  "file_types": {
+    ".js": 47,
+    ".css": 34,
+    ".html": 19
+  },
+  "changed_types": {
+    ".js": 16,
+    ".html": 14,
+    ".css": 3
+  },
+  "stored_mock_cases_not_rerun": 186,
+  "modified_from_original": 60,
+  "crc_hashes_and_version_contents_agree": true,
+  "archive_sha256": {
+    "ITS_Chrome_v3_Apply.zip": "b2b436460c55d17b71a47a11dbfa0d05c6d5a4920f2388d446b2c8a2700e4a1c",
+    "ITS_Chrome_v3_Evidence.zip": "69f52777fe9d88436ad0e2eabc2bbfa62561ea8993ee4240036f4bd0dc3122e5",
+    "ITS_Chrome_v3_Full.zip": "fc9e4f4a5e280d11649a89c68e70117c2926bb4a9953d2a930bd4bb0a03d389e",
+    "ITS_Chrome_v3_Original.zip": "87cc69a6b631c06c1547b8cbf29d5e1d5fdedb6f810db60351d42d8f0f44b9ac",
+    "ITS_Chrome_v3_Rollback.zip": "3caf2760a74490bf0c2af83440f8693baee7b2b4895bb71502a632d899d0aaa4"
+  },
+  "drive": {
+    "listed_files": 100,
+    "matching_original_names_and_sizes": 100,
+    "remote_bytes_redownloaded_all": false,
+    "latest_metadata_modified_time": "2026-09-14T01:03:35.271Z",
+    "contextmenubase": {
+      "current_readable_text_bytes": 736,
+      "archived_original_bytes": 736,
+      "returned_text_equals_archived_utf8": true,
+      "returned_text_sha256": "0b72df41b0aa34930af6e53ac35354b515a3a672a2b5da4454f196e2a311a62e"
+    }
+  },
+  "evidence_access": {
+    "reports_read_in_full": 3,
+    "console_image_viewed": 1,
+    "console_image_included": false,
+    "old_network_images_available": false,
+    "source_files_byte_compared": 100,
+    "all_functions_reaudited": false
+  },
+  "limitations": [
+    "99 current Drive files were not re-downloaded or hash-verified; metadata agreement is not byte agreement.",
+    "Operational deployment and Chrome/ERP behavior remain unverified.",
+    "Conversation is visible excerpts, not all other project chats.",
+    "Historic report sandbox links are retained unchanged; use new relative links."
+  ],
+  "package_validation": {
+    "checked_on": "2026-10-08",
+    "main_md_files": [
+      "00_README.md",
+      "01_프로젝트_맥락과설계.md",
+      "02_교육과실습.md",
+      "03_자료목록과보완사항.md"
+    ],
+    "packaged_files": 26,
+    "relative_links_checked": 63,
+    "broken_relative_links": 0,
+    "copied_files_byte_identical": [
+      "attachments/ITS_Chrome_v3_Apply.zip",
+      "attachments/ITS_Chrome_v3_Evidence.zip",
+      "attachments/ITS_Chrome_v3_Full.zip",
+      "attachments/ITS_Chrome_v3_Original.zip",
+      "attachments/ITS_Chrome_v3_Rollback.zip",
+      "references/ITS_Chrome_v3_Report.md",
+      "references/SYSTEMGUI_Analysis_Report.md",
+      "references/WEBGUI_Arrow_Error_Report.md",
+      "references/v3_evidence/README.md",
+      "references/v3_evidence/changes.diff",
+      "references/v3_evidence/inline_validation.json",
+      "references/v3_evidence/integration_validation.json",
+      "references/v3_evidence/manifest.json",
+      "references/v3_evidence/markup_validation.json",
+      "references/v3_evidence/validation.json",
+      "references/v3_evidence/zip_validation.json"
+    ],
+    "historical_absolute_links_left_unchanged": 5,
+    "sensitive_console_image_included": false,
+    "narrow_secret_pattern_scan": "No matches; manual review and exclusion of console URL image also performed.",
+    "no_old_functional_suites_rerun": true
+  }
+}

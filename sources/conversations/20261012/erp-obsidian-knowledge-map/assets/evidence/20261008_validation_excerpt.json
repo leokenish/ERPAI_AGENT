@@ -1,0 +1,66 @@
+{
+  "evidence_type": "tool_result_excerpt",
+  "description": "2026-10-08 자료 추출 작업의 실제 도구 검사 결과에서 선택한 필드. 당시 존재한 첨부 파일의 재생성이 아니라, 확인 가능한 도구 결과를 이번에 별도 JSON으로 옮긴 증거 발췌이다. 사용자·AI 발화 원문이 아니며 Mac/ERP 검증 기록도 아니다.",
+  "source_locator": "현재 프로젝트의 이전 추출 작업 / validate_obsidian_export.py 실행 결과 / obs-m022 및 obs-m024의 완료 보고를 뒷받침하는 도구 출력. 이 이름의 검사 스크립트 자체는 이번 ZIP에 포함하지 않음.",
+  "source_date": "2026-10-08",
+  "source_timestamp": null,
+  "extracted_on": "2026-10-12",
+  "redacted": false,
+  "result_excerpt": {
+    "ok": true,
+    "relative_links_checked": 20,
+    "defined_source_ids": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "P01",
+      "R01",
+      "R02",
+      "T01",
+      "T02",
+      "T03",
+      "T04",
+      "T05",
+      "T06",
+      "T07",
+      "T08"
+    ],
+    "zip_members": 4,
+    "zip_bytes": 36628,
+    "not_tested": [
+      "User Mac file preservation",
+      "Obsidian UI rendering",
+      "Codex instruction loading",
+      "SAP runtime",
+      "Performance improvement"
+    ]
+  },
+  "current_original_file_checks": [
+    {
+      "name": "00_README.md",
+      "size_bytes": 11679,
+      "sha256": "17c8cf7f6acf2c197d292b45a807a2fdb1d54a235eafb3b80b6290b75828728b"
+    },
+    {
+      "name": "01_프로젝트_맥락과설계.md",
+      "size_bytes": 30308,
+      "sha256": "17cfec32b3b65944309fa688179f6553311d12f05b1c5690b48446ddd68d2eb0"
+    },
+    {
+      "name": "02_교육과실습.md",
+      "size_bytes": 30494,
+      "sha256": "95c8c609784048ca2ed6aefdecd95017530276eb59c42194201730021832d261"
+    },
+    {
+      "name": "03_자료목록과보완사항.md",
+      "size_bytes": 20471,
+      "sha256": "e5adc0b970bc2f0e5cbfe5454af40d66f8d75a06e98867c36a64d7324be17810"
+    }
+  ],
+  "current_check_scope": "위 current_original_file_checks는 2026-10-12 확보 ZIP의 파일 바이트에 대해 다시 계산했다. 당시 검사와 이번 재검사를 구분한다."
+}
