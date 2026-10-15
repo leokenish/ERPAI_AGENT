@@ -1,0 +1,38 @@
+[
+  {
+    "id": "export-diag",
+    "archive": "KBS_ERP_AI_Export_Diag_Agents_20261008.zip",
+    "sha256": "0cba5edd8f3baa5fd32454575d941edac54d72bc295f807eb5467d5b35ac2d4f",
+    "files": 35
+  },
+  {
+    "id": "erp-remote",
+    "archive": "ERP_MCP서버구성_ERP연동과텔레그램에이전트_2026-10-08.zip",
+    "sha256": "ced538fd3340bf165fb4e68237ca40dccbac33f5b1542f78ee55b3c5c34f7f7b",
+    "files": 9
+  },
+  {
+    "id": "agent-collaboration",
+    "archive": "ERP_AI_Agent_Communication_Remote_MCP_2026-10-08.zip",
+    "sha256": "cc7f3cc0a9a61b5919651553de52b7cb8eb2321819cbfe3b758e8ee2398e7637",
+    "files": 13
+  },
+  {
+    "id": "knowledge-images",
+    "archive": "카카오톡업무맥락_TXT이미지연계_2026-10-08.zip",
+    "sha256": "4229e23e6cf572683b6a30dfb2e0eeef0a8e778b69974495eee4b2f5cfc3e3b6",
+    "files": 4
+  },
+  {
+    "id": "webgui",
+    "archive": "ERP_WebGUI_Refactoring_교육자료추출_2026-10-08.zip",
+    "sha256": "e81dec3b5628fbcf41fc21a49bfd735dc47abf30174d6f167f5d526cf3792263",
+    "files": 26
+  },
+  {
+    "id": "obsidian",
+    "archive": "ERP_Obsidian_교육자료_20261008.zip",
+    "sha256": "a4890a5afc97302131c96be64904b2102327bc2d6e1525741a7c94d7326ba762",
+    "files": 4
+  }
+]

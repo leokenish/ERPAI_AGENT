@@ -1,0 +1,129 @@
+{
+  "project_id": "erp-agent-communication",
+  "shared_url": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb",
+  "visible_turns": 22,
+  "turn_to_messages": {
+    "1": [
+      "eac-m001"
+    ],
+    "2": [
+      "eac-m003"
+    ],
+    "3": [
+      "eac-m004"
+    ],
+    "4": [
+      "eac-m005"
+    ],
+    "5": [
+      "eac-m006"
+    ],
+    "6": [
+      "eac-m008"
+    ],
+    "7": [
+      "eac-m009"
+    ],
+    "8": [
+      "eac-m010"
+    ],
+    "9": [
+      "eac-m011"
+    ],
+    "10": [
+      "eac-m012"
+    ],
+    "11": [
+      "eac-m013"
+    ],
+    "12": [
+      "eac-m014"
+    ],
+    "13": [
+      "eac-m015"
+    ],
+    "14": [
+      "eac-m017"
+    ],
+    "15": [
+      "eac-m018"
+    ],
+    "16": [
+      "eac-m019"
+    ],
+    "17": [
+      "eac-m020"
+    ],
+    "18": [
+      "eac-m024"
+    ],
+    "19": [
+      "eac-m025"
+    ],
+    "20": [
+      "eac-m031"
+    ],
+    "21": [
+      "eac-m032"
+    ],
+    "22": [
+      "SHARED-022"
+    ]
+  },
+  "new_ids": [
+    "SHARED-022"
+  ],
+  "replaced_ids": [
+    "eac-m003",
+    "eac-m005",
+    "eac-m008",
+    "eac-m010",
+    "eac-m012",
+    "eac-m014",
+    "eac-m017",
+    "eac-m018",
+    "eac-m019",
+    "eac-m024",
+    "eac-m031",
+    "eac-m032"
+  ],
+  "preserved_previous_ids": [
+    "eac-m001",
+    "eac-m002",
+    "eac-m003",
+    "eac-m004",
+    "eac-m005",
+    "eac-m006",
+    "eac-m007",
+    "eac-m008",
+    "eac-m009",
+    "eac-m010",
+    "eac-m011",
+    "eac-m012",
+    "eac-m013",
+    "eac-m014",
+    "eac-m015",
+    "eac-m016",
+    "eac-m017",
+    "eac-m018",
+    "eac-m019",
+    "eac-m020",
+    "eac-m021",
+    "eac-m022",
+    "eac-m023",
+    "eac-m024",
+    "eac-m025",
+    "eac-m026",
+    "eac-m027",
+    "eac-m028",
+    "eac-m029",
+    "eac-m030",
+    "eac-m031",
+    "eac-m032"
+  ],
+  "missing": [
+    "공유 링크 밖의 다른 대화방·분기와 플랫폼 전체 내보내기, 공유 화면에 표시되지 않은 추가 진행 기록은 확인하지 못했습니다.",
+    "개별 발화의 정확한 시각은 공유 화면에서 확인되지 않아 기존에 근거가 있는 값만 유지하고 나머지는 null입니다.",
+    "실제 FI AI 워커와 사용자 Mac 설정·사내 운영 로그는 미확보입니다. 포함된 Node 예제의 모의 워커와 실제 AI 분석을 구분합니다."
+  ]
+}

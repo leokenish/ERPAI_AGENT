@@ -1,0 +1,56 @@
+[
+  {
+    "archive": "erp-agent-communication_교육대화추출_20261012.zip",
+    "bytes": 234938,
+    "sha256": "58df3a36aa2679b34f88691d108f8fa21c2b23c0045983d1cc87f309de126a0d",
+    "preservedPath": "sources/conversations/20261012/erp-agent-communication/"
+  },
+  {
+    "archive": "erp-obsidian-knowledge-map_교육대화추출_20261012.zip",
+    "bytes": 121845,
+    "sha256": "d0a16fbfa59588aef59b4df3918910897cec7c2b33b4746cb848949434f14fa6",
+    "preservedPath": "sources/conversations/20261012/erp-obsidian-knowledge-map/"
+  },
+  {
+    "archive": "kakao-work-context_교육대화추출_20261012.zip",
+    "bytes": 104085,
+    "sha256": "79f119ab47214646ffe2b1c766c02e85086f78bc98ffbe50c4cb21ff9a1a9e49",
+    "preservedPath": "sources/conversations/20261012/kakao-work-context/"
+  },
+  {
+    "archive": "kbs-erp-export-diag-agents_교육대화추출_20261012.zip",
+    "bytes": 1618004,
+    "sha256": "a4efc9160d5d8a8405df08c20f1c11cb96392a0e17719b0255d44e89386fe76a",
+    "preservedPath": "sources/conversations/20261012/kbs-erp-export-diag-agents/"
+  },
+  {
+    "archive": "kbs-erp-mcp-telegram_교육대화추출_20261012.zip",
+    "bytes": 153293,
+    "sha256": "f50a78c4e373a98f8332c44446aaf42b5f81f9efe3f8de3dc54ca0d0329d9a1c",
+    "preservedPath": "sources/conversations/20261012/kbs-erp-mcp-telegram/"
+  },
+  {
+    "archive": "kbs-erp-webgui-refactor_교육대화추출_20261012.zip",
+    "bytes": 6209273,
+    "sha256": "ba125fa3899db72a2e3820817bf846bdeba665b2451acdfa65624b9600d6c125",
+    "preservedPath": "sources/conversations/20261012/kbs-erp-webgui-refactor/"
+  },
+  {
+    "archive": "kbs-erp-export-diag-agents_교육대화_답변전문보완_20261012.zip",
+    "bytes": 3276958,
+    "sha256": "2497d7ee14038580ca907c11575ffe7b1ab13f99dc104915caf3fe89b5473434",
+    "preservedPath": "sources/conversations/20261012-supplement/kbs-erp-export-diag-agents/"
+  },
+  {
+    "archive": "kbs-erp-webgui-refactor_교육대화_답변전문보완_20261012.zip",
+    "bytes": 12439729,
+    "sha256": "21c4ae436738a882f0b6aa887eed1e181e63f0d3223608a34540d8d485f62889",
+    "preservedPath": "sources/conversations/20261012-supplement/kbs-erp-webgui-refactor/"
+  },
+  {
+    "archive": "SAP_Package_Conversation_Full_20261013.zip",
+    "bytes": 742448,
+    "sha256": "bc02aec402ca666792340ad639372a23b9d2466f2a1fc3e4fc78006449512a07",
+    "preservedPath": "sources/conversations/20261013-shared/kbs-erp-export-diag-agents/"
+  }
+]
