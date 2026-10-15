@@ -1,0 +1,506 @@
+{
+  "checked_on": "2026-10-08",
+  "method": "Google Drive direct folder listings. Content not re-downloaded except contextmenubase readable text; size/mtime are metadata, not content hashes.",
+  "files": [
+    {
+      "file": "SYSTEMGUI/HTML/contextmenubase.html",
+      "size": 736,
+      "modified_time": "2026-09-14T01:03:35.271Z"
+    },
+    {
+      "file": "SYSTEMGUI/HTML/wgu_pers_emptypage2.html",
+      "size": 505,
+      "modified_time": "2026-09-14T00:30:03.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/HTML/wgu_pers_emptypage1.html",
+      "size": 366,
+      "modified_time": "2026-09-14T00:29:45.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/HTML/wgu_pers_emptypage.html",
+      "size": 513,
+      "modified_time": "2026-09-14T00:29:23.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/HTML/wgu_empty.html",
+      "size": 263,
+      "modified_time": "2026-09-14T00:28:57.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/HTML/tabstripmenu.html",
+      "size": 284,
+      "modified_time": "2026-09-14T00:28:46.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/HTML/splittersash.html",
+      "size": 1666,
+      "modified_time": "2026-09-14T00:28:27.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/HTML/splashscreen.html",
+      "size": 2251,
+      "modified_time": "2026-09-14T00:28:13.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/HTML/shmult.html",
+      "size": 23053,
+      "modified_time": "2026-09-14T00:27:56.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/HTML/sheerror.html",
+      "size": 934,
+      "modified_time": "2026-09-14T00:27:33.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/HTML/perfdisplay.html",
+      "size": 617,
+      "modified_time": "2026-09-14T00:27:20.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/HTML/menubase.html",
+      "size": 678,
+      "modified_time": "2026-09-14T00:27:03.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/HTML/lodingpage.html",
+      "size": 709,
+      "modified_time": "2026-09-14T00:26:49.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/HTML/hourglass.html",
+      "size": 795,
+      "modified_time": "2026-09-14T00:26:36.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/HTML/framepost.html",
+      "size": 5249,
+      "modified_time": "2026-09-14T00:26:08.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/HTML/endsess.html",
+      "size": 2485,
+      "modified_time": "2026-09-14T00:25:51.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/HTML/emptypage.html",
+      "size": 263,
+      "modified_time": "2026-09-14T00:23:02.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/HTML/dockingsash.html",
+      "size": 1672,
+      "modified_time": "2026-09-14T00:22:48.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/HTML/aboutbox.html",
+      "size": 2238,
+      "modified_time": "2026-09-14T00:22:10.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/CSS/gui.css",
+      "size": 3135,
+      "modified_time": "2026-09-13T11:15:30.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/JS/sap_secu.js",
+      "size": 26752,
+      "modified_time": "2026-09-13T11:14:58.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/JS/sap_terminateinterface.js",
+      "size": 823,
+      "modified_time": "2026-09-13T11:14:54.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/JS/sap_savecancelinterface.js",
+      "size": 1208,
+      "modified_time": "2026-09-13T11:14:05.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/JS/sap_refreshinterface.js",
+      "size": 1646,
+      "modified_time": "2026-09-13T11:11:34.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/JS/sap_its.js",
+      "size": 8986,
+      "modified_time": "2026-09-13T11:08:54.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/JS/sap_externalwindowinterface.js",
+      "size": 3817,
+      "modified_time": "2026-09-13T11:07:09.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/JS/sap_commobj.js",
+      "size": 5654,
+      "modified_time": "2026-09-13T11:06:32.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/JS/sapwebframework.js",
+      "size": 46439,
+      "modified_time": "2026-09-13T11:06:04.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/JS/its_utils.js",
+      "size": 137591,
+      "modified_time": "2026-09-13T11:05:21.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/JS/its_frameset.js",
+      "size": 22777,
+      "modified_time": "2026-09-13T11:04:40.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/JS/its_domain.js",
+      "size": 1523,
+      "modified_time": "2026-09-13T11:04:12.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/JS/editorg.js",
+      "size": 4330,
+      "modified_time": "2026-09-13T11:03:54.000Z"
+    },
+    {
+      "file": "SYSTEMGUI/JS/dss_list.js",
+      "size": 7767,
+      "modified_time": "2026-09-13T11:01:33.000Z"
+    },
+    {
+      "file": "WEBGUI/JS/columntree.js",
+      "size": 163785,
+      "modified_time": "2026-09-13T00:37:02.900Z"
+    },
+    {
+      "file": "WEBGUI/JS/calendar.js",
+      "size": 51158,
+      "modified_time": "2026-09-13T00:37:02.489Z"
+    },
+    {
+      "file": "WEBGUI/JS/control.js",
+      "size": 32797,
+      "modified_time": "2026-09-13T00:37:01.659Z"
+    },
+    {
+      "file": "WEBGUI/JS/searchhelpctrl.js",
+      "size": 69081,
+      "modified_time": "2026-09-13T00:37:01.308Z"
+    },
+    {
+      "file": "WEBGUI/JS/wgu_utils.js",
+      "size": 84774,
+      "modified_time": "2026-09-13T00:37:01.297Z"
+    },
+    {
+      "file": "WEBGUI/JS/wgu_frameset.js",
+      "size": 20266,
+      "modified_time": "2026-09-13T00:37:01.188Z"
+    },
+    {
+      "file": "WEBGUI/JS/menu.js",
+      "size": 44755,
+      "modified_time": "2026-09-13T00:37:01.063Z"
+    },
+    {
+      "file": "WEBGUI/JS/gui_tablecontrol.js",
+      "size": 72129,
+      "modified_time": "2026-09-13T00:37:00.970Z"
+    },
+    {
+      "file": "WEBGUI/JS/wgu_domain.js",
+      "size": 1523,
+      "modified_time": "2026-09-13T00:37:00.800Z"
+    },
+    {
+      "file": "WEBGUI/JS/gui_splitter.js",
+      "size": 63712,
+      "modified_time": "2026-09-13T00:37:00.732Z"
+    },
+    {
+      "file": "WEBGUI/JS/gui_scroll.js",
+      "size": 65074,
+      "modified_time": "2026-09-13T00:37:00.688Z"
+    },
+    {
+      "file": "WEBGUI/JS/itsdoc.js",
+      "size": 8472,
+      "modified_time": "2026-09-13T00:37:00.664Z"
+    },
+    {
+      "file": "WEBGUI/JS/htmlviewer.js",
+      "size": 10617,
+      "modified_time": "2026-09-13T00:37:00.624Z"
+    },
+    {
+      "file": "WEBGUI/JS/menubase.js",
+      "size": 10594,
+      "modified_time": "2026-09-13T00:37:00.622Z"
+    },
+    {
+      "file": "WEBGUI/JS/gui_toolbarctrl.js",
+      "size": 36376,
+      "modified_time": "2026-09-13T00:37:00.590Z"
+    },
+    {
+      "file": "WEBGUI/JS/gui_shbutton.js",
+      "size": 6898,
+      "modified_time": "2026-09-13T00:37:00.582Z"
+    },
+    {
+      "file": "WEBGUI/JS/gui_ts.js",
+      "size": 3949,
+      "modified_time": "2026-09-13T00:37:00.431Z"
+    },
+    {
+      "file": "WEBGUI/JS/gui_statusbar.js",
+      "size": 6080,
+      "modified_time": "2026-09-13T00:37:00.163Z"
+    },
+    {
+      "file": "WEBGUI/JS/gui_perf.js",
+      "size": 3586,
+      "modified_time": "2026-09-13T00:36:59.499Z"
+    },
+    {
+      "file": "WEBGUI/JS/gui_event.js",
+      "size": 54670,
+      "modified_time": "2026-09-13T00:36:58.234Z"
+    },
+    {
+      "file": "WEBGUI/JS/gui_dropdown.js",
+      "size": 46453,
+      "modified_time": "2026-09-13T00:36:58.232Z"
+    },
+    {
+      "file": "WEBGUI/JS/gui_acf.js",
+      "size": 3683,
+      "modified_time": "2026-09-13T00:36:58.209Z"
+    },
+    {
+      "file": "WEBGUI/JS/edit.js",
+      "size": 27621,
+      "modified_time": "2026-09-13T00:36:58.195Z"
+    },
+    {
+      "file": "WEBGUI/JS/gui.js",
+      "size": 39262,
+      "modified_time": "2026-09-13T00:36:58.182Z"
+    },
+    {
+      "file": "WEBGUI/JS/gui_popupresize.js",
+      "size": 13919,
+      "modified_time": "2026-09-13T00:36:58.093Z"
+    },
+    {
+      "file": "WEBGUI/JS/gui_form.js",
+      "size": 16042,
+      "modified_time": "2026-09-13T00:36:58.057Z"
+    },
+    {
+      "file": "WEBGUI/JS/controldhtml.js",
+      "size": 7279,
+      "modified_time": "2026-09-13T00:36:57.993Z"
+    },
+    {
+      "file": "WEBGUI/JS/gui_list.js",
+      "size": 4651,
+      "modified_time": "2026-09-13T00:36:57.943Z"
+    },
+    {
+      "file": "WEBGUI/JS/gui_cua.js",
+      "size": 15134,
+      "modified_time": "2026-09-13T00:36:57.883Z"
+    },
+    {
+      "file": "WEBGUI/JS/gui_ctxtmenu.js",
+      "size": 1186,
+      "modified_time": "2026-09-13T00:36:57.833Z"
+    },
+    {
+      "file": "WEBGUI/JS/gui_a11y.js",
+      "size": 7731,
+      "modified_time": "2026-09-13T00:36:57.832Z"
+    },
+    {
+      "file": "WEBGUI/JS/ewtlib.js",
+      "size": 2979,
+      "modified_time": "2026-09-13T00:36:57.827Z"
+    },
+    {
+      "file": "WEBGUI/JS/gui_dialogbox.js",
+      "size": 1668,
+      "modified_time": "2026-09-13T00:36:57.787Z"
+    },
+    {
+      "file": "WEBGUI/JS/gui_gridview.js",
+      "size": 131214,
+      "modified_time": "2026-09-13T00:36:57.748Z"
+    },
+    {
+      "file": "WEBGUI/CSS/edit.css",
+      "size": 1220,
+      "modified_time": "2026-09-12T11:44:32.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_bar.css",
+      "size": 2424,
+      "modified_time": "2026-09-12T11:43:54.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_button.css",
+      "size": 4478,
+      "modified_time": "2026-09-12T11:43:45.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_cua_ie.css",
+      "size": 1352,
+      "modified_time": "2026-09-12T11:43:23.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_cua.css",
+      "size": 8348,
+      "modified_time": "2026-09-12T11:43:10.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_dropdown_ie.css",
+      "size": 62,
+      "modified_time": "2026-09-12T11:43:01.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_dropdown.css",
+      "size": 2170,
+      "modified_time": "2026-09-12T11:42:54.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_dynpro_ie6.css",
+      "size": 455,
+      "modified_time": "2026-09-12T11:42:47.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_groupbox.css",
+      "size": 1285,
+      "modified_time": "2026-09-12T11:41:55.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_font.css",
+      "size": 699,
+      "modified_time": "2026-09-12T11:41:15.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_gridview_ie.css",
+      "size": 588,
+      "modified_time": "2026-09-12T11:40:23.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_gridview.css",
+      "size": 9877,
+      "modified_time": "2026-09-12T11:40:16.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_input.css",
+      "size": 6256,
+      "modified_time": "2026-09-12T11:38:02.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_page.css",
+      "size": 2624,
+      "modified_time": "2026-09-12T11:37:34.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_popup.css",
+      "size": 3871,
+      "modified_time": "2026-09-12T11:37:29.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_popupresize.css",
+      "size": 1391,
+      "modified_time": "2026-09-12T11:37:25.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_scroll.css",
+      "size": 2195,
+      "modified_time": "2026-09-12T11:37:20.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_splitter.css",
+      "size": 2638,
+      "modified_time": "2026-09-12T11:37:14.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_statusbar.css",
+      "size": 2821,
+      "modified_time": "2026-09-12T11:37:09.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_tablecontrol_ie.css",
+      "size": 689,
+      "modified_time": "2026-09-12T11:37:04.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_tablecontrol.css",
+      "size": 7165,
+      "modified_time": "2026-09-12T11:37:00.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_toolbar.css",
+      "size": 595,
+      "modified_time": "2026-09-12T11:36:53.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_toolbarctrl_ie.css",
+      "size": 65,
+      "modified_time": "2026-09-12T11:36:41.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_toolbarctrl.css",
+      "size": 4845,
+      "modified_time": "2026-09-12T11:36:33.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui.css",
+      "size": 3231,
+      "modified_time": "2026-09-12T11:36:22.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/gui_ts.css",
+      "size": 4318,
+      "modified_time": "2026-09-12T11:36:13.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/menu.css",
+      "size": 3291,
+      "modified_time": "2026-09-12T11:36:03.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/searchhelpctrl.css",
+      "size": 13010,
+      "modified_time": "2026-09-12T11:35:57.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/generator.css",
+      "size": 1235,
+      "modified_time": "2026-09-12T11:29:21.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/dynprolist.css",
+      "size": 3930,
+      "modified_time": "2026-09-12T11:29:06.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/columntree_ie.css",
+      "size": 1454,
+      "modified_time": "2026-09-12T11:28:00.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/columntree.css",
+      "size": 13408,
+      "modified_time": "2026-09-12T11:26:28.000Z"
+    },
+    {
+      "file": "WEBGUI/CSS/calendar.css",
+      "size": 13247,
+      "modified_time": "2026-09-12T11:24:52.000Z"
+    }
+  ]
+}

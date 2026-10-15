@@ -79,3 +79,20 @@ test('키보드·닫기 버튼으로 고정 말풍선을 해제하고 크게 보
  f.root.handlers.get('keydown')(f.event(n,{key:'Escape'}));assert.equal(f.root.ownerDocument.body.style.overflow,'auto');
  f.root.handlers.get('keydown')(f.event(n,{key:' '}));assert.equal(tip.hidden,false);f.click(f.button('data-map-dismiss',null,tip));assert.equal(tip.hidden,true);assert.equal(f.selected.at(-1),null);f.controller.dispose();
 });
+
+test('말풍선 드래그는 지도와 선택을 유지하고 확대 후에도 위치를 보존한다',()=>{
+ const f=fixture();f.click(f.nodes[0]);const tip=f.root.querySelector('[data-map-tooltip]');
+ assert.ok(!tip.innerHTML.includes('선택 고정'));
+ const handle=f.el({mapTipDrag:''},'div',tip);
+ const beforeEdges=f.root.querySelector('[data-map-active-edges]').innerHTML;
+ tip.handlers.get('pointerdown')(f.event(handle,{button:0,pointerId:7,clientX:100,clientY:100}));
+ tip.handlers.get('pointermove')(f.event(handle,{pointerId:7,clientX:400,clientY:300}));
+ tip.handlers.get('pointerup')(f.event(handle,{pointerId:7}));
+ const position=[tip.style.left,tip.style.top];assert.equal(f.selected.length,1);
+ f.click(f.button('data-map-zoom','in'));assert.deepEqual([tip.style.left,tip.style.top],position);
+ assert.equal(f.root.querySelector('[data-map-active-edges]').innerHTML,beforeEdges);
+ tip.handlers.get('pointerdown')(f.event(handle,{button:0,pointerId:8,clientX:0,clientY:0}));
+ tip.handlers.get('pointermove')(f.event(handle,{pointerId:8,clientX:-9000,clientY:-9000}));
+ assert.equal(tip.style.left,'8px');assert.equal(tip.style.top,'8px');
+ tip.handlers.get('pointercancel')(f.event(handle,{pointerId:8}));f.controller.dispose();assert.ok(f.all.every(el=>el.handlers.size===0));
+});

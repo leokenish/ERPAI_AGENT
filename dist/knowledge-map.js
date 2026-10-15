@@ -29,12 +29,14 @@ export function mountKnowledgeMap(root,data,{onSelect=()=>{},onRead=()=>{},onMen
  const $=s=>root.querySelector(s),svg=$('[data-map-svg]'),stage=$('[data-map-stage]'),tooltip=$('[data-map-tooltip]'),inspector=$('[data-map-inspector]');
  const elements=new Map([...root.querySelectorAll('[data-map-node]')].map(n=>[n.dataset.mapNode,n]));
  let camera={x:0,y:0,w:1240,h:800,scale:1},selected=null,hovered=null,mentions=false,allLines=false,drag=null,suppressClick=false,query='',disposed=false;
+ let tipPosition=null,tipDrag=null;
  const doc=root.ownerDocument,bodyStyle=doc?.body?.style;let previousOverflow;
  const events=[];const listen=(el,type,fn,options)=>{el.addEventListener(type,fn,options);events.push(()=>el.removeEventListener(type,fn,options));};
  const activeEdges=()=>data.edges.filter(e=>mentions||e.kind!=='mention');
  function positionTip(){
   if(!selected||tooltip.hidden)return;
   const n=byId.get(selected),r=stage.getBoundingClientRect(),v=svg.getBoundingClientRect();
+  if(tipPosition){placeTip(tipPosition.x,tipPosition.y);return;}
   const scale=Math.min(v.width/camera.w,v.height/camera.h);
   const x=v.left-r.left+(v.width-camera.w*scale)/2+(n.x-camera.x)*scale;
   const y=v.top-r.top+(v.height-camera.h*scale)/2+(n.y-camera.y)*scale;
@@ -43,6 +45,21 @@ export function mountKnowledgeMap(root,data,{onSelect=()=>{},onRead=()=>{},onMen
   tooltip.style.left=Math.max(8,Math.min(r.width-w-8,left))+'px';
   tooltip.style.top=Math.max(8,Math.min(r.height-h-8,y-h/2))+'px';
  }
+ function placeTip(x,y){
+  const r=stage.getBoundingClientRect();
+  tipPosition={x:Math.max(8,Math.min(Math.max(8,r.width-tooltip.offsetWidth-8),x)),y:Math.max(8,Math.min(Math.max(8,r.height-tooltip.offsetHeight-8),y))};
+  tooltip.style.left=tipPosition.x+'px';tooltip.style.top=tipPosition.y+'px';
+ }
+ listen(tooltip,'pointerdown',event=>{
+  if(event.button!==0||!event.target.closest?.('[data-map-tip-drag]')||event.target.closest?.('button,a'))return;
+  event.preventDefault();event.stopPropagation();
+  tipDrag={id:event.pointerId,x:event.clientX,y:event.clientY,left:parseFloat(tooltip.style.left)||8,top:parseFloat(tooltip.style.top)||8};
+  tooltip.setPointerCapture?.(event.pointerId);
+ });
+ listen(tooltip,'pointermove',event=>{if(!tipDrag||tipDrag.id!==event.pointerId)return;event.preventDefault();placeTip(tipDrag.left+event.clientX-tipDrag.x,tipDrag.top+event.clientY-tipDrag.y);});
+ const releaseTip=event=>{if(!tipDrag||tipDrag.id!==event.pointerId)return;tipDrag=null;tooltip.releasePointerCapture?.(event.pointerId);};
+ listen(tooltip,'pointerup',releaseTip);listen(tooltip,'pointercancel',releaseTip);listen(tooltip,'lostpointercapture',()=>{tipDrag=null;});
+ listen(tooltip,'keydown',event=>{if(!event.target.hasAttribute?.('data-map-tip-drag'))return;const delta={ArrowLeft:[-20,0],ArrowRight:[20,0],ArrowUp:[0,-20],ArrowDown:[0,20]}[event.key];if(!delta)return;event.preventDefault();event.stopPropagation();placeTip((parseFloat(tooltip.style.left)||8)+delta[0],(parseFloat(tooltip.style.top)||8)+delta[1]);});
  function view(){svg.setAttribute('viewBox',`${round(camera.x)} ${round(camera.y)} ${round(camera.w)} ${round(camera.h)}`);$('[data-map-scale]').textContent=Math.round(camera.scale*100)+'%';positionTip();}
  function fit(){camera={x:0,y:0,w:1240,h:800,scale:1};view();}
  function edgeMarkup(edge,active=false){const a=byId.get(edge.from),b=byId.get(edge.to);if(!a||!b)return '';const geo=edgeGeometry(a,b);const angle=Math.atan2(geo.to.y-geo.from.y,geo.to.x-geo.from.x),len=5;const bx=geo.to.x-Math.cos(angle)*len,by=geo.to.y-Math.sin(angle)*len;const arrow=`M${round(bx-Math.sin(angle)*2.5)},${round(by+Math.cos(angle)*2.5)} L${geo.to.x},${geo.to.y} L${round(bx+Math.sin(angle)*2.5)},${round(by-Math.cos(angle)*2.5)}`;
@@ -51,18 +68,18 @@ export function mountKnowledgeMap(root,data,{onSelect=()=>{},onRead=()=>{},onMen
  function paint(){if(disposed)return;const id=selected,edges=activeEdges(),related=new Set(id?[id]:[]);let chosen=[];if(id){chosen=edges.filter(e=>e.from===id||e.to===id);for(const edge of chosen){related.add(edge.from);related.add(edge.to);}}
   for(const [key,el] of elements){const d=docs.get(key),match=!query||(d.path+' '+d.title).toLowerCase().includes(query);el.classList.toggle('is-dim',Boolean((id&&!related.has(key))||!match));el.classList.toggle('is-selected',key===selected);el.classList.toggle('is-hovered',key===hovered);el.classList.toggle('is-related',!!id&&key!==id&&related.has(key));el.classList.toggle('is-search-match',!!query&&match);el.setAttribute('aria-pressed',String(key===selected));el.setAttribute('aria-expanded',String(key===selected));}
   $('[data-map-active-edges]').innerHTML=chosen.map(e=>edgeMarkup(e,true)).join('');$('[data-map-bundles]').classList.toggle('is-dim',!!id||allLines);
-  $('[data-map-status]').textContent=id?`${docs.get(id).title} · 선택 고정 · 들어오는 링크 ${chosen.filter(e=>e.to===id).length} · 나가는 링크 ${chosen.filter(e=>e.from===id).length} · 전체 ${data.documents.length}개 문서 유지`:`${data.documents.length}개 문서 전체 · ${allLines?'모든 개별 링크 표시':'그룹 간 링크를 묶어 표시'}${query?' · 검색 결과 '+[...docs.values()].filter(d=>(d.path+' '+d.title).toLowerCase().includes(query)).length+'개':''}`;
+  $('[data-map-status]').textContent=id?`${docs.get(id).title} · 들어오는 링크 ${chosen.filter(e=>e.to===id).length} · 나가는 링크 ${chosen.filter(e=>e.from===id).length} · 전체 ${data.documents.length}개 문서 유지`:`${data.documents.length}개 문서 전체 · ${allLines?'모든 개별 링크 표시':'그룹 간 링크를 묶어 표시'}${query?' · 검색 결과 '+[...docs.values()].filter(d=>(d.path+' '+d.title).toLowerCase().includes(query)).length+'개':''}`;
  }
  function allEdges(){const host=$('[data-map-all-edges]');host.innerHTML=allLines?activeEdges().map(e=>edgeMarkup(e)).join(''):'';}
  function hideTip(){tooltip.hidden=true;}
  function showTip(){
   if(!selected){hideTip();return;}
   const d=docs.get(selected),g=data.groups.find(g=>g.id===d.group),edges=activeEdges();
-  tooltip.innerHTML=`<div class="km-tip-heading"><span class="km-tooltip-group km-color-${d.group}">${e(g.title)} · 선택 고정</span><button class="km-tip-close" data-map-dismiss aria-label="문서 선택 해제">×</button></div><strong id="km-map-popover-title">${e(d.title)}</strong><code>${e(d.path)}</code><span>들어오는 링크 ${edges.filter(e=>e.to===selected).length} · 나가는 링크 ${edges.filter(e=>e.from===selected).length}</span><div class="km-tip-actions"><a class="btn small primary" href="${e(d.download)}" download="${e(d.path.split('/').pop())}">MD 받기 ↓</a><button class="btn small" data-map-read>본문 읽기 ↓</button></div><span class="km-tip-hint">다른 노드를 클릭하면 선택 변경 · 빈 곳 클릭 또는 Esc로 해제</span>`;
+  tooltip.innerHTML=`<div class="km-tip-heading" data-map-tip-drag tabindex="0" aria-label="말풍선 이동: 드래그하거나 방향키를 사용하세요" title="드래그해서 이동"><span class="km-tooltip-group km-color-${d.group}">${e(g.title)}</span><button class="km-tip-close" data-map-dismiss aria-label="문서 선택 해제">×</button></div><strong id="km-map-popover-title">${e(d.title)}</strong><code>${e(d.path)}</code><span>들어오는 링크 ${edges.filter(e=>e.to===selected).length} · 나가는 링크 ${edges.filter(e=>e.from===selected).length}</span><div class="km-tip-actions"><a class="btn small primary" href="${e(d.download)}" download="${e(d.path.split('/').pop())}">MD 받기 ↓</a><button class="btn small" data-map-read>본문 읽기 ↗</button></div><span class="km-tip-hint">상단을 드래그해 이동 · 빈 곳 클릭 또는 Esc로 닫기</span>`;
   tooltip.hidden=false;hydrate(tooltip);positionTip();
  }
- function inspect(){if(!selected){inspector.innerHTML='<p>노드를 클릭하면 관계와 말풍선이 고정됩니다. 빈 곳을 클릭하면 선택이 해제됩니다.</p>';return;}const d=docs.get(selected),g=data.groups.find(g=>g.id===d.group);inspector.innerHTML=`<div><span class="km-tooltip-group km-color-${d.group}">${e(g.title)}</span><strong>${e(d.title)}</strong><code>${e(d.path)}</code></div><div class="km-inspector-actions"><button class="btn small" data-map-center>선택 위치 확대</button><button class="btn small" data-map-read>본문 읽기 ↓</button><a class="btn small" href="${e(d.download)}" download="${e(d.path.split('/').pop())}">MD 받기 ↓</a></div>`;hydrate(inspector);}
- function select(id,{notify=false}={}){if(id&&!docs.has(id))return;selected=id;hovered=null;if(id)for(const [key,el] of elements)el.setAttribute('tabindex',key===id?'0':'-1');inspect();showTip();paint();if(notify)onSelect(id);}
+ function inspect(){if(!selected){inspector.innerHTML='<p>노드를 클릭하면 관계와 말풍선이 고정됩니다. 빈 곳을 클릭하면 선택이 해제됩니다.</p>';return;}const d=docs.get(selected),g=data.groups.find(g=>g.id===d.group);inspector.innerHTML=`<div><span class="km-tooltip-group km-color-${d.group}">${e(g.title)}</span><strong>${e(d.title)}</strong><code>${e(d.path)}</code></div><div class="km-inspector-actions"><button class="btn small" data-map-center>선택 위치 확대</button><button class="btn small" data-map-read>본문 읽기 ↗</button><a class="btn small" href="${e(d.download)}" download="${e(d.path.split('/').pop())}">MD 받기 ↓</a></div>`;hydrate(inspector);}
+ function select(id,{notify=false}={}){if(id&&!docs.has(id))return;if(id!==selected){tipPosition=null;tipDrag=null;}selected=id;hovered=null;if(id)for(const [key,el] of elements)el.setAttribute('tabindex',key===id?'0':'-1');inspect();showTip();paint();if(notify)onSelect(id);}
  function dismiss(restoreFocus=false){const previous=selected;if(!previous)return;select(null,{notify:true});if(restoreFocus)elements.get(previous)?.focus({preventScroll:true});}
  function center(node,scale=4){camera={x:node.x-1240/scale/2,y:node.y-800/scale/2,w:1240/scale,h:800/scale,scale};view();}
  function nodeTarget(event){return event.target.closest?.('[data-map-node]');}
@@ -79,7 +96,7 @@ export function mountKnowledgeMap(root,data,{onSelect=()=>{},onRead=()=>{},onMen
   if(b.hasAttribute('data-map-region')){const g=layout.regions.find(g=>g.id===b.dataset.mapRegion);const scale=Math.min(5,Math.min(1240/(g.w+48),800/(g.h+48)));center({x:g.x+g.w/2,y:g.y+g.h/2},scale);}
   if(b.hasAttribute('data-map-result')){select(b.dataset.mapResult,{notify:true});center(byId.get(selected));$('[data-map-search-results]').hidden=true;}
   if(b.hasAttribute('data-map-center')&&selected)center(byId.get(selected));
-  if(b.hasAttribute('data-map-read')&&selected){closeExpanded();onRead(selected);}
+  if(b.hasAttribute('data-map-read')&&selected){onRead(selected);}
   if(b.hasAttribute('data-map-expand')){const expanded=root.classList.toggle('is-expanded');if(expanded&&bodyStyle){previousOverflow=bodyStyle.overflow;bodyStyle.overflow='hidden';}else if(bodyStyle&&previousOverflow!==undefined){bodyStyle.overflow=previousOverflow;previousOverflow=undefined;}b.setAttribute('aria-pressed',String(expanded));b.textContent=expanded?'크게 보기 닫기 ×':'지도 크게 보기 ⛶';positionTip();}
  });
  function closeExpanded(){root.classList.remove('is-expanded');if(bodyStyle&&previousOverflow!==undefined){bodyStyle.overflow=previousOverflow;previousOverflow=undefined;}const b=$('[data-map-expand]');b.setAttribute('aria-pressed','false');b.textContent='지도 크게 보기 ⛶';positionTip();}

@@ -47,3 +47,16 @@
 .km-tip-actions{display:flex;flex-wrap:wrap;gap:.5rem;padding-top:.35rem}
 .km-tip-actions .btn{font-size:var(--text-caption)}
 .km-tip-actions a:focus-visible,.km-tip-actions button:focus-visible,.km-tip-close:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+
+/* v1.9.1: movable document card and separate reading window */
+.km-tip-heading{cursor:grab;touch-action:none;user-select:none;border-bottom:1px solid var(--line);padding-bottom:.5rem}
+.km-tip-heading:active{cursor:grabbing}
+.km-tip-heading:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+.km-tip-close{cursor:pointer}
+.km-reader-window{margin:0;background:var(--canvas);color:var(--body)}
+.km-reader-main{max-width:1100px;margin:0 auto;padding:clamp(16px,4vw,48px)}
+.km-reader-toolbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.5rem}
+.km-reader-main .km-document{margin-top:0;overflow-wrap:anywhere}
+.km-reader-main .km-source-content{overflow-x:auto}
+@media(max-width:600px){.km-reader-toolbar,.km-reader-main .km-document-head{align-items:flex-start;flex-direction:column}.km-reader-main .km-related-columns{grid-template-columns:1fr}}
+@media print{.km-reader-toolbar,.km-reader-main [data-km-back-map]{display:none}.km-reader-main{max-width:none;padding:0}}

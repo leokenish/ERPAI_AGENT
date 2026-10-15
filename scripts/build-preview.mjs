@@ -4,7 +4,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const dist=path.join(root,'dist');
-const mime={'.otf':'font/otf','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.md':'text/markdown;charset=utf-8','.zip':'application/zip','.json':'application/json','.py':'text/plain;charset=utf-8'};
+const mime={'.otf':'font/otf','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.md':'text/markdown;charset=utf-8','.zip':'application/zip','.json':'application/json','.py':'text/plain;charset=utf-8','.mjs':'text/plain;charset=utf-8','.js':'text/plain;charset=utf-8','.diff':'text/plain;charset=utf-8','.txt':'text/plain;charset=utf-8','.css':'text/plain;charset=utf-8'};
 const files={};
 async function collect(directory){for(const e of await readdir(directory,{withFileTypes:true})){const f=path.join(directory,e.name);if(e.isDirectory())await collect(f);else{const relative=path.relative(dist,f).split(path.sep).join('/');files[relative]=`data:${mime[path.extname(f)]||'application/octet-stream'};base64,${(await readFile(f)).toString('base64')}`;}}}
 for(const name of ['assets','content','downloads'])await collect(path.join(dist,name));
@@ -25,7 +25,7 @@ app=app.replace("import {mountHeroMotion} from './hero-motion.js';",()=>heroMoti
 const presentation=(await readFile(path.join(dist,'presentation.js'),'utf8')).replace(/^export /gm,'');
 app=app.replace("import {renderPresentation,mountPresentation} from './presentation.js';",()=>`const {renderPresentation,mountPresentation}=(()=>{\n${presentation}\nreturn {renderPresentation,mountPresentation};\n})();`);
 const conversations=(await readFile(path.join(dist,'conversations.js'),'utf8')).replace(/^export /gm,'');
-app=app.replace(/^import \{[^\n]+\} from '\.\/conversations\.js';$/m,()=>`const {conversationIndex,conversationWorkspace,resolveConversation,relatedConversationCount,conversationLink,conversationSearchEntries}=(()=>{\n${conversations}\nreturn {conversationIndex,conversationWorkspace,resolveConversation,relatedConversationCount,conversationLink,conversationSearchEntries};\n})();`);
+app=app.replace(/^import \{[^\n]+\} from '\.\/conversations\.js';$/m,()=>`const {conversationIndex,conversationWorkspace,resolveConversation,conversationVisibleCount,relatedConversationCount,conversationLink,conversationSearchEntries}=(()=>{\n${conversations}\nreturn {conversationIndex,conversationWorkspace,resolveConversation,conversationVisibleCount,relatedConversationCount,conversationLink,conversationSearchEntries};\n})();`);
 app=app.replace("const r=await fetch('data/portal.json');if(!r.ok)throw Error('자료 응답 오류');data=await r.json();",()=>`data=${portal};`);
 // This trusted SVG is already inline in portal.heroScene; avoid embedding a duplicate.
 delete files['assets/images/team-collaboration-animated.svg'];

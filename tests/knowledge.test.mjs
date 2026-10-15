@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {inflateRawSync} from 'node:zlib';
-import {renderKnowledge,renderDocumentDetail,filterDocuments,connections,mountKnowledge} from '../site/knowledge.js';
+import {renderKnowledge,renderDocumentDetail,filterDocuments,connections,mountKnowledge,openKnowledgeReader} from '../site/knowledge.js';
 import {resolvePath} from '../scripts/build-knowledge.mjs';
 const root=new URL('../',import.meta.url);
 const data=JSON.parse(await readFile(new URL('dist/data/portal.json',root),'utf8'));
@@ -57,10 +57,10 @@ test('탐색 UI는 필터·문서 이동·경로 언급 선택과 이벤트 정�
   const cleanup=mountKnowledge(host,k,{hydrate:el=>hydrated.push(el)});
   const id=byPath('harness/feedback/FB-20261008-001.md').id;
   events.get('click')({preventDefault(){},target:{closest(){return {dataset:{kmDoc:id},hasAttribute:a=>a==='data-km-doc'};}}});
-  assert.match(node('[data-km-detail]').innerHTML,/FB-20261008-001\.md/);assert.equal(globalThis.history.url,'#/learn/worktime-agent?doc='+id);
+  assert.ok(!nodes.has('[data-km-detail]'));assert.ok(!renderKnowledge(k).includes('data-km-detail'));assert.equal(globalThis.history.url,'#/learn/worktime-agent?doc='+id);
   events.get('input')({target:{value:'없는내용-123456789',matches:s=>s==='[data-km-search]'}});assert.match(node('[data-km-results]').innerHTML,/일치하는 문서가 없습니다/);
   events.get('change')({target:{value:'knowledge',matches:s=>s==='[data-km-filter]'}});assert.match(node('[data-km-results]').innerHTML,/일치하는 문서가 없습니다/);
-  assert.ok(hydrated.length>=2);cleanup();assert.equal(events.size,0);
+  assert.equal(hydrated.length,0);cleanup();assert.equal(events.size,0);
  }finally{globalThis.history=prev;}
 });
 
@@ -81,4 +81,18 @@ test('갱신 명령은 커밋된 MD만 가져오고 기존 원천과 비MD·미�
  assert.equal(await readFile(path.join(snapPath,'knowledge/INDEX.md'),'utf8'),'committed knowledge/INDEX.md');assert.equal(await readFile(path.join(repo,'knowledge/INDEX.md'),'utf8'),'uncommitted change');
  const register=JSON.parse(await readFile(path.join(portal,'docs/source-files.json'),'utf8'));assert.deepEqual(register[0],{path:'old/raw.md',sha256:'preserved'});
  assert.throws(()=>execFileSync(process.execPath,[path.join(portal,'scripts/import-worktime-md.mjs'),repo],{stdio:'pipe'}),/Snapshot already exists/);
+});
+
+test('본문은 별도 창에서 열리고 연결 문서 이동과 다운로드를 유지한다',()=>{
+ const handlers=new Map();const body={innerHTML:''},head={appendChild(){}};
+ const page={body,head,documentElement:{setAttribute(){}},createElement(){return {};},querySelector(){return {focus(){},textContent:''};},addEventListener:(type,fn)=>handlers.set(type,fn)};
+ const reader={document:page,focus(){},scrollTo(){},close(){this.closed=true;}};
+ const calls=[],hydrated=[];
+ const source={baseURI:'https://example.test/index.html',documentElement:{getAttribute(){return 'dark';}},querySelectorAll(){return [];},defaultView:{open(...args){calls.push(args);return reader;},focus(){}}};
+ const first=byPath('maps/topics/selective.md'),second=byPath('harness/feedback/FB-20261008-001.md');
+ assert.equal(openKnowledgeReader(k,first.id,{ownerDocument:source,hydrate:el=>hydrated.push(el)}),reader);
+ assert.equal(calls[0][1],'_blank');assert.match(body.innerHTML,/selective\.md/);assert.match(body.innerHTML,/download="selective.md"/);assert.match(body.innerHTML,/class="km-content" open/);
+ handlers.get('click')({preventDefault(){},target:{closest(){return {dataset:{kmDoc:second.id},hasAttribute:a=>a==='data-km-doc'};}}});
+ assert.match(body.innerHTML,/FB-20261008-001\.md/);assert.equal(hydrated.length,2);
+ source.defaultView.open=()=>null;assert.equal(openKnowledgeReader(k,first.id,{ownerDocument:source}),null);
 });

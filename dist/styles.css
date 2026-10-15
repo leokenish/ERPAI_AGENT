@@ -711,6 +711,14 @@ mark { background: var(--cream); color: inherit; }
 .conversation-gap { background:var(--warning-bg); color:var(--warning); padding:16px; border-radius:6px; }
 .conversation-transcript { padding:22px 24px 0; }
 .chat-message { display:flex; gap:10px; margin-bottom:30px; scroll-margin-top:110px; }
+.conversation-progress { margin:0 0 18px 43px; border:1px solid var(--line); border-radius:12px; color:var(--muted); scroll-margin-top:110px; }
+.conversation-progress > summary { padding:12px 16px; cursor:pointer; font-size:var(--text-caption); }
+.conversation-progress > summary > span:first-child { color:var(--ink); font-weight:500; margin-right:10px; }
+.progress-preview { overflow-wrap:anywhere; }
+.conversation-progress[open] .progress-preview { display:none; }
+.progress-content { padding:0 16px 16px; }
+.progress-content .chat-message-foot { flex-wrap:wrap; }
+@media(max-width:600px) { .conversation-progress { margin-left:0; } }
 .chat-avatar { display:flex; align-items:center; justify-content:center; width:33px; height:33px; flex:0 0 33px; margin-top:4px; border-radius:50%; background:var(--card); color:var(--ink); font-size:var(--text-caption); font-weight:500; }
 .chat-message-main { min-width:0; width:calc(100% - 43px); }
 .chat-message.from-user { flex-direction:row-reverse; margin-left:24px; }
@@ -844,6 +852,11 @@ mark { background: var(--cream); color: inherit; }
 .conversation-missing-response strong { color:var(--ink); font-weight:500; }
 .conversation-missing-response p { margin:8px 0; }
 .conversation-missing-response > span { font-size:var(--text-caption); }
+
+.conversation-message-files{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;margin-top:1rem;padding-top:.85rem;border-top:1px solid var(--line)}
+.conversation-message-files>strong{flex-basis:100%;font-size:.875rem}
+.conversation-message-files .btn{max-width:100%;overflow-wrap:anywhere;white-space:normal;text-align:left}
+.conversation-prose pre{tab-size:4;white-space:pre;overflow-x:auto}
 
 /* Presentation: one teaching objective, workflow, request and reflection per page. */
 .present-mode .sidebar { display:none; }
@@ -986,6 +999,19 @@ mark { background: var(--cream); color: inherit; }
 .km-tip-actions{display:flex;flex-wrap:wrap;gap:.5rem;padding-top:.35rem}
 .km-tip-actions .btn{font-size:var(--text-caption)}
 .km-tip-actions a:focus-visible,.km-tip-actions button:focus-visible,.km-tip-close:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+
+/* v1.9.1: movable document card and separate reading window */
+.km-tip-heading{cursor:grab;touch-action:none;user-select:none;border-bottom:1px solid var(--line);padding-bottom:.5rem}
+.km-tip-heading:active{cursor:grabbing}
+.km-tip-heading:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+.km-tip-close{cursor:pointer}
+.km-reader-window{margin:0;background:var(--canvas);color:var(--body)}
+.km-reader-main{max-width:1100px;margin:0 auto;padding:clamp(16px,4vw,48px)}
+.km-reader-toolbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.5rem}
+.km-reader-main .km-document{margin-top:0;overflow-wrap:anywhere}
+.km-reader-main .km-source-content{overflow-x:auto}
+@media(max-width:600px){.km-reader-toolbar,.km-reader-main .km-document-head{align-items:flex-start;flex-direction:column}.km-reader-main .km-related-columns{grid-template-columns:1fr}}
+@media print{.km-reader-toolbar,.km-reader-main [data-km-back-map]{display:none}.km-reader-main{max-width:none;padding:0}}
 
 /* v1.9.0: shared reading scale and clear actions, using the existing theme colors. */
 :root {

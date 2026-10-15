@@ -1,0 +1,1364 @@
+{
+  "schema_version": "1.0",
+  "project_id": "erp-agent-communication",
+  "project_title": "ERP AI 에이전트간의 통신",
+  "coverage": {
+    "status": "shared_page_verified",
+    "description": "2026-10-14 공개 공유 대화를 직접 확인했습니다. 사용자 요청 11개, AI 최종 응답 전문 11개, 진행 안내 11개, 본문 없는 상태 안내 0개를 구분합니다. 기존 진행 안내와 이미지·첨부 연결을 보존했고 플랫폼 turn/message ID를 확보한 항목에 추가했습니다. HTML 서식을 Markdown으로 전사했으며 전체 플랫폼 export는 아닙니다.",
+    "missing": [
+      "공유 링크 밖의 다른 대화방·분기와 플랫폼 전체 내보내기, 공유 화면에 표시되지 않은 추가 진행 기록은 확인하지 못했습니다.",
+      "개별 발화의 정확한 시각은 공유 화면에서 확인되지 않아 기존에 근거가 있는 값만 유지하고 나머지는 null입니다.",
+      "실제 FI AI 워커와 사용자 Mac 설정·사내 운영 로그는 미확보입니다. 포함된 Node 예제의 모의 워커와 실제 AI 분석을 구분합니다."
+    ],
+    "shared_url": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb",
+    "captured_at": "2026-10-14",
+    "final_responses": 11,
+    "progress_messages": 11,
+    "visible_turns": 22
+  },
+  "threads": [
+    {
+      "id": "eac-thread01",
+      "title": "ERP AI 에이전트간의 통신 — 현재 대화",
+      "source_description": "2026-10-14 공개 공유 대화를 직접 확인했습니다. 사용자 요청 11개, AI 최종 응답 전문 11개, 진행 안내 11개, 본문 없는 상태 안내 0개를 구분합니다. 기존 진행 안내와 이미지·첨부 연결을 보존했고 플랫폼 turn/message ID를 확보한 항목에 추가했습니다. HTML 서식을 Markdown으로 전사했으며 전체 플랫폼 export는 아닙니다.",
+      "messages": [
+        {
+          "id": "eac-m001",
+          "sequence": 1,
+          "role": "user",
+          "timestamp": "2026-10-03T01:18:11+09:00",
+          "content_type": "verbatim",
+          "content_markdown": "현재 ERP서버에서 개발 패키지별로 소스코드와 업무 매뉴얼 회의록등을 추출해서 ai에이전트를 만들고 있어. 에이전트는 맥에서 코덱스 데스크탑을 설치해서 해당 폴더를 지정해서 사용해. 문제는 이렇게 개별 패키지별로 에이전트를 만들고 나서 에이전트간 협업을 어떻게 하냐는거야. 예를들어 시간외 에이전트 ZHR5는 시간외정산이 재무회계 전표와 관련이있기에 ZFI 라는 에이전트와 협업해야해. 폴더는 따로 구분이 되어있을건데 서브에이전트 처럼 사용하거나 할때 어떻개 해야해?",
+          "source_locator": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb / 화면 turn 1 / 2026-10-14 직접 확인",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript",
+            "missing-zfi-source"
+          ],
+          "platform_turn_id": "ff465181-1eba-468b-8e0d-9a98db925ffb",
+          "platform_message_id": "ff465181-1eba-468b-8e0d-9a98db925ffb",
+          "shared_turn_index": 1,
+          "capture_origin": "shared_page",
+          "delivery_kind": "request",
+          "pair_number": 1
+        },
+        {
+          "id": "eac-m002",
+          "sequence": 2,
+          "role": "assistant",
+          "timestamp": null,
+          "content_type": "verbatim",
+          "content_markdown": "패키지별 폴더를 유지하면서 협업시키는 구조와, Codex에서 이를 실행하는 방법을 공식 자료로 확인해볼게요.",
+          "source_locator": "현재 제공된 대화 / 초기 협업 질문의 중간 안내 / 화면상 순서 2; 자체 발화 ID이며 플랫폼 메시지 ID 아님",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript"
+          ],
+          "delivery_kind": "progress",
+          "capture_origin": "prior_verified",
+          "in_reply_to": [
+            "eac-m001"
+          ],
+          "capture_notes": [
+            "이전 추출본에 보존된 진행 안내입니다. 공유 화면의 최종 답변과 구분해 유지했습니다."
+          ]
+        },
+        {
+          "id": "eac-m003",
+          "sequence": 3,
+          "role": "assistant",
+          "timestamp": null,
+          "content_type": "verbatim",
+          "content_markdown": "**가능해요. 지금 구조에서는 패키지별 폴더를 유지하고, 그 위에 ‘ERP 통합 프로젝트’를 하나 두어 ZHR5·ZFI 담당 서브에이전트를 운영하는 방식이 가장 간단합니다.**\n\n다만 **“ZHR5 폴더에서 사용하던 기존 대화창이 ZFI 대화창에 자동으로 질문한다”와 “ZFI 자료를 읽는 담당 서브에이전트를 호출한다”는 서로 다릅니다.** 우선은 두 번째 방식으로 구성하는 게 좋습니다.\n\n현재 공식 OpenAI 문서에서는 Codex의 서브에이전트 실행과 결과 취합을 지원하며, 직접 요청하거나 `AGENTS.md`에 위임 지침을 둘 수 있다고 안내합니다. 설치된 앱 버전과 제공 기능은 확인해야 합니다. [ChatGPT Learn](https://developers.openai.com/codex/agent-configuration/subagents?utm_source=chatgpt.com)\n\n**1. 기존 폴더 위에 통합 작업 공간을 둡니다**\n\n예를 들어 맥에서 다음처럼 구성하는 겁니다. 아래는 제안하는 구조예요.\n\n| 경로 | 역할 |\n| --- | --- |\n| `ERP/AGENTS.md` | 패키지 담당 구분과 협업 규칙 |\n| `ERP/ZHR5/` | 기존 시간외 소스·매뉴얼·회의록·스킬·하네스 |\n| `ERP/ZFI/` | 기존 재무회계 소스·매뉴얼·회의록·스킬·하네스 |\n| `ERP/interfaces/ZHR5-ZFI.md` | 시간외 정산과 전표 생성의 연결 관계 |\n| `ERP/tasks/` | 여러 패키지에 걸친 검토 결과와 결정 사항 |\n\n**Codex에서 협업할 때는 `ZHR5`가 아니라 상위 `ERP` 폴더를 프로젝트로 여는 겁니다.** 기존 패키지 내부 구성은 그대로 유지하면 됩니다.\n\n그러면 메인 에이전트가 두 폴더에 접근할 수 있는 작업 범위 안에서 업무를 나누게 됩니다. 서브에이전트도 부모의 샌드박스 권한을 상속하므로, 폴더 경로를 알려주는 것만으로 접근 권한이 추가되는 것은 아닙니다. [ChatGPT Learn](https://developers.openai.com/codex/agent-configuration/subagents?utm_source=chatgpt.com)\n\n**2. 메인 에이전트가 패키지별 담당자에게 업무를 나눕니다**\n\n가령 “시간외 정산 방식을 변경하면 회계 전표에 어떤 영향이 있는지 검토해줘”라고 요청했다면 이렇게 운영합니다.\n\n| 담당 | 수행할 일 |\n| --- | --- |\n| ZHR5 서브에이전트 | 정산 계산, 지급 대상, 전표로 넘기는 금액·항목·호출 지점 조사 |\n| ZFI 서브에이전트 | 전달받은 데이터의 회계 처리, 계정 결정, 전표 생성·취소 로직 조사 |\n| 메인 에이전트 | 양쪽 결과 대조, 불일치 확인, 추가 질문 전달, 최종 변경 범위 정리 |\n\n처음에는 양쪽을 병렬 조사하고, **ZHR5에서 실제 호출 함수나 전달 구조를 찾으면 그 결과를 ZFI 담당에게 넘겨 후속 확인**시키면 됩니다. 서로 연결되는 업무이므로 한 번씩 분석하고 합치는 데서 끝내면 부족합니다.\n\n예를 들어 ZHR5 담당이 “정산 취소 시 상태만 변경한다”고 보고하고, ZFI 담당이 “이미 생성된 전표는 별도 역분개가 필요하다”고 보고하면, 메인 에이전트가 취소 처리의 연결 여부를 추가로 확인하도록 지시하는 식입니다. 이는 실제 소스에 대한 판단이 아니라 협업 방식의 예입니다.\n\n**3. ‘담당 지식’은 기존 대화보다 파일에 남겨야 합니다**\n\n여기가 가장 중요합니다. **새로 만든 ZFI 서브에이전트가 기존 ZFI 대화창의 모든 논의와 결정을 자동으로 알고 있다고 가정하면 안 됩니다.**\n\n대신 담당을 맡길 때 다음 자료를 명시적으로 읽게 해야 합니다.\n\n- 패키지별 `AGENTS.md`: 업무 범위와 작업 규칙\n\n- 기존 `SKILL.md`: 분석·변경·검증 절차\n\n- `knowledge/`: 업무 지식과 과거 결정 근거\n\n- `exports/`: 실제 코드\n\n- `harness/`: 검증 방법과 회귀 시나리오\n\n이미 만들어 놓으신 자료가 그대로 **새 담당 에이전트가 업무를 인수받는 기반**이 되는 겁니다.\n\n참고로 Codex의 `AGENTS.md` 자동 탐색은 프로젝트 루트에서 현재 작업 디렉터리까지의 경로를 기준으로 합니다. 상위 폴더를 열었다고 모든 하위 패키지 지침이 처음부터 전부 로드되는 것은 아니므로, **위임할 때 해당 패키지 지침을 먼저 읽도록 명시하는 편이 확실합니다.** [ChatGPT Learn](https://developers.openai.com/codex/agent-configuration/agents-md?utm_source=chatgpt.com)\n\n**4. 패키지 사이의 ‘연결 문서’를 하나 만드세요**\n\n`interfaces/ZHR5-ZFI.md`에는 두 업무 사이의 접점을 기록합니다.\n\n| 기록 항목 | 내용 |\n| --- | --- |\n| 호출 관계 | 정산 프로그램 → 호출 함수 → 전표 생성 프로그램 |\n| 전달 데이터 | 실제 필드명, 의미, 금액 단위, 필수 여부 |\n| 처리 시점 | 확정·전표 생성·취소가 발생하는 시점 |\n| 오류 처리 | 실패 시 재처리 방법과 중복 생성 방지 방식 |\n| 근거 | 관련 소스 경로, 매뉴얼, 회의록 날짜 |\n| 검증 항목 | 정산 금액과 전표 금액 일치, 취소·재처리 등 |\n\n처음부터 사람이 모두 작성할 필요는 없습니다. **양쪽 에이전트에게 실제 소스와 문서를 조사해 초안을 만들게 하고, 확인된 사실과 미확인 사항을 구분해 두면 됩니다.**\n\n이 문서가 있으면 다음 작업에서는 매번 두 패키지를 처음부터 뒤지지 않고 연결 지점부터 확인할 수 있습니다.\n\n**5. 실제로는 이렇게 요청하면 됩니다**\n\n`ERP` 폴더를 연 Codex에서 다음처럼 지시해보세요.\n\n> 시간외 정산과 회계 전표 연계의 변경 영향을 검토해줘.\n> \n> ZHR5 담당과 ZFI 담당 서브에이전트를 각각 만들어줘.\n> \n> 각 담당은 해당 폴더의 AGENTS.md와 기존 SKILL.md를 먼저 읽고, 관련 knowledge·exports·harness를 조사해.\n> \n> 먼저 양쪽에서 연결 지점을 조사한 뒤, 확인한 호출 함수와 전달 구조를 공유해 서로 대조해. 불일치가 있으면 추가 검토를 맡겨.\n> \n> 최종적으로 실제 호출 흐름, 변경 대상, 미확인 사항, 통합 회귀 검증 항목을 근거 파일과 함께 정리해. 이번 작업은 분석만 해.\n\n이 흐름이 잘 작동하면 상위 `ERP/AGENTS.md`에 “여러 패키지에 걸친 요청은 패키지별 서브에이전트에게 위임한다”는 규칙을 넣어 반복 지시를 줄이면 됩니다.\n\n**현재 단계에서는 별도 에이전트 통신 서버나 MCP를 먼저 만들 필요가 없습니다. 상위 작업 공간 + 패키지별 담당 지침 + 연결 문서만으로 협업을 시작할 수 있습니다.** 나중에 서로 다른 서버에서 상시 실행되는 에이전트들이 요청을 주고받아야 할 때 별도 통신 구조로 확장하면 됩니다.",
+          "source_locator": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb / 화면 turn 2 / 2026-10-14 직접 확인",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript",
+            "missing-skills"
+          ],
+          "platform_turn_id": "12413492-2292-4db0-a504-053b915a81c5",
+          "platform_message_id": "c4e5490f-fead-51cc-b3df-2f54c904a70c",
+          "shared_turn_index": 2,
+          "capture_origin": "shared_page",
+          "delivery_kind": "final",
+          "pair_number": 1,
+          "in_reply_to": [
+            "eac-m001"
+          ]
+        },
+        {
+          "id": "eac-m004",
+          "sequence": 4,
+          "role": "user",
+          "timestamp": "2026-10-03T01:28:19+09:00",
+          "content_type": "verbatim",
+          "content_markdown": "결국 두 업무사이의 접점을 기록하는 md파일이 중요한거네? 그럼 앞으로 코덱스 데스크탑에서는 최상위폴더로 ERP 를 지정 하고 그 밑에 있는 ZFI ZAA ZMM ZHR ZCO 등등 처럼 여러개 에이전트 폴더가 있게해서 다 서브에이전트화 시키고 수정변경이 생기거나 ZXX 같은게 생기면 필요하면 추가하고 이런식으로 하라는거야?",
+          "source_locator": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb / 화면 turn 3 / 2026-10-14 직접 확인",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript"
+          ],
+          "platform_turn_id": "3d856b26-f2b4-4ab8-9f32-b0473ace5e6b",
+          "platform_message_id": "3d856b26-f2b4-4ab8-9f32-b0473ace5e6b",
+          "shared_turn_index": 3,
+          "capture_origin": "shared_page",
+          "delivery_kind": "request",
+          "pair_number": 2
+        },
+        {
+          "id": "eac-m005",
+          "sequence": 5,
+          "role": "assistant",
+          "timestamp": null,
+          "content_type": "verbatim",
+          "content_markdown": "**네, 이해하신 방향이 맞습니다.** `ERP`를 통합 작업 공간으로 지정하고, 그 아래 `ZFI·ZAA·ZMM·ZHR·ZCO` 같은 패키지별 폴더를 유지하면서 **업무에 필요한 담당 서브에이전트만 호출**하는 구조입니다.\n\n한 가지 구분하면, **폴더마다 에이전트가 항상 실행되는 것은 아닙니다.** 폴더에는 해당 담당자의 지식·소스·작업 규칙을 보관하고, 요청이 들어오면 그 자료를 읽는 담당 에이전트를 만드는 겁니다.\n\n예를 들면 이렇게 운영합니다.\n\n| 요청 | 참여할 담당 |\n| --- | --- |\n| 시간외 신청 화면 수정 | ZHR5 |\n| 시간외 정산과 전표 연계 변경 | ZHR5 + ZFI |\n| 구매한 장비의 자산 취득 처리 변경 | ZMM + ZAA + ZFI |\n| 새로운 ZXX 패키지 추가 | ZXX 담당 추가, 관련 패키지만 연결 |\n\n**핵심 문서는 세 종류로 나누면 됩니다.**\n\n| 문서 | 담을 내용 |\n| --- | --- |\n| `ERP/AGENTS.md` | 어떤 업무를 어떤 패키지에 맡길지, 언제 협업할지, 결과를 어떻게 합칠지 |\n| 각 패키지의 `AGENTS.md`와 기존 스킬·지식 | 해당 업무의 규칙, 소스 위치, 분석·수정·검증 방법 |\n| `ERP/interfaces/`의 연결 문서 | 패키지 간 호출 관계, 전달 데이터, 처리 순서, 오류·취소·재처리 관계 |\n\n말씀하신 **접점 MD가 중요한 이유는 각 담당자가 자기 업무만 맞게 수정해도 전체 흐름은 깨질 수 있기 때문**입니다. ZHR5가 정산 금액의 의미나 전달 시점을 바꾸면 ZFI가 그 변경을 알아야 하는 것이죠.\n\n다만 **접점 문서는 소스와 함께 갱신되어야 합니다.** 오래된 접점 문서를 확정 사실처럼 믿으면 오히려 오류가 생길 수 있으므로, 연결 문서에는 근거 소스와 마지막 확인 시점도 남기는 게 좋습니다.\n\n앞으로 변경할 때의 기본 흐름은 다음이면 충분합니다.\n\n1. 메인 에이전트가 담당 패키지와 연결 문서를 확인합니다.\n2. 관련 담당만 호출해 변경 영향을 분석합니다.\n3. 각 담당이 맡은 파일을 수정하고, 패키지 사이의 동작을 함께 검증합니다.\n4. 변경된 업무 지식과 접점 문서를 같이 갱신합니다.\n\n`ZXX`가 새로 생기면 **폴더와 담당 지침을 추가하고, 상위 업무 목록에 등록한 뒤, 실제로 연결되는 패키지의 접점만 추가**하면 됩니다. 모든 패키지 조합의 문서를 미리 만들 필요는 없습니다.\n\n**지금까지 만든 패키지별 자료를 그대로 살리면서, 위에 ‘업무 배분 규칙’과 옆에 ‘패키지 간 연결 정보’를 더하는 방식이라고 보시면 정확합니다.**",
+          "source_locator": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb / 화면 turn 4 / 2026-10-14 직접 확인",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript",
+            "missing-skills"
+          ],
+          "platform_turn_id": "3054c3ec-dd27-4d1d-9fec-1cc638279396",
+          "platform_message_id": "f9dc20c9-121c-5488-9334-a5cf0219d237",
+          "shared_turn_index": 4,
+          "capture_origin": "shared_page",
+          "delivery_kind": "final",
+          "pair_number": 2,
+          "in_reply_to": [
+            "eac-m004"
+          ]
+        },
+        {
+          "id": "eac-m006",
+          "sequence": 6,
+          "role": "user",
+          "timestamp": "2026-10-03T01:30:53+09:00",
+          "content_type": "verbatim",
+          "content_markdown": "옵시디언도 사용하면 업무간 연결고리도 시각화할수 있을까?",
+          "source_locator": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb / 화면 turn 5 / 2026-10-14 직접 확인",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript"
+          ],
+          "platform_turn_id": "ce453384-24e1-44b8-9bb8-9e786c0d3528",
+          "platform_message_id": "ce453384-24e1-44b8-9bb8-9e786c0d3528",
+          "shared_turn_index": 5,
+          "capture_origin": "shared_page",
+          "delivery_kind": "request",
+          "pair_number": 3
+        },
+        {
+          "id": "eac-m007",
+          "sequence": 7,
+          "role": "assistant",
+          "timestamp": null,
+          "content_type": "verbatim",
+          "content_markdown": "옵시디언의 연결 표시 방식을 확인해서, 지금 정리한 ERP 폴더 구조에 어떻게 적용할지 설명드릴게요.",
+          "source_locator": "현재 제공된 대화 / Obsidian 중간 안내 / 화면상 순서 7; 자체 발화 ID이며 플랫폼 메시지 ID 아님",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript"
+          ],
+          "delivery_kind": "progress",
+          "capture_origin": "prior_verified",
+          "in_reply_to": [
+            "eac-m006"
+          ],
+          "capture_notes": [
+            "이전 추출본에 보존된 진행 안내입니다. 공유 화면의 최종 답변과 구분해 유지했습니다."
+          ]
+        },
+        {
+          "id": "eac-m008",
+          "sequence": 8,
+          "role": "assistant",
+          "timestamp": null,
+          "content_type": "verbatim",
+          "content_markdown": "**네. 지금 구상하신 ERP 구조에 옵시디언을 함께 쓰면, 업무 간 연결을 눈으로 확인하는 지도로 활용할 수 있습니다.** Codex와 옵시디언이 같은 `ERP` 폴더를 사용하도록 구성하면 됩니다.\n\n역할은 이렇게 나뉩니다.\n\n| 구성 요소 | 역할 |\n| --- | --- |\n| Codex | 소스·매뉴얼을 분석하고 업무 관계를 찾아 MD에 기록 |\n| MD 파일 | 업무 지식과 연결 관계를 보관 |\n| 옵시디언 | 기록된 연결을 시각화하고, 클릭해서 관련 문서로 이동 |\n\n**다만 폴더를 열기만 하면 업무 관계가 저절로 분석되는 것은 아닙니다.** 옵시디언 그래프는 기본적으로 **노트를 점으로, 노트 사이의 링크를 선으로** 표시합니다. 따라서 Codex가 접점 문서를 만들 때 관련 문서의 링크도 함께 넣도록 하면 됩니다. [Obsidian Help](https://help.obsidian.md/plugins/graph?utm_source=chatgpt.com)\n\n예를 들어 `interfaces/ZHR5-ZFI.md`에 다음처럼 기록하는 겁니다. 경로와 문서명은 예시입니다.\n\n```markdown\n# 시간외 정산과 회계 전표 연계\n\n## 관련 업무\n- 정산 담당: [[ZHR5/시간외정산]]\n- 회계 담당: [[ZFI/시간외전표처리]]\n\n## 관련 근거\n- [[ZHR5/knowledge/시간외정산매뉴얼]]\n- [[ZFI/knowledge/전표취소처리지침]]\n\n## 연결 내용\n정산 결과를 회계 전표 생성에 전달한다.\n실제 호출 함수와 전달 필드는 소스 확인 후 기록한다.\n```\n\n이런 `[[폴더/문서]]` 형식이 옵시디언의 내부 링크입니다. 해당 문서들이 존재하면 클릭해서 이동할 수 있고, 그래프에도 연결이 나타납니다. [Obsidian Help](https://help.obsidian.md/links?utm_source=chatgpt.com)\n\n시각화는 용도별로 세 가지를 활용하면 좋습니다.\n\n| 보기 | ERP에서 활용하는 방법 |\n| --- | --- |\n| **전체 그래프** | FI·MM·AA·HR·CO 업무 문서가 어떻게 연결되는지 전체적으로 확인 |\n| **로컬 그래프** | ‘시간외 정산’ 문서 주변에 연결된 전표·매뉴얼·회의록만 확인 |\n| **Canvas** | ‘정산 확정 → 전표 생성’ 같은 업무 흐름을 카드와 화살표로 배치하고, 연결선에 의미를 표시 |\n\n로컬 그래프는 연결 깊이를 조절할 수 있어 관련 업무를 단계적으로 살펴보기 좋습니다. Canvas는 연결선에 설명을 붙일 수 있어 **처리 순서나 데이터 전달 관계를 설명할 때** 더 적합합니다. [Obsidian Help+1](https://help.obsidian.md/plugins/graph?utm_source=chatgpt.com)\n\n실무에서는 **전체 그래프에는 업무 개요와 접점 문서를 중심으로 보여주고, 상세 분석은 로컬 그래프로 보는 방식**을 권합니다. 모든 소스와 회의록을 한꺼번에 표시하면 복잡해지기 쉽습니다. 그래프에는 폴더·검색 조건에 따른 필터와 색상 그룹을 적용할 수 있습니다. [Obsidian Help](https://help.obsidian.md/plugins/graph?utm_source=chatgpt.com)\n\n**접점 MD를 기준 정보로 관리하고, 옵시디언은 그 정보를 보여주는 화면으로 쓰면 됩니다.** Codex에게 “업무 변경 시 접점 문서와 관련 내부 링크도 함께 갱신하라”고 정해두면, AI가 참고하는 업무 지식과 사람이 보는 업무 지도를 함께 유지할 수 있습니다.",
+          "source_locator": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb / 화면 turn 6 / 2026-10-14 직접 확인",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript",
+            "missing-screens"
+          ],
+          "platform_turn_id": "5d12da7c-daf2-4a20-89bb-94a3c3c58ee8",
+          "platform_message_id": "d5829070-57f4-5bf6-b528-8e46d7d8ec4c",
+          "shared_turn_index": 6,
+          "capture_origin": "shared_page",
+          "delivery_kind": "final",
+          "pair_number": 3,
+          "in_reply_to": [
+            "eac-m006"
+          ]
+        },
+        {
+          "id": "eac-m009",
+          "sequence": 9,
+          "role": "user",
+          "timestamp": "2026-10-03T01:35:30+09:00",
+          "content_type": "verbatim",
+          "content_markdown": "그럼 우리팀의 실제 업무담당자들이 이 에이전트를 어떻게 사용하면 좋을까. 지금 fi담당자는 zfi, mm담당자는 zmm을 굴리도록 계획했었어. 왜냐하면 다른 업무 범위의 코드나 내용은 수정하면 안되거든. 근데 이렇게 erp 최상위 폴더로 코덱스 데그크탑에서 지정하게되면 영역이 침범될수 있잖아.",
+          "source_locator": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb / 화면 turn 7 / 2026-10-14 직접 확인",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript"
+          ],
+          "platform_turn_id": "7a2e6739-7cd1-49df-a246-d046ec5b243b",
+          "platform_message_id": "7a2e6739-7cd1-49df-a246-d046ec5b243b",
+          "shared_turn_index": 7,
+          "capture_origin": "shared_page",
+          "delivery_kind": "request",
+          "pair_number": 4
+        },
+        {
+          "id": "eac-m010",
+          "sequence": 10,
+          "role": "assistant",
+          "timestamp": null,
+          "content_type": "verbatim",
+          "content_markdown": "**맞습니다. 여러 담당자가 사용하는 환경이라면, 모두에게 `ERP` 최상위 폴더를 열게 하는 것은 적절하지 않습니다.** 앞서 제안한 상위 폴더 방식은 통합 분석에는 편하지만, 말씀하신 **담당 영역별 수정 권한을 보장하는 구조는 아닙니다.**\n\n팀에서는 원래 계획하신 **“FI 담당자는 ZFI, MM 담당자는 ZMM을 운영”하는 방식을 유지**하고, 협업을 위한 통로를 별도로 두는 게 좋습니다.\n\n**핵심은 ‘다른 업무에 검토를 요청할 수 있는 권한’과 ‘다른 업무의 코드를 수정할 수 있는 권한’을 분리하는 것입니다.**\n\n| 사용자·역할 | 자기 패키지 | 다른 패키지 | 공통 접점 문서 |\n| --- | --- | --- | --- |\n| FI 담당자·에이전트 | 조회·수정 | 필요 범위만 조회 또는 검토 요청 | 조회·변경 제안 |\n| MM 담당자·에이전트 | 조회·수정 | 필요 범위만 조회 또는 검토 요청 | 조회·변경 제안 |\n| HR 담당자·에이전트 | 조회·수정 | 필요 범위만 조회 또는 검토 요청 | 조회·변경 제안 |\n| 통합 검토 에이전트 | 전체 조회 | 전체 조회 | 영향 분석·초안 작성 |\n\n통합 검토 에이전트는 **전체 소스를 읽고 분석하되, 패키지 소스를 직접 수정하지 않는 역할**로 두면 됩니다. 다른 업무의 내용 자체도 공개하면 안 된다면, 전체 조회 대신 담당자가 제공한 검토 결과만 받아야 합니다.\n\n예를 들어 시간외 정산을 변경할 때는 이렇게 진행합니다.\n\n1. **HR 담당자**가 ZHR5 에이전트에게 변경을 요청합니다.\n2. ZHR5가 회계 영향 가능성을 발견하면 **FI 검토 요청서**를 만듭니다. 변경 내용, 전달 필드, 확인할 질문을 담습니다.\n3. **FI 담당자**가 자기 ZFI 에이전트로 요청서를 검토합니다.\n4. FI 변경이 필요하면 FI 담당자가 자기 영역에서 수정합니다.\n5. 양쪽 결과를 대조해 연계 검증하고, 접점 문서를 갱신합니다.\n\n**ZHR5 에이전트가 ZFI 코드를 직접 고치는 대신, ZFI 담당에게 필요한 변경을 요청하는 구조**입니다. 처음에는 요청서 MD를 전달하는 방식으로 시작해도 충분합니다. 이후 이 전달과 결과 취합을 자동화하면 됩니다.\n\n여기서 꼭 구분해야 하는 것이 있습니다.\n\n- `AGENTS.md`에 “다른 패키지를 수정하지 마라”라고 쓰는 것은 **작업 지침**입니다.\n\n- 실제로 수정을 막는 것은 **파일 접근 권한, 실행 환경의 쓰기 범위, 저장소 권한**입니다.\n\n- **서브에이전트라는 이름이나 역할만으로 권한이 분리되지는 않습니다.**\n\n따라서 팀 운영은 다음 구성이 적합합니다.\n\n| 구성 | 권장 방식 |\n| --- | --- |\n| 담당자 작업 공간 | 각자 자기 패키지 폴더를 Codex 프로젝트로 지정 |\n| 수정 권한 | 자기 패키지에만 쓰기 허용 |\n| 타 업무 참고 자료 | 필요한 경우 읽기 전용으로 제공 |\n| 협업 자료 | 별도의 공통 폴더·저장소에서 검토 요청과 답변 관리 |\n| 통합 분석 | 전체 읽기 전용 환경에서 수행 |\n| ERP 반영 | 담당별 검토와 기존 CTS 절차로 통제 |\n\n같은 OS 계정이 모든 폴더에 쓰기 권한을 가진 상태라면 **Codex에서 여는 폴더를 나누는 것만으로 강한 격리가 완성되지는 않습니다.** 담당자별 계정·작업 사본을 분리하고, 필요하면 별도 실행 환경으로 쓰기 범위를 제한해야 합니다.\n\n**지금 팀에는 ‘패키지별 독립 작업 + 공통 접점 문서 + 담당 간 검토 요청’ 방식이 맞습니다.** `ERP` 전체를 여는 에이전트는 팀장님의 통합 영향 분석용으로 두고, 실제 수정은 각 담당 에이전트에게 맡기는 구성이 좋겠습니다.",
+          "source_locator": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb / 화면 turn 8 / 2026-10-14 직접 확인",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript"
+          ],
+          "platform_turn_id": "2a925ddf-4497-443c-a812-76cfd65d39c6",
+          "platform_message_id": "cafc0866-4fc0-5a86-870d-2eea51f2cb5f",
+          "shared_turn_index": 8,
+          "capture_origin": "shared_page",
+          "delivery_kind": "final",
+          "pair_number": 4,
+          "in_reply_to": [
+            "eac-m009"
+          ]
+        },
+        {
+          "id": "eac-m011",
+          "sequence": 11,
+          "role": "user",
+          "timestamp": "2026-10-03T01:40:09+09:00",
+          "content_type": "verbatim",
+          "content_markdown": "별도의 공통 폴더 저장소에서 검토요청을 하라고 되어있는데 내가 원하는 맥락하고 다른거같은데? 나는 예를들어 zhr담당자가 전표를 물어보면 zfi가 서브에이전트로 붙어서 의사소통하는 모양새가 가능한지 물어본거야.",
+          "source_locator": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb / 화면 turn 9 / 2026-10-14 직접 확인",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript"
+          ],
+          "platform_turn_id": "c3bd10f4-a274-4e34-8b01-a92e2a44c76b",
+          "platform_message_id": "c3bd10f4-a274-4e34-8b01-a92e2a44c76b",
+          "shared_turn_index": 9,
+          "capture_origin": "shared_page",
+          "delivery_kind": "request",
+          "pair_number": 5
+        },
+        {
+          "id": "eac-m012",
+          "sequence": 12,
+          "role": "assistant",
+          "timestamp": null,
+          "content_type": "verbatim",
+          "content_markdown": "**네, 가능합니다. 제가 앞서 사람끼리 검토 요청서를 주고받는 방식으로 설명해서 의도에서 벗어났습니다. 원하시는 것은 ZHR 에이전트와 대화하는 중에, 필요하면 ZFI 전문 서브에이전트가 참여해서 답하는 구조죠.**\n\n예를 들면 이런 흐름입니다.\n\n1. **HR 담당자 → ZHR:** “시간외 정산을 취소하면 회계 전표도 취소돼?”\n2. **ZHR → ZFI 서브에이전트:** “회계 자료와 소스에서 전표 취소 조건과 호출 방법을 확인해줘.”\n3. **ZFI → ZHR:** 확인한 처리 방식과 근거를 반환합니다.\n4. **ZHR → ZFI:** 필요하면 “그럼 이 정산 취소 함수에서 추가 호출이 필요한가?”라고 후속 질문합니다.\n5. **ZHR → HR 담당자:** 양쪽 결과를 종합해 설명합니다.\n\n**사용자는 ZHR 대화창 하나에서 질문하고, 에이전트 사이의 위임과 결과 전달은 Codex가 처리하는 방식입니다.** 현재 공식 문서에서도 서브에이전트 생성, 후속 지시 전달, 결과 대기와 취합을 지원한다고 안내합니다. [developers.openai.com](https://developers.openai.com/codex/agent-configuration/subagents?utm_source=chatgpt.com)\n\n이때 **‘ZFI 전문 역할’과 ‘ZFI 수정 권한’은 별개**입니다.\n\n| 실행 상황 | 역할 | 필요한 파일 권한 |\n| --- | --- | --- |\n| FI 담당자가 자기 업무 수행 | ZFI 주 에이전트 | ZFI 읽기·쓰기 |\n| HR 담당자의 질문에 참여 | ZFI 자문 서브에이전트 | ZFI 읽기 전용 |\n\n**같은 ZFI 스킬·업무 지식·소스를 활용하되, HR 쪽에서 호출할 때는 조회와 자문만 하게 만드는 겁니다.** ZFI 수정이 필요하다는 결론까지는 낼 수 있지만, 직접 수정하지는 못하도록요.\n\n따라서 HR 담당자의 실행 환경을 다음처럼 구성하면 됩니다.\n\n- **ZHR 자료·소스:** 읽기·쓰기 가능\n\n- **ZFI 자료·소스:** 읽기 전용으로 접근 가능\n\n- **ZHR 작업 지침:** 회계 질문이 나오면 ZFI 담당 서브에이전트를 생성하고, ZFI 지침과 관련 자료를 읽어 조사하도록 위임\n\n단, **서브에이전트는 부모의 샌드박스 권한을 상속하므로, ‘ZFI는 읽기 전용’이라는 실제 접근 제한을 HR 실행 환경에 설정해야 합니다.** 담당 역할을 이름으로 지정하거나 MD에 금지만 적는 것으로 권한 격리가 완성되지는 않습니다. [developers.openai.com](https://developers.openai.com/codex/agent-configuration/subagents?utm_source=chatgpt.com)\n\n또 하나, 여기서 호출하는 ZFI는 **FI 담당자가 이미 열어둔 기존 대화창 자체가 아니라, 공통 ZFI 지식과 지침을 읽고 새로 참여하는 전문 서브에이전트**입니다. 기존 대화에서만 논의한 내용까지 알아야 한다면 그 결정 사항을 ZFI 지식 파일에 남겨야 합니다.\n\n**즉, 원래 계획하신 담당별 운영을 유지하면서 “내 업무는 수정하고, 다른 업무는 해당 전문 서브에이전트에게 물어보는” 구조가 가능합니다. 이를 위해 모든 담당자에게 ERP 전체 수정 권한을 줄 필요는 없습니다.**",
+          "source_locator": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb / 화면 turn 10 / 2026-10-14 직접 확인",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript"
+          ],
+          "platform_turn_id": "e79605aa-a077-454a-a40c-b6969a3c6c35",
+          "platform_message_id": "57626403-f7f5-5e41-a90a-6854628e2bfc",
+          "shared_turn_index": 10,
+          "capture_origin": "shared_page",
+          "delivery_kind": "final",
+          "pair_number": 5,
+          "in_reply_to": [
+            "eac-m011"
+          ]
+        },
+        {
+          "id": "eac-m013",
+          "sequence": 13,
+          "role": "user",
+          "timestamp": "2026-10-03T01:42:54+09:00",
+          "content_type": "verbatim",
+          "content_markdown": "zhr은 깃허브를 통해서 맥에 클론해서 가져온다음 코덱스 데스크탑으로 폴더 지정을했다고 치자. 그 이후에 zhr업무담당자가 zfi를 어떻게 참조한다는거야? zfi는 클론 안할건데",
+          "source_locator": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb / 화면 turn 11 / 2026-10-14 직접 확인",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript",
+            "missing-zfi-source"
+          ],
+          "platform_turn_id": "97100857-93d5-485d-9465-7f9573d7226c",
+          "platform_message_id": "97100857-93d5-485d-9465-7f9573d7226c",
+          "shared_turn_index": 11,
+          "capture_origin": "shared_page",
+          "delivery_kind": "request",
+          "pair_number": 6
+        },
+        {
+          "id": "eac-m014",
+          "sequence": 14,
+          "role": "assistant",
+          "timestamp": null,
+          "content_type": "verbatim",
+          "content_markdown": "**ZFI를 클론하지 않고 별도 조회 수단도 연결하지 않았다면, ZHR 에이전트는 ZFI를 참조할 수 없습니다.** 제가 앞에서는 ZFI 자료에 접근할 수 있다는 전제를 빠뜨렸습니다. 서브에이전트를 만든다고 다른 저장소의 지식이 자동으로 생기는 것은 아닙니다.\n\n원하시는 구조라면 **ZFI를 알고 있는 에이전트를 별도 환경에서 실행하고, ZHR이 그 에이전트에 질문할 수 있게 연결**해야 합니다.\n\n구체적으로는 다음과 같습니다.\n\n| 위치 | 구성 |\n| --- | --- |\n| HR 담당자 맥 | ZHR만 클론 + Codex Desktop |\n| 사내 서버 또는 FI 전용 실행 환경 | ZFI 저장소 + ZFI 스킬·업무 지식 + 질문에 답하는 에이전트 |\n| 둘 사이의 연결 | ZFI 에이전트에 질문하고 답을 받는 API 또는 MCP 도구 |\n\n예를 들어 HR 담당자의 Codex에 **`ask_zfi`라는 MCP 도구를 연결하는 방식**입니다. 이름은 설계 예시입니다.\n\nHR 담당자가 “시간외 정산 취소 시 전표는 어떻게 처리돼?”라고 물으면:\n\n1. ZHR 에이전트가 자기 소스에서 관련 호출과 전달 항목을 확인합니다.\n2. `ask_zfi`로 **질문과 필요한 ZHR 근거**를 보냅니다.\n3. 서버의 ZFI 에이전트가 **서버에 있는 ZFI 소스·매뉴얼을 조사**합니다.\n4. 답변과 근거를 반환합니다.\n5. ZHR이 필요하면 추가 질문을 보내고, 최종 답변을 담당자에게 제공합니다.\n\n**HR 담당자의 맥에는 ZFI를 클론할 필요가 없습니다.** ZFI 소스 조회는 ZFI 실행 환경에서 이루어지고, HR 쪽은 질문과 답변만 주고받습니다. 자문용 ZFI 실행 환경을 읽기 전용으로 구성하면 HR 쪽 요청으로 ZFI 소스를 수정하는 것도 막을 수 있습니다.\n\n여기서 제가 앞서 설명한 용어를 바로잡으면:\n\n- **로컬 서브에이전트:** HR 맥에서 접근 가능한 자료와 도구를 사용해 위임 작업을 수행합니다.\n\n- **원격 ZFI 에이전트 호출:** 다른 실행 환경의 ZFI 담당에게 질문합니다. **지금 원하시는 구조에 해당합니다.**\n\n사용자에게는 “ZFI 담당이 붙어서 답해주는” 모습으로 만들 수 있지만, **실제로는 원격 에이전트를 호출하는 연결 기능을 구축해야 합니다.** MCP는 그 호출 도구를 Codex에 제공하는 역할이고, 뒤에서 ZFI 에이전트를 실행하고 결과를 돌려주는 서비스가 따로 필요합니다.\n\n**따라서 지금 조건에서는 ‘담당자는 자기 패키지만 클론하고, 다른 업무는 사내 서버의 전문 에이전트에 MCP로 질의’하는 구성이 맞습니다.** 이것이 말씀하신 업무 분리와 에이전트 간 협업을 함께 충족합니다.",
+          "source_locator": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb / 화면 turn 12 / 2026-10-14 직접 확인",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript"
+          ],
+          "platform_turn_id": "37b8eed5-1409-404c-8fa4-b503855cbf1e",
+          "platform_message_id": "6c0473ac-faa9-5642-96b1-d575d4ebf4d4",
+          "shared_turn_index": 12,
+          "capture_origin": "shared_page",
+          "delivery_kind": "final",
+          "pair_number": 6,
+          "in_reply_to": [
+            "eac-m013"
+          ]
+        },
+        {
+          "id": "eac-m015",
+          "sequence": 15,
+          "role": "user",
+          "timestamp": "2026-10-03T01:46:56+09:00",
+          "content_type": "verbatim",
+          "content_markdown": "맞아 이런 구성을 원한거야. 업무 담당자 즉 사람이 다르니 에이전트도 사람따라가게 만들려고 말이야. 그럼 각 팀원에게 맥을 하나씩 제공 하고 각 맥애 본인의 ZXX 를 클론해서 코덱스 데스크탑 폴더로 지정하게 할거야. 그리고 중앙에 MCP 서버를 별도로 만들거야. 각 맥과 mcp서버를 어떻게 연동하지?",
+          "source_locator": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb / 화면 turn 13 / 2026-10-14 직접 확인",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript",
+            "missing-zfi-source"
+          ],
+          "platform_turn_id": "abcfc2c6-88ca-4379-808d-64b23a851ee0",
+          "platform_message_id": "abcfc2c6-88ca-4379-808d-64b23a851ee0",
+          "shared_turn_index": 13,
+          "capture_origin": "shared_page",
+          "delivery_kind": "request",
+          "pair_number": 7
+        },
+        {
+          "id": "eac-m016",
+          "sequence": 16,
+          "role": "assistant",
+          "timestamp": null,
+          "content_type": "verbatim",
+          "content_markdown": "각 맥에서 중앙 MCP에 접속하는 방법과, 중앙에서 다른 담당자의 에이전트를 호출하는 연결을 나눠 확인하겠습니다. 이 둘을 연결해야 원하시는 협업이 됩니다.",
+          "source_locator": "현재 제공된 대화 / 분산 연결 중간 안내 / 화면상 순서 16; 자체 발화 ID이며 플랫폼 메시지 ID 아님",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript"
+          ],
+          "delivery_kind": "progress",
+          "capture_origin": "prior_verified",
+          "in_reply_to": [
+            "eac-m015"
+          ],
+          "capture_notes": [
+            "이전 추출본에 보존된 진행 안내입니다. 공유 화면의 최종 답변과 구분해 유지했습니다."
+          ]
+        },
+        {
+          "id": "eac-m017",
+          "sequence": 17,
+          "role": "assistant",
+          "timestamp": null,
+          "content_type": "verbatim",
+          "content_markdown": "**가능합니다. 각 맥에 ‘Codex Desktop + 자기 패키지 + 외부 질문에 답하는 작은 실행 프로그램’을 두고, 중앙 MCP 서버가 질문을 담당 맥으로 전달하도록 구성하면 됩니다.**\n\n여기서 중요한 점은 **각 맥의 Codex에 MCP 주소를 등록하는 것만으로는, 중앙 서버가 그 맥의 Codex 대화창을 호출할 수 없다는 것**입니다. 질문을 받는 쪽에 별도의 실행 프로그램이 필요합니다.\n\n**① 전체 구성은 이렇게 됩니다**\n\n```text\nflowchart TD\n    H[\"HR 담당자 맥<br/>Codex Desktop · ZHR\"] -->|\"FI 질문: MCP 호출\"| M[\"중앙 MCP 서버<br/>인증 · 담당 연결 · 요청 관리\"]\n    M -->|\"FI 작업 대기열\"| Q[\"FI 담당 질문\"]\n    W[\"FI 맥의 자문 실행 프로그램\"] -->|\"질문 수신 · 답변 반환\"| Q\n    W --> A[\"별도 Codex 자문 세션<br/>ZFI 읽기 전용\"]\n    A --> F[\"FI 맥의 ZFI<br/>소스 · 스킬 · 업무 지식\"]\n    M -->|\"답변 반환\"| H\n```\n\n*그림의 구성은 제안하는 설계입니다.*\n\nFI 담당자는 평소 자기 맥의 Codex Desktop에서 ZFI를 수정합니다. 동시에 **별도의 자문 실행 프로그램**이 다른 담당자의 질문을 받아 같은 ZFI 자료를 읽고 답합니다.\n\n이 자문 세션은 **FI 담당자가 작업 중인 대화창과 분리**합니다. 그래야 원격 질문이 담당자의 편집 작업에 끼어들지 않습니다.\n\n**② 각 맥에서 중앙 MCP 서버를 등록합니다**\n\n중앙 서버에 예를 들어 다음 주소를 만듭니다.\n\n```text\nhttps://erp-agent.회사도메인/mcp\n```\n\n각 맥의 Codex MCP 설정에 이 주소를 등록합니다. 공식 문서상 원격 MCP는 **Streamable HTTP**로 연결하고, OAuth 또는 Bearer 토큰 인증을 사용할 수 있습니다. 데스크톱 설정의 MCP 서버 추가 화면에서도 등록할 수 있습니다. [ChatGPT Learn](https://developers.openai.com/codex/mcp?utm_source=chatgpt.com)\n\n설정 파일로 표현하면 다음과 같은 형태입니다. 주소는 예시이며, 인증 설정은 별도로 필요합니다.\n\n```text\n[mcp_servers.erp_team]\nurl = \"https://erp-agent.example.com/mcp\"\n```\n\n이 연결로 HR 담당자의 Codex는 중앙 서버가 제공하는 다음과 같은 도구를 사용할 수 있습니다.\n\n| 도구 예시 | 기능 |\n| --- | --- |\n| `list_experts` | FI·MM·HR 등 담당 에이전트와 접속 상태 조회 |\n| `ask_expert` | 특정 담당에게 질문 |\n| `get_answer` | 처리 상태와 답변 조회 |\n| `follow_up` | 앞선 답변에 대한 추가 질문 |\n\n**이 도구들은 기본 내장 기능이 아니라 중앙 MCP 서버에 구현할 기능입니다.**\n\n**③ 각 맥에 ‘자문 실행 프로그램’을 추가합니다**\n\n이 프로그램이 실제 연결의 핵심입니다. FI 맥이라면 다음 설정을 가집니다.\n\n| 설정 | FI 맥의 예 |\n| --- | --- |\n| 담당 업무 | ZFI |\n| 자료 위치 | FI 담당자가 클론한 ZFI 폴더 |\n| 연결 대상 | 중앙 서버 |\n| 실행 권한 | 자문 세션은 읽기 전용 |\n| 초기 지침 | ZFI 지침·스킬을 읽고, 근거를 들어 답변 |\n| 응답 내용 | 설명, 근거 파일·위치, 확인한 소스 버전, 미확인 사항 |\n\n프로그램은 **중앙 서버에 나가는 연결을 만들어 자기 업무의 질문을 기다리도록** 구현하면 됩니다. 장시간 대기하는 HTTP 요청이나 WebSocket 등을 사용할 수 있습니다. 그러면 중앙 서버가 담당자 맥에 직접 접속할 수 있도록 수신 포트를 열 필요가 없습니다.\n\n질문을 받으면 프로그램이 **Codex SDK로 별도 자문 세션을 실행**하고, 결과를 중앙 서버로 반환합니다. 공식 SDK는 로컬 Codex를 프로그램에서 실행하고, 같은 스레드에서 후속 질문을 이어가는 기능을 제공합니다. [ChatGPT Learn](https://developers.openai.com/codex/codex-sdk?utm_source=chatgpt.com)\n\n즉, 연결은 두 종류입니다.\n\n| 연결 | 역할 |\n| --- | --- |\n| **Codex Desktop → 중앙 MCP** | 다른 업무에 질문하는 통로 |\n| **각 맥의 자문 프로그램 ↔ 중앙 서버** | 자기 업무에 들어온 질문을 받아 처리하는 통로 |\n\n두 번째 통로는 자체 HTTP API 등으로 구현할 수 있습니다. **모든 통신을 MCP로 만들 필요는 없습니다.**\n\n**④ 실제 사용 모습은 원하신 대로 됩니다**\n\nHR 담당자가 자기 Codex에 묻습니다.\n\n> 시간외 정산 취소 시 FI 전표도 취소되는지 확인해줘.\n\n그러면 다음 순서로 진행됩니다.\n\n1. ZHR이 자기 소스에서 정산 취소 흐름을 확인합니다.\n2. 중앙 MCP에 **“ZFI 담당에게 이 호출과 연결된 전표 취소 처리를 확인해줘”**라고 요청합니다.\n3. FI 맥의 자문 프로그램이 질문을 받아 ZFI를 조사합니다.\n4. ZFI가 근거와 답변을 반환합니다.\n5. ZHR이 필요하면 같은 자문 세션에 추가 질문하고, 결과를 종합합니다.\n\n**사람이 요청서를 전달하거나 FI 담당자가 매번 대화창에서 답할 필요는 없습니다.** 다만 FI 담당자의 기존 대화에서만 언급된 정보는 자문 세션에 자동 공유되지 않으므로, 확정된 업무 지식은 파일에 남겨야 합니다.\n\n**⑤ 처음부터 정해야 할 운영 조건은 세 가지입니다**\n\n- **맥이 꺼지거나 잠들면 해당 담당은 응답할 수 없습니다.** 중앙 서버는 부재 상태를 알리고, 대기 또는 시간 초과로 처리해야 합니다.\n\n- **자문이 보는 소스 기준을 정해야 합니다.** 담당자가 수정 중인 파일과 섞이지 않도록, 같은 맥에 자문용 작업 사본을 별도로 두고 검토 완료된 커밋을 읽게 하는 편이 안정적입니다.\n\n- **원격 요청은 자문 전용으로 제한합니다.** 자문 실행 환경의 쓰기 권한을 제한하고, 중앙 서버가 인증된 사용자 기준으로 질문 가능한 업무를 통제해야 합니다.\n\n**우선 HR 맥과 FI 맥 두 대로 “ZHR 질문 → 중앙 MCP → FI 맥의 읽기 전용 자문 → 답변”을 구현하면 됩니다.** 이후 같은 자문 프로그램에 담당 패키지와 경로만 달리 설정해 MM·AA·CO로 확장하는 방식이 적합합니다.",
+          "source_locator": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb / 화면 turn 14 / 2026-10-14 직접 확인",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript",
+            "missing-screens",
+            "missing-config",
+            "missing-real-worker"
+          ],
+          "platform_turn_id": "bf677d22-f2b9-4233-b6d7-e23c5e282246",
+          "platform_message_id": "a70f8ac2-fe0e-5c1e-ad72-6a21005fcc8f",
+          "shared_turn_index": 14,
+          "capture_origin": "shared_page",
+          "delivery_kind": "final",
+          "pair_number": 7,
+          "in_reply_to": [
+            "eac-m015"
+          ]
+        },
+        {
+          "id": "eac-m018",
+          "sequence": 18,
+          "role": "user",
+          "timestamp": "2026-10-03T01:55:17+09:00",
+          "content_type": "verbatim",
+          "content_markdown": "중앙 mcp서버에는 뭘 어떤걸 설치해야하는거야? 난 중앙 mcp거버에도 코덱스 데스크탑을 깔려고 했었는데",
+          "source_locator": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb / 화면 turn 15 / 2026-10-14 직접 확인",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript"
+          ],
+          "platform_turn_id": "d55eeef4-6227-4cb0-b917-a10edfb28505",
+          "platform_message_id": "d55eeef4-6227-4cb0-b917-a10edfb28505",
+          "shared_turn_index": 15,
+          "capture_origin": "shared_page",
+          "delivery_kind": "request",
+          "pair_number": 8
+        },
+        {
+          "id": "eac-m019",
+          "sequence": 19,
+          "role": "assistant",
+          "timestamp": null,
+          "content_type": "verbatim",
+          "content_markdown": "**중앙 서버에 Codex Desktop을 설치해도 되지만, 그것만으로 MCP 서버가 되지는 않습니다.** Codex Desktop은 MCP에 연결해서 도구를 사용하는 앱이고, **중앙 MCP 서버는 질문을 받아 해당 담당자의 맥으로 전달하는 별도 프로그램**입니다.\n\n지금 원하시는 구조에서는 중앙 서버에 다음을 설치하면 됩니다.\n\n| 구성 | 설치·구현할 것 | 역할 |\n| --- | --- | --- |\n| 프로그램 실행 환경 | **Python 또는 Node.js 중 하나** | 중앙 서버 프로그램 실행 |\n| MCP 서버 라이브러리 | 선택한 언어의 MCP SDK | Codex에서 호출할 질문 도구 제공 |\n| **ERP 협업 서버 프로그램** | 직접 개발할 부분 | 담당 등록, 질문 전달, 답변 반환 |\n| 작업 기록 저장소 | 초기에는 SQLite 정도 | 질문·처리 상태·답변·후속 대화 식별자 보관 |\n| HTTPS 접속 구성 | 인증서와 필요 시 리버스 프록시 | 각 맥에서 인증 후 접속 |\n\n**위 항목을 전부 별도 서버로 만드는 것은 아닙니다.** 초기에는 중앙 컴퓨터 한 대에서 작은 프로그램 하나와 SQLite로 시작할 수 있습니다. MCP 기능과 담당 맥의 연결을 받는 기능도 하나의 프로그램 안에 구성할 수 있습니다.\n\n가장 중요한 부분은 **‘ERP 협업 서버 프로그램’은 설치만 하면 완성되는 제품이 아니라, 원하시는 업무 방식에 맞게 개발해야 한다는 점**입니다. 예를 들어 이런 일을 합니다.\n\n- FI 맥이 접속하면 “ZFI 담당이 접속 중”이라고 등록합니다.\n\n- HR에서 FI 질문이 오면 FI 담당의 작업 대기열에 넣습니다.\n\n- FI 맥에서 답변이 돌아오면 질문한 HR에 반환합니다.\n\n- 추가 질문이면 기존 자문 대화에 이어서 전달합니다.\n\n- FI 맥이 꺼져 있으면 부재 상태를 알려줍니다.\n\n**중앙 서버에는 AI가 반드시 필요한 것도 아닙니다.** “대상 업무가 ZFI인 질문은 FI 맥에 전달한다”는 처리는 일반 프로그램으로 할 수 있습니다. 실제 소스를 읽고 판단하는 AI는 각 담당자의 맥에서 실행됩니다.\n\n장비별로 정리하면 다음과 같습니다.\n\n| 중앙 서버 | 각 담당자 맥 |\n| --- | --- |\n| Python 또는 Node.js | Codex Desktop |\n| MCP SDK + 직접 만든 협업 프로그램 | 본인 ZXX 저장소 |\n| 질문·답변 저장용 SQLite | 원격 질문에 답하는 자문 프로그램 |\n| 인증·HTTPS 구성 | 자문 프로그램이 사용하는 Codex 실행 환경 |\n\n**중앙에 설치하려던 Codex Desktop은 이 협업 서버를 개발하고 유지보수하는 용도로 쓰면 됩니다.** 중앙 서버 프로그램의 프로젝트 폴더를 열고, Codex에 구현·수정·테스트를 맡기는 것이죠. 완성된 서버 프로그램은 Codex Desktop 대화창을 닫아도 계속 실행되도록 서비스로 등록합니다.\n\n따라서 중앙 장비 준비 방향은 **“Codex Desktop을 설치해 서버 개발에 활용하고, 별도로 만든 MCP 협업 프로그램을 상시 실행한다”**입니다. 중앙에 ZFI·ZHR 소스를 모두 클론할 필요도 없습니다.",
+          "source_locator": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb / 화면 turn 16 / 2026-10-14 직접 확인",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript"
+          ],
+          "platform_turn_id": "dba386f4-29ef-46ac-9265-ed98ada1f859",
+          "platform_message_id": "d8abd09e-23f7-550a-9caa-68685328227d",
+          "shared_turn_index": 16,
+          "capture_origin": "shared_page",
+          "delivery_kind": "final",
+          "pair_number": 8,
+          "in_reply_to": [
+            "eac-m018"
+          ]
+        },
+        {
+          "id": "eac-m020",
+          "sequence": 20,
+          "role": "user",
+          "timestamp": "2026-10-03T01:58:37+09:00",
+          "content_type": "verbatim",
+          "content_markdown": "중앙 mcp거버에 nodejs로 구현한다고 가정하고 예시 코드를 짜줘봐",
+          "source_locator": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb / 화면 turn 17 / 2026-10-14 직접 확인",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript"
+          ],
+          "platform_turn_id": "ea7d4587-d8c7-4070-bfc4-b5993065fbea",
+          "platform_message_id": "ea7d4587-d8c7-4070-bfc4-b5993065fbea",
+          "shared_turn_index": 17,
+          "capture_origin": "shared_page",
+          "delivery_kind": "request",
+          "pair_number": 9
+        },
+        {
+          "id": "eac-m021",
+          "sequence": 21,
+          "role": "assistant",
+          "timestamp": null,
+          "content_type": "verbatim",
+          "content_markdown": "중앙 Node.js 서버와 각 맥에서 접속하는 자문 워커의 예시를 함께 만들겠습니다. 중앙은 질문을 배정하고 답변을 보관하며, 워커가 자기 패키지를 읽는 구조로 작성하겠습니다.",
+          "source_locator": "현재 제공된 대화 / Node 예제 제작 첫 안내 / 화면상 순서 21; 자체 발화 ID이며 플랫폼 메시지 ID 아님",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript"
+          ],
+          "delivery_kind": "progress",
+          "capture_origin": "prior_verified",
+          "in_reply_to": [
+            "eac-m020"
+          ],
+          "capture_notes": [
+            "이전 추출본에 보존된 진행 안내입니다. 공유 화면의 최종 답변과 구분해 유지했습니다."
+          ]
+        },
+        {
+          "id": "eac-m022",
+          "sequence": 22,
+          "role": "assistant",
+          "timestamp": null,
+          "content_type": "verbatim",
+          "content_markdown": "예시는 실제 MCP 연결과 질문 배정·답변 조회까지 실행할 수 있게 만들고 있습니다. FI 쪽 AI 실행은 중앙 서버와 분리하고, 먼저 통신을 확인할 수 있는 모의 워커를 포함하겠습니다. 예제 파일은 Library 스킬로 저장하겠습니다.",
+          "source_locator": "현재 제공된 대화 / Node 예제 모의 워커 범위 안내 / 화면상 순서 22; 자체 발화 ID이며 플랫폼 메시지 ID 아님",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript"
+          ],
+          "delivery_kind": "progress",
+          "capture_origin": "prior_verified",
+          "in_reply_to": [
+            "eac-m020"
+          ],
+          "capture_notes": [
+            "이전 추출본에 보존된 진행 안내입니다. 공유 화면의 최종 답변과 구분해 유지했습니다."
+          ]
+        },
+        {
+          "id": "eac-m023",
+          "sequence": 23,
+          "role": "assistant",
+          "timestamp": null,
+          "content_type": "verbatim",
+          "content_markdown": "중앙 서버 코드와 통신 시험용 워커를 작성했습니다. 요청자별 결과 접근 제한과 FI·MM 워커의 담당 분리도 넣었으며, 지금 실제 MCP 클라이언트로 요청부터 답변까지 검증하고 있습니다.",
+          "source_locator": "현재 제공된 대화 / Node 예제 검증 중간 안내 / 화면상 순서 23; 자체 발화 ID이며 플랫폼 메시지 ID 아님",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript"
+          ],
+          "delivery_kind": "progress",
+          "capture_origin": "prior_verified",
+          "in_reply_to": [
+            "eac-m020"
+          ],
+          "capture_notes": [
+            "이전 추출본에 보존된 진행 안내입니다. 공유 화면의 최종 답변과 구분해 유지했습니다."
+          ]
+        },
+        {
+          "id": "eac-m024",
+          "sequence": 24,
+          "role": "assistant",
+          "timestamp": null,
+          "content_type": "verbatim",
+          "content_markdown": "**실행 가능한 Node.js 중앙 MCP 서버 예제를 만들었습니다.** HR의 질문을 저장하고, FI 맥의 워커에 배정한 뒤 답변을 돌려주는 구조입니다.\n\n[ERP_MCP_NodeJS_Example.zip](ERP_MCP_NodeJS_Example.zip)\n\n**중앙 MCP 통신은 구현되어 있고, FI의 실제 AI 분석 부분은 연결 지점으로 남겨두었습니다.** 포함된 모의 워커는 통신 확인용 답변만 반환합니다.\n\n파일 구성은 다음과 같습니다.\n\n| 파일 | 역할 |\n| --- | --- |\n| `server.mjs` | 중앙 MCP 서버·질문 배정·SQLite 저장 |\n| `mock-worker.mjs` | FI 맥에서 중앙 질문을 받아 답하는 통신 시험용 워커 |\n| `test.mjs` | 실제 MCP 클라이언트를 사용하는 통합 테스트 |\n| `README.md` | 설치·실행·Codex 연결 방법 |\n| `package.json`, `package-lock.json` | 필요한 라이브러리와 설치 버전 |\n\n중앙 서버의 핵심은 다음 코드입니다. 전체 코드에서 핵심 흐름만 줄인 예입니다.\n\n```javascript\nserver.registerTool(\n  \"ask_expert\",\n  {\n    description: \"다른 업무 담당에게 자문 요청\",\n    inputSchema: {\n      expert: z.string(),    // 예: ZFI\n      question: z.string(),  // 질문\n      context: z.string()    // ZHR에서 확인한 근거\n    }\n  },\n  async ({ expert, question, context }) => {\n    // 1. 요청자가 해당 업무에 질문할 권한이 있는지 확인\n    // 2. SQLite에 질문 저장\n    // 3. FI 워커가 가져갈 수 있도록 대기 상태로 등록\n\n    return {\n      content: [{\n        type: \"text\",\n        text: JSON.stringify({\n          job_id: id,\n          status: \"queued\"\n        })\n      }]\n    };\n  }\n);\n```\n\n여기서 **`registerTool()`은 HR 담당자의 Codex에 “다른 담당에게 질문하기” 기능을 제공하는 부분**입니다. 원격 연결에는 MCP SDK의 Streamable HTTP를 사용했습니다. [MCP TypeScript SDK (v1)](https://ts.sdk.modelcontextprotocol.io/server?utm_source=chatgpt.com)\n\nFI 맥의 워커는 중앙에 다음 요청을 보냅니다.\n\n```javascript\n// 자기 업무에 들어온 질문을 가져오기\nPOST /worker/claim\n\n// 분석이 오래 걸리면 처리 중임을 알리기\nPOST /worker/작업ID/heartbeat\n\n// 답변 반환\nPOST /worker/작업ID/complete\n{\n  \"lease\": \"작업을 배정받을 때 받은 값\",\n  \"answer\": \"ZFI 소스를 확인한 결과...\"\n}\n```\n\n**HR Codex는 `get_answer` 도구로 답변을 조회**합니다. 오래 걸리는 AI 분석 동안 하나의 MCP 호출을 계속 붙잡지 않도록, 요청과 결과 조회를 나눴습니다. 추가 질문은 이전 작업 ID를 지정해 앞선 질문·답변을 전달하도록 했습니다.\n\n중앙 서버는 Node.js 24 이상에서 다음 순서로 실행합니다.\n\n```bash\nnpm ci\n\nexport HR_CLIENT_TOKEN='HR전용_24자이상_임의토큰'\nexport FI_WORKER_TOKEN='FI워커전용_다른_임의토큰'\n\nnpm start\n```\n\n처음에는 같은 컴퓨터에서 모의 워커로 확인하고, 이후 FI 맥의 워커를 연결하면 됩니다. 상세 명령은 README에 넣었습니다.\n\n**검증한 내용:** MCP 질문 → FI 워커 배정 → 답변 조회, 후속 질문 문맥 전달, 다른 사용자의 답변 접근 차단, 다른 업무 워커의 처리 차단, 작업 임대 만료 처리까지 통합 테스트를 통과했습니다.\n\n다음 구현 대상은 **FI 맥의 모의 답변 부분을 “ZFI 폴더를 읽는 Codex 자문 실행”으로 교체하는 것**입니다. 중앙 서버에는 ZFI 소스나 Codex Desktop이 없어도 됩니다.",
+          "source_locator": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb / 화면 turn 18 / 2026-10-14 직접 확인",
+          "redacted": false,
+          "asset_ids": [
+            "asset-node-zip",
+            "asset-server",
+            "asset-worker",
+            "asset-test",
+            "asset-node-readme",
+            "asset-package",
+            "asset-lock",
+            "asset-tool-evidence",
+            "asset-transcript",
+            "missing-screens",
+            "missing-real-worker",
+            "asset-previous-node-copy"
+          ],
+          "platform_turn_id": "88667b97-5381-4389-b663-0d5c4bb98f61",
+          "platform_message_id": "ecef90d1-1caf-54b1-a8b2-c092b0749810",
+          "shared_turn_index": 18,
+          "capture_origin": "shared_page",
+          "delivery_kind": "final",
+          "pair_number": 9,
+          "in_reply_to": [
+            "eac-m020"
+          ]
+        },
+        {
+          "id": "eac-m025",
+          "sequence": 25,
+          "role": "user",
+          "timestamp": "2026-10-08T21:09:34+09:00",
+          "content_type": "verbatim",
+          "content_markdown": "이 프로젝트의 대화와 자료를 추출해 ‘ERP AI 에이전트 교육 포털’ 제작에 활용하려고 한다. 아래 목적과 기준에 맞춰 실제 다운로드 가능한 MD 파일과 ZIP을 만들어줘.\n\n1. 전체 목적과 활용 방식\n\n여러 ERP AI 프로젝트에서 진행한 내용을 통합하여, KBS ERP 담당 팀원들이 전체 구조를 이해하고 직접 실습하며 운영 중에도 참고할 수 있는 교육 포털을 만들 예정이다.\n\n통합 대상에는 ERP 소스 추출·배포, Codex Desktop 활용, GitHub 연동, ERP MCP 구성, 담당 업무별 에이전트와 서브에이전트, 업무 지식·스킬·하네스 구성, Obsidian 활용 등이 있다. 이 중 현재 프로젝트에서 실제 다룬 범위만 정리해줘.\n\n자료는 다음과 같이 활용한다.\n\n1. 각 프로젝트·대화방에서 MD와 관련 자료를 추출한다.\n2. 별도 통합 대화방에서 자료들을 대조하여 교육 순서로 재구성한다.\n3. 원본 자료, 교육용 콘텐츠, 이미지, 실습 자료, 웹 소스를 구분하여 GitHub에서 관리한다.\n4. HTML·CSS·JavaScript 기반 포털을 만들고 MD를 콘텐츠 원본으로 사용한다.\n5. 맥에서 GitHub 저장소를 클론하고, Codex Desktop으로 구성·유지보수한다.\n6. Node.js 기반 웹서버가 완성된 배포 폴더를 제공하고, 팀원이 사내망과 KBS 도메인으로 접속한다.\n7. 이후 팀원이 추가한 업무 경험과 변경 사항도 GitHub를 통해 교육 내용에 반영한다.\n\n지금 요청하는 작업은 현재 프로젝트의 자료 추출이다. 웹사이트 구현, 서버 설치, GitHub push는 수행하지 마.\n\n2. 확인 범위와 작성 원칙\n\n* 현재 접근 가능한 대화·프로젝트 자료·첨부파일·기존 MD·산출물을 확인해서 작성해줘.\n* 다른 대화방까지 모두 읽을 수 있다고 가정하지 말고, 실제 확인한 범위와 접근하지 못한 범위를 명시해줘.\n* 파일명만 알고 있는 것과 실제 내용을 읽은 것을 구분해줘.\n* 접근 가능한 최신 원본을 확인하고, 기억이나 요약만으로 현재 상태를 단정하지 마.\n* 일반적인 기술 설명보다 이 프로젝트의 목적, 실제 작업, 결정 이유, 변경 과정을 우선해줘.\n* 중요한 사용자 요구·수정 요청·실패 경험·제약사항은 과도하게 축약하지 마.\n* ‘제안·결정·구현·검증·운영’ 상태를 구분해줘. 코드 생성이나 사용자 무응답을 검증 완료로 판단하지 마.\n* 과거 방안과 현재 방안을 구분하고, 상충하는 내용은 근거와 시점을 비교해줘. 결론을 내릴 수 없으면 미확인으로 남겨줘.\n* 주요 결정과 기술 사실에는 확인 가능한 파일명·문서 절·대화 날짜 등 출처를 붙여줘. 출처를 만들지 마.\n* 다른 프로젝트의 내용은 추정하지 말고, 연결되는 부분과 통합 시 확인할 사항만 기록해줘.\n* 인증정보·비밀번호·토큰은 포함하지 말고, 교육 예시에는 대체값을 사용해줘.\n\n3. 작성할 MD 파일\n\n다음 4개 파일을 만들어줘. 프로젝트를 식별할 수 있는 폴더 안에 넣고, 문서 내부에도 프로젝트명과 정리 기준일을 명시해줘.\n\n00_README.md — 자료 안내\n\n* 프로젝트명과 이 대화방의 주제\n* 프로젝트 목적과 현재 상태 요약\n* 정리 기준일\n* 실제 확인한 대화·파일 범위\n* 확인하지 못한 자료와 누락 가능 범위\n* 제공 파일 목록과 권장 읽기 순서\n* 다른 대화방에서 추출한 자료와 중복될 수 있는 범위\n\n01_프로젝트_맥락과설계.md — 상세 맥락과 근거\n\n다음 내용을 포함해줘.\n\n1. 배경, 기존 문제, 목표\n2. 대상 업무와 범위\n3. 시스템 환경·버전·기술적·업무적 제약\n4. 구성 요소별 역할과 연결 관계\n5. 입력 → 처리 → 출력의 실제 흐름\n6. 사람·AI·프로그램이 각각 담당하는 작업\n7. 주요 결정과 결정 이유\n8. 검토 후 제외한 대안과 실패한 시도\n9. 사용자 피드백에 따른 변경 사항\n10. 현재 방안과 더 이상 사용하지 않는 과거 방안\n11. 주요 프로그램·파일·폴더·설정과 최신 여부\n12. 완료·진행 중·미착수·미확인 항목\n13. 실제 검증한 내용과 남은 검증\n14. 주요 오류의 증상·원인·조치·해결 여부\n15. 다른 ERP AI 프로젝트에 필요한 입력·제공할 출력·의존관계\n16. 주요 내용의 출처\n\n필요하면 간결한 Mermaid 구성도를 넣어줘. 구성 요소를 무조건 일렬로 나열하지 말고, 실제 역할과 연결 관계를 표현해줘.\n\n02_교육과실습.md — 교육 콘텐츠 초안\n\n대화의 시간순이 아니라 팀원이 이해하기 쉬운 학습 순서로 작성해줘.\n\n* 교육 대상과 사전 지식\n* 학습 후 할 수 있는 일\n* 전체 ERP AI 구조에서 이 프로젝트가 맡는 역할\n* 왜 필요한지 설명하는 실제 업무 문제\n* 핵심 용어와 이 프로젝트에서의 의미\n* 단계별 개념 설명과 작동 방식\n* 실제 사례의 문제 → 입력 → 작업 → 결과 → 검증\n* 따라 하기 실습\n    * 준비물·선행 조건\n    * 수행 순서\n    * 명령문·프롬프트·설정 예시\n    * 예상 결과와 확인 방법\n    * 자주 하는 실수와 해결 방법\n* 운영 중 갱신·유지보수 방법\n* 실제 논의에서 나온 FAQ\n* 팀원이 혼동하기 쉬운 부분\n\n실제 사례와 가상 예시를 구분해줘. 미검증 절차와 운영 ERP 변경이 필요한 단계는 명시해줘.\n\n웹페이지로 옮기기 쉽도록 제목 구조를 일관되게 사용하고, 필요에 따라 핵심 설명·기술 상세·실습을 구분해줘. 이 프로젝트에서 다루지 않은 교육 내용을 억지로 채우지 마.\n\n03_자료목록과보완사항.md — 이미지·파일·추가 확인 목록\n\n다음 항목을 표로 정리해줘.\n\nA. 기존 자료 목록\n\n* 파일명과 형식\n* 자료의 역할과 주요 내용\n* 최신 여부 및 판단 근거\n* 실제 내용을 확인했는지\n* ZIP에 포함했는지\n* 교육에서 사용할 위치\n\nB. 실제 화면 캡처 요청 목록\n\n* 프로그램과 구체적인 화면\n* 반드시 보여야 할 요소\n* 설명하려는 교육 내용\n* 기존 이미지 활용 가능 여부\n* 사용자가 추가로 캡처해야 하는지 여부\n\nC. 새로 제작할 설명용 시각자료\n\n* 구성도·흐름도·비교표·단계별 설명 그림\n* 전달 목적\n* 필수 요소와 연결 관계\n* 적합한 표현 방식: SVG·HTML·Mermaid·일반 이미지\n* 근거가 되는 문서 절\n\n실제 제품 화면은 생성형 이미지로 대체하지 않도록 구분해줘. 지금 이미지를 새로 생성할 필요는 없다.\n\nD. 포털 상호작용 아이디어\n\n* 구성 요소 클릭 시 보여줄 설명\n* 단계별 전환이 유용한 사례\n* 업무별 탭·비교 화면·펼침 설명\n* 복사 버튼이 필요한 명령문·프롬프트\n\n장식 효과보다 학습에 도움이 되는 기능만 제안해줘.\n\nE. 보완·확인 사항\n\n* 누락된 원본과 미확인 사실\n* 결정되지 않은 내용\n* 통합 시 충돌 여부를 확인할 사항\n* 질문이 필요한 이유\n* 교육자료 제작 전 필수인지, 추후 보완 가능한지\n\n4. 기존 파일과 ZIP 구성\n\n다음 구조를 기본으로 사용하되, 첨부할 파일이 없는 폴더는 생략해줘.\n\n[프로젝트명][대화주제][정리일]/\n00_README.md\n01_프로젝트_맥락과설계.md\n02_교육과실습.md\n03_자료목록과보완사항.md\nattachments/\nimages/\nexamples/\nreferences/\n\n* attachments에는 실제 확보했고 교육에 필요한 기존 파일만 복사해줘.\n* 기존 원본은 수정하지 마.\n* 전체 소스나 기존 문서를 MD 본문에 반복해서 넣지 말고, 핵심 예시와 상대경로 링크로 참조해줘.\n* 핵심 프로그램·설정·스킬은 접근 가능한 최신본을 우선해줘.\n* 같은 이름의 파일이 여러 버전이면 구분하고, 최신본을 판단할 수 없으면 명시해줘.\n* 기존 MD에만 있는 중요한 맥락이 사라지지 않게 본문에 반영하거나 참고 자료로 포함해줘.\n* 여러 프로젝트의 ZIP을 함께 풀어도 덮어쓰지 않도록 프로젝트·대화주제를 포함한 최상위 폴더를 사용해줘.\n\n5. 완료 기준과 최종 응답\n\n* 확인 가능한 자료로 우선 완성하고, 부족한 부분은 보완 목록에 남겨줘.\n* 파일 간 상태·용어·버전이 일관되는지 확인해줘.\n* 상대경로 링크와 ZIP 포함 파일이 맞는지 확인해줘.\n* 다른 AI가 이 자료만 읽어도 배경·현재 상태·설계 이유를 이해하고 교육 콘텐츠로 통합할 수 있을 정도로 상세하게 작성해줘.\n* 실제 파일 생성 기능이 없으면 그 한계를 밝히고, 파일별로 복사해 저장할 수 있는 내용을 제공해줘.\n* 최종 답변에는 ZIP 다운로드 링크, 추출 범위, 주요 누락·미확인 사항만 간결하게 알려줘.",
+          "source_locator": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb / 화면 turn 19 / 2026-10-14 직접 확인",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript",
+            "asset-old-readme",
+            "asset-old-context",
+            "asset-old-learning",
+            "asset-old-inventory",
+            "asset-node-readme"
+          ],
+          "platform_turn_id": "7b20167a-4e94-45d0-9d96-923316aefec1",
+          "platform_message_id": "7b20167a-4e94-45d0-9d96-923316aefec1",
+          "shared_turn_index": 19,
+          "capture_origin": "shared_page",
+          "delivery_kind": "request",
+          "pair_number": 10
+        },
+        {
+          "id": "eac-m026",
+          "sequence": 26,
+          "role": "assistant",
+          "timestamp": null,
+          "content_type": "verbatim",
+          "content_markdown": "이 대화에서 설계가 바뀐 이유와 최종 합의한 구성을 중심으로 정리하겠습니다. 기존 Node.js 예제 ZIP의 실제 내용을 확인하고, 구현·시험 완료 범위와 아직 연결하지 않은 부분을 구분해 MD 4개와 묶음 ZIP을 만들겠습니다.",
+          "source_locator": "현재 제공된 대화 / 10월8일 추출 시작 안내 / 화면상 순서 26; 자체 발화 ID이며 플랫폼 메시지 ID 아님",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript"
+          ],
+          "delivery_kind": "progress",
+          "capture_origin": "prior_verified",
+          "in_reply_to": [
+            "eac-m025"
+          ],
+          "capture_notes": [
+            "이전 추출본에 보존된 진행 안내입니다. 공유 화면의 최종 답변과 구분해 유지했습니다."
+          ]
+        },
+        {
+          "id": "eac-m027",
+          "sequence": 27,
+          "role": "assistant",
+          "timestamp": null,
+          "content_type": "verbatim",
+          "content_markdown": "Library 스킬을 사용해 기존 예제 원본을 확보하고 결과물을 저장하겠습니다. 특히 초기에 제안했던 ‘ERP 전체 폴더를 여는 방식’과, 이후 확정한 ‘담당자별 맥 + 중앙 MCP 중계 방식’을 명확히 구분하겠습니다.",
+          "source_locator": "현재 제공된 대화 / 10월8일 원본·교정 구분 안내 / 화면상 순서 27; 자체 발화 ID이며 플랫폼 메시지 ID 아님",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript"
+          ],
+          "delivery_kind": "progress",
+          "capture_origin": "prior_verified",
+          "in_reply_to": [
+            "eac-m025"
+          ],
+          "capture_notes": [
+            "이전 추출본에 보존된 진행 안내입니다. 공유 화면의 최종 답변과 구분해 유지했습니다."
+          ]
+        },
+        {
+          "id": "eac-m028",
+          "sequence": 28,
+          "role": "assistant",
+          "timestamp": null,
+          "content_type": "verbatim",
+          "content_markdown": "원본 ZIP에서 중앙 서버·모의 워커·테스트 등 6개 파일을 확인했습니다. 실제 ZFI AI 연결은 아직 없고, 후속 질문도 기존 Codex 대화창을 이어가는 방식이 아니라 이전 질문·답변을 전달하는 방식입니다. 이 차이를 교육자료의 핵심 주의사항으로 넣겠습니다.",
+          "source_locator": "현재 제공된 대화 / 10월8일 코드 범위 확인 안내 / 화면상 순서 28; 자체 발화 ID이며 플랫폼 메시지 ID 아님",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript",
+            "missing-real-worker"
+          ],
+          "delivery_kind": "progress",
+          "capture_origin": "prior_verified",
+          "in_reply_to": [
+            "eac-m025"
+          ],
+          "capture_notes": [
+            "이전 추출본에 보존된 진행 안내입니다. 공유 화면의 최종 답변과 구분해 유지했습니다."
+          ]
+        },
+        {
+          "id": "eac-m029",
+          "sequence": 29,
+          "role": "assistant",
+          "timestamp": null,
+          "content_type": "verbatim",
+          "content_markdown": "기존 예제를 별도 임시 폴더에서 다시 시험해 요청·답변 전달과 권한 분리 테스트 통과를 확인했습니다. 문서에는 이를 “모의 통신 검증”으로 표시하고, 실제 맥·Codex AI·사내망 운영 검증과 구분하고 있습니다.",
+          "source_locator": "현재 제공된 대화 / 10월8일 재시험 안내 / 화면상 순서 29; 자체 발화 ID이며 플랫폼 메시지 ID 아님",
+          "redacted": false,
+          "asset_ids": [
+            "asset-test-1008",
+            "asset-tool-evidence",
+            "asset-transcript"
+          ],
+          "delivery_kind": "progress",
+          "capture_origin": "prior_verified",
+          "in_reply_to": [
+            "eac-m025"
+          ],
+          "capture_notes": [
+            "이전 추출본에 보존된 진행 안내입니다. 공유 화면의 최종 답변과 구분해 유지했습니다."
+          ]
+        },
+        {
+          "id": "eac-m030",
+          "sequence": 30,
+          "role": "assistant",
+          "timestamp": null,
+          "content_type": "verbatim",
+          "content_markdown": "MD 4개와 원본 예제·검증 기록을 묶었고, 상대경로 링크 36개와 원본 파일의 무변경 여부를 확인했습니다. 실제 제품 화면, 업무별 스킬·소스 최신본, 실제 AI 워커와 사내망 운영 결과는 미확인 목록으로 남겼습니다. 파일을 Library에 저장하겠습니다.",
+          "source_locator": "현재 제공된 대화 / 10월8일 자료 검사 안내 / 화면상 순서 30; 자체 발화 ID이며 플랫폼 메시지 ID 아님",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript"
+          ],
+          "delivery_kind": "progress",
+          "capture_origin": "prior_verified",
+          "in_reply_to": [
+            "eac-m025"
+          ],
+          "capture_notes": [
+            "이전 추출본에 보존된 진행 안내입니다. 공유 화면의 최종 답변과 구분해 유지했습니다."
+          ]
+        },
+        {
+          "id": "eac-m031",
+          "sequence": 31,
+          "role": "assistant",
+          "timestamp": null,
+          "content_type": "verbatim",
+          "content_markdown": "[ERP_AI_Agent_Communication_Remote_MCP_2026-10-08.zip](ERP_AI_Agent_Communication_Remote_MCP_2026-10-08.zip)\n\n- **포함:** 요청한 MD 4개, 기존 Node.js 예제 원본·소스, 출처·검증 기록.\n\n- **추출 범위:** 현재 대화의 설계 변경 과정, 담당자별 맥과 중앙 MCP 협업 구조, 접점 MD·Obsidian 활용, 모의 통신 실습.\n\n- **미확인:** 다른 대화방 전체, 실제 업무 소스·스킬 최신본, 실제 ZFI AI 워커, 담당자 맥·사내망 운영 결과.\n\n상대경로 링크와 원본 보존을 확인했으며, 모의 통합 테스트도 재실행해 통과했습니다.",
+          "source_locator": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb / 화면 turn 20 / 2026-10-14 직접 확인",
+          "redacted": false,
+          "asset_ids": [
+            "asset-previous-zip",
+            "asset-old-readme",
+            "asset-old-context",
+            "asset-old-learning",
+            "asset-old-inventory",
+            "asset-old-evidence",
+            "asset-test-1008",
+            "asset-previous-node-copy",
+            "asset-server",
+            "asset-worker",
+            "asset-test",
+            "asset-node-readme",
+            "asset-package",
+            "asset-lock",
+            "asset-tool-evidence",
+            "asset-transcript"
+          ],
+          "platform_turn_id": "e49e137b-b812-4cc8-bfed-ff9fc7287dd8",
+          "platform_message_id": "7e2bed04-bdf5-55b2-a026-ae626bc06077",
+          "shared_turn_index": 20,
+          "capture_origin": "shared_page",
+          "delivery_kind": "final",
+          "pair_number": 10,
+          "in_reply_to": [
+            "eac-m025"
+          ]
+        },
+        {
+          "id": "eac-m032",
+          "sequence": 32,
+          "role": "user",
+          "timestamp": "2026-10-12T15:07:03+09:00",
+          "content_type": "verbatim",
+          "content_markdown": "이 프로젝트에서 진행한 실제 AI 활용 과정을 추출해, KBS 팀원용 **‘ERP AI 에이전트 교육 포털’**에 활용하려고 한다.\n\n교육생이 내가 했던 일을 자기 업무에서 재현할 수 있도록, 프로젝트의 목적부터 실제 명령·응답·시행착오·수정·검증까지 이어지는 자료를 만들어줘. 실제 다운로드 가능한 MD·JSON·첨부 파일을 하나의 ZIP으로 제공해줘.\n\n## 1. 교육 목적과 화면 활용 방식\n\n교육 포털에는 ERP 소스 추출, GitHub, Codex, 업무 지식, DIAG, Obsidian, 담당자 피드백, MCP 협업 등을 보여주는 전체 구성도가 있다.\n\n교육생이 구성도의 요소를 선택하면 다음 내용을 볼 수 있게 만들 예정이다.\n\n1. 왜 이 프로젝트를 시작했는가\n2. 당시 어떤 환경과 자료를 가지고 있었는가\n3. 내가 AI에게 실제로 무엇을 요청했는가\n4. AI가 어떻게 응답하고 어떤 결과물을 만들었는가\n5. 어떤 오류·오해·누락이 발생했는가\n6. 내가 어떤 맥락과 제약을 추가로 설명했는가\n7. 수정과 검증을 거쳐 무엇이 결정되었는가\n8. 교육생은 무엇을 준비해 어떻게 따라 하면 되는가\n\n사용자와 AI의 실제 대화는 채팅 말풍선으로 보여주고, 중간에 교육 해설·오류 화면·관련 파일을 연결할 예정이다.\n\n**성공 결과만 정리하지 말고, 요구사항이 구체화되고 잘못된 방향을 수정해 나간 과정을 보존해줘.**\n\n## 2. 추출 범위와 원문 원칙\n\n- 현재 실제로 확인할 수 있는 이 프로젝트의 사용자–AI 대화와 제공 자료를 대상으로 한다.\n\n- 확인 가능한 대화는 순서대로 보존한다. 긴 코드나 파일 내용은 별도 파일로 분리하고 해당 발화와 연결해도 된다.\n\n- 교육용 핵심 구간은 별도로 선정하되, 확인 가능한 나머지 대화를 임의로 버리지 않는다.\n\n- 다른 대화방이나 오래된 메시지를 볼 수 없다면 그 범위를 명확히 적는다. 확인하지 못한 대화까지 모두 추출했다고 표현하지 않는다.\n\n- 실제 발화, 발췌, 요약을 구분한다. 요약 MD에서 추정한 내용을 실제 대화처럼 복원하거나 인용하지 않는다.\n\n- 원문의 오류·오해·잘못된 답변을 당시 메시지에서 몰래 수정하지 않는다. 정정은 별도의 해설과 후속 발화로 연결한다.\n\n- 날짜·버전·파일명·실행 결과가 확인되지 않으면 미확인 또는 null로 남긴다.\n\n- AI의 “수정했다”는 응답, 사용자의 실행 보고, 실제 확인 가능한 테스트 결과를 구분한다.\n\n- 인증값이나 교육에 불필요한 개인 식별정보는 명시적으로 마스킹하고, 마스킹 여부를 기록한다.\n\n- 접근할 수 없는 첨부 파일은 재생성하지 말고 ‘원본 미확보’로 기록한다.\n\n## 3. ZIP 구성\n\n### 00_README.md — 자료 안내와 확보 범위\n\n다음을 포함해줘.\n\n- 프로젝트명과 고유 project_id\n\n- 추출일\n\n- 확인한 대화방·기간·자료 범위\n\n- 전체 원문 확보인지, 일부 대화 또는 요약만 확보했는지\n\n- 빠진 대화·첨부·미확인 사항\n\n- 파일 목록과 각 파일의 용도\n\n- 먼저 읽을 순서\n\n### 01_PROJECT_CONTEXT.md — 프로젝트의 출발점과 변화\n\n다음을 시간 흐름에 맞춰 정리해줘.\n\n- 시작 계기와 해결하려던 실제 업무 문제\n\n- 당시의 시스템·개발 환경과 제약조건\n\n- 처음 가지고 있던 자료와 부족했던 자료\n\n- 최초 목표와 이후 달라진 목표\n\n- 핵심 결정과 그렇게 판단한 이유\n\n- 시도했지만 폐기하거나 보류한 접근\n\n- 최종 산출물과 버전\n\n- 구현·검증·사용 보고·미확인 상태\n\n- 다른 ERP AI 프로젝트와 연결되는 부분\n\n주요 설명에는 근거가 되는 발화 ID 또는 파일 위치를 붙여줘. 현재 남아 있는 요약 문서만 근거인 경우에도 그렇게 표시해줘.\n\n### 02_LEARNING_GUIDE.md — 실제 대화를 따라가는 교육 과정\n\n프로젝트 흐름을 의미 있는 학습 단계로 나눠줘. 단계 수를 억지로 맞추지 않는다.\n\n각 단계마다 다음을 적어줘.\n\n1. **학습 목표**\n2. **이 단계에 들어오기 전 상황과 준비물**\n3. **관련 실제 대화의 발화 ID**\n4. **사용자가 AI에게 요구한 핵심**\n5. **AI의 대응과 생성한 결과물**\n6. **오류·오해·누락 또는 중요한 판단**\n7. **추가 설명과 수정이 필요했던 이유**\n8. **다음 단계로 넘어갈 수 있었던 근거**\n9. **교육생이 자기 업무로 따라 할 실습**\n10. **실습 결과 확인 방법과 흔한 실패**\n11. **관련 캡처·코드·문서**\n\n교육용으로 새로 다듬은 실습 프롬프트를 제공해도 된다. 다만 반드시 **‘교육용 재작성 프롬프트’**라고 표시하고 실제 사용자 발화와 구분해줘.\n\n과거의 잘못된 방법은 시행착오로 설명하고, 따라 하기 실습에는 현재 확보 자료에서 확인되는 최종 방식을 사용해줘. 현재 재현할 수 없는 부분은 필요한 환경과 미확인 사항을 적어줘.\n\n### conversation-data.json — 채팅 UI와 구성도 연결 데이터\n\nUTF-8의 유효한 JSON으로 만들어줘. 주석이나 trailing comma는 넣지 않는다.\n\n최상위 구조는 다음과 같이 맞춰줘.\n\n```text\n{\n  \"schema_version\": \"1.0\",\n  \"project_id\": \"영문-프로젝트-id\",\n  \"project_title\": \"프로젝트명\",\n  \"coverage\": {\n    \"status\": \"partial\",\n    \"description\": \"실제로 확인한 대화와 자료 범위\",\n    \"missing\": []\n  },\n  \"threads\": [],\n  \"episodes\": [],\n  \"assets\": []\n}\n```\n\n각 배열의 항목은 다음 기준을 따른다.\n\n**threads — 실제 대화**\n\n각 대화방 항목:\n\n- id\n\n- title\n\n- source_description\n\n- messages\n\n각 messages 항목:\n\n- id: 프로젝트 안에서 중복되지 않는 발화 ID\n\n- sequence: 대화방 안의 실제 발화 순서\n\n- role: user 또는 assistant\n\n- timestamp: 확인 가능한 시각, 없으면 null\n\n- content_type: verbatim / excerpt / summary\n\n- content_markdown: 발화 내용\n\n- source_locator: 원래 대화·메시지·문서 위치에 대한 확인 가능한 설명\n\n- redacted: 마스킹 여부\n\n- asset_ids: 연결되는 첨부 ID 배열\n\n실제 플랫폼 메시지 ID가 없으면 자체 ID를 부여해도 된다. 자체 ID를 실제 플랫폼 ID처럼 표현하지 않는다.\n\n**episodes — 교육 화면에 표시할 학습 단계**\n\n각 항목:\n\n- id\n\n- order\n\n- title\n\n- goal\n\n- map_nodes\n\n- prerequisites\n\n- message_refs: 해당 단계의 발화 ID를 읽을 순서대로 나열\n\n- commentary_markdown: 실제 대화와 구분되는 교육 해설\n\n- outcome_markdown: 결과와 확인 상태\n\n- exercise_markdown: 따라 하기와 확인 방법\n\n- asset_ids\n\nmap_nodes는 관련된 구성도 요소를 아래 값에서 선택한다. 여러 요소를 연결해도 되며, 이 프로젝트와 무관한 요소를 억지로 넣지 않는다.\n\n- sap: SAP ERP\n\n- export: 소스 추출\n\n- git: GitHub·버전 관리\n\n- knowledge: 업무 지식·MD\n\n- codex: Codex·지침·스킬·업무 에이전트\n\n- diag: DIAG·비교·검증\n\n- maps: Obsidian·관계 문서\n\n- feedback: 담당자 검토·피드백·회귀 사례\n\n- agent: 원격 협업의 주 에이전트\n\n- lookup: ERP 조회 MCP\n\n- hub: 중앙 자문 MCP\n\n- worker: 담당 워커\n\n- expert: 전문 자문 에이전트\n\n- telegram: Telegram 연결\n\n- erp-api: REST·RFC 연계\n\n- portal: 교육 포털 운영\n\n**assets — 첨부와 산출물**\n\n각 항목:\n\n- id\n\n- original_filename\n\n- path: ZIP 내부 상대 경로, 미확보이면 null\n\n- kind: image / code / document / archive / other\n\n- description\n\n- availability: included / unavailable\n\n- version: 확인 가능한 버전, 없으면 null\n\n- related_message_ids\n\n같은 파일의 서로 다른 버전은 별개 항목으로 구분한다. 오류가 발생한 버전과 수정 완료 버전을 섞지 않는다.\n\n### assets/ — 실제 첨부와 산출물\n\n확보 가능한 관련 캡처·코드·MD·ZIP을 포함해줘.\n\n- 가능하면 원본 파일을 보존한다.\n\n- JSON의 path와 실제 파일 경로가 일치하게 한다.\n\n- 긴 코드·로그를 파일로 분리했다면 원래 발화에 분리 사실과 파일 연결을 남긴다.\n\n- 자료가 크면 학습 단계에 필요한 핵심 자료부터 포함하고, 제외한 자료 목록과 이유를 README에 적는다.\n\n## 4. 제출 전 확인\n\n- JSON이 실제로 파싱되는가?\n\n- 발화 ID와 첨부 ID가 중복되지 않는가?\n\n- episodes의 message_refs가 실제 messages 항목을 가리키는가?\n\n- included로 표시한 첨부 파일이 ZIP 안에 존재하는가?\n\n- 발화 순서와 수정 전후 버전이 맞는가?\n\n- 실제 대화와 교육 해설·재작성 프롬프트가 구분되는가?\n\n- 실패·수정·검증 과정이 빠지지 않았는가?\n\n- 보지 못한 대화나 파일을 확보했다고 표시하지 않았는가?\n\n대화량이 많아 파일을 분할해야 한다면 동일한 필드 구조와 중복 없는 ID를 유지하고, README에 결합 순서를 적어줘. 용량 때문에 대화를 조용히 잘라내지 않는다.\n\n## 5. 최종 제출\n\n파일명은 `프로젝트ID_교육대화추출_YYYYMMDD.zip`으로 해줘.\n\n최종 답변에는 ZIP 다운로드 링크와 함께 아래 내용을 짧게 알려줘.\n\n- 확인한 대화 범위와 원문 확보 수준\n\n- 포함한 대화방·발화·학습 단계·첨부 수\n\n- 포함하지 못한 핵심 자료\n\n- 교육에 활용하기 좋은 대표 시행착오\n\n추출 범위가 불완전하더라도 확인 가능한 자료부터 완성해서 제공하고, 추가로 필요한 자료를 구체적으로 적어줘.",
+          "source_locator": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb / 화면 turn 21 / 2026-10-14 직접 확인",
+          "redacted": false,
+          "asset_ids": [
+            "asset-transcript",
+            "asset-old-readme",
+            "asset-node-readme"
+          ],
+          "platform_turn_id": "b6bd903f-c9d6-468a-a3ca-de7ac5bcb736",
+          "platform_message_id": "b6bd903f-c9d6-468a-a3ca-de7ac5bcb736",
+          "shared_turn_index": 21,
+          "capture_origin": "shared_page",
+          "delivery_kind": "request",
+          "pair_number": 11
+        },
+        {
+          "id": "SHARED-022",
+          "role": "assistant",
+          "content_markdown": "[erp-agent-communication_교육대화추출_20261012.zip](erp-agent-communication_교육대화추출_20261012.zip)\n\n- **확보 범위:** 현재 확인 가능한 10월 3일~12일 대화. 프로젝트 전체 원본 export는 아닙니다.\n\n- **포함:** 대화방 1개, 발화 32개, 학습 단계 9개, 첨부·근거 파일 17개와 MD·JSON.\n\n- **미확보:** 실제 FI AI 워커, 업무 소스·매뉴얼, 사용자 맥 설정·화면·운영 로그 등.\n\n- **대표 시행착오:** 전체 ERP 폴더 공유 → 담당별 수정 경계 확인 → 수동 검토 방식 교정 → 원격 MCP 자문 구조로 구체화.\n\nJSON 파싱, 참조·첨부 경로, 원본 보존 및 ZIP 검사를 통과했습니다.\n\n---\n\n대화 내용을 간단히 요약하면 다음과 같습니다.\n\nERP 시스템 내 여러 업무 패키지를 코드, 매뉴얼, 회의록 등으로 관리하는 AI 에이전트를 맥 Codex 데스크탑에서 각각 서브에이전트로 운용하며, 에이전트 간 협업 방안이 논의되고 있습니다. 주요 제안은 상위 폴더 ERP를 통합 작업 공간으로 두고, 각 패키지별 폴더를 유지하며 담당 서브에이전트가 필요한 업무만 수행하도록 하는 것입니다. 업무 접점을 기록하는 MD 파일로 상호 연결을 문서화해 협업 효율을 높이고, 옵시디언으로 시각화하는 방법도 소개됩니다.\n\n팀 환경에서는 최상위 폴더를 모두가 열기보다 각 담당자가 자기 영역만 작업하고, 다른 패키지에 대해서는 수정 권한 없이 조회·검토만 가능하도록 분리하는 권한 체계가 권장됩니다. 이에 더해 사용자는 주 에이전트와 대화하면서 필요 시 다른 서브에이전트에 자동으로 질문을 위임하는 구조를 구현할 수 있어, 에이전트 간 직접 협업도 가능합니다.",
+          "content_type": "verbatim",
+          "source_locator": "https://chatgpt.com/share/6acf6d07-d340-83ee-b865-0f1aa5ae8ecb / 화면 turn 22 / 2026-10-14 직접 확인",
+          "platform_turn_id": "c8ed8d57-7d71-4311-a3df-2b3730328f26",
+          "platform_message_id": "85099afb-92f3-5fe0-8a8c-a742c6e67389",
+          "shared_turn_index": 22,
+          "capture_origin": "shared_page",
+          "asset_ids": [
+            "shared-file-1"
+          ],
+          "redacted": false,
+          "timestamp": null,
+          "delivery_kind": "final",
+          "pair_number": 11,
+          "in_reply_to": [
+            "eac-m032"
+          ],
+          "sequence": 33
+        }
+      ]
+    }
+  ],
+  "episodes": [
+    {
+      "id": "eac-ep01",
+      "order": 1,
+      "title": "협업 목표를 묻고, 자료 접근 전제를 드러내기",
+      "goal": "업무 접점·문서 구조와 실제 자료 접근 조건을 구분한다.",
+      "map_nodes": [
+        "knowledge",
+        "codex",
+        "agent"
+      ],
+      "prerequisites": [
+        "자기 패키지와 관련 업무 이름을 알고 있을 것",
+        "소스·매뉴얼·회의록 보유 여부를 정리할 것"
+      ],
+      "message_refs": [
+        "eac-m001",
+        "eac-m002",
+        "eac-m003",
+        "eac-m004",
+        "eac-m005"
+      ],
+      "commentary_markdown": "**교육 해설 — 실제 발화와 구분**\n\n사용자 요구: ZHR5의 시간외 정산과 ZFI 전표처럼 분리된 업무 에이전트의 협업 방법을 알고 싶었다.\n\nAI 대응: 상위 ERP 폴더, 담당별 서브에이전트, AGENTS.md 및 접점 MD를 제안했다. 실제 파일을 읽거나 생성한 단계는 아니다.\n\n오류·중요 판단: 모든 관련 패키지가 같은 실행 환경에서 접근 가능하다는 전제를 충분히 확인하지 않았다. m003/m005의 상위 루트 권장은 뒤의 m009~m015 조건으로 바뀐다.\n\n추가 설명이 필요한 이유: 대화창·업무 역할·파일 접근 권한을 하나로 생각하면 실제 담당별 운영과 어긋난다.",
+      "outcome_markdown": "제안 단계. 사용자가 m004에서 이해를 확인했지만 모든 팀원에게 전체 저장소 접근을 허용한 결정은 아니다. 후속 요구로 재검토된다.",
+      "exercise_markdown": "**교육용 재작성 프롬프트**\n```text\n나는 자기 패키지만 클론하며 다른 담당 코드를 수정하면 안 된다.\n타 업무 에이전트에 질문하고 싶다. 자료 위치·읽기/쓰기 권한·담당자를 먼저 표로 정리하고,\n확인되지 않은 타 저장소 접근을 전제로 삼지 마. 접점 문서에 필요한 항목을 제안해줘.\n```\n실습은 요구·자료 목록 작성까지만 수행한다. 초기안처럼 ERP 전체 폴더를 공유하는 설정을 따라 하지 않는다.\n\n**확인 방법과 흔한 실패:** 자료 위치·보유 여부·읽기·쓰기·담당자가 따로 적혀 있는지 확인. 폴더만 만들면 에이전트가 상시 실행된다는 해석은 실패다.",
+      "asset_ids": [
+        "asset-old-context",
+        "missing-skills",
+        "asset-transcript",
+        "missing-zfi-source"
+      ]
+    },
+    {
+      "id": "eac-ep02",
+      "order": 2,
+      "title": "접점 MD를 업무 지도로 설명하기",
+      "goal": "문서 링크 시각화와 원격 에이전트 통신의 차이를 설명한다.",
+      "map_nodes": [
+        "maps",
+        "knowledge"
+      ],
+      "prerequisites": [
+        "접점 문서가 조사 근거를 담는다는 이해"
+      ],
+      "message_refs": [
+        "eac-m006",
+        "eac-m007",
+        "eac-m008"
+      ],
+      "commentary_markdown": "**교육 해설 — 실제 발화와 구분**\n\n사용자 요구: Obsidian으로 업무 간 연결을 시각화하고 싶었다.\n\nAI 대응: 노트 링크, 전체/로컬 그래프, Canvas 활용과 예시 MD를 설명했다.\n\n오류·중요 판단: 같은 ERP 폴더를 열라는 설명은 당시 한 폴더 가정에 따른 것이다. 뒤에 확정된 분산 맥 구조의 자료 공유 문제는 별도다.\n\n추가 설명이 필요한 이유: 지도는 업무 관계를 보여주지만 다른 맥에 질문을 보내거나 접근 권한을 부여하지 않는다.",
+      "outcome_markdown": "시각화 방법 제안만 확인. 실제 Vault·접점 파일·화면·관계 분석 실행은 미확인.",
+      "exercise_markdown": "**교육용 재작성 프롬프트**\n```text\n실제 확인된 근거만 사용해 패키지 간 접점 문서의 빈 양식을 제안해줘.\n호출 함수·전달 필드·취소 조건을 모르면 미확인으로 표시해.\n이 문서의 링크와 MCP 통신은 서로 다른 역할임을 설명해줘.\n```\n원하면 별도 테스트 Vault에서 가상 노트 두 개와 링크를 만든다. 실제 업무 관계로 표시하지 않는다.\n\n**확인 방법과 흔한 실패:** 가상 예시 표시, 근거/확인일 항목, 링크 대상 존재 여부 확인. 실제 화면 캡처는 확보 후 추가하고 생성형 화면을 넣지 않는다.",
+      "asset_ids": [
+        "asset-old-inventory",
+        "missing-screens",
+        "asset-transcript"
+      ]
+    },
+    {
+      "id": "eac-ep03",
+      "order": 3,
+      "title": "업무 담당자의 수정 경계를 명시하기",
+      "goal": "편의상 통합 접근과 실제 권한 분리를 구분한다.",
+      "map_nodes": [
+        "feedback",
+        "codex",
+        "agent"
+      ],
+      "prerequisites": [
+        "업무 담당자별 수정 허용 영역 목록"
+      ],
+      "message_refs": [
+        "eac-m009",
+        "eac-m010"
+      ],
+      "commentary_markdown": "**교육 해설 — 실제 발화와 구분**\n\n사용자 요구: FI 담당자는 ZFI, MM 담당자는 ZMM만 다루고 다른 범위의 코드·내용은 수정하지 않아야 했다.\n\nAI 대응: 전체 ERP 루트를 모두 열게 하는 제안을 철회하고 조회/수정 분리를 설명했지만, 사람이 검토 요청서를 전달하는 새 대안을 제안했다.\n\n오류·중요 판단: 권한 문제를 인지한 것은 맞지만 자동 에이전트 협업이라는 원래 목표를 놓쳤다.\n\n추가 설명이 필요한 이유: 제약을 하나 해결하면서 사용자가 원한 상호작용을 바꾸지 않았는지 확인해야 한다.",
+      "outcome_markdown": "수정 경계는 사용자 명시 요구. 수동 요청서 제안은 뒤 m011에서 사용자가 교정하므로 채택된 최종안으로 취급하지 않는다.",
+      "exercise_markdown": "**교육용 재작성 프롬프트**\n```text\n담당별 코드 수정 경계를 유지해야 한다. 협업 방식은 사람의 요청서 전달이 아니라\n주 에이전트가 타 업무 전문 에이전트에 자동 질의하는 방식이다.\n이 두 조건을 동시에 만족하는 설계와 미확인 권한 설정을 구분해줘.\n```\n\n**확인 방법과 흔한 실패:** 설계가 자동 자문을 유지하는지 확인. AGENTS.md의 금지 문구를 OS/샌드박스 권한 격리 완료라고 설명하면 실패다.",
+      "asset_ids": [
+        "asset-old-context",
+        "asset-transcript"
+      ]
+    },
+    {
+      "id": "eac-ep04",
+      "order": 4,
+      "title": "자동 자문 요구와 미클론 제약으로 원격 호출을 선택하기",
+      "goal": "로컬 서브에이전트와 다른 기기의 전문 에이전트를 구분한다.",
+      "map_nodes": [
+        "feedback",
+        "git",
+        "agent",
+        "expert",
+        "hub"
+      ],
+      "prerequisites": [
+        "HR 맥에 ZHR만 있고 ZFI는 없다는 조건"
+      ],
+      "message_refs": [
+        "eac-m011",
+        "eac-m012",
+        "eac-m013",
+        "eac-m014"
+      ],
+      "commentary_markdown": "**교육 해설 — 실제 발화와 구분**\n\n사용자 요구: ZHR 질문에 ZFI가 붙어 응답하는 모습을 원했고, ZFI를 HR 맥에 클론하지 않는다고 명확히 했다.\n\nAI 대응: 먼저 로컬 읽기 전용 ZFI 접근을 가정했다가, 그 전제를 빠뜨렸음을 인정하고 원격 API/MCP 자문으로 수정했다.\n\n오류·중요 판단: m012의 가능하다는 답은 자료 접근 조건이 누락되어 있었다. m014에서 명시적으로 정정된다.\n\n추가 설명이 필요한 이유: 역할 이름을 ZFI로 정하는 것과 실제 ZFI 지식에 접근하는 것은 다르다.",
+      "outcome_markdown": "원격 자문 방향으로 설계 수정. ask_zfi는 설명용 이름이며 뒤 실제 구현은 ask_expert이다. 이 단계에서 API·실제 에이전트는 구축되지 않았다.",
+      "exercise_markdown": "**교육용 재작성 프롬프트**\n```text\nHR 맥에는 ZHR만 있고 ZFI는 FI 담당자 맥에 있다. HR에 ZFI를 클론하지 않는다.\nZHR이 ZFI 전문 실행에 질문·후속 질문을 보내는 경로를 설명해줘.\n각 단계에서 누가 어느 자료를 읽는지와 필요한 별도 프로그램을 표시해줘.\n```\n\n**확인 방법과 흔한 실패:** ZFI 자료를 FI 실행 환경에서 읽는지 확인. 기존 FI Desktop 대화 전체를 자동 공유한다고 가정하지 않는다.",
+      "asset_ids": [
+        "missing-zfi-source",
+        "missing-real-worker",
+        "asset-transcript"
+      ]
+    },
+    {
+      "id": "eac-ep05",
+      "order": 5,
+      "title": "담당 맥과 중앙을 두 통로로 연결하기",
+      "goal": "Codex→MCP 호출과 워커→중앙 작업 수신을 구분한다.",
+      "map_nodes": [
+        "hub",
+        "worker",
+        "expert",
+        "agent",
+        "codex"
+      ],
+      "prerequisites": [
+        "담당자별 맥·자기 저장소·중앙 서버 구상"
+      ],
+      "message_refs": [
+        "eac-m015",
+        "eac-m016",
+        "eac-m017"
+      ],
+      "commentary_markdown": "**교육 해설 — 실제 발화와 구분**\n\n사용자 요구: 사람별 맥에 자기 ZXX를 클론하고 중앙 MCP로 연결하겠다고 명시했다.\n\nAI 대응: 각 맥에 별도 자문 실행 프로그램, 중앙에 인증·요청 관리, 자문용 읽기 전용 작업 사본을 제안했다.\n\n오류·중요 판단: MCP URL 등록만으로 다른 사람의 Desktop이 질문을 받는 서버가 되는 것은 아니다. 별도 자문 실행은 계획이다.\n\n추가 설명이 필요한 이유: 요청을 보내는 기능과 받는 실행 환경이 모두 있어야 협업이 된다.",
+      "outcome_markdown": "분산 배치 방향은 m015의 사용자 명시 선택. 실제 워커/HTTPS/읽기 전용 격리/무인 실행은 아직 미구현·미검증이다.",
+      "exercise_markdown": "**교육용 재작성 프롬프트**\n```text\n현재 조건에 맞춰 HR Codex→중앙 MCP와 FI 워커→중앙 API의 두 통로를 그려줘.\nZFI AI 실행은 별도 읽기 전용 세션으로 표시하고, 현재 구현된 부분과 계획을 나눠줘.\n담당 맥이 꺼진 경우와 자문 소스 버전을 어떻게 확인할지도 적어줘.\n```\n\n**확인 방법과 흔한 실패:** 중앙에 ZFI 소스가 필수라고 하지 않는지, 워커의 발신 폴링과 AI 읽기 권한을 구분하는지 확인. 실제 기기 화면은 미확보다.",
+      "asset_ids": [
+        "asset-server",
+        "asset-worker",
+        "missing-config",
+        "missing-real-worker",
+        "missing-screens",
+        "asset-transcript",
+        "missing-zfi-source"
+      ]
+    },
+    {
+      "id": "eac-ep06",
+      "order": 6,
+      "title": "Codex Desktop 설치와 MCP 서버 구현을 구분하기",
+      "goal": "설치 도구·실행 프로그램·업무 로직의 책임을 나눈다.",
+      "map_nodes": [
+        "hub",
+        "codex",
+        "worker"
+      ],
+      "prerequisites": [
+        "중앙 서버도 별도 프로그램이라는 이해"
+      ],
+      "message_refs": [
+        "eac-m018",
+        "eac-m019"
+      ],
+      "commentary_markdown": "**교육 해설 — 실제 발화와 구분**\n\n사용자 요구: 중앙에 무엇을 설치해야 하는지, Codex Desktop을 깔면 되는지 물었다.\n\nAI 대응: Node/Python, MCP SDK, 직접 만들 협업 프로그램, SQLite, HTTPS의 역할을 설명했다.\n\n오류·중요 판단: 중앙 Desktop은 개발 보조로 쓸 수 있지만 상시 MCP 서버 그 자체가 아니다. 중앙 배정에 AI는 필수가 아니다.\n\n추가 설명이 필요한 이유: 클라이언트 앱과 네트워크 서비스를 혼동하면 설치 후에도 통신이 되지 않는다.",
+      "outcome_markdown": "구성 요소 설명·제안 단계. 실제 중앙 OS/장비/서비스 등록은 확인되지 않았고 다음 발화에서 Node 예제를 요청한다.",
+      "exercise_markdown": "**교육용 재작성 프롬프트**\n```text\nNode.js 중앙 서버가 하는 일과 담당 맥 워커가 하는 일을 나눠줘.\n설치할 런타임·라이브러리와 직접 구현할 업무 로직을 구분해.\n중앙에 Codex Desktop이나 AI 모델이 없어도 되는 부분을 표시해줘.\n```\n\n**확인 방법과 흔한 실패:** 일반 프로그램의 인증/큐/배정과 AI의 소스 분석이 구분되는지 확인. SDK 설치 완료를 서비스 완성으로 간주하지 않는다.",
+      "asset_ids": [
+        "asset-package",
+        "asset-node-readme",
+        "asset-transcript"
+      ]
+    },
+    {
+      "id": "eac-ep07",
+      "order": 7,
+      "title": "Node 예제 생성·환경 오류·모의 검증을 연결하기",
+      "goal": "코드 생성 주장과 실제 시험 증거, 업무 검증을 구분한다.",
+      "map_nodes": [
+        "hub",
+        "worker",
+        "feedback"
+      ],
+      "prerequisites": [
+        "Node 24 이상·npm·루프백 통신 가능한 실습 환경",
+        "확보 코드 0.1.0"
+      ],
+      "message_refs": [
+        "eac-m020",
+        "eac-m021",
+        "eac-m022",
+        "eac-m023",
+        "eac-m024"
+      ],
+      "commentary_markdown": "**교육 해설 — 실제 발화와 구분**\n\n사용자 요구: 중앙 MCP의 Node.js 예시 코드를 요청했다.\n\nAI 대응: server.mjs, mock-worker.mjs, test.mjs, README, package.json/lock을 만들어 ZIP으로 제공했다.\n\n오류·중요 판단: 첫 안내는 워커가 자기 패키지를 읽는 구조를 말했으나 실제 산출물은 MOCK뿐이며 m022/m024에서 이를 한정했다. 제작 환경에서 npm EPERM·SDK 모듈 미설치·시험 실패 후 재실행을 겪었다.\n\n추가 설명이 필요한 이유: 모의 통신이 성공해도 FI 분석·맥 간 연결·운영 ERP가 검증된 것은 아니다. 실패는 당시 제작 환경의 실패이며 사용자 맥 장애 보고가 아니다.",
+      "outcome_markdown": "0.1.0 구현과 도구 기록의 tests 1/pass 1/exit 0 확인. 10월8일 재시험 로그도 확보. 실제 AI 워커·사내 배포는 미확인. 이번 10월12일에는 새 기능 구현이나 재시험을 하지 않았다.",
+      "exercise_markdown": "실습은 모의 코드까지만 실행한다. 압축을 푼 루트에서:\n```bash\ncd assets/previous/ERP_AI_Agent_Communication_Remote_MCP_2026-10-08/examples/erp-mcp-example\nnode --version\nnpm ci\nnpm test\n```\n**교육용 재작성 프롬프트**\n```text\n이 예제의 test.mjs가 검증하는 내용을 읽어줘.\n통신·접근 제한 검증과 실제 FI 업무 분석 미검증을 구분해.\n환경 오류가 나면 오류 출력에 근거해 원인을 찾고 코드 오류로 단정하지 마.\n```\n실제 AI 연결은 이 실습의 완료 조건에 넣지 않는다. 직접 서버/워커 실행과 대체값 설정은 기존 README를 참고하되 실환경 토큰은 파일에 남기지 않는다.\n\n**확인 방법과 흔한 실패:** pass 1/fail 0와 각 assertion을 확인. npm ci 실패 후 모듈 없음은 설치 문제일 수 있다. 정상 결과는 MOCK이며 코드 수정이 필요한 시험이 아니다. 실제 앱 환경 인증 상속·TLS는 별도 확인한다.",
+      "asset_ids": [
+        "asset-node-zip",
+        "asset-server",
+        "asset-worker",
+        "asset-test",
+        "asset-node-readme",
+        "asset-package",
+        "asset-lock",
+        "asset-tool-evidence",
+        "asset-test-1008",
+        "asset-transcript",
+        "missing-screens",
+        "missing-real-worker",
+        "asset-previous-node-copy"
+      ]
+    },
+    {
+      "id": "eac-ep08",
+      "order": 8,
+      "title": "설계와 구현 경계를 교육 자료로 고정하기",
+      "goal": "코드 원본·해설·검증 기록을 구분해 다음 작업에 넘긴다.",
+      "map_nodes": [
+        "portal",
+        "knowledge",
+        "feedback"
+      ],
+      "prerequisites": [
+        "현재 원본 ZIP과 실제 확인 가능한 대화"
+      ],
+      "message_refs": [
+        "eac-m025",
+        "eac-m026",
+        "eac-m027",
+        "eac-m028",
+        "eac-m029",
+        "eac-m030",
+        "eac-m031"
+      ],
+      "commentary_markdown": "**교육 해설 — 실제 발화와 구분**\n\n사용자 요구: 프로젝트별 MD 4개와 ZIP을 추출하고 확인 범위·상태·출처를 명시하도록 요청했다.\n\nAI 대응: 현재 대화와 원본을 확인해 상세 설계·교육·보완 문서를 작성하고 모의 시험을 재실행했다.\n\n오류·중요 판단: 이때 만든 요약 MD는 전체 발화 JSON이 아니다. 이를 실제 발화로 역복원해서는 안 된다.\n\n추가 설명이 필요한 이유: 후속 교육 포털에서 사용자가 어떻게 요구를 교정했는지 보여주려면 원 발화가 필요하다.\n\n**2026-10-14 보완:** 이 화면의 과거 추출 범위·미확보 설명은 당시 상태입니다. 이번 공유 대화의 최종 답변과 새 확보 전문은 현재 대화 기록에 추가했습니다.",
+      "outcome_markdown": "10월8일 추출본 1.0.0과 실제 시험 로그 확보. 예제 0.1.0을 새 코드 버전으로 갱신한 것은 아니다.",
+      "exercise_markdown": "**교육용 재작성 프롬프트**\n```text\n현재 읽을 수 있는 파일만으로 구현·검증·운영 상태표를 만들어줘.\n대화 발화와 요약 MD의 근거를 구분하고, 원본이 없는 자료는 미확보로 남겨줘.\n초기 잘못된 설계와 수정 이유를 삭제하지 마.\n```\n\n**확인 방법과 흔한 실패:** 원본 링크·버전·미검증 상태 일치 여부 확인. 테스트가 없는 AI 설명을 검증 완료로 승격하지 않는다.",
+      "asset_ids": [
+        "asset-previous-zip",
+        "asset-old-readme",
+        "asset-old-context",
+        "asset-old-learning",
+        "asset-old-inventory",
+        "asset-old-evidence",
+        "asset-test-1008",
+        "asset-transcript",
+        "asset-node-readme",
+        "missing-real-worker",
+        "asset-tool-evidence",
+        "asset-previous-node-copy",
+        "asset-server",
+        "asset-worker",
+        "asset-test",
+        "asset-package",
+        "asset-lock"
+      ]
+    },
+    {
+      "id": "eac-ep09",
+      "order": 9,
+      "title": "대화 말풍선과 학습 해설을 분리해 포털에 연결하기",
+      "goal": "발화·교육 해설·실습 프롬프트의 출처를 유지한다.",
+      "map_nodes": [
+        "portal",
+        "feedback",
+        "knowledge"
+      ],
+      "prerequisites": [
+        "현재 보이는 사용자–AI 대화와 확보 파일"
+      ],
+      "message_refs": [
+        "eac-m032",
+        "SHARED-022"
+      ],
+      "commentary_markdown": "**교육 해설 — 실제 발화와 구분**\n\n사용자 요구: 성공 요약을 넘어 실제 명령·응답·오해·수정·검증을 MD와 JSON으로 보존해달라고 요청했다.\n\nAI 대응: 이 발화는 추출 종료 경계다. 이후 진행 중인 응답은 역사 대화 배열에 넣지 않고 현재 산출물의 메타데이터로 다룬다.\n\n오류·중요 판단: 이전 요약을 원문처럼 복원하거나 없는 시각·이미지·버전을 채우면 안 된다.\n\n추가 설명이 필요한 이유: 채팅 화면에서는 실제 원문과 새로 작성한 설명을 눈에 보이게 구분해야 한다.\n\n**2026-10-14 보완:** 이 화면의 과거 추출 범위·미확보 설명은 당시 상태입니다. 이번 공유 대화의 최종 답변과 새 확보 전문은 현재 대화 기록에 추가했습니다.",
+      "outcome_markdown": "이번 요청 원문 확보. 현재 ZIP은 이 요청에 대한 새 추출본이며 과거 완료 응답을 창작하지 않았다.",
+      "exercise_markdown": "**교육용 재작성 프롬프트**\n```text\nconversation-data.json의 원문 말풍선과 episodes의 교육 해설을 서로 다른 영역에 표시하는\n데이터 연결안을 설명해줘. 원문은 수정하지 말고 발화 ID로 정정 후속 메시지를 연결해.\n없는 첨부는 availability=unavailable, path=null을 유지해.\n```\n이번 실습은 데이터 구조 점검까지다. 웹사이트 구현·배포·GitHub push를 수행하지 않는다.\n\n**확인 방법과 흔한 실패:** JSON 파싱, ID 중복, 참조, included 경로, 발화 순서 확인. assistant timestamp가 null인 것을 사용자 시각으로 채우지 않는다.",
+      "asset_ids": [
+        "asset-transcript",
+        "asset-previous-zip",
+        "asset-old-readme",
+        "asset-node-readme",
+        "shared-file-1"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "id": "asset-node-zip",
+      "original_filename": "ERP_MCP_NodeJS_Example.zip",
+      "path": "assets/originals/ERP_MCP_NodeJS_Example.zip",
+      "kind": "archive",
+      "description": "2026-10-03 생성한 Node 중앙 MCP 예제 원본. 코드 0.1.0. 실제 AI 워커 없음.",
+      "availability": "included",
+      "version": "0.1.0",
+      "related_message_ids": [
+        "eac-m024"
+      ]
+    },
+    {
+      "id": "asset-previous-zip",
+      "original_filename": "ERP_AI_Agent_Communication_Remote_MCP_2026-10-08.zip",
+      "path": "assets/originals/ERP_AI_Agent_Communication_Remote_MCP_2026-10-08.zip",
+      "kind": "archive",
+      "description": "2026-10-08 교육 추출본 원본. 전 발화 원문이 아닌 당시 요약 문서.",
+      "availability": "included",
+      "version": "1.0.0",
+      "related_message_ids": [
+        "eac-m031"
+      ]
+    },
+    {
+      "id": "asset-old-readme",
+      "original_filename": "00_README.md",
+      "path": "assets/previous/ERP_AI_Agent_Communication_Remote_MCP_2026-10-08/00_README.md",
+      "kind": "document",
+      "description": "10월8일 교육 추출본의 당시 확보 범위·읽기 순서; 원문 대화로 취급하지 않음.",
+      "availability": "included",
+      "version": "1.0.0",
+      "related_message_ids": [
+        "eac-m031"
+      ]
+    },
+    {
+      "id": "asset-old-context",
+      "original_filename": "01_프로젝트_맥락과설계.md",
+      "path": "assets/previous/ERP_AI_Agent_Communication_Remote_MCP_2026-10-08/01_프로젝트_맥락과설계.md",
+      "kind": "document",
+      "description": "10월8일 교육 추출본의 당시 요구·설계·상태 정리; 원문 대화로 취급하지 않음.",
+      "availability": "included",
+      "version": "1.0.0",
+      "related_message_ids": [
+        "eac-m031"
+      ]
+    },
+    {
+      "id": "asset-old-learning",
+      "original_filename": "02_교육과실습.md",
+      "path": "assets/previous/ERP_AI_Agent_Communication_Remote_MCP_2026-10-08/02_교육과실습.md",
+      "kind": "document",
+      "description": "10월8일 교육 추출본의 당시 개념·실습·FAQ; 원문 대화로 취급하지 않음.",
+      "availability": "included",
+      "version": "1.0.0",
+      "related_message_ids": [
+        "eac-m031"
+      ]
+    },
+    {
+      "id": "asset-old-inventory",
+      "original_filename": "03_자료목록과보완사항.md",
+      "path": "assets/previous/ERP_AI_Agent_Communication_Remote_MCP_2026-10-08/03_자료목록과보완사항.md",
+      "kind": "document",
+      "description": "10월8일 교육 추출본의 당시 자료·캡처·보완 목록; 원문 대화로 취급하지 않음.",
+      "availability": "included",
+      "version": "1.0.0",
+      "related_message_ids": [
+        "eac-m031"
+      ]
+    },
+    {
+      "id": "asset-previous-node-copy",
+      "original_filename": "ERP_MCP_NodeJS_Example.zip",
+      "path": "assets/previous/ERP_AI_Agent_Communication_Remote_MCP_2026-10-08/attachments/ERP_MCP_NodeJS_Example.zip",
+      "kind": "archive",
+      "description": "10월8일 묶음에 포함된 10월3일 원본의 동일 사본. 새 버전 아님.",
+      "availability": "included",
+      "version": "0.1.0",
+      "related_message_ids": [
+        "eac-m031"
+      ]
+    },
+    {
+      "id": "asset-server",
+      "original_filename": "server.mjs",
+      "path": "assets/previous/ERP_AI_Agent_Communication_Remote_MCP_2026-10-08/examples/erp-mcp-example/server.mjs",
+      "kind": "code",
+      "description": "중앙 MCP/SQLite 큐/워커 API; 원본 바이트 유지.",
+      "availability": "included",
+      "version": "0.1.0",
+      "related_message_ids": [
+        "eac-m024",
+        "eac-m031"
+      ]
+    },
+    {
+      "id": "asset-worker",
+      "original_filename": "mock-worker.mjs",
+      "path": "assets/previous/ERP_AI_Agent_Communication_Remote_MCP_2026-10-08/examples/erp-mcp-example/mock-worker.mjs",
+      "kind": "code",
+      "description": "3초 폴링 고정 MOCK 답변; ZFI 분석 코드 없음; 원본 바이트 유지.",
+      "availability": "included",
+      "version": "0.1.0",
+      "related_message_ids": [
+        "eac-m024",
+        "eac-m031"
+      ]
+    },
+    {
+      "id": "asset-test",
+      "original_filename": "test.mjs",
+      "path": "assets/previous/ERP_AI_Agent_Communication_Remote_MCP_2026-10-08/examples/erp-mcp-example/test.mjs",
+      "kind": "code",
+      "description": "메모리 DB와 SDK 클라이언트를 쓰는 통신·권한 테스트; 원본 바이트 유지.",
+      "availability": "included",
+      "version": "0.1.0",
+      "related_message_ids": [
+        "eac-m024",
+        "eac-m031"
+      ]
+    },
+    {
+      "id": "asset-node-readme",
+      "original_filename": "README.md",
+      "path": "assets/previous/ERP_AI_Agent_Communication_Remote_MCP_2026-10-08/examples/erp-mcp-example/README.md",
+      "kind": "document",
+      "description": "기존 설치·MCP 설정·워커 후속 구현 안내; 원본 바이트 유지.",
+      "availability": "included",
+      "version": "0.1.0",
+      "related_message_ids": [
+        "eac-m024",
+        "eac-m031"
+      ]
+    },
+    {
+      "id": "asset-package",
+      "original_filename": "package.json",
+      "path": "assets/previous/ERP_AI_Agent_Communication_Remote_MCP_2026-10-08/examples/erp-mcp-example/package.json",
+      "kind": "code",
+      "description": "프로젝트 0.1.0, Node >=24, 실행 명령; 원본 바이트 유지.",
+      "availability": "included",
+      "version": "0.1.0",
+      "related_message_ids": [
+        "eac-m024",
+        "eac-m031"
+      ]
+    },
+    {
+      "id": "asset-lock",
+      "original_filename": "package-lock.json",
+      "path": "assets/previous/ERP_AI_Agent_Communication_Remote_MCP_2026-10-08/examples/erp-mcp-example/package-lock.json",
+      "kind": "code",
+      "description": "MCP 1.31.0, Express 5.2.1, Zod 3.25.76 잠금; 원본 바이트 유지.",
+      "availability": "included",
+      "version": "0.1.0",
+      "related_message_ids": [
+        "eac-m024",
+        "eac-m031"
+      ]
+    },
+    {
+      "id": "asset-old-evidence",
+      "original_filename": "출처와검증기록.md",
+      "path": "assets/previous/ERP_AI_Agent_Communication_Remote_MCP_2026-10-08/references/출처와검증기록.md",
+      "kind": "document",
+      "description": "10월8일 작성한 출처 목록과 검증 해설. assistant의 정리 문서이며 사용자 운영 보고 아님.",
+      "availability": "included",
+      "version": "1.0.0",
+      "related_message_ids": [
+        "eac-m031"
+      ]
+    },
+    {
+      "id": "asset-test-1008",
+      "original_filename": "2026-10-08_test-output.txt",
+      "path": "assets/previous/ERP_AI_Agent_Communication_Remote_MCP_2026-10-08/references/2026-10-08_test-output.txt",
+      "kind": "other",
+      "description": "10월8일 실제 재시험 출력 원본. tests 1/pass 1/fail 0. 날짜는 파일·당시 실행 기록 근거.",
+      "availability": "included",
+      "version": null,
+      "related_message_ids": [
+        "eac-m029",
+        "eac-m031"
+      ]
+    },
+    {
+      "id": "asset-tool-evidence",
+      "original_filename": "tool-evidence.md",
+      "path": "assets/tool-evidence.md",
+      "kind": "document",
+      "description": "이번에 작성한 도구 증거 발췌·해설. 과거 사용자 또는 assistant 발화로 복원하지 않음.",
+      "availability": "included",
+      "version": "1.0.0",
+      "related_message_ids": [
+        "eac-m024",
+        "eac-m029",
+        "eac-m031"
+      ]
+    },
+    {
+      "id": "asset-transcript",
+      "original_filename": "visible-conversation.md",
+      "path": "assets/visible-conversation.md",
+      "kind": "document",
+      "description": "JSON messages의 읽기용 동일 본문. 이번 추출본; 플랫폼 원본 export 파일은 아님.",
+      "availability": "included",
+      "version": "1.0.0",
+      "related_message_ids": [
+        "eac-m001",
+        "eac-m002",
+        "eac-m003",
+        "eac-m004",
+        "eac-m005",
+        "eac-m006",
+        "eac-m007",
+        "eac-m008",
+        "eac-m009",
+        "eac-m010",
+        "eac-m011",
+        "eac-m012",
+        "eac-m013",
+        "eac-m014",
+        "eac-m015",
+        "eac-m016",
+        "eac-m017",
+        "eac-m018",
+        "eac-m019",
+        "eac-m020",
+        "eac-m021",
+        "eac-m022",
+        "eac-m023",
+        "eac-m024",
+        "eac-m025",
+        "eac-m026",
+        "eac-m027",
+        "eac-m028",
+        "eac-m029",
+        "eac-m030",
+        "eac-m031",
+        "eac-m032"
+      ]
+    },
+    {
+      "id": "missing-screens",
+      "original_filename": null,
+      "path": null,
+      "kind": "image",
+      "description": "실제 Codex Desktop/MCP 연결/Obsidian/오류 화면 캡처: 원본 미확보. 새 이미지로 대체하지 않음.",
+      "availability": "unavailable",
+      "version": null,
+      "related_message_ids": [
+        "eac-m008",
+        "eac-m017",
+        "eac-m024"
+      ]
+    },
+    {
+      "id": "missing-zfi-source",
+      "original_filename": null,
+      "path": null,
+      "kind": "code",
+      "description": "실제 ZFI 저장소 소스·매뉴얼: 사용자 보유/예정 자료이며 이번 원본 미확보.",
+      "availability": "unavailable",
+      "version": null,
+      "related_message_ids": [
+        "eac-m001",
+        "eac-m013",
+        "eac-m015"
+      ]
+    },
+    {
+      "id": "missing-skills",
+      "original_filename": "SKILL.md",
+      "path": null,
+      "kind": "document",
+      "description": "실제 패키지별 SKILL.md 및 지침·knowledge/harness: 논의만 확인, 원본 미확보.",
+      "availability": "unavailable",
+      "version": null,
+      "related_message_ids": [
+        "eac-m003",
+        "eac-m005"
+      ]
+    },
+    {
+      "id": "missing-config",
+      "original_filename": "config.toml",
+      "path": null,
+      "kind": "code",
+      "description": "사용자 맥의 실제 MCP 설정 파일: 예시만 있고 원본 미확보.",
+      "availability": "unavailable",
+      "version": null,
+      "related_message_ids": [
+        "eac-m017"
+      ]
+    },
+    {
+      "id": "missing-real-worker",
+      "original_filename": null,
+      "path": null,
+      "kind": "code",
+      "description": "실제 ZFI AI 자문 워커: 구현 파일 미확보. 모의 워커를 실제 구현으로 표시하지 않음.",
+      "availability": "unavailable",
+      "version": null,
+      "related_message_ids": [
+        "eac-m017",
+        "eac-m024",
+        "eac-m028"
+      ]
+    },
+    {
+      "id": "shared-file-1",
+      "kind": "archive",
+      "availability": "included",
+      "path": "attachments/erp-agent-communication_교육대화추출_20261012.zip",
+      "asset_root": "sources/conversations/20261014-shared/erp-agent-communication",
+      "original_filename": "erp-agent-communication_교육대화추출_20261012.zip",
+      "description": "공유 대화에서 안내한 실제 첨부파일입니다. 최초 CSS 산출물 또는 당시 교육자료 추출본을 원본 바이트로 보존합니다.",
+      "sha256": "58df3a36aa2679b34f88691d108f8fa21c2b23c0045983d1cc87f309de126a0d"
+    }
+  ]
+}

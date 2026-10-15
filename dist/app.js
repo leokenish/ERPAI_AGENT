@@ -2,10 +2,8 @@ import {renderKnowledge,mountKnowledge} from './knowledge.js';
 import {compare} from './compare.js';
 import {mountHeroMotion} from './hero-motion.js';
 import {renderPresentation,mountPresentation} from './presentation.js';
-
-
-import {conversationIndex,conversationWorkspace,resolveConversation,relatedConversationCount,conversationLink,conversationSearchEntries} from './conversations.js';
-let heroCleanup, presentationCleanup, knowledgeCleanup, heroTyped=false;
+import {conversationIndex,conversationWorkspace,resolveConversation,conversationVisibleCount,relatedConversationCount,conversationLink,conversationSearchEntries} from './conversations.js';
+let heroCleanup, presentationCleanup, knowledgeCleanup;
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icons={print:'<path d="M6 9V3h12v6M6 17H3V9h18v8h-3"/><path d="M6 14h12v7H6z"/><path d="M17 12h1"/>',download:'<path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/>',home:'<path d="m3 10 9-7 9 7v10H3z"/><path d="M9 20v-7h6v7"/>',book:'<path d="M12 5v16M3 4c4-1 6 0 9 2 3-2 5-3 9-2v15c-4-1-6 0-9 2-3-2-5-3-9-2z"/>',map:'<rect x="8" y="2" width="8" height="5" rx="1"/><rect x="2" y="17" width="7" height="5" rx="1"/><rect x="15" y="17" width="7" height="5" rx="1"/><path d="M12 7v5M5.5 17v-5h13v5"/>',case:'<path d="M8 3H4v18h16V3h-4"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="m7 12 3 3 7-7"/>',folder:'<path d="M3 5h7l2 3h9v12H3z"/>',code:'<path d="m8 6-5 6 5 6m8-12 5 6-5 6m-3-15-2 18"/>',nodes:'<circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="12" cy="19" r="3"/><path d="m7 9 4 7m6-7-4 7M9 6h6"/>'};
@@ -189,7 +187,7 @@ function route(){
  hydratePreviewAssets($('#main'));
  if(parts[0]==='learn'&&parts[1]==='worktime-agent')knowledgeCleanup=mountKnowledge($('[data-knowledge]'),data.worktimeKnowledge,{docId:params.get('doc'),openDocument:params.get('read')==='1',hydrate:hydratePreviewAssets});
  if(parts[0]==='present')presentationCleanup=mountPresentation($('[data-presentation]'));
- if(parts[0]==='home')heroCleanup=mountHeroMotion($('.hero'),{alreadyTyped:heroTyped,onTyped:()=>{heroTyped=true;}});
+ if(parts[0]==='home')heroCleanup=mountHeroMotion($('.hero'));
  document.title=(parts[0]==='learn'?(data.lessons.find(l=>l.id===parts[1])?.title||'교육')+' | ':'')+data.title;
  if($('#compare-preset'))setPreset(0);
  closeMenu();
@@ -221,7 +219,7 @@ document.addEventListener('click',e=>{
  if(target.matches('[data-open-conversation]')){$('#conversation-heading')?.scrollIntoView({block:'start'});$('#conversation-heading')?.focus({preventScroll:true});}
  if(target.matches('[data-conversation-episode]')){conversationState.episodeId=target.dataset.conversationEpisode;conversationState.visible=4;conversationState.tab='dialogue';updateConversation('conversation-episode-title',true);}
  if(target.matches('[data-conversation-tab]')){conversationState.tab=target.dataset.conversationTab;updateConversation('conversation-pane');}
- if(target.matches('[data-conversation-more]')){const s=resolveConversation(data.conversations,conversationState);const next=s.messages[conversationState.visible];conversationState.visible++;updateConversation(next?`message-${s.project.id}-${next.id}`:null);}
+ if(target.matches('[data-conversation-more]')){const s=resolveConversation(data.conversations,conversationState);const count=conversationVisibleCount(s.messages,conversationState.visible);const next=s.messages[count];conversationState.visible=count+1;updateConversation(next?`message-${s.project.id}-${next.id}`:null);}
  if(target.matches('[data-conversation-all]')){conversationState.visible=999;updateConversation('conversation-pane');}
  if(target.matches('[data-image-size]')){const active=$('#image-dialog').classList.toggle('actual-size');target.textContent=active?'화면에 맞추기':'원본 크기로 보기';target.setAttribute('aria-pressed',String(active));}
  if(target.matches('[data-image]')){$('#image-dialog').classList.remove('actual-size');$('#image-size').textContent='원본 크기로 보기';$('#image-size').setAttribute('aria-pressed','false');$('#large-image').src=target.dataset.image;$('#large-image').alt=target.querySelector('img').alt;$('#image-dialog').showModal();}

@@ -5,11 +5,11 @@ import {readFile} from 'node:fs/promises';
 
 // Behavioral lifecycle tests, without claiming browser layout verification.
 const source=(await readFile(new URL('../site/hero-motion.js',import.meta.url),'utf8')).replace('export function','function');
-function setup(reduced=false){
+function setup(reduced=false,initiallyHidden=false){
  const timers=new Map();let seq=0, completed=0;
  function el(){const classes=new Set(),listeners=new Map();return {classes,listeners,textContent:'',dataset:{},classList:{add:x=>classes.add(x),remove:x=>classes.delete(x),toggle:(x,v)=>v?classes.add(x):classes.delete(x)},setAttribute(k,v){this[k]=v;},addEventListener(k,v){listeners.set(k,v);},removeEventListener(k,v){if(listeners.get(k)===v)listeners.delete(k);}};}
  const outputs=['ERP AI,','이해에서 실무로.'].map(text=>Object.assign(el(),{dataset:{text},textContent:text}));
- const button=el(),root=el(),document=Object.assign(el(),{hidden:false}),preference=Object.assign(el(),{matches:reduced});
+ const button=el(),root=el(),document=Object.assign(el(),{hidden:initiallyHidden}),preference=Object.assign(el(),{matches:reduced});
  root.querySelectorAll=()=>outputs;root.querySelector=()=>button;
  const context=vm.createContext({document,setTimeout:fn=>{timers.set(++seq,fn);return seq;},clearTimeout:id=>timers.delete(id)});
  vm.runInContext(source,context);
@@ -40,5 +40,15 @@ test('정지 버튼 없이 동작하고 페이지 이탈·재방문에 타이머
  assert.equal(f.outputs[0].textContent,before);assert.equal(f.timers.size,0);
  assert.equal(f.document.listeners.size,0);assert.equal(f.preference.listeners.size,0);
  const hidden=setup();hidden.document.hidden=true;hidden.document.listeners.get('visibilitychange')();
- assert.equal(hidden.outputs[1].textContent,'이해에서 실무로.');assert.equal(hidden.timers.size,0);hidden.cleanup();
+ assert.equal(hidden.outputs[1].textContent,'');assert.equal(hidden.timers.size,0);
+ hidden.document.hidden=false;hidden.document.listeners.get('visibilitychange')();hidden.step();assert.equal(hidden.outputs[0].textContent,'E');hidden.cleanup();
+});
+
+test('백그라운드에서 열린 홈은 활성화 후 타이핑하고 중간 숨김은 같은 위치에서 이어간다',()=>{
+ const f=setup(false,true);assert.equal(f.timers.size,0);assert.equal(f.outputs[0].textContent,'');
+ f.document.hidden=false;f.document.listeners.get('visibilitychange')();f.step();f.step();
+ assert.equal(f.outputs[0].textContent,'ER');
+ f.document.hidden=true;f.document.listeners.get('visibilitychange')();assert.equal(f.timers.size,0);
+ f.document.hidden=false;f.document.listeners.get('visibilitychange')();f.step();assert.equal(f.outputs[0].textContent,'ERP');
+ for(let n=0;n<40;n++)f.step();assert.equal(f.completed(),1);assert.equal(f.timers.size,0);f.cleanup();
 });

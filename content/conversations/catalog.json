@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-13",
+  "asOf": "2026-10-14",
   "sourceRoot": "sources/conversations/20261012",
   "preferredNodes": {
     "sap": [
@@ -117,7 +117,21 @@
         "kwc-e02",
         "kwc-e03",
         "kwc-e04"
-      ]
+      ],
+      "progressMessageIds": [
+        "kwc-m004",
+        "kwc-m005",
+        "kwc-m006",
+        "kwc-m007",
+        "kwc-m008"
+      ],
+      "episodeMessageAdditions": {
+        "kwc-e02": [
+          "kwc-m007",
+          "kwc-m008",
+          "kwc-m009"
+        ]
+      }
     },
     {
       "id": "erp-obsidian-knowledge-map",
@@ -130,13 +144,21 @@
       "environment": "사용자는 이미 스킬·knowledge·하네스·추출 소스를 가지고 있었으며 기존 폴더를 보존하는 방식을 원했습니다.",
       "turningPoint": "Obsidian이 자동으로 의미를 분석하는 것은 아니라는 점을 확인하고, 기존 원본 위에 연결 MD를 추가하는 방향으로 구체화했습니다.",
       "currentState": "설계 대화와 교육 문서를 확보했습니다. 그래프가 Codex에 자동 전달되거나 분석 속도를 높인다는 실행 증거는 없습니다.",
-      "coverageNote": "원문 전사 25개를 7개 에피소드로 연결했습니다. 추출본의 ‘화면 미확보’는 해당 대화방에서 확보한 범위를 말합니다.",
+      "coverageNote": "사용자 9개·AI 최종 응답 전문 9개·진행 안내 8개를 수록했습니다.",
       "integrationNote": "이 포털에는 별도로 받은 실제 업무지도·전체 그래프 캡처 2장이 있습니다. 과정 05에서 볼 수 있으며, 링크 유효성·속도 개선까지 검증한 것은 아닙니다.",
       "supplementLesson": "maps",
       "metaEpisodes": [
         "obs-e006",
         "obs-e007"
-      ]
+      ],
+      "sourcePath": "content/conversations/shared-full/erp-obsidian-knowledge-map",
+      "assetSourcePath": "sources/conversations/20261012/erp-obsidian-knowledge-map",
+      "supplementDocuments": [
+        "AI_RESPONSES_FULL.md",
+        "MISSING_RESPONSES.md",
+        "CHANGELOG.md"
+      ],
+      "publishAttachments": true
     },
     {
       "id": "erp-agent-communication",
@@ -149,13 +171,21 @@
       "environment": "각 담당자는 자기 Mac에서 자기 패키지만 클론합니다. 다른 담당의 코드를 내려받거나 수정하는 방식은 요구와 맞지 않았습니다.",
       "turningPoint": "공유 폴더·수동 요청서 제안에서, 중앙 MCP에 질문을 등록하고 담당 Mac의 워커가 자문하는 분산 구조로 바뀌었습니다.",
       "currentState": "Node.js 중앙 예제 0.1.0과 모의 워커 통신 검증 기록을 확보했습니다. 실제 Codex AI 워커·사내 운영 연결은 미구현·미확인입니다.",
-      "coverageNote": "원문 전사 32개입니다. 초기 제안이 뒤의 사용자 제약으로 바뀌는 과정과 예제 제작 중 오류를 함께 읽습니다.",
+      "coverageNote": "사용자 11개·AI 최종 응답 전문 11개·진행 안내 11개를 수록했습니다.",
       "integrationNote": "중앙 자문 MCP와 ERP 조회 MCP는 서로 다른 역할입니다. 이 예제의 통신 검증을 ERP·Telegram 연동 성공으로 확대하지 않습니다.",
       "supplementLesson": "collaboration",
       "metaEpisodes": [
         "eac-ep08",
         "eac-ep09"
-      ]
+      ],
+      "sourcePath": "content/conversations/shared-full/erp-agent-communication",
+      "assetSourcePath": "sources/conversations/20261012/erp-agent-communication",
+      "supplementDocuments": [
+        "AI_RESPONSES_FULL.md",
+        "MISSING_RESPONSES.md",
+        "CHANGELOG.md"
+      ],
+      "publishAttachments": true
     },
     {
       "id": "kbs-erp-mcp-telegram",
@@ -168,12 +198,20 @@
       "environment": "ECC 6.0에서 JSON REST 방식의 RFC 연동을 사용 중이라는 설명을 출발점으로, 사내 서버와 외부 Telegram 사이의 배치를 논의했습니다.",
       "turningPoint": "‘MCP에 AI는 어디에 있는가’라는 질문으로 역할을 다시 나누고, 원격 화면 접속보다 모바일 채팅·long polling을 중심으로 설계했습니다.",
       "currentState": "설계·설명·가상 계약만 확보했습니다. 실제 API 명세·최종 런타임·서버 설치·Telegram과 AI의 왕복은 미확인입니다.",
-      "coverageNote": "원문 20개·발췌 1개·요약 13개입니다. 초기 AI 답변 대부분은 요약으로만 남아 있어 원문 말풍선과 구분해서 표시합니다.",
+      "coverageNote": "사용자 16개·AI 최종 응답 전문 16개·진행 안내 3개를 수록했습니다. 기존 요약 13개와 발췌 1개를 전문으로 교체했습니다.",
       "integrationNote": "과거의 장비·SDK·설치 예시는 당시 논의입니다. 실제 구축 단계에서는 선택한 환경의 명세와 버전을 확인해야 합니다.",
       "supplementLesson": "erp-mcp",
       "metaEpisodes": [
         "E08"
-      ]
+      ],
+      "sourcePath": "content/conversations/shared-full/kbs-erp-mcp-telegram",
+      "assetSourcePath": "sources/conversations/20261012/kbs-erp-mcp-telegram",
+      "supplementDocuments": [
+        "AI_RESPONSES_FULL.md",
+        "MISSING_RESPONSES.md",
+        "CHANGELOG.md"
+      ],
+      "publishAttachments": true
     },
     {
       "id": "kbs-erp-webgui-refactor",
@@ -186,19 +224,22 @@
       "environment": "WEBGUI·SYSTEMGUI JS/CSS와 일부 HTML, Chrome DevTools 관찰 자료를 제공하고 수정본·원본·검증 자료를 ZIP으로 주고받았습니다.",
       "turningPoint": "캐시 요청과 실제 업무 POST, 중복 콜백과 중복 전송을 구분했습니다. 오류가 나자 제공 소스와 실제 배포 응답의 일치 여부를 다시 확인했습니다.",
       "currentState": "초기 패치·Chrome v3 산출물과 당시 정적·모의 검증 기록을 확보했습니다. 실제 Chrome·ERP에서 v3 전체 동작을 검증한 결과는 없습니다.",
-      "coverageNote": "원문 전사 41개·발췌 6개, 총 47개 항목입니다. 상태 문의 1개와 자료 추출 응답 5개를 추가했습니다. 과거 리팩토링 답변 4개 구간은 여전히 미확보입니다.",
+      "coverageNote": "사용자 20개·AI 최종 응답 전문 15개·진행 안내 28개를 수록했습니다. 본문 없는 상태 2곳은 따로 안내합니다.",
       "integrationNote": "350/700ms 타이머는 요청 전에 예약하는 시간입니다. 모형의 중복 콜백을 실제 중복 POST나 체감 개선 수치로 단정하지 않습니다.",
       "supplementLesson": "webgui",
       "metaEpisodes": [
         "wg-ep08"
       ],
-      "sourcePath": "sources/conversations/20261012-supplement/kbs-erp-webgui-refactor",
+      "sourcePath": "content/conversations/shared-full/kbs-erp-webgui-refactor",
       "supplementDocuments": [
         "AI_RESPONSES_FULL.md",
         "MISSING_RESPONSES.md",
         "CHANGELOG.md"
       ],
-      "supplementEpisode": "wg-ep08"
+      "supplementEpisode": "wg-ep00",
+      "assetSourcePath": "sources/conversations/20261012-supplement/kbs-erp-webgui-refactor",
+      "supplementLabel": "초기 CSS 요청부터 확보한 전문 읽기",
+      "publishAttachments": true
     }
   ]
 }

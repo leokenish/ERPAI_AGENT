@@ -51,3 +51,18 @@ test('두 테마는 같은 크기·클립·모션을 사용하고 문서 ID가 �
  assert.equal(groups.length,23);
  for(const [,id,cycle,delay] of groups)assert.ok(css.includes(`#dark-erp-screen-scene #${id}{--cycle:${cycle}s;--delay:${delay}s}`));
 });
+
+test('일곱 올리브 열매는 라이트의 올리브색·다크의 붉은색이며 재생성해도 중복되지 않는다',async()=>{
+ const {colorOliveFruits}=await import('../scripts/color-olive-fruits.mjs');
+ for(const [theme,file,color] of [['light','team-collaboration-animated.svg','#87913E'],['dark','team-collaboration-dark.svg','#D15F60']]){
+  const svg=await readFile(new URL('../assets/images/'+file,import.meta.url),'utf8');
+  assert.equal((svg.match(/class="olive-fruit"/g)||[]).length,7);
+  assert.ok(svg.includes(`stop-color="${color}"`));
+  assert.equal(colorOliveFruits(svg,theme),svg);
+  const fruits=[...svg.matchAll(/<ellipse class="olive-fruit"[^>]+>/g)];
+  for(const [i,fruit] of fruits.entries()){
+   assert.ok(fruit[0].includes(`data-fruit="${i+1}"`));
+   assert.doesNotMatch(fruit[0],/animation|ui-motion|transform/);
+  }
+ }
+});

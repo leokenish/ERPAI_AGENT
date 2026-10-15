@@ -5154,5 +5154,95 @@
   {
     "path": "sources/github-erp-ai/520ac77046f5/무제.md",
     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "sources/conversations/20261014-shared/erp-obsidian-knowledge-map/integration-index.json",
+    "sha256": "4042aa5e1f37775ef069d1b11e0c508ae7979719a1572a02baab14416140bc51",
+    "bytes": 2010
+  },
+  {
+    "path": "sources/conversations/20261014-shared/erp-obsidian-knowledge-map/converted-conversation.json",
+    "sha256": "520e2b3eb1e181ae0e6a2738f37933e7ea1df5a77a2ff16b3b0fdabe684d6680",
+    "bytes": 198198
+  },
+  {
+    "path": "sources/conversations/20261014-shared/erp-obsidian-knowledge-map/rendered-conversation.json",
+    "sha256": "b27123b0eebd981f963117b4c9066755225d0bff23cc14ca7ee1d0eeacc61761",
+    "bytes": 159845
+  },
+  {
+    "path": "sources/conversations/20261014-shared/kbs-erp-webgui-refactor/integration-index.json",
+    "sha256": "ded9cbff663c7ed9236210fb034d064827bbb3fee63b21d518f08cb029f4f352",
+    "bytes": 3920
+  },
+  {
+    "path": "sources/conversations/20261014-shared/kbs-erp-webgui-refactor/converted-conversation.json",
+    "sha256": "546d82b4afad2e4b7379d7d3eb581de1415c9a6990b89f24ef3f2e96ab381719",
+    "bytes": 559101
+  },
+  {
+    "path": "sources/conversations/20261014-shared/kbs-erp-webgui-refactor/rendered-conversation.json",
+    "sha256": "3d91f9650feea5a3b42773e370907bf059876d12e25baca9cad28c2506311546",
+    "bytes": 449147
+  },
+  {
+    "path": "sources/conversations/20261014-shared/kbs-erp-mcp-telegram/integration-index.json",
+    "sha256": "6d4da290bd1df439d71be2b872256a728dc8447701424856e75282fe5e22b76d",
+    "bytes": 2541
+  },
+  {
+    "path": "sources/conversations/20261014-shared/kbs-erp-mcp-telegram/converted-conversation.json",
+    "sha256": "4bdcee664079bc93407024bbb56d27ea1c59b5f11cbbc910cc7de3b513b15b98",
+    "bytes": 496905
+  },
+  {
+    "path": "sources/conversations/20261014-shared/kbs-erp-mcp-telegram/rendered-conversation.json",
+    "sha256": "f6b0ac61b1f3743fad1b890b6185e659432d7469f11a657b94fd39ed77d0f62b",
+    "bytes": 418944
+  },
+  {
+    "path": "sources/conversations/20261014-shared/erp-agent-communication/integration-index.json",
+    "sha256": "e3d3a9424750cb1f32ea685f53e9044a2f5280f5e861ddd8fab0efdf16731089",
+    "bytes": 2294
+  },
+  {
+    "path": "sources/conversations/20261014-shared/erp-agent-communication/converted-conversation.json",
+    "sha256": "f5873cb29f19d2d1ee899df62c56a7205c2281372a364a422997bb5faa772248",
+    "bytes": 362543
+  },
+  {
+    "path": "sources/conversations/20261014-shared/erp-agent-communication/rendered-conversation.json",
+    "sha256": "868c3b1e00d5f281c47aace3ecbd69d8357060b86c4384e1d65b04cc45c280eb",
+    "bytes": 300731
+  },
+  {
+    "path": "sources/conversations/20261014-shared/erp-obsidian-knowledge-map/attachments/erp-obsidian-knowledge-map_교육대화추출_20261012.zip",
+    "sha256": "d0a16fbfa59588aef59b4df3918910897cec7c2b33b4746cb848949434f14fa6",
+    "bytes": 121845
+  },
+  {
+    "path": "sources/conversations/20261014-shared/kbs-erp-webgui-refactor/attachments/kbs-erp-webgui-refactor_교육대화추출_20261012.zip",
+    "sha256": "ba125fa3899db72a2e3820817bf846bdeba665b2451acdfa65624b9600d6c125",
+    "bytes": 6209273
+  },
+  {
+    "path": "sources/conversations/20261014-shared/kbs-erp-webgui-refactor/attachments/ERP_CSS_Modernized.zip",
+    "sha256": "fcac786227bec0da31e1e9f0d0862261bab1383638bd6ab2929d91dfcc1a43d3",
+    "bytes": 17683
+  },
+  {
+    "path": "sources/conversations/20261014-shared/kbs-erp-mcp-telegram/attachments/kbs-erp-mcp-telegram_교육대화추출_20261012.zip",
+    "sha256": "f50a78c4e373a98f8332c44446aaf42b5f81f9efe3f8de3dc54ca0d0329d9a1c",
+    "bytes": 153293
+  },
+  {
+    "path": "sources/conversations/20261014-shared/erp-agent-communication/attachments/erp-agent-communication_교육대화추출_20261012.zip",
+    "sha256": "58df3a36aa2679b34f88691d108f8fa21c2b23c0045983d1cc87f309de126a0d",
+    "bytes": 234938
+  },
+  {
+    "path": "sources/conversations/20261014-shared/html_to_markdown.py",
+    "sha256": "2a6e4f5584eb370543cccf4475077184af3ef23f0605c0916fcb9355aa3edb46",
+    "bytes": 4630
   }
 ]

@@ -8,7 +8,7 @@ import {renderKnowledge,mountKnowledge} from '../site/knowledge.js';
 const data=JSON.parse(await readFile(new URL('../dist/data/portal.json',import.meta.url),'utf8'));
 const source=(await readFile(new URL('../site/app.js',import.meta.url),'utf8')).replace(/^import .+;$/gm,'');
 function fixture(hash){
- const elements=new Map(),events={},windowEvents={},graphNodes=[],copied=[],presentationLifecycle=[];
+ const elements=new Map(),events={},windowEvents={},graphNodes=[],copied=[],presentationLifecycle=[],heroLifecycle=[];
  const classes=()=>({add(){},remove(){},contains(){return false;},toggle(){return false;}});
  const element=id=>{
   if(!elements.has(id))elements.set(id,{id,innerHTML:'',textContent:'',hidden:false,classList:classes(),setAttribute(){},addEventListener(){},querySelectorAll(){return [];},focus(){},scrollIntoView(){}});
@@ -17,8 +17,8 @@ function fixture(hash){
  for(const id of ['sap','export','git','knowledge','codex','diag','maps','feedback'])graphNodes.push({dataset:{node:id},classList:classes(),setAttribute(){}});
  const location={hash};
  const document={body:{classList:classes()},querySelector(s){if(s==='#compare-preset'||s==='dialog[open]'||s==='.hero')return null;if(s==='[data-presentation]')return element('presentation');return s.startsWith('#')?element(s.slice(1)):null;},querySelectorAll(s){return s==='.graph-node'?graphNodes:[];},getElementById:element,addEventListener(type,fn){events[type]=fn;}};
- const context=vm.createContext({...conversations,renderKnowledge,mountKnowledge,renderPresentation,mountPresentation(root){assert.equal(root.id,'presentation');presentationLifecycle.push('mount');return ()=>presentationLifecycle.push('cleanup');},mountHeroMotion(){return ()=>{};},document,location,history:{replaceState(a,b,url){location.hash=url;}},localStorage:{getItem(){return null;}},window:{scrollTo(){},addEventListener(type,fn){windowEvents[type]=fn;},isSecureContext:true},navigator:{clipboard:{async writeText(text){copied.push(text);}}},URLSearchParams,fetch:async()=>({ok:true,json:async()=>data}),console,setTimeout,clearTimeout});
- return {context,elements,events,windowEvents,location,copied,presentationLifecycle};
+ const context=vm.createContext({...conversations,renderKnowledge,mountKnowledge,renderPresentation,mountPresentation(root){assert.equal(root.id,'presentation');presentationLifecycle.push('mount');return ()=>presentationLifecycle.push('cleanup');},mountHeroMotion(root,options){assert.equal(options?.alreadyTyped,undefined);heroLifecycle.push('mount');return ()=>heroLifecycle.push('cleanup');},document,location,history:{replaceState(a,b,url){location.hash=url;}},localStorage:{getItem(){return null;}},window:{scrollTo(){},addEventListener(type,fn){windowEvents[type]=fn;},isSecureContext:true},navigator:{clipboard:{async writeText(text){copied.push(text);}}},URLSearchParams,fetch:async()=>({ok:true,json:async()=>data}),console,setTimeout,clearTimeout});
+ return {context,elements,events,windowEvents,location,copied,presentationLifecycle,heroLifecycle};
 }
 function target(attribute,dataset){return {dataset,closest(){return this;},matches(selector){return selector===`[${attribute}]`;}};}
 test('발표의 직접 주소·방향키·버튼·종료에서 화면과 타이핑 생명주기를 연결한다',async()=>{
@@ -40,7 +40,7 @@ test('복사 버튼은 화면에 표시한 사용자 교육 문장과 AI 답변�
  const reply=data.conversations.projects.find(p=>p.id===projectId).messages.find(m=>m.role==='assistant');
  f.events.click({target:target('data-chat-copy',{projectId,chatCopy})});
  f.events.click({target:target('data-chat-copy',{projectId,chatCopy:reply.id})});
- assert.deepEqual(f.copied,[m.editorial_markdown,reply.content_markdown]);
+ assert.deepEqual(f.copied,[m.editorial_markdown,reply.editorial_markdown??reply.content_markdown]);
 });
 test('구성 요소 선택 후 프로젝트·에피소드·해설을 바꿔도 같은 화면에서 올바른 대화와 주소가 연결된다',async()=>{
  const f=fixture('#/map/core?node=export');await vm.runInContext(`(async()=>{${source}})()`,f.context);
@@ -63,7 +63,7 @@ test('단독 대화에서 항목을 차례로 펼치고 다음 에피소드로 �
  const f=fixture('#/conversations/erp-obsidian-knowledge-map/obs-e003');await vm.runInContext(`(async()=>{${source}})()`,f.context);
  assert.equal((f.elements.get('main').innerHTML.match(/class="chat-message /g)||[]).length,4);
  f.events.click({target:target('data-conversation-more',{})});
- assert.equal((f.elements.get('conversation-host').innerHTML.match(/class="chat-message /g)||[]).length,5);
+ assert.equal((f.elements.get('conversation-host').innerHTML.match(/class="chat-message /g)||[]).length,6);
  f.events.click({target:target('data-conversation-all',{})});
  assert.equal((f.elements.get('conversation-host').innerHTML.match(/class="chat-message /g)||[]).length,6);
  f.events.click({target:target('data-conversation-episode',{conversationEpisode:'obs-e004'})});
@@ -101,4 +101,11 @@ test('완료 기록 없이 모든 과정의 자료 저장·이전 다음 이동�
  }
  f.events.click({target:target('data-print',{})});assert.equal(prints,1);
  f.location.hash='#/courses';f.windowEvents.hashchange();assert.doesNotMatch(f.elements.get('main').innerHTML,/학습 표시|read-progress/);
+});
+
+test('홈으로 돌아오면 제목 타이핑을 새로 시작하고 기존 생명주기를 정리한다',async()=>{
+ const f=fixture('#/home');await vm.runInContext(`(async()=>{${source}})()`,f.context);
+ f.location.hash='#/courses';f.windowEvents.hashchange();
+ f.location.hash='#/home';f.windowEvents.hashchange();
+ assert.deepEqual(f.heroLifecycle,['mount','cleanup','mount']);
 });

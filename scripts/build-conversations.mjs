@@ -58,6 +58,9 @@ export async function buildConversations(root,out){
  const editorial=JSON.parse(await readFile(path.join(root,'content/conversations/editorial-prompts.json'),'utf8'));
  requireValue(editorial.schema_version==='1.0','unknown editorial schema');
  requireValue(Object.keys(editorial.projects).every(id=>config.projects.some(p=>p.id===id)),'unknown editorial project');
+ const responseEditorial=JSON.parse(await readFile(path.join(root,'content/conversations/editorial-responses.json'),'utf8'));
+ requireValue(responseEditorial.schema_version==='1.0','unknown response editorial schema');
+ requireValue(Object.keys(responseEditorial.projects).every(id=>config.projects.some(p=>p.id===id)),'unknown response editorial project');
  const projects=[];
  for(const meta of config.projects){
   const sourcePath=meta.sourcePath||`${config.sourceRoot}/${meta.id}`;
@@ -66,7 +69,17 @@ export async function buildConversations(root,out){
   const raw=JSON.parse(await readFile(path.join(source,'conversation-data.json'),'utf8'));
   requireValue(raw.project_id===meta.id,'project directory mismatch');
   const messages=validateConversation(raw);
+  const progressIds=new Set(meta.progressMessageIds||[]);
+  for(const id of progressIds)requireValue(messages.some(m=>m.id===id&&m.role==='assistant'&&m.content_type==='verbatim'),`invalid progress message ${meta.id}/${id}`);
   const edits=editorial.projects[meta.id]||{};
+  const responseEdits=responseEditorial.projects[meta.id]||{};
+  for(const [id,edit] of Object.entries(responseEdits)){
+   const m=messages.find(m=>m.id===id);
+   requireValue(m?.role==='assistant'&&m.content_markdown.trim(),`response editorial target is not assistant text ${meta.id}/${id}`);
+   requireValue(edit.source_sha256===createHash('sha256').update(m.content_markdown).digest('hex'),`stale response editorial source ${meta.id}/${id}`);
+   requireValue(edit.source_content_type===m.content_type,`response editorial provenance mismatch ${meta.id}/${id}`);
+   requireValue(typeof edit.content_markdown==='string'&&edit.content_markdown.trim(),`empty response editorial text ${meta.id}/${id}`);
+  }
   for(const [id,edit] of Object.entries(edits)){
    const m=messages.find(m=>m.id===id);
    requireValue(m?.role==='user'&&m.content_markdown.trim(),`editorial target is not a user text ${meta.id}/${id}`);
@@ -74,19 +87,28 @@ export async function buildConversations(root,out){
    requireValue(typeof edit.content_markdown==='string'&&edit.content_markdown.trim(),`empty editorial text ${meta.id}/${id}`);
   }
   for(const m of messages)if(m.role==='user'&&m.content_markdown.trim())requireValue(edits[m.id],`missing editorial text ${meta.id}/${m.id}`);
-  const assets=[];
+  const assets=[],publishedAssets=new Map();
   for(const original of raw.assets){
    const a={...original,publicPath:null};
    if(a.availability==='included'){
-    const input=safePath(assetSource,a.path);
+    const input=safePath(a.asset_root?safePath(root,a.asset_root):assetSource,a.path);
     requireValue((await stat(input)).isFile(),`missing included asset ${a.id}`);
     if(a.kind==='image'){
      requireValue(/\.(png|jpe?g|webp)$/i.test(input),'unsupported image');
      a.publicPath=`assets/conversations/${meta.id}/${a.id}${path.extname(input).toLowerCase()}`;
      const target=path.join(out,a.publicPath);await mkdir(path.dirname(target),{recursive:true});await copyFile(input,target);
     }
+    if(meta.publishAttachments&&a.kind!=='image'){
+     requireValue(/\.(zip|md|txt|json|mjs|js|py|css|diff|csv|ya?ml)$/i.test(input),'unsupported attachment');
+     const bytes=await readFile(input),hash=createHash('sha256').update(bytes).digest('hex');
+     if(a.sha256)requireValue(a.sha256===hash,`attachment hash mismatch ${a.id}`);
+     a.sha256=hash;
+     const key=hash+path.extname(input).toLowerCase();
+     a.publicPath=publishedAssets.get(key)||`downloads/conversations/${meta.id}/attachments/${a.id}${path.extname(input).toLowerCase()}`;
+     if(!publishedAssets.has(key)){const target=path.join(out,a.publicPath);await mkdir(path.dirname(target),{recursive:true});await copyFile(input,target);publishedAssets.set(key,a.publicPath);}
+    }
     // Reuse the already-curated download instead of publishing source archives.
-    if(meta.id==='erp-agent-communication'&&a.id==='asset-node-zip')a.publicPath='downloads/ERP_MCP_NodeJS_Example.zip';
+    if(!meta.publishAttachments&&meta.id==='erp-agent-communication'&&a.id==='asset-node-zip')a.publicPath='downloads/ERP_MCP_NodeJS_Example.zip';
    }
    assets.push(a);
   }
@@ -102,12 +124,19 @@ export async function buildConversations(root,out){
   await copyFile(path.join(source,'conversation-data.json'),path.join(out,documents['conversation-data.json']));
   const resolveURL=conversationResolver(assets,documents);
   const render=(text,key)=>renderMarkdown(text.replace(/[^]*/g,'[당시 답변의 출처 표기]'),{headingPrefix:`cv-${meta.id}-${key}-`,keepTitle:true,headingOffset:2,resolveURL}).html;
-  const episodes=raw.episodes.map(e=>{
+  for(const [episodeId,additions] of Object.entries(meta.episodeMessageAdditions||{})){
+   requireValue(raw.episodes.some(e=>e.id===episodeId),`unknown episode extension ${meta.id}/${episodeId}`);
+   requireValue(Array.isArray(additions)&&additions.every(id=>messages.some(m=>m.id===id)),`invalid episode messages ${meta.id}/${episodeId}`);
+  }
+  const episodes=raw.episodes.map(original=>{
+   const ids=new Set([...original.message_refs,...(meta.episodeMessageAdditions?.[original.id]||[])]);
+   const e={...original,message_refs:messages.filter(m=>ids.has(m.id)).map(m=>m.id)};
    const exercise=e.exercise_markdown.replaceAll('주십시오','주세요').replaceAll('마십시오','마세요');
    const refs=new Set([...e.asset_ids,...messages.filter(m=>e.message_refs.includes(m.id)).flatMap(m=>m.asset_ids)]);
    return {...e,exercise_markdown:exercise,asset_ids:[...refs],isMeta:meta.metaEpisodes.includes(e.id),commentaryHtml:render(e.commentary_markdown,`${e.id}-commentary`),outcomeHtml:render(e.outcome_markdown,`${e.id}-outcome`),exerciseHtml:render(exercise,`${e.id}-exercise`)};
   });
-  const preparedMessages=messages.map(m=>({...m,html:render(m.content_markdown,m.id),...(edits[m.id]?{editorial_markdown:edits[m.id].content_markdown,editorialHtml:render(edits[m.id].content_markdown,`${m.id}-editorial`)}:{})}));
+  const displayEdits={...edits,...responseEdits};
+  const preparedMessages=messages.map(m=>({...m,...(progressIds.has(m.id)?{delivery_kind:'progress'}:{}),html:render(m.content_markdown,m.id),...(displayEdits[m.id]?{editorial_markdown:displayEdits[m.id].content_markdown,editorialHtml:render(displayEdits[m.id].content_markdown,`${m.id}-editorial`)}:{})}));
   const counts={messages:messages.length,episodes:episodes.length,verbatim:0,excerpt:0,summary:0,reconstructed:0,unavailable:0};
   for(const m of messages)counts[m.content_type]++;
   const context=await readFile(path.join(source,'01_PROJECT_CONTEXT.md'),'utf8');
