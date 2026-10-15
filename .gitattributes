@@ -1,2 +1,0 @@
-# Preserve source bytes and their recorded hashes across Windows checkouts.
-sources/** -text
