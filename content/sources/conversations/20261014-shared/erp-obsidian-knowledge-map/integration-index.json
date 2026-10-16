@@ -1,0 +1,106 @@
+{
+  "project_id": "erp-obsidian-knowledge-map",
+  "shared_url": "https://chatgpt.com/share/6acf6cf5-03fc-83e8-9921-90f3229f7fd0",
+  "visible_turns": 18,
+  "turn_to_messages": {
+    "1": [
+      "obs-m001"
+    ],
+    "2": [
+      "obs-m002"
+    ],
+    "3": [
+      "obs-m003"
+    ],
+    "4": [
+      "obs-m005"
+    ],
+    "5": [
+      "obs-m006"
+    ],
+    "6": [
+      "obs-m007"
+    ],
+    "7": [
+      "obs-m008"
+    ],
+    "8": [
+      "obs-m009"
+    ],
+    "9": [
+      "obs-m010"
+    ],
+    "10": [
+      "obs-m011"
+    ],
+    "11": [
+      "obs-m012"
+    ],
+    "12": [
+      "obs-m013"
+    ],
+    "13": [
+      "obs-m014"
+    ],
+    "14": [
+      "obs-m015"
+    ],
+    "15": [
+      "obs-m016"
+    ],
+    "16": [
+      "obs-m024"
+    ],
+    "17": [
+      "obs-m025"
+    ],
+    "18": [
+      "SHARED-018"
+    ]
+  },
+  "new_ids": [
+    "SHARED-018"
+  ],
+  "replaced_ids": [
+    "obs-m002",
+    "obs-m005",
+    "obs-m007",
+    "obs-m009",
+    "obs-m011",
+    "obs-m013",
+    "obs-m024",
+    "obs-m025"
+  ],
+  "preserved_previous_ids": [
+    "obs-m001",
+    "obs-m002",
+    "obs-m003",
+    "obs-m004",
+    "obs-m005",
+    "obs-m006",
+    "obs-m007",
+    "obs-m008",
+    "obs-m009",
+    "obs-m010",
+    "obs-m011",
+    "obs-m012",
+    "obs-m013",
+    "obs-m014",
+    "obs-m015",
+    "obs-m016",
+    "obs-m017",
+    "obs-m018",
+    "obs-m019",
+    "obs-m020",
+    "obs-m021",
+    "obs-m022",
+    "obs-m023",
+    "obs-m024",
+    "obs-m025"
+  ],
+  "missing": [
+    "공유 링크 밖의 다른 대화방·분기와 플랫폼 전체 내보내기, 공유 화면에 표시되지 않은 추가 진행 기록은 확인하지 못했습니다.",
+    "개별 발화의 정확한 시각은 공유 화면에서 확인되지 않아 기존에 근거가 있는 값만 유지하고 나머지는 null입니다.",
+    "사용자 Mac의 원본 업무 폴더·Vault 설정·생성한 관계 문서·링크 실행 및 속도 비교는 미확인입니다. 포털의 기존 그래프 캡처는 별도 제공 자료입니다."
+  ]
+}

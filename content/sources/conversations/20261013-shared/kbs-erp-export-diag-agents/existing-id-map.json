@@ -1,0 +1,768 @@
+{
+  "previous_source": "20261012-supplement/kbs-erp-export-diag-agents/conversation-data.json",
+  "matches": [
+    {
+      "previous_id": "U002",
+      "shared_id": "SHARE-055",
+      "pair_number": 28,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-056"
+    },
+    {
+      "previous_id": "U003",
+      "shared_id": "SHARE-057",
+      "pair_number": 29,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-058"
+    },
+    {
+      "previous_id": "U004",
+      "shared_id": "SHARE-059",
+      "pair_number": 30,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-060"
+    },
+    {
+      "previous_id": "U005",
+      "shared_id": "SHARE-061",
+      "pair_number": 31,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-062"
+    },
+    {
+      "previous_id": "U006",
+      "shared_id": "SHARE-063",
+      "pair_number": 32,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-064"
+    },
+    {
+      "previous_id": "U007",
+      "shared_id": "SHARE-065",
+      "pair_number": 33,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-066"
+    },
+    {
+      "previous_id": "U008",
+      "shared_id": "SHARE-067",
+      "pair_number": 34,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-068"
+    },
+    {
+      "previous_id": "U009",
+      "shared_id": "SHARE-069",
+      "pair_number": 35,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-070"
+    },
+    {
+      "previous_id": "U010",
+      "shared_id": "SHARE-071",
+      "pair_number": 36,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-072"
+    },
+    {
+      "previous_id": "U011",
+      "shared_id": "SHARE-073",
+      "pair_number": 37,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-074"
+    },
+    {
+      "previous_id": "U012",
+      "shared_id": "SHARE-075",
+      "pair_number": 38,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-076"
+    },
+    {
+      "previous_id": "U014",
+      "shared_id": "SHARE-079",
+      "pair_number": 40,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-080"
+    },
+    {
+      "previous_id": "U015",
+      "shared_id": "SHARE-081",
+      "pair_number": 41,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-082"
+    },
+    {
+      "previous_id": "U016",
+      "shared_id": "SHARE-083",
+      "pair_number": 42,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-084"
+    },
+    {
+      "previous_id": "U017",
+      "shared_id": "SHARE-085",
+      "pair_number": 43,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-086"
+    },
+    {
+      "previous_id": "U018",
+      "shared_id": "SHARE-087",
+      "pair_number": 44,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-088"
+    },
+    {
+      "previous_id": "U019",
+      "shared_id": "SHARE-089",
+      "pair_number": 45,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-090"
+    },
+    {
+      "previous_id": "U020",
+      "shared_id": "SHARE-091",
+      "pair_number": 46,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-092"
+    },
+    {
+      "previous_id": "U021",
+      "shared_id": "SHARE-093",
+      "pair_number": 47,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-094"
+    },
+    {
+      "previous_id": "U022",
+      "shared_id": "SHARE-095",
+      "pair_number": 48,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-096"
+    },
+    {
+      "previous_id": "U023",
+      "shared_id": "SHARE-097",
+      "pair_number": 49,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-098"
+    },
+    {
+      "previous_id": "U024",
+      "shared_id": "SHARE-099",
+      "pair_number": 50,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-100"
+    },
+    {
+      "previous_id": "U025",
+      "shared_id": "SHARE-101",
+      "pair_number": 51,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-102"
+    },
+    {
+      "previous_id": "U026",
+      "shared_id": "SHARE-103",
+      "pair_number": 52,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-104"
+    },
+    {
+      "previous_id": "U027",
+      "shared_id": "SHARE-105",
+      "pair_number": 53,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-106"
+    },
+    {
+      "previous_id": "U028",
+      "shared_id": "SHARE-107",
+      "pair_number": 54,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-108"
+    },
+    {
+      "previous_id": "U029",
+      "shared_id": "SHARE-109",
+      "pair_number": 55,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-110"
+    },
+    {
+      "previous_id": "U030",
+      "shared_id": "SHARE-111",
+      "pair_number": 56,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-112"
+    },
+    {
+      "previous_id": "U031",
+      "shared_id": "SHARE-111",
+      "pair_number": 56,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-112"
+    },
+    {
+      "previous_id": "U032",
+      "shared_id": "SHARE-113",
+      "pair_number": 57,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-114"
+    },
+    {
+      "previous_id": "U033",
+      "shared_id": "SHARE-115",
+      "pair_number": 58,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-116"
+    },
+    {
+      "previous_id": "U034",
+      "shared_id": "SHARE-117",
+      "pair_number": 59,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-118"
+    },
+    {
+      "previous_id": "U035",
+      "shared_id": "SHARE-119",
+      "pair_number": 60,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-120"
+    },
+    {
+      "previous_id": "U036",
+      "shared_id": "SHARE-121",
+      "pair_number": 61,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-122"
+    },
+    {
+      "previous_id": "U037",
+      "shared_id": "SHARE-123",
+      "pair_number": 62,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-124"
+    },
+    {
+      "previous_id": "U038",
+      "shared_id": "SHARE-125",
+      "pair_number": 63,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-126"
+    },
+    {
+      "previous_id": "U039",
+      "shared_id": "SHARE-127",
+      "pair_number": 64,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-128"
+    },
+    {
+      "previous_id": "U040",
+      "shared_id": "SHARE-129",
+      "pair_number": 65,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-130"
+    },
+    {
+      "previous_id": "U041",
+      "shared_id": "SHARE-131",
+      "pair_number": 66,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-132"
+    },
+    {
+      "previous_id": "U043",
+      "shared_id": "SHARE-135",
+      "pair_number": 68,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-136"
+    },
+    {
+      "previous_id": "U044",
+      "shared_id": "SHARE-137",
+      "pair_number": 69,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-138"
+    },
+    {
+      "previous_id": "U045",
+      "shared_id": "SHARE-139",
+      "pair_number": 70,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-140"
+    },
+    {
+      "previous_id": "U046",
+      "shared_id": "SHARE-141",
+      "pair_number": 71,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-142"
+    },
+    {
+      "previous_id": "U047",
+      "shared_id": "SHARE-143",
+      "pair_number": 72,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-144"
+    },
+    {
+      "previous_id": "U048",
+      "shared_id": "SHARE-145",
+      "pair_number": 73,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-146"
+    },
+    {
+      "previous_id": "U049",
+      "shared_id": "SHARE-147",
+      "pair_number": 74,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-148"
+    },
+    {
+      "previous_id": "U050",
+      "shared_id": "SHARE-149",
+      "pair_number": 75,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-150"
+    },
+    {
+      "previous_id": "U051",
+      "shared_id": "SHARE-151",
+      "pair_number": 76,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-152"
+    },
+    {
+      "previous_id": "U052",
+      "shared_id": "SHARE-153",
+      "pair_number": 77,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-154"
+    },
+    {
+      "previous_id": "U053",
+      "shared_id": "SHARE-155",
+      "pair_number": 78,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-156"
+    },
+    {
+      "previous_id": "U054",
+      "shared_id": "SHARE-157",
+      "pair_number": 79,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-158"
+    },
+    {
+      "previous_id": "U055",
+      "shared_id": "SHARE-159",
+      "pair_number": 80,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-160"
+    },
+    {
+      "previous_id": "U056",
+      "shared_id": "SHARE-161",
+      "pair_number": 81,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-162"
+    },
+    {
+      "previous_id": "U057",
+      "shared_id": "SHARE-163",
+      "pair_number": 82,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-164"
+    },
+    {
+      "previous_id": "U058",
+      "shared_id": "SHARE-165",
+      "pair_number": 83,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-166"
+    },
+    {
+      "previous_id": "U059",
+      "shared_id": "SHARE-167",
+      "pair_number": 84,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-168"
+    },
+    {
+      "previous_id": "U060",
+      "shared_id": "SHARE-169",
+      "pair_number": 85,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-170"
+    },
+    {
+      "previous_id": "U061",
+      "shared_id": "SHARE-171",
+      "pair_number": 86,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-172"
+    },
+    {
+      "previous_id": "U062",
+      "shared_id": "SHARE-173",
+      "pair_number": 87,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-174"
+    },
+    {
+      "previous_id": "U063",
+      "shared_id": "SHARE-175",
+      "pair_number": 88,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-176"
+    },
+    {
+      "previous_id": "U065",
+      "shared_id": "SHARE-181",
+      "pair_number": 91,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-182"
+    },
+    {
+      "previous_id": "U066",
+      "shared_id": "SHARE-183",
+      "pair_number": 92,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-184"
+    },
+    {
+      "previous_id": "U067",
+      "shared_id": "SHARE-185",
+      "pair_number": 93,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-186"
+    },
+    {
+      "previous_id": "U068",
+      "shared_id": "SHARE-187",
+      "pair_number": 94,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-188"
+    },
+    {
+      "previous_id": "U069",
+      "shared_id": "SHARE-189",
+      "pair_number": 95,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-190"
+    },
+    {
+      "previous_id": "U070",
+      "shared_id": "SHARE-191",
+      "pair_number": 96,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-192"
+    },
+    {
+      "previous_id": "U071",
+      "shared_id": "SHARE-193",
+      "pair_number": 97,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-194"
+    },
+    {
+      "previous_id": "U072",
+      "shared_id": "SHARE-195",
+      "pair_number": 98,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-196"
+    },
+    {
+      "previous_id": "U073",
+      "shared_id": "SHARE-197",
+      "pair_number": 99,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-198"
+    },
+    {
+      "previous_id": "U074",
+      "shared_id": "SHARE-199",
+      "pair_number": 100,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-200"
+    },
+    {
+      "previous_id": "U075",
+      "shared_id": "SHARE-201",
+      "pair_number": 101,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-202"
+    },
+    {
+      "previous_id": "U076",
+      "shared_id": "SHARE-203",
+      "pair_number": 102,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-204"
+    },
+    {
+      "previous_id": "U077",
+      "shared_id": "SHARE-205",
+      "pair_number": 103,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-206"
+    },
+    {
+      "previous_id": "U078",
+      "shared_id": "SHARE-207",
+      "pair_number": 104,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-208"
+    },
+    {
+      "previous_id": "U079",
+      "shared_id": "SHARE-209",
+      "pair_number": 105,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-210"
+    },
+    {
+      "previous_id": "U080",
+      "shared_id": "SHARE-211",
+      "pair_number": 106,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-212"
+    },
+    {
+      "previous_id": "U082",
+      "shared_id": "SHARE-215",
+      "pair_number": 108,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-216"
+    },
+    {
+      "previous_id": "U084",
+      "shared_id": "SHARE-219",
+      "pair_number": 110,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-220"
+    },
+    {
+      "previous_id": "U085",
+      "shared_id": "SHARE-221",
+      "pair_number": 111,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-222"
+    },
+    {
+      "previous_id": "U086",
+      "shared_id": "SHARE-223",
+      "pair_number": 112,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-224"
+    },
+    {
+      "previous_id": "U087",
+      "shared_id": "SHARE-225",
+      "pair_number": 113,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-226"
+    },
+    {
+      "previous_id": "U088",
+      "shared_id": "SHARE-227",
+      "pair_number": 114,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-228"
+    },
+    {
+      "previous_id": "U089",
+      "shared_id": "SHARE-229",
+      "pair_number": 115,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-230"
+    },
+    {
+      "previous_id": "U090",
+      "shared_id": "SHARE-231",
+      "pair_number": 116,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-232"
+    },
+    {
+      "previous_id": "U091",
+      "shared_id": "SHARE-233",
+      "pair_number": 117,
+      "role": "user",
+      "method": "unique_exact_match_after_whitespace_and_markdown_escape_normalization",
+      "assistant_response_id": "SHARE-234"
+    }
+  ],
+  "unmatched": [
+    {
+      "previous_id": "U013",
+      "role": "user",
+      "reason": "no_unique_exact_match"
+    },
+    {
+      "previous_id": "U042",
+      "role": "user",
+      "reason": "no_unique_exact_match"
+    },
+    {
+      "previous_id": "U064",
+      "role": "user",
+      "reason": "no_unique_exact_match"
+    },
+    {
+      "previous_id": "U081",
+      "role": "user",
+      "reason": "no_unique_exact_match"
+    },
+    {
+      "previous_id": "U083",
+      "role": "user",
+      "reason": "no_unique_exact_match"
+    },
+    {
+      "previous_id": "A001",
+      "role": "assistant",
+      "reason": "no_unique_exact_match"
+    },
+    {
+      "previous_id": "A002",
+      "role": "assistant",
+      "reason": "no_unique_exact_match"
+    },
+    {
+      "previous_id": "A003",
+      "role": "assistant",
+      "reason": "no_unique_exact_match"
+    },
+    {
+      "previous_id": "A004",
+      "role": "assistant",
+      "reason": "no_unique_exact_match"
+    },
+    {
+      "previous_id": "U092",
+      "role": "user",
+      "reason": "no_unique_exact_match"
+    },
+    {
+      "previous_id": "A005",
+      "role": "assistant",
+      "reason": "no_unique_exact_match"
+    },
+    {
+      "previous_id": "A006",
+      "role": "assistant",
+      "reason": "no_unique_exact_match"
+    },
+    {
+      "previous_id": "U093",
+      "role": "user",
+      "reason": "no_unique_exact_match"
+    },
+    {
+      "previous_id": "A007",
+      "role": "assistant",
+      "reason": "no_unique_exact_match"
+    },
+    {
+      "previous_id": "A008",
+      "role": "assistant",
+      "reason": "no_unique_exact_match"
+    },
+    {
+      "previous_id": "A009",
+      "role": "assistant",
+      "reason": "no_unique_exact_match"
+    }
+  ],
+  "note": "매칭되지 않은 항목을 유사도만으로 연결하지 않았다. 기존 포털 파일은 변경하지 않았다."
+}

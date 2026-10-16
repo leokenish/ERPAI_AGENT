@@ -1,0 +1,306 @@
+[
+  {
+    "id": "webgui-asset-001",
+    "original_filename": "ITS_SYSTEM.zip",
+    "path": "unavailable/webgui-asset-001",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "webgui-t002-u1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "webgui"
+  },
+  {
+    "id": "webgui-asset-002",
+    "original_filename": "ITS_WEBGUI.zip",
+    "path": "unavailable/webgui-asset-002",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "webgui-t002-u1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "webgui"
+  },
+  {
+    "id": "webgui-asset-003",
+    "original_filename": "KBS_WebGUI_Modern_v1.zip",
+    "path": "unavailable/webgui-asset-003",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "webgui-t002-a1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "webgui"
+  },
+  {
+    "id": "webgui-asset-004",
+    "original_filename": "WebGUI_Report.html",
+    "path": "unavailable/webgui-asset-004",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "webgui-t002-a1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "webgui"
+  },
+  {
+    "id": "webgui-asset-005",
+    "original_filename": "WebGUI_Comparison.html",
+    "path": "unavailable/webgui-asset-005",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "webgui-t002-a1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "webgui"
+  },
+  {
+    "id": "webgui-asset-006",
+    "original_filename": "image.png",
+    "path": "assets/webgui-asset-006.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "webgui-t002-u1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "webgui",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-webgui-refactor",
+    "sha256": "ee0c5d1b06bea3b5ce6ec2714259745de3de063dd2ae32e53bfd077cf5313698"
+  },
+  {
+    "id": "webgui-asset-007",
+    "original_filename": "image(1).png",
+    "path": "assets/webgui-asset-007.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "webgui-t002-u1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "webgui",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-webgui-refactor",
+    "sha256": "53c3e1e1853abe7a09ca59533deb51fc72aee4604a4348eb944842857d0ba9df"
+  },
+  {
+    "id": "webgui-asset-008",
+    "original_filename": "image(2).png",
+    "path": "assets/webgui-asset-008.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "webgui-t002-u1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "webgui",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-webgui-refactor",
+    "sha256": "f6d6deea0aa6ec7437eb905a5a2790c7e2f6d60a0cb75a2b3fe9bb9e52a9af21"
+  },
+  {
+    "id": "webgui-asset-009",
+    "original_filename": "image(3).png",
+    "path": "assets/webgui-asset-009.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "webgui-t002-u1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "webgui",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-webgui-refactor",
+    "sha256": "62fb5f4b8e59ce84826adfacfa70fba34298accbc0c057d4c1b958df745556d4"
+  },
+  {
+    "id": "webgui-asset-010",
+    "original_filename": "image(4).png",
+    "path": "assets/webgui-asset-010.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "webgui-t002-u1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "webgui",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-webgui-refactor",
+    "sha256": "90a459c46ce7dcab585debfa9441b7a153463a9fed8396bed97f2b95a2ba7978"
+  },
+  {
+    "id": "webgui-asset-011",
+    "original_filename": "image(5).png",
+    "path": "assets/webgui-asset-011.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "webgui-t002-u1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "webgui",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-webgui-refactor",
+    "sha256": "20341a4571eb114a80085d940b67b18157be5252b3e02be146622802c88dcba9"
+  },
+  {
+    "id": "webgui-asset-012",
+    "original_filename": "image(6).png",
+    "path": "assets/webgui-asset-012.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "webgui-t002-u1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "webgui",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-webgui-refactor",
+    "sha256": "0fa812681703e4d6d3a82e340e4e3a123f3f1fc3f2158a0443b2033cf2ff7005"
+  },
+  {
+    "id": "webgui-asset-013",
+    "original_filename": "image(7).png",
+    "path": "unavailable/webgui-asset-013",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "webgui-t002-u1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "webgui"
+  },
+  {
+    "id": "webgui-asset-014",
+    "original_filename": "image(8).png",
+    "path": "unavailable/webgui-asset-014",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "webgui-t002-u1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "webgui"
+  },
+  {
+    "id": "webgui-asset-015",
+    "original_filename": "image(9).png",
+    "path": "unavailable/webgui-asset-015",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "webgui-t002-u1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "webgui"
+  },
+  {
+    "id": "webgui-asset-016",
+    "original_filename": "image(10).png",
+    "path": "unavailable/webgui-asset-016",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "webgui-t002-u1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "webgui"
+  },
+  {
+    "id": "webgui-asset-017",
+    "original_filename": "SE80_CSS_21files.zip",
+    "path": "assets/webgui-asset-017.zip",
+    "kind": "archive",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "webgui-t003-a1"
+    ],
+    "source_turn_index": 3,
+    "source_thread": "webgui",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-webgui-refactor",
+    "sha256": "626bd40bcaaf32bbd54aef41ec7e5db334bf72320b5ae32814bdff1a3acce8bc"
+  },
+  {
+    "id": "webgui-asset-018",
+    "original_filename": "WebGUI_V2_Change_Report.html",
+    "path": "unavailable/webgui-asset-018",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "webgui-t005-a1"
+    ],
+    "source_turn_index": 5,
+    "source_thread": "webgui"
+  },
+  {
+    "id": "webgui-asset-019",
+    "original_filename": "SE80_WebGUI_V2_112files.zip",
+    "path": "assets/webgui-asset-019.zip",
+    "kind": "archive",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "webgui-t005-a1"
+    ],
+    "source_turn_index": 5,
+    "source_thread": "webgui",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-webgui-refactor",
+    "sha256": "56b48c0ca31b552e752bafc7c744cb3edbb21b34f05d23772eae2cd927689767"
+  },
+  {
+    "id": "webgui-asset-020",
+    "original_filename": "WebGUI_V2_Comparison.html",
+    "path": "unavailable/webgui-asset-020",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "webgui-t005-a1"
+    ],
+    "source_turn_index": 5,
+    "source_thread": "webgui"
+  },
+  {
+    "id": "webgui-asset-021",
+    "original_filename": "KBS_WebGUI_Modern_v2.zip",
+    "path": "unavailable/webgui-asset-021",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "webgui-t005-a1"
+    ],
+    "source_turn_index": 5,
+    "source_thread": "webgui"
+  },
+  {
+    "id": "webgui-asset-022",
+    "original_filename": "Z_PACKAGE_DIAG_0_4_5(1).abap",
+    "path": "unavailable/webgui-asset-022",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "webgui-t006-u1"
+    ],
+    "source_turn_index": 6,
+    "source_thread": "webgui"
+  }
+]

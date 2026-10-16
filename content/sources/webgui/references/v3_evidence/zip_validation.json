@@ -1,0 +1,20 @@
+[
+  {
+    "file": "ITS_Chrome_v3_Full.zip",
+    "files": 100,
+    "sha256": "fc9e4f4a5e280d11649a89c68e70117c2926bb4a9953d2a930bd4bb0a03d389e",
+    "crcAndContents": true
+  },
+  {
+    "file": "ITS_Chrome_v3_Rollback.zip",
+    "files": 100,
+    "sha256": "3caf2760a74490bf0c2af83440f8693baee7b2b4895bb71502a632d899d0aaa4",
+    "crcAndContents": true
+  },
+  {
+    "file": "ITS_Chrome_v3_Original.zip",
+    "files": 100,
+    "sha256": "87cc69a6b631c06c1547b8cbf29d5e1d5fdedb6f810db60351d42d8f0f44b9ac",
+    "crcAndContents": true
+  }
+]

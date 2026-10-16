@@ -1,0 +1,18 @@
+{
+  "expected_turn_slots": 238,
+  "accounted_turn_slots": 238,
+  "user_bodies": 119,
+  "assistant_bodies": 116,
+  "empty_assistant_slots": 3,
+  "unaccounted_turn_ids": [],
+  "unique_turn_ids": 238,
+  "unique_nonempty_message_ids": 235,
+  "alternating_user_assistant_order": true,
+  "code_blocks_preserved_exactly": 29,
+  "tables_converted": 118,
+  "old_messages_matched_exactly": 85,
+  "old_messages_without_unique_exact_match": 16,
+  "markdown_characters": 220227,
+  "source_sha256": "603d5257ed7d0962d247c63a956a1a6b643b3b8d0c5e92366e34f6566b577f1a",
+  "scope_limit": "Completeness checked against displayed turn slots, not against private server records or other branches."
+}

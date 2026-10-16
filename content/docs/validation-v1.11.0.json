@@ -1,0 +1,19 @@
+{
+  "version": "1.11.0",
+  "asOf": "2026-10-16",
+  "build": "passed",
+  "tests": {
+    "passed": 61,
+    "failed": 0
+  },
+  "original_source_files_preserved": 1206,
+  "source_hashes_verified": 1302,
+  "new_messages": 522,
+  "new_user_requests": 261,
+  "new_ai_bodies": 252,
+  "new_missing_ai_bodies": 9,
+  "new_images": 74,
+  "new_valid_archives": 3,
+  "browser_visual_check": "not_completed_local_file_protocol_blocked",
+  "git_commit_or_push": false
+}

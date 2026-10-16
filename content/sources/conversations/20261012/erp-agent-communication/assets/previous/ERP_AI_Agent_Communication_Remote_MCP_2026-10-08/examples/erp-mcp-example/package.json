@@ -1,0 +1,9 @@
+{
+  "name": "erp-team-mcp-example",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": { "start": "node server.mjs", "worker:mock": "node mock-worker.mjs", "test": "node --test test.mjs" },
+  "dependencies": { "@modelcontextprotocol/sdk": "^1.0.0", "express": "^5.0.0", "zod": "^3.25.0" }
+}

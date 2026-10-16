@@ -1,0 +1,356 @@
+{
+  "htmlFiles": 19,
+  "tagIDNameSequencePreserved": true,
+  "doctypePreserved": true,
+  "css": [
+    {
+      "file": "SYSTEMGUI/CSS/gui.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": true
+    },
+    {
+      "file": "WEBGUI/CSS/calendar.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/columntree.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/columntree_ie.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/dynprolist.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/edit.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/generator.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/gui.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": true
+    },
+    {
+      "file": "WEBGUI/CSS/gui_bar.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/gui_button.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/gui_cua.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/gui_cua_ie.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/gui_dropdown.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": true
+    },
+    {
+      "file": "WEBGUI/CSS/gui_dropdown_ie.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/gui_dynpro_ie6.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/gui_font.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/gui_gridview.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/gui_gridview_ie.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/gui_groupbox.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/gui_input.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/gui_page.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/gui_popup.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/gui_popupresize.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/gui_scroll.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/gui_splitter.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/gui_statusbar.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/gui_tablecontrol.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/gui_tablecontrol_ie.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/gui_toolbar.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/gui_toolbarctrl.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/gui_toolbarctrl_ie.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/gui_ts.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/menu.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    },
+    {
+      "file": "WEBGUI/CSS/searchhelpctrl.css",
+      "existingRulesByteIdentical": true,
+      "focusRuleAdded": false
+    }
+  ],
+  "serializationHTMLParserCases": 7,
+  "dependencies": [
+    {
+      "page": "aboutbox.html",
+      "url": "/mimes/system/sl/script/its_domain.js",
+      "included": true
+    },
+    {
+      "page": "contextmenubase.html",
+      "url": "/mimes/webgui/sl/scripts/wgu_domain.js",
+      "included": true
+    },
+    {
+      "page": "dockingsash.html",
+      "url": "/mimes/webgui/sl/scripts/wgu_domain.js",
+      "included": true
+    },
+    {
+      "page": "dockingsash.html",
+      "url": "/mimes/webgui/sl/scripts/wgu_utils.js",
+      "included": true
+    },
+    {
+      "page": "emptypage.html",
+      "url": "/mimes/system/sl/script/its_domain.js",
+      "included": true
+    },
+    {
+      "page": "endsess.html",
+      "url": "/mimes/system/sl/script/its_domain.js",
+      "included": true
+    },
+    {
+      "page": "framepost.html",
+      "url": "/mimes/system/sl/script/its_domain.js",
+      "included": true
+    },
+    {
+      "page": "framepost.html",
+      "url": "/mimes/system/sl/script/its_utils.js",
+      "included": true
+    },
+    {
+      "page": "hourglass.html",
+      "url": "/mimes/system/sl/script/its_domain.js",
+      "included": true
+    },
+    {
+      "page": "lodingpage.html",
+      "url": "/mimes/system/sl/script/its_domain.js",
+      "included": true
+    },
+    {
+      "page": "menubase.html",
+      "url": "/mimes/system/sl/script/its_domain.js",
+      "included": true
+    },
+    {
+      "page": "menubase.html",
+      "url": "/mimes/system/sl/script/its_utils.js",
+      "included": true
+    },
+    {
+      "page": "perfdisplay.html",
+      "url": "/mimes/system/sl/script/sapwebframework.js",
+      "included": true
+    },
+    {
+      "page": "sheerror.html",
+      "url": "/mimes/webgui/sl/scripts/wgu_domain.js",
+      "included": true
+    },
+    {
+      "page": "shmult.html",
+      "url": "/sap/public/bc/its/mimes/webgui/sl/style/gui_popup.css",
+      "included": true
+    },
+    {
+      "page": "shmult.html",
+      "url": "/sap/public/bc/its/mimes/webgui/sl/style/generator.css",
+      "included": true
+    },
+    {
+      "page": "shmult.html",
+      "url": "/sap/public/bc/its/mimes/webgui/sl/style/gui_input.css",
+      "included": true
+    },
+    {
+      "page": "shmult.html",
+      "url": "/sap/public/bc/its/mimes/webgui/sl/style/searchhelpctrl.css",
+      "included": true
+    },
+    {
+      "page": "shmult.html",
+      "url": "/mimes/webgui/sl/scripts/wgu_domain.js",
+      "included": true
+    },
+    {
+      "page": "shmult.html",
+      "url": "/mimes/webgui/sl/scripts/wgu_utils.js",
+      "included": true
+    },
+    {
+      "page": "shmult.html",
+      "url": "/mimes/webgui/sl/scripts/gui_event.js",
+      "included": true
+    },
+    {
+      "page": "shmult.html",
+      "url": "/mimes/webgui/sl/scripts/gui.js",
+      "included": true
+    },
+    {
+      "page": "shmult.html",
+      "url": "/mimes/webgui/sl/scripts/control.js",
+      "included": true
+    },
+    {
+      "page": "shmult.html",
+      "url": "/mimes/webgui/sl/scripts/searchhelpctrl.js",
+      "included": true
+    },
+    {
+      "page": "shmult.html",
+      "url": "/mimes/webgui/sl/scripts/gui_dropdown.js",
+      "included": true
+    },
+    {
+      "page": "shmult.html",
+      "url": "/sap/public/bc/its/mimes/webgui/sl/style/gui_dropdown.css",
+      "included": true
+    },
+    {
+      "page": "shmult.html",
+      "url": "/mimes/webgui/sl/style/gui_dropdown_ie.css",
+      "included": true
+    },
+    {
+      "page": "splashscreen.html",
+      "url": "/mimes/system/sl/script/its_domain.js",
+      "included": true
+    },
+    {
+      "page": "splittersash.html",
+      "url": "/mimes/webgui/sl/scripts/wgu_domain.js",
+      "included": true
+    },
+    {
+      "page": "splittersash.html",
+      "url": "/mimes/webgui/sl/scripts/wgu_utils.js",
+      "included": true
+    },
+    {
+      "page": "tabstripmenu.html",
+      "url": "/mimes/webgui/sl/scripts/wgu_domain.js",
+      "included": true
+    },
+    {
+      "page": "wgu_empty.html",
+      "url": "/mimes/system/sl/script/its_domain.js",
+      "included": true
+    },
+    {
+      "page": "wgu_pers_emptypage.html",
+      "url": "/mimes/system/sl/script/sapwebframework.js",
+      "included": true
+    },
+    {
+      "page": "wgu_pers_emptypage1.html",
+      "url": "/mimes/system/sl/script/sapwebframework.js",
+      "included": true
+    },
+    {
+      "page": "wgu_pers_emptypage2.html",
+      "url": "/mimes/system/sl/script/sapwebframework.js",
+      "included": true
+    }
+  ],
+  "emptyPages": []
+}

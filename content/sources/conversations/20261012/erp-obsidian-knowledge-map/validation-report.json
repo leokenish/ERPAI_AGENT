@@ -1,0 +1,339 @@
+{
+  "report_type": "current_package_validation",
+  "project_id": "erp-obsidian-knowledge-map",
+  "validated_on": "2026-10-12",
+  "result": "passed",
+  "counts": {
+    "threads": 1,
+    "messages": 25,
+    "user_messages": 9,
+    "assistant_messages": 16,
+    "assistant_final_messages": 8,
+    "assistant_commentary_messages": 8,
+    "episodes": 7,
+    "asset_records": 11,
+    "included_assets": 6,
+    "unavailable_assets": 5,
+    "images": 0,
+    "relative_markdown_links_checked": 57,
+    "archive_files": 11
+  },
+  "checks": {
+    "strict_utf8_json_parses": true,
+    "required_field_sets": true,
+    "unique_ids": true,
+    "message_and_asset_references_exist": true,
+    "message_order_contiguous": true,
+    "known_user_timestamps_chronological": true,
+    "unknown_assistant_timestamps_null": true,
+    "all_messages_represented_in_episodes": true,
+    "episode_refs_in_message_order": true,
+    "included_assets_exist_and_unavailable_paths_null": true,
+    "asset_backreferences_match": true,
+    "relative_markdown_targets_exist_excluding_fenced_and_inline_code_examples": true,
+    "prior_zip_and_four_mds_byte_identical": true,
+    "all_seven_steps_have_eleven_guide_sections": true,
+    "rewritten_prompts_labeled": true,
+    "zip_crc_and_members": true
+  },
+  "transcript_assurance": {
+    "method": "확인 가능한 현재 대화 본문의 수동 전사와 발화 순서 대조. 자동 비교 가능한 플랫폼 내보내기는 미확보.",
+    "platform_export_byte_comparison": false,
+    "cutoff_message_id": "obs-m025",
+    "redacted_message_count": 0,
+    "excluded_after_cutoff": "현재 추출 요청에 답하는 진행 안내와 최종 답변",
+    "historical_tool_results_are_separate": "assets/evidence/20261008_validation_excerpt.json"
+  },
+  "not_tested": [
+    "User Mac original-file preservation",
+    "Obsidian installation, link UI, backlinks or graph",
+    "Codex instruction loading or actual source selection",
+    "ERP business relationship correctness",
+    "SAP runtime or source deployment",
+    "Performance improvement",
+    "Portal UI rendering, server installation or GitHub push"
+  ],
+  "file_hashes": [
+    {
+      "path": "00_README.md",
+      "bytes": 10847,
+      "sha256": "244238a1c28df338817d7cb411abe0fbb38e3d32041cede2a031fa08bb17f3bb"
+    },
+    {
+      "path": "01_PROJECT_CONTEXT.md",
+      "bytes": 17705,
+      "sha256": "48c3fde328c9a4eeef570092f1e58d0fd97d37fa84ac093a2721d1fd62132ff4"
+    },
+    {
+      "path": "02_LEARNING_GUIDE.md",
+      "bytes": 31740,
+      "sha256": "501905f2c016f5bd7844d95a03036df720b0317642b9eeffeb6c298da1672ae5"
+    },
+    {
+      "path": "assets/archives/ERP_Obsidian_교육자료_20261008.zip",
+      "bytes": 36628,
+      "sha256": "a4890a5afc97302131c96be64904b2102327bc2d6e1525741a7c94d7326ba762"
+    },
+    {
+      "path": "assets/evidence/20261008_validation_excerpt.json",
+      "bytes": 2231,
+      "sha256": "f4d13d5f047db2c139a713df59a945c218ee43a0fcdcab07bc1bbd80a38dff48"
+    },
+    {
+      "path": "assets/prior-20261008/00_README.md",
+      "bytes": 11679,
+      "sha256": "17c8cf7f6acf2c197d292b45a807a2fdb1d54a235eafb3b80b6290b75828728b"
+    },
+    {
+      "path": "assets/prior-20261008/01_프로젝트_맥락과설계.md",
+      "bytes": 30308,
+      "sha256": "17cfec32b3b65944309fa688179f6553311d12f05b1c5690b48446ddd68d2eb0"
+    },
+    {
+      "path": "assets/prior-20261008/02_교육과실습.md",
+      "bytes": 30494,
+      "sha256": "95c8c609784048ca2ed6aefdecd95017530276eb59c42194201730021832d261"
+    },
+    {
+      "path": "assets/prior-20261008/03_자료목록과보완사항.md",
+      "bytes": 20471,
+      "sha256": "e5adc0b970bc2f0e5cbfe5454af40d66f8d75a06e98867c36a64d7324be17810"
+    },
+    {
+      "path": "conversation-data.json",
+      "bytes": 83029,
+      "sha256": "a8f464e1048435e3c01a9602e7ab2b86e5799bc9edee8aec5ff39e4f806e4120"
+    }
+  ],
+  "relative_links": [
+    {
+      "file": "00_README.md",
+      "target": "validation-report.json"
+    },
+    {
+      "file": "00_README.md",
+      "target": "00_README.md"
+    },
+    {
+      "file": "00_README.md",
+      "target": "01_PROJECT_CONTEXT.md"
+    },
+    {
+      "file": "00_README.md",
+      "target": "02_LEARNING_GUIDE.md"
+    },
+    {
+      "file": "00_README.md",
+      "target": "conversation-data.json"
+    },
+    {
+      "file": "00_README.md",
+      "target": "validation-report.json"
+    },
+    {
+      "file": "00_README.md",
+      "target": "assets/archives/ERP_Obsidian_교육자료_20261008.zip"
+    },
+    {
+      "file": "00_README.md",
+      "target": "assets/prior-20261008/00_README.md"
+    },
+    {
+      "file": "00_README.md",
+      "target": "assets/prior-20261008/01_프로젝트_맥락과설계.md"
+    },
+    {
+      "file": "00_README.md",
+      "target": "assets/prior-20261008/02_교육과실습.md"
+    },
+    {
+      "file": "00_README.md",
+      "target": "assets/prior-20261008/03_자료목록과보완사항.md"
+    },
+    {
+      "file": "00_README.md",
+      "target": "assets/evidence/20261008_validation_excerpt.json"
+    },
+    {
+      "file": "01_PROJECT_CONTEXT.md",
+      "target": "assets/archives/ERP_Obsidian_교육자료_20261008.zip"
+    },
+    {
+      "file": "01_PROJECT_CONTEXT.md",
+      "target": "02_LEARNING_GUIDE.md"
+    },
+    {
+      "file": "01_PROJECT_CONTEXT.md",
+      "target": "conversation-data.json"
+    },
+    {
+      "file": "02_LEARNING_GUIDE.md",
+      "target": "conversation-data.json"
+    },
+    {
+      "file": "02_LEARNING_GUIDE.md",
+      "target": "conversation-data.json"
+    },
+    {
+      "file": "02_LEARNING_GUIDE.md",
+      "target": "assets/prior-20261008/02_교육과실습.md"
+    },
+    {
+      "file": "02_LEARNING_GUIDE.md",
+      "target": "conversation-data.json"
+    },
+    {
+      "file": "02_LEARNING_GUIDE.md",
+      "target": "assets/prior-20261008/01_프로젝트_맥락과설계.md"
+    },
+    {
+      "file": "02_LEARNING_GUIDE.md",
+      "target": "conversation-data.json"
+    },
+    {
+      "file": "02_LEARNING_GUIDE.md",
+      "target": "assets/prior-20261008/02_교육과실습.md"
+    },
+    {
+      "file": "02_LEARNING_GUIDE.md",
+      "target": "conversation-data.json"
+    },
+    {
+      "file": "02_LEARNING_GUIDE.md",
+      "target": "assets/prior-20261008/03_자료목록과보완사항.md"
+    },
+    {
+      "file": "02_LEARNING_GUIDE.md",
+      "target": "conversation-data.json"
+    },
+    {
+      "file": "02_LEARNING_GUIDE.md",
+      "target": "assets/prior-20261008/01_프로젝트_맥락과설계.md"
+    },
+    {
+      "file": "02_LEARNING_GUIDE.md",
+      "target": "conversation-data.json"
+    },
+    {
+      "file": "02_LEARNING_GUIDE.md",
+      "target": "assets/archives/ERP_Obsidian_교육자료_20261008.zip"
+    },
+    {
+      "file": "02_LEARNING_GUIDE.md",
+      "target": "assets/prior-20261008/00_README.md"
+    },
+    {
+      "file": "02_LEARNING_GUIDE.md",
+      "target": "assets/prior-20261008/01_프로젝트_맥락과설계.md"
+    },
+    {
+      "file": "02_LEARNING_GUIDE.md",
+      "target": "assets/prior-20261008/02_교육과실습.md"
+    },
+    {
+      "file": "02_LEARNING_GUIDE.md",
+      "target": "assets/prior-20261008/03_자료목록과보완사항.md"
+    },
+    {
+      "file": "02_LEARNING_GUIDE.md",
+      "target": "assets/evidence/20261008_validation_excerpt.json"
+    },
+    {
+      "file": "02_LEARNING_GUIDE.md",
+      "target": "conversation-data.json"
+    },
+    {
+      "file": "02_LEARNING_GUIDE.md",
+      "target": "conversation-data.json"
+    },
+    {
+      "file": "02_LEARNING_GUIDE.md",
+      "target": "00_README.md"
+    },
+    {
+      "file": "02_LEARNING_GUIDE.md",
+      "target": "validation-report.json"
+    },
+    {
+      "file": "assets/prior-20261008/00_README.md",
+      "target": "01_프로젝트_맥락과설계.md"
+    },
+    {
+      "file": "assets/prior-20261008/00_README.md",
+      "target": "00_README.md"
+    },
+    {
+      "file": "assets/prior-20261008/00_README.md",
+      "target": "01_프로젝트_맥락과설계.md"
+    },
+    {
+      "file": "assets/prior-20261008/00_README.md",
+      "target": "02_교육과실습.md"
+    },
+    {
+      "file": "assets/prior-20261008/00_README.md",
+      "target": "03_자료목록과보완사항.md"
+    },
+    {
+      "file": "assets/prior-20261008/01_프로젝트_맥락과설계.md",
+      "target": "00_README.md"
+    },
+    {
+      "file": "assets/prior-20261008/01_프로젝트_맥락과설계.md",
+      "target": "02_교육과실습.md"
+    },
+    {
+      "file": "assets/prior-20261008/01_프로젝트_맥락과설계.md",
+      "target": "03_자료목록과보완사항.md"
+    },
+    {
+      "file": "assets/prior-20261008/02_교육과실습.md",
+      "target": "00_README.md"
+    },
+    {
+      "file": "assets/prior-20261008/02_교육과실습.md",
+      "target": "01_프로젝트_맥락과설계.md"
+    },
+    {
+      "file": "assets/prior-20261008/02_교육과실습.md",
+      "target": "03_자료목록과보완사항.md"
+    },
+    {
+      "file": "assets/prior-20261008/02_교육과실습.md",
+      "target": "01_프로젝트_맥락과설계.md"
+    },
+    {
+      "file": "assets/prior-20261008/03_자료목록과보완사항.md",
+      "target": "00_README.md"
+    },
+    {
+      "file": "assets/prior-20261008/03_자료목록과보완사항.md",
+      "target": "01_프로젝트_맥락과설계.md"
+    },
+    {
+      "file": "assets/prior-20261008/03_자료목록과보완사항.md",
+      "target": "02_교육과실습.md"
+    },
+    {
+      "file": "assets/prior-20261008/03_자료목록과보완사항.md",
+      "target": "00_README.md"
+    },
+    {
+      "file": "assets/prior-20261008/03_자료목록과보완사항.md",
+      "target": "01_프로젝트_맥락과설계.md"
+    },
+    {
+      "file": "assets/prior-20261008/03_자료목록과보완사항.md",
+      "target": "02_교육과실습.md"
+    },
+    {
+      "file": "assets/prior-20261008/03_자료목록과보완사항.md",
+      "target": "03_자료목록과보완사항.md"
+    },
+    {
+      "file": "assets/prior-20261008/03_자료목록과보완사항.md",
+      "target": "01_프로젝트_맥락과설계.md"
+    }
+  ],
+  "hash_scope_note": "본 보고서 자체와 최종 ZIP 파일의 해시는 자기참조를 피하기 위해 이 목록에서 제외. 이전 ZIP 안의 MD는 별도 보존 사본과 바이트 대조."
+}

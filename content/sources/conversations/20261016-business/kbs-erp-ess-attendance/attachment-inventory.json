@@ -1,0 +1,3674 @@
+[
+  {
+    "id": "ess1-asset-001",
+    "original_filename": "file_upload_evt_OnInputProcessing.htm",
+    "path": "unavailable/ess1-asset-001",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t002-u1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-002",
+    "original_filename": "file_upload_layout.htm",
+    "path": "unavailable/ess1-asset-002",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t002-u1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-003",
+    "original_filename": "guntae_input_evt_OnCreate.kbs",
+    "path": "unavailable/ess1-asset-003",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t002-u1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-004",
+    "original_filename": "guntae_input_evt_OnInitialization.kbs",
+    "path": "unavailable/ess1-asset-004",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t002-u1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-005",
+    "original_filename": "guntae_input_evt_OnInputProcessing.kbs",
+    "path": "unavailable/ess1-asset-005",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t002-u1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-006",
+    "original_filename": "guntae_input_evt_OnRequest.kbs",
+    "path": "unavailable/ess1-asset-006",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t002-u1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-007",
+    "original_filename": "guntae_input_layout.kbs",
+    "path": "unavailable/ess1-asset-007",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t002-u1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-008",
+    "original_filename": "file_upload_evt_OnInitialization.htm",
+    "path": "unavailable/ess1-asset-008",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t002-u1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-009",
+    "original_filename": "근태 입력화면.png",
+    "path": "assets/ess1-asset-009.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess1-t002-u1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "ess1",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "3d3ea8666271b7b46f818ee837a6cc8989c32bddc318792ecbd21c527da732c7"
+  },
+  {
+    "id": "ess1-asset-010",
+    "original_filename": "ESS 화면 (근태메뉴 외부화면).png",
+    "path": "assets/ess1-asset-010.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess1-t002-u1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "ess1",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "69248f86486ce76fe65ae23ca14a4b61518619794971a3b77664dded20675dde"
+  },
+  {
+    "id": "ess1-asset-011",
+    "original_filename": "ZHR_SAVE_ZTHR0080.txt",
+    "path": "unavailable/ess1-asset-011",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t003-u1"
+    ],
+    "source_turn_index": 3,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-012",
+    "original_filename": "ZHR_GUN_DAYS_COUNT(1).txt",
+    "path": "unavailable/ess1-asset-012",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t003-u1"
+    ],
+    "source_turn_index": 3,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-013",
+    "original_filename": "ZHR_GUN_DAYS_LIMIT_CHECK(1).txt",
+    "path": "unavailable/ess1-asset-013",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t003-u1"
+    ],
+    "source_turn_index": 3,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-014",
+    "original_filename": "zthr0080_1(1).png",
+    "path": "assets/ess1-asset-014.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess1-t003-u1"
+    ],
+    "source_turn_index": 3,
+    "source_thread": "ess1",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "e3adc3e68108ee2923758b6435a4aa3f7943b271641b9c931b51300e91acda77"
+  },
+  {
+    "id": "ess1-asset-015",
+    "original_filename": "zthr0080_2(1).png",
+    "path": "assets/ess1-asset-015.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess1-t003-u1"
+    ],
+    "source_turn_index": 3,
+    "source_thread": "ess1",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "29e3b0e280f3c5fdf510444860a048c3a78743806476bdf0a38e423e1528c3b2"
+  },
+  {
+    "id": "ess1-asset-016",
+    "original_filename": "zthr0080_3.png",
+    "path": "unavailable/ess1-asset-016",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t003-u1"
+    ],
+    "source_turn_index": 3,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-017",
+    "original_filename": "guntae_input_attribute(1).png",
+    "path": "unavailable/ess1-asset-017",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t003-u1"
+    ],
+    "source_turn_index": 3,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-018",
+    "original_filename": "cd40e744-9341-44f5-804d-b5b002479dbb.png",
+    "path": "unavailable/ess1-asset-018",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t008-u1"
+    ],
+    "source_turn_index": 8,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-019",
+    "original_filename": "8b432115-085e-4265-8155-1e0f306c42a8.png",
+    "path": "unavailable/ess1-asset-019",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t012-u1"
+    ],
+    "source_turn_index": 12,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-020",
+    "original_filename": "guntae_ui_v1.zip",
+    "path": "unavailable/ess1-asset-020",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t015-a1"
+    ],
+    "source_turn_index": 15,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-021",
+    "original_filename": "guntae_input_layout.kbs",
+    "path": "unavailable/ess1-asset-021",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t015-a1"
+    ],
+    "source_turn_index": 15,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-022",
+    "original_filename": "guntae_ess_v1.css",
+    "path": "unavailable/ess1-asset-022",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t015-a1"
+    ],
+    "source_turn_index": 15,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-023",
+    "original_filename": "guntae_ess_v1.js",
+    "path": "unavailable/ess1-asset-023",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t015-a1"
+    ],
+    "source_turn_index": 15,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-024",
+    "original_filename": "guntae_preview.html",
+    "path": "unavailable/ess1-asset-024",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t015-a1"
+    ],
+    "source_turn_index": 15,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-025",
+    "original_filename": "README_KO.md",
+    "path": "unavailable/ess1-asset-025",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t015-a1"
+    ],
+    "source_turn_index": 15,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-026",
+    "original_filename": "6bb0f510-d0cd-4675-9b8a-8416b1a98614.png",
+    "path": "unavailable/ess1-asset-026",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t017-u1"
+    ],
+    "source_turn_index": 17,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-027",
+    "original_filename": "guntae_header.kbs",
+    "path": "unavailable/ess1-asset-027",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t018-u1"
+    ],
+    "source_turn_index": 18,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-028",
+    "original_filename": "jscommon.kbs",
+    "path": "unavailable/ess1-asset-028",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t019-u1"
+    ],
+    "source_turn_index": 19,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-029",
+    "original_filename": "LZHR008F01.txt",
+    "path": "unavailable/ess1-asset-029",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t022-u1"
+    ],
+    "source_turn_index": 22,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-030",
+    "original_filename": "LZHR008TOP.txt",
+    "path": "unavailable/ess1-asset-030",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t022-u1"
+    ],
+    "source_turn_index": 22,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-031",
+    "original_filename": "ZWF_START_WORK_HR.txt",
+    "path": "unavailable/ess1-asset-031",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t023-u1"
+    ],
+    "source_turn_index": 23,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-032",
+    "original_filename": "zshr0032_2.png",
+    "path": "unavailable/ess1-asset-032",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t023-u1"
+    ],
+    "source_turn_index": 23,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-033",
+    "original_filename": "zshr0032_1.png",
+    "path": "assets/ess1-asset-033.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess1-t023-u1"
+    ],
+    "source_turn_index": 23,
+    "source_thread": "ess1",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "3cd3c117cde58646448d943908ed4f6cdacce82f781557f9d8dd12b8ea671db3"
+  },
+  {
+    "id": "ess1-asset-034",
+    "original_filename": "zshr0032_4.png",
+    "path": "assets/ess1-asset-034.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess1-t023-u1"
+    ],
+    "source_turn_index": 23,
+    "source_thread": "ess1",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "f1a0c743e95062f5634460c1fdc1ebce2a515ef25582bfc721a2695ddd08593d"
+  },
+  {
+    "id": "ess1-asset-035",
+    "original_filename": "zshr0032_3.png",
+    "path": "assets/ess1-asset-035.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess1-t023-u1"
+    ],
+    "source_turn_index": 23,
+    "source_thread": "ess1",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "f7915ec6d39bc25d4810f447067717275ae8747dc67a4cfca2ded2294a768233"
+  },
+  {
+    "id": "ess1-asset-036",
+    "original_filename": "ZWF_SET_INDEX.txt",
+    "path": "unavailable/ess1-asset-036",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t024-u1"
+    ],
+    "source_turn_index": 24,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-037",
+    "original_filename": "LZWF02F06.txt",
+    "path": "unavailable/ess1-asset-037",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t024-u1"
+    ],
+    "source_turn_index": 24,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-038",
+    "original_filename": "LZWF02F01.txt",
+    "path": "unavailable/ess1-asset-038",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t024-u1"
+    ],
+    "source_turn_index": 24,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-039",
+    "original_filename": "ZWF_START_WORK.txt",
+    "path": "unavailable/ess1-asset-039",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t024-u1"
+    ],
+    "source_turn_index": 24,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-040",
+    "original_filename": "ZWF_SET_PENDING_LIST.txt",
+    "path": "unavailable/ess1-asset-040",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t024-u1"
+    ],
+    "source_turn_index": 24,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-041",
+    "original_filename": "LZWF02TOP.txt",
+    "path": "unavailable/ess1-asset-041",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t025-u1"
+    ],
+    "source_turn_index": 25,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-042",
+    "original_filename": "0f7e516f-865b-4be7-94d0-1b58db78f6e4.png",
+    "path": "unavailable/ess1-asset-042",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t026-u1"
+    ],
+    "source_turn_index": 26,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-043",
+    "original_filename": "5dddda12-571d-4af6-a1f6-28541f024186.png",
+    "path": "unavailable/ess1-asset-043",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t027-u1"
+    ],
+    "source_turn_index": 27,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-044",
+    "original_filename": "bc9ac5da-33f7-4732-9d16-ba43ba6e46bb.png",
+    "path": "unavailable/ess1-asset-044",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t028-u1"
+    ],
+    "source_turn_index": 28,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-045",
+    "original_filename": "18c088af-01b7-4a8d-b5ae-12b0c64581b6.png",
+    "path": "unavailable/ess1-asset-045",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t030-u1"
+    ],
+    "source_turn_index": 30,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-046",
+    "original_filename": "0672092e-1cbe-4528-ac35-7addab3a0f5a.png",
+    "path": "assets/ess1-asset-046.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess1-t033-u1"
+    ],
+    "source_turn_index": 33,
+    "source_thread": "ess1",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "17489c6d0b38214ee0f8b0a9001a3806ea2915d9aec46b828838841e1371d587"
+  },
+  {
+    "id": "ess1-asset-047",
+    "original_filename": "MZH080_GULJAEI01.txt",
+    "path": "unavailable/ess1-asset-047",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t034-u1"
+    ],
+    "source_turn_index": 34,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-048",
+    "original_filename": "MZH080_GULJAEO01.txt",
+    "path": "unavailable/ess1-asset-048",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t034-u1"
+    ],
+    "source_turn_index": 34,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-049",
+    "original_filename": "MZH080_GULJAETOP.txt",
+    "path": "unavailable/ess1-asset-049",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t034-u1"
+    ],
+    "source_turn_index": 34,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-050",
+    "original_filename": "MZH080_GULJAEF01.txt",
+    "path": "unavailable/ess1-asset-050",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t034-u1"
+    ],
+    "source_turn_index": 34,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-051",
+    "original_filename": "ZRPTH_GUN_GULJAE_NEW_include_RHEHCONS.txt",
+    "path": "unavailable/ess1-asset-051",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t038-u1"
+    ],
+    "source_turn_index": 38,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-052",
+    "original_filename": "ZRPTH_GUN_GULJAE_NEW.txt",
+    "path": "unavailable/ess1-asset-052",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t038-u1"
+    ],
+    "source_turn_index": 38,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-053",
+    "original_filename": "ZRPTH_GUN_GULJAE_NEW_include_RHEH0000.txt",
+    "path": "unavailable/ess1-asset-053",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t038-u1"
+    ],
+    "source_turn_index": 38,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-054",
+    "original_filename": "ZHW_GET_PERSON_DATA.txt",
+    "path": "unavailable/ess1-asset-054",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t039-u1"
+    ],
+    "source_turn_index": 39,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess1-asset-055",
+    "original_filename": "ZRPTH_GUN_GYEONGJO.txt",
+    "path": "unavailable/ess1-asset-055",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess1-t039-u1"
+    ],
+    "source_turn_index": 39,
+    "source_thread": "ess1"
+  },
+  {
+    "id": "ess2-asset-001",
+    "original_filename": "guntae_r1_dev_XA32762.zip",
+    "path": "unavailable/ess2-asset-001",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess2-t001-a1"
+    ],
+    "source_turn_index": 1,
+    "source_thread": "ess2"
+  },
+  {
+    "id": "ess2-asset-002",
+    "original_filename": "30fe39c5-1f34-46c3-8f53-80746f698cd7.png",
+    "path": "assets/ess2-asset-002.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess2-t001-u1"
+    ],
+    "source_turn_index": 1,
+    "source_thread": "ess2",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "4e540ee48b4629c416fdf2c0cc269e4214efd247927bc668cbcd6db73ff96bf7"
+  },
+  {
+    "id": "ess2-asset-003",
+    "original_filename": "451bec52-5b85-433a-b306-694bdf7b5415.png",
+    "path": "assets/ess2-asset-003.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess2-t001-u1"
+    ],
+    "source_turn_index": 1,
+    "source_thread": "ess2",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "47b42819699f9823417d145a379122c8c85218cd07fa08e12199453a031ff21b"
+  },
+  {
+    "id": "ess2-asset-004",
+    "original_filename": "4dd47360-a1b8-44d3-8d7c-264668db9048.png",
+    "path": "assets/ess2-asset-004.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess2-t001-u1"
+    ],
+    "source_turn_index": 1,
+    "source_thread": "ess2",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "d2d8a429e5358e597d8b3e88088ba19eb039ad58236cd000c57e0b5d19f564ce"
+  },
+  {
+    "id": "ess2-asset-005",
+    "original_filename": "guntae_input_layout_text_only_XA32762.kbs",
+    "path": "unavailable/ess2-asset-005",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess2-t002-a1"
+    ],
+    "source_turn_index": 2,
+    "source_thread": "ess2"
+  },
+  {
+    "id": "ess2-asset-006",
+    "original_filename": "guntae_help_n.hwp",
+    "path": "unavailable/ess2-asset-006",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess2-t003-u1"
+    ],
+    "source_turn_index": 3,
+    "source_thread": "ess2"
+  },
+  {
+    "id": "ess2-asset-007",
+    "original_filename": "guntae_current_page_update_XA32762.zip",
+    "path": "unavailable/ess2-asset-007",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess2-t003-a1"
+    ],
+    "source_turn_index": 3,
+    "source_thread": "ess2"
+  },
+  {
+    "id": "ess2-asset-008",
+    "original_filename": "guntae_input_layout_text_only_XA32762.kbs",
+    "path": "unavailable/ess2-asset-008",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess2-t003-a1"
+    ],
+    "source_turn_index": 3,
+    "source_thread": "ess2"
+  },
+  {
+    "id": "ess2-asset-009",
+    "original_filename": "3b1d5179-acb1-4596-b97b-e6ae64fbd71a.png",
+    "path": "assets/ess2-asset-009.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess2-t003-u1"
+    ],
+    "source_turn_index": 3,
+    "source_thread": "ess2",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "476592d05d270a2075a56236b9a5d834fd948febb8f20cb4bad429708587af29"
+  },
+  {
+    "id": "ess2-asset-010",
+    "original_filename": "1bd102c7-2fd3-4ddd-9d02-8935a7169c29.png",
+    "path": "assets/ess2-asset-010.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess2-t003-u1"
+    ],
+    "source_turn_index": 3,
+    "source_thread": "ess2",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "b694724fc5197d4203f0fba15fc0a9428b0a6c09c34d70db852c9ef086880e9a"
+  },
+  {
+    "id": "ess2-asset-011",
+    "original_filename": "guntae_input_layout_text_only_XA32762.kbs",
+    "path": "unavailable/ess2-asset-011",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess2-t005-a1"
+    ],
+    "source_turn_index": 5,
+    "source_thread": "ess2"
+  },
+  {
+    "id": "ess2-asset-012",
+    "original_filename": "guntae_current_page_update_XA32762.zip",
+    "path": "unavailable/ess2-asset-012",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess2-t005-a1"
+    ],
+    "source_turn_index": 5,
+    "source_thread": "ess2"
+  },
+  {
+    "id": "ess2-asset-013",
+    "original_filename": "31b6433c-f208-4b41-80eb-bf2846645585.png",
+    "path": "assets/ess2-asset-013.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess2-t006-u1"
+    ],
+    "source_turn_index": 6,
+    "source_thread": "ess2",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "fe9811c97bb38a637d6b6aa121ad208a1f5019a1f5efa52675726e0d1dca2170"
+  },
+  {
+    "id": "ess2-asset-014",
+    "original_filename": "9fe27e17-ce40-445e-8d3f-64df91091b59.png",
+    "path": "assets/ess2-asset-014.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess2-t007-u1"
+    ],
+    "source_turn_index": 7,
+    "source_thread": "ess2",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "85b4badb49ee937183d7a4a4305121e7552b40caace67080bbddc359635ba22b"
+  },
+  {
+    "id": "ess2-asset-015",
+    "original_filename": "guntae_r1_dev_XA32762.zip",
+    "path": "unavailable/ess2-asset-015",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess2-t008-a1"
+    ],
+    "source_turn_index": 8,
+    "source_thread": "ess2"
+  },
+  {
+    "id": "ess2-asset-016",
+    "original_filename": "5bf4c0d8-39b8-46b4-9a7a-ebf17e4d76fe.png",
+    "path": "assets/ess2-asset-016.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess2-t011-u1"
+    ],
+    "source_turn_index": 11,
+    "source_thread": "ess2",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "91a11f8d305e0468c1f80be9e7906cecce553fea694728405df67fade35610aa"
+  },
+  {
+    "id": "ess2-asset-017",
+    "original_filename": "590e2ebf-228a-48df-ba1c-2a917b2b8440.png",
+    "path": "assets/ess2-asset-017.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess2-t012-u1"
+    ],
+    "source_turn_index": 12,
+    "source_thread": "ess2",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "91a11f8d305e0468c1f80be9e7906cecce553fea694728405df67fade35610aa"
+  },
+  {
+    "id": "ess2-asset-018",
+    "original_filename": "692ee4f7-40cb-4699-8b22-1f7529f941ad.png",
+    "path": "assets/ess2-asset-018.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess2-t013-u1"
+    ],
+    "source_turn_index": 13,
+    "source_thread": "ess2",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "c09c2a546e25b9dd5b3addb19919d6d348f3241dc2eaec4e39b7d1419cb9f07f"
+  },
+  {
+    "id": "ess2-asset-019",
+    "original_filename": "9d0c0af8-a62b-4efb-b770-a7d54e7f819c.png",
+    "path": "assets/ess2-asset-019.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess2-t014-u1"
+    ],
+    "source_turn_index": 14,
+    "source_thread": "ess2",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "c09c2a546e25b9dd5b3addb19919d6d348f3241dc2eaec4e39b7d1419cb9f07f"
+  },
+  {
+    "id": "ess2-asset-020",
+    "original_filename": "1dcdd23b-515e-44da-96de-e50d51725cbf.png",
+    "path": "assets/ess2-asset-020.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess2-t015-u1"
+    ],
+    "source_turn_index": 15,
+    "source_thread": "ess2",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "b5a6f8b7df0c89b63ae219caa810847b42cacaa1a3355a64a56f1a91fd3d23f0"
+  },
+  {
+    "id": "ess2-asset-021",
+    "original_filename": "0f7e3319-25a6-45e5-b1c8-557d0163f08b.png",
+    "path": "assets/ess2-asset-021.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess2-t017-u1"
+    ],
+    "source_turn_index": 17,
+    "source_thread": "ess2",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "1a4df57d5317d4f2cdb8bddac82b7b8d9a8b2b42b28d2377d31e992fe87eb2f4"
+  },
+  {
+    "id": "ess2-asset-022",
+    "original_filename": "646fb1af-7575-404b-9e3c-be6c5f7b474f.png",
+    "path": "assets/ess2-asset-022.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess2-t018-u1"
+    ],
+    "source_turn_index": 18,
+    "source_thread": "ess2",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "b89819dedd6cc7614b2f3ec215c32bd4ffaa860c5556c71bc6754303c1cc107e"
+  },
+  {
+    "id": "ess2-asset-023",
+    "original_filename": "82508054-8513-4d3b-a1b9-ecaf7ef3a111.png",
+    "path": "assets/ess2-asset-023.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess2-t019-u1"
+    ],
+    "source_turn_index": 19,
+    "source_thread": "ess2",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "c09c2a546e25b9dd5b3addb19919d6d348f3241dc2eaec4e39b7d1419cb9f07f"
+  },
+  {
+    "id": "ess2-asset-024",
+    "original_filename": "guntae_files_OnInitialization_fixed_XA32762.kbs",
+    "path": "unavailable/ess2-asset-024",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess2-t020-a1"
+    ],
+    "source_turn_index": 20,
+    "source_thread": "ess2"
+  },
+  {
+    "id": "ess2-asset-025",
+    "original_filename": "7232afb9-adc1-49c5-be13-ca1241261f10.png",
+    "path": "assets/ess2-asset-025.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess2-t020-u1"
+    ],
+    "source_turn_index": 20,
+    "source_thread": "ess2",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "b5a6f8b7df0c89b63ae219caa810847b42cacaa1a3355a64a56f1a91fd3d23f0"
+  },
+  {
+    "id": "ess3-asset-001",
+    "original_filename": "guntae_progress_summary_XA32762.md",
+    "path": "unavailable/ess3-asset-001",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t001-u1"
+    ],
+    "source_turn_index": 1,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-002",
+    "original_filename": "guntae_input.zip",
+    "path": "unavailable/ess3-asset-002",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t003-u1"
+    ],
+    "source_turn_index": 3,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-003",
+    "original_filename": "ZHR_GET_ZTHR0080.txt",
+    "path": "unavailable/ess3-asset-003",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t004-u1"
+    ],
+    "source_turn_index": 4,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-004",
+    "original_filename": "ZHR_GUN_GULJAE.txt",
+    "path": "unavailable/ess3-asset-004",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t004-u1"
+    ],
+    "source_turn_index": 4,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-005",
+    "original_filename": "ZWF_REJECT_WORK.txt",
+    "path": "unavailable/ess3-asset-005",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t005-u1"
+    ],
+    "source_turn_index": 5,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-006",
+    "original_filename": "ZWF_APPROVE_WORK.txt",
+    "path": "unavailable/ess3-asset-006",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t005-u1"
+    ],
+    "source_turn_index": 5,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-007",
+    "original_filename": "app_va_list.kbs_evt_handler_OnInputProcessing.txt",
+    "path": "unavailable/ess3-asset-007",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t005-u1"
+    ],
+    "source_turn_index": 5,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-008",
+    "original_filename": "app_va_list.kbs_layout.txt",
+    "path": "unavailable/ess3-asset-008",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t006-u1"
+    ],
+    "source_turn_index": 6,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-009",
+    "original_filename": "app_va_list.kbs_layout(1).txt",
+    "path": "unavailable/ess3-asset-009",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t007-u1"
+    ],
+    "source_turn_index": 7,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-010",
+    "original_filename": "app_script.kbs.txt",
+    "path": "unavailable/ess3-asset-010",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t007-u1"
+    ],
+    "source_turn_index": 7,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-011",
+    "original_filename": "list_sub2.kbs.txt",
+    "path": "unavailable/ess3-asset-011",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t008-u1"
+    ],
+    "source_turn_index": 8,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-012",
+    "original_filename": "ZWF_APPROVAL.txt",
+    "path": "unavailable/ess3-asset-012",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t008-u1"
+    ],
+    "source_turn_index": 8,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-013",
+    "original_filename": "ZWF_SET_WORKITEM_COMPLETE.txt",
+    "path": "unavailable/ess3-asset-013",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t008-u1"
+    ],
+    "source_turn_index": 8,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-014",
+    "original_filename": "ZWF_REJECT_f01.txt",
+    "path": "unavailable/ess3-asset-014",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t008-u1"
+    ],
+    "source_turn_index": 8,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-015",
+    "original_filename": "ZWF_REJECT.txt",
+    "path": "unavailable/ess3-asset-015",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t008-u1"
+    ],
+    "source_turn_index": 8,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-016",
+    "original_filename": "ZWF_APPROVAL_f01.txt",
+    "path": "unavailable/ess3-asset-016",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t008-u1"
+    ],
+    "source_turn_index": 8,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-017",
+    "original_filename": "app_va_list.kbs_OnInitialization.txt",
+    "path": "unavailable/ess3-asset-017",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t009-u1"
+    ],
+    "source_turn_index": 9,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-018",
+    "original_filename": "ef39c620-4f40-483b-b65a-15dabe6ad906.png",
+    "path": "unavailable/ess3-asset-018",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t010-u1"
+    ],
+    "source_turn_index": 10,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-019",
+    "original_filename": "IF_HTMLB_TABLEVIEW_ITERATOR~RENDER_CELL_START.txt",
+    "path": "unavailable/ess3-asset-019",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t011-u1"
+    ],
+    "source_turn_index": 11,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-020",
+    "original_filename": "IF_HTMLB_TABLEVIEW_ITERATOR~RENDER_ROW_START.txt",
+    "path": "unavailable/ess3-asset-020",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t011-u1"
+    ],
+    "source_turn_index": 11,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-021",
+    "original_filename": "IF_HTMLB_TABLEVIEW_ITERATOR~GET_COLUMN_DEFINITIONS.txt",
+    "path": "unavailable/ess3-asset-021",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t011-u1"
+    ],
+    "source_turn_index": 11,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-022",
+    "original_filename": "CONSTRUCTOR.txt",
+    "path": "unavailable/ess3-asset-022",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t011-u1"
+    ],
+    "source_turn_index": 11,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-023",
+    "original_filename": "GET_COLUMN_VALUE.txt",
+    "path": "unavailable/ess3-asset-023",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t011-u1"
+    ],
+    "source_turn_index": 11,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-024",
+    "original_filename": "guntae_r1_dev_XA32762.zip",
+    "path": "unavailable/ess3-asset-024",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t014-a1"
+    ],
+    "source_turn_index": 14,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-025",
+    "original_filename": "guntae_r1_dev_XA32762.zip",
+    "path": "unavailable/ess3-asset-025",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t019-a1"
+    ],
+    "source_turn_index": 19,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-026",
+    "original_filename": "guntae_panel_r1_language_fixed_XA32762.kbs",
+    "path": "unavailable/ess3-asset-026",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t027-a1"
+    ],
+    "source_turn_index": 27,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-027",
+    "original_filename": "0ad98af6-43ce-46e8-b1e6-f004411df3bc.png",
+    "path": "unavailable/ess3-asset-027",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t027-u1"
+    ],
+    "source_turn_index": 27,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-028",
+    "original_filename": "ab613319-0fc3-41d2-9e8a-105ed314056e.png",
+    "path": "unavailable/ess3-asset-028",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t028-u1"
+    ],
+    "source_turn_index": 28,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-029",
+    "original_filename": "guntae_r1.js",
+    "path": "unavailable/ess3-asset-029",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t029-a1"
+    ],
+    "source_turn_index": 29,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-030",
+    "original_filename": "README_R1_IE_FIX_XA32762.md",
+    "path": "unavailable/ess3-asset-030",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t029-a1"
+    ],
+    "source_turn_index": 29,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-031",
+    "original_filename": "README_R1_ISOLATED_XA32762.md",
+    "path": "unavailable/ess3-asset-031",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t029-a1"
+    ],
+    "source_turn_index": 29,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-032",
+    "original_filename": "guntae_r1_dev_XA32762.zip",
+    "path": "unavailable/ess3-asset-032",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t029-a1"
+    ],
+    "source_turn_index": 29,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-033",
+    "original_filename": "e37a5dc9-6ae7-4ea7-9c8d-962372b3e41e.png",
+    "path": "unavailable/ess3-asset-033",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t029-u1"
+    ],
+    "source_turn_index": 29,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-034",
+    "original_filename": "guntae_r1_js_fix_XA32762.zip",
+    "path": "unavailable/ess3-asset-034",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t030-a1"
+    ],
+    "source_turn_index": 30,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-035",
+    "original_filename": "bdf0801c-72f7-4569-b8bc-21023af5c844.png",
+    "path": "unavailable/ess3-asset-035",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t030-u1"
+    ],
+    "source_turn_index": 30,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-036",
+    "original_filename": "image(2).png",
+    "path": "assets/ess3-asset-036.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t033-u1"
+    ],
+    "source_turn_index": 33,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "ebf586042c68493232300689a1de9fca6b1d852245b6e1b30caa9d0730e0f195"
+  },
+  {
+    "id": "ess3-asset-037",
+    "original_filename": "ZHR_ANNUAL_HOLIDAY.txt",
+    "path": "unavailable/ess3-asset-037",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t035-u1"
+    ],
+    "source_turn_index": 35,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-038",
+    "original_filename": "ZHR_ANNUAL_HOLIDAY(1).txt",
+    "path": "unavailable/ess3-asset-038",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t036-u1"
+    ],
+    "source_turn_index": 36,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-039",
+    "original_filename": "R1_annual_leave_change_review_20261002.txt",
+    "path": "unavailable/ess3-asset-039",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t037-a1"
+    ],
+    "source_turn_index": 37,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-040",
+    "original_filename": "guntae_r1_B1_XA32762_20261002.zip",
+    "path": "unavailable/ess3-asset-040",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t039-a1"
+    ],
+    "source_turn_index": 39,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-041",
+    "original_filename": "image(20261006-003901).png",
+    "path": "unavailable/ess3-asset-041",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t042-u1"
+    ],
+    "source_turn_index": 42,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-042",
+    "original_filename": "image(20261006-004532).png",
+    "path": "unavailable/ess3-asset-042",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t043-u1"
+    ],
+    "source_turn_index": 43,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-043",
+    "original_filename": "image(20261006-005013).png",
+    "path": "unavailable/ess3-asset-043",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t044-u1"
+    ],
+    "source_turn_index": 44,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-044",
+    "original_filename": "image(20261006-005229).png",
+    "path": "unavailable/ess3-asset-044",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t045-u1"
+    ],
+    "source_turn_index": 45,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-045",
+    "original_filename": "image(20261006-012735).png",
+    "path": "unavailable/ess3-asset-045",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t047-u1"
+    ],
+    "source_turn_index": 47,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-046",
+    "original_filename": "image(20261006-015012).png",
+    "path": "unavailable/ess3-asset-046",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t049-u1"
+    ],
+    "source_turn_index": 49,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-047",
+    "original_filename": "image(20261006-015225).png",
+    "path": "unavailable/ess3-asset-047",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t050-u1"
+    ],
+    "source_turn_index": 50,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-048",
+    "original_filename": "붙여넣은 마크다운.md",
+    "path": "unavailable/ess3-asset-048",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t051-u1"
+    ],
+    "source_turn_index": 51,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-049",
+    "original_filename": "image(20261006-020200).png",
+    "path": "unavailable/ess3-asset-049",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t052-u1"
+    ],
+    "source_turn_index": 52,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-050",
+    "original_filename": "image(20261006-021335).png",
+    "path": "unavailable/ess3-asset-050",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t053-u1"
+    ],
+    "source_turn_index": 53,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-051",
+    "original_filename": "image(20261006-022109).png",
+    "path": "assets/ess3-asset-051.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t054-u1"
+    ],
+    "source_turn_index": 54,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "25b56c5ad7f747a29540df987e9b41da0c99f0cae90fc220cc51f0e5a9198a0c"
+  },
+  {
+    "id": "ess3-asset-052",
+    "original_filename": "guntae_r1_PATCH_20261006_XA32762.zip",
+    "path": "unavailable/ess3-asset-052",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t056-a1"
+    ],
+    "source_turn_index": 56,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-053",
+    "original_filename": "guntae_r1_DATE_WRAP_20261006_XA32762.zip",
+    "path": "unavailable/ess3-asset-053",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t057-a1"
+    ],
+    "source_turn_index": 57,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-054",
+    "original_filename": "image(20261006-033534).png",
+    "path": "assets/ess3-asset-054.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t057-u1"
+    ],
+    "source_turn_index": 57,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "92f22046785ea2db610ac7a3335f61ae7665c3e4588d92c60d8fa8ecf913d956"
+  },
+  {
+    "id": "ess3-asset-055",
+    "original_filename": "guntae_r1_WEEKEND_SPLIT_20261006_XA32762.zip",
+    "path": "unavailable/ess3-asset-055",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t060-a1"
+    ],
+    "source_turn_index": 60,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-056",
+    "original_filename": "image(20261006-040342).png",
+    "path": "assets/ess3-asset-056.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t061-u1"
+    ],
+    "source_turn_index": 61,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "92f22046785ea2db610ac7a3335f61ae7665c3e4588d92c60d8fa8ecf913d956"
+  },
+  {
+    "id": "ess3-asset-057",
+    "original_filename": "guntae_r1_HISTORY_BATCH_20261006_XA32762.zip",
+    "path": "unavailable/ess3-asset-057",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t062-a1"
+    ],
+    "source_turn_index": 62,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-058",
+    "original_filename": "guntae_r1_HISTORY_BATCH_20261006_XA32762.zip",
+    "path": "unavailable/ess3-asset-058",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t063-a1"
+    ],
+    "source_turn_index": 63,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-059",
+    "original_filename": "guntae_r1_HISTORY_BATCH_20261006_XA32762.zip",
+    "path": "unavailable/ess3-asset-059",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t064-a1"
+    ],
+    "source_turn_index": 64,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-060",
+    "original_filename": "image(20261006-053725).png",
+    "path": "assets/ess3-asset-060.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t065-u1"
+    ],
+    "source_turn_index": 65,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "1d1868446186a7ed74f13cba10d07d34e0647737db3730f40e1b2c707c1ec3c1"
+  },
+  {
+    "id": "ess3-asset-061",
+    "original_filename": "guntae_r1_HISTORY_BATCH_20261006_XA32762.zip",
+    "path": "unavailable/ess3-asset-061",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t066-a1"
+    ],
+    "source_turn_index": 66,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-062",
+    "original_filename": "image(20261006-054436).png",
+    "path": "assets/ess3-asset-062.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t066-u1"
+    ],
+    "source_turn_index": 66,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "302a121c95b708c5d0060ae12e1a6f0721f534625fa1e3cbc997d45cd35edbb1"
+  },
+  {
+    "id": "ess3-asset-063",
+    "original_filename": "image(20261007-070207).png",
+    "path": "unavailable/ess3-asset-063",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t069-u1"
+    ],
+    "source_turn_index": 69,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-064",
+    "original_filename": "guntae_r1_HISTORY_BATCH_20261006_XA32762.zip",
+    "path": "unavailable/ess3-asset-064",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t070-a1"
+    ],
+    "source_turn_index": 70,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-065",
+    "original_filename": "image(20261007-073633).png",
+    "path": "unavailable/ess3-asset-065",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t072-u1"
+    ],
+    "source_turn_index": 72,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-066",
+    "original_filename": "image(20261007-074644).png",
+    "path": "unavailable/ess3-asset-066",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t073-u1"
+    ],
+    "source_turn_index": 73,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-067",
+    "original_filename": "image(20261007-075134).png",
+    "path": "unavailable/ess3-asset-067",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t074-u1"
+    ],
+    "source_turn_index": 74,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-068",
+    "original_filename": "guntae_r1_HISTORY_BATCH_20261006_XA32762.zip",
+    "path": "unavailable/ess3-asset-068",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t075-a1"
+    ],
+    "source_turn_index": 75,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-069",
+    "original_filename": "image(20261007-075326).png",
+    "path": "unavailable/ess3-asset-069",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t075-u1"
+    ],
+    "source_turn_index": 75,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-070",
+    "original_filename": "image(20261007-080431).png",
+    "path": "unavailable/ess3-asset-070",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t076-u1"
+    ],
+    "source_turn_index": 76,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-071",
+    "original_filename": "image(20261007-080619).png",
+    "path": "unavailable/ess3-asset-071",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t077-u1"
+    ],
+    "source_turn_index": 77,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-072",
+    "original_filename": "image(20261007-080638).png",
+    "path": "unavailable/ess3-asset-072",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t077-u1"
+    ],
+    "source_turn_index": 77,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-073",
+    "original_filename": "image(20261007-080648).png",
+    "path": "unavailable/ess3-asset-073",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t077-u1"
+    ],
+    "source_turn_index": 77,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-074",
+    "original_filename": "guntae_r1_HISTORY_BATCH_20261006_XA32762.zip",
+    "path": "unavailable/ess3-asset-074",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t078-a1"
+    ],
+    "source_turn_index": 78,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-075",
+    "original_filename": "image(20261007-081914).png",
+    "path": "assets/ess3-asset-075.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t078-u1"
+    ],
+    "source_turn_index": 78,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "f439e2c46a71f12cdb583e4747a7173413b44f096f9c81297e34371f7b3f2892"
+  },
+  {
+    "id": "ess3-asset-076",
+    "original_filename": "image(20261007-084215).png",
+    "path": "assets/ess3-asset-076.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t079-u1"
+    ],
+    "source_turn_index": 79,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "f40ff2b5f934f97561d93c0aded2d3f3cf9acfaac6d4068dc27d1cbdf319c996"
+  },
+  {
+    "id": "ess3-asset-077",
+    "original_filename": "guntae_r1_HISTORY_BATCH_20261006_XA32762.zip",
+    "path": "unavailable/ess3-asset-077",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t080-a1"
+    ],
+    "source_turn_index": 80,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-078",
+    "original_filename": "guntae_r1_HISTORY_BATCH_20261006_XA32762.zip",
+    "path": "unavailable/ess3-asset-078",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t082-a1"
+    ],
+    "source_turn_index": 82,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-079",
+    "original_filename": "image(20261008-001355).png",
+    "path": "unavailable/ess3-asset-079",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t082-u1"
+    ],
+    "source_turn_index": 82,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-080",
+    "original_filename": "guntae_r1_HISTORY_BATCH_20261006_XA32762.zip",
+    "path": "unavailable/ess3-asset-080",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t084-a1"
+    ],
+    "source_turn_index": 84,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-081",
+    "original_filename": "guntae_r1_HISTORY_BATCH_20261006_XA32762.zip",
+    "path": "unavailable/ess3-asset-081",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t085-a1"
+    ],
+    "source_turn_index": 85,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-082",
+    "original_filename": "guntae_r1_HISTORY_BATCH_20261006_XA32762.zip",
+    "path": "unavailable/ess3-asset-082",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t086-a1"
+    ],
+    "source_turn_index": 86,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-083",
+    "original_filename": "guntae_r1_HISTORY_BATCH_20261006_XA32762.zip",
+    "path": "unavailable/ess3-asset-083",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t088-a1"
+    ],
+    "source_turn_index": 88,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-084",
+    "original_filename": "image(20261008-020005).png",
+    "path": "assets/ess3-asset-084.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t090-u1"
+    ],
+    "source_turn_index": 90,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "bf5bfc3803cd416ed65e55cf57fae8a502590986f61d1812948b3dd091d230f4"
+  },
+  {
+    "id": "ess3-asset-085",
+    "original_filename": "image(20261008-021108).png",
+    "path": "assets/ess3-asset-085.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t091-u1"
+    ],
+    "source_turn_index": 91,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "251e6ea2c2d11dca1303b1723175a66e929524baf362db87649166d5a5092f1f"
+  },
+  {
+    "id": "ess3-asset-086",
+    "original_filename": "image(20261008-021302).png",
+    "path": "assets/ess3-asset-086.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t092-u1"
+    ],
+    "source_turn_index": 92,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "56d40ce50cec787f066d83885606856faa8e4a89c0bcf480044400bf379b7e1e"
+  },
+  {
+    "id": "ess3-asset-087",
+    "original_filename": "guntae_r1_HISTORY_BATCH_20261006_XA32762.zip",
+    "path": "unavailable/ess3-asset-087",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t093-a1"
+    ],
+    "source_turn_index": 93,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-088",
+    "original_filename": "image(20261008-022140).png",
+    "path": "assets/ess3-asset-088.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t093-u1"
+    ],
+    "source_turn_index": 93,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "1adb8c3efd1d539f1634feafe446d57302173e3ff787d573400bf3ab2aff1fe2"
+  },
+  {
+    "id": "ess3-asset-089",
+    "original_filename": "image(20261008-023224).png",
+    "path": "assets/ess3-asset-089.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t094-u1"
+    ],
+    "source_turn_index": 94,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "1adb8c3efd1d539f1634feafe446d57302173e3ff787d573400bf3ab2aff1fe2"
+  },
+  {
+    "id": "ess3-asset-090",
+    "original_filename": "image(20261008-023821).png",
+    "path": "assets/ess3-asset-090.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t095-u1"
+    ],
+    "source_turn_index": 95,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "91e878ffada765e01c2147d4b516b60ceb775f7f8bc38e9e10ca1e2ea09d9569"
+  },
+  {
+    "id": "ess3-asset-091",
+    "original_filename": "guntae_r1_HISTORY_BATCH_20261006_XA32762.zip",
+    "path": "unavailable/ess3-asset-091",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t099-a1"
+    ],
+    "source_turn_index": 99,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-092",
+    "original_filename": "image(20261008-033528).png",
+    "path": "assets/ess3-asset-092.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t100-u1"
+    ],
+    "source_turn_index": 100,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "a0ce267777619020a007546781506af4fb316341d15c54ea1de3d00933aaa9b8"
+  },
+  {
+    "id": "ess3-asset-093",
+    "original_filename": "guntae_r1_HISTORY_BATCH_20261006_XA32762.zip",
+    "path": "unavailable/ess3-asset-093",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t101-a1"
+    ],
+    "source_turn_index": 101,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-094",
+    "original_filename": "image(20261008-042022).png",
+    "path": "unavailable/ess3-asset-094",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t101-u1"
+    ],
+    "source_turn_index": 101,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-095",
+    "original_filename": "image(20261008-043243).png",
+    "path": "assets/ess3-asset-095.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t103-u1"
+    ],
+    "source_turn_index": 103,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "0bb902e1e8545be592b57839b04f73683092fbb605f742966b9a649796f9ac9f"
+  },
+  {
+    "id": "ess3-asset-096",
+    "original_filename": "image(20261008-062011).png",
+    "path": "assets/ess3-asset-096.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t104-u1"
+    ],
+    "source_turn_index": 104,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "91cc935fe82a1ca1388d68ab10cc079a364bcc3fb442b78c304b4717c02ac223"
+  },
+  {
+    "id": "ess3-asset-097",
+    "original_filename": "붙여넣은 마크다운(1).md",
+    "path": "unavailable/ess3-asset-097",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t105-u1"
+    ],
+    "source_turn_index": 105,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-098",
+    "original_filename": "guntae_r1_HISTORY_BATCH_20261006_XA32762.zip",
+    "path": "unavailable/ess3-asset-098",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t105-a1"
+    ],
+    "source_turn_index": 105,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-099",
+    "original_filename": "image(20261008-065209).png",
+    "path": "assets/ess3-asset-099.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t106-u1"
+    ],
+    "source_turn_index": 106,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "0f57fd76117c107627e779f233f979585ed08dcc8e2c0aeb16d787f8a83cdaf1"
+  },
+  {
+    "id": "ess3-asset-100",
+    "original_filename": "guntae_r1_HISTORY_BATCH_20261006_XA32762.zip",
+    "path": "unavailable/ess3-asset-100",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t107-a1"
+    ],
+    "source_turn_index": 107,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-101",
+    "original_filename": "image(20261008-065312).png",
+    "path": "assets/ess3-asset-101.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t107-u1"
+    ],
+    "source_turn_index": 107,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "74f8a4024605cf03cf58ea1faa6caeff23263f51360bdff5af6f5f5b01ec8f2f"
+  },
+  {
+    "id": "ess3-asset-102",
+    "original_filename": "image(20261008-071511).png",
+    "path": "assets/ess3-asset-102.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t108-u1"
+    ],
+    "source_turn_index": 108,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "91e878ffada765e01c2147d4b516b60ceb775f7f8bc38e9e10ca1e2ea09d9569"
+  },
+  {
+    "id": "ess3-asset-103",
+    "original_filename": "guntae_r1_HISTORY_BATCH_20261006_XA32762.zip",
+    "path": "unavailable/ess3-asset-103",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t110-a1"
+    ],
+    "source_turn_index": 110,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-104",
+    "original_filename": "guntae_r1_HISTORY_BATCH_20261006_XA32762.zip",
+    "path": "unavailable/ess3-asset-104",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess3-t111-a1"
+    ],
+    "source_turn_index": 111,
+    "source_thread": "ess3"
+  },
+  {
+    "id": "ess3-asset-105",
+    "original_filename": "image(20261008-074538).png",
+    "path": "assets/ess3-asset-105.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t111-u1"
+    ],
+    "source_turn_index": 111,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "74f8a4024605cf03cf58ea1faa6caeff23263f51360bdff5af6f5f5b01ec8f2f"
+  },
+  {
+    "id": "ess3-asset-106",
+    "original_filename": "image(20261008-074547).png",
+    "path": "assets/ess3-asset-106.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t111-u1"
+    ],
+    "source_turn_index": 111,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "1c0a51951882de2d6acf87412edbb456c220ae01274e23cf78a5764e9a24e863"
+  },
+  {
+    "id": "ess3-asset-107",
+    "original_filename": "image(20261008-074555).png",
+    "path": "assets/ess3-asset-107.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t111-u1"
+    ],
+    "source_turn_index": 111,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "cdf71aee15bdc927a42b6d839452bc84f27fef4ce24e3bce05db465109795733"
+  },
+  {
+    "id": "ess3-asset-108",
+    "original_filename": "image(20261008-074604).png",
+    "path": "assets/ess3-asset-108.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess3-t111-u1"
+    ],
+    "source_turn_index": 111,
+    "source_thread": "ess3",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "99b1233f70058982b83140a7cf68073abf91a335ebcf8411ef4a5b9a25fc9c01"
+  },
+  {
+    "id": "ess4-asset-001",
+    "original_filename": "README_TABLES_EASY.md",
+    "path": "unavailable/ess4-asset-001",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t003-u1"
+    ],
+    "source_turn_index": 3,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-002",
+    "original_filename": "README_R1_APPROVED_CONNECT_20261012_EASY.md",
+    "path": "unavailable/ess4-asset-002",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t010-u1"
+    ],
+    "source_turn_index": 10,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-003",
+    "original_filename": "image(20261012-074425).png",
+    "path": "assets/ess4-asset-003.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess4-t011-u1"
+    ],
+    "source_turn_index": 11,
+    "source_thread": "ess4",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "5c109cfbd617021e2437adbcb526f4af91ebc04e4c7626fa1db42e99e42ecf95"
+  },
+  {
+    "id": "ess4-asset-004",
+    "original_filename": "image(20261012-081911).png",
+    "path": "unavailable/ess4-asset-004",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t013-u1"
+    ],
+    "source_turn_index": 13,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-005",
+    "original_filename": "image(20261012-082155).png",
+    "path": "unavailable/ess4-asset-005",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t015-u1"
+    ],
+    "source_turn_index": 15,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-006",
+    "original_filename": "image(20261012-082337).png",
+    "path": "unavailable/ess4-asset-006",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t016-u1"
+    ],
+    "source_turn_index": 16,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-007",
+    "original_filename": "image(20261012-082529).png",
+    "path": "unavailable/ess4-asset-007",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t017-u1"
+    ],
+    "source_turn_index": 17,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-008",
+    "original_filename": "image(20261012-083024).png",
+    "path": "unavailable/ess4-asset-008",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t021-u1"
+    ],
+    "source_turn_index": 21,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-009",
+    "original_filename": "image(20261014-005713).png",
+    "path": "assets/ess4-asset-009.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess4-t022-u1"
+    ],
+    "source_turn_index": 22,
+    "source_thread": "ess4",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "84ec42e777734e3ab646b4d087df2e4fafa11d52b80ac46dd1ca588d167e63e7"
+  },
+  {
+    "id": "ess4-asset-010",
+    "original_filename": "image(20261014-010006).png",
+    "path": "assets/ess4-asset-010.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess4-t023-u1"
+    ],
+    "source_turn_index": 23,
+    "source_thread": "ess4",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "8f6e338ddde7339f4ef13fdd11e1ecf249484e0b2a6b1434939d1a1ff9ebb724"
+  },
+  {
+    "id": "ess4-asset-011",
+    "original_filename": "image(20261014-011622).png",
+    "path": "unavailable/ess4-asset-011",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t025-u1"
+    ],
+    "source_turn_index": 25,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-012",
+    "original_filename": "image(20261014-012326).png",
+    "path": "unavailable/ess4-asset-012",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t026-u1"
+    ],
+    "source_turn_index": 26,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-013",
+    "original_filename": "image(20261014-014656).png",
+    "path": "unavailable/ess4-asset-013",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t027-u1"
+    ],
+    "source_turn_index": 27,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-014",
+    "original_filename": "image(20261014-015035).png",
+    "path": "unavailable/ess4-asset-014",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t029-u1"
+    ],
+    "source_turn_index": 29,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-015",
+    "original_filename": "image(20261014-015120).png",
+    "path": "unavailable/ess4-asset-015",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t030-u1"
+    ],
+    "source_turn_index": 30,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-016",
+    "original_filename": "붙여넣은 마크다운(2).md",
+    "path": "unavailable/ess4-asset-016",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t033-u1"
+    ],
+    "source_turn_index": 33,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-017",
+    "original_filename": "R1_CONNECT_RESTORE_20261014_XA32762.zip",
+    "path": "unavailable/ess4-asset-017",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t034-a1"
+    ],
+    "source_turn_index": 34,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-018",
+    "original_filename": "근태실적.xls",
+    "path": "unavailable/ess4-asset-018",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t036-u1"
+    ],
+    "source_turn_index": 36,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-019",
+    "original_filename": "image(20261014-042252).png",
+    "path": "assets/ess4-asset-019.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess4-t037-u1"
+    ],
+    "source_turn_index": 37,
+    "source_thread": "ess4",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "d928e9733781806e7aa6a93556cad008fdb71be391ea560ef13d6bfbc949dd2e"
+  },
+  {
+    "id": "ess4-asset-020",
+    "original_filename": "image(20261014-042731).png",
+    "path": "assets/ess4-asset-020.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess4-t037-u1"
+    ],
+    "source_turn_index": 37,
+    "source_thread": "ess4",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "071117d8454ba75a76dd7c02b95467a4c3ce43ac51c60b06b44fa92835ba53a5"
+  },
+  {
+    "id": "ess4-asset-021",
+    "original_filename": "zthr0080_kobis.xls",
+    "path": "unavailable/ess4-asset-021",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t038-u1"
+    ],
+    "source_turn_index": 38,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-022",
+    "original_filename": "근태실적.xls",
+    "path": "unavailable/ess4-asset-022",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t038-a1"
+    ],
+    "source_turn_index": 38,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-023",
+    "original_filename": "README_REJECT_CHECK_EASY.md",
+    "path": "unavailable/ess4-asset-023",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t039-a1"
+    ],
+    "source_turn_index": 39,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-024",
+    "original_filename": "R1_REJECT_CHECK_20261014_XA32762.zip",
+    "path": "unavailable/ess4-asset-024",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t039-a1"
+    ],
+    "source_turn_index": 39,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-025",
+    "original_filename": "README_CHECK02_EASY.md",
+    "path": "unavailable/ess4-asset-025",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t040-a1"
+    ],
+    "source_turn_index": 40,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-026",
+    "original_filename": "R1_REJECT_CHECK02_20261014_XA32762.zip",
+    "path": "unavailable/ess4-asset-026",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t040-a1"
+    ],
+    "source_turn_index": 40,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-027",
+    "original_filename": "image(20261014-045524).png",
+    "path": "unavailable/ess4-asset-027",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t040-u1"
+    ],
+    "source_turn_index": 40,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-028",
+    "original_filename": "image(20261014-045700).png",
+    "path": "unavailable/ess4-asset-028",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t040-u1"
+    ],
+    "source_turn_index": 40,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-029",
+    "original_filename": "image(20261014-050857).png",
+    "path": "unavailable/ess4-asset-029",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t041-u1"
+    ],
+    "source_turn_index": 41,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-030",
+    "original_filename": "image(20261014-050923).png",
+    "path": "unavailable/ess4-asset-030",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t041-u1"
+    ],
+    "source_turn_index": 41,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-031",
+    "original_filename": "image(20261014-052258).png",
+    "path": "assets/ess4-asset-031.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess4-t042-u1"
+    ],
+    "source_turn_index": 42,
+    "source_thread": "ess4",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "2df85c3510bc55cd1e2675b71fe5ab25a2e7796108cbc428d260de844b319168"
+  },
+  {
+    "id": "ess4-asset-032",
+    "original_filename": "image(20261014-052300).png",
+    "path": "unavailable/ess4-asset-032",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t042-u1"
+    ],
+    "source_turn_index": 42,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-033",
+    "original_filename": "image(20261014-052711).png",
+    "path": "unavailable/ess4-asset-033",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t043-u1"
+    ],
+    "source_turn_index": 43,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-034",
+    "original_filename": "image(20261014-052724).png",
+    "path": "unavailable/ess4-asset-034",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t043-u1"
+    ],
+    "source_turn_index": 43,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-035",
+    "original_filename": "붙여넣은 마크다운(3).md",
+    "path": "unavailable/ess4-asset-035",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t044-u1"
+    ],
+    "source_turn_index": 44,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-036",
+    "original_filename": "README_PC_GUARD01_EASY.md",
+    "path": "unavailable/ess4-asset-036",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t044-a1"
+    ],
+    "source_turn_index": 44,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-037",
+    "original_filename": "R1_PC_GUARD01_20261014_XA32762.zip",
+    "path": "unavailable/ess4-asset-037",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t044-a1"
+    ],
+    "source_turn_index": 44,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-038",
+    "original_filename": "README_REJECT_SYNC01_EASY.md",
+    "path": "unavailable/ess4-asset-038",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t045-a1"
+    ],
+    "source_turn_index": 45,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-039",
+    "original_filename": "R1_REJECT_SYNC01_20261014_XA32762.zip",
+    "path": "unavailable/ess4-asset-039",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t045-a1"
+    ],
+    "source_turn_index": 45,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-040",
+    "original_filename": "image(20261014-065743).png",
+    "path": "assets/ess4-asset-040.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess4-t046-u1"
+    ],
+    "source_turn_index": 46,
+    "source_thread": "ess4",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "cc2ec021eeb4e2756bccf10bfe8c7844dbccd5d6058dd39c6f136e0a4ad75b2a"
+  },
+  {
+    "id": "ess4-asset-041",
+    "original_filename": "image(20261014-070630).png",
+    "path": "unavailable/ess4-asset-041",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t047-u1"
+    ],
+    "source_turn_index": 47,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-042",
+    "original_filename": "image(20261014-071640).png",
+    "path": "unavailable/ess4-asset-042",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t049-u1"
+    ],
+    "source_turn_index": 49,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-043",
+    "original_filename": "image(20261014-072125).png",
+    "path": "unavailable/ess4-asset-043",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t050-u1"
+    ],
+    "source_turn_index": 50,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-044",
+    "original_filename": "image(20261014-072927).png",
+    "path": "unavailable/ess4-asset-044",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t052-u1"
+    ],
+    "source_turn_index": 52,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-045",
+    "original_filename": "image(20261014-073342).png",
+    "path": "unavailable/ess4-asset-045",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t053-u1"
+    ],
+    "source_turn_index": 53,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-046",
+    "original_filename": "WF_CHECK_WF_STATE01_20261014.txt",
+    "path": "unavailable/ess4-asset-046",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t054-a1"
+    ],
+    "source_turn_index": 54,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-047",
+    "original_filename": "WF_FINISH_WF_STATE01_20261014.txt",
+    "path": "unavailable/ess4-asset-047",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t054-a1"
+    ],
+    "source_turn_index": 54,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-048",
+    "original_filename": "R1_WF_STATE01_20261014_XA32762.zip",
+    "path": "unavailable/ess4-asset-048",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t054-a1"
+    ],
+    "source_turn_index": 54,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-049",
+    "original_filename": "image(20261014-074020).png",
+    "path": "assets/ess4-asset-049.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess4-t054-u1"
+    ],
+    "source_turn_index": 54,
+    "source_thread": "ess4",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "73bbd6028a264428b065d9f0bf206c3df3202a7b070c4b1148925acbd877d115"
+  },
+  {
+    "id": "ess4-asset-050",
+    "original_filename": "image(20261014-075010).png",
+    "path": "assets/ess4-asset-050.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess4-t055-u1"
+    ],
+    "source_turn_index": 55,
+    "source_thread": "ess4",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "773809f46038055a84d41e2c3a6fc246cbe911982ccf8625e01ba46debda6cd5"
+  },
+  {
+    "id": "ess4-asset-051",
+    "original_filename": "image(20261014-075024).png",
+    "path": "assets/ess4-asset-051.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess4-t055-u1"
+    ],
+    "source_turn_index": 55,
+    "source_thread": "ess4",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "73bbd6028a264428b065d9f0bf206c3df3202a7b070c4b1148925acbd877d115"
+  },
+  {
+    "id": "ess4-asset-052",
+    "original_filename": "image(20261014-075739).png",
+    "path": "assets/ess4-asset-052.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess4-t056-u1"
+    ],
+    "source_turn_index": 56,
+    "source_thread": "ess4",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "e13f7263aefeb53c69158dddd80ba52421a35f9c7469055d0e761735296be232"
+  },
+  {
+    "id": "ess4-asset-053",
+    "original_filename": "image(20261014-080224).png",
+    "path": "unavailable/ess4-asset-053",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t057-u1"
+    ],
+    "source_turn_index": 57,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-054",
+    "original_filename": "download.png",
+    "path": "assets/ess4-asset-054.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess4-t057-u1"
+    ],
+    "source_turn_index": 57,
+    "source_thread": "ess4",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "09a4dbf682a0c02196ed39fc477f1cc4581dbb46af71eab2b573c137201df799"
+  },
+  {
+    "id": "ess4-asset-055",
+    "original_filename": "image(20261014-082408).png",
+    "path": "assets/ess4-asset-055.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess4-t058-u1"
+    ],
+    "source_turn_index": 58,
+    "source_thread": "ess4",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "31dde365a53a5723e6320ff1205e3350678067de1a8ebbaef308bd09ab40c88c"
+  },
+  {
+    "id": "ess4-asset-056",
+    "original_filename": "image(20261014-082715).png",
+    "path": "assets/ess4-asset-056.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess4-t059-u1"
+    ],
+    "source_turn_index": 59,
+    "source_thread": "ess4",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "09d100dc04ddae7aa5a4ab235f73feaae9a54d680c1bdb74f1d0884013158260"
+  },
+  {
+    "id": "ess4-asset-057",
+    "original_filename": "STATUS_HTML_RESUME_EVENT01_FULL.txt",
+    "path": "unavailable/ess4-asset-057",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t060-a1"
+    ],
+    "source_turn_index": 60,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-058",
+    "original_filename": "R1_RESUME_EVENT01_20261014_XA32762.zip",
+    "path": "unavailable/ess4-asset-058",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t060-a1"
+    ],
+    "source_turn_index": 60,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-059",
+    "original_filename": "OnRequest_ADD_RESUME_PAGE02.txt",
+    "path": "unavailable/ess4-asset-059",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t062-a1"
+    ],
+    "source_turn_index": 62,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-060",
+    "original_filename": "OnInputProcessing_RESUME_PAGE02.txt",
+    "path": "unavailable/ess4-asset-060",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t062-a1"
+    ],
+    "source_turn_index": 62,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-061",
+    "original_filename": "OnInitialization_RESUME_PAGE02.txt",
+    "path": "unavailable/ess4-asset-061",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t062-a1"
+    ],
+    "source_turn_index": 62,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-062",
+    "original_filename": "R1_RESUME_PAGE02_20261014_XA32762.zip",
+    "path": "unavailable/ess4-asset-062",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t062-a1"
+    ],
+    "source_turn_index": 62,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-063",
+    "original_filename": "image(20261014-235540).png",
+    "path": "unavailable/ess4-asset-063",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t063-u1"
+    ],
+    "source_turn_index": 63,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-064",
+    "original_filename": "image(20261014-235806).png",
+    "path": "unavailable/ess4-asset-064",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t064-u1"
+    ],
+    "source_turn_index": 64,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-065",
+    "original_filename": "image(20261015-000237).png",
+    "path": "unavailable/ess4-asset-065",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t065-u1"
+    ],
+    "source_turn_index": 65,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-066",
+    "original_filename": "image(20261015-000242).png",
+    "path": "unavailable/ess4-asset-066",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t065-u1"
+    ],
+    "source_turn_index": 65,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-067",
+    "original_filename": "image(20261015-000710).png",
+    "path": "unavailable/ess4-asset-067",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t066-u1"
+    ],
+    "source_turn_index": 66,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-068",
+    "original_filename": "image(20261015-001453).png",
+    "path": "assets/ess4-asset-068.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess4-t067-u1"
+    ],
+    "source_turn_index": 67,
+    "source_thread": "ess4",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "88c07a0c462021b79418b5f8bb857e672efd9ddd869fbb473de758f23cf26450"
+  },
+  {
+    "id": "ess4-asset-069",
+    "original_filename": "image(20261015-044819).png",
+    "path": "assets/ess4-asset-069.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess4-t068-u1"
+    ],
+    "source_turn_index": 68,
+    "source_thread": "ess4",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "354e9a930aadcf33cfdf27362cef15f256631153dfb59b13cedecadf3260f3f1"
+  },
+  {
+    "id": "ess4-asset-070",
+    "original_filename": "image(20261015-045609).png",
+    "path": "assets/ess4-asset-070.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess4-t069-u1"
+    ],
+    "source_turn_index": 69,
+    "source_thread": "ess4",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "ee8633b00eafa93707cb31c61e00de99a9367bd23f2398a65f1888823b6cd9ec"
+  },
+  {
+    "id": "ess4-asset-071",
+    "original_filename": "image(20261015-050531).png",
+    "path": "assets/ess4-asset-071.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess4-t070-u1"
+    ],
+    "source_turn_index": 70,
+    "source_thread": "ess4",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "4969025004a2f1ded007b188345ec79739d44457265b7bdc7f49263d0f46bd5a"
+  },
+  {
+    "id": "ess4-asset-072",
+    "original_filename": "image(20261015-051251).png",
+    "path": "unavailable/ess4-asset-072",
+    "kind": "image",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t072-u1"
+    ],
+    "source_turn_index": 72,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-073",
+    "original_filename": "R1_SUBMIT_POPUP_SOURCE_REVIEW_20261015.txt",
+    "path": "unavailable/ess4-asset-073",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t073-a1"
+    ],
+    "source_turn_index": 73,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-074",
+    "original_filename": "붙여넣은 마크다운(4).md",
+    "path": "unavailable/ess4-asset-074",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t075-u1"
+    ],
+    "source_turn_index": 75,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-075",
+    "original_filename": "붙여넣은 마크다운(2)(1).md",
+    "path": "unavailable/ess4-asset-075",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t075-u1"
+    ],
+    "source_turn_index": 75,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-076",
+    "original_filename": "R1_SUBMIT_ONCE01_20261015_XA32762.zip",
+    "path": "unavailable/ess4-asset-076",
+    "kind": "archive",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t075-a1"
+    ],
+    "source_turn_index": 75,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-077",
+    "original_filename": "guntae_input_r1_LAYOUT_SUBMIT_ONCE01_FULL.txt",
+    "path": "unavailable/ess4-asset-077",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t075-a1"
+    ],
+    "source_turn_index": 75,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-078",
+    "original_filename": "guntae_input_r1_OnInputProcessing_SUBMIT_ONCE01_FULL.txt",
+    "path": "unavailable/ess4-asset-078",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t075-a1"
+    ],
+    "source_turn_index": 75,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-079",
+    "original_filename": "README_SUBMIT_ONCE01_EASY.md",
+    "path": "unavailable/ess4-asset-079",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t075-a1"
+    ],
+    "source_turn_index": 75,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-080",
+    "original_filename": "image(20261015-061148).png",
+    "path": "assets/ess4-asset-080.png",
+    "kind": "image",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess4-t076-u1"
+    ],
+    "source_turn_index": 76,
+    "source_thread": "ess4",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "e83be6b4e96274f7706b58720ac8a982a345d21bf1b3a57bf8ebabaca97b4ed2"
+  },
+  {
+    "id": "ess4-asset-081",
+    "original_filename": "R1_SUBMIT_PRG01_20261015_XA32762.zip",
+    "path": "assets/ess4-asset-081.zip",
+    "kind": "archive",
+    "availability": "included",
+    "description": "2026-10-16 공유 화면에서 내려받은 첨부 원본입니다.",
+    "related_message_ids": [
+      "ess4-t079-a1"
+    ],
+    "source_turn_index": 79,
+    "source_thread": "ess4",
+    "asset_root": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+    "sha256": "051ce9c714586dbb7825116be61250d3614965e7b4cba0d084ac9bd9bcca1ff7"
+  },
+  {
+    "id": "ess4-asset-082",
+    "original_filename": "guntae_input_r1_LAYOUT_SUBMIT_PRG01_FULL.txt",
+    "path": "unavailable/ess4-asset-082",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t079-a1"
+    ],
+    "source_turn_index": 79,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-083",
+    "original_filename": "guntae_input_r1_OnInputProcessing_SUBMIT_PRG01_FULL.txt",
+    "path": "unavailable/ess4-asset-083",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t079-a1"
+    ],
+    "source_turn_index": 79,
+    "source_thread": "ess4"
+  },
+  {
+    "id": "ess4-asset-084",
+    "original_filename": "README_SUBMIT_PRG01_EASY.md",
+    "path": "unavailable/ess4-asset-084",
+    "kind": "document",
+    "availability": "unavailable",
+    "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+    "related_message_ids": [
+      "ess4-t079-a1"
+    ],
+    "source_turn_index": 79,
+    "source_thread": "ess4"
+  }
+]

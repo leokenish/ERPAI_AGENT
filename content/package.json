@@ -1,0 +1,23 @@
+{
+  "name": "kbs-erp-ai-learning-portal",
+  "version": "1.11.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/server.mjs",
+    "start:lan": "node scripts/server.mjs --lan",
+    "dev": "node scripts/preview.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "service:install": "node scripts/macos-service.mjs install",
+    "service:status": "node scripts/macos-service.mjs status",
+    "service:restart": "node scripts/macos-service.mjs restart",
+    "service:stop": "node scripts/macos-service.mjs stop",
+    "service:uninstall": "node scripts/macos-service.mjs uninstall",
+    "preview:file": "node scripts/build-preview.mjs",
+    "knowledge:import": "node scripts/import-worktime-md.mjs"
+  }
+}
