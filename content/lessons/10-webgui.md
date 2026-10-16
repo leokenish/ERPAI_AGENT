@@ -4,7 +4,7 @@
 
 기존 WebGUI의 색상·가독성 개선에서 출발해 스크롤 끊김, Chrome 오류, SYSTEM 공통 자원과 HTML까지 분석 범위가 확대됐습니다. 최종 우선순위는 **업무·데이터 → 시스템 호환 → 배치·조작 → 디자인·가독성 → 근거 있는 성능**입니다.
 
-확보 기준은 ITS Chrome v3, 2026-09-14 보고서입니다. 총 100개 소스 중 v3의 추가 변경은 33개이며, 정적·모의 시험 기록을 보존합니다. 실제 Chrome·ERP 전체 시험은 미확인입니다.
+기존 확보 기준은 ITS Chrome v3, 2026-09-14 보고서입니다. 총 100개 소스 중 v3의 추가 변경은 33개이며, 정적·모의 시험 기록을 보존합니다. 2026-10-16에는 별도 대화의 **Modern V2 디자인 개편과 ITS 비교·반영 도구 검토**를 추가했습니다. 두 산출물 계열의 이름·범위·검증을 구분합니다. 실제 Chrome·ERP 전체 시험은 미확인입니다.
 
 ## 사례 1: 스크롤하면 자원이 다시 보인다
 
@@ -46,8 +46,41 @@ Full을 적용한 뒤 오래된 부분 패치를 덮어쓰면 최신 변경을 �
 
 저장소의 v3 보고서와 증빙을 읽고, “186건 모형 시험 통과”가 무엇을 확인했는지 설명합니다. 실제 화면에서는 휠·화살표·ALV·팝업·한글 IME·폼 제출·세션 유지 등을 별도로 시험합니다. 이번 포털의 화면 검증을 기존 WebGUI 운영 검증으로 대체하지 않습니다.
 
+## 추가 사례: CSS 개선에서 Modern V2로
+
+새 대화는 ECC 6.0·SAP_BASIS 700에서 기존 WEBGUI·SYSTEM 인터넷 서비스의 기능과 파일·함수 이름을 보존하며 디자인을 개선하려는 요청입니다. CSS 21개를 적용하는 안내 이후, 사용자는 더 넓은 UI 개편을 요구했습니다. JS의 메뉴 위치 계산, 툴바 크기와 폰트 폭, HTMLBusiness 템플릿과 아이콘의 의존성까지 확인 범위가 넓어졌습니다.
+
+| 계열 | 대상 | 검증을 읽는 기준 |
+|---|---|---|
+| 기존 ITS Chrome v3 | 100개 소스, 직전 기준 대비 변경 33개 | 기존 정적·모의 시험 기록 |
+| 새 Modern V1 | CSS 중심 디자인 개선 | 실제 SAP 실행 캡처와 재구성 비교 화면 구분 |
+| 새 Modern V2 | CSS 21·JS 6·HTMLBusiness 10·GIF 75, 총 112개 객체 | 원 대화의 AI가 정적 20개·로컬 Chromium 25개 검사 보고 |
+
+Modern V2의 112개 객체와 각 메타데이터 XML까지 포함한 224개 물리 파일은 서로 다른 집계입니다. 112개는 MIME 102개와 템플릿 10개로도 나뉩니다. 이 숫자를 기존 Chrome v3의 100개·33개와 합치거나 최신성만으로 서로 덮어쓰면 안 됩니다.
+
+포털은 대화에 기록된 검증 주장을 전사했습니다. 이를 SAP 운영 서버, Windows Chrome·Edge, 실제 업무 전 구간의 독립 시험 결과로 확장하지 않습니다.
+
+[Modern V1부터 대화 전문 읽기](#/conversations/kbs-erp-webgui-refactor/wg-modern-01) · [Modern V2 객체와 검증 범위](#/conversations/kbs-erp-webgui-refactor/wg-modern-03)
+
+## 추가 사례: ITS 반영 도구는 아직 검토 단계
+
+사용자는 웹 자산과 `.sapxml`을 올려 ALV에서 차이를 보고 선택한 객체를 저장·활성화하는 ABAP 도구를 **검토만** 요청했습니다. 기존 DIAG 0.4.5는 읽기 전용 진단이며, 그 안에 검증된 ITS 쓰기 기능이 있다고 가정하지 않습니다.
+
+| 검토 항목 | 확인할 이유 |
+|---|---|
+| 파일명과 MIME 내부 키 | 표시 이름만으로 대상 객체를 찾으면 잘못된 객체에 연결할 수 있음 |
+| MIME와 HTMLBusiness 템플릿 | 저장·언어·활성화·발행 경로가 같다고 가정할 수 없음 |
+| 추출기와 메타데이터 스키마 | DEVHUB export와 ITS source export의 구조를 혼동하지 않음 |
+| 백업·잠금·권한·CTS | 비교 성공이 안전한 반영 절차의 완성을 뜻하지 않음 |
+| 작은 CSS 1개 시범 | 대상 조회·차이·저장·되읽기·복구를 검증한 뒤 범위를 확대 |
+
+최신 ITS 추출기는 분석에 도움이 될 수 있지만, 대화에서는 0.1.7 추출기를 필수 선행 조건으로 확정하지 않았습니다. 실제 SAP 700 API와 반영·발행 절차의 검증은 남아 있습니다.
+
+[ITS 도구 검토 전문 읽기](#/conversations/kbs-erp-webgui-refactor/wg-modern-04)
+
 ## 근거
 
 - `sources/webgui/01_프로젝트_맥락과설계.md` §5·7·10·13
 - `sources/webgui/references/ITS_Chrome_v3_Report.md`
 - `sources/webgui/references/v3_evidence/validation.json`
+- `sources/conversations/20261016-business/kbs-erp-webgui-refactor/webgui-transcript.md`

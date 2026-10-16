@@ -1,7 +1,7 @@
 {
   "title": "ERP AI 에이전트 교육 포털",
-  "version": "1.10.1",
-  "asOf": "2026-10-14",
+  "version": "1.11.0",
+  "asOf": "2026-10-16",
   "groups": [
     "공통 기초",
     "업무 적용",
@@ -158,16 +158,16 @@
       "file": "lessons/10-webgui.md",
       "number": 10,
       "title": "WEBGUI 개선과 검증",
-      "summary": "Chrome 개선 과정에서 데이터·이벤트 계약을 보존한 방법",
+      "summary": "Chrome v3와 Modern V2의 범위·증거, ITS 반영 도구 검토를 구분하기",
       "group": "사례·운영",
       "status": "정적·모의 검증",
-      "tag": "ITS Chrome v3",
+      "tag": "Chrome v3 · Modern V2",
       "source": "webgui",
       "goals": [
         "관측 증상과 실제 원인을 구분한다",
         "모의 시험과 운영 검증의 경계를 설명한다"
       ],
-      "asOf": "2026-10-08"
+      "asOf": "2026-10-16"
     },
     {
       "id": "worktime-agent",
@@ -201,6 +201,23 @@
         "dist만 웹서버에서 제공한다"
       ],
       "asOf": "2026-10-08"
+    },
+    {
+      "id": "ess-attendance",
+      "file": "lessons/13-ess-attendance.md",
+      "number": 13,
+      "title": "ESS 근태시스템 개편",
+      "summary": "날짜·반차 UI부터 저장·결재·원래 휴가 보존·제출 오류까지 실제 대화로 확인하기",
+      "group": "사례·운영",
+      "status": "실행 보고·추가 검증",
+      "tag": "BSP · 근태 R1",
+      "source": "ess-attendance",
+      "goals": [
+        "기존 페이지와 R1 분리 개발의 기준을 설명한다",
+        "저장·상신·승인과 실제 데이터 검증을 구분한다",
+        "사용자 성공 보고와 최종 수정안의 검증 대기를 구분한다"
+      ],
+      "asOf": "2026-10-16"
     }
   ],
   "sources": [
@@ -346,6 +363,26 @@
       "mdCount": 783,
       "path": "sources/github-erp-ai/520ac77046f5/",
       "sha256": "63cc330025c5431c59f44633bc3b0da022694d36562484ece2408eeaf88b7c55"
+    },
+    {
+      "id": "ess-attendance",
+      "title": "ESS 근태시스템 개편",
+      "version": "공유 대화 4개 · 2026-10-16 확보",
+      "status": "대화 전문·첨부 확보",
+      "summary": "사용자 요청 254개·AI 본문 245개와 응답 본문 없는 9개 위치를 보존했습니다.",
+      "findings": [
+        "기존 페이지를 보존한 R1 개발과 저장·결재 경로 추적",
+        "날짜 이동·반차 변경의 특정 시나리오 사용자 확인",
+        "최종 SUBMIT_PRG01 적용 후 재시험은 미확인"
+      ],
+      "lessons": [
+        "ess-attendance"
+      ],
+      "fileCount": 82,
+      "mdCount": 5,
+      "path": "sources/conversations/20261016-business/kbs-erp-ess-attendance/",
+      "archive": null,
+      "sha256": null
     }
   ],
   "downloads": [

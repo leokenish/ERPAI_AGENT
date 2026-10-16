@@ -1,4 +1,0 @@
-interface:
-  display_name: "ZHR5 업무 지식 정리"
-  short_description: "근로시간 원문을 근거와 시점이 있는 업무 문서로 정리"
-  default_prompt: "$zhr5-knowledge-curation으로 제공한 근로시간 자료를 정리해줘."

@@ -168,7 +168,7 @@ main { margin-left: var(--sidebar); padding: calc(var(--top) + 36px) 44px 52px; 
 .home-section .section-top p { font-size:var(--text-small); }
 .home-section .section-top h2 { display: flex; align-items: center; gap: 14px; }
 .section-count { font: 400 0.875rem/1.5 var(--sans); color: var(--muted); letter-spacing: 0; white-space: nowrap; }
-.practice-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
+.practice-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
 .expansion-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
 .home-card { min-width: 0; display: flex; flex-direction: column; padding: 26px; border: 1px solid var(--home-card-line); border-radius: 6px; background: var(--home-card-bg); transition: background-color .18s, border-color .18s; }
 .home-card:hover { border-color: var(--brand); background: var(--home-card-hover); }

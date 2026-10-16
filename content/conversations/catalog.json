@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-14",
+  "asOf": "2026-10-16",
   "sourceRoot": "sources/conversations/20261012",
   "preferredNodes": {
     "sap": [
@@ -223,23 +223,49 @@
       "purpose": "기존 업무 기능을 보존하며 WebGUI의 가독성과 스크롤 동작을 개선하고, 사용자 실행 피드백으로 문제를 좁히려 했습니다.",
       "environment": "WEBGUI·SYSTEMGUI JS/CSS와 일부 HTML, Chrome DevTools 관찰 자료를 제공하고 수정본·원본·검증 자료를 ZIP으로 주고받았습니다.",
       "turningPoint": "캐시 요청과 실제 업무 POST, 중복 콜백과 중복 전송을 구분했습니다. 오류가 나자 제공 소스와 실제 배포 응답의 일치 여부를 다시 확인했습니다.",
-      "currentState": "초기 패치·Chrome v3 산출물과 당시 정적·모의 검증 기록을 확보했습니다. 실제 Chrome·ERP에서 v3 전체 동작을 검증한 결과는 없습니다.",
-      "coverageNote": "사용자 20개·AI 최종 응답 전문 15개·진행 안내 28개를 수록했습니다. 본문 없는 상태 2곳은 따로 안내합니다.",
+      "currentState": "Chrome v3 기존 자료에 Modern V2 설계·산출물과 ITS 비교·반영 도구 검토를 추가했습니다. SAP 운영 적용과 최종 전 구간 검증은 별도입니다.",
+      "coverageNote": "기존 대화를 보존하고 Modern V2 대화의 사용자 요청 7개·AI 전문 7개를 추가했습니다.",
       "integrationNote": "350/700ms 타이머는 요청 전에 예약하는 시간입니다. 모형의 중복 콜백을 실제 중복 POST나 체감 개선 수치로 단정하지 않습니다.",
       "supplementLesson": "webgui",
       "metaEpisodes": [
         "wg-ep08"
       ],
-      "sourcePath": "content/conversations/shared-full/kbs-erp-webgui-refactor",
+      "sourcePath": "content/conversations/business-full/kbs-erp-webgui-refactor",
       "supplementDocuments": [
         "AI_RESPONSES_FULL.md",
         "MISSING_RESPONSES.md",
         "CHANGELOG.md"
       ],
-      "supplementEpisode": "wg-ep00",
+      "supplementEpisode": "wg-modern-01",
       "assetSourcePath": "sources/conversations/20261012-supplement/kbs-erp-webgui-refactor",
-      "supplementLabel": "초기 CSS 요청부터 확보한 전문 읽기",
+      "supplementLabel": "추가 확보한 Modern V2 대화 읽기",
       "publishAttachments": true
+    },
+    {
+      "id": "kbs-erp-ess-attendance",
+      "shortTitle": "ESS 근태시스템 개편",
+      "sourceId": "ess-attendance",
+      "lessonIds": [
+        "ess-attendance"
+      ],
+      "purpose": "기존 근태 신청 화면의 가독성과 조작을 개선하고, 날짜·반차 변경을 저장·결재·잔여 연차와 일치시키려 했습니다.",
+      "environment": "SAP ECC·SAP_BASIS 700, BSP·MIME·ABAP 클래스·함수·워크플로와 IE11·Chrome을 다룬 대화입니다.",
+      "turningPoint": "기존 페이지를 보존한 R1 분리 개발로 전환하고, 저장 상태 변경과 기승인 변경을 나누었습니다. 실제 오류·현재 소스·승인 결과를 확인하며 범위를 좁혔습니다.",
+      "currentState": "특정 날짜 이동·반차 변경의 사용자 성공 보고가 있습니다. 마지막 SUBMIT_PRG01의 적용 후 재시험과 전체 회귀 검증은 남아 있습니다.",
+      "coverageNote": "2026-10-16 공유 화면의 사용자 요청 254개·AI 응답 본문 245개를 추가 확보했습니다. 본문이 표시되지 않은 AI 위치 9곳을 별도로 표시합니다.",
+      "integrationNote": "첨부 전용 요청과 본문이 없는 응답도 위치를 유지합니다. 원 대화의 AI 주장과 사용자의 실행 보고를 구분합니다.",
+      "supplementLesson": "ess-attendance",
+      "metaEpisodes": [],
+      "sourcePath": "content/conversations/business-full/kbs-erp-ess-attendance",
+      "assetSourcePath": "sources/conversations/20261016-business/kbs-erp-ess-attendance",
+      "publishAttachments": true,
+      "supplementDocuments": [
+        "AI_RESPONSES_FULL.md",
+        "MISSING_RESPONSES.md",
+        "CHANGELOG.md"
+      ],
+      "supplementEpisode": "ess-01",
+      "supplementLabel": "첫 요구 확인부터 대화 전문 읽기"
     }
   ]
 }
