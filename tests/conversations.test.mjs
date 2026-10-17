@@ -97,7 +97,7 @@ test('89개 에피소드의 각 화면에 중복 ID·깨진 자료·과정 링�
 });
 test('미확보 AI 답변과 요약을 원문 응답으로 표시하지 않고 검색으로 찾을 수 있다',()=>{
  const missing=conversationWorkspace(bundle,{projectId:'kbs-erp-export-diag-agents',episodeId:'E12',visible:999});
- assert.ok(missing.includes('이 위치에는 AI 답변 본문이 표시되지 않습니다'));
+ assert.ok(missing.includes('AI 답변 본문 미확보'));
  assert.equal((missing.match(/class="conversation-missing-response"/g)||[]).length,2);
  assert.ok(!missing.includes('당시 AI 답변 원문은 확보하지 못했습니다'));
  const summary=conversationWorkspace(bundle,{projectId:'kbs-erp-mcp-telegram',episodeId:'E01',visible:999});

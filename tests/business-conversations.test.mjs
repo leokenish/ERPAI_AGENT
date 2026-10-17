@@ -51,8 +51,8 @@ test('추가 첨부의 공개 파일은 원본 해시와 같고 미확보 파일
 
 test('새 ESS 과정·사례·대화가 연결되고 기존 WebGUI 버전과 검토 상태를 구분한다',async()=>{
  const lesson=portal.lessons.find(l=>l.id==='ess-attendance');assert.equal(lesson.number,13);
- assert.match(lesson.html,/SUBMIT_PRG01/);assert.match(lesson.html,/재시험 결과는 공유 대화에 없습니다/);
- const web=portal.lessons.find(l=>l.id==='webgui');assert.match(web.html,/Modern V2/);assert.match(web.html,/검토만/);assert.match(web.html,/Chrome v3/);
+ assert.match(lesson.html,/SUBMIT_PRG01/);assert.match(lesson.html,/적용 후 사용자 재시험은 대기 상태/);
+ const web=portal.lessons.find(l=>l.id==='webgui');assert.match(web.html,/Modern V2/);assert.match(web.html,/ITS 쓰기 도구는 검토 단계/);assert.match(web.html,/Chrome v3/);
  const app=await readFile(new URL('site/app.js',root),'utf8');assert.match(app,/id:'ess-attendance'/);assert.match(app,/id==='ess-attendance'/);
  await access(new URL('dist/content/lessons/13-ess-attendance.md',root));
 });

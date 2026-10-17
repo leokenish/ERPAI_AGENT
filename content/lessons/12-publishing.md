@@ -2,7 +2,7 @@
 
 ## 원본부터 배포물까지
 
-이 포털은 GitHub에서 관리할 수 있는 HTML·CSS·JavaScript 프로젝트입니다. MD를 수정한 뒤 Node.js 빌드가 본문·목차·검색 데이터를 생성합니다. 웹서버는 완성된 dist만 제공합니다. DB나 외부 CDN은 필요하지 않습니다.
+GitHub로 관리하는 정적 교육 사이트입니다. Node.js 빌드가 MD에서 본문·목차·검색 데이터를 만들고, 웹서버는 `dist/`를 제공합니다.
 
 | 폴더 | 역할 |
 |---|---|
@@ -24,7 +24,7 @@
 5. 변경 이유와 화면을 검토한 후 GitHub에 공유합니다.
 6. 운영 맥에서 확정한 변경을 받아 빌드·반영합니다.
 
-sources에 메모를 올리는 것만으로 자동 게시되지 않습니다. 교육용으로 정리한 content와 명시적으로 지정한 다운로드가 게시 대상입니다.
+게시 대상은 `content/`의 교육 콘텐츠와 지정한 다운로드 파일입니다.
 
 ## 맥에서 처음 실행하기
 
@@ -53,7 +53,7 @@ npm run build
 npm test
 ```
 
-원본 ZIP 전체나 저장소 루트를 웹서버 루트로 지정하지 않습니다. 도메인·고정 IP·사내 접근·HTTPS는 실제 KBS 환경에 맞춰 별도로 구성합니다.
+웹서버 루트는 `dist/`로 지정합니다. 도메인·고정 IP·HTTPS는 사내 환경에 맞춰 구성합니다.
 
 ## 자동 실행의 범위
 
@@ -77,9 +77,9 @@ sources 원본은 보존하고 build와 test를 실행해 결과를 알려줘.
 
 ## 근거
 
-- 이번 통합 대화에서 합의한 GitHub·정적 배포·맥 Node.js 운영 방향
-- 이 저장소의 `README.md`, `docs/MAC_SETUP.md`, `docs/CONTENT_WORKFLOW.md`
-- 운영 맥·KBS 도메인 연결은 아직 이 환경에서 검증하지 않았습니다.
+- GitHub·정적 배포·맥 Node.js 운영 방향
+- `README.md`, `docs/MAC_SETUP.md`, `docs/CONTENT_WORKFLOW.md`
+- 운영 맥·KBS 도메인 연결: 현장 검증 필요
 
 
 ## 근로시간 에이전트의 MD를 갱신할 때
@@ -93,4 +93,4 @@ npm test
 npm run preview:file
 ```
 
-가져오기는 ERP_AI의 **커밋된 HEAD에 있는 MD만** 새 스냅샷에 보존합니다. 커밋하지 않은 수정, ABAP·웹 자산은 가져오지 않습니다. 이미 보존한 커밋은 다시 덮어쓰지 않습니다. 명령 결과와 `docs/WORKTIME_KNOWLEDGE.md`를 읽고 교육 본문·읽기 순서·출처 상태를 검토한 뒤 배포합니다. 포털에서 GitHub에 자동 접속하거나 자동 push하지는 않습니다.
+ERP_AI의 **커밋된 HEAD에 있는 MD**를 새 스냅샷으로 보존합니다. 기존 스냅샷은 유지하며, 교육 본문·읽기 순서·출처 상태를 검토한 뒤 빌드·배포합니다. 상세 절차는 `docs/WORKTIME_KNOWLEDGE.md`를 확인하세요.
