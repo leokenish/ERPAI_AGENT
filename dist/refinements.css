@@ -147,3 +147,10 @@
  .lesson-body>h2 { break-after:avoid; }
  .lesson-body>h3 { break-after:avoid; }
 }
+
+/* Stable statistic widths; screen readers and printing always get the total. */
+.count-up.count-up{font:inherit;color:inherit;display:inline-grid;position:relative;font-variant-numeric:tabular-nums;white-space:nowrap}
+.count-up>.count-up-width,.count-up>.count-up-value{grid-area:1/1;font:inherit;color:inherit;letter-spacing:inherit}
+.count-up>.count-up-width{visibility:hidden}
+.count-up>.count-up-accessible{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media print{.count-up>.count-up-width{visibility:visible}.count-up>.count-up-value{visibility:hidden}}

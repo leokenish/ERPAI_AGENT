@@ -1,0 +1,44 @@
+{
+  "version": "1.11.1",
+  "base": "1.11.0",
+  "source_files_preserved": 1302,
+  "baseline_display_code_blocks_preserved": 177,
+  "editorial_changes": {
+    "user": 186,
+    "assistant": 77
+  },
+  "tests": {
+    "total": 67,
+    "passed": 67,
+    "failed": 0
+  },
+  "browser_visual_check": "not_run_no_supported_browser",
+  "changed_baseline_files": [
+    "README.md",
+    "content/catalog.json",
+    "content/conversations/editorial-prompts.json",
+    "content/conversations/editorial-responses.json",
+    "dist/app.js",
+    "dist/conversations.js",
+    "dist/data/build.json",
+    "dist/data/portal.json",
+    "dist/knowledge.js",
+    "dist/refinements.css",
+    "dist/styles.css",
+    "docs/CONVERSATION_INTEGRATION.md",
+    "docs/DESIGN.md",
+    "docs/INTEGRATION_REVIEW.md",
+    "index.html",
+    "package.json",
+    "preview.html",
+    "scripts/build-preview.mjs",
+    "site/app.js",
+    "site/conversations.js",
+    "site/knowledge.js",
+    "site/refinements.css",
+    "tests/business-conversations.test.mjs",
+    "tests/conversation-navigation.test.mjs",
+    "tests/conversations.test.mjs"
+  ],
+  "removed_baseline_files": []
+}

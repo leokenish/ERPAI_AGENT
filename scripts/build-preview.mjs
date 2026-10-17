@@ -18,13 +18,15 @@ const comparison=(await readFile(path.join(dist,'compare.js'),'utf8')).replaceAl
 const portal=await readFile(path.join(dist,'data/portal.json'),'utf8');
 app=app.replace("import {compare} from './compare.js';",()=>comparison);
 const knowledgeMap=(await readFile(path.join(dist,'knowledge-map.js'),'utf8')).replace(/^export /gm,'');
-const knowledge=(await readFile(path.join(dist,'knowledge.js'),'utf8')).replace(/^export /gm,'').replace("import {renderKnowledgeMap,mountKnowledgeMap} from './knowledge-map.js';",()=>`const {renderKnowledgeMap,mountKnowledgeMap}=(()=>{\n${knowledgeMap}\nreturn {renderKnowledgeMap,mountKnowledgeMap};\n})();`);
+const knowledge=(await readFile(path.join(dist,'knowledge.js'),'utf8')).replace(/^export /gm,'').replace("import {countNumber} from './count-up.js';",'').replace("import {renderKnowledgeMap,mountKnowledgeMap} from './knowledge-map.js';",()=>`const {renderKnowledgeMap,mountKnowledgeMap}=(()=>{\n${knowledgeMap}\nreturn {renderKnowledgeMap,mountKnowledgeMap};\n})();`);
 app=app.replace("import {renderKnowledge,mountKnowledge} from './knowledge.js';",()=>`const {renderKnowledge,mountKnowledge}=(()=>{\n${knowledge}\nreturn {renderKnowledge,mountKnowledge};\n})();`);
 const heroMotion=(await readFile(path.join(dist,'hero-motion.js'),'utf8')).replace('export function','function');
 app=app.replace("import {mountHeroMotion} from './hero-motion.js';",()=>heroMotion);
 const presentation=(await readFile(path.join(dist,'presentation.js'),'utf8')).replace(/^export /gm,'');
 app=app.replace("import {renderPresentation,mountPresentation} from './presentation.js';",()=>`const {renderPresentation,mountPresentation}=(()=>{\n${presentation}\nreturn {renderPresentation,mountPresentation};\n})();`);
-const conversations=(await readFile(path.join(dist,'conversations.js'),'utf8')).replace(/^export /gm,'');
+const countUp=(await readFile(path.join(dist,'count-up.js'),'utf8')).replace(/^export /gm,'');
+app=app.replace("import {countNumber,mountCountUps} from './count-up.js';",()=>countUp);
+const conversations=(await readFile(path.join(dist,'conversations.js'),'utf8')).replace(/^export /gm,'').replace("import {countNumber} from './count-up.js';",'');
 app=app.replace(/^import \{[^\n]+\} from '\.\/conversations\.js';$/m,()=>`const {conversationIndex,conversationWorkspace,resolveConversation,conversationVisibleCount,relatedConversationCount,conversationLink,conversationSearchEntries}=(()=>{\n${conversations}\nreturn {conversationIndex,conversationWorkspace,resolveConversation,conversationVisibleCount,relatedConversationCount,conversationLink,conversationSearchEntries};\n})();`);
 app=app.replace("const r=await fetch('data/portal.json');if(!r.ok)throw Error('자료 응답 오류');data=await r.json();",()=>`data=${portal};`);
 // This trusted SVG is already inline in portal.heroScene; avoid embedding a duplicate.

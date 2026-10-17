@@ -1,5 +1,5 @@
 {
-  "version": "1.11.0",
+  "version": "1.11.1",
   "asOf": "2026-10-16",
   "lessons": 13,
   "sourceBundles": 8,
@@ -143,6 +143,7 @@
     "content/lessons/13-ess-attendance.md",
     "conversations.css",
     "conversations.js",
+    "count-up.js",
     "data/portal.json",
     "downloads/ERP_AI_Markdown_520ac77046f5.zip",
     "downloads/ERP_AI_Markdown_inventory.json",

@@ -155,7 +155,7 @@ test('AI 경어체 편집은 해시와 확보 수준을 보존하며 요약을 �
   assert.equal(edit.source_content_type,m.content_type);assert.equal(m.editorial_markdown,edit.content_markdown);
   const code=text=>[...text.matchAll(/```[\s\S]*?```/g)].map(x=>x[0]);assert.deepEqual(code(m.editorial_markdown),code(m.content_markdown));
  }
- assert.equal(count,294);
+ assert.equal(count,296); // 294 retained overlays + 2 newly edited responses.
  const project=bundle.projects.find(p=>p.id==='kbs-erp-mcp-telegram');
  const episode=project.episodes.find(e=>e.message_refs.includes('M002'));
  assert.match(conversationWorkspace(bundle,{projectId:project.id,episodeId:episode.id,visible:999}),/원문 전사 · 경어체 편집/);

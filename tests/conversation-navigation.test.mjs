@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
 import {readFile} from 'node:fs/promises';
+import {countNumber,mountCountUps} from '../site/count-up.js';
 import * as conversations from '../site/conversations.js';
 import {renderPresentation} from '../site/presentation.js';
 import {renderKnowledge,mountKnowledge} from '../site/knowledge.js';
@@ -17,7 +18,7 @@ function fixture(hash){
  for(const id of ['sap','export','git','knowledge','codex','diag','maps','feedback'])graphNodes.push({dataset:{node:id},classList:classes(),setAttribute(){}});
  const location={hash};
  const document={body:{classList:classes()},querySelector(s){if(s==='#compare-preset'||s==='dialog[open]'||s==='.hero')return null;if(s==='[data-presentation]')return element('presentation');return s.startsWith('#')?element(s.slice(1)):null;},querySelectorAll(s){return s==='.graph-node'?graphNodes:[];},getElementById:element,addEventListener(type,fn){events[type]=fn;}};
- const context=vm.createContext({...conversations,renderKnowledge,mountKnowledge,renderPresentation,mountPresentation(root){assert.equal(root.id,'presentation');presentationLifecycle.push('mount');return ()=>presentationLifecycle.push('cleanup');},mountHeroMotion(root,options){assert.equal(options?.alreadyTyped,undefined);heroLifecycle.push('mount');return ()=>heroLifecycle.push('cleanup');},document,location,history:{replaceState(a,b,url){location.hash=url;}},localStorage:{getItem(){return null;}},window:{scrollTo(){},addEventListener(type,fn){windowEvents[type]=fn;},isSecureContext:true},navigator:{clipboard:{async writeText(text){copied.push(text);}}},URLSearchParams,fetch:async()=>({ok:true,json:async()=>data}),console,setTimeout,clearTimeout});
+ const context=vm.createContext({...conversations,countNumber,mountCountUps,renderKnowledge,mountKnowledge,renderPresentation,mountPresentation(root){assert.equal(root.id,'presentation');presentationLifecycle.push('mount');return ()=>presentationLifecycle.push('cleanup');},mountHeroMotion(root,options){assert.equal(options?.alreadyTyped,undefined);heroLifecycle.push('mount');return ()=>heroLifecycle.push('cleanup');},document,location,history:{replaceState(a,b,url){location.hash=url;}},localStorage:{getItem(){return null;}},window:{scrollTo(){},addEventListener(type,fn){windowEvents[type]=fn;},isSecureContext:true},navigator:{clipboard:{async writeText(text){copied.push(text);}}},URLSearchParams,fetch:async()=>({ok:true,json:async()=>data}),console,setTimeout,clearTimeout});
  return {context,elements,events,windowEvents,location,copied,presentationLifecycle,heroLifecycle};
 }
 function target(attribute,dataset){return {dataset,closest(){return this;},matches(selector){return selector===`[${attribute}]`;}};}

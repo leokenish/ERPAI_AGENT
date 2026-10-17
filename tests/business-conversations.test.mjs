@@ -21,6 +21,9 @@ test('사업용 공유 화면의 261개 요청과 252개 AI 본문을 원문·�
    for(const source of capture.messages){
     const m=found.find(m=>m.id===source.id);
     assert.equal(m.content_markdown,source.content_markdown);
+    const published=p.messages.find(message=>message.id===m.id);
+    const code=text=>[...text.matchAll(/```[\s\S]*?```|~~~[\s\S]*?~~~/g)].map(match=>match[0]);
+    assert.deepEqual(code(published.editorial_markdown??published.content_markdown),code(source.content_markdown),`code changed in display: ${m.id}`);
     assert.equal(m.source_platform_message_id,source.source_platform_message_id);
     assert.equal(m.content_type,source.content_type);
     const episodes=p.episodes.filter(e=>e.message_refs.includes(m.id));
