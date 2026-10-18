@@ -9,7 +9,7 @@ const root=new URL('../',import.meta.url);
 const portal=JSON.parse(await readFile(new URL('dist/data/portal.json',root),'utf8'));
 const bundle=portal.conversations;
 const fields=['id','sequence','role','timestamp','content_type','content_markdown','source_locator','redacted'];
-test('373개 사용자 문장은 교육용으로 구분하고 AI 전문·첨부 전용 항목을 보존한다',async()=>{
+test('393개 사용자 문장은 교육용으로 구분하고 AI 전문·첨부 전용 항목을 보존한다',async()=>{
  const edits=JSON.parse(await readFile(new URL('content/conversations/editorial-prompts.json',root),'utf8'));
  let edited=0,empty=0;
  for(const p of bundle.projects)for(const m of p.messages){
@@ -19,7 +19,7 @@ test('373개 사용자 문장은 교육용으로 구분하고 AI 전문·첨부 
   assert.equal(edit.source_sha256,createHash('sha256').update(m.content_markdown).digest('hex'));
   assert.equal(m.editorial_markdown,edit.content_markdown);assert.doesNotMatch(m.editorial_markdown,/주십시오|마십시오/);assert.ok(m.editorialHtml);edited++;
  }
- assert.equal(edited,373);assert.equal(empty,66);
+ assert.equal(edited,393);assert.equal(empty,66);
  const html=conversationWorkspace(bundle,{projectId:'erp-obsidian-knowledge-map',episodeId:'obs-e001',visible:999});
  assert.match(html,/>교육용 문장<\/span>/);
  assert.match(html,/회사.*ERP 관련 업무 파일을 구조화/);
@@ -30,9 +30,9 @@ test('373개 사용자 문장은 교육용으로 구분하고 AI 전문·첨부 
  const emptyHtml=conversationWorkspace(bundle,{projectId:blank.id,episodeId:episode.id,visible:999});
  assert.match(emptyHtml,/첨부 자료만 전달된 항목입니다/);
 });
-test('7개 프로젝트의 929개 위치를 원문·발췌·요약·본문 없음으로 구분하고 순서를 보존한다',async()=>{
+test('7개 프로젝트의 969개 위치를 원문·발췌·요약·본문 없음으로 구분하고 순서를 보존한다',async()=>{
  assert.equal(bundle.projects.length,7);
- assert.deepEqual(bundle.totals,{projects:7,messages:929,episodes:89,verbatim:915,excerpt:0,summary:0,reconstructed:0,unavailable:14});
+ assert.deepEqual(bundle.totals,{projects:7,messages:969,episodes:97,verbatim:955,excerpt:0,summary:0,reconstructed:0,unavailable:14});
  for(const p of bundle.projects){
   const source=JSON.parse(await readFile(new URL(p.sourcePath+'conversation-data.json',root),'utf8'));
   const original=validateConversation(source);assert.equal(p.messages.length,original.length);
@@ -77,7 +77,7 @@ test('네 공유 프로젝트의 모든 표시 본문과 기존 발화 ID·첨�
  for(let i=2;i<=28;i+=2)assert.equal(mcp.messages.find(m=>m.id===`M${String(i).padStart(3,'0')}`).content_type,'verbatim');
  assert.equal(mcp.coverage.final_responses,16);
 });
-test('89개 에피소드의 각 화면에 중복 ID·깨진 자료·과정 링크가 없다',async()=>{
+test('97개 에피소드의 각 화면에 중복 ID·깨진 자료·과정 링크가 없다',async()=>{
  const projectIds=new Set(bundle.projects.map(p=>p.id)),lessonIds=new Set(portal.lessons.map(l=>l.id));
  const publicLinks=new Set();
  for(const p of bundle.projects)for(const e of p.episodes)for(const [tab] of conversationTabs){
@@ -93,7 +93,7 @@ test('89개 에피소드의 각 화면에 중복 ID·깨진 자료·과정 링�
  }
  for(const url of publicLinks)await access(new URL('dist/'+url,root));
  assert.equal([...publicLinks].filter(p=>p.startsWith('assets/conversations/')).length,new Set(bundle.projects.flatMap(p=>p.assets.filter(a=>a.kind==='image'&&a.publicPath).map(a=>a.publicPath))).size);
- assert.ok(conversationIndex(bundle).includes('원문 전사 915개'));
+ assert.ok(conversationIndex(bundle).includes('원문 전사 955개'));
 });
 test('미확보 AI 답변과 요약을 원문 응답으로 표시하지 않고 검색으로 찾을 수 있다',()=>{
  const missing=conversationWorkspace(bundle,{projectId:'kbs-erp-export-diag-agents',episodeId:'E12',visible:999});
@@ -102,7 +102,7 @@ test('미확보 AI 답변과 요약을 원문 응답으로 표시하지 않고 �
  assert.ok(!missing.includes('당시 AI 답변 원문은 확보하지 못했습니다'));
  const summary=conversationWorkspace(bundle,{projectId:'kbs-erp-mcp-telegram',episodeId:'E01',visible:999});
  assert.ok(!summary.includes('type-summary'));assert.ok(summary.includes('pip install'));assert.ok(summary.includes('MCPServer'));
- const entries=conversationSearchEntries(bundle);assert.equal(entries.length,89);
+ const entries=conversationSearchEntries(bundle);assert.equal(entries.length,97);
  assert.ok(entries.some(e=>e.text.includes('OnDestory')),'preserves the original typo for search and quotation');
 });
 test('공유 화면의 235개 본문 전체와 3개 빈 응답을 보존하며 모든 요청 뒤에 대응 위치가 연결된다',async()=>{
@@ -155,7 +155,7 @@ test('AI 경어체 편집은 해시와 확보 수준을 보존하며 요약을 �
   assert.equal(edit.source_content_type,m.content_type);assert.equal(m.editorial_markdown,edit.content_markdown);
   const code=text=>[...text.matchAll(/```[\s\S]*?```/g)].map(x=>x[0]);assert.deepEqual(code(m.editorial_markdown),code(m.content_markdown));
  }
- assert.equal(count,296); // 294 retained overlays + 2 newly edited responses.
+ assert.equal(count,316); // 296 retained overlays + 20 newly captured responses.
  const project=bundle.projects.find(p=>p.id==='kbs-erp-mcp-telegram');
  const episode=project.episodes.find(e=>e.message_refs.includes('M002'));
  assert.match(conversationWorkspace(bundle,{projectId:project.id,episodeId:episode.id,visible:999}),/원문 전사 · 경어체 편집/);

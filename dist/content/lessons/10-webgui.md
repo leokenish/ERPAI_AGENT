@@ -4,7 +4,7 @@
 
 WebGUI의 가독성과 스크롤 동작을 개선하고 기존 업무 기능을 보존하는 사례입니다. 우선순위는 **업무·데이터 → 호환성 → 조작 → 디자인 → 성능**입니다.
 
-기존 Chrome v3와 새 Modern V2의 산출물·검증 기록을 함께 살펴봅니다. SAP 운영 환경의 전체 검증은 추가 확인 대상입니다.
+Chrome v3·Modern V2부터 ITS 실제 적용 보고, 재추출 V3와 결재 본문 렌더러 설계까지 살펴봅니다. SAP 운영 환경의 전체 검증은 추가 확인 대상입니다.
 
 ## 사례 1: 스크롤하면 자원이 다시 보인다
 
@@ -62,9 +62,9 @@ Modern V2는 112개 객체(MIME 102·템플릿 10)이며 메타데이터 XML을 
 
 [Modern V1부터 대화 전문 읽기](#/conversations/kbs-erp-webgui-refactor/wg-modern-01) · [Modern V2 객체와 검증 범위](#/conversations/kbs-erp-webgui-refactor/wg-modern-03)
 
-## 추가 사례: ITS 반영 도구는 아직 검토 단계
+## 초기 검토: ITS 반영 도구의 범위
 
-웹 자산과 `.sapxml`을 ALV에서 비교하고 선택 객체를 저장·활성화하는 도구를 검토했습니다. **ITS 쓰기 도구는 검토 단계**, 기존 DIAG 0.4.5는 읽기 전용입니다.
+웹 자산과 `.sapxml`을 ALV에서 비교하고 선택 객체를 저장·활성화하는 도구를 검토했습니다. 초기 대화에서 **ITS 쓰기 도구는 검토 단계**였습니다. 이후 구현·실행 보고는 아래 최신 흐름에서 이어집니다. 기존 DIAG 0.4.5는 읽기 전용입니다.
 
 | 검토 항목 | 확인할 이유 |
 |---|---|
@@ -78,9 +78,65 @@ Modern V2는 112개 객체(MIME 102·템플릿 10)이며 메타데이터 XML을 
 
 [ITS 도구 검토 전문 읽기](#/conversations/kbs-erp-webgui-refactor/wg-modern-04)
 
+## 최신 흐름: ITS 적용 결과에서 결재 본문 개선까지
+
+2026-10-17 공유 대화에서 후속 요청·응답 20쌍을 추가했습니다. 기존 Chrome v3, Modern V2, 적용 후 재추출한 **WebGUI V3**를 구분해 읽습니다.
+
+| 단계 | 대화에서 확인한 내용 | 현재 읽는 기준 |
+|---|---|---|
+| ITS 도구 1.0.1~1.0.5 | DO 문법·RTTI 반환 인자·ERROR_MESSAGE·게시 API 문제 수정 | 반복 실패를 공통 코드와 실제 API 선언으로 좁혀갑니다. |
+| 1.0.6 첫 적용 | 사용자가 GUI_CUA.JS의 SE80 변경 확인 보고 | 당시 AI는 저장·INTERNAL 게시·D/P 일치를 보고했습니다. |
+| 전체 선택 | 26개 서버 고유 변경으로 저장 전 차단 | 파일 선택과 덮어쓰기 허용은 별도 조건입니다. |
+| 107번 템플릿 | 당시 AI가 106개 완료·107번 저장 후 D 불일치·이후 미처리 보고 | 1.0.8 보정·1.0.9 권한 인자 수정의 SAP 재시험은 추가 확인 대상입니다. |
+| 재추출 V3 | CSS 9·JS 7·HTML 템플릿 3, 총 19개 교체안 | 로컬 검사 보고와 SAP 업무 검증을 구분합니다. |
+| 결재 본문 | WRITE 목록 판별·변환, 설정 테이블·RFC·JSON 파싱 | 테이블 생성 보고를 확보했으며 공통 렌더러와 RFC 전체 동작은 검증 전입니다. |
+
+[새 ITS 구현·오류 수정 대화](#/conversations/kbs-erp-webgui-refactor/wg-apply-01) · [첫 파일 적용과 CTS](#/conversations/kbs-erp-webgui-refactor/wg-apply-03) · [전체 선택·107번 오류](#/conversations/kbs-erp-webgui-refactor/wg-apply-04)
+
+### 결과를 읽는 순서
+
+**비교 → 저장 → INTERNAL 게시 → 저장본(D)·게시본(P) 재조회 → 실제 업무 동작** 순서로 확인합니다. 초록 신호등과 화면의 업무 정상 동작은 각각 검증합니다.
+
+![일괄 반영 중 나타난 로그온 언어 유지보수 선택창](assets/conversations/kbs-erp-webgui-refactor/webgui-next-image-018-1.png)
+
+원 대화의 `WEBGUI 업로드 결과.xlsx`, `_v2.xlsx`, `_v3.xlsx`, `_v4.xlsx`, `result (2).xlsx`, `result2.xlsx`는 파일명과 분석 대화를 확인했습니다. **엑셀 원본 6개는 다운로드 미확보**입니다. 아래 학습 대화에서는 당시 분석 전문과 실제 확보한 이미지를 볼 수 있습니다.
+
+### 재추출본을 기준으로 만든 V3
+
+적용 이후 다시 추출한 WEBGUI·SYSTEM과 이슈 기록을 기준으로 툴바, 대기 배경, 팝업·F4, 표·트리 폭, 스크롤, 탭 표시를 수정한 사례입니다. 대화에는 19개 교체안, S-Core 글꼴, 104종 벡터 아이콘 표현이 보고되어 있습니다.
+
+브라우저 34개·정적 17개·패키지 12개 검사는 **당시 AI의 검사 보고**입니다. ZIP은 이번 요청에 따라 수집하지 않았으며, 실제 SAP 업무·Windows Chrome/Edge의 후속 검증은 남아 있습니다.
+
+[재추출 V3 대화 전문](#/conversations/kbs-erp-webgui-refactor/wg-v3-review)
+
+### 결재 화면을 판별하고 본문만 다시 구성하기
+
+WRITE 보고서에서 결재 대상과 양식 구조를 확인한 뒤 새 본문을 표시하는 설계입니다. 제목·결재선·자산 항목을 재구성하면서 원래 목록의 ID·행·열·커서·더블클릭과 승인·반려 동작을 연결합니다.
+
+![사용자가 제공한 결재 화면 비교 자료 1](assets/conversations/kbs-erp-webgui-refactor/webgui-next-image-021-1.png)
+
+![사용자가 제공한 결재 화면 비교 자료 2](assets/conversations/kbs-erp-webgui-refactor/webgui-next-image-021-2.png)
+
+| 구성 | 역할 |
+|---|---|
+| ZWGUI_APPR_CFG | TCODE·RULE_ID·MODE·PROFILE_ID·PROFILE_VER로 대상과 양식 관리 |
+| OFF | 기존 화면 사용 |
+| TEST | 구조·누락·동작 연결 검사, 원래 본문 유지 |
+| ON | 판별·검증을 통과한 본문에 새 양식 적용 |
+| RFC 조회 | 설정을 내부 테이블로 반환하고 기존 시스템에서 JSON 배열 변환 |
+| POST input | function_name·tcode를 JSON 문자열로 묶어 폼 필드로 전달 |
+| JSON 파서 | 평면 객체의 키·값을 파라미터 테이블로 변환하는 별도 함수 제안 |
+
+![사용자가 생성했다고 보고한 ZWGUI_APPR_CFG 테이블 첨부](assets/conversations/kbs-erp-webgui-refactor/webgui-next-image-025-1.png)
+
+[대상 판별과 기능 보존](#/conversations/kbs-erp-webgui-refactor/wg-approval-01) · [설정 테이블](#/conversations/kbs-erp-webgui-refactor/wg-approval-02) · [RFC·POST·JSON 전문](#/conversations/kbs-erp-webgui-refactor/wg-approval-03)
+
+
 ## 근거
 
 - `sources/webgui/01_프로젝트_맥락과설계.md` §5·7·10·13
 - `sources/webgui/references/ITS_Chrome_v3_Report.md`
 - `sources/webgui/references/v3_evidence/validation.json`
 - `sources/conversations/20261016-business/kbs-erp-webgui-refactor/webgui-transcript.md`
+
+- [2026-10-17 추가 공유 대화](https://chatgpt.com/share/e/6ad30b87-ece4-8004-8229-5c974ed47060) · 보존 경로 `sources/conversations/20261017-webgui/`

@@ -173,6 +173,86 @@
         "source_sha256": "4a22e30318e338cdbaa96fe45d9e6af8e4c35c0bae455f7f4727e875336cb51e",
         "content_markdown": "1. 테이블·DDIC·구조 관련 XML은 필요하지 않습니다. HTML·CSS·JS·이미지 등 웹자산만 변경한다고 가정하므로 웹자산 파일과 관련 XML만 있으면 되는지 검토해 주세요. 기존에도 특정 웹자산의 소스를 수정하여 저장하고 활성화(Ctrl+F3)했으며 다른 구조는 변경하지 않았습니다. ALV 비교 화면에도 웹자산만 표시되면 됩니다.\n2. ALV 보고 화면에서 파일별 SAP 서버 대비 변경 여부와 저장/활성화 버튼을 누른 뒤의 성공 여부를 확인할 수 있어야 합니다.\n3. **WEBGUI/SYSTEM을 추출했던 exporter 0.1.7의 ABAP 원본**이 필요한 이유를 설명해 주세요. 변경된 224개 파일의 경로와 파일명만으로 대상 인터넷 서비스를 찾아 저장·활성화할 수 있는지도 검토해 주세요.\n4. 프로그램을 만들면 테스트용 CSS 파일 하나를 업로드하여 저장·활성화되는지 직접 확인할 예정입니다.\n\n우선 프로그램은 만들지 말고 위 네 가지에 대한 검토 답변을 주세요.",
         "style": "natural_polite"
+      },
+      "webgui-next-t008-u1": {
+        "source_sha256": "37ca7a347a7a8f20c125d27332b90c2b05c7abe197c371d065b60d33368369a4",
+        "content_markdown": "앞서 정리한 맥락으로 ABAP 프로그램을 만들어 주세요. 기존에 올린 ABAP을 참고하고 ECC 6.0·SAP_BASIS 700 문법을 사용해 주세요. 수동 적용용 SE80_WebGUI_V2_112files.zip을 그대로 SAP 서버에 업로드하겠습니다. ALV 리포트에서 비교 결과를 확인하고, “저장/활성화 적용” 버튼을 누르면 실제 서버에 반영한 뒤 결과를 갱신하도록 구성해 주세요."
+      },
+      "webgui-next-t009-u1": {
+        "source_sha256": "f20c838bd82ae8b54dba9ae0ed2ee401d7fdd086f29488212b2b9a63ba3fd528",
+        "content_markdown": "243줄에서 첨부한 오류가 발생합니다. 코드 전체에 같은 오류가 있는지 확인하고 수정해 주세요."
+      },
+      "webgui-next-t010-u1": {
+        "source_sha256": "63c38df25d8a9ec7473bf0134e8f2fc0c59accc31c743a171b72c77b40d608cb",
+        "content_markdown": "562줄에서 `formal parameter type does not exsit` 오류가 발생합니다. 관련 오류를 모두 확인하고 수정해 주세요."
+      },
+      "webgui-next-t011-u1": {
+        "source_sha256": "500dff4fb5bfe9987b7d6dd1d529a81dc61e3742b305a2bb7d424a20c2bd346c",
+        "content_markdown": "결과 엑셀을 첨부했습니다. 모두 “확인 실패”로 표시되는 원인을 분석해 주세요."
+      },
+      "webgui-next-t012-u1": {
+        "source_sha256": "a3b526ff5bfc54e9eca49caa61f36dddfe00418bee23190a83c759a297f2b110",
+        "content_markdown": "이번에도 모두 “확인 실패”로 표시됩니다. 첨부 결과를 확인해 주세요."
+      },
+      "webgui-next-t013-u1": {
+        "source_sha256": "0a1b6619efed9659881fd99d9945c38f34306c6281b295cff1efa35e91df533c",
+        "content_markdown": "이제 비교 결과는 확인됩니다. 상단에 “저장/활성화” 버튼을 추가해 SAP 서버 반영을 시험할 수 있게 해 주세요. 저장 결과와 활성화·게시 결과 필드를 갱신하고, 문제가 없으면 맨 왼쪽 신호등을 초록색으로 표시해 주세요."
+      },
+      "webgui-next-t014-u1": {
+        "source_sha256": "2510382b590e44720e0a6d73a509877a2a51a28c3258e878e53ec952deab2298",
+        "content_markdown": "몇 개 파일을 선택해 저장/게시를 눌렀는데 차단으로 표시됩니다. 결과 엑셀과 실행 로그 XML을 함께 확인해 주세요."
+      },
+      "webgui-next-t015-u1": {
+        "source_sha256": "d3d3746c91a3229ade6ca165906960181c390d2f687eb2fa8d94731c1e42d513",
+        "content_markdown": "2번 파일은 성공한 것으로 보입니다. SE80 파일 버전관리에서도 제 사용자 ID로 수정된 것을 확인했습니다. CTS는 기존에 만든 요청에 들어갔습니다. 기존 CTS가 없으면 선택창이 나타나는지 설명해 주세요. 나머지 111개 파일도 이어서 처리해도 되는지 확인해 주세요."
+      },
+      "webgui-next-t016-u1": {
+        "source_sha256": "96dff0db84b2ed9bcd5365457d4c740fc11c64a8a63b7cbd9bece84a1a146c4c",
+        "content_markdown": "체크박스를 하나씩 선택하기 번거롭습니다. 전체 선택 버튼도 추가해 주세요."
+      },
+      "webgui-next-t017-u1": {
+        "source_sha256": "18f0f0c8c1151336ca649799fba047116896328121ed9bb7a79bc15dee555987",
+        "content_markdown": "전체 선택 후 저장/활성화를 눌렀는데 중간에 오류가 나서 중단됐습니다. 첨부한 로그와 결과 엑셀을 확인해 주세요."
+      },
+      "webgui-next-t018-u1": {
+        "source_sha256": "5865c78adb78fcd55a608194eff4d32a005f80a003ccceb6019e151e95700887",
+        "content_markdown": "다른 파일들은 반영됐지만 107번부터 SAVE D 오류로 중단됐습니다. 파일마다 로그온 언어 유지 여부를 묻는 창도 나타납니다. 오류를 수정하고 로그온 언어 유지보수(KO)를 일괄 선택하도록 개선해 주세요."
+      },
+      "webgui-next-t019-u1": {
+        "source_sha256": "935fc98f0160b98e4663ed0cb4fc0282b511958ede8660230d83943bba02a275",
+        "content_markdown": "2005줄에서 첨부한 오류가 발생합니다. 비슷한 오류가 발생할 부분도 함께 수정해 주세요."
+      },
+      "webgui-next-t020-u1": {
+        "source_sha256": "5c56a22e1554ed630cd677ec3af169cf7ae42c2a1814d5db646a1dc2342ecbf3",
+        "content_markdown": "적용 후 화면을 확인했지만 문제가 남아 있어 WEBGUI·SYSTEM 인터넷 서비스를 다시 추출했습니다. 개선사항을 캡처·영상으로 기록하고 TXT에 A01~A05 이슈 번호와 설명을 적었습니다. 전면 개편 목적에 맞게 깔끔하고 부드럽게 수정해 주세요. 작업 중에는 진행 상황도 상세히 표시해 주세요."
+      },
+      "webgui-next-t021-u1": {
+        "source_sha256": "1fe8878f51fdf978ac6ed0096a3c8047c8820e880c4f68fa7895c7fac28cdd14",
+        "content_markdown": "먼저 해결할 결재 화면 문제를 검토해 주세요. SAP GUI와 WebGUI의 같은 결재 화면을 캡처했고 해당 ABAP 코드를 TXT로 첨부했습니다. WRITE 구문으로 표를 직접 그린 오래된 방식이며 WebGUI에서도 가독성이 좋지 않습니다. 이런 결재 화면이 많아 프로그램마다 ABAP 수정이나 웹 전환을 하기에는 작업량이 큽니다.\n\n공통 JS·CSS 렌더링 계층에서 결재 화면을 별도 엔진으로 처리하고, HTML table과 가운데 정렬 등을 사용한 새 결재 양식으로 표시하고 싶습니다. 필요하면 새 JS·CSS와 해당 엔진으로의 전환도 가능합니다. 구현하기 전에 이 아이디어의 적합성을 먼저 검토해 주세요."
+      },
+      "webgui-next-t022-u1": {
+        "source_sha256": "2c8dd34ad32ff7a1e1cb5dea0a02e2f18b6791fcdd12a74bcf47abe997af9156",
+        "content_markdown": "WRITE로 출력하는 화면이 모두 결재 화면은 아닙니다. 어떤 기준으로 결재 화면을 판별할지 설명해 주세요. `LINE-SIZE 120`, `WRITE`의 출력 길이, `ULINE`, `|`, 공백만으로 결재 화면을 간주하는 것인지 확인해 주세요.\n\n원래 HTML을 읽고 DOM을 정교하게 분석한 뒤 새 엔진으로 렌더링하는 방식도 가능합니다. 그동안 로딩 표시를 보여주고 준비가 끝나면 새 화면을 표시해 주세요. 제공한 트랜잭션은 샘플이며 모든 결재 화면에 공통 적용하려고 합니다. 기존 기능을 유지하면서 화면 내부의 결재 본문만 새 HTML로 구성하고 싶습니다. 이 방향에 대한 의견을 먼저 설명해 주세요."
+      },
+      "webgui-next-t023-u1": {
+        "source_sha256": "dd9426997f3b5218de03a5e6fca028334b111d355086bdef78135b27606925ad",
+        "content_markdown": "명시적인 결재 대상 판별과 변환 검증을 갖춘 구조를 어떻게 만들면 좋을지 제안해 주세요. SE11에 설정 테이블을 만들고 결재 화면 트랜잭션 목록을 관리한 뒤 렌더링 초반에 참조하는 방안을 검토해 주세요. 이 경우 공통 JavaScript가 테이블 설정을 조회하는 통신 구조도 함께 설명해 주세요."
+      },
+      "webgui-next-t024-u1": {
+        "source_sha256": "80eec7cf6296a151ef0db252ec5c8d3bfe7ab95d2808904a478d7a9d7975d68a",
+        "content_markdown": "ZWGUI_APPR_CFG 테이블을 먼저 만들겠습니다. 샘플 자산 결재 화면의 레코드가 어떻게 들어가는지 예시를 작성해 주세요."
+      },
+      "webgui-next-t025-u1": {
+        "source_sha256": "0312a44b3845f40601765f54c927d1e100bdce142abcd8d47a781fb7856bada7",
+        "content_markdown": "첨부처럼 설정 테이블을 만들었습니다. 이 테이블의 데이터를 조회하는 RFC 함수를 ABAP으로 작성해 주세요. 결과는 내부 테이블로 EXPORTING하며, 기존 시스템에서 `[{}]` 형식의 JSON 배열로 변환합니다."
+      },
+      "webgui-next-t026-u1": {
+        "source_sha256": "3e171b3e647997596a96c776f54553d5a76e921303316e272eafd21a3c03eaa4",
+        "content_markdown": "[https://erpdev.kbs.co.kr/kbs(bD1rbyZjPTMwMA==)/zweb_common/rfc_call.htm?function_name=Z_RFC_WGUI_APPR&tcode=ZMZF014_1](https://erpdev.kbs.co.kr/kbs(bD1rbyZjPTMwMA==)/zweb_common/rfc_call.htm?function_name=Z_RFC_WGUI_APPR&tcode=ZMZF014_1)\n\n위 주소를 호출할 예정입니다. 예시 URL에는 GET 파라미터로 표시했지만 실제 요청은 function_name과 tcode를 JSON 문자열로 묶어 input 변수에 넣고 POST로 전송해 주세요. 로그인한 화면의 개발자 도구 콘솔에서 시험할 fetch 구문을 작성해 주세요."
+      },
+      "webgui-next-t027-u1": {
+        "source_sha256": "82d1f09a5acd2e75b3f62b81317a9c6c3feac6c29ec4bcc024b26f2b016db6cd",
+        "content_markdown": "현재 JSON 파싱 함수가 개별 파라미터를 추출하지 못합니다. 첨부 ABAP의 원인을 분석하고 수정 코드를 작성해 주세요.\n\n{\"function_name\":\"Z_RFC_WGUI_APPR\",\"tcode\":\"ZMZF014_1\"}\n\n위 JSON의 각 파라미터를 분리하여 lt_parameter_list에 담아 주세요. 기존 선언은 다음과 같습니다.\n DATA: lt_parameter_list TYPE zhttp_param."
       }
     },
     "kbs-erp-export-diag-agents": {

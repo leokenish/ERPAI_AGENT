@@ -1,7 +1,7 @@
 {
   "title": "ERP AI 에이전트 교육 포털",
-  "version": "1.11.1",
-  "asOf": "2026-10-16",
+  "version": "1.11.2",
+  "asOf": "2026-10-17",
   "groups": [
     "공통 기초",
     "업무 적용",
@@ -158,16 +158,16 @@
       "file": "lessons/10-webgui.md",
       "number": 10,
       "title": "WEBGUI 개선과 검증",
-      "summary": "Chrome v3·Modern V2의 개선 과정과 ITS 반영 검토",
+      "summary": "ITS 실제 적용·재추출 V3·결재 본문 렌더러와 RFC 설계",
       "group": "사례·운영",
-      "status": "정적·모의 검증",
-      "tag": "Chrome v3 · Modern V2",
+      "status": "일부 적용 보고·추가 검증",
+      "tag": "ITS · V3 · 결재 화면",
       "source": "webgui",
       "goals": [
         "관측 증상과 실제 원인을 구분한다",
         "모의 시험과 운영 검증의 경계를 설명한다"
       ],
-      "asOf": "2026-10-16"
+      "asOf": "2026-10-17"
     },
     {
       "id": "worktime-agent",
@@ -328,12 +328,13 @@
       "id": "webgui",
       "title": "WebGUI·SYSTEMGUI 개선",
       "version": "ITS Chrome v3 · 2026-09-14",
-      "status": "정적·모의 검증",
-      "summary": "100개 소스와 v3 변경 33개, 버전별 패키지와 검증 기록을 보존합니다.",
+      "status": "일부 적용 보고·추가 검증",
+      "summary": "WebGUI 디자인·ITS 반영 결과와 결재 화면 렌더러 설계",
       "findings": [
         "모형 검증 186건",
         "Full·Apply·Original·Rollback의 의미를 구분",
-        "실제 Chrome·ERP 결과와 배포본 일치는 추가 확인"
+        "실제 Chrome·ERP 결과와 배포본 일치는 추가 확인",
+        "2026-10-17: 후속 대화 20쌍·이미지 8개 추가, 재추출 V3 19개 변경안과 결재 설정·RFC·JSON 설계 확보"
       ],
       "lessons": [
         "webgui"
@@ -434,6 +435,13 @@
       "type": "MD 사례",
       "desc": "SRC-11 · 익명화한 IAM 기본값 문의 · 출처·상태·미확인 구분",
       "from": "examples/src-11-iam-case.md"
+    },
+    {
+      "file": "ZHR5_result_uploaded_20261007.xlsx",
+      "title": "ERP 코드 형상관리 · 실제 DIAG 결과",
+      "type": "XLSX 원본",
+      "desc": "2026-10-07 업로드 · RawData 2,541행 · 실행 버전 미확인",
+      "from": "examples/ZHR5_result_uploaded_20261007.xlsx"
     }
   ],
   "slides": [

@@ -1163,12 +1163,25 @@ mark { background: var(--cream); color: inherit; }
  .lesson-body>h3 { break-after:avoid; }
 }
 
-/* Stable statistic widths; screen readers and printing always get the total. */
-.count-up.count-up{font:inherit;color:inherit;display:inline-grid;position:relative;font-variant-numeric:tabular-nums;white-space:nowrap}
-.count-up>.count-up-width,.count-up>.count-up-value{grid-area:1/1;font:inherit;color:inherit;letter-spacing:inherit}
-.count-up>.count-up-width{visibility:hidden}
-.count-up>.count-up-accessible{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-@media print{.count-up>.count-up-width{visibility:visible}.count-up>.count-up-value{visibility:hidden}}
+/* The label retains the total while only one numeric text node is rendered. */
+.count-up.count-up{font:inherit;color:inherit;display:inline-block;font-variant-numeric:tabular-nums;white-space:nowrap}
+.count-up>.count-up-value{font:inherit;color:inherit;letter-spacing:inherit}
+.path-courses{list-style:none;margin:0;padding:0;display:grid;gap:.35rem}
+.path-courses a{display:flex;gap:.6rem;padding:.55rem .65rem;border-radius:5px;font-size:var(--text-body);line-height:1.6;color:var(--ink)}
+.path-courses a:hover,.path-courses a:focus-visible{background:var(--hover-surface);color:var(--brand)}
+.path-course-number{font-variant-numeric:tabular-nums;flex:none;color:var(--brand)}
+.path-entry .path-courses{grid-column:2 / -1}
+.case-project-title{font-size:var(--text-body);color:var(--brand);font-weight:600;margin:0 0 .45rem}
+@media(max-width:700px){.path-entry .path-courses{grid-column:1 / -1}}
+
+/* Each course keeps its own selectable row on desktop and mobile. */
+.path-courses{width:100%}
+.path-courses li{display:block;min-width:0}
+.path-courses a>span:last-child{min-width:0;overflow-wrap:anywhere}
+.case-download-panel{display:flex;align-items:center;flex-wrap:wrap;gap:.7rem 1.25rem;margin:1.25rem 0 1.5rem;padding:1rem;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+.case-download-panel .caption{margin:0}
+.case-download-panel .btn{white-space:normal;text-align:center}
+@media(max-width:520px){.case-download-panel .btn{width:100%}}
 
 /* Screen-only hero animation */
 #erp-screen-scene{display:block;max-width:100%;height:auto}

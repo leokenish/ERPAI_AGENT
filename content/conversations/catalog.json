@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-16",
+  "asOf": "2026-10-17",
   "sourceRoot": "sources/conversations/20261012",
   "preferredNodes": {
     "sap": [
@@ -215,7 +215,7 @@
     },
     {
       "id": "kbs-erp-webgui-refactor",
-      "shortTitle": "WebGUI 리팩토링과 오류 추적",
+      "shortTitle": "WEBGUI 개선과 검증",
       "sourceId": "webgui",
       "lessonIds": [
         "webgui"
@@ -223,9 +223,9 @@
       "purpose": "기존 업무 기능을 유지하며 WebGUI의 가독성과 스크롤 동작을 개선합니다.",
       "environment": "WEBGUI·SYSTEMGUI의 JS/CSS·HTML과 Chrome DevTools 관찰 자료를 비교했습니다.",
       "turningPoint": "중복 콜백과 실제 POST를 나누어 확인하고, 제공 소스와 서버 응답을 대조했습니다.",
-      "currentState": "Chrome v3·Modern V2 산출물과 ITS 반영 도구 검토 확보. SAP 운영 적용과 전체 검증은 추가 확인 대상입니다.",
-      "coverageNote": "기존 대화 + Modern V2 사용자 요청 7개·AI 전문 7개",
-      "integrationNote": "과정 10에서 350/700ms 예약 모형과 실제 POST·체감 성능의 측정 기준을 확인하세요.",
+      "currentState": "ITS 일부 적용 보고와 V3 19개 변경안, 결재 렌더러·RFC 설계를 확보했습니다. 후속 SAP 재시험은 추가 확인 대상입니다.",
+      "coverageNote": "기존 대화 + 최신 Modern·ITS·결재 화면 요청 27개·AI 전문 27개",
+      "integrationNote": "과정 10에서 실제 적용 보고와 V3 수정안, 결재 본문 렌더러 설계를 함께 확인하세요.",
       "supplementLesson": "webgui",
       "metaEpisodes": [
         "wg-ep08"
@@ -236,9 +236,9 @@
         "MISSING_RESPONSES.md",
         "CHANGELOG.md"
       ],
-      "supplementEpisode": "wg-modern-01",
+      "supplementEpisode": "wg-apply-01",
       "assetSourcePath": "sources/conversations/20261012-supplement/kbs-erp-webgui-refactor",
-      "supplementLabel": "추가 확보한 Modern V2 대화 읽기",
+      "supplementLabel": "새로 추가한 ITS 적용·결재 화면 대화 읽기",
       "publishAttachments": true
     },
     {

@@ -1,12 +1,12 @@
 const formatCount = (value, digits) => value.toLocaleString('ko-KR', {minimumIntegerDigits: digits});
 
-// Render the final value for assistive technology and reserve its width.
+// Keep a single text value, including when a browser uses an older stylesheet.
 export function countNumber(value, minDigits = 1) {
  const target = Number(value);
  if (!Number.isSafeInteger(target) || target < 0) throw new TypeError('Invalid statistic');
  const digits = Math.max(1, Math.min(12, Number(minDigits) || 1));
  const final = formatCount(target, digits);
- return `<span class="count-up" data-count-to="${target}" data-count-digits="${digits}"><span class="count-up-accessible">${final}</span><span class="count-up-width" aria-hidden="true">${final}</span><span class="count-up-value" aria-hidden="true">${final}</span></span>`;
+ return `<span class="count-up" role="img" aria-label="${final}" data-count-to="${target}" data-count-digits="${digits}"><span class="count-up-value" aria-hidden="true">${final}</span></span>`;
 }
 
 // One shared RAF loop per page; each statistic starts on first visibility.
@@ -16,6 +16,7 @@ export function mountCountUps(root) {
   digits: Number(el.dataset.countDigits) || 1, elapsed: 0, started: false, done: false
  })).filter(item => item.output && Number.isSafeInteger(item.target) && item.target >= 0);
  if (!items.length) return () => {};
+ for (const item of items) item.el.style.minWidth = `${item.el.getBoundingClientRect().width}px`;
  const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
  const duration = 1600;
  let frame = null, lastTime = null, observer, disposed = false;

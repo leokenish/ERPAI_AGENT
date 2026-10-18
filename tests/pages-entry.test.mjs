@@ -12,6 +12,9 @@ test('Pages 진입점은 최신 dist로 이동하고 프로젝트 하위 경로�
  ]){
   const url=new URL(href);let result;
   vm.runInNewContext(source,{URL,location:{href,protocol:url.protocol,search:url.search,hash:url.hash,replace(value){result=value;}}});
-  assert.equal(result,expected);
+  const target=new URL(result);
+  assert.match(target.searchParams.get('v'),/^\d+\.\d+\.\d+-[a-f0-9]{12}$/);
+  target.searchParams.delete('v');
+  assert.equal(target.href,expected);
  }
 });

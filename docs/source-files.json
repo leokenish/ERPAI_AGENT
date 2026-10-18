@@ -6508,5 +6508,120 @@
     "path": "sources/webgui/references/추출_검증결과.json",
     "bytes": 3659,
     "sha256": "b2c41e59327edcd3e9f4b6ae428b2e8b714fd9b6fc1ee83aeee58665a3f35a6d"
+  },
+  {
+    "path": "sources/conversations/20261017-webgui/README.md",
+    "bytes": 710,
+    "sha256": "cb2c0ee9b261c859b62aab9fd46ec171de875aaa6bf3cc31c0cb1d682f58e70b"
+  },
+  {
+    "path": "sources/conversations/20261017-webgui/attachments.json",
+    "bytes": 4150,
+    "sha256": "f382220b1bff5fd5489c68d8d95547e1d03b8a365cda14b0fdd328fa5046c84f"
+  },
+  {
+    "path": "sources/conversations/20261017-webgui/images/turn-02-01.png",
+    "bytes": 359765,
+    "sha256": "ee0c5d1b06bea3b5ce6ec2714259745de3de063dd2ae32e53bfd077cf5313698"
+  },
+  {
+    "path": "sources/conversations/20261017-webgui/images/turn-02-02.png",
+    "bytes": 23519,
+    "sha256": "53c3e1e1853abe7a09ca59533deb51fc72aee4604a4348eb944842857d0ba9df"
+  },
+  {
+    "path": "sources/conversations/20261017-webgui/images/turn-02-03.png",
+    "bytes": 50233,
+    "sha256": "f6d6deea0aa6ec7437eb905a5a2790c7e2f6d60a0cb75a2b3fe9bb9e52a9af21"
+  },
+  {
+    "path": "sources/conversations/20261017-webgui/images/turn-02-04.png",
+    "bytes": 52842,
+    "sha256": "62fb5f4b8e59ce84826adfacfa70fba34298accbc0c057d4c1b958df745556d4"
+  },
+  {
+    "path": "sources/conversations/20261017-webgui/images/turn-02-05.png",
+    "bytes": 100700,
+    "sha256": "90a459c46ce7dcab585debfa9441b7a153463a9fed8396bed97f2b95a2ba7978"
+  },
+  {
+    "path": "sources/conversations/20261017-webgui/images/turn-02-06.png",
+    "bytes": 24681,
+    "sha256": "20341a4571eb114a80085d940b67b18157be5252b3e02be146622802c88dcba9"
+  },
+  {
+    "path": "sources/conversations/20261017-webgui/images/turn-02-07.png",
+    "bytes": 105367,
+    "sha256": "0fa812681703e4d6d3a82e340e4e3a123f3f1fc3f2158a0443b2033cf2ff7005"
+  },
+  {
+    "path": "sources/conversations/20261017-webgui/images/turn-02-08.png",
+    "bytes": 209893,
+    "sha256": "4710314710196309da3b38d26ad0e8ef0e00af015b4033346abab108e497c91e"
+  },
+  {
+    "path": "sources/conversations/20261017-webgui/images/turn-02-09.png",
+    "bytes": 272686,
+    "sha256": "50e92b017a639fe807231db8c5c14a34d841e8ae5f390f79dfbb0c01a5fabd26"
+  },
+  {
+    "path": "sources/conversations/20261017-webgui/images/turn-02-10.png",
+    "bytes": 245655,
+    "sha256": "d6dd469a3ef21d21ac6df827a7546322bc252dc795c242e032105447268ff4a8"
+  },
+  {
+    "path": "sources/conversations/20261017-webgui/images/turn-02-11.png",
+    "bytes": 190429,
+    "sha256": "c3dfd0dddb6044372c3f44dc7cc79a0abe0b58deff2814cb48e9e51cfff2774c"
+  },
+  {
+    "path": "sources/conversations/20261017-webgui/images/turn-09-01.png",
+    "bytes": 78190,
+    "sha256": "a6e0e26504ce53f4a64b57668d3dcd61e3930e850fdd3c9de957739cb110b5ae"
+  },
+  {
+    "path": "sources/conversations/20261017-webgui/images/turn-10-01.png",
+    "bytes": 72743,
+    "sha256": "3e09dbe095a8d87b434f2be4963da4b824ae00d0634be8b01a1d547b31935a4b"
+  },
+  {
+    "path": "sources/conversations/20261017-webgui/images/turn-13-01.png",
+    "bytes": 882614,
+    "sha256": "f09058237606cbc62fbc782fc9b60f61b430a3b749eecf89a3617771967b4e23"
+  },
+  {
+    "path": "sources/conversations/20261017-webgui/images/turn-18-01.png",
+    "bytes": 151480,
+    "sha256": "83e16d85a1426e694aa523cefb6037eda5b29726fe9e7b79ca23d815e7244970"
+  },
+  {
+    "path": "sources/conversations/20261017-webgui/images/turn-19-01.png",
+    "bytes": 114214,
+    "sha256": "b682604b821722975044956b97f9e3c3ef24509d8b0df278fdf6989e726219c6"
+  },
+  {
+    "path": "sources/conversations/20261017-webgui/images/turn-21-01.png",
+    "bytes": 68778,
+    "sha256": "315d70f35179abb4fe29e71436a0e3c78428575db94185a26d8eb00eea20b6a2"
+  },
+  {
+    "path": "sources/conversations/20261017-webgui/images/turn-21-02.png",
+    "bytes": 106132,
+    "sha256": "137dc6fc9becdceadbd1cfc60e969252580a124fc1f25de9e2c5474d6f19d164"
+  },
+  {
+    "path": "sources/conversations/20261017-webgui/images/turn-25-01.png",
+    "bytes": 30987,
+    "sha256": "229e5fc39417e2a36f92b9fa6e7330713da886d7fb6d6276558dd503609bcf10"
+  },
+  {
+    "path": "sources/conversations/20261017-webgui/transcript.json",
+    "bytes": 131439,
+    "sha256": "8c50308c6ea1a71c0ca2cf5a3cf8bc437007654be8eddfd48ca23663a8bdc5f1"
+  },
+  {
+    "path": "sources/conversations/20261017-webgui/visible-dom.json",
+    "bytes": 1265333,
+    "sha256": "f29d04040b1a081e762691327dba6cce50939200e77042cebbde00d9e89ecf8b"
   }
 ]

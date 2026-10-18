@@ -11,7 +11,7 @@ function setup({reduced=false,hidden=false,observe=true}={}) {
  const document=Object.assign(events(),{hidden});
  const window=Object.assign(events(),{matchMedia:()=>preference});
  const outputs=[{textContent:'08'},{textContent:'9,425'}];
- const items=outputs.map((output,i)=>({dataset:{countTo:String(i?9425:8),countDigits:String(i?1:2)},querySelector:()=>output}));
+ const items=outputs.map((output,i)=>({dataset:{countTo:String(i?9425:8),countDigits:String(i?1:2)},querySelector:()=>output,style:{},getBoundingClientRect:()=>({width:i?70:28})}));
  const root={querySelectorAll:()=>items},frames=new Map();let id=0,observer;
  class Observer {constructor(callback){this.callback=callback;this.observed=new Set();observer=this;}observe(el){this.observed.add(el);}unobserve(el){this.observed.delete(el);}disconnect(){this.observed.clear();}}
  const ctx=vm.createContext({window,document,requestAnimationFrame:fn=>{frames.set(++id,fn);return id;},cancelAnimationFrame:id=>frames.delete(id),...(observe?{IntersectionObserver:Observer}:{})});
@@ -22,9 +22,10 @@ function setup({reduced=false,hidden=false,observe=true}={}) {
  return {preference,document,window,outputs,frames,cleanup,step,enter,get observer(){return observer;}};
 }
 test('통계는 고정 폭과 접근성용 최종값을 제공하고 자릿수·천 단위 구분을 유지한다',()=>{
- assert.match(countNumber(8,2),/class="count-up-accessible">08</);
- assert.match(countNumber(9425),/class="count-up-width" aria-hidden="true">9,425</);
- assert.equal((countNumber(13).match(/aria-hidden="true"/g)||[]).length,2);
+ assert.match(countNumber(8,2),/role="img" aria-label="08"/);
+ assert.match(countNumber(9425),/class="count-up-value" aria-hidden="true">9,425</);
+ // Even without CSS, the text must never concatenate 7/89/929 three times.
+ for(const n of [7,89,929,9425]) assert.equal(countNumber(n).replace(/<[^>]*>/g,''),n.toLocaleString('ko-KR'));
  for(const n of [-1,Infinity,NaN,1.5])assert.throws(()=>countNumber(n));
 });
 test('화면 진입 때 시작하여 감속하고 정확한 최종값에서 멈추며 재진입 시 반복하지 않는다',()=>{

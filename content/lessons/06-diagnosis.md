@@ -56,6 +56,8 @@
 
 2026-10-07 업로드된 `RawData` 2,541행의 재집계입니다. 실제 실행 버전과 날짜는 미확인입니다.
 
+[실제 DIAG 결과 엑셀 다운로드](downloads/ZHR5_result_uploaded_20261007.xlsx)에서 각 행의 비교·검사 결과를 직접 확인해 보세요.
+
 - **1440행:** 크기는 모두 3,210 bytes, 내용은 SAP 대비 수정입니다. 변경 필드 확인에는 원문 XML이 필요합니다.
 - **828행:** 세 비교는 변경없음, API 소스와 활성 Include 대조는 불일치입니다. 실제 활성 상태는 추가 확인합니다.
 - **활성 확인 실패 71건:** 함수 API 70건 + DDIC 진단 1건.
@@ -85,4 +87,4 @@ python3 compare_cases.py
 
 - `sources/export-diag/01_프로젝트_맥락과설계.md` §9–11·14
 - `sources/export-diag/examples/ZHR5_result_facts_derived.json`
-- `sources/export-diag/attachments/results/ZHR5_result_uploaded_20261007.xlsx` — 원본은 저장소에 보존
+- `sources/export-diag/attachments/results/ZHR5_result_uploaded_20261007.xlsx` — 원본 보존·다운로드 제공
