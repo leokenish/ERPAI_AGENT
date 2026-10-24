@@ -98,11 +98,30 @@ test('완료 기록 없이 모든 과정의 자료 저장·이전 다음 이동�
   assert.equal((html.match(/data-print/g)||[]).length,1,lesson.id);assert.match(html,/인쇄 · PDF 저장/);assert.match(html,/과정 MD 다운로드/);
   assert.ok(html.includes('href="content/'+lesson.file+'" download="'+lesson.file.split('/').pop()+'"'));
   assert.doesNotMatch(html,/data-complete|complete-panel|학습 완료 표시/);assert.doesNotMatch(f.elements.get('sidebar').innerHTML,/done-tick|학습 표시 완료/);
-  if(i>0)assert.ok(html.includes('이전 과정 · '+String(data.lessons[i-1].number).padStart(2,'0')));
-  if(i<data.lessons.length-1)assert.ok(html.includes('다음 과정 · '+String(data.lessons[i+1].number).padStart(2,'0')));
+  if(i>0)assert.ok(html.includes('이전 과정 · '+(data.lessons[i-1].displayNumber||String(data.lessons[i-1].number).padStart(2,'0'))));
+  if(i<data.lessons.length-1)assert.ok(html.includes('다음 과정 · '+(data.lessons[i+1].displayNumber||String(data.lessons[i+1].number).padStart(2,'0'))));
  }
  f.events.click({target:target('data-print',{})});assert.equal(prints,1);
  f.location.hash='#/courses';f.windowEvents.hashchange();assert.doesNotMatch(f.elements.get('main').innerHTML,/학습 표시|read-progress/);
+});
+
+test('GITHUB와 CODEX의 독립 주소·탐색·검색과 핵심 MD 바로가기가 동작한다',async()=>{
+ const f=fixture('#/learn/workspace');await vm.runInContext(`(async()=>{${source}})()`,f.context);
+ assert.match(f.elements.get('main').innerHTML,/<h1>GITHUB<\/h1>/);
+ assert.match(f.elements.get('main').innerHTML,/과정 03-A/);
+ assert.match(f.elements.get('main').innerHTML,/다음 과정 · 03-B/);
+ f.location.hash='#/learn/codex';f.windowEvents.hashchange();
+ assert.match(f.elements.get('main').innerHTML,/<h1>CODEX<\/h1>/);
+ assert.match(f.elements.get('main').innerHTML,/이전 과정 · 03-A/);
+ assert.match(f.elements.get('main').innerHTML,/다음 과정 · 04/);
+ assert.match(f.elements.get('main').innerHTML,/content\/lessons\/03-codex.md/);
+ f.events.input({target:{id:'search-input',value:'Git: Clone',matches(){return false;}}});
+ assert.match(f.elements.get('search-results').innerHTML,/#\/learn\/workspace/);
+ f.events.input({target:{id:'search-input',value:'프로젝트 폴더 지정',matches(){return false;}}});
+ assert.match(f.elements.get('search-results').innerHTML,/#\/learn\/codex/);
+ let scrolled=false;f.context.document.getElementById('core-md-title').scrollIntoView=()=>{scrolled=true;};
+ f.location.hash='#/library?section=core-md-title';f.windowEvents.hashchange();
+ assert.equal(scrolled,true);assert.match(f.elements.get('main').innerHTML,/<div class="core-md-files"><\/div>/);
 });
 
 test('홈으로 돌아오면 제목 타이핑을 새로 시작하고 기존 생명주기를 정리한다',async()=>{

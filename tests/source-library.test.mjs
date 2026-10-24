@@ -34,7 +34,7 @@ test('각 프로젝트 MD 목록·개별 파일·전체 ZIP은 해당 원천의 
   }
   assert.equal(count,source.mdCount);assert.equal(expected.size,0);
  }
- assert.equal(total,839);
+ assert.equal(total,851);
 });
 
 test('자료확인 화면은 프로젝트별 링크·원래 파일명을 사용하고 HTML 문자를 이스케이프한다',()=>{
@@ -45,6 +45,19 @@ test('자료확인 화면은 프로젝트별 링크·원래 파일명을 사용�
   const view=renderSourceDocuments(source);
   assert.match(view,new RegExp(source.mdArchive.replaceAll('.','\\.')));
   assert.equal((view.match(/data-source-file=/g)||[]).length,source.mdCount);
+ }
+});
+
+test('세 소스의 프로젝트 MD 네 파일은 자료확인 상단과 개별 다운로드로 연결된다',()=>{
+ for(const [id,count] of [['export-diag',24],['knowledge-images',8],['webgui',15]]){
+  const source=portal.sources.find(s=>s.id===id);
+  assert.equal(source.mdCount,count);
+  assert.deepEqual(source.projectDocuments.map(p=>p.split('/').at(-1)),['intent.md','spec.md','plan.md','insight.md']);
+  for(const path of source.projectDocuments)assert.equal(source.mdDocuments.filter(d=>d.path===path).length,1);
+  const html=renderSourceDocuments(source);
+  const displayed=[...html.matchAll(/<strong>([^<]+)<\/strong>/g)].map(m=>m[1]);
+  assert.deepEqual(displayed.slice(0,4),['intent.md','spec.md','plan.md','insight.md']);
+  assert.equal((html.match(/class="source-document-kind"/g)||[]).length,4);
  }
 });
 

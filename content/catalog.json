@@ -1,7 +1,7 @@
 {
   "title": "ERP AI 에이전트",
-  "version": "1.12.0",
-  "asOf": "2026-10-17",
+  "version": "1.13.0",
+  "asOf": "2026-10-24",
   "groups": [
     "공통 기초",
     "업무 적용",
@@ -29,7 +29,7 @@
       "id": "export",
       "file": "lessons/02-export.md",
       "number": 2,
-      "title": "SAP 소스를 밖으로 가져오기",
+      "title": "EXPORT",
       "summary": "Export·manifest·baseline으로 분석 가능한 기준본 만들기",
       "group": "공통 기초",
       "status": "소스 확보",
@@ -45,23 +45,43 @@
       "id": "workspace",
       "file": "lessons/03-workspace.md",
       "number": 3,
-      "title": "GitHub와 Codex 작업 환경",
-      "summary": "담당 패키지의 소스·지식·지침을 같은 작업 폴더에서 관리하기",
+      "title": "GITHUB",
+      "summary": "VS Code 설치부터 ABAP 파일 검토, Git 원격 지정·Clone·Commit·Fetch·Pull·Push까지",
       "group": "공통 기초",
-      "status": "사용 보고·설계",
-      "tag": "담당 패키지",
+      "status": "설치·운영 안내",
+      "tag": "VS Code · Git · GitHub",
       "source": "export-diag",
       "goals": [
-        "프로젝트 지침과 지식의 역할을 나눈다",
-        "근거를 읽는 첫 질문을 작성한다"
+        "담당 저장소를 Clone하고 원격 주소를 확인한다",
+        "ABAP·MD의 차이를 검토해 Commit·Push한다",
+        "Fetch·Pull·Sync Changes와 충돌 대응을 구분한다"
       ],
-      "asOf": "2026-10-08"
+      "asOf": "2026-10-24",
+      "displayNumber": "03-A"
+    },
+    {
+      "id": "codex",
+      "file": "lessons/03-codex.md",
+      "number": 3,
+      "displayNumber": "03-B",
+      "title": "CODEX",
+      "summary": "데스크톱 앱 설치·로그인·프로젝트 폴더 지정과 근거 분석·수정 검토",
+      "group": "공통 기초",
+      "status": "설치·운영 안내",
+      "tag": "Codex Desktop · 프로젝트",
+      "source": "export-diag",
+      "goals": [
+        "Clone한 저장소 루트를 Codex 작업 대상으로 연다",
+        "지침·업무 지식·스킬과 실제 소스의 역할을 나눈다",
+        "변경과 검증 결과를 검토하고 다음 작업에 인계한다"
+      ],
+      "asOf": "2026-10-24"
     },
     {
       "id": "knowledge",
       "file": "lessons/04-knowledge.md",
       "number": 4,
-      "title": "대화와 이미지를 업무 지식으로",
+      "title": "업무 지식·스킬",
       "summary": "요청·합의·완료를 구분하고 원문으로 돌아갈 수 있는 MD 만들기",
       "group": "업무 적용",
       "status": "TXT 사례 확보",
@@ -77,7 +97,7 @@
       "id": "maps",
       "file": "lessons/05-maps.md",
       "number": 5,
-      "title": "Obsidian으로 업무 관계 연결하기",
+      "title": "OBSIDIAN",
       "summary": "기존 폴더를 보존하며 기준·코드·검증을 링크로 연결하기",
       "group": "업무 적용",
       "status": "적용 화면 확보",
@@ -93,7 +113,7 @@
       "id": "diagnosis",
       "file": "lessons/06-diagnosis.md",
       "number": 6,
-      "title": "DIAG 결과를 정확하게 읽기",
+      "title": "DIAG(검증 및 적용)",
       "summary": "원본·추출본·현재 SAP의 차이와 별도 검증 결과 해석하기",
       "group": "업무 적용",
       "status": "소스·결과 확보",
@@ -109,7 +129,7 @@
       "id": "feedback",
       "file": "lessons/07-feedback.md",
       "number": 7,
-      "title": "피드백을 다음 검증으로 남기기",
+      "title": "SKILL & FEEDBACK",
       "summary": "업무 답변의 오류를 지식 수정과 회귀 사례로 연결하기",
       "group": "업무 적용",
       "status": "지침 확보",
@@ -125,7 +145,7 @@
       "id": "collaboration",
       "file": "lessons/08-collaboration.md",
       "number": 8,
-      "title": "담당 에이전트에게 원격 자문하기",
+      "title": "담당자 자문 MCP",
       "summary": "각자의 맥과 소스를 유지하며 중앙 MCP로 질문과 답변 전달하기",
       "group": "확장 설계",
       "status": "모의 통신 검증",
@@ -141,7 +161,7 @@
       "id": "erp-mcp",
       "file": "lessons/09-erp-mcp.md",
       "number": 9,
-      "title": "ERP 조회와 Telegram 연결 설계",
+      "title": "ERP 조회 MCP",
       "summary": "기존 REST/RFC를 조회 도구로 연결하고 모바일 질문 받기",
       "group": "확장 설계",
       "status": "설계 단계",
@@ -230,19 +250,27 @@
       "findings": [
         "현재 범위: 추출과 읽기 전용 진단",
         "71건 활성 확인 실패는 함수 API 70건 + DDIC 진단 1건",
-        "DIAG 0.4.5 캡처 확보 · 소스·실행본 일치와 JSON 출력은 추가 확인"
+        "DIAG 0.4.5 캡처 확보 · 소스·실행본 일치와 JSON 출력은 추가 확인",
+        "프로젝트 MD 4종: intent · spec · plan · insight"
       ],
       "lessons": [
         "export",
         "workspace",
+        "codex",
         "diagnosis",
         "feedback"
       ],
       "archive": "KBS_ERP_AI_Export_Diag_Agents_20261008.zip",
-      "fileCount": 35,
-      "mdCount": 20,
+      "fileCount": 40,
+      "mdCount": 24,
       "path": "sources/export-diag/",
-      "sha256": "0cba5edd8f3baa5fd32454575d941edac54d72bc295f807eb5467d5b35ac2d4f"
+      "sha256": "0cba5edd8f3baa5fd32454575d941edac54d72bc295f807eb5467d5b35ac2d4f",
+      "projectDocuments": [
+        "project-md/20261024/intent.md",
+        "project-md/20261024/spec.md",
+        "project-md/20261024/plan.md",
+        "project-md/20261024/insight.md"
+      ]
     },
     {
       "id": "knowledge-images",
@@ -253,16 +281,23 @@
       "findings": [
         "2026-10-12 SRC-11 실제 TXT 확보. 대화 속 원래 첨부 이미지·엑셀은 미확보",
         "전송 시각과 화면 내용을 함께 대조",
-        "요청·합의·완료보고·검증을 별도로 기록"
+        "요청·합의·완료보고·검증을 별도로 기록",
+        "프로젝트 MD 4종: intent · spec · plan · insight"
       ],
       "lessons": [
         "knowledge"
       ],
       "archive": "카카오톡업무맥락_TXT이미지연계_2026-10-08.zip",
-      "fileCount": 4,
-      "mdCount": 4,
+      "fileCount": 9,
+      "mdCount": 8,
       "path": "sources/knowledge-images/",
-      "sha256": "4229e23e6cf572683b6a30dfb2e0eeef0a8e778b69974495eee4b2f5cfc3e3b6"
+      "sha256": "4229e23e6cf572683b6a30dfb2e0eeef0a8e778b69974495eee4b2f5cfc3e3b6",
+      "projectDocuments": [
+        "project-md/20261024/intent.md",
+        "project-md/20261024/spec.md",
+        "project-md/20261024/plan.md",
+        "project-md/20261024/insight.md"
+      ]
     },
     {
       "id": "obsidian",
@@ -334,16 +369,23 @@
         "모형 검증 186건",
         "Full·Apply·Original·Rollback의 의미를 구분",
         "실제 Chrome·ERP 결과와 배포본 일치는 추가 확인",
-        "2026-10-17: 후속 대화 20쌍·이미지 8개 추가, 재추출 V3 19개 변경안과 결재 설정·RFC·JSON 설계 확보"
+        "2026-10-17: 후속 대화 20쌍·이미지 8개 추가, 재추출 V3 19개 변경안과 결재 설정·RFC·JSON 설계 확보",
+        "프로젝트 MD 4종: intent · spec · plan · insight"
       ],
       "lessons": [
         "webgui"
       ],
       "archive": "ERP_WebGUI_Refactoring_교육자료추출_2026-10-08.zip",
-      "fileCount": 26,
-      "mdCount": 11,
+      "fileCount": 31,
+      "mdCount": 15,
       "path": "sources/webgui/",
-      "sha256": "e81dec3b5628fbcf41fc21a49bfd735dc47abf30174d6f167f5d526cf3792263"
+      "sha256": "e81dec3b5628fbcf41fc21a49bfd735dc47abf30174d6f167f5d526cf3792263",
+      "projectDocuments": [
+        "project-md/20261024/intent.md",
+        "project-md/20261024/spec.md",
+        "project-md/20261024/plan.md",
+        "project-md/20261024/insight.md"
+      ]
     },
     {
       "id": "worktime-agent",

@@ -1,0 +1,38 @@
+[
+  {
+    "uploaded_name": "WebGUI·SYSTEMGUI 개선 4개 md.zip",
+    "source": "webgui",
+    "archive_path": "sources/webgui/archives/project-md-20261024.zip",
+    "sha256": "2bd1009ddc3eb3042931450d9f35ab85a213fba00a36a0a05e7982e214f7791b",
+    "documents": [
+      "intent.md",
+      "spec.md",
+      "plan.md",
+      "insight.md"
+    ]
+  },
+  {
+    "uploaded_name": "카카오톡 TXT·이미지 업무 맥락 4개 md.zip",
+    "source": "knowledge-images",
+    "archive_path": "sources/knowledge-images/archives/project-md-20261024.zip",
+    "sha256": "f3040180fbbc9c6bbb18f229f2553af6e6cd2d3e8d95d9d75fbf4a2e132b02d4",
+    "documents": [
+      "intent.md",
+      "spec.md",
+      "plan.md",
+      "insight.md"
+    ]
+  },
+  {
+    "uploaded_name": "소스 추출·진단과 업무 에이전트 4개 md.zip",
+    "source": "export-diag",
+    "archive_path": "sources/export-diag/archives/project-md-20261024.zip",
+    "sha256": "11a902d397cd02012de14a433e7ce210d75e85f9541511e223e94dcd301b611d",
+    "documents": [
+      "intent.md",
+      "spec.md",
+      "plan.md",
+      "insight.md"
+    ]
+  }
+]

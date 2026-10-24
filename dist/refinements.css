@@ -191,6 +191,24 @@
 .source-document-path { display:block; color:var(--muted); font-size:var(--text-caption); margin-top:4px; overflow-wrap:anywhere; }
 .source-document-list .btn { flex:none; }
 .core-md-section { margin-top:48px; padding-top:28px; border-top:1px solid var(--line); min-height:140px; }
+
+/* 03 is split without renumbering the existing workflow and case links. */
+.lesson-link .num { flex-basis: 43px; }
+.lesson-row { grid-template-columns: 58px minmax(0,1fr) auto; }
+.home-applications { --home-section-bg:var(--surface); --home-card-bg:var(--panel); --home-card-line:var(--line); --home-card-hover:var(--hover-surface); }
+.application-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+.application-card .home-card-tag { margin-bottom:10px; }
+.application-card h3 a { color:inherit; }
+.application-actions { margin-top:auto; }
+.application-actions .text-link { display:inline-flex; margin-top:15px; }
+.source-document-kind { display:inline-block; margin-left:.55rem; margin-top:5px; color:var(--accent-ink); font-size:var(--text-caption); }
+#core-md-title { scroll-margin-top:100px; }
+@media(max-width:760px) {
+ .application-grid { grid-template-columns:1fr; }
+ .home-applications .section-top { align-items:flex-start; flex-direction:column; }
+ .home-applications .section-top h2 { flex-wrap:wrap; }
+ .lesson-row { grid-template-columns:48px minmax(0,1fr); }
+}
 @media(max-width:600px) {
  .source-dialog { padding:18px; max-height:90dvh; }
  .source-document-list li { flex-direction:column; align-items:flex-start; gap:12px; }

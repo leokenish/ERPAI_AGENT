@@ -6623,5 +6623,80 @@
     "path": "sources/conversations/20261017-webgui/visible-dom.json",
     "bytes": 1265333,
     "sha256": "f29d04040b1a081e762691327dba6cce50939200e77042cebbde00d9e89ecf8b"
+  },
+  {
+    "path": "sources/webgui/project-md/20261024/intent.md",
+    "bytes": 10717,
+    "sha256": "21fbda663c8216ebd76922935a4f20cb591275b6d8ca864305d59f7d91fe7020"
+  },
+  {
+    "path": "sources/webgui/project-md/20261024/spec.md",
+    "bytes": 17689,
+    "sha256": "e3b5cedd072da6c51039e357dc979c0f9067b7a392095996a0febba507ce804c"
+  },
+  {
+    "path": "sources/webgui/project-md/20261024/plan.md",
+    "bytes": 23433,
+    "sha256": "bdc4db34549b28e9cff511aefc8dc10dfd8cbbd9bae0a1b8229c3e9014069d7c"
+  },
+  {
+    "path": "sources/webgui/project-md/20261024/insight.md",
+    "bytes": 15819,
+    "sha256": "92ab81ac1f0f612d4849e8a2d4f0ebb019983ea9807e1b2d5825554ac2d9052f"
+  },
+  {
+    "path": "sources/webgui/archives/project-md-20261024.zip",
+    "bytes": 28452,
+    "sha256": "2bd1009ddc3eb3042931450d9f35ab85a213fba00a36a0a05e7982e214f7791b"
+  },
+  {
+    "path": "sources/knowledge-images/project-md/20261024/intent.md",
+    "bytes": 9994,
+    "sha256": "77d8fb54bda2a71f147dcde856deae6c25a35bb5ebc44043e527e3721693e804"
+  },
+  {
+    "path": "sources/knowledge-images/project-md/20261024/spec.md",
+    "bytes": 13230,
+    "sha256": "7e74f7c7195d467ee9972fc3dc040316e3dac153aec389d2b38866719eeb44d9"
+  },
+  {
+    "path": "sources/knowledge-images/project-md/20261024/plan.md",
+    "bytes": 15879,
+    "sha256": "4573882246b01c16e0e38f76484ee8ae8e4964006d35ca35f278181a763e78c6"
+  },
+  {
+    "path": "sources/knowledge-images/project-md/20261024/insight.md",
+    "bytes": 13037,
+    "sha256": "e4afa6925478a118d42f9623bcd98f079780e57f7cedd574cbb2edc814305a56"
+  },
+  {
+    "path": "sources/knowledge-images/archives/project-md-20261024.zip",
+    "bytes": 21525,
+    "sha256": "f3040180fbbc9c6bbb18f229f2553af6e6cd2d3e8d95d9d75fbf4a2e132b02d4"
+  },
+  {
+    "path": "sources/export-diag/project-md/20261024/intent.md",
+    "bytes": 11546,
+    "sha256": "b198942308f8e9dbe668cd9a16f17b0551e0bca667940ae8b0d07e24d5f4b7c8"
+  },
+  {
+    "path": "sources/export-diag/project-md/20261024/spec.md",
+    "bytes": 19663,
+    "sha256": "15081ec89238261f774a9dc63f2486d2dfeba967b1be80d7fa254a43b6b153bc"
+  },
+  {
+    "path": "sources/export-diag/project-md/20261024/plan.md",
+    "bytes": 22619,
+    "sha256": "c23faf0d6dd32a78b682eddbceccc68aea979d474b00bcb7e0d801d90cc003ac"
+  },
+  {
+    "path": "sources/export-diag/project-md/20261024/insight.md",
+    "bytes": 17051,
+    "sha256": "6be31cfd3c4b214240d5fcf240c18de129c1f4067b7995725e0daa715dd7e351"
+  },
+  {
+    "path": "sources/export-diag/archives/project-md-20261024.zip",
+    "bytes": 28743,
+    "sha256": "11a902d397cd02012de14a433e7ce210d75e85f9541511e223e94dcd301b611d"
   }
 ]

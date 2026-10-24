@@ -33,18 +33,32 @@ test('최신 WEBGUI 20쌍의 본문·코드·순서와 이미지 8개가 원천�
  assert.equal(missing.length,6);assert.ok(missing.every(a=>a.publicPath===null));
 });
 
-test('홈에서 13개 과정을 각각 선택하고 사례실습 링크를 노출하지 않는다',()=>{
+test('홈에서 14개 과정을 각각 선택하고 사례실습 링크를 노출하지 않는다',()=>{
  const start=app.indexOf('function home(){'),end=app.indexOf('function courses(){');
- const context=vm.createContext({data:portal,countNumber,esc:s=>s,lessonLink:id=>'#/learn/'+id,icon:()=>'',badge:()=>'',footer:()=>'',caseItems:[{id:'compare',title:'ERP 코드 형상관리 · 세 방향 비교'},{id:'evidence',title:'ERP 코드 형상관리 · DIAG 결과 읽기'},{id:'webgui'},{id:'ess-attendance'}]});
+ const context=vm.createContext({data:portal,countNumber,lessonNumber:l=>l.displayNumber||String(l.number).padStart(2,'0'),esc:s=>s,lessonLink:id=>'#/learn/'+id,icon:()=>'',badge:()=>'',footer:()=>'',caseItems:[{id:'compare',title:'ERP 코드 형상관리 · 세 방향 비교'},{id:'evidence',title:'ERP 코드 형상관리 · DIAG 결과 읽기'},{id:'webgui'},{id:'ess-attendance'}]});
  vm.runInContext(app.slice(start,end),context);
  const html=vm.runInContext('home()',context);
  const paths=html.match(/<div class="path-list">([\s\S]*?)<\/section><\/div>/)[1];
- assert.equal((paths.match(/class="path-course-number"/g)||[]).length,13);
+ assert.equal((paths.match(/class="path-course-number"/g)||[]).length,14);
  for(const l of portal.lessons)assert.match(paths,new RegExp(`href="#/learn/${l.id}"`));
  assert.doesNotMatch(paths,/01[–-]03|04[–-]07|08[–-]12/);
  assert.doesNotMatch(html,/#\/cases|사례 실습|home-practice/);
  const htmlIndex=conversationIndex(portal.conversations);
  assert.match(htmlIndex,/data-count-to="955"/);assert.doesNotMatch(htmlIndex,/data-count-to="969"/);
+});
+
+test('확장 설계 다음에 10~13 활용 사례와 개별 과정·핵심 MD 링크를 제공한다',()=>{
+ const context=vm.createContext({data:portal,countNumber,lessonNumber:l=>l.displayNumber||String(l.number).padStart(2,'0'),esc:s=>s,lessonLink:id=>'#/learn/'+id,icon:()=>'',badge:()=>'',footer:()=>''});
+ vm.runInContext(app.slice(app.indexOf('function home(){'),app.indexOf('function courses(){')),context);
+ const html=vm.runInContext('home()',context);
+ assert.ok(html.indexOf('home-applications-title')>html.indexOf('home-expansion-title'));
+ const cards=[...html.matchAll(/<article class="home-card application-card">([\s\S]*?)<\/article>/g)].map(m=>m[1]);
+ assert.equal(cards.length,4);
+ for(const [i,id] of ['webgui','worktime-agent','publishing','ess-attendance'].entries()){
+  assert.ok(cards[i].includes(`href="#/learn/${id}">설계 과정 읽기`));
+  assert.match(cards[i],/href="#\/library\?section=core-md-title"/);
+ }
+ assert.equal(new Set(portal.lessons.map(l=>l.displayNumber||String(l.number))).size,14);
 });
 
 test('실제 DIAG 엑셀 다운로드는 보존된 원본 바이트와 같다',async()=>{
@@ -62,14 +76,14 @@ test('HTML과 전체 모듈 그래프는 같은 버전의 정적 파일을 요�
  }
 });
 
-test('생성된 배포 화면의 13개 과정과 자료실이 새 구성을 사용한다',async()=>{
+test('생성된 배포 화면의 14개 과정과 자료실이 새 구성을 사용한다',async()=>{
  const built=await read('dist/app.js');
- const context=vm.createContext({data:portal,countNumber,esc:s=>s,lessonLink:id=>'#/learn/'+id,icon:()=>'',badge:()=>'',footer:()=>'',breadcrumbs:()=>''});
+ const context=vm.createContext({data:portal,countNumber,lessonNumber:l=>l.displayNumber||String(l.number).padStart(2,'0'),esc:s=>s,lessonLink:id=>'#/learn/'+id,icon:()=>'',badge:()=>'',footer:()=>'',breadcrumbs:()=>''});
  vm.runInContext(built.slice(built.indexOf('function home(){'),built.indexOf('function courses(){')),context);
  vm.runInContext(built.slice(built.indexOf('function libraryPage('),built.indexOf('function openSourceDocuments(')),context);
  const home=vm.runInContext('home()',context);
- const rows=[...home.matchAll(/<li><a href="#\/learn\/([^"]+)"><span class="path-course-number">(\d{2})\.<\/span><span>([^<]+)<\/span><\/a><\/li>/g)];
- assert.deepEqual(rows.map(m=>[m[1],m[2],m[3]]),portal.lessons.map(l=>[l.id,String(l.number).padStart(2,'0'),l.title]));
+ const rows=[...home.matchAll(/<li><a href="#\/learn\/([^"]+)"><span class="path-course-number">(\d{2}(?:-[AB])?)\.<\/span><span>([^<]+)<\/span><\/a><\/li>/g)];
+ assert.deepEqual(rows.map(m=>[m[1],m[2],m[3]]),portal.lessons.map(l=>[l.id,(l.displayNumber||String(l.number).padStart(2,'0')),l.title]));
  assert.doesNotMatch(home,/#\/cases|home-practice|사례 실습/);
  assert.match(home,/ERP AI 에이전트, 이해에서 실무로/);
  const library=vm.runInContext('libraryPage()',context);
