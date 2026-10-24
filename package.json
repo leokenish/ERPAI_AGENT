@@ -1,6 +1,6 @@
 {
   "name": "kbs-erp-ai-learning-portal",
-  "version": "1.11.2",
+  "version": "1.12.0",
   "private": true,
   "type": "module",
   "engines": {

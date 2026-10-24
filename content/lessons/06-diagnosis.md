@@ -65,7 +65,7 @@
 
 ## 직접 비교해 보기
 
-[사례 실습 화면](#/cases/compare)에서 합성 데이터의 값과 존재 상태를 바꾸며 세 비교 방향을 익혀보세요.
+[소스 추출·DIAG 프로젝트 대화](#/conversations/kbs-erp-export-diag-agents)에서 실제 비교 결과와 수정·검증 과정을 읽어보세요.
 
 로컬에서는 [비교 실습 스크립트](downloads/compare_cases.py)와 [입력 JSON](downloads/three_way_cases.json)을 같은 폴더에 저장해 실행할 수 있습니다.
 

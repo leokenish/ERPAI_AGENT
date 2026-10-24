@@ -10,7 +10,7 @@ const data=JSON.parse(await readFile(new URL('dist/data/portal.json',root),'utf8
 const k=data.worktimeKnowledge;
 const byPath=p=>k.documents.find(d=>d.path===p);
 test('10→11→12 과정 순서와 기존 publishing 주소를 보존한다',()=>{
- assert.deepEqual(data.lessons.filter(l=>l.number>=10&&l.number<=12).map(l=>[l.number,l.id,l.title]),[[10,'webgui','WEBGUI 개선과 검증'],[11,'worktime-agent','근로시간 AI 에이전트 구축'],[12,'publishing','교육 포털을 함께 갱신하기']]);
+ assert.deepEqual(data.lessons.filter(l=>l.number>=10&&l.number<=12).map(l=>[l.number,l.id,l.title]),[[10,'webgui','WEBGUI 개선과 검증'],[11,'worktime-agent','근로시간 AI 에이전트 구축'],[12,'publishing','에이전트 사이트를 함께 갱신하기']]);
  for(const step of k.walkthrough)assert.ok(byPath(step.path),step.path);
 });
 test('783개 원본 MD와 개별 다운로드의 바이트가 일치하고 ZIP에는 MD만 존재한다',async()=>{

@@ -16,9 +16,9 @@ html=html.replace('<script src="theme.js"></script>',()=>`<script>${theme.replac
 let css=await readFile(path.join(dist,'styles.css'),'utf8');
 css=css.replace(/url\("([^"]+)"\)/g,(all,url)=>files[url]?`url("${files[url]}")`:all);
 let app=await readScript('app.js');
-const comparison=(await readScript('compare.js')).replaceAll('export function','function');
 const portal=await readFile(path.join(dist,'data/portal.json'),'utf8');
-app=app.replace("import {compare} from './compare.js';",()=>comparison);
+const sourceLibrary=(await readScript('source-library.js')).replace(/^export /gm,'');
+app=app.replace("import {renderSourceDocuments,filterSourceDocuments} from './source-library.js';",()=>`const {renderSourceDocuments,filterSourceDocuments}=(()=>{\n${sourceLibrary}\nreturn {renderSourceDocuments,filterSourceDocuments};\n})();`);
 const knowledgeMap=(await readScript('knowledge-map.js')).replace(/^export /gm,'');
 const knowledge=(await readScript('knowledge.js')).replace(/^export /gm,'').replace("import {countNumber} from './count-up.js';",'').replace("import {renderKnowledgeMap,mountKnowledgeMap} from './knowledge-map.js';",()=>`const {renderKnowledgeMap,mountKnowledgeMap}=(()=>{\n${knowledgeMap}\nreturn {renderKnowledgeMap,mountKnowledgeMap};\n})();`);
 app=app.replace("import {renderKnowledge,mountKnowledge} from './knowledge.js';",()=>`const {renderKnowledge,mountKnowledge}=(()=>{\n${knowledge}\nreturn {renderKnowledge,mountKnowledge};\n})();`);

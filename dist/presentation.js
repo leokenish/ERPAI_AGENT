@@ -6,7 +6,7 @@ export function renderPresentation(slides,index=0){
  const n=Math.max(0,Math.min(slides.length-1,Math.floor(Number(index))||0)),s=slides[n];
  return `<div class="presentation" data-presentation>
   <article class="slide" aria-labelledby="slide-title">
-   <div class="slide-topline"><span class="slide-number">ERP AI · ${String(n+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}</span><span class="slide-section">${escapeText(s.section)}</span><button class="btn small" data-present-reveal>전체 표시</button></div>
+   <div class="slide-topline"><span class="slide-number">ERP AI 에이전트 · ${String(n+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}</span><span class="slide-section">${escapeText(s.section)}</span><button class="btn small" data-present-reveal>전체 표시</button></div>
    <header class="slide-heading"><h1 id="slide-title">${typedText(s.title,'title')}</h1><p class="subtitle">${typedText(s.subtitle)}</p></header>
    <div class="slide-body">
     <section class="slide-workflow" aria-labelledby="slide-workflow-title"><h2 class="slide-label" id="slide-workflow-title">실무에서 따라갈 순서</h2><ol class="slide-steps">${s.steps.map((step,i)=>`<li><span class="slide-step-number" aria-hidden="true">${String(i+1).padStart(2,'0')}</span><div><h3>${typedText(step.title)}</h3><p>${typedText(step.text)}</p></div></li>`).join('')}</ol></section>

@@ -5,6 +5,7 @@ import {fileURLToPath} from 'node:url';
 import {renderMarkdown} from './markdown.mjs';
 import {buildConversations} from './build-conversations.mjs';
 import {buildKnowledge} from './build-knowledge.mjs';
+import {buildSourceDocuments} from './build-source-documents.mjs';
 import {updateOliveFruits} from './color-olive-fruits.mjs';
 const root=path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 await updateOliveFruits(root);
@@ -24,7 +25,6 @@ async function loadHero(filename,rootId){
 }
 catalog.heroScene=await loadHero('team-collaboration-animated.svg','erp-screen-scene');
 catalog.heroSceneDark=await loadHero('team-collaboration-dark.svg','dark-erp-screen-scene');
-catalog.compareCases=JSON.parse(await readFile(path.join(root,'examples/three_way_cases.json'),'utf8'));
 const ids=new Set();
 for(const lesson of catalog.lessons){
  if(ids.has(lesson.id))throw Error(`Duplicate lesson ${lesson.id}`); ids.add(lesson.id);
@@ -49,6 +49,7 @@ await writeFile(path.join(out,'styles.css'),(await readFile(path.join(root,'site
 await cp(path.join(root,'assets'),path.join(out,'assets'),{recursive:true});
 catalog.conversations=await buildConversations(root,out);
 catalog.worktimeKnowledge=await buildKnowledge(root,out);
+await buildSourceDocuments(root,out,catalog.sources);
 catalog.sources.find(s=>s.id==='worktime-agent').sha256=catalog.worktimeKnowledge.archiveSha256;
 await mkdir(path.join(out,'downloads'),{recursive:true});
 for(const item of catalog.downloads){
@@ -78,7 +79,7 @@ await writeFile(path.join(root,'index.html'),`<!doctype html>
 <html lang="ko">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ERP AI 교육 포털 · v${catalog.version}</title>
+<title>ERP AI 에이전트 · v${catalog.version}</title>
 <script>
 const target=new URL(location.protocol==='file:'?'./preview.html':'./dist/',location.href);
 target.search=location.search;
@@ -86,7 +87,7 @@ target.searchParams.set('v','${catalog.version}-${assetVersion}');
 target.hash=location.hash;
 location.replace(target.href);
 </script>
-<p><a href="./dist/?v=${catalog.version}-${assetVersion}">ERP AI 교육 포털 v${catalog.version} 열기</a></p>
+<p><a href="./dist/?v=${catalog.version}-${assetVersion}">ERP AI 에이전트 v${catalog.version} 열기</a></p>
 </html>
 `);
 const manifest={version:catalog.version,asOf:catalog.asOf,lessons:catalog.lessons.length,sourceBundles:catalog.sources.length,conversations:catalog.conversations.totals,files:[]};

@@ -1183,6 +1183,36 @@ mark { background: var(--cream); color: inherit; }
 .case-download-panel .btn{white-space:normal;text-align:center}
 @media(max-width:520px){.case-download-panel .btn{width:100%}}
 
+/* v1.12.0: project MD browser, sharing-oriented navigation and longer title. */
+.visually-hidden { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0; }
+.hero-title .signature-word { font-size:.82em; word-break:keep-all; }
+.source-card { min-width:0; }
+.source-card .source-foot { align-items:center; }
+.source-card .source-foot .text-link { white-space:nowrap; }
+.source-modal-open { overflow:hidden; }
+.source-dialog { width:min(920px,94vw); max-height:88dvh; padding:30px; border:1px solid var(--line); border-radius:12px; background:var(--canvas); color:var(--body); box-shadow:0 18px 70px var(--shadow); overflow:auto; overscroll-behavior:contain; }
+.source-dialog::backdrop { background:var(--backdrop); }
+.source-dialog-close { display:block; margin:0 0 12px auto; }
+.source-documents h1 { font-size:clamp(1.4rem,3vw,2rem); line-height:1.45; margin:0 0 24px; overflow-wrap:anywhere; }
+.source-document-toolbar { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:24px; }
+.source-document-search { display:grid; gap:8px; font-weight:500; }
+.source-document-search input { width:100%; min-width:0; padding:12px 14px; color:var(--ink); background:var(--panel); border:1px solid var(--control-line); border-radius:6px; font:inherit; }
+.source-document-count { color:var(--muted); font-size:var(--text-caption); margin:12px 0; }
+.source-document-list { list-style:none; padding:0; margin:0; border-top:1px solid var(--line); }
+.source-document-list li { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:16px 0; border-bottom:1px solid var(--line); }
+.source-document-list li[hidden],.source-document-empty[hidden] { display:none; }
+.source-document-list li>div { min-width:0; overflow-wrap:anywhere; }
+.source-document-list strong { font-size:var(--text-small); font-weight:500; }
+.source-document-path { display:block; color:var(--muted); font-size:var(--text-caption); margin-top:4px; overflow-wrap:anywhere; }
+.source-document-list .btn { flex:none; }
+.core-md-section { margin-top:48px; padding-top:28px; border-top:1px solid var(--line); min-height:140px; }
+@media(max-width:600px) {
+ .source-dialog { padding:18px; max-height:90dvh; }
+ .source-document-list li { flex-direction:column; align-items:flex-start; gap:12px; }
+ .source-document-toolbar { align-items:flex-start; }
+ .source-document-toolbar .btn { width:100%; }
+}
+
 /* Screen-only hero animation */
 #erp-screen-scene{display:block;max-width:100%;height:auto}
 #erp-screen-scene .ui-motion{opacity:1;animation:erp-ui-cycle var(--cycle) ease-in-out var(--delay) infinite}

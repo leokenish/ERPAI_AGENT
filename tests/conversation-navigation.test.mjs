@@ -4,6 +4,7 @@ import vm from 'node:vm';
 import {readFile} from 'node:fs/promises';
 import {countNumber,mountCountUps} from '../site/count-up.js';
 import * as conversations from '../site/conversations.js';
+import {renderSourceDocuments,filterSourceDocuments} from '../site/source-library.js';
 import {renderPresentation} from '../site/presentation.js';
 import {renderKnowledge,mountKnowledge} from '../site/knowledge.js';
 const data=JSON.parse(await readFile(new URL('../dist/data/portal.json',import.meta.url),'utf8'));
@@ -12,13 +13,13 @@ function fixture(hash){
  const elements=new Map(),events={},windowEvents={},graphNodes=[],copied=[],presentationLifecycle=[],heroLifecycle=[];
  const classes=()=>({add(){},remove(){},contains(){return false;},toggle(){return false;}});
  const element=id=>{
-  if(!elements.has(id))elements.set(id,{id,innerHTML:'',textContent:'',hidden:false,classList:classes(),setAttribute(){},addEventListener(){},querySelectorAll(){return [];},focus(){},scrollIntoView(){}});
+  if(!elements.has(id))elements.set(id,{id,innerHTML:'',textContent:'',hidden:false,classList:classes(),setAttribute(){},addEventListener(){},querySelectorAll(){return [];},focus(){},scrollIntoView(){},close(){}});
   return elements.get(id);
  };
  for(const id of ['sap','export','git','knowledge','codex','diag','maps','feedback'])graphNodes.push({dataset:{node:id},classList:classes(),setAttribute(){}});
- const location={hash};
+ const location={hash,replace(next){this.hash=next;}};
  const document={body:{classList:classes()},querySelector(s){if(s==='#compare-preset'||s==='dialog[open]'||s==='.hero')return null;if(s==='[data-presentation]')return element('presentation');return s.startsWith('#')?element(s.slice(1)):null;},querySelectorAll(s){return s==='.graph-node'?graphNodes:[];},getElementById:element,addEventListener(type,fn){events[type]=fn;}};
- const context=vm.createContext({...conversations,countNumber,mountCountUps,renderKnowledge,mountKnowledge,renderPresentation,mountPresentation(root){assert.equal(root.id,'presentation');presentationLifecycle.push('mount');return ()=>presentationLifecycle.push('cleanup');},mountHeroMotion(root,options){assert.equal(options?.alreadyTyped,undefined);heroLifecycle.push('mount');return ()=>heroLifecycle.push('cleanup');},document,location,history:{replaceState(a,b,url){location.hash=url;}},localStorage:{getItem(){return null;}},window:{scrollTo(){},addEventListener(type,fn){windowEvents[type]=fn;},isSecureContext:true},navigator:{clipboard:{async writeText(text){copied.push(text);}}},URLSearchParams,fetch:async()=>({ok:true,json:async()=>data}),console,setTimeout,clearTimeout});
+ const context=vm.createContext({...conversations,renderSourceDocuments,filterSourceDocuments,countNumber,mountCountUps,renderKnowledge,mountKnowledge,renderPresentation,mountPresentation(root){assert.equal(root.id,'presentation');presentationLifecycle.push('mount');return ()=>presentationLifecycle.push('cleanup');},mountHeroMotion(root,options){assert.equal(options?.alreadyTyped,undefined);heroLifecycle.push('mount');return ()=>heroLifecycle.push('cleanup');},document,location,history:{replaceState(a,b,url){location.hash=url;}},localStorage:{getItem(){return null;}},window:{scrollTo(){},addEventListener(type,fn){windowEvents[type]=fn;},isSecureContext:true},navigator:{clipboard:{async writeText(text){copied.push(text);}}},URLSearchParams,fetch:async()=>({ok:true,json:async()=>data}),console,setTimeout,clearTimeout});
  return {context,elements,events,windowEvents,location,copied,presentationLifecycle,heroLifecycle};
 }
 function target(attribute,dataset){return {dataset,closest(){return this;},matches(selector){return selector===`[${attribute}]`;}};}
@@ -91,10 +92,10 @@ test('완료 기록 없이 모든 과정의 자료 저장·이전 다음 이동�
  f.context.localStorage.getItem=key=>{if(key==='erp-ai-completed-v1'){completionReads++;return JSON.stringify(data.lessons.map(l=>l.id));}return null;};
  f.context.window.print=()=>prints++;
  await vm.runInContext(`(async()=>{${source}})()`,f.context);
- assert.equal(completionReads,0);assert.match(f.elements.get('main').innerHTML,/학습 시작하기/);assert.doesNotMatch(f.elements.get('main').innerHTML,/이어서 학습하기/);
+ assert.equal(completionReads,0);assert.match(f.elements.get('main').innerHTML,/워크플로 살펴보기/);assert.doesNotMatch(f.elements.get('main').innerHTML,/이어서 학습하기/);
  for(let i=0;i<data.lessons.length;i++){
   const lesson=data.lessons[i];f.location.hash='#/learn/'+lesson.id;f.windowEvents.hashchange();const html=f.elements.get('main').innerHTML;
-  assert.equal((html.match(/data-print/g)||[]).length,1,lesson.id);assert.match(html,/인쇄 · PDF 저장/);assert.match(html,/교육 MD 다운로드/);
+  assert.equal((html.match(/data-print/g)||[]).length,1,lesson.id);assert.match(html,/인쇄 · PDF 저장/);assert.match(html,/과정 MD 다운로드/);
   assert.ok(html.includes('href="content/'+lesson.file+'" download="'+lesson.file.split('/').pop()+'"'));
   assert.doesNotMatch(html,/data-complete|complete-panel|학습 완료 표시/);assert.doesNotMatch(f.elements.get('sidebar').innerHTML,/done-tick|학습 표시 완료/);
   if(i>0)assert.ok(html.includes('이전 과정 · '+String(data.lessons[i-1].number).padStart(2,'0')));
@@ -109,4 +110,23 @@ test('홈으로 돌아오면 제목 타이핑을 새로 시작하고 기존 생�
  f.location.hash='#/courses';f.windowEvents.hashchange();
  f.location.hash='#/home';f.windowEvents.hashchange();
  assert.deepEqual(f.heroLifecycle,['mount','cleanup','mount']);
+});
+
+
+test('제거된 사례실습 주소는 관련 과정으로 이동한다',async()=>{
+ for(const [old,next] of [['compare','diagnosis'],['evidence','diagnosis'],['webgui','webgui'],['ess-attendance','ess-attendance']]){
+  const f=fixture('#/cases/'+old);await vm.runInContext(`(async()=>{${source}})()`,f.context);
+  assert.equal(f.location.hash,'#/learn/'+next);
+  f.windowEvents.hashchange();assert.ok(f.elements.get('main').innerHTML.includes('과정 MD 다운로드'));
+ }
+});
+
+test('자료확인 직접 주소는 선택한 프로젝트 MD만 표시한다',async()=>{
+ for(const item of data.sources){
+  const f=fixture('#/library/'+item.id);await vm.runInContext(`(async()=>{${source}})()`,f.context);
+  const html=f.elements.get('main').innerHTML;
+  assert.equal((html.match(/data-source-file=/g)||[]).length,item.mdCount);
+  assert.ok(html.includes(item.mdArchive));
+  for(const other of data.sources.filter(s=>s.id!==item.id))assert.ok(!html.includes(other.mdArchive));
+ }
 });

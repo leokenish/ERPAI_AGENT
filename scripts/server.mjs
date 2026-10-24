@@ -26,7 +26,9 @@ export function makeServer(directory=root){
    const body=req.method==='HEAD'?null:await readFile(file);
    res.setHeader('Content-Type',types[path.extname(file)]||'application/octet-stream');
    res.setHeader('Content-Length',info.size);
-   if(relative.startsWith('downloads/'))res.setHeader('Content-Disposition',`attachment; filename="${path.basename(file)}"`);
+   // Let the source MD link's download attribute retain its original filename.
+   if(relative.startsWith('downloads/source-md/')&&path.extname(file)==='.md')res.setHeader('Content-Disposition','attachment');
+   else if(relative.startsWith('downloads/'))res.setHeader('Content-Disposition',`attachment; filename="${path.basename(file)}"`);
    res.statusCode=200;res.end(body);
   }catch(e){return fail(e instanceof URIError?400:404,e instanceof URIError?'Bad request':'Not found');}
  });
@@ -37,7 +39,7 @@ export function start(){
  if(!Number.isInteger(port)||port<1||port>65535)throw Error('PORT must be 1–65535');
  const server=makeServer();
  server.on('error',e=>{console.error(`Portal failed to start: ${e.message}`);process.exitCode=1;});
- server.listen(port,host,()=>console.log(`ERP AI 에이전트 교육 포털 · http://${host}:${port} · dist/ only`));
+ server.listen(port,host,()=>console.log(`ERP AI 에이전트 · http://${host}:${port} · dist/ only`));
  for(const signal of ['SIGINT','SIGTERM'])process.on(signal,()=>server.close(()=>process.exit(0)));
  return server;
 }

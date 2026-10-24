@@ -1,4 +1,4 @@
-import {countNumber} from './count-up.js?v=7d479e1ba83b';
+import {countNumber} from './count-up.js?v=2221ecad0845';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const types={verbatim:'원문 전사',excerpt:'원문 발췌',summary:'답변 요약',reconstructed:'교육용 재구성',unavailable:'본문 표시 없음'};
 export const conversationTabs=[['dialogue','대화 기록'],['review','해설·시행착오'],['exercise','따라 하기'],['context','프로젝트 맥락'],['assets','관련 자료']];
