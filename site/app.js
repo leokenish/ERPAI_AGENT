@@ -73,11 +73,11 @@ function home(){
  const next=data.lessons[0];
  // Keep the home as a curated entry point; new content can live in the full indexes.
  const expansion=['collaboration','erp-mcp'].map(id=>data.lessons.find(l=>l.id===id));
- const applications=data.lessons.filter(l=>l.number>=10&&l.number<=13);
+ const applications=data.lessons.filter(l=>l.group==='에이전트 활용 사례');
  const paths=[
   ['01','처음 이해하기',1,3],
   ['02','내 업무에 적용하기',4,7],
-  ['03','팀으로 확장하기',8,13]
+  ['03','팀으로 확장하기',8,Math.max(...data.lessons.map(l=>l.number))]
  ];
  return `<div class="page home-page"><section class="hero-band"><div class="home-inner"><div class="hero-meta"><span>KBS / ERP AI AGENTS</span><span>v${esc(data.version)} · 자료 기준 ${esc(data.asOf.replaceAll('-','.'))}</span></div><div class="hero"><div class="hero-copy"><div class="eyebrow">BUILD · UNDERSTAND · COLLABORATE</div><h1 class="hero-title" aria-label="ERP AI 에이전트, 이해에서 실무로."><span class="type-line signature-word" aria-hidden="true"><span class="type-reserve">ERP AI 에이전트,</span><span class="type-output" data-type-output data-text="ERP AI 에이전트,">ERP AI 에이전트,</span></span><span class="type-line" aria-hidden="true"><span class="type-reserve">이해에서 실무로.</span><span class="type-output" data-type-output data-text="이해에서 실무로.">이해에서 실무로.</span></span></h1><p>소스와 업무 맥락을 연결하고,<br>우리 팀의 에이전트 환경을 만들어 갑니다.</p><div class="hero-actions"><a class="btn primary" href="${lessonLink(next.id)}">워크플로 살펴보기 <span aria-hidden="true">↗</span></a><a class="btn hero-secondary" href="#/map">전체 구성도 보기 <span aria-hidden="true">↗</span></a></div></div><div class="hero-media" role="img" aria-label="올리브 나무를 중심으로 협업하는 사람들. 컴퓨터 화면의 카드와 글자가 차례로 나타납니다."><div class="hero-art hero-art-light" aria-hidden="true">${data.heroScene}</div><div class="hero-art hero-art-dark" aria-hidden="true">${data.heroSceneDark}</div></div></div><div class="hero-foot"><span>현행 기능부터 확장 설계까지</span><a href="#/courses">${countNumber(data.lessons.length)}개 과정 둘러보기 <span aria-hidden="true">↓</span></a></div></div></section>
  <div class="home-inner home-content"><section class="intro-section" aria-label="프로젝트 자료 구성"><div class="section-top"><div><div class="eyebrow">BUILT FROM OUR WORK</div><h2>AI 에이전트가<br>프로젝트의 출발점 입니다.</h2></div><p>각 프로젝트의 의사결정 과정을 읽어 볼 수 있습니다.</p></div><div class="stats-strip"><a href="#/library" class="stat"><span class="stat-label">SOURCES</span><strong>${countNumber(data.sources.length,2)}</strong><span>원천 자료 묶음 <b aria-hidden="true">↗</b></span></a><a href="#/conversations" class="stat"><span class="stat-label">EPISODES</span><strong>${countNumber(data.conversations.totals.episodes)}</strong><span>프로젝트 대화 에피소드 <b aria-hidden="true">↗</b></span></a><a href="#/courses" class="stat"><span class="stat-label">WORK. FLOW</span><strong>${countNumber(data.lessons.length)}</strong><span>에이전트 구축·활용 과정 <b aria-hidden="true">↗</b></span></a></div></section>
@@ -101,11 +101,11 @@ function lessonPage(id){
 const graphModes={
  core:{title:'소스와 업무 지식의 연결',nodes:[
  ['sap',20,50,'SAP ERP','현재 저장소','업무 소스와 개발 객체를 보관합니다. Export로 추출하고 DIAG로 비교합니다.','지원 객체와 실제 업무 데이터 행을 구분합니다.','export','소스 원천'],
- ['export',245,50,'Export','파일화·원본 보존','지원 객체를 추출하고 manifest·catalog·로그·baseline을 함께 만듭니다.','확보 기준 0.3.18 · 최신 SAP 전체 재검증은 별도','export','소스 확보'],
+ ['export',245,50,'Export','파일화·원본 보존','패키지 또는 BSP 한 앱을 추출하고 manifest·catalog·baseline을 함께 보존합니다.','기준 0.4.1 · 단일 BSP 앱 ZIP 형식 확인','export','소스 확보'],
  ['git',470,50,'GitHub','이력·검토·공유','담당 패키지의 소스와 지식을 버전 관리합니다. 원본 기준과 변경 이유를 추적합니다.','소스·지식의 이력과 검토 기록 관리','workspace','사용 보고·설계'],
  ['knowledge',20,225,'업무 지식','규정·협의·매뉴얼','업무 기준과 협의 이유를 출처·시점·상태와 함께 기록합니다. 이미지도 실제 내용과 대조합니다.','텍스트 정리 사용 보고 · 이미지 연계는 보완 설계','knowledge','근거 문서'],
  ['codex',245,225,'업무 에이전트','Codex · 지침 · 스킬','소스와 업무 근거를 필요한 범위에서 읽고, 답변·변경 검토·타 담당 질문을 작성합니다.','ZHR5 구성 사용 보고 · 다른 패키지 운영 상태는 별도 확인','codex','사용 보고·설계'],
- ['diag',470,225,'DIAG','비교·검사 결과','원본·추출본·SAP의 차이를 제시합니다. 조회·활성 버전 근거·문법 검사를 나누어 해석합니다.','확보 기준 0.4.5 · 읽기 전용 · 자동 Import 제외','diagnosis','소스·결과 확보'],
+ ['diag',470,225,'DIAG','비교·검사 결과','원본·추출본·SAP를 비교하고, 지원 웹자산의 선택 반영을 저장·활성화·재검증으로 나누어 확인합니다.','기준 0.7.1 · 0.6.11 BSP 사례 확인 · 최신 SAP 실행 미확인','diagnosis','소스·결과 확보'],
  ['maps',20,400,'Obsidian · 연결 MD','사람의 업무 탐색','기존 폴더에 연결 문서를 추가해 업무 근거를 탐색합니다.','사용자 제공 업무지도·전체 그래프 캡처 확보 · 링크 유효성·성능은 별도 확인','maps','적용 화면 확보'],
  ['feedback',245,400,'담당자 검토·피드백','지식·회귀 사례 갱신','담당자 정정을 업무 지식과 회귀 사례에 반영하고 검증 결과를 기록합니다.','피드백 지침 확보 · 자동 평가 실행기는 미확인','feedback','지침 확보']
  ],edges:[['sap','export'],['export','git'],['git','codex'],['knowledge','codex'],['codex','diag'],['knowledge','maps',true],['codex','feedback'],['maps','feedback',true],['feedback','knowledge',false,'diagonal']],note:'실선: 자료·기능 관계 · 점선: 확장 설계. 구현 상태는 각 요소에서 확인하세요.'},
@@ -145,7 +145,7 @@ function libraryPage(id){
  const source=data.sources.find(s=>s.id===id);
  if(id&&!source)return notFound();
  if(source)return `<div class="page source-detail-page">${breadcrumbs(['자료실',source.title])}<p><a class="text-link" href="#/library">← 자료실</a></p>${renderSourceDocuments(source)}${footer()}</div>`;
- return `<div class="page library-page">${breadcrumbs(['자료실'])}<h1 class="visually-hidden">자료실</h1><div class="resource-grid">${data.sources.map((s,i)=>`<section class="source-card"><div class="source-head"><span class="source-id">SOURCE ${String(i+1).padStart(2,'0')}</span>${badge(s.status)}</div><h3>${esc(s.title)}</h3><p>${esc(s.summary)}</p><p class="caption">${esc(s.version)}</p><ul>${s.findings.map(f=>`<li>${esc(f)}</li>`).join('')}</ul><div class="source-links">${s.lessons.map(id=>`<a href="${lessonLink(id)}">과정 ${lessonNumber(data.lessons.find(l=>l.id===id))}</a>`).join('')}</div><div class="source-foot"><span>MD ${s.mdCount}개</span><a class="text-link" href="#/library/${s.id}" data-source-open="${s.id}" aria-haspopup="dialog">자료확인</a></div></section>`).join('')}</div><section class="core-md-section" aria-labelledby="core-md-title"><h2 id="core-md-title">핵심 MD 자료</h2><div class="core-md-files"></div></section>${footer()}</div>`;
+ return `<div class="page library-page">${breadcrumbs(['자료실'])}<h1 class="visually-hidden">자료실</h1><div class="resource-grid">${data.sources.map((s,i)=>`<section class="source-card"><div class="source-head"><span class="source-id">SOURCE ${String(i+1).padStart(2,'0')}</span><span class="badge source-category">${esc(s.category)}</span></div><h3>${esc(s.title)}</h3><p>${esc(s.summary)}</p><p class="caption">${esc(s.version)}</p><ul>${s.findings.map(f=>`<li>${esc(f)}</li>`).join('')}</ul><div class="source-links">${s.lessons.map(id=>`<a href="${lessonLink(id)}">과정 ${lessonNumber(data.lessons.find(l=>l.id===id))}</a>`).join('')}</div><div class="source-foot"><span>MD ${s.mdCount}개</span><a class="text-link" href="#/library/${s.id}" data-source-open="${s.id}" aria-haspopup="dialog">자료확인</a></div></section>`).join('')}</div><section class="core-md-section" aria-labelledby="core-md-title"><h2 id="core-md-title">핵심 MD 자료</h2><div class="core-md-files"></div></section>${footer()}</div>`;
 }
 function openSourceDocuments(id,trigger){
  const source=data.sources.find(s=>s.id===id);if(!source)return;

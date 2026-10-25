@@ -9,7 +9,7 @@ const root=new URL('../',import.meta.url);
 const portal=JSON.parse(await readFile(new URL('dist/data/portal.json',root),'utf8'));
 const bundle=portal.conversations;
 const fields=['id','sequence','role','timestamp','content_type','content_markdown','source_locator','redacted'];
-test('393개 사용자 문장은 교육용으로 구분하고 AI 전문·첨부 전용 항목을 보존한다',async()=>{
+test('572개 사용자 문장은 교육용으로 구분하고 AI 전문·첨부 전용 항목을 보존한다',async()=>{
  const edits=JSON.parse(await readFile(new URL('content/conversations/editorial-prompts.json',root),'utf8'));
  let edited=0,empty=0;
  for(const p of bundle.projects)for(const m of p.messages){
@@ -19,7 +19,7 @@ test('393개 사용자 문장은 교육용으로 구분하고 AI 전문·첨부 
   assert.equal(edit.source_sha256,createHash('sha256').update(m.content_markdown).digest('hex'));
   assert.equal(m.editorial_markdown,edit.content_markdown);assert.doesNotMatch(m.editorial_markdown,/주십시오|마십시오/);assert.ok(m.editorialHtml);edited++;
  }
- assert.equal(edited,393);assert.equal(empty,66);
+ assert.equal(edited,572);assert.equal(empty,66);
  const html=conversationWorkspace(bundle,{projectId:'erp-obsidian-knowledge-map',episodeId:'obs-e001',visible:999});
  assert.match(html,/>교육용 문장<\/span>/);
  assert.match(html,/회사.*ERP 관련 업무 파일을 구조화/);
@@ -30,9 +30,9 @@ test('393개 사용자 문장은 교육용으로 구분하고 AI 전문·첨부 
  const emptyHtml=conversationWorkspace(bundle,{projectId:blank.id,episodeId:episode.id,visible:999});
  assert.match(emptyHtml,/첨부 자료만 전달된 항목입니다/);
 });
-test('7개 프로젝트의 969개 위치를 원문·발췌·요약·본문 없음으로 구분하고 순서를 보존한다',async()=>{
- assert.equal(bundle.projects.length,7);
- assert.deepEqual(bundle.totals,{projects:7,messages:969,episodes:97,verbatim:955,excerpt:0,summary:0,reconstructed:0,unavailable:14});
+test('9개 프로젝트의 1327개 위치를 원문·발췌·요약·본문 없음으로 구분하고 순서를 보존한다',async()=>{
+ assert.equal(bundle.projects.length,9);
+ assert.deepEqual(bundle.totals,{projects:9,messages:1327,episodes:147,verbatim:1309,excerpt:0,summary:0,reconstructed:0,unavailable:18});
  for(const p of bundle.projects){
   const source=JSON.parse(await readFile(new URL(p.sourcePath+'conversation-data.json',root),'utf8'));
   const original=validateConversation(source);assert.equal(p.messages.length,original.length);
@@ -51,7 +51,7 @@ test('구성도의 모든 요소에서 유효한 관련 프로젝트·에피소�
  assert.equal(resolveConversation(bundle,{node:'no-such-node'}),null);
 });
 test('네 공유 프로젝트의 모든 표시 본문과 기존 발화 ID·첨부를 보존한다',async()=>{
- for(const p of bundle.projects.filter(p=>p.publishAttachments&&p.id!=='kbs-erp-ess-attendance')){
+ for(const p of bundle.projects.filter(p=>['erp-obsidian-knowledge-map','erp-agent-communication','kbs-erp-mcp-telegram','kbs-erp-webgui-refactor'].includes(p.id))){
   const capture=JSON.parse(await readFile(new URL(`sources/conversations/20261014-shared/${p.id}/converted-conversation.json`,root),'utf8'));
   for(const turn of capture.turns){
    const messages=p.messages.filter(m=>m.shared_turn_index===turn.index);
@@ -77,7 +77,7 @@ test('네 공유 프로젝트의 모든 표시 본문과 기존 발화 ID·첨�
  for(let i=2;i<=28;i+=2)assert.equal(mcp.messages.find(m=>m.id===`M${String(i).padStart(3,'0')}`).content_type,'verbatim');
  assert.equal(mcp.coverage.final_responses,16);
 });
-test('97개 에피소드의 각 화면에 중복 ID·깨진 자료·과정 링크가 없다',async()=>{
+test('147개 에피소드의 각 화면에 중복 ID·깨진 자료·과정 링크가 없다',async()=>{
  const projectIds=new Set(bundle.projects.map(p=>p.id)),lessonIds=new Set(portal.lessons.map(l=>l.id));
  const publicLinks=new Set();
  for(const p of bundle.projects)for(const e of p.episodes)for(const [tab] of conversationTabs){
@@ -93,7 +93,7 @@ test('97개 에피소드의 각 화면에 중복 ID·깨진 자료·과정 링�
  }
  for(const url of publicLinks)await access(new URL('dist/'+url,root));
  assert.equal([...publicLinks].filter(p=>p.startsWith('assets/conversations/')).length,new Set(bundle.projects.flatMap(p=>p.assets.filter(a=>a.kind==='image'&&a.publicPath).map(a=>a.publicPath))).size);
- assert.ok(conversationIndex(bundle).includes('원문 전사 955개'));
+ assert.ok(conversationIndex(bundle).includes('원문 전사 1309개'));
 });
 test('미확보 AI 답변과 요약을 원문 응답으로 표시하지 않고 검색으로 찾을 수 있다',()=>{
  const missing=conversationWorkspace(bundle,{projectId:'kbs-erp-export-diag-agents',episodeId:'E12',visible:999});
@@ -102,14 +102,14 @@ test('미확보 AI 답변과 요약을 원문 응답으로 표시하지 않고 �
  assert.ok(!missing.includes('당시 AI 답변 원문은 확보하지 못했습니다'));
  const summary=conversationWorkspace(bundle,{projectId:'kbs-erp-mcp-telegram',episodeId:'E01',visible:999});
  assert.ok(!summary.includes('type-summary'));assert.ok(summary.includes('pip install'));assert.ok(summary.includes('MCPServer'));
- const entries=conversationSearchEntries(bundle);assert.equal(entries.length,97);
+ const entries=conversationSearchEntries(bundle);assert.equal(entries.length,147);
  assert.ok(entries.some(e=>e.text.includes('OnDestory')),'preserves the original typo for search and quotation');
 });
 test('공유 화면의 235개 본문 전체와 3개 빈 응답을 보존하며 모든 요청 뒤에 대응 위치가 연결된다',async()=>{
  const p=bundle.projects.find(p=>p.id==='kbs-erp-export-diag-agents');
  const source=JSON.parse(await readFile(new URL('sources/conversations/20261013-shared/kbs-erp-export-diag-agents/conversation-data.json',root),'utf8'));
  const original=source.threads[0].messages;
- assert.equal(p.messages.length,238);assert.equal(p.episodes.length,22);
+ assert.equal(p.messages.length,306);assert.equal(p.episodes.length,35);
  for(let i=0;i<original.length;i++){
   const m=p.messages[i],o=original[i];
   for(const key of ['id','sequence','role','timestamp','content_markdown','platform_message_id','platform_turn_id'])assert.deepEqual(m[key],o[key],`${o.id}/${key}`);
@@ -120,8 +120,8 @@ test('공유 화면의 235개 본문 전체와 3개 빈 응답을 보존하며 �
    for(const e of p.episodes.filter(e=>e.message_refs.includes(m.id)))assert.ok(e.message_refs.includes(response.id),`${e.id}/${m.id}: unpaired`);
   }
  }
- assert.equal(p.messages.filter(m=>m.role==='assistant'&&m.content_type==='verbatim').length,116);
- assert.deepEqual(p.messages.filter(m=>m.content_type==='unavailable').map(m=>m.pair_number),[13,89,90]);
+ assert.equal(p.messages.slice(0,238).filter(m=>m.role==='assistant'&&m.content_type==='verbatim').length,116);
+ assert.deepEqual(p.messages.slice(0,238).filter(m=>m.content_type==='unavailable').map(m=>m.pair_number),[13,89,90]);
  for(let i=1;i<=18;i++)assert.ok(p.episodes.some(e=>e.id===`E${String(i).padStart(2,'0')}`),'old episode links survive');
  const html=conversationWorkspace(bundle,{projectId:p.id,episodeId:'E00-start',visible:999});
  assert.ok(html.includes('대화 전문 펼치기'));assert.ok(html.includes('SP 수준'));
@@ -129,8 +129,9 @@ test('공유 화면의 235개 본문 전체와 3개 빈 응답을 보존하며 �
  assert.equal((e01.match(/class="chat-message from-assistant/g)||[]).length,4);
  assert.ok(!e01.includes('당시 AI 답변 원문은 확보하지 못했습니다'));
  const download=await readFile(new URL('dist/'+p.documents['AI_RESPONSES_FULL.md'],root));
- const originalMd=await readFile(new URL('sources/conversations/20261013-shared/kbs-erp-export-diag-agents/SAP_Package_Conversation_Full.md',root));
- assert.deepEqual(download,originalMd);
+ const updatedMd=await readFile(new URL(p.sourcePath+'AI_RESPONSES_FULL.md',root));
+ assert.deepEqual(download,updatedMd);
+ for(const m of p.messages.filter(m=>m.role==='assistant'&&m.content_type==='verbatim'))assert.ok(download.toString().includes(m.content_markdown),m.id);
 });
 test('대화 데이터의 누락 참조를 거부하고 원문 HTML·실행 링크는 표시용으로 처리한다',async()=>{
  const source=JSON.parse(await readFile(new URL(bundle.projects[0].sourcePath+'conversation-data.json',root),'utf8'));

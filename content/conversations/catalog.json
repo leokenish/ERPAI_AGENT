@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-17",
+  "asOf": "2026-10-24",
   "sourceRoot": "sources/conversations/20261012",
   "preferredNodes": {
     "sap": [
@@ -80,15 +80,17 @@
         "diagnosis",
         "feedback"
       ],
-      "purpose": "SAP 소스와 업무 지식을 연결해 담당 업무를 분석하는 에이전트 환경을 만듭니다.",
+      "purpose": "SAP 소스와 업무 근거를 연결하고, 비교·검사에서 지원 웹자산의 선택 저장·활성화로 확장합니다.",
       "environment": "ECC 6.0·SAP_BASIS 700 / SP0041·Unicode·Windows 11에서 시작해 GitHub·Mac Codex Desktop으로 확장했습니다.",
-      "turningPoint": "파일 구조를 SAP 객체에 맞추고, 자동 Import 구상을 읽기 전용 DIAG로 전환했습니다.",
-      "currentState": "Export 0.3.18·DIAG 0.4.5 소스와 실행 보고 확보. 최신 소스·실행본 일치와 SAP 전체 검증은 추가 확인 대상입니다.",
-      "coverageNote": "사용자 요청 119개 · AI 전문 116개 · 본문 미확보 3곳",
-      "integrationNote": "과정 06에서 DIAG 캡처와 결과 해석을 함께 확인하세요. 소스와 실행본의 일치 여부는 추가 확인 대상입니다.",
+      "turningPoint": "SAP 소스와 업무 근거를 연결하고, 비교·검사에서 지원 웹자산의 선택 저장·활성화로 확장합니다.",
+      "currentState": "Export 0.4.1 / DIAG 0.7.1 소스 확보. 0.6.11의 기존 I 버전 재사용·활성화·SE80는 사용자 확인, 최신 0.7.1 SAP 실행은 미확인입니다.",
+      "coverageNote": "사용자 요청 153개 · AI 본문 149개 · 본문 미확보 4곳",
+      "integrationNote": "해설은 교육용 설명이며 원문 발화와 별도로 표시합니다. 실제 확보 파일과 원문에만 언급된 미확보 자료를 구분합니다.",
       "supplementLesson": "diagnosis",
       "metaEpisodes": [
-        "E18"
+        "E18",
+        "E30-context-four-md",
+        "E31-insight-portal-package"
       ],
       "sourcePath": "content/conversations/export-full",
       "supplementDocuments": [
@@ -96,9 +98,10 @@
         "MISSING_RESPONSES.md",
         "CHANGELOG.md"
       ],
-      "supplementEpisode": "E00-start",
+      "supplementEpisode": "E19-handover",
       "assetSourcePath": "sources/conversations/20261012-supplement/kbs-erp-export-diag-agents",
-      "supplementLabel": "9월 18일, 최초 목적과 환경 확인부터 읽기"
+      "supplementLabel": "2026-10-24 확인 후속 흐름 읽기",
+      "publishAttachments": true
     },
     {
       "id": "kakao-work-context",
@@ -221,15 +224,17 @@
       "lessonIds": [
         "webgui"
       ],
-      "purpose": "기존 업무 기능을 유지하며 WebGUI의 가독성과 스크롤 동작을 개선합니다.",
+      "purpose": "기존 업무 기능을 보존하며 결재 본문·다운로드·팝업·스크롤을 실제 오류 근거로 개선합니다.",
       "environment": "WEBGUI·SYSTEMGUI의 JS/CSS·HTML과 Chrome DevTools 관찰 자료를 비교했습니다.",
-      "turningPoint": "중복 콜백과 실제 POST를 나누어 확인하고, 제공 소스와 서버 응답을 대조했습니다.",
-      "currentState": "ITS 일부 적용 보고와 V3 19개 변경안, 결재 렌더러·RFC 설계를 확보했습니다. 후속 SAP 재시험은 추가 확인 대상입니다.",
-      "coverageNote": "기존 대화 + 최신 Modern·ITS·결재 화면 요청 27개·AI 전문 27개",
-      "integrationNote": "과정 10에서 실제 적용 보고와 V3 수정안, 결재 본문 렌더러 설계를 함께 확인하세요.",
+      "turningPoint": "기존 업무 기능을 보존하며 결재 본문·다운로드·팝업·스크롤을 실제 오류 근거로 개선합니다.",
+      "currentState": "V429 / UI 4.2.6 / 결재 렌더러 1.4.5 구현. 특정 화면·다운로드의 사용자 확인과 최신 SAP 재시험을 구분합니다.",
+      "coverageNote": "사용자 요청 113개 · AI 본문 135개 · 본문 미확보 3곳",
+      "integrationNote": "해설은 교육용 설명이며 원문 발화와 별도로 표시합니다. 실제 확보 파일과 원문에만 언급된 미확보 자료를 구분합니다.",
       "supplementLesson": "webgui",
       "metaEpisodes": [
-        "wg-ep08"
+        "wg-ep08",
+        "wg-progress-handoff-spec-checkpoint",
+        "wg-progress-four-md-and-philosophical-insight"
       ],
       "sourcePath": "content/conversations/business-full/kbs-erp-webgui-refactor",
       "supplementDocuments": [
@@ -237,9 +242,9 @@
         "MISSING_RESPONSES.md",
         "CHANGELOG.md"
       ],
-      "supplementEpisode": "wg-apply-01",
+      "supplementEpisode": "wg-progress-approval-api-observed",
       "assetSourcePath": "sources/conversations/20261012-supplement/kbs-erp-webgui-refactor",
-      "supplementLabel": "새로 추가한 ITS 적용·결재 화면 대화 읽기",
+      "supplementLabel": "2026-10-24 확인 후속 흐름 읽기",
       "publishAttachments": true
     },
     {
@@ -254,7 +259,7 @@
       "turningPoint": "기존 화면을 보존하는 R1 분리 개발로 전환하고, 저장 상태와 기승인 변경을 나누어 추적했습니다.",
       "currentState": "날짜 이동·반차 변경: 사용자 성공 보고. 최종 SUBMIT_PRG01과 전체 회귀: 재시험 대기.",
       "coverageNote": "사용자 요청 254개 · AI 본문 245개 · 본문 미확보 9곳",
-      "integrationNote": "과정 13에서 원래 승인 데이터, 변경 신청, 잔여 일수와 결재 상태를 함께 확인하세요.",
+      "integrationNote": "2026-10-24 네 공유 링크의 254턴·499본문을 재대조했습니다. 새 턴은 없으며 기존 26개 에피소드를 유지하고 미확보 이미지 51개를 복구했습니다. 최종 SUBMIT_PRG01 적용 후 재시험은 여전히 미확인입니다.",
       "supplementLesson": "ess-attendance",
       "metaEpisodes": [],
       "sourcePath": "content/conversations/business-full/kbs-erp-ess-attendance",
@@ -267,6 +272,60 @@
       ],
       "supplementEpisode": "ess-01",
       "supplementLabel": "첫 요구 확인부터 대화 전문 읽기"
+    },
+    {
+      "id": "kbs-weekly-work-timeline",
+      "shortTitle": "주간업무일지 타임라인 시스템",
+      "sourceId": "weekly-timeline",
+      "lessonIds": [
+        "weekly-timeline"
+      ],
+      "environment": "공유 대화와 제공한 실제 원본·프리뷰·프로젝트 MD를 기준으로 학습합니다.",
+      "metaEpisodes": [
+        "timeline-four-md-and-organizational-memory"
+      ],
+      "sourcePath": "content/conversations/progress-20261024/kbs-weekly-work-timeline",
+      "assetSourcePath": "sources/conversations/20261024-progress/kbs-weekly-work-timeline",
+      "publishAttachments": true,
+      "supplementDocuments": [
+        "AI_RESPONSES_FULL.md",
+        "MISSING_RESPONSES.md",
+        "CHANGELOG.md"
+      ],
+      "supplementLesson": "weekly-timeline",
+      "purpose": "주간업무 기록을 국·업무·시점과 원문 근거로 연결해 조직의 업무 흐름을 읽습니다.",
+      "currentState": "UI 2.3 / 구조 2.0과 617개 HML 처리 보고. 전 기간 의미 연결 정확도와 최신 화면의 최종 사용자 수용은 미확인입니다.",
+      "integrationNote": "해설은 교육용 설명이며 원문 발화와 별도로 표시합니다. 실제 확보 파일과 원문에만 언급된 미확보 자료를 구분합니다.",
+      "coverageNote": "사용자 요청 30개 · AI 본문 30개 · 본문 미확보 0곳",
+      "turningPoint": "주간업무 기록을 국·업무·시점과 원문 근거로 연결해 조직의 업무 흐름을 읽습니다.",
+      "supplementEpisode": "timeline-intent-and-file-based-navigation",
+      "supplementLabel": "첫 요청부터 설계 과정 읽기"
+    },
+    {
+      "id": "kbs-smart-erp-main",
+      "shortTitle": "스마트 ERP 메인화면 개편",
+      "sourceId": "smart-erp",
+      "lessonIds": [
+        "smart-erp"
+      ],
+      "environment": "공유 대화와 제공한 실제 원본·프리뷰·프로젝트 MD를 기준으로 학습합니다.",
+      "metaEpisodes": [],
+      "sourcePath": "content/conversations/progress-20261024/kbs-smart-erp-main",
+      "assetSourcePath": "sources/conversations/20261024-progress/kbs-smart-erp-main",
+      "publishAttachments": true,
+      "supplementDocuments": [
+        "AI_RESPONSES_FULL.md",
+        "MISSING_RESPONSES.md",
+        "CHANGELOG.md"
+      ],
+      "supplementLesson": "smart-erp",
+      "purpose": "기존 ERP 기능을 유지하며 메인화면 배치·배경·글꼴을 반복 검토합니다.",
+      "currentState": "v9 소스·로컬 프리뷰 근거 확보. 전체 v9 ZIP 불완전 확인, 실제 SAP 검증·운영 반영·최종 수용은 미확인입니다.",
+      "integrationNote": "해설은 교육용 설명이며 원문 발화와 별도로 표시합니다. 실제 확보 파일과 원문에만 언급된 미확보 자료를 구분합니다.",
+      "coverageNote": "사용자 요청 49개 · AI 본문 47개 · 본문 미확보 2곳",
+      "turningPoint": "기존 ERP 기능을 유지하며 메인화면 배치·배경·글꼴을 반복 검토합니다.",
+      "supplementEpisode": "smart-E01-preserve-and-package",
+      "supplementLabel": "첫 요청부터 설계 과정 읽기"
     }
   ]
 }

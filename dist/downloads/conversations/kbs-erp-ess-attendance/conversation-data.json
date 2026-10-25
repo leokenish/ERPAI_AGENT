@@ -9458,54 +9458,70 @@
     {
       "id": "ess1-asset-016",
       "original_filename": "zthr0080_3.png",
-      "path": "unavailable/ess1-asset-016",
+      "path": "assets/ess1-asset-016.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 1 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess1-t003-u1"
       ],
       "source_turn_index": 3,
-      "source_thread": "ess1"
+      "source_thread": "ess1",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "8358cc47e9390f447b5a936390f723067e40d3904b46b6baa9105fe233270bd0",
+      "bytes": 453273,
+      "source_url": "https://sdmntprseasia.oaiusercontent.com/files/00000000-38c8-8207-a4fb-1044deee9764/raw"
     },
     {
       "id": "ess1-asset-017",
       "original_filename": "guntae_input_attribute(1).png",
-      "path": "unavailable/ess1-asset-017",
+      "path": "assets/ess1-asset-017.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 1 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess1-t003-u1"
       ],
       "source_turn_index": 3,
-      "source_thread": "ess1"
+      "source_thread": "ess1",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "a9058d031623b749705243b2c6591cd17227fbca431940d54e09ec22d3ca3301",
+      "bytes": 782500,
+      "source_url": "https://sdmntprcentralus.oaiusercontent.com/files/00000000-209c-81f5-bfb2-0f2edec5a028/raw"
     },
     {
       "id": "ess1-asset-018",
       "original_filename": "cd40e744-9341-44f5-804d-b5b002479dbb.png",
-      "path": "unavailable/ess1-asset-018",
+      "path": "assets/ess1-asset-018.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 1 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess1-t008-u1"
       ],
       "source_turn_index": 8,
-      "source_thread": "ess1"
+      "source_thread": "ess1",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "c313df86e9e2ce42af20c8d44ab78f4fecbc567087c0706550f88e6d35c54040",
+      "bytes": 13399,
+      "source_url": "https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-78b8-822f-9aaf-7030cd2ad36e/raw"
     },
     {
       "id": "ess1-asset-019",
       "original_filename": "8b432115-085e-4265-8155-1e0f306c42a8.png",
-      "path": "unavailable/ess1-asset-019",
+      "path": "assets/ess1-asset-019.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 1 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess1-t012-u1"
       ],
       "source_turn_index": 12,
-      "source_thread": "ess1"
+      "source_thread": "ess1",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "3c985627391424b1058c560019ac0cb9f5822287e1272b691a6730ffc28cf1ec",
+      "bytes": 17457,
+      "source_url": "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-7d20-8209-8dc6-df4261584fc0/raw"
     },
     {
       "id": "ess1-asset-020",
@@ -9588,15 +9604,19 @@
     {
       "id": "ess1-asset-026",
       "original_filename": "6bb0f510-d0cd-4675-9b8a-8416b1a98614.png",
-      "path": "unavailable/ess1-asset-026",
+      "path": "assets/ess1-asset-026.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 1 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess1-t017-u1"
       ],
       "source_turn_index": 17,
-      "source_thread": "ess1"
+      "source_thread": "ess1",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "0276a359681b96756be2b4469794329ba5840c1b54c5d08c9cb84a58ad27aa74",
+      "bytes": 13684,
+      "source_url": "https://sdmntprindiasocentral.oaiusercontent.com/files/00000000-fef8-8211-b415-9d0a17e28d4a/raw"
     },
     {
       "id": "ess1-asset-027",
@@ -9828,28 +9848,36 @@
     {
       "id": "ess1-asset-044",
       "original_filename": "bc9ac5da-33f7-4732-9d16-ba43ba6e46bb.png",
-      "path": "unavailable/ess1-asset-044",
+      "path": "assets/ess1-asset-044.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 1 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess1-t028-u1"
       ],
       "source_turn_index": 28,
-      "source_thread": "ess1"
+      "source_thread": "ess1",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "4ba7cc053594787e6dd8eb9fbc186ee1b43572cee8e8761bd7d5532a5190042d",
+      "bytes": 50377,
+      "source_url": "https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-b704-822f-b209-59eab33458bf/raw"
     },
     {
       "id": "ess1-asset-045",
       "original_filename": "18c088af-01b7-4a8d-b5ae-12b0c64581b6.png",
-      "path": "unavailable/ess1-asset-045",
+      "path": "assets/ess1-asset-045.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 1 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess1-t030-u1"
       ],
       "source_turn_index": 30,
-      "source_thread": "ess1"
+      "source_thread": "ess1",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "17d7166454676e6d5125c56e05f4d717d7b3b0d85ad73f64c7f10a05a89c6966",
+      "bytes": 33477,
+      "source_url": "https://sdmntprwestus3.oaiusercontent.com/files/00000000-567c-81fd-bcef-379b8a03f52b/raw"
     },
     {
       "id": "ess1-asset-046",
@@ -10564,15 +10592,19 @@
     {
       "id": "ess3-asset-018",
       "original_filename": "ef39c620-4f40-483b-b65a-15dabe6ad906.png",
-      "path": "unavailable/ess3-asset-018",
+      "path": "assets/ess3-asset-018.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 3 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess3-t010-u1"
       ],
       "source_turn_index": 10,
-      "source_thread": "ess3"
+      "source_thread": "ess3",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "7d123eb20a4d557d1d3bebaebc7ea048dac49d17f30af90311d0ad0acf64c21f",
+      "bytes": 25407,
+      "source_url": "https://sdmntprseasia.oaiusercontent.com/files/00000000-7460-8207-8e58-876909e7f6c5/raw"
     },
     {
       "id": "ess3-asset-019",
@@ -10681,28 +10713,36 @@
     {
       "id": "ess3-asset-027",
       "original_filename": "0ad98af6-43ce-46e8-b1e6-f004411df3bc.png",
-      "path": "unavailable/ess3-asset-027",
+      "path": "assets/ess3-asset-027.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 3 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess3-t027-u1"
       ],
       "source_turn_index": 27,
-      "source_thread": "ess3"
+      "source_thread": "ess3",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "6e6b8420200ce783957ce2dbb0420f6a5a038be9823e3213225a030e506aa73c",
+      "bytes": 47880,
+      "source_url": "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-9520-8209-995f-2d24c3a3372f/raw"
     },
     {
       "id": "ess3-asset-028",
       "original_filename": "ab613319-0fc3-41d2-9e8a-105ed314056e.png",
-      "path": "unavailable/ess3-asset-028",
+      "path": "assets/ess3-asset-028.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 3 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess3-t028-u1"
       ],
       "source_turn_index": 28,
-      "source_thread": "ess3"
+      "source_thread": "ess3",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "f4cd9a0f48da8dcdbd0578da801fed53dc2659afc807fd89295f3ee799fb3752",
+      "bytes": 42232,
+      "source_url": "https://sdmntprkoreacentral.oaiusercontent.com/files/00000000-54e0-8206-8d36-d2668bfa41f2/raw"
     },
     {
       "id": "ess3-asset-029",
@@ -10759,15 +10799,19 @@
     {
       "id": "ess3-asset-033",
       "original_filename": "e37a5dc9-6ae7-4ea7-9c8d-962372b3e41e.png",
-      "path": "unavailable/ess3-asset-033",
+      "path": "assets/ess3-asset-033.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 3 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess3-t029-u1"
       ],
       "source_turn_index": 29,
-      "source_thread": "ess3"
+      "source_thread": "ess3",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "26980349cb63c045e971ab1824ce5fdde9e061757a0955ac195a3fa071b6f030",
+      "bytes": 73173,
+      "source_url": "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-14c0-8209-9f40-69e6a7c15e71/raw"
     },
     {
       "id": "ess3-asset-034",
@@ -10785,15 +10829,19 @@
     {
       "id": "ess3-asset-035",
       "original_filename": "bdf0801c-72f7-4569-b8bc-21023af5c844.png",
-      "path": "unavailable/ess3-asset-035",
+      "path": "assets/ess3-asset-035.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 3 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess3-t030-u1"
       ],
       "source_turn_index": 30,
-      "source_thread": "ess3"
+      "source_thread": "ess3",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "2c2a0c7814cf08a084b9a73810a345f525ca16d57b82ebd57972dee29299c5d0",
+      "bytes": 35819,
+      "source_url": "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-9e74-8209-9d6b-2ef0b9460ad2/raw"
     },
     {
       "id": "ess3-asset-036",
@@ -10865,93 +10913,121 @@
     {
       "id": "ess3-asset-041",
       "original_filename": "image(20261006-003901).png",
-      "path": "unavailable/ess3-asset-041",
+      "path": "assets/ess3-asset-041.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 3 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess3-t042-u1"
       ],
       "source_turn_index": 42,
-      "source_thread": "ess3"
+      "source_thread": "ess3",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "2d1311425cf411e1d940a154fe620cc188cbf466c95afe2bd005536772210a07",
+      "bytes": 33671,
+      "source_url": "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-801c-8209-a1e1-73949d6b716e/raw"
     },
     {
       "id": "ess3-asset-042",
       "original_filename": "image(20261006-004532).png",
-      "path": "unavailable/ess3-asset-042",
+      "path": "assets/ess3-asset-042.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 3 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess3-t043-u1"
       ],
       "source_turn_index": 43,
-      "source_thread": "ess3"
+      "source_thread": "ess3",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "0e1796ae2a256a462aafe208b998c0244d7fdf6cfcc59687b99929df653a871f",
+      "bytes": 42616,
+      "source_url": "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-40dc-8209-9609-e76deaf2110c/raw"
     },
     {
       "id": "ess3-asset-043",
       "original_filename": "image(20261006-005013).png",
-      "path": "unavailable/ess3-asset-043",
+      "path": "assets/ess3-asset-043.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 3 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess3-t044-u1"
       ],
       "source_turn_index": 44,
-      "source_thread": "ess3"
+      "source_thread": "ess3",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "c3e058adf2f68a86b56d3048af89ca9ff80104a93f202e6bd4fb312d1ad0317b",
+      "bytes": 50112,
+      "source_url": "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-094c-8209-bdc7-bc49d5177a1a/raw"
     },
     {
       "id": "ess3-asset-044",
       "original_filename": "image(20261006-005229).png",
-      "path": "unavailable/ess3-asset-044",
+      "path": "assets/ess3-asset-044.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 3 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess3-t045-u1"
       ],
       "source_turn_index": 45,
-      "source_thread": "ess3"
+      "source_thread": "ess3",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "068669632bee989316d6451e840698b99b8940b2323465620e8ced8fd9ace846",
+      "bytes": 29471,
+      "source_url": "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-8b10-8209-887a-3cc43af8971e/raw"
     },
     {
       "id": "ess3-asset-045",
       "original_filename": "image(20261006-012735).png",
-      "path": "unavailable/ess3-asset-045",
+      "path": "assets/ess3-asset-045.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 3 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess3-t047-u1"
       ],
       "source_turn_index": 47,
-      "source_thread": "ess3"
+      "source_thread": "ess3",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "5abdbfe20086d26392635e027dfb99ee16ffd09e1b1d795fc90cc25020983306",
+      "bytes": 11663,
+      "source_url": "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-7658-8209-8efc-df3f83a7d5fc/raw"
     },
     {
       "id": "ess3-asset-046",
       "original_filename": "image(20261006-015012).png",
-      "path": "unavailable/ess3-asset-046",
+      "path": "assets/ess3-asset-046.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 3 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess3-t049-u1"
       ],
       "source_turn_index": 49,
-      "source_thread": "ess3"
+      "source_thread": "ess3",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "fae4388fd7e720938af6902028a94cd4d76ace7c9a04918ff051ecb3c9c94cab",
+      "bytes": 107122,
+      "source_url": "https://sdmntprkoreacentral.oaiusercontent.com/files/00000000-6a1c-8206-b97d-0ab1f477e6e7/raw"
     },
     {
       "id": "ess3-asset-047",
       "original_filename": "image(20261006-015225).png",
-      "path": "unavailable/ess3-asset-047",
+      "path": "assets/ess3-asset-047.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 3 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess3-t050-u1"
       ],
       "source_turn_index": 50,
-      "source_thread": "ess3"
+      "source_thread": "ess3",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "33eae2be42f117afa6aa53128995e0ea205dab7794654e11fba7afce2c703377",
+      "bytes": 108389,
+      "source_url": "https://sdmntprkoreacentral.oaiusercontent.com/files/00000000-eb48-8206-a931-f7dcfe96163f/raw"
     },
     {
       "id": "ess3-asset-048",
@@ -10969,28 +11045,36 @@
     {
       "id": "ess3-asset-049",
       "original_filename": "image(20261006-020200).png",
-      "path": "unavailable/ess3-asset-049",
+      "path": "assets/ess3-asset-049.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 3 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess3-t052-u1"
       ],
       "source_turn_index": 52,
-      "source_thread": "ess3"
+      "source_thread": "ess3",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "b10954fe52d4a6bfb35348fa8c862702c44c3ac60d228e9125b25a17076f9eac",
+      "bytes": 48192,
+      "source_url": "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-cd9c-8209-a824-1335e5782d16/raw"
     },
     {
       "id": "ess3-asset-050",
       "original_filename": "image(20261006-021335).png",
-      "path": "unavailable/ess3-asset-050",
+      "path": "assets/ess3-asset-050.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 3 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess3-t053-u1"
       ],
       "source_turn_index": 53,
-      "source_thread": "ess3"
+      "source_thread": "ess3",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "25b56c5ad7f747a29540df987e9b41da0c99f0cae90fc220cc51f0e5a9198a0c",
+      "bytes": 27048,
+      "source_url": "https://sdmntprkoreacentral.oaiusercontent.com/files/00000000-d05c-8206-abdc-5dc2e280ce64/raw"
     },
     {
       "id": "ess3-asset-051",
@@ -11161,15 +11245,19 @@
     {
       "id": "ess3-asset-063",
       "original_filename": "image(20261007-070207).png",
-      "path": "unavailable/ess3-asset-063",
+      "path": "assets/ess3-asset-063.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 3 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess3-t069-u1"
       ],
       "source_turn_index": 69,
-      "source_thread": "ess3"
+      "source_thread": "ess3",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "59e42cc118ddde2e80078f8e8b884a481a2f4a98a4b94bef8bfbdbe84b7081d4",
+      "bytes": 33324,
+      "source_url": "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-df90-8209-90be-2af5115402fe/raw"
     },
     {
       "id": "ess3-asset-064",
@@ -11187,28 +11275,36 @@
     {
       "id": "ess3-asset-065",
       "original_filename": "image(20261007-073633).png",
-      "path": "unavailable/ess3-asset-065",
+      "path": "assets/ess3-asset-065.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 3 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess3-t072-u1"
       ],
       "source_turn_index": 72,
-      "source_thread": "ess3"
+      "source_thread": "ess3",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "a70ca10923ca15453325df95032232174497b385cdb155a6780975c6d7fb750b",
+      "bytes": 17965,
+      "source_url": "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-a1cc-8209-b1bc-c89cbb22630f/raw"
     },
     {
       "id": "ess3-asset-066",
       "original_filename": "image(20261007-074644).png",
-      "path": "unavailable/ess3-asset-066",
+      "path": "assets/ess3-asset-066.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 3 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess3-t073-u1"
       ],
       "source_turn_index": 73,
-      "source_thread": "ess3"
+      "source_thread": "ess3",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "5bf4ce9b9f7e296a6f9bae9c099cd8bdd4795fef757546a035fdf49214a5735f",
+      "bytes": 28044,
+      "source_url": "https://sdmntprwestcentralus.oaiusercontent.com/files/00000000-a134-81fb-be5c-2baf12539bb1/raw"
     },
     {
       "id": "ess3-asset-067",
@@ -11373,15 +11469,19 @@
     {
       "id": "ess3-asset-079",
       "original_filename": "image(20261008-001355).png",
-      "path": "unavailable/ess3-asset-079",
+      "path": "assets/ess3-asset-079.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 3 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess3-t082-u1"
       ],
       "source_turn_index": 82,
-      "source_thread": "ess3"
+      "source_thread": "ess3",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "4aa850557f8b9da1815f08aa1fc3767d050195efbfa7a5c7e4700b354fee009e",
+      "bytes": 91682,
+      "source_url": "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-8248-8209-9a80-c754497d389c/raw"
     },
     {
       "id": "ess3-asset-080",
@@ -11582,15 +11682,19 @@
     {
       "id": "ess3-asset-094",
       "original_filename": "image(20261008-042022).png",
-      "path": "unavailable/ess3-asset-094",
+      "path": "assets/ess3-asset-094.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 3 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess3-t101-u1"
       ],
       "source_turn_index": 101,
-      "source_thread": "ess3"
+      "source_thread": "ess3",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "058fd3ada3d328eda6083bddc2a42ad20a49a62375c6de8fdcee17ffa71762d5",
+      "bytes": 89686,
+      "source_url": "https://sdmntpraustraliaeast.oaiusercontent.com/files/00000000-6bac-81fa-bcbb-976a25ab65f1/raw"
     },
     {
       "id": "ess3-asset-095",
@@ -11849,54 +11953,70 @@
     {
       "id": "ess4-asset-005",
       "original_filename": "image(20261012-082155).png",
-      "path": "unavailable/ess4-asset-005",
+      "path": "assets/ess4-asset-005.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t015-u1"
       ],
       "source_turn_index": 15,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "eaf8a9449c433eb90ec016a46cc702d005c9100fdff82f9cadb76ffbd0a9058c",
+      "bytes": 69473,
+      "source_url": "https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-a90c-81f7-b06b-c30d72383ffe/raw"
     },
     {
       "id": "ess4-asset-006",
       "original_filename": "image(20261012-082337).png",
-      "path": "unavailable/ess4-asset-006",
+      "path": "assets/ess4-asset-006.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t016-u1"
       ],
       "source_turn_index": 16,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "a60353a45a9774e9812e1daab88fcf3a02c134c8dc361f1e4cd2bc2da3b4e52e",
+      "bytes": 40824,
+      "source_url": "https://sdmntpraustraliaeast.oaiusercontent.com/files/00000000-7958-81fa-8a49-f76f9978ca53/raw"
     },
     {
       "id": "ess4-asset-007",
       "original_filename": "image(20261012-082529).png",
-      "path": "unavailable/ess4-asset-007",
+      "path": "assets/ess4-asset-007.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t017-u1"
       ],
       "source_turn_index": 17,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "cdbc73e1b832b2609d8e5a1b9a38ac23cf10c75b39f5b412b0eb0c1431c600fa",
+      "bytes": 71670,
+      "source_url": "https://sdmntprsoutheastus3.oaiusercontent.com/files/00000000-4964-820c-9f6e-c8096e70ba49/raw"
     },
     {
       "id": "ess4-asset-008",
       "original_filename": "image(20261012-083024).png",
-      "path": "unavailable/ess4-asset-008",
+      "path": "assets/ess4-asset-008.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t021-u1"
       ],
       "source_turn_index": 21,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "5dbfdbde5b5c24ed118afef39f32fb60452e3ae619f8c1e16bff926e5f9af955",
+      "bytes": 31676,
+      "source_url": "https://sdmntprwestus3.oaiusercontent.com/files/00000000-c2ec-81fd-9912-3fb0ce10213e/raw"
     },
     {
       "id": "ess4-asset-009",
@@ -11931,54 +12051,70 @@
     {
       "id": "ess4-asset-011",
       "original_filename": "image(20261014-011622).png",
-      "path": "unavailable/ess4-asset-011",
+      "path": "assets/ess4-asset-011.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t025-u1"
       ],
       "source_turn_index": 25,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "1da1a7cb0dc4c269ce46e76ef599dc73071231063fba16d85d6760b26b5e75c5",
+      "bytes": 155396,
+      "source_url": "https://sdmntprkoreacentral.oaiusercontent.com/files/00000000-4430-8206-b5c1-19cbfce074b8/raw"
     },
     {
       "id": "ess4-asset-012",
       "original_filename": "image(20261014-012326).png",
-      "path": "unavailable/ess4-asset-012",
+      "path": "assets/ess4-asset-012.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t026-u1"
       ],
       "source_turn_index": 26,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "8f914dec30b300c7bd7fe1acaa25e39d47cbb3009358579ccae9e20f034f0529",
+      "bytes": 157989,
+      "source_url": "https://sdmntprkoreacentral.oaiusercontent.com/files/00000000-bc44-8206-b93f-7dc7fc36a7c0/raw"
     },
     {
       "id": "ess4-asset-013",
       "original_filename": "image(20261014-014656).png",
-      "path": "unavailable/ess4-asset-013",
+      "path": "assets/ess4-asset-013.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t027-u1"
       ],
       "source_turn_index": 27,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "4bd315dd7af18f06f91b4d21d81717dac230b8ceee07ef12eae5d8275489f03d",
+      "bytes": 26067,
+      "source_url": "https://sdmntpraustraliaeast.oaiusercontent.com/files/00000000-9788-81fa-9543-7db8b9b91eeb/raw"
     },
     {
       "id": "ess4-asset-014",
       "original_filename": "image(20261014-015035).png",
-      "path": "unavailable/ess4-asset-014",
+      "path": "assets/ess4-asset-014.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t029-u1"
       ],
       "source_turn_index": 29,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "38882de27538958e6bc3c9b7d6d3aef4d17712fd83f479340393558ae4156ae9",
+      "bytes": 68296,
+      "source_url": "https://sdmntpraustraliaeast.oaiusercontent.com/files/00000000-4160-81fa-95ff-ebc220a68717/raw"
     },
     {
       "id": "ess4-asset-015",
@@ -12143,54 +12279,70 @@
     {
       "id": "ess4-asset-027",
       "original_filename": "image(20261014-045524).png",
-      "path": "unavailable/ess4-asset-027",
+      "path": "assets/ess4-asset-027.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t040-u1"
       ],
       "source_turn_index": 40,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "bea983b837344c7f1f6581d1502b453b355b5991b5356fe8f2d5aab0379d17d2",
+      "bytes": 56797,
+      "source_url": "https://sdmntpraustraliaeast.oaiusercontent.com/files/00000000-5d00-81fa-a329-c4aacb4eb75d/raw"
     },
     {
       "id": "ess4-asset-028",
       "original_filename": "image(20261014-045700).png",
-      "path": "unavailable/ess4-asset-028",
+      "path": "assets/ess4-asset-028.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t040-u1"
       ],
       "source_turn_index": 40,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "2dfdf91a491c25cae996627525baab720fa004abffde69e9725d6973ade89ca3",
+      "bytes": 47290,
+      "source_url": "https://sdmntprnznorth.oaiusercontent.com/files/00000000-5ccc-820b-931e-1ab79762da74/raw"
     },
     {
       "id": "ess4-asset-029",
       "original_filename": "image(20261014-050857).png",
-      "path": "unavailable/ess4-asset-029",
+      "path": "assets/ess4-asset-029.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t041-u1"
       ],
       "source_turn_index": 41,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "cea5b0d90f7dc7544601ef90f45f1508ab1cc99db81214894debfd2cae64a917",
+      "bytes": 72001,
+      "source_url": "https://sdmntprwestus.oaiusercontent.com/files/00000000-3588-8230-b545-269034f0fc24/raw"
     },
     {
       "id": "ess4-asset-030",
       "original_filename": "image(20261014-050923).png",
-      "path": "unavailable/ess4-asset-030",
+      "path": "assets/ess4-asset-030.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t041-u1"
       ],
       "source_turn_index": 41,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "0dda121bda6724c9fe4a09e9591cfe5e51d1ca38db1a3aed5320b95b1632cc81",
+      "bytes": 69098,
+      "source_url": "https://sdmntpraustraliaeast.oaiusercontent.com/files/00000000-71a4-81fa-b0ca-91a74f89b4ef/raw"
     },
     {
       "id": "ess4-asset-031",
@@ -12210,41 +12362,53 @@
     {
       "id": "ess4-asset-032",
       "original_filename": "image(20261014-052300).png",
-      "path": "unavailable/ess4-asset-032",
+      "path": "assets/ess4-asset-032.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t042-u1"
       ],
       "source_turn_index": 42,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "19c1b504b10a497e690bbfd322c2ee170e6c0465b70c4f1d66f9deee0b10c3a0",
+      "bytes": 20803,
+      "source_url": "https://sdmntprnznorth.oaiusercontent.com/files/00000000-7700-820b-943a-5d36886d49b5/raw"
     },
     {
       "id": "ess4-asset-033",
       "original_filename": "image(20261014-052711).png",
-      "path": "unavailable/ess4-asset-033",
+      "path": "assets/ess4-asset-033.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t043-u1"
       ],
       "source_turn_index": 43,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "63dfde88a408c354ab5c7335989aea5a1fe57d63a12b91461f7a4eebc3001b73",
+      "bytes": 40048,
+      "source_url": "https://sdmntprwestus2.oaiusercontent.com/files/00000000-a3c4-81f8-b193-1d74506f36c4/raw"
     },
     {
       "id": "ess4-asset-034",
       "original_filename": "image(20261014-052724).png",
-      "path": "unavailable/ess4-asset-034",
+      "path": "assets/ess4-asset-034.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t043-u1"
       ],
       "source_turn_index": 43,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "8f79ae4cdbc8e7d6f21332cbdcfab45d89ca5aa85e0c6a7e9d31983e895b86a5",
+      "bytes": 17927,
+      "source_url": "https://sdmntpraustraliaeast.oaiusercontent.com/files/00000000-5db4-81fa-b60d-df2026402a6e/raw"
     },
     {
       "id": "ess4-asset-035",
@@ -12329,15 +12493,19 @@
     {
       "id": "ess4-asset-041",
       "original_filename": "image(20261014-070630).png",
-      "path": "unavailable/ess4-asset-041",
+      "path": "assets/ess4-asset-041.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t047-u1"
       ],
       "source_turn_index": 47,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "358ae295d97f1911f55811d72ebb0a27a71b4eb59731c11194686280ea2e6083",
+      "bytes": 31937,
+      "source_url": "https://sdmntpraustraliaeast.oaiusercontent.com/files/00000000-9794-81fa-8379-014e83a2a7b3/raw"
     },
     {
       "id": "ess4-asset-042",
@@ -12368,28 +12536,36 @@
     {
       "id": "ess4-asset-044",
       "original_filename": "image(20261014-072927).png",
-      "path": "unavailable/ess4-asset-044",
+      "path": "assets/ess4-asset-044.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t052-u1"
       ],
       "source_turn_index": 52,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "c32027146ffb3c7e4fddf6d8137676703e7ece1383ccb5fd0c8fd8890a34b3a5",
+      "bytes": 52698,
+      "source_url": "https://sdmntpraustraliaeast.oaiusercontent.com/files/00000000-d5fc-81fa-a5ca-c355959d2e89/raw"
     },
     {
       "id": "ess4-asset-045",
       "original_filename": "image(20261014-073342).png",
-      "path": "unavailable/ess4-asset-045",
+      "path": "assets/ess4-asset-045.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t053-u1"
       ],
       "source_turn_index": 53,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "3f6c977b96a082c4b56c88db282c9394e6558087c8746f9142b2a59861d7f90b",
+      "bytes": 67824,
+      "source_url": "https://sdmntprwestus.oaiusercontent.com/files/00000000-44b8-8230-b4ab-bdb66e087e0c/raw"
     },
     {
       "id": "ess4-asset-046",
@@ -12493,15 +12669,19 @@
     {
       "id": "ess4-asset-053",
       "original_filename": "image(20261014-080224).png",
-      "path": "unavailable/ess4-asset-053",
+      "path": "assets/ess4-asset-053.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t057-u1"
       ],
       "source_turn_index": 57,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "142455bd6fc8b2667df0c1473ac6da98434342c9809df6070b51f6be700aabcc",
+      "bytes": 51138,
+      "source_url": "https://sdmntprwestus.oaiusercontent.com/files/00000000-a29c-8230-abf2-c807bcad09d2/raw"
     },
     {
       "id": "ess4-asset-054",
@@ -12629,67 +12809,87 @@
     {
       "id": "ess4-asset-063",
       "original_filename": "image(20261014-235540).png",
-      "path": "unavailable/ess4-asset-063",
+      "path": "assets/ess4-asset-063.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t063-u1"
       ],
       "source_turn_index": 63,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "ad0c24958de0d8583c999fcfd8ba52d2c9ca6c917beba3d9bb382519fc84ce5c",
+      "bytes": 86801,
+      "source_url": "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-6de4-8209-a832-810962e1b565/raw"
     },
     {
       "id": "ess4-asset-064",
       "original_filename": "image(20261014-235806).png",
-      "path": "unavailable/ess4-asset-064",
+      "path": "assets/ess4-asset-064.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t064-u1"
       ],
       "source_turn_index": 64,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "acad41ab4f63290de8b60129fd49416138c7e93cf192938830eba6bf115101c7",
+      "bytes": 79073,
+      "source_url": "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-01a0-8209-9a10-d25afd774ad6/raw"
     },
     {
       "id": "ess4-asset-065",
       "original_filename": "image(20261015-000237).png",
-      "path": "unavailable/ess4-asset-065",
+      "path": "assets/ess4-asset-065.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t065-u1"
       ],
       "source_turn_index": 65,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "f22c2ef33eb68d453dc65cf1e9e4bc41dc7ee7b58addf00b96eb321513e0f736",
+      "bytes": 80515,
+      "source_url": "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-00b0-8209-9d53-8edb98d814ab/raw"
     },
     {
       "id": "ess4-asset-066",
       "original_filename": "image(20261015-000242).png",
-      "path": "unavailable/ess4-asset-066",
+      "path": "assets/ess4-asset-066.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t065-u1"
       ],
       "source_turn_index": 65,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "73e66dcfa04f02553268d8f8143838cbc8d09127951b1bc35ef9a05f2a93146e",
+      "bytes": 13028,
+      "source_url": "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-66e8-8209-b597-bcb385cff42b/raw"
     },
     {
       "id": "ess4-asset-067",
       "original_filename": "image(20261015-000710).png",
-      "path": "unavailable/ess4-asset-067",
+      "path": "assets/ess4-asset-067.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t066-u1"
       ],
       "source_turn_index": 66,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "5f0caebcf9824f2d999fb548e82ec7d721509cdbb2c7582847220dc4c22cd51e",
+      "bytes": 41642,
+      "source_url": "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-8e88-8209-8ac7-fe128d9784da/raw"
     },
     {
       "id": "ess4-asset-068",
@@ -12754,15 +12954,19 @@
     {
       "id": "ess4-asset-072",
       "original_filename": "image(20261015-051251).png",
-      "path": "unavailable/ess4-asset-072",
+      "path": "assets/ess4-asset-072.png",
       "kind": "image",
-      "availability": "unavailable",
-      "description": "공유 화면의 첨부 위치를 보존했습니다. 원본 파일 미확보.",
+      "availability": "included",
+      "description": "ESS 대화 4 · 기존 요청의 실제 화면 원본을 2026-10-24 추가 확보",
       "related_message_ids": [
         "ess4-t072-u1"
       ],
       "source_turn_index": 72,
-      "source_thread": "ess4"
+      "source_thread": "ess4",
+      "asset_root": "sources/conversations/20261024-progress/kbs-erp-ess-attendance",
+      "sha256": "9e01235be9a7fb34a4fe163f53f206c0faac9bc33d8700b953e4c1501e987101",
+      "bytes": 29157,
+      "source_url": "https://sdmntprwestus2.oaiusercontent.com/files/00000000-fb0c-81f8-8e0c-8509cf516a57/raw"
     },
     {
       "id": "ess4-asset-073",

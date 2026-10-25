@@ -1,0 +1,31 @@
+[
+  {
+    "alt": "사용자 첨부 파일",
+    "names": [
+      "image(4).png"
+    ],
+    "src": "https://sdmntprindiasocentral.oaiusercontent.com/files/00000000-83bc-8211-8a4d-05aa0c30ab22/raw",
+    "unitKey": "fallback-turn-35:0:user"
+  },
+  {
+    "alt": "사용자 첨부 파일",
+    "names": [
+      "image(5).png"
+    ],
+    "src": "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-9848-8209-9129-818d34b82be6/raw",
+    "turnKey": "fallback-turn-36",
+    "unitKey": "fallback-turn-36:0:user"
+  },
+  {
+    "alt": "생성된 이미지 1",
+    "names": [],
+    "src": "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-f160-8209-aaf6-79347332bea9/raw",
+    "turnKey": "fallback-turn-36"
+  },
+  {
+    "alt": "생성된 이미지 1",
+    "names": [],
+    "src": "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-b0ac-8209-8c6b-598816c9e3b2/raw",
+    "turnKey": "fallback-turn-37"
+  }
+]

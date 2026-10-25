@@ -1,7 +1,6 @@
-# 공유 화면에 본문이 표시되지 않은 응답
+# 최종 AI 본문 미확보 위치
 
-- 대화 013 / SHARE-026: 15m 51s 동안 처리함
-- 대화 089 / SHARE-178: 표시 문구 없음
-- 대화 090 / SHARE-180: 3m 15s 동안 처리함
-
-본문을 임의로 복원하지 않았습니다. 다른 대화방·분기와 첨부 파일 전체를 확보했다는 뜻은 아닙니다.
+- SHARE-026: 공유 대화 ‘SAP 패키지 이관 구현’ · 대화 013 · conversation-turn-26 · 470d68bf-3d17-4b8f-acf0-6fbf21ab0d7d
+- SHARE-178: 공유 대화 ‘SAP 패키지 이관 구현’ · 대화 089 · conversation-turn-178 · 6bbfaa88-c828-461e-a488-4db23268188f
+- SHARE-180: 공유 대화 ‘SAP 패키지 이관 구현’ · 대화 090 · conversation-turn-180 · bb9abbfc-ffc5-4506-b390-96c0df8c976c
+- export-diag-progress-t011-a1: 2026-10-24 확인 공유 화면 · 0기준 턴 11 · assistant

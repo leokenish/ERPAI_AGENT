@@ -99,7 +99,7 @@ export async function buildConversations(root,out){
      const target=path.join(out,a.publicPath);await mkdir(path.dirname(target),{recursive:true});await copyFile(input,target);
     }
     if(meta.publishAttachments&&a.kind!=='image'){
-     requireValue(/\.(zip|md|txt|json|mjs|js|py|css|diff|csv|ya?ml)$/i.test(input),'unsupported attachment');
+     requireValue(/\.(zip|md|txt|json|mjs|js|py|css|diff|csv|ya?ml|abap|html)$/i.test(input),'unsupported attachment');
      const bytes=await readFile(input),hash=createHash('sha256').update(bytes).digest('hex');
      if(a.sha256)requireValue(a.sha256===hash,`attachment hash mismatch ${a.id}`);
      a.sha256=hash;

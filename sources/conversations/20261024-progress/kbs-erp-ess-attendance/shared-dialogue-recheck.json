@@ -1,0 +1,251 @@
+{
+  "date": "2026-10-24",
+  "method": "Live shared page DOM via CUA scroll; compare exact parent platform turn IDs, assistant final message IDs, and both raw HTML captures through the same converter.",
+  "baseline": "agent-portal-v1.14.0/content/conversations/business-full/kbs-erp-ess-attendance/conversation-data.json",
+  "threads": [
+    {
+      "thread": 1,
+      "title": "근태 페이지 개선 진행",
+      "url": "https://chatgpt.com/share/6ac704e5-ec3c-83ee-8874-a0b85fe777a9?ogimg=plain",
+      "turns": 44,
+      "availableMessages": 86,
+      "userMessages": 44,
+      "assistantFinalMessages": 42,
+      "assistantMessageIdsExactlyMatched": 42,
+      "normalizedBodyMatches": 86,
+      "newTurns": 0,
+      "missingRoles": [
+        {
+          "turn": 41,
+          "role": "assistant"
+        },
+        {
+          "turn": 42,
+          "role": "assistant"
+        }
+      ],
+      "uniqueRenderedImageUrls": 12,
+      "oldInlineImageInstances": 18,
+      "currentInlineImageInstances": 12,
+      "tables": 19,
+      "rawSha256": "1b26875c2d39f2326c5f354d468172a110b39ad65662351c9ae4ed83fa91fe1f"
+    },
+    {
+      "thread": 2,
+      "title": "근태페이지 수정 완료",
+      "url": "https://chatgpt.com/share/e/6ad08960-7d58-83ec-8ec6-c1b3ddfc2ab7",
+      "turns": 20,
+      "availableMessages": 40,
+      "userMessages": 20,
+      "assistantFinalMessages": 20,
+      "assistantMessageIdsExactlyMatched": 20,
+      "normalizedBodyMatches": 40,
+      "newTurns": 0,
+      "missingRoles": [],
+      "uniqueRenderedImageUrls": 16,
+      "oldInlineImageInstances": 16,
+      "currentInlineImageInstances": 16,
+      "tables": 5,
+      "rawSha256": "cf5ab6bde19457b5fc789e7da648edc917791edf636574341254566664c3b461"
+    },
+    {
+      "thread": 3,
+      "title": "작업 자료 확인",
+      "url": "https://chatgpt.com/share/e/6ad08935-28d8-83ec-9288-2f965ee2a586",
+      "turns": 111,
+      "availableMessages": 216,
+      "userMessages": 111,
+      "assistantFinalMessages": 105,
+      "assistantMessageIdsExactlyMatched": 105,
+      "normalizedBodyMatches": 216,
+      "newTurns": 0,
+      "missingRoles": [
+        {
+          "turn": 11,
+          "role": "assistant"
+        },
+        {
+          "turn": 12,
+          "role": "assistant"
+        },
+        {
+          "turn": 33,
+          "role": "assistant"
+        },
+        {
+          "turn": 34,
+          "role": "assistant"
+        },
+        {
+          "turn": 35,
+          "role": "assistant"
+        },
+        {
+          "turn": 102,
+          "role": "assistant"
+        }
+      ],
+      "uniqueRenderedImageUrls": 37,
+      "oldInlineImageInstances": 60,
+      "currentInlineImageInstances": 47,
+      "tables": 76,
+      "rawSha256": "523f312c1fb5c07cf4bb5a6177be5d198159055e1f3c46f4c3fd4a8e44b97d29"
+    },
+    {
+      "thread": 4,
+      "title": "근태페이지 개선 이어가기",
+      "url": "https://chatgpt.com/share/e/6ad08165-a998-83ee-ac0a-aaf87bd93dc4",
+      "turns": 79,
+      "availableMessages": 157,
+      "userMessages": 79,
+      "assistantFinalMessages": 78,
+      "assistantMessageIdsExactlyMatched": 78,
+      "normalizedBodyMatches": 157,
+      "newTurns": 0,
+      "missingRoles": [
+        {
+          "turn": 62,
+          "role": "assistant"
+        }
+      ],
+      "uniqueRenderedImageUrls": 45,
+      "oldInlineImageInstances": 61,
+      "currentInlineImageInstances": 57,
+      "tables": 104,
+      "rawSha256": "c528f08037bd504951f236977fa234ee21f6eeef39d3879f46b00641225d199b"
+    }
+  ],
+  "known_rendering_differences": [
+    {
+      "thread": 1,
+      "turnIndex0": 22,
+      "role": "user",
+      "oldInlineImageCount": 4,
+      "newInlineImageCount": 0,
+      "note": "Original asset references must be preserved; current DOM may show a file card instead."
+    },
+    {
+      "thread": 1,
+      "turnIndex0": 25,
+      "role": "user",
+      "oldInlineImageCount": 1,
+      "newInlineImageCount": 0,
+      "note": "Original asset references must be preserved; current DOM may show a file card instead."
+    },
+    {
+      "thread": 1,
+      "turnIndex0": 26,
+      "role": "user",
+      "oldInlineImageCount": 1,
+      "newInlineImageCount": 0,
+      "note": "Original asset references must be preserved; current DOM may show a file card instead."
+    },
+    {
+      "thread": 3,
+      "turnIndex0": 73,
+      "role": "user",
+      "oldInlineImageCount": 1,
+      "newInlineImageCount": 0,
+      "note": "Original asset references must be preserved; current DOM may show a file card instead."
+    },
+    {
+      "thread": 3,
+      "turnIndex0": 74,
+      "role": "user",
+      "oldInlineImageCount": 1,
+      "newInlineImageCount": 0,
+      "note": "Original asset references must be preserved; current DOM may show a file card instead."
+    },
+    {
+      "thread": 3,
+      "turnIndex0": 75,
+      "role": "user",
+      "oldInlineImageCount": 1,
+      "newInlineImageCount": 0,
+      "note": "Original asset references must be preserved; current DOM may show a file card instead."
+    },
+    {
+      "thread": 3,
+      "turnIndex0": 76,
+      "role": "user",
+      "oldInlineImageCount": 3,
+      "newInlineImageCount": 0,
+      "note": "Original asset references must be preserved; current DOM may show a file card instead."
+    },
+    {
+      "thread": 3,
+      "turnIndex0": 77,
+      "role": "user",
+      "oldInlineImageCount": 1,
+      "newInlineImageCount": 0,
+      "note": "Original asset references must be preserved; current DOM may show a file card instead."
+    },
+    {
+      "thread": 3,
+      "turnIndex0": 106,
+      "role": "user",
+      "oldInlineImageCount": 1,
+      "newInlineImageCount": 0,
+      "note": "Original asset references must be preserved; current DOM may show a file card instead."
+    },
+    {
+      "thread": 3,
+      "turnIndex0": 107,
+      "role": "user",
+      "oldInlineImageCount": 1,
+      "newInlineImageCount": 0,
+      "note": "Original asset references must be preserved; current DOM may show a file card instead."
+    },
+    {
+      "thread": 3,
+      "turnIndex0": 110,
+      "role": "user",
+      "oldInlineImageCount": 4,
+      "newInlineImageCount": 0,
+      "note": "Original asset references must be preserved; current DOM may show a file card instead."
+    },
+    {
+      "thread": 4,
+      "turnIndex0": 12,
+      "role": "user",
+      "oldInlineImageCount": 1,
+      "newInlineImageCount": 0,
+      "note": "Original asset references must be preserved; current DOM may show a file card instead."
+    },
+    {
+      "thread": 4,
+      "turnIndex0": 29,
+      "role": "user",
+      "oldInlineImageCount": 1,
+      "newInlineImageCount": 0,
+      "note": "Original asset references must be preserved; current DOM may show a file card instead."
+    },
+    {
+      "thread": 4,
+      "turnIndex0": 48,
+      "role": "user",
+      "oldInlineImageCount": 1,
+      "newInlineImageCount": 0,
+      "note": "Original asset references must be preserved; current DOM may show a file card instead."
+    },
+    {
+      "thread": 4,
+      "turnIndex0": 49,
+      "role": "user",
+      "oldInlineImageCount": 1,
+      "newInlineImageCount": 0,
+      "note": "Original asset references must be preserved; current DOM may show a file card instead."
+    }
+  ],
+  "total": {
+    "turns": 254,
+    "availableMessages": 499,
+    "userMessages": 254,
+    "assistantFinalMessages": 245,
+    "assistantMessageIdsExactlyMatched": 245,
+    "normalizedBodyMatches": 499,
+    "newTurns": 0,
+    "uniqueRenderedImageUrlsPerThreadSum": 110,
+    "currentMissingInlineImages": 23
+  }
+}

@@ -3,7 +3,7 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {makeZip} from './build-knowledge.mjs';
 
-// Only the eight explicitly catalogued project roots are published, and only MD.
+// Only the explicitly catalogued project roots are published, and only MD.
 // Original bytes, line endings, filenames and relative ZIP paths are retained.
 export async function buildSourceDocuments(root,out,sources){
  const sourceRoot=await realpath(path.join(root,'sources'));

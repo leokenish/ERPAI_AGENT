@@ -1,0 +1,82 @@
+{
+  "https://sdmntprcentralindia.oaiusercontent.com/files/00000000-a0f4-8208-8b2f-d992e1b67c5e/raw": {
+    "original_filename": "image.png",
+    "turn_keys": [
+      "fallback-turn-14"
+    ],
+    "sha256": "0b5b21ea281cdd686953e3721d7120b1051cb305e095da9ff80cd522a34cb804",
+    "bytes": 21431,
+    "format": "PNG",
+    "width": 792,
+    "height": 449,
+    "method": "library_exact_filename_and_uuid",
+    "library_file_id": "libfile_0900a90b4c0081918e99bac52bc99010",
+    "file_id": "file_00000000a0f482088b2fd992e1b67c5e",
+    "library_path": "/주간업무일지 타임라인/image.png",
+    "repository_size_eligible": true
+  },
+  "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-1c0c-8209-a930-c2961d0298c4/raw": {
+    "original_filename": "image(1).png",
+    "turn_keys": [
+      "fallback-turn-17"
+    ],
+    "sha256": "3e928e70ce27463a19113d7077fcc0bbfc9c230dd4719cd89b331004d6fc7859",
+    "bytes": 176196,
+    "format": "PNG",
+    "width": 2001,
+    "height": 1378,
+    "method": "library_exact_filename_and_uuid",
+    "library_file_id": "libfile_c59b37331e4081919c36a6fb387885f2",
+    "file_id": "file_000000001c0c8209a930c2961d0298c4",
+    "library_path": "/주간업무일지 타임라인/image(1).png",
+    "repository_size_eligible": true
+  },
+  "https://sdmntprindiasocentral.oaiusercontent.com/files/00000000-9e08-8211-a441-700b63e8b1a8/raw": {
+    "original_filename": "image(4).png",
+    "turn_keys": [
+      "fallback-turn-24"
+    ],
+    "sha256": "d2d34044d629258a0014e0a14ce5cc6d445e23981d01bb7e4884d801b1669455",
+    "bytes": 392535,
+    "format": "PNG",
+    "width": 1853,
+    "height": 920,
+    "method": "library_exact_filename_and_uuid",
+    "library_file_id": "libfile_a9639f36fa4081918b7b6acb72fea72e",
+    "file_id": "file_000000009e088211a441700b63e8b1a8",
+    "library_path": "/주간업무일지 타임라인/image(4).png",
+    "repository_size_eligible": true
+  },
+  "https://sdmntprwestus2.oaiusercontent.com/files/00000000-30ac-81f8-969a-47088967fff0/raw": {
+    "original_filename": "image(2).png",
+    "turn_keys": [
+      "fallback-turn-23"
+    ],
+    "sha256": "2f043560ae3419a5b93664a55192b8905c67a58baaf6195469d90ff6f092fe13",
+    "bytes": 211994,
+    "format": "PNG",
+    "width": 1886,
+    "height": 868,
+    "method": "library_exact_filename_and_uuid",
+    "library_file_id": "libfile_df628d19ed7481919263e819529e1ab9",
+    "file_id": "file_0000000030ac81f8969a47088967fff0",
+    "library_path": "/주간업무일지 타임라인/image(2).png",
+    "repository_size_eligible": true
+  },
+  "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-09c0-8209-8c16-30339be0bdc5/raw": {
+    "original_filename": "image(3).png",
+    "turn_keys": [
+      "fallback-turn-23"
+    ],
+    "sha256": "fd5f6448843e5e87f4ea9ec8076e63bbe28b95e07d3c0b3736f1e30ebcffc383",
+    "bytes": 11291,
+    "format": "PNG",
+    "width": 605,
+    "height": 129,
+    "method": "library_exact_filename_and_uuid",
+    "library_file_id": "libfile_56b34a96fbd48191a790a4440e72004c",
+    "file_id": "file_0000000009c082098c1630339be0bdc5",
+    "library_path": "/주간업무일지 타임라인/image(3).png",
+    "repository_size_eligible": true
+  }
+}

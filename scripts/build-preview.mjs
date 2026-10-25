@@ -1,7 +1,8 @@
 // Offline review copy. The hosted site continues to serve dist/ through Node.
-import {readFile,writeFile,readdir} from 'node:fs/promises';
+import {readFile,writeFile,readdir,mkdir,unlink} from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {gzipSync} from 'node:zlib';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const dist=path.join(root,'dist');
 const readScript=async name=>(await readFile(path.join(dist,name),'utf8')).replace(/((?:\.\/|data\/)[\w./-]+\.(?:js|json))\?v=[a-f0-9]+/g,'$1');
@@ -38,8 +39,29 @@ for(const key of Object.keys(files))if(key.startsWith('assets/fonts/'))delete fi
 app=`globalThis.erpPreviewFiles=${JSON.stringify(files)};\n`+app;
 html=html.replace(/\s*<link rel="preload"[^>]*>/g,'').replace('<link rel="stylesheet" href="styles.css">',()=>`<style>${css}</style>`).replace('  <script type="module" src="app.js"></script>','').replace('href="assets/favicon.svg"',()=>`href="${files['assets/favicon.svg']}"`);
 html=html.replace(/(src|href)="(assets\/[^"]+)"/g,(all,attr,url)=>files[url]?`${attr}="${files[url]}"`:all);
-// Callbacks preserve literal $&, $` and $' within source code and transcripts.
-html=html.replace('</body>',()=>`<script type="module">${app.replace(/<\/script/gi,'<\\/script')}</script>\n</body>`);
+// Compress the trusted, self-contained module to retain all originals without
+// ballooning the repository's single offline HTML file. No network is required.
 const target=path.resolve(root,process.argv[2]||'preview.html');
+const payload=gzipSync(Buffer.from(app),{level:9});
+const companion=path.basename(target,path.extname(target))+'-data';
+const companionPath=path.join(path.dirname(target),companion);
+await mkdir(companionPath,{recursive:true});
+for(const name of await readdir(companionPath))if(/^part-\d+\.js$/.test(name))await unlink(path.join(companionPath,name));
+// Classic script sidecars also load from file://. Each generated file stays
+// small enough for ordinary Git; the HTML and folder form one offline bundle.
+let payloadScripts='<script>globalThis.erpPreviewParts=[];</script>';
+const partSize=12*1024*1024;
+for(let offset=0,index=1;offset<payload.length;offset+=partSize,index++){
+ const filename=`part-${String(index).padStart(3,'0')}.js`;
+ await writeFile(path.join(companionPath,filename),`globalThis.erpPreviewParts.push("${payload.subarray(offset,offset+partSize).toString('base64')}");\n`);
+ payloadScripts+=`<script src="${companion}/${filename}"></script>`;
+}
+const bootstrap=`try {
+ if(typeof DecompressionStream==='undefined')throw Error('이 미리보기는 최신 Chrome, Edge, Firefox 또는 Safari에서 열어 주세요.');
+ const packed=globalThis.erpPreviewParts.map(part=>Uint8Array.from(atob(part),c=>c.charCodeAt(0)));delete globalThis.erpPreviewParts;
+ const code=await new Response(new Blob(packed).stream().pipeThrough(new DecompressionStream('gzip'))).text();
+ const module=document.createElement('script');module.type='module';module.textContent=code;document.body.append(module);
+} catch(error) {document.getElementById('main').textContent='미리보기를 열 수 없습니다. '+error.message;}`;
+html=html.replace('</body>',()=>`${payloadScripts}<script type="module">${bootstrap}</script>\n</body>`);
 await writeFile(target,html);
-console.log(`Offline preview: ${target} (${Buffer.byteLength(html)} bytes)`);
+console.log(`Offline preview: ${target} (${Buffer.byteLength(html)} bytes), ${companion}/ (${Math.ceil(payload.length/partSize)} compressed parts)`);

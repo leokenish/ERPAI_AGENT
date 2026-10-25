@@ -1,0 +1,42 @@
+[
+  {
+    "project": "kbs-erp-webgui-refactor",
+    "old_positions": 119,
+    "added_positions": 132,
+    "added_episodes": 16,
+    "new_included_images": 47,
+    "recovered_historical_images": 4,
+    "new_included_files": 8,
+    "missing_bodies": 3
+  },
+  {
+    "project": "kbs-erp-export-diag-agents",
+    "old_positions": 238,
+    "added_positions": 68,
+    "added_episodes": 13,
+    "new_included_images": 18,
+    "recovered_historical_images": 0,
+    "new_included_files": 7,
+    "missing_bodies": 4
+  },
+  {
+    "project": "kbs-weekly-work-timeline",
+    "old_positions": 0,
+    "added_positions": 60,
+    "added_episodes": 9,
+    "new_included_images": 5,
+    "recovered_historical_images": 0,
+    "new_included_files": 6,
+    "missing_bodies": 0
+  },
+  {
+    "project": "kbs-smart-erp-main",
+    "old_positions": 0,
+    "added_positions": 98,
+    "added_episodes": 12,
+    "new_included_images": 38,
+    "recovered_historical_images": 0,
+    "new_included_files": 6,
+    "missing_bodies": 2
+  }
+]

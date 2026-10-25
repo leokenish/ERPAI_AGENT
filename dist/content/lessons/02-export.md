@@ -14,12 +14,28 @@ SE80의 지원 객체를 AI와 Git이 읽을 수 있는 파일로 바꿉니다. 
 
 | 도구 | 확보 버전 | 역할 |
 |---|---|---|
-| Z_PACKAGE_EXPORT | 0.3.18 | 지원 객체 파일화 |
+| Z_PACKAGE_EXPORT | 0.4.1 | 개발 패키지 또는 BSP 한 앱 파일화 |
 | DEVHUB_CHECK | 0.3.3 | 로컬 추출물 무결성·로그 확인 |
-| Z_PACKAGE_DIAG | 0.4.5 | 추출본·원본·현재 SAP 비교 |
-| manifest | 0.2 | 파일과 객체의 대응 정보 |
+| Z_PACKAGE_DIAG | 0.7.1 | 세 방향 비교와 지원 웹자산 선택 반영 |
+| manifest | 패키지 0.3 / BSP 0.4 | 파일·객체·추출 모드 대응. 구형 0.2는 과거 패키지 기준 |
 
-도구 소스는 `sources/export-diag/attachments/`에 있습니다. DIAG 입력에는 해당 추출 도구로 만든 ZIP을 사용합니다.
+현재 도구는 [최신 BSP 한 앱 추출 대화](#/conversations/kbs-erp-export-diag-agents/E29-single-app-zip)의 관련 자료에서 내려받을 수 있습니다. 기존 `sources/export-diag/attachments/`는 과거 기준본입니다. CHECK 0.3.3의 새 BSP 형식 호환을 가정하지 말고, 해당 manifest와 도구 지원 범위를 확인합니다.
+
+## 추가 흐름: BSP 애플리케이션 한 개 추출
+
+전체 개발 패키지가 아닌 `ZWEB_COMMON` 같은 한 앱을 선택하는 모드가 추가됐습니다. 0.4.1은 여러 소유 패키지 폴더를 만들던 구조를 **한 앱 폴더**로 정리합니다. MIME의 소유 패키지가 다르다고 해당 앱의 실제 자산을 삭제하는 방식이 아닙니다.
+
+| 앱 폴더 안의 자료 | 확인할 역할 |
+|---|---|
+| `manifest.xml` | 앱·추출 모드·객체 키·파일 경로 |
+| `pages/` | Layout 및 다른 탭의 추출·비교·보존 |
+| `MIMEs/` | 해당 앱 URL 트리의 자산 |
+| `catalog/mime-metadata.xml`, `catalog/web-assets.xml` | MIME 소유권·언어·저장소 대응 |
+| `.devhub/baseline/` | 추출 시점 원문, 편집하지 않음 |
+
+Layout 이외 Attributes·Event Handler·Type Definitions는 추출·비교 근거로 보존하지만 현재 업로드 반영 범위는 아닙니다. 최신 0.4.1 소스와 ZIP 형식 근거를 확보했으며 **DIAG 0.7.1의 실제 SAP 비교·반영 성공은 추가 확인**입니다.
+
+[BSP 활성화 확인 후 한 앱 추출로 이어지는 대화](#/conversations/kbs-erp-export-diag-agents/E28-confirmed-bsp-next-scope)
 
 ## 추출물에서 먼저 찾을 것
 
@@ -37,7 +53,8 @@ baseline은 추출 시점 원문으로 보존하고, 작업 파일과 분리합�
 
 ## 범위와 제한을 먼저 확인하기
 
-- 대상: 선택 패키지와 하위 패키지의 지원 개발 객체.
+- 패키지 모드: 선택 패키지와 하위 패키지의 지원 개발 객체.
+- BSP 모드: 선택한 한 앱의 페이지·다른 탭·소속 MIME과 baseline. 외부 공용 자산이나 다른 패키지 전체를 모두 확보했다는 뜻은 아닙니다.
 - 범위 밖: 업무 테이블 데이터 행. 외부 참조 본문은 일부 제한.
 - 클래스 본문 지원: 현행 가이드에 명시 없음.
 - 언어: KO 우선, 항목별 조건에 따라 EN 보완.
