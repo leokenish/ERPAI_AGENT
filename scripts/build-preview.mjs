@@ -25,8 +25,6 @@ const knowledge=(await readScript('knowledge.js')).replace(/^export /gm,'').repl
 app=app.replace("import {renderKnowledge,mountKnowledge} from './knowledge.js';",()=>`const {renderKnowledge,mountKnowledge}=(()=>{\n${knowledge}\nreturn {renderKnowledge,mountKnowledge};\n})();`);
 const heroMotion=(await readScript('hero-motion.js')).replace('export function','function');
 app=app.replace("import {mountHeroMotion} from './hero-motion.js';",()=>heroMotion);
-const presentation=(await readScript('presentation.js')).replace(/^export /gm,'');
-app=app.replace("import {renderPresentation,mountPresentation} from './presentation.js';",()=>`const {renderPresentation,mountPresentation}=(()=>{\n${presentation}\nreturn {renderPresentation,mountPresentation};\n})();`);
 const countUp=(await readScript('count-up.js')).replace(/^export /gm,'');
 app=app.replace("import {countNumber,mountCountUps} from './count-up.js';",()=>countUp);
 const conversations=(await readScript('conversations.js')).replace(/^export /gm,'').replace("import {countNumber} from './count-up.js';",'');

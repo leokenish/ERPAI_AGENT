@@ -1,6 +1,4 @@
 /* Course 11: document roles, navigable MD links, local downloads. */
-.worktime-page .lesson-layout{grid-template-columns:minmax(0,1fr)}
-.worktime-page .toc{position:static;display:none}
 .worktime-page .article{min-width:0;max-width:none}
 .knowledge-portal{margin:2.5rem 0 4rem;--km-green:#3e6758;--km-amber:#836039;--km-violet:#695a87}
 [data-theme="dark"] .knowledge-portal{--km-green:#a1c7b6;--km-amber:#d6b998;--km-violet:#c1b3dc}

@@ -1,0 +1,116 @@
+{
+  "inputs": [
+    {
+      "filename": "업무일지 TIMELINE 보고.html",
+      "bytes": 3436457,
+      "sha256": "88f1286e76bd169b2599d8c9fa24bc56cf9bd98ab0bd4385b3d50bcefb9a7583"
+    },
+    {
+      "filename": "WEBGUI 개선 보고.html",
+      "bytes": 4809580,
+      "sha256": "af9403867ccbb1d74d71d516549cbd586a5b10d5b848cb4b87d736a90f372c51"
+    }
+  ],
+  "publishedImages": [
+    {
+      "path": "assets/reports/20261026/timeline/image-01.jpg",
+      "sha256": "46a3fb56b4222e010b02c05b948c09e634b10527116e48ba28dbf1a1bf9502d3",
+      "bytes": 208316
+    },
+    {
+      "path": "assets/reports/20261026/timeline/image-02.jpg",
+      "sha256": "5382fa7459fd3bce94df856bd24d7c5c6cbad13003b6950a4d8af9ceea5ba452",
+      "bytes": 158763
+    },
+    {
+      "path": "assets/reports/20261026/timeline/image-04.jpg",
+      "sha256": "5ca6b8f225880fa0958ace4f8813bdf173964e7265d97052267109b00d38f18e",
+      "bytes": 108887
+    },
+    {
+      "path": "assets/reports/20261026/timeline/image-05.jpg",
+      "sha256": "60aedeaaec404cb65636bbf9b8c8c9f323e2d15aa5c22553936a31c526e2465b",
+      "bytes": 67352
+    },
+    {
+      "path": "assets/reports/20261026/timeline/image-06.jpg",
+      "sha256": "f447292202ecb461a9f6816bc312a216fe0f7594e3f59bd0cbc6ecc085bd5a8b",
+      "bytes": 76230
+    },
+    {
+      "path": "assets/reports/20261026/timeline/image-07.jpg",
+      "sha256": "3110155b6c46499ff8edb641cfa445cf186498aa7f0ea71b58b526f9586590a0",
+      "bytes": 189138
+    },
+    {
+      "path": "assets/reports/20261026/webgui/image-01.png",
+      "sha256": "cf2476b8e3c9d4a8991dbe00a5ba229c71cf7eb1fd0bd9948daf29dafcc80e24",
+      "bytes": 88600
+    },
+    {
+      "path": "assets/reports/20261026/webgui/image-02.png",
+      "sha256": "738f94aeed4a3bb1adfb9cd2720f5914248a7b3d26d7462418d6e342ac894a06",
+      "bytes": 107370
+    },
+    {
+      "path": "assets/reports/20261026/webgui/image-03.png",
+      "sha256": "6d3b2cd80274156b2f1a6c814f22bed798a63922a785535f3c31b38702ace97c",
+      "bytes": 49828
+    },
+    {
+      "path": "assets/reports/20261026/webgui/image-04.png",
+      "sha256": "e31d38e667a0012d2d25e46d2e2983e5bd2f1f1d0c53b08893a1cf50dc53e3b4",
+      "bytes": 43203
+    },
+    {
+      "path": "assets/reports/20261026/webgui/image-05.gif",
+      "sha256": "0a82acc7079c29958b8b70f71af8b8d50a9d74859526001eba7efc9355a42642",
+      "bytes": 235
+    },
+    {
+      "path": "assets/reports/20261026/webgui/image-06.svg",
+      "sha256": "19f6afde9428a3d7f5e02f72edd395709e692deb1f9bb21e7adc267abf6b0d41",
+      "bytes": 229
+    },
+    {
+      "path": "assets/reports/20261026/webgui/image-07.svg",
+      "sha256": "f09a97c4a91d3378ffaaed649721297f9f6f2e243415aa1a9ac260e80093327e",
+      "bytes": 1929
+    },
+    {
+      "path": "assets/reports/20261026/webgui/image-11.gif",
+      "sha256": "f64f34599bef061020d8d312a0c1ae5089cee468033adc6cea3ee1350975cc16",
+      "bytes": 115
+    },
+    {
+      "path": "assets/reports/20261026/webgui/image-12.svg",
+      "sha256": "f10c30bfb945e943798d17c241766a767c16838fb5cd362604ab8af280e1856e",
+      "bytes": 290
+    },
+    {
+      "path": "assets/reports/20261026/webgui/image-13.svg",
+      "sha256": "d95555890ff1cf8b48538e15554feb92fc5a290bebf72a318b69dfcbd0e924b6",
+      "bytes": 741
+    },
+    {
+      "path": "assets/reports/20261026/webgui/image-20.gif",
+      "sha256": "d78213ea923450c5ecb44694e2ade677d1e30c04e092be1679cdb28d53fa5522",
+      "bytes": 127
+    },
+    {
+      "path": "assets/reports/20261026/webgui/image-21.svg",
+      "sha256": "362a99cfad2cda9bb05d4629878a142bb236d5c1ccc29df26858db82d9e501a4",
+      "bytes": 272
+    },
+    {
+      "path": "assets/reports/20261026/webgui/image-22.svg",
+      "sha256": "773b30fc9f1b36323ad3dfcca12c29674035e02aaa8202b304efcd547839d417",
+      "bytes": 937
+    },
+    {
+      "path": "assets/reports/20261026/webgui/image-41.png",
+      "sha256": "b810d83d2b8e26c0950380ddaeae014ba061042c40263a51e46e014df38daf7b",
+      "bytes": 88130
+    }
+  ]
+}

@@ -1,8 +1,8 @@
-# GITHUB
+# GITHUB 연동
 
 ## 작업 흐름
 
-VS Code에서 담당 저장소를 열고, 추출한 ABAP 소스와 업무 MD의 변경을 검토해 GitHub에 공유합니다. **설치 → Clone → 원격 확인 → 변경 검토 → Commit → Fetch·Pull → Push** 순서로 진행합니다. 같은 폴더를 에이전트 작업 대상으로 지정하는 방법은 [CODEX](#/learn/codex)에서 이어집니다.
+VS Code에서 담당 저장소를 열고, 추출한 ABAP 소스와 업무 MD의 변경을 검토해 GitHub에 공유합니다. **설치 → Clone → 원격 확인 → 변경 검토 → Commit → Fetch·Pull → Push** 순서로 진행합니다. 같은 폴더를 에이전트 작업 대상으로 지정하는 방법은 [로컬 에이전트 구성](#/learn/codex)에서 이어집니다.
 
 이 포털의 저장소는 [leokenish/ERPAI_AGENT](https://github.com/leokenish/ERPAI_AGENT)입니다. 아래 예시는 이 주소를 사용합니다. 담당 ABAP 소스를 관리할 때는 담당 패키지 저장소의 주소로 바꿔 주세요.
 
@@ -89,7 +89,7 @@ GitHub에 이미 이력이 있는 프로젝트는 먼저 Clone한 폴더에 파�
 4. 두 파일은 첫 파일 우클릭 → Select for Compare, 두 번째 파일 우클릭 → Compare with Selected로 비교합니다. 수정한 파일은 Source Control에서 클릭하면 변경 전후를 볼 수 있습니다.
 5. 저장 전 인코딩과 LF/CRLF를 확인합니다. 기존 Git 속성을 따르고 원천·baseline의 바이트와 줄바꿈을 변환하지 않습니다.
 
-ABAP 구문 색상은 SAP_BASIS 700의 컴파일·실행 성공을 의미하지 않습니다. GitHub Commit도 SAP 활성화를 수행하지 않습니다. 실제 검사와 적용 판단은 [DIAG(검증 및 적용)](#/learn/diagnosis)에서 별도로 다룹니다.
+ABAP 구문 색상은 SAP_BASIS 700의 컴파일·실행 성공을 의미하지 않습니다. GitHub Commit도 SAP 활성화를 수행하지 않습니다. 실제 검사와 적용 판단은 [코드 검증 및 적용](#/learn/diagnosis)에서 별도로 다룹니다.
 
 ## 6. Stage와 Commit
 
@@ -159,7 +159,7 @@ git push origin main
 
 ## 공유 완료 확인
 
-GitHub에서 기대한 브랜치·커밋·파일을 확인하고 다른 PC에서도 Fetch·Pull 후 대조합니다. Pages 게시와 SAP 적용은 각각 실제 환경의 결과로 확인합니다. 다음 [CODEX](#/learn/codex)에서 같은 Clone 폴더를 사용합니다.
+GitHub에서 기대한 브랜치·커밋·파일을 확인하고 다른 PC에서도 Fetch·Pull 후 대조합니다. Pages 게시와 SAP 적용은 각각 실제 환경의 결과로 확인합니다. 다음 [로컬 에이전트 구성](#/learn/codex)에서 같은 Clone 폴더를 사용합니다.
 
 ## 자료 기준
 

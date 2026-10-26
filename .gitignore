@@ -11,3 +11,9 @@ dist.next/
 .sites-runtime/
 qa/
 
+
+# Generated locally or by GitHub Actions; retain source only in Git.
+/dist/
+/preview.html
+/preview-data/
+/qa-*.html

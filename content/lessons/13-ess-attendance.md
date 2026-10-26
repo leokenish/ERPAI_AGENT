@@ -1,4 +1,4 @@
-# 실제 사례: ESS 근태시스템 개편
+# ESS 근태시스템 개편
 
 ## 화면 개선에서 승인 데이터 보존까지
 
@@ -6,7 +6,6 @@
 
 공유 대화 4개에 사용자 요청 254개·AI 본문 245개가 있습니다. 본문 미확보 9곳과 첨부 전용 요청도 원래 순서에 표시합니다.
 
-[첫 요청부터 학습흐름대화 읽기](#/conversations/kbs-erp-ess-attendance/ess-01)
 
 ## 이번 공유 링크 재확인
 
@@ -27,7 +26,6 @@
 
 V2 일부 적용 후 R1으로 전환한 사례입니다. AI에게 현재 적용 단계와 실제 파일을 함께 제공해 기존 객체와 추가 객체를 확인합니다.
 
-[R1 분리와 적용 단계의 대화](#/conversations/kbs-erp-ess-attendance/ess-11)
 
 ## 사례 2: 날짜 선택 UI와 서버 처리를 함께 보기
 
@@ -40,7 +38,6 @@ V2 일부 적용 후 R1으로 전환한 사례입니다. AI에게 현재 적용 
 | 1일을 반차로 변경 | 오전·오후와 0.5일 표시 | 승인 결과·실제 차감·잔여 일수 |
 | 기승인 날짜 이동 | 기존 신청과 변경 신청 구분 | 승인 전 원래 데이터 보존·승인 후 반영 |
 
-[날짜 선택과 일괄 상신의 대화](#/conversations/kbs-erp-ess-attendance/ess-14)
 
 ## 사례 3: 결재가 보이지 않을 때 확인 순서
 
@@ -48,7 +45,6 @@ V2 일부 적용 후 R1으로 전환한 사례입니다. AI에게 현재 적용 
 
 조회 키와 `ZSERIAL`·`SAVED` 상태를 확인하고, 적용 함수의 `BEFORE_ACTION`·`BIND_SERIAL` 호출과 BSP 버튼 이벤트를 대조했습니다.
 
-[결재 번호 연결의 대화](#/conversations/kbs-erp-ess-attendance/ess-21) · [승인 재개와 BSP 이벤트의 대화](#/conversations/kbs-erp-ess-attendance/ess-23)
 
 ## 사례 4: 원래 휴가를 보존하고 결과를 확인하기
 
@@ -56,7 +52,6 @@ V2 일부 적용 후 R1으로 전환한 사례입니다. AI에게 현재 적용 
 
 날짜 이동 후 승인 재개와 반차 변경 후 잔여 0.5일 표시는 **사용자 성공 보고**가 있습니다. 부분 취소·동시 신청·연도 경계 등 전체 회귀 검증은 남아 있습니다.
 
-[원래 데이터 비교](#/conversations/kbs-erp-ess-attendance/ess-22) · [반차 변경 결과](#/conversations/kbs-erp-ess-attendance/ess-24)
 
 ## 사례 5: 업무 처리는 성공했는데 첫 상신 팝업이 남음
 
@@ -64,7 +59,6 @@ V2 일부 적용 후 R1으로 전환한 사례입니다. AI에게 현재 적용 
 
 `SUBMIT_PRG01`은 POST 처리 후 GET으로 이동하고 진단 정보를 보완하는 수정안입니다. **적용 후 사용자 재시험은 대기 상태**입니다.
 
-[첫 상신 문제의 대화](#/conversations/kbs-erp-ess-attendance/ess-25) · [최종 PRG 수정안과 남은 시험](#/conversations/kbs-erp-ess-attendance/ess-26)
 
 ## 따라 하기: 근거가 있는 상태표 작성
 
@@ -82,6 +76,5 @@ SAP 재시험 항목은 첫 상신·연속 클릭·F5·뒤로 가기·토큰 만
 
 학습흐름대화의 **대화 기록·해설·따라 하기·관련 자료**에서 전문과 첨부를 확인하세요.
 
-[ESS 전체 학습흐름대화](#/conversations/kbs-erp-ess-attendance)
 
 근거: `sources/conversations/20261016-business/kbs-erp-ess-attendance/`의 대화 4개 전사와 첨부 원본입니다.

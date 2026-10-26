@@ -1,0 +1,29 @@
+{
+  "tests": 89,
+  "passed": 89,
+  "build": "passed",
+  "offlineGzipReconstruction": "passed",
+  "offlineFileBrowserExecution": "not tested; environment file URL restriction",
+  "browser": {
+    "desktop": [
+      "home numbering",
+      "library category display",
+      "core MD search and purpose",
+      "cases map and matching conversation",
+      "WEBGUI gallery and feature selection",
+      "image zoom",
+      "worktime TOC"
+    ],
+    "narrowFrame": {
+      "iframeWidth": 390,
+      "bodyWidth": 375,
+      "scrollWidth": 375,
+      "passed": [
+        "library",
+        "menu toggle",
+        "dark theme",
+        "timeline gallery"
+      ]
+    }
+  }
+}

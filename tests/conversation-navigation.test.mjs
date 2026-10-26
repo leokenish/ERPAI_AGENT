@@ -5,7 +5,6 @@ import {readFile} from 'node:fs/promises';
 import {countNumber,mountCountUps} from '../site/count-up.js';
 import * as conversations from '../site/conversations.js';
 import {renderSourceDocuments,filterSourceDocuments} from '../site/source-library.js';
-import {renderPresentation} from '../site/presentation.js';
 import {renderKnowledge,mountKnowledge} from '../site/knowledge.js';
 const data=JSON.parse(await readFile(new URL('../dist/data/portal.json',import.meta.url),'utf8'));
 const source=(await readFile(new URL('../site/app.js',import.meta.url),'utf8')).replace(/^import .+;$/gm,'');
@@ -19,22 +18,10 @@ function fixture(hash){
  for(const id of ['sap','export','git','knowledge','codex','diag','maps','feedback'])graphNodes.push({dataset:{node:id},classList:classes(),setAttribute(){}});
  const location={hash,replace(next){this.hash=next;}};
  const document={body:{classList:classes()},querySelector(s){if(s==='#compare-preset'||s==='dialog[open]'||s==='.hero')return null;if(s==='[data-presentation]')return element('presentation');return s.startsWith('#')?element(s.slice(1)):null;},querySelectorAll(s){return s==='.graph-node'?graphNodes:[];},getElementById:element,addEventListener(type,fn){events[type]=fn;}};
- const context=vm.createContext({...conversations,renderSourceDocuments,filterSourceDocuments,countNumber,mountCountUps,renderKnowledge,mountKnowledge,renderPresentation,mountPresentation(root){assert.equal(root.id,'presentation');presentationLifecycle.push('mount');return ()=>presentationLifecycle.push('cleanup');},mountHeroMotion(root,options){assert.equal(options?.alreadyTyped,undefined);heroLifecycle.push('mount');return ()=>heroLifecycle.push('cleanup');},document,location,history:{replaceState(a,b,url){location.hash=url;}},localStorage:{getItem(){return null;}},window:{scrollTo(){},addEventListener(type,fn){windowEvents[type]=fn;},isSecureContext:true},navigator:{clipboard:{async writeText(text){copied.push(text);}}},URLSearchParams,fetch:async()=>({ok:true,json:async()=>data}),console,setTimeout,clearTimeout});
+ const context=vm.createContext({...conversations,renderSourceDocuments,filterSourceDocuments,countNumber,mountCountUps,renderKnowledge,mountKnowledge,mountPresentation(root){assert.equal(root.id,'presentation');presentationLifecycle.push('mount');return ()=>presentationLifecycle.push('cleanup');},mountHeroMotion(root,options){assert.equal(options?.alreadyTyped,undefined);heroLifecycle.push('mount');return ()=>heroLifecycle.push('cleanup');},document,location,history:{replaceState(a,b,url){location.hash=url;}},localStorage:{getItem(){return null;}},window:{scrollTo(){},addEventListener(type,fn){windowEvents[type]=fn;},isSecureContext:true},navigator:{clipboard:{async writeText(text){copied.push(text);}}},URLSearchParams,fetch:async()=>({ok:true,json:async()=>data}),console,setTimeout,clearTimeout});
  return {context,elements,events,windowEvents,location,copied,presentationLifecycle,heroLifecycle};
 }
 function target(attribute,dataset){return {dataset,closest(){return this;},matches(selector){return selector===`[${attribute}]`;}};}
-test('발표의 직접 주소·방향키·버튼·종료에서 화면과 타이핑 생명주기를 연결한다',async()=>{
- const f=fixture('#/present/0');await vm.runInContext(`(async()=>{${source}})()`,f.context);
- assert.ok(f.elements.get('main').innerHTML.includes(data.slides[0].title));
- const key=k=>f.events.keydown({key:k,target:{tagName:'BODY',matches(){return false;}},preventDefault(){}});
- key('ArrowRight');assert.equal(f.location.hash,'#/present/1');f.windowEvents.hashchange();
- assert.ok(f.elements.get('main').innerHTML.includes(data.slides[1].title));
- f.events.click({target:target('data-slide',{slide:'6'})});f.windowEvents.hashchange();
- assert.ok(f.elements.get('main').innerHTML.includes(data.slides[6].title));
- key('ArrowRight');assert.equal(f.location.hash,'#/present/6');
- key('Escape');assert.equal(f.location.hash,'#/home');f.windowEvents.hashchange();
- assert.deepEqual(f.presentationLifecycle,['mount','cleanup','mount','cleanup','mount','cleanup']);
-});
 test('복사 버튼은 화면에 표시한 사용자 교육 문장과 AI 답변을 복사한다',async()=>{
  const f=fixture('#/conversations/erp-obsidian-knowledge-map/obs-e001');await vm.runInContext(`(async()=>{${source}})()`,f.context);
  const projectId='erp-obsidian-knowledge-map',chatCopy='obs-m001';
@@ -55,11 +42,11 @@ test('구성 요소 선택 후 프로젝트·에피소드·해설을 바꿔도 �
  assert.ok(f.elements.get('conversation-host').innerHTML.includes('접점 MD를 업무 지도로 설명하기'));
  assert.ok(f.location.hash.includes('project=erp-agent-communication'));
  f.events.click({target:target('data-conversation-tab',{conversationTab:'review'})});
- assert.ok(f.elements.get('conversation-host').innerHTML.includes('교육 해설 · 당시 AI 답변과 구분'));
+ assert.ok(f.elements.get('conversation-host').innerHTML.includes('conversation-outcome'));
  assert.ok(f.location.hash.includes('tab=review'));
  const reloaded=fixture(f.location.hash);await vm.runInContext(`(async()=>{${source}})()`,reloaded.context);
  assert.ok(reloaded.elements.get('main').innerHTML.includes('접점 MD를 업무 지도로 설명하기'));
- assert.ok(reloaded.elements.get('main').innerHTML.includes('교육 해설 · 당시 AI 답변과 구분'));
+ assert.ok(reloaded.elements.get('main').innerHTML.includes('conversation-outcome'));
 });
 test('단독 대화에서 항목을 차례로 펼치고 다음 에피소드로 이동하면 기록 순서와 초기 표시 수가 유지된다',async()=>{
  const f=fixture('#/conversations/erp-obsidian-knowledge-map/obs-e003');await vm.runInContext(`(async()=>{${source}})()`,f.context);
@@ -78,13 +65,13 @@ test('새 11번 과정과 전체 과정·검색·12번 이동이 같은 카탈�
  const f=fixture('#/learn/worktime-agent');await vm.runInContext(`(async()=>{${source}})()`,f.context);
  assert.ok(f.elements.get('main').innerHTML.includes('업무 지식의 전체 구조'));
  assert.ok(f.elements.get('sidebar').innerHTML.includes('근로시간 AI 에이전트 구축'));
- assert.ok(f.elements.get('main').innerHTML.includes('#/learn/publishing'));
+ assert.ok(f.elements.get('main').innerHTML.includes('#/learn/webgui'));
  f.events.input({target:{id:'search-input',value:'selective-cumulative-display',matches(){return false;}}});
  assert.ok(f.elements.get('search-results').innerHTML.includes('#/learn/worktime-agent?doc='));
  f.location.hash='#/courses';f.windowEvents.hashchange();
  assert.ok(f.elements.get('main').innerHTML.includes('근로시간 AI 에이전트 구축'));
  f.location.hash='#/learn/publishing';f.windowEvents.hashchange();
- assert.ok(f.elements.get('main').innerHTML.includes('과정 12'));
+ assert.ok(f.elements.get('main').innerHTML.includes('과정 13'));
 });
 
 test('완료 기록 없이 모든 과정의 자료 저장·이전 다음 이동을 제공한다',async()=>{
@@ -95,8 +82,9 @@ test('완료 기록 없이 모든 과정의 자료 저장·이전 다음 이동�
  assert.equal(completionReads,0);assert.match(f.elements.get('main').innerHTML,/워크플로 살펴보기/);assert.doesNotMatch(f.elements.get('main').innerHTML,/이어서 학습하기/);
  for(let i=0;i<data.lessons.length;i++){
   const lesson=data.lessons[i];f.location.hash='#/learn/'+lesson.id;f.windowEvents.hashchange();const html=f.elements.get('main').innerHTML;
-  assert.equal((html.match(/data-print/g)||[]).length,1,lesson.id);assert.match(html,/인쇄 · PDF 저장/);assert.match(html,/과정 MD 다운로드/);
-  assert.ok(html.includes('href="content/'+lesson.file+'" download="'+lesson.file.split('/').pop()+'"'));
+  assert.equal((html.match(/data-print/g)||[]).length,lesson.number<11?1:0,lesson.id);
+  if(lesson.number<11)assert.ok(html.includes('href="content/'+lesson.file+'"'));
+  else {assert.match(html,/프로젝트의 네 가지 관점/);assert.doesNotMatch(html,/이 과정 자료/);}
   assert.doesNotMatch(html,/data-complete|complete-panel|학습 완료 표시/);assert.doesNotMatch(f.elements.get('sidebar').innerHTML,/done-tick|학습 표시 완료/);
   if(i>0)assert.ok(html.includes('이전 과정 · '+(data.lessons[i-1].displayNumber||String(data.lessons[i-1].number).padStart(2,'0'))));
   if(i<data.lessons.length-1)assert.ok(html.includes('다음 과정 · '+(data.lessons[i+1].displayNumber||String(data.lessons[i+1].number).padStart(2,'0'))));
@@ -107,13 +95,13 @@ test('완료 기록 없이 모든 과정의 자료 저장·이전 다음 이동�
 
 test('GITHUB와 CODEX의 독립 주소·탐색·검색과 핵심 MD 바로가기가 동작한다',async()=>{
  const f=fixture('#/learn/workspace');await vm.runInContext(`(async()=>{${source}})()`,f.context);
- assert.match(f.elements.get('main').innerHTML,/<h1>GITHUB<\/h1>/);
- assert.match(f.elements.get('main').innerHTML,/과정 03-A/);
- assert.match(f.elements.get('main').innerHTML,/다음 과정 · 03-B/);
- f.location.hash='#/learn/codex';f.windowEvents.hashchange();
- assert.match(f.elements.get('main').innerHTML,/<h1>CODEX<\/h1>/);
- assert.match(f.elements.get('main').innerHTML,/이전 과정 · 03-A/);
+ assert.match(f.elements.get('main').innerHTML,/<h1>03. GITHUB 연동<\/h1>/);
+ assert.match(f.elements.get('main').innerHTML,/과정 03/);
  assert.match(f.elements.get('main').innerHTML,/다음 과정 · 04/);
+ f.location.hash='#/learn/codex';f.windowEvents.hashchange();
+ assert.match(f.elements.get('main').innerHTML,/<h1>04. 로컬 에이전트 구성<\/h1>/);
+ assert.match(f.elements.get('main').innerHTML,/이전 과정 · 03/);
+ assert.match(f.elements.get('main').innerHTML,/다음 과정 · 05/);
  assert.match(f.elements.get('main').innerHTML,/content\/lessons\/03-codex.md/);
  f.events.input({target:{id:'search-input',value:'Git: Clone',matches(){return false;}}});
  assert.match(f.elements.get('search-results').innerHTML,/#\/learn\/workspace/);
@@ -121,7 +109,7 @@ test('GITHUB와 CODEX의 독립 주소·탐색·검색과 핵심 MD 바로가기
  assert.match(f.elements.get('search-results').innerHTML,/#\/learn\/codex/);
  let scrolled=false;f.context.document.getElementById('core-md-title').scrollIntoView=()=>{scrolled=true;};
  f.location.hash='#/library?section=core-md-title';f.windowEvents.hashchange();
- assert.equal(scrolled,true);assert.match(f.elements.get('main').innerHTML,/<div class="core-md-files"><\/div>/);
+ assert.equal(scrolled,true);assert.match(f.elements.get('main').innerHTML,/core-progress/);
 });
 
 test('홈으로 돌아오면 제목 타이핑을 새로 시작하고 기존 생명주기를 정리한다',async()=>{
@@ -136,7 +124,7 @@ test('제거된 사례실습 주소는 관련 과정으로 이동한다',async()
  for(const [old,next] of [['compare','diagnosis'],['evidence','diagnosis'],['webgui','webgui'],['ess-attendance','ess-attendance']]){
   const f=fixture('#/cases/'+old);await vm.runInContext(`(async()=>{${source}})()`,f.context);
   assert.equal(f.location.hash,'#/learn/'+next);
-  f.windowEvents.hashchange();assert.ok(f.elements.get('main').innerHTML.includes('과정 MD 다운로드'));
+  f.windowEvents.hashchange();assert.ok(f.elements.get('main').innerHTML.includes(next==='diagnosis'?'과정 MD 다운로드':'프로젝트의 네 가지 관점'));
  }
 });
 
@@ -148,4 +136,26 @@ test('자료확인 직접 주소는 선택한 프로젝트 MD만 표시한다',a
   assert.ok(html.includes(item.mdArchive));
   for(const other of data.sources.filter(s=>s.id!==item.id))assert.ok(!html.includes(other.mdArchive));
  }
+});
+
+test('16개 새 순서·4개 홈 묶음·메뉴와 제목이 일치한다',async()=>{
+ const titles=['ERP AI 에이전트 전체 그림','ERP 소스 추출하기','GITHUB 연동','로컬 에이전트 구성','업무 맥락 만들기','업무 지도 만들기','업무 스킬 및 회귀','코드 검증 및 적용','에이전트간 협업(계획 중)','ERP 데이터 연동','근로시간 AI 에이전트 구축','ERP WEBGUI 개편','ERP AI 에이전트 포털 구축','ESS 근태시스템 개편','업무일지 타임라인 개발','스마트 ERP 메인화면 개편'];
+ assert.deepEqual(data.lessons.map(l=>l.title),titles);assert.deepEqual(data.lessons.map(l=>l.number),Array.from({length:16},(_,i)=>i+1));
+ const f=fixture('#/home');await vm.runInContext(`(async()=>{${source}})()`,f.context);
+ assert.equal((f.elements.get('main').innerHTML.match(/class="path-entry"/g)||[]).length,4);
+ assert.doesNotMatch(f.elements.get('sidebar').innerHTML,/워크플로/);
+ for(const l of data.lessons){f.location.hash='#/learn/'+l.id;f.windowEvents.hashchange();assert.ok(f.elements.get('main').innerHTML.includes(`<h1>${String(l.number).padStart(2,'0')}. ${l.title}</h1>`));}
+});
+test('활용사례 지도는 독립 박스 여섯 개이며 자체 프로젝트 대화만 선택한다',async()=>{
+ const f=fixture('#/map/cases');await vm.runInContext(`(async()=>{${source}})()`,f.context);
+ assert.equal((f.elements.get('main').innerHTML.match(/data-node="case-/g)||[]).length,6);assert.doesNotMatch(f.elements.get('main').innerHTML,/class="graph-line/);
+ for(const [id,pid] of [['webgui','kbs-erp-webgui-refactor'],['ess-attendance','kbs-erp-ess-attendance'],['weekly-timeline','kbs-weekly-work-timeline'],['smart-erp','kbs-smart-erp-main']]){
+  f.events.click({target:target('data-node',{node:'case-'+id})});assert.ok(f.elements.get('conversation-host').innerHTML.includes(`data-conversation-project="${pid}"`));assert.ok(f.location.hash.startsWith('#/map/cases?'));
+ }
+ f.events.click({target:target('data-node',{node:'case-publishing'})});assert.match(f.elements.get('conversation-host').innerHTML,/대화 전문은 아직 등록되지 않았습니다/);
+});
+test('핵심 MD 직접 주소에는 프로젝트·용도·다운로드를 제공하고 제거된 대화 탭은 노출하지 않는다',async()=>{
+ for(const g of data.coreDocuments){const f=fixture('#/library/'+g.id);await vm.runInContext(`(async()=>{${source}})()`,f.context);const html=f.elements.get('main').innerHTML;assert.match(html,/source-document-purpose/);for(const d of g.mdDocuments){assert.ok(html.includes(d.download));assert.ok(html.includes(d.project));}}
+ assert.deepEqual(conversations.conversationTabs.map(t=>t[0]),['dialogue','review','assets']);
+ for(const p of data.conversations.projects){const html=conversations.conversationWorkspace(data.conversations,{projectId:p.id,tab:'review'});assert.doesNotMatch(html,/선택한 요소와 연결된 에피소드만|교육 해설 — 실제 AI 발화 아님|교육 해설 · 당시 AI 답변과 구분|대화 확보 범위 ·/);}
 });

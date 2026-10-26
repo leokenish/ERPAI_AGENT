@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-24",
+  "asOf": "2026-10-26",
   "sourceRoot": "sources/conversations/20261012",
   "preferredNodes": {
     "sap": [
@@ -70,7 +70,7 @@
   "projects": [
     {
       "id": "kbs-erp-export-diag-agents",
-      "shortTitle": "소스 추출·DIAG·업무 에이전트",
+      "shortTitle": "소스 추출 및 진단, 업무 에이전트",
       "sourceId": "export-diag",
       "lessonIds": [
         "overview",
@@ -101,11 +101,12 @@
       "supplementEpisode": "E19-handover",
       "assetSourcePath": "sources/conversations/20261012-supplement/kbs-erp-export-diag-agents",
       "supplementLabel": "2026-10-24 확인 후속 흐름 읽기",
-      "publishAttachments": true
+      "publishAttachments": true,
+      "category": "에이전트 구축"
     },
     {
       "id": "kakao-work-context",
-      "shortTitle": "카카오톡 대화를 업무 지식으로",
+      "shortTitle": "사용자 대화 업무 맥락 가져오기",
       "sourceId": "knowledge-images",
       "lessonIds": [
         "knowledge"
@@ -135,11 +136,12 @@
           "kwc-m008",
           "kwc-m009"
         ]
-      }
+      },
+      "category": "에이전트 구축"
     },
     {
       "id": "erp-obsidian-knowledge-map",
-      "shortTitle": "Obsidian으로 업무 관계 연결",
+      "shortTitle": "업무지도 만들기",
       "sourceId": "obsidian",
       "lessonIds": [
         "maps"
@@ -162,11 +164,12 @@
         "MISSING_RESPONSES.md",
         "CHANGELOG.md"
       ],
-      "publishAttachments": true
+      "publishAttachments": true,
+      "category": "에이전트 구축"
     },
     {
       "id": "erp-agent-communication",
-      "shortTitle": "담당 에이전트 원격 자문",
+      "shortTitle": "에이전트 협업",
       "sourceId": "agent-collaboration",
       "lessonIds": [
         "collaboration"
@@ -189,11 +192,12 @@
         "MISSING_RESPONSES.md",
         "CHANGELOG.md"
       ],
-      "publishAttachments": true
+      "publishAttachments": true,
+      "category": "에이전트 협업 및 조회"
     },
     {
       "id": "kbs-erp-mcp-telegram",
-      "shortTitle": "ERP 조회 MCP·Telegram",
+      "shortTitle": "ERP 데이터 연동 및 활용",
       "sourceId": "erp-remote",
       "lessonIds": [
         "erp-mcp"
@@ -215,11 +219,12 @@
         "MISSING_RESPONSES.md",
         "CHANGELOG.md"
       ],
-      "publishAttachments": true
+      "publishAttachments": true,
+      "category": "에이전트 협업 및 조회"
     },
     {
       "id": "kbs-erp-webgui-refactor",
-      "shortTitle": "WEBGUI 개선과 검증",
+      "shortTitle": "ERP WEBGUI 개편",
       "sourceId": "webgui",
       "lessonIds": [
         "webgui"
@@ -245,7 +250,8 @@
       "supplementEpisode": "wg-progress-approval-api-observed",
       "assetSourcePath": "sources/conversations/20261012-supplement/kbs-erp-webgui-refactor",
       "supplementLabel": "2026-10-24 확인 후속 흐름 읽기",
-      "publishAttachments": true
+      "publishAttachments": true,
+      "category": "에이전트 활용사례"
     },
     {
       "id": "kbs-erp-ess-attendance",
@@ -271,11 +277,12 @@
         "CHANGELOG.md"
       ],
       "supplementEpisode": "ess-01",
-      "supplementLabel": "첫 요구 확인부터 대화 전문 읽기"
+      "supplementLabel": "첫 요구 확인부터 대화 전문 읽기",
+      "category": "에이전트 활용사례"
     },
     {
       "id": "kbs-weekly-work-timeline",
-      "shortTitle": "주간업무일지 타임라인 시스템",
+      "shortTitle": "업무일지 타임라인 개발",
       "sourceId": "weekly-timeline",
       "lessonIds": [
         "weekly-timeline"
@@ -299,7 +306,8 @@
       "coverageNote": "사용자 요청 30개 · AI 본문 30개 · 본문 미확보 0곳",
       "turningPoint": "주간업무 기록을 국·업무·시점과 원문 근거로 연결해 조직의 업무 흐름을 읽습니다.",
       "supplementEpisode": "timeline-intent-and-file-based-navigation",
-      "supplementLabel": "첫 요청부터 설계 과정 읽기"
+      "supplementLabel": "첫 요청부터 설계 과정 읽기",
+      "category": "에이전트 활용사례"
     },
     {
       "id": "kbs-smart-erp-main",
@@ -325,7 +333,8 @@
       "coverageNote": "사용자 요청 49개 · AI 본문 47개 · 본문 미확보 2곳",
       "turningPoint": "기존 ERP 기능을 유지하며 메인화면 배치·배경·글꼴을 반복 검토합니다.",
       "supplementEpisode": "smart-E01-preserve-and-package",
-      "supplementLabel": "첫 요청부터 설계 과정 읽기"
+      "supplementLabel": "첫 요청부터 설계 과정 읽기",
+      "category": "에이전트 활용사례"
     }
   ]
 }

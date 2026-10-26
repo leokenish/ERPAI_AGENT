@@ -12,9 +12,9 @@ const read=p=>readFile(new URL(p,root),'utf8');
 const data=JSON.parse(await read('dist/data/portal.json'));
 
 test('세 자료 분류와 신규 14·15는 기존 번호를 보존하며 연결된다',()=>{
- const map={'export-diag':'에이전트 구축','knowledge-images':'에이전트 구축',obsidian:'에이전트 구축','agent-collaboration':'에이전트 협업,조회확장','erp-remote':'에이전트 협업,조회확장'};
+ const map={'export-diag':'에이전트 구축','knowledge-images':'에이전트 구축',obsidian:'에이전트 구축','agent-collaboration':'에이전트 협업 및 조회','erp-remote':'에이전트 협업 및 조회'};
  for(const s of data.sources)assert.equal(s.category,map[s.id]||'에이전트 활용사례');
- for(const [id,number,pid] of [['weekly-timeline',14,'kbs-weekly-work-timeline'],['smart-erp',15,'kbs-smart-erp-main']]){
+ for(const [id,number,pid] of [['weekly-timeline',15,'kbs-weekly-work-timeline'],['smart-erp',16,'kbs-smart-erp-main']]){
   assert.equal(data.lessons.find(l=>l.id===id).number,number);
   assert.equal(data.sources.find(s=>s.id===id).projectDocuments.length,4);
   assert.deepEqual(data.conversations.projects.find(p=>p.id===pid).lessonIds,[id]);

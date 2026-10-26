@@ -5,6 +5,7 @@ import {fileURLToPath} from 'node:url';
 import {renderMarkdown} from './markdown.mjs';
 import {buildConversations} from './build-conversations.mjs';
 import {buildKnowledge} from './build-knowledge.mjs';
+import {buildCoreDocuments} from './build-core-documents.mjs';
 import {buildSourceDocuments} from './build-source-documents.mjs';
 import {updateOliveFruits} from './color-olive-fruits.mjs';
 const root=path.dirname(path.dirname(fileURLToPath(import.meta.url)));
@@ -45,11 +46,12 @@ async function copySite(from,to){
  }
 }
 await copySite(path.join(root,'site'),out);
-await writeFile(path.join(out,'styles.css'),(await readFile(path.join(root,'site/styles.css'),'utf8'))+'\n'+(await readFile(path.join(root,'site/conversations.css'),'utf8'))+'\n'+(await readFile(path.join(root,'site/presentation.css'),'utf8'))+'\n'+(await readFile(path.join(root,'site/knowledge.css'),'utf8'))+'\n'+(await readFile(path.join(root,'site/refinements.css'),'utf8'))+'\n/* Screen-only hero animation */\n'+heroCSS);
+await writeFile(path.join(out,'styles.css'),(await readFile(path.join(root,'site/styles.css'),'utf8'))+'\n'+(await readFile(path.join(root,'site/conversations.css'),'utf8'))+'\n'+(await readFile(path.join(root,'site/knowledge.css'),'utf8'))+'\n'+(await readFile(path.join(root,'site/refinements.css'),'utf8'))+'\n/* Screen-only hero animation */\n'+heroCSS);
 await cp(path.join(root,'assets'),path.join(out,'assets'),{recursive:true});
 catalog.conversations=await buildConversations(root,out);
 catalog.worktimeKnowledge=await buildKnowledge(root,out);
 await buildSourceDocuments(root,out,catalog.sources);
+catalog.coreDocuments=await buildCoreDocuments(root,out,catalog.sources);
 catalog.sources.find(s=>s.id==='worktime-agent').sha256=catalog.worktimeKnowledge.archiveSha256;
 await mkdir(path.join(out,'downloads'),{recursive:true});
 for(const item of catalog.downloads){

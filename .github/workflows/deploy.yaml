@@ -30,15 +30,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Build portal
+        run: npm run build
+
       # 2. GitHub Pages 환경 설정
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # 3. 프로젝트 전체 파일 아티팩트로 압축 (HTML, CSS, JS, MD 파일 모두 포함)
+      # 3. 빌드된 공개 파일만 게시
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: 'dist'
 
       # 4. GitHub Pages에 최종 배포
       - name: Deploy to GitHub Pages

@@ -12,15 +12,20 @@ export async function buildSourceDocuments(root,out,sources){
   const directory=await realpath(path.join(root,source.path));
   if(!directory.startsWith(sourceRoot+path.sep))throw Error('Source directory escapes sources/');
   const entries=[];
-  async function walk(dir){
+  async function walk(dir,base=directory,prefix=''){
    for(const entry of (await readdir(dir,{withFileTypes:true})).sort((a,b)=>a.name<b.name?-1:a.name>b.name?1:0)){
     const file=path.join(dir,entry.name);
     if(entry.isSymbolicLink())throw Error(`Source symlink is not supported: ${file}`);
-    if(entry.isDirectory())await walk(file);
-    else if(entry.isFile()&&/\.md$/i.test(entry.name))entries.push({name:path.relative(directory,file).split(path.sep).join('/'),bytes:await readFile(file)});
+    if(entry.isDirectory())await walk(file,base,prefix);
+    else if(entry.isFile()&&/\.md$/i.test(entry.name))entries.push({name:prefix+path.relative(base,file).split(path.sep).join('/'),bytes:await readFile(file)});
    }
   }
   await walk(directory);
+  for(const extra of source.additionalMdRoots||[]){
+   const extraDir=await realpath(path.join(root,extra));
+   if(!extraDir.startsWith(sourceRoot+path.sep))throw Error('Additional MD directory escapes sources');
+   await walk(extraDir,extraDir,'project-progress/'+path.basename(extraDir)+'/');
+  }
   const downloadRoot=`downloads/source-md/${source.id}`;
   await mkdir(path.join(out,downloadRoot),{recursive:true});
   source.mdDocuments=[];

@@ -1,8 +1,8 @@
-# CODEX
+# 로컬 에이전트 구성
 
 ## 같은 폴더에서 에이전트 작업 시작하기
 
-Codex 데스크톱에서 담당 패키지의 소스·업무 지식·지침을 읽고 설명과 수정안을 만듭니다. [GITHUB](#/learn/workspace)에서 Clone을 마친 뒤 **설치 → 로그인 → 폴더 지정 → 분석 → 변경 검토 → 검증 → 공유** 순서로 진행합니다.
+Codex 데스크톱에서 담당 패키지의 소스·업무 지식·지침을 읽고 설명과 수정안을 만듭니다. [GITHUB 연동](#/learn/workspace)에서 Clone을 마친 뒤 **설치 → 로그인 → 폴더 지정 → 분석 → 변경 검토 → 검증 → 공유** 순서로 진행합니다.
 
 이 페이지는 요청하신 CODEX 명칭을 사용합니다. 2026-10-24 확인한 공식 Codex 앱 안내 주소는 ChatGPT 데스크톱 앱 문서로 연결됩니다. 설치 화면의 제품 이름과 메뉴는 현재 공식 안내를 따르고, 앱에서 Codex 작업을 선택합니다. [공식 앱 안내](https://learn.chatgpt.com/docs/app)
 
@@ -51,7 +51,7 @@ README.md, 적용되는 AGENTS.md, git status와 현재 브랜치를 읽어 주�
 
 Codex는 AGENTS.md를 작업 지침으로 읽으며 상위·하위 지침이 함께 적용될 수 있습니다. 기존 내용을 새 지침으로 통째로 덮어쓰지 않습니다. [공식 AGENTS.md 안내](https://learn.chatgpt.com/docs/agent-configuration/agents-md)
 
-폴더명은 예시이며 실제 저장소의 구조를 우선합니다. [업무 지식·스킬](#/learn/knowledge), [SKILL & FEEDBACK](#/learn/feedback)에서 자료 정리·반복 작업의 기준을 이어갑니다.
+폴더명은 예시이며 실제 저장소의 구조를 우선합니다. [업무 맥락 만들기](#/learn/knowledge), [업무 스킬 및 회귀](#/learn/feedback)에서 자료 정리·반복 작업의 기준을 이어갑니다.
 
 ## 4. 첫 분석 요청
 
@@ -100,7 +100,7 @@ npm test
 npm run preview:file
 ```
 
-변경한 화면과 다운로드를 확인한 뒤 [GITHUB](#/learn/workspace)의 Commit·Push 절차로 공유합니다. 포털 검사 통과와 실제 SAP 호환성·운영 검증을 구분합니다.
+변경한 화면과 다운로드를 확인한 뒤 [GITHUB 연동](#/learn/workspace)의 Commit·Push 절차로 공유합니다. 포털 검사 통과와 실제 SAP 호환성·운영 검증을 구분합니다.
 
 ## 7. 다음 작업에 넘길 MD
 

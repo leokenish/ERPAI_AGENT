@@ -35,7 +35,7 @@ test('최신 WEBGUI 20쌍의 본문·코드·순서와 이미지 8개가 원천�
 
 test('홈에서 16개 과정을 각각 선택하고 사례실습 링크를 노출하지 않는다',()=>{
  const start=app.indexOf('function home(){'),end=app.indexOf('function courses(){');
- const context=vm.createContext({data:portal,countNumber,lessonNumber:l=>l.displayNumber||String(l.number).padStart(2,'0'),esc:s=>s,lessonLink:id=>'#/learn/'+id,icon:()=>'',badge:()=>'',footer:()=>'',caseItems:[{id:'compare',title:'ERP 코드 형상관리 · 세 방향 비교'},{id:'evidence',title:'ERP 코드 형상관리 · DIAG 결과 읽기'},{id:'webgui'},{id:'ess-attendance'}]});
+ const context=vm.createContext({data:portal,countNumber,lessonNumber:l=>l.displayNumber||String(l.number).padStart(2,'0'),esc:s=>s,lessonLink:id=>'#/learn/'+id,icon:()=>'',badge:()=>'',categoryBadge:()=>'',footer:()=>'',caseItems:[{id:'compare',title:'ERP 코드 형상관리 · 세 방향 비교'},{id:'evidence',title:'ERP 코드 형상관리 · DIAG 결과 읽기'},{id:'webgui'},{id:'ess-attendance'}]});
  vm.runInContext(app.slice(start,end),context);
  const html=vm.runInContext('home()',context);
  const paths=html.match(/<div class="path-list">([\s\S]*?)<\/section><\/div>/)[1];
@@ -48,13 +48,13 @@ test('홈에서 16개 과정을 각각 선택하고 사례실습 링크를 노�
 });
 
 test('확장 설계 다음에 10~15 활용 사례와 개별 과정·핵심 MD 링크를 제공한다',()=>{
- const context=vm.createContext({data:portal,countNumber,lessonNumber:l=>l.displayNumber||String(l.number).padStart(2,'0'),esc:s=>s,lessonLink:id=>'#/learn/'+id,icon:()=>'',badge:()=>'',footer:()=>''});
+ const context=vm.createContext({data:portal,countNumber,lessonNumber:l=>l.displayNumber||String(l.number).padStart(2,'0'),esc:s=>s,lessonLink:id=>'#/learn/'+id,icon:()=>'',badge:()=>'',categoryBadge:()=>'',footer:()=>''});
  vm.runInContext(app.slice(app.indexOf('function home(){'),app.indexOf('function courses(){')),context);
  const html=vm.runInContext('home()',context);
  assert.ok(html.indexOf('home-applications-title')>html.indexOf('home-expansion-title'));
  const cards=[...html.matchAll(/<article class="home-card application-card">([\s\S]*?)<\/article>/g)].map(m=>m[1]);
  assert.equal(cards.length,6);
- for(const [i,id] of ['webgui','worktime-agent','publishing','ess-attendance','weekly-timeline','smart-erp'].entries()){
+ for(const [i,id] of ['worktime-agent','webgui','publishing','ess-attendance','weekly-timeline','smart-erp'].entries()){
   assert.ok(cards[i].includes(`href="#/learn/${id}">설계 과정 읽기`));
   assert.match(cards[i],/href="#\/library\?section=core-md-title"/);
  }
@@ -78,7 +78,7 @@ test('HTML과 전체 모듈 그래프는 같은 버전의 정적 파일을 요�
 
 test('생성된 배포 화면의 16개 과정과 자료실이 새 구성을 사용한다',async()=>{
  const built=await read('dist/app.js');
- const context=vm.createContext({data:portal,countNumber,lessonNumber:l=>l.displayNumber||String(l.number).padStart(2,'0'),esc:s=>s,lessonLink:id=>'#/learn/'+id,icon:()=>'',badge:()=>'',footer:()=>'',breadcrumbs:()=>''});
+ const context=vm.createContext({data:portal,countNumber,lessonNumber:l=>l.displayNumber||String(l.number).padStart(2,'0'),esc:s=>s,lessonLink:id=>'#/learn/'+id,icon:()=>'',badge:()=>'',categoryBadge:()=>'',footer:()=>'',breadcrumbs:()=>''});
  vm.runInContext(built.slice(built.indexOf('function home(){'),built.indexOf('function courses(){')),context);
  vm.runInContext(built.slice(built.indexOf('function libraryPage('),built.indexOf('function openSourceDocuments(')),context);
  const home=vm.runInContext('home()',context);
@@ -87,9 +87,9 @@ test('생성된 배포 화면의 16개 과정과 자료실이 새 구성을 사�
  assert.doesNotMatch(home,/#\/cases|home-practice|사례 실습/);
  assert.match(home,/ERP AI 에이전트, 이해에서 실무로/);
  const library=vm.runInContext('libraryPage()',context);
- assert.equal((library.match(/data-source-open=/g)||[]).length,10);
+ assert.equal((library.match(/data-source-open=/g)||[]).length,15);
  assert.match(library,/핵심 MD 자료/);
- assert.match(library,/<div class="core-md-files"><\/div>/);
+ assert.match(library,/core-progress/);
  assert.doesNotMatch(library,/자료 범위|근거와 실습|프로젝트별 근거|바로 사용할 실습 자료|실제 화면으로 보완|전체 \d+파일|MD 지도/);
 });
 

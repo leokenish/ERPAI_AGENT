@@ -19,7 +19,7 @@ test('각 프로젝트 MD 목록·개별 파일·전체 ZIP은 해당 원천의 
   for(const doc of source.mdDocuments){
    assert.match(doc.path,/\.md$/i);
    assert.ok(!doc.path.split('/').includes('..'));
-   const original=await readFile(new URL(source.path+doc.path,root));
+   const original=await readFile(new URL(doc.path.startsWith('project-progress/')?source.additionalMdRoots[0]+'/'+doc.name:source.path+doc.path,root));
    assert.deepEqual(await readFile(new URL('dist/'+doc.download,root)),original);
    expected.set(doc.path,original);total++;
   }
@@ -34,7 +34,7 @@ test('각 프로젝트 MD 목록·개별 파일·전체 ZIP은 해당 원천의 
   }
   assert.equal(count,source.mdCount);assert.equal(expected.size,0);
  }
- assert.equal(total,859);
+ assert.equal(total,867);
 });
 
 test('자료확인 화면은 프로젝트별 링크·원래 파일명을 사용하고 HTML 문자를 이스케이프한다',()=>{
@@ -90,7 +90,7 @@ test('MD와 ZIP HTTP 응답은 원천 바이트를 제공하고 MD 저장명을 
  const source=portal.sources.find(s=>s.id==='knowledge-images'),doc=source.mdDocuments[1];
  const response=await fetch(base+doc.download);
  assert.equal(response.status,200);assert.equal(response.headers.get('content-disposition'),'attachment');
- assert.deepEqual(Buffer.from(await response.arrayBuffer()),await readFile(new URL(source.path+doc.path,root)));
+ assert.deepEqual(Buffer.from(await response.arrayBuffer()),await readFile(new URL(doc.path.startsWith('project-progress/')?source.additionalMdRoots[0]+'/'+doc.name:source.path+doc.path,root)));
  assert.ok(renderSourceDocuments(source).includes(`download="${doc.name}"`));
  const zip=await fetch(base+source.mdArchive);assert.equal(zip.status,200);
  assert.match(zip.headers.get('content-disposition'),/attachment; filename="knowledge-images_MD.zip"/);

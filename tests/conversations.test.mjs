@@ -93,7 +93,7 @@ test('147개 에피소드의 각 화면에 중복 ID·깨진 자료·과정 링�
  }
  for(const url of publicLinks)await access(new URL('dist/'+url,root));
  assert.equal([...publicLinks].filter(p=>p.startsWith('assets/conversations/')).length,new Set(bundle.projects.flatMap(p=>p.assets.filter(a=>a.kind==='image'&&a.publicPath).map(a=>a.publicPath))).size);
- assert.ok(conversationIndex(bundle).includes('원문 전사 1309개'));
+ assert.ok(!conversationIndex(bundle).includes('원문 전사 1309개'));
 });
 test('미확보 AI 답변과 요약을 원문 응답으로 표시하지 않고 검색으로 찾을 수 있다',()=>{
  const missing=conversationWorkspace(bundle,{projectId:'kbs-erp-export-diag-agents',episodeId:'E12',visible:999});
