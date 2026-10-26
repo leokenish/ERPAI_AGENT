@@ -1,0 +1,264 @@
+{
+  "version": "1.16.0",
+  "courses": [
+    {
+      "number": "01",
+      "id": "overview",
+      "title": "ERP AI 에이전트 전체 그림",
+      "headings": [
+        "1. 왜 만드는가: 같은 업무를 매번 처음부터 설명하지 않기",
+        "2. 무엇을 만드는가: 내 업무를 근거로 설명하는 작업 공간",
+        "3. 어떤 방향을 택했는가: 담당 업무 하나부터, 파일로 남기기",
+        "4. 어떻게 구성하는가: 필요한 역할을 하나씩 연결하기",
+        "5. 실제 사례로 보면 무엇이 달라지는가",
+        "6. 어디까지 맡길 수 있고, 무엇부터 시작하면 되는가",
+        "근거와 이어 읽기"
+      ],
+      "links": [
+        "#/learn/export",
+        "#/learn/worktime-agent",
+        "#/learn/webgui",
+        "#/learn/knowledge",
+        "#/library/export-diag",
+        "#/map"
+      ],
+      "invalidInternalTargets": []
+    },
+    {
+      "number": "02",
+      "id": "export",
+      "title": "ERP 소스 추출하기",
+      "headings": [
+        "1. 왜 추출했는가: ERP 안의 자료를 AI가 읽을 수 있게 만들기",
+        "2. 실제로 무엇이 부족했는가: 파일이 있어도 업무가 보이지 않았습니다",
+        "3. 어떤 범위를 정했는가: 패키지 전체와 BSP 한 앱을 나눕니다",
+        "4. 어떻게 구현했는가: 읽기·파일화·원본 보존·점검",
+        "5. 직접 해보기: 첫 추출물에서 함수 하나와 페이지 하나 찾기",
+        "6. 한계와 다음 방향: 추출 범위와 적용 범위는 다릅니다",
+        "근거와 도구 찾기"
+      ],
+      "links": [
+        "#/learn/workspace",
+        "#/learn/diagnosis",
+        "#/conversations/kbs-erp-export-diag-agents/E28-confirmed-bsp-next-scope",
+        "#/conversations/kbs-erp-export-diag-agents/E29-single-app-zip",
+        "#/library/export-diag"
+      ],
+      "invalidInternalTargets": []
+    },
+    {
+      "number": "03",
+      "id": "workspace",
+      "title": "GITHUB 연동",
+      "headings": [
+        "1. 왜 연결하려 했는가: ZIP을 옮기는 수고와 버전 혼동 줄이기",
+        "2. 무엇이 막혔는가: 실제 시험에서 확인한 TLS 오류",
+        "3. 어떤 방향으로 바꿨는가: PC를 파일 전달과 검토의 중심으로",
+        "4. 어떻게 사용하는가: 설치부터 공유까지",
+        "5. 직접 따라 해보기: 설명 한 줄을 고치고 공유 결과 확인하기",
+        "6. 한계와 다음 방향: GitHub 공유가 ERP 적용은 아닙니다",
+        "근거와 이어 읽기"
+      ],
+      "links": [
+        "https://github.com/leokenish/ERPAI_AGENT",
+        "https://code.visualstudio.com/download",
+        "https://git-scm.com/install/windows",
+        "https://code.visualstudio.com/docs/setup/mac",
+        "https://git-scm.com/install/mac",
+        "https://code.visualstudio.com/docs/setup/windows",
+        "https://code.visualstudio.com/docs/sourcecontrol/overview",
+        "https://code.visualstudio.com/docs/sourcecontrol/github",
+        "https://github.com/larshp/vscode-abap",
+        "https://code.visualstudio.com/docs/sourcecontrol/repos-remotes",
+        "https://git-scm.com/docs/git-remote",
+        "#/learn/diagnosis",
+        "https://code.visualstudio.com/docs/sourcecontrol/quickstart",
+        "https://code.visualstudio.com/docs/sourcecontrol/repos-remotes",
+        "#/learn/diagnosis",
+        "#/learn/codex",
+        "https://code.visualstudio.com/docs/sourcecontrol/overview",
+        "https://code.visualstudio.com/docs/sourcecontrol/quickstart",
+        "https://git-scm.com/docs/git-pull"
+      ],
+      "invalidInternalTargets": []
+    },
+    {
+      "number": "04",
+      "id": "codex",
+      "title": "로컬 에이전트 구성",
+      "headings": [
+        "1. 왜 로컬에서 시작했는가: 자료를 매번 설명하는 작업에서 벗어나기",
+        "2. 왜 Codex 데스크톱을 활용했는가",
+        "3. 어떤 구성을 만들 것인가: 한 폴더, 한 업무, 확인 가능한 결과",
+        "4. 어떻게 구성하는가: 설치·폴더 선택·첫 요청",
+        "5. 실제로 달라진 작업: 코드 설명에서 업무 근거 확인으로",
+        "6. 한계와 다음 방향: 파일을 읽는 AI에서 업무를 이해하는 AI로",
+        "근거와 이어 읽기"
+      ],
+      "links": [
+        "https://learn.chatgpt.com/docs/app",
+        "https://learn.chatgpt.com/docs/app",
+        "https://learn.chatgpt.com/docs/agent-configuration/agents-md",
+        "#/learn/knowledge",
+        "#/learn/feedback",
+        "#/learn/workspace",
+        "#/library/export-diag",
+        "#/learn/feedback",
+        "#/learn/knowledge",
+        "https://learn.chatgpt.com/docs/app",
+        "https://learn.chatgpt.com/docs/projects",
+        "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+      ],
+      "invalidInternalTargets": []
+    },
+    {
+      "number": "05",
+      "id": "knowledge",
+      "title": "업무 맥락 만들기",
+      "headings": [
+        "1. 왜 코드 밖의 자료가 필요한가",
+        "2. 어떤 문제를 겪었는가: 대화를 줄이면 중요한 차이가 사라집니다",
+        "3. 어떻게 정리하기로 했는가: 원문·업무 지식·절차를 나누기",
+        "4. 어떻게 만드는가: 한 사안을 끝까지 따라 읽기",
+        "5. 실제 사례: 같은 대화에서 다른 결론을 구분하기",
+        "6. 한계와 다음 방향: 정리한 문장도 다시 확인할 수 있어야 합니다",
+        "근거와 이어 읽기"
+      ],
+      "links": [
+        "downloads/src-11-iam-case.md",
+        "downloads/knowledge-record.md",
+        "#/learn/maps",
+        "#/library/knowledge-images"
+      ],
+      "invalidInternalTargets": []
+    },
+    {
+      "number": "06",
+      "id": "maps",
+      "title": "업무 지도 만들기",
+      "headings": [
+        "1. 왜 지도가 필요한가: 문서를 모았는데 무엇부터 읽을지 모르겠습니다",
+        "2. 무엇을 오해했는가: 폴더를 열면 관계가 저절로 생길까요?",
+        "3. 어떤 방향을 택했는가: 기존 폴더를 유지하고 길 안내를 추가하기",
+        "4. 어떻게 만드는가: 질문 하나에서 원문까지 연결하기",
+        "5. 실제 사례: 단가 질문에서 정책·코드·검증으로",
+        "6. 한계와 다음 방향: 연결의 수보다 연결의 정확성",
+        "근거와 이어 읽기"
+      ],
+      "links": [
+        "downloads/relationship-map.md",
+        "https://obsidian.md/help/install",
+        "https://obsidian.md/help/manage-vaults",
+        "#/learn/worktime-agent",
+        "assets/images/obsidian-business-map.png",
+        "assets/images/obsidian-full-graph.png",
+        "#/learn/feedback",
+        "#/library/obsidian",
+        "#/library/worktime-agent"
+      ],
+      "invalidInternalTargets": []
+    },
+    {
+      "number": "07",
+      "id": "feedback",
+      "title": "업무 스킬 및 회귀",
+      "headings": [
+        "1. 왜 절차와 재검증이 필요한가: AI는 틀려도 오류 창을 띄우지 않습니다",
+        "2. 무엇을 바꾸기로 했는가: 업무 답변 정정과 코드 수정을 분리하기",
+        "3. 어떤 파일이 어떤 역할을 맡는가",
+        "4. 어떻게 반복하는가: 피드백 한 건을 끝까지 남기기",
+        "5. 실제 사례: 고쳐야 할 것은 코드일까요, 업무 이해일까요?",
+        "6. 한계와 다음 방향: 기록이 쌓여도 자동으로 정답이 되지는 않습니다",
+        "근거와 이어 읽기"
+      ],
+      "links": [
+        "downloads/feedback-record.md",
+        "#/learn/diagnosis",
+        "#/library/export-diag",
+        "#/library/worktime-agent"
+      ],
+      "invalidInternalTargets": []
+    },
+    {
+      "number": "08",
+      "id": "diagnosis",
+      "title": "코드 검증 및 적용",
+      "headings": [
+        "1. 왜 검증 도구가 필요했는가: 내가 고친 동안 서버도 바뀔 수 있습니다",
+        "2. 무엇을 겪었는가: “다르다”와 “적용해도 된다” 사이의 간격",
+        "3. 어떤 기준을 정했는가: 세 자료와 네 확인 단계를 나누기",
+        "4. 어떻게 처리하는가: 진단부터 선택 반영까지",
+        "5. 실제 사례와 따라 해보기",
+        "6. 한계와 다음 방향: 성공 표시의 범위를 끝까지 확인하기",
+        "근거와 이어 읽기"
+      ],
+      "links": [
+        "assets/images/diag-045-summary.png",
+        "assets/images/diag-045-three-way.png",
+        "downloads/ZHR5_result_uploaded_20261007.xlsx",
+        "assets/conversations/kbs-erp-export-diag-agents/export-diag-progress-asset-016.png",
+        "downloads/compare_cases.py",
+        "downloads/three_way_cases.json",
+        "assets/images/diag-044-type-error.png",
+        "#/learn/feedback",
+        "#/learn/collaboration",
+        "#/conversations/kbs-erp-export-diag-agents/E28-confirmed-bsp-next-scope",
+        "#/conversations/kbs-erp-export-diag-agents/E29-single-app-zip"
+      ],
+      "invalidInternalTargets": []
+    },
+    {
+      "number": "09",
+      "id": "collaboration",
+      "title": "에이전트간 협업(계획 중)",
+      "headings": [
+        "1. 왜 협업이 필요한가: 내 업무의 끝이 다른 업무의 시작입니다",
+        "2. 어떤 방향이 맞지 않았는가: 모두의 소스를 한곳에 모으는 방식",
+        "3. 어떻게 역할을 나눴는가: 질문·전달·조사",
+        "4. 무엇을 구현했는가: 질문이 왕복하는 모의 예제",
+        "5. 직접 해보기: 실제 AI 연결 전에 질문 전달부터 확인하기",
+        "6. 한계와 다음 방향: 전달 성공 다음에는 답변의 근거가 필요합니다",
+        "근거와 이어 읽기"
+      ],
+      "links": [
+        "downloads/ERP_MCP_NodeJS_Example.zip",
+        "#/learn/erp-mcp",
+        "#/library/agent-collaboration"
+      ],
+      "invalidInternalTargets": []
+    },
+    {
+      "number": "10",
+      "id": "erp-mcp",
+      "title": "ERP 데이터 연동",
+      "headings": [
+        "1. 왜 실데이터가 필요한가: 계산 방법과 오늘의 결과는 다릅니다",
+        "2. 무엇에서 출발했는가: 기존 REST·RFC를 재사용하기",
+        "3. 어떤 방향을 택했는가: 허용된 조회 하나부터 연결하기",
+        "4. 어떻게 연결하는가: 질문에서 ERP 결과까지",
+        "5. 어떤 순서로 검증하는가: 작은 조회 하나의 왕복",
+        "6. 한계와 향후 방향: 연결보다 결과를 믿을 조건이 먼저입니다",
+        "근거와 이어 읽기"
+      ],
+      "links": [
+        "https://core.telegram.org/bots/api#getupdates",
+        "#/learn/worktime-agent",
+        "#/library/erp-remote"
+      ],
+      "invalidInternalTargets": []
+    }
+  ],
+  "preservedCatalogFields": [
+    "id",
+    "file",
+    "number",
+    "displayNumber",
+    "title",
+    "group",
+    "category"
+  ],
+  "caseCatalogPreserved": true,
+  "sourceCatalogPreserved": true,
+  "downloadsCatalogPreserved": true,
+  "oldOverviewHeadingsRemoved": true
+}

@@ -55,15 +55,6 @@
  .toc nav a { border:0; padding:.55rem 0; }
  .toc nav a:hover { color:var(--brand); }
  .toc nav a.depth-3 { padding-left:.7rem; }
- .lesson-tools { display:flex; flex-wrap:wrap; gap:.65rem 1.25rem; align-items:center; background:var(--surface); border:1px solid var(--line); border-radius:9px; padding:1.1rem 1.2rem; margin:0 0 1.7rem; }
- .lesson-tools-heading { flex:1 1 160px; }
- .lesson-tools-heading strong { display:block; color:var(--ink); font-size:var(--text-lead); font-weight:600; }
- .lesson-tools-heading>span { font-size:var(--text-caption); color:var(--muted); }
- .lesson-tool-actions { display:flex; flex-wrap:wrap; gap:.65rem; flex:1 1 360px; }
- .lesson-tool-actions .btn { flex:1 1 170px; padding:.7rem .9rem; font-size:var(--text-small); min-height:48px; }
- .lesson-tool-actions .tool-print { color:var(--accent-ink); border-color:var(--control-line); background:var(--panel); }
- .lesson-tool-actions .tool-print:hover { background:var(--brand-tint); border-color:var(--brand); }
- .lesson-tools-note { flex-basis:100%; font-size:var(--text-caption); line-height:1.7; margin:0; color:var(--muted); }
  .lesson-pager,.conversation-pager { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:1rem; align-items:stretch; }
  .lesson-pager { margin-top:2.5rem; padding-top:1.5rem; border-top:1px solid var(--line); }
  .lesson-pager a.pager-card,.conversation-pager .pager-card { display:flex; flex-direction:column; gap:.6rem; max-width:none; width:100%; min-height:92px; padding:1rem 1.1rem; border:1px solid var(--line); border-radius:8px; background:var(--panel); color:var(--ink); text-align:left; text-decoration:none; }
@@ -121,7 +112,6 @@
  .course-group { padding:1rem; }
  .lesson-row { grid-template-columns:28px minmax(0,1fr); padding:1rem .85rem; gap:.65rem; }
  .lesson-row .badge { grid-column:2; justify-self:start; white-space:normal; }
- .lesson-tools { padding:1rem; }
  .lesson-pager,.conversation-pager { gap:.65rem; }
  .conversation-layout { grid-template-columns:minmax(0,1fr); }
  .conversation-episode-list { position:static; max-height:19rem; }
@@ -135,15 +125,12 @@
  .lesson-pager,.conversation-pager { grid-template-columns:minmax(0,1fr); }
  .conversation-pager>span:empty { display:none; }
  .lesson-pager a.pager-card,.conversation-pager .pager-card { min-height:82px; }
- .lesson-tool-actions { flex-basis:100%; }
- .lesson-tool-actions .btn { flex-basis:100%; }
  .conversation-tabs button { flex:1 1 40%; }
  .slide-controls [data-slide] { min-width:0; flex:1; }
  .slide-controls .controls-group { width:100%; flex-wrap:wrap; }
  .slide-controls .btn { padding:.6rem .8rem; }
 }
 @media print {
- .lesson-tools { display:none!important; }
  .lesson-body>h2 { break-after:avoid; }
  .lesson-body>h3 { break-after:avoid; }
 }

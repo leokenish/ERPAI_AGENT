@@ -1,0 +1,15 @@
+{
+  "baseline": "v1.15.2",
+  "baselineZipSha256": "bc3c56cd5c99c5a3e7c4095836af146bc018ea1083cf0383ad31a690b9146bc4",
+  "preservedCounts": {
+    "sources": 1576,
+    "conversations": 68,
+    "caseLessons": 6,
+    "assets": 36,
+    "site": 14,
+    "scripts": 15,
+    "tests": 15
+  },
+  "AGENTS_preserved": true,
+  "mismatches": []
+}

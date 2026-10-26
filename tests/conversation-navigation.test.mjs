@@ -74,22 +74,20 @@ test('새 11번 과정과 전체 과정·검색·12번 이동이 같은 카탈�
  assert.ok(f.elements.get('main').innerHTML.includes('과정 13'));
 });
 
-test('완료 기록 없이 모든 과정의 자료 저장·이전 다음 이동을 제공한다',async()=>{
- const f=fixture('#/home');let prints=0,completionReads=0;
+test('모든 과정에서 자료 저장 박스를 제거하고 이전 다음 이동을 유지한다',async()=>{
+ const f=fixture('#/home');let completionReads=0;
  f.context.localStorage.getItem=key=>{if(key==='erp-ai-completed-v1'){completionReads++;return JSON.stringify(data.lessons.map(l=>l.id));}return null;};
- f.context.window.print=()=>prints++;
  await vm.runInContext(`(async()=>{${source}})()`,f.context);
  assert.equal(completionReads,0);assert.match(f.elements.get('main').innerHTML,/워크플로 살펴보기/);assert.doesNotMatch(f.elements.get('main').innerHTML,/이어서 학습하기/);
  for(let i=0;i<data.lessons.length;i++){
   const lesson=data.lessons[i];f.location.hash='#/learn/'+lesson.id;f.windowEvents.hashchange();const html=f.elements.get('main').innerHTML;
-  assert.equal((html.match(/data-print/g)||[]).length,lesson.number<11?1:0,lesson.id);
-  if(lesson.number<11)assert.ok(html.includes('href="content/'+lesson.file+'"'));
-  else {assert.match(html,/프로젝트의 네 가지 관점/);assert.doesNotMatch(html,/이 과정 자료/);}
+  assert.doesNotMatch(html,/이 과정 자료|lesson-tools|data-print|인쇄 · PDF 저장|과정 MD 다운로드/,lesson.id);
+  assert.ok(!html.includes('href="content/'+lesson.file+'"'),lesson.id);
+  if(lesson.number>=11)assert.match(html,/프로젝트의 네 가지 관점/);
   assert.doesNotMatch(html,/data-complete|complete-panel|학습 완료 표시/);assert.doesNotMatch(f.elements.get('sidebar').innerHTML,/done-tick|학습 표시 완료/);
   if(i>0)assert.ok(html.includes('이전 과정 · '+(data.lessons[i-1].displayNumber||String(data.lessons[i-1].number).padStart(2,'0'))));
   if(i<data.lessons.length-1)assert.ok(html.includes('다음 과정 · '+(data.lessons[i+1].displayNumber||String(data.lessons[i+1].number).padStart(2,'0'))));
  }
- f.events.click({target:target('data-print',{})});assert.equal(prints,1);
  f.location.hash='#/courses';f.windowEvents.hashchange();assert.doesNotMatch(f.elements.get('main').innerHTML,/학습 표시|read-progress/);
 });
 
@@ -102,7 +100,7 @@ test('GITHUB와 CODEX의 독립 주소·탐색·검색과 핵심 MD 바로가기
  assert.match(f.elements.get('main').innerHTML,/<h1>04. 로컬 에이전트 구성<\/h1>/);
  assert.match(f.elements.get('main').innerHTML,/이전 과정 · 03/);
  assert.match(f.elements.get('main').innerHTML,/다음 과정 · 05/);
- assert.match(f.elements.get('main').innerHTML,/content\/lessons\/03-codex.md/);
+ assert.equal(data.lessons.find(l=>l.id==='codex').file,'lessons/03-codex.md');
  f.events.input({target:{id:'search-input',value:'Git: Clone',matches(){return false;}}});
  assert.match(f.elements.get('search-results').innerHTML,/#\/learn\/workspace/);
  f.events.input({target:{id:'search-input',value:'프로젝트 폴더 지정',matches(){return false;}}});
@@ -124,7 +122,9 @@ test('제거된 사례실습 주소는 관련 과정으로 이동한다',async()
  for(const [old,next] of [['compare','diagnosis'],['evidence','diagnosis'],['webgui','webgui'],['ess-attendance','ess-attendance']]){
   const f=fixture('#/cases/'+old);await vm.runInContext(`(async()=>{${source}})()`,f.context);
   assert.equal(f.location.hash,'#/learn/'+next);
-  f.windowEvents.hashchange();assert.ok(f.elements.get('main').innerHTML.includes(next==='diagnosis'?'과정 MD 다운로드':'프로젝트의 네 가지 관점'));
+  f.windowEvents.hashchange();
+  const lesson=data.lessons.find(l=>l.id===next);
+  assert.ok(f.elements.get('main').innerHTML.includes(`<h1>${lesson.displayNumber||String(lesson.number).padStart(2,'0')}. ${lesson.title}</h1>`));
  }
 });
 

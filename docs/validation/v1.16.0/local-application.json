@@ -1,0 +1,108 @@
+{
+  "date": "2026-10-26",
+  "release": "1.16.0",
+  "localBaseline": {
+    "commit": "eb99743b49924a82744cf82672de0a47b8ef5e9e",
+    "version": "1.15.0",
+    "initialStatus": "clean",
+    "remote": "https://github.com/leokenish/ERPAI_AGENT",
+    "branch": "main",
+    "upstream": "origin/main",
+    "fetchedRemoteEqualsBaseline": true
+  },
+  "package": {
+    "name": "KBS_ERP_AI_Agent_v1.16.0_Full.zip",
+    "manifestBaseline": "1.15.2",
+    "changedEntryHashesVerified": 23,
+    "localManifestBeforeMatches": 10,
+    "differentExistingFilesMatchV115": 22,
+    "conflicts": [],
+    "replaced": 22,
+    "addedIncludingIgnoredLogs": 18,
+    "deleted": 0,
+    "includesIntermediateUpdates": [
+      "1.15.1 editorial corrections",
+      "1.15.2 course tools removal"
+    ]
+  },
+  "preservation": {
+    "sourceFiles": 1576,
+    "assets": 36,
+    "conversationFilesExceptEditorialOverlays": 66,
+    "courseBodies11to16": 6,
+    "all16CourseIdentitiesAndOrder": true,
+    "sourceAndDownloadCatalogs": true,
+    "originalEditorialEntriesRemoved": 0,
+    "gitConfigUnchanged": true,
+    "unlistedLocalFilesPreserved": true
+  },
+  "validation": {
+    "node": "v24.22.1",
+    "npm": "12.2.1 (temporary official npm CLI; no project dependency installation)",
+    "commands": [
+      {
+        "command": "npm run build",
+        "result": "passed"
+      },
+      {
+        "command": "npm run preview:file",
+        "result": "passed"
+      },
+      {
+        "command": "npm test",
+        "result": "89 passed; 0 failed; 0 skipped"
+      },
+      {
+        "command": "npm start",
+        "result": "local server and Chrome browser checks passed"
+      }
+    ],
+    "browserChecks": [
+      "All 16 course identities, TOC and previous/next links; no course tools",
+      "Course 03 TOC scroll, actual conversation, pager and TLS search",
+      "Library individual MD, ZIP and attachment downloads match local bytes",
+      "Mobile 390px courses 01-10, menu and dark theme",
+      "Offline file preview: revised lessons, conversation, MD and ZIP with network disabled"
+    ],
+    "browserConsoleErrors": [],
+    "screenshotsVisuallyReviewed": 3,
+    "fileSizeAtOrAbove100MiB": [],
+    "generatedPathsTracked": 0,
+    "gitDiffCheck": "passed"
+  },
+  "packageFilesToCommit": [
+    "README.md",
+    "content/catalog.json",
+    "content/conversations/editorial-prompts.json",
+    "content/conversations/editorial-responses.json",
+    "content/lessons/01-overview.md",
+    "content/lessons/02-export.md",
+    "content/lessons/03-codex.md",
+    "content/lessons/03-workspace.md",
+    "content/lessons/04-knowledge.md",
+    "content/lessons/05-maps.md",
+    "content/lessons/06-diagnosis.md",
+    "content/lessons/07-feedback.md",
+    "content/lessons/08-collaboration.md",
+    "content/lessons/09-erp-mcp.md",
+    "docs/CONTENT_WORKFLOW.md",
+    "docs/CURRICULUM_REVIEW_v1.16.0.md",
+    "docs/EDITORIAL_REVIEW_v1.15.1.json",
+    "docs/INTEGRATION_REVIEW.md",
+    "docs/RELEASE_v1.15.1.md",
+    "docs/RELEASE_v1.15.2.md",
+    "docs/RELEASE_v1.16.0.md",
+    "docs/validation/v1.15.1/preservation.json",
+    "docs/validation/v1.15.2/preservation.json",
+    "docs/validation/v1.16.0/content-audit.json",
+    "docs/validation/v1.16.0/preservation.json",
+    "index.html",
+    "package.json",
+    "site/app.js",
+    "site/refinements.css",
+    "tests/conversation-navigation.test.mjs",
+    "tests/conversations.test.mjs"
+  ],
+  "ignoredNewPackageLogs": 9,
+  "publication": "This record covers validation before commit/push. The actual commit and remote result are reported separately; GitHub Actions deployment is not claimed here."
+}
