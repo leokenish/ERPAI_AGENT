@@ -33,6 +33,16 @@ for(const lesson of catalog.lessons){
  const md=await readFile(path.join(root,'content',lesson.file),'utf8');
  const rendered=renderMarkdown(md);
  Object.assign(lesson,rendered,{search:md.replace(/[#*`>|]/g,' ')});
+ if(lesson.contextFile){
+  if(!/^lesson-contexts\/[a-z0-9-]+\.md$/.test(lesson.contextFile))throw Error('Invalid lesson context path');
+  const contextMD=await readFile(path.join(root,'content',lesson.contextFile),'utf8');
+  const context=renderMarkdown(contextMD,{headingPrefix:'context-'});
+  lesson.contextHtml=context.html;
+  lesson.toc=[...context.toc,...lesson.toc];
+  lesson.search=contextMD.replace(/[#*`>|]/g,' ')+'\n'+lesson.search;
+  await mkdir(path.join(out,'content','lesson-contexts'),{recursive:true});
+  await writeFile(path.join(out,'content',lesson.contextFile),contextMD);
+ }
  await mkdir(path.join(out,'content','lessons'),{recursive:true});
  await writeFile(path.join(out,'content',lesson.file),md);
 }

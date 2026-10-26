@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-27",
+  "release": "1.16.1",
+  "baseline": {
+    "commit": "a2f62f1e2f1db4da9a7dc1b508758d7ad0f907fc",
+    "branch": "main",
+    "remote": "https://github.com/leokenish/ERPAI_AGENT",
+    "upstream": "origin/main",
+    "initialWorkingTree": "clean",
+    "fetchedRemoteMatchesLocal": true
+  },
+  "application": {
+    "package": "KBS_ERP_AI_Agent_v1.16.1_Full.zip",
+    "manifestChangedEntries": 22,
+    "afterHashesVerified": 22,
+    "replaced": 9,
+    "addedIncludingIgnoredLogs": 13,
+    "deleted": 0,
+    "beforeHashesMatched": 8,
+    "merged": [
+      "docs/INTEGRATION_REVIEW.md: retained prior local v1.16.0 validation record and added incoming v1.16.1 entry"
+    ],
+    "unresolvedConflicts": [],
+    "ignoredNewLogs": 3,
+    "otherLocalFilesPreserved": true
+  },
+  "preservation": {
+    "lessonBodies": 16,
+    "sourceFiles": 1576,
+    "conversationFilesIncludingEditorial": 68,
+    "assetFiles": 36,
+    "catalogOnlyVersionAndSixContextFilesChanged": true,
+    "builtExistingLessonHtmlPreserved": true,
+    "originalTocIdsPreserved": true,
+    "builtConversationsAndKnowledgeMapPreserved": true,
+    "gitConfigUnchanged": true
+  },
+  "validation": {
+    "node": "v24.19.0",
+    "npm": "12.2.1 temporary CLI outside repository",
+    "commandsInOrder": [
+      "npm run build",
+      "npm run preview:file",
+      "npm test",
+      "npm start"
+    ],
+    "build": "passed",
+    "preview": "passed",
+    "tests": {
+      "passed": 90,
+      "failed": 0,
+      "skipped": 0
+    },
+    "browserChecks": [
+      "All 16 bodies preserved; six contexts after 4MD and before existing elements",
+      "Six cases: new and original TOC clicks, deep links and context search",
+      "WEBGUI and timeline gallery, features, icons, zoom and course navigation",
+      "783-document map selection, MD download and real conversation remain usable",
+      "Mobile 390px: all six contexts in light/dark without horizontal overflow",
+      "Offline file preview: six contexts, both anchor namespaces, search, gallery and downloads"
+    ],
+    "browserErrors": [],
+    "screenshotsVisuallyReviewed": 3,
+    "gitDiffCheck": "passed",
+    "generatedTrackedFiles": 0,
+    "filesAtOrAbove100MiB": []
+  },
+  "packageFilesForCommit": [
+    "README.md",
+    "content/catalog.json",
+    "content/lesson-contexts/11-worktime-agent.md",
+    "content/lesson-contexts/12-webgui.md",
+    "content/lesson-contexts/13-publishing.md",
+    "content/lesson-contexts/14-ess-attendance.md",
+    "content/lesson-contexts/15-weekly-timeline.md",
+    "content/lesson-contexts/16-smart-erp.md",
+    "docs/CASE_CONTEXT_v1.16.1.md",
+    "docs/CONTENT_WORKFLOW.md",
+    "docs/INTEGRATION_REVIEW.md",
+    "docs/RELEASE_v1.16.1.md",
+    "docs/validation/v1.16.1/context-audit.json",
+    "docs/validation/v1.16.1/preservation.json",
+    "index.html",
+    "package.json",
+    "scripts/build.mjs",
+    "site/app.js",
+    "tests/conversation-navigation.test.mjs"
+  ],
+  "publication": "Local validation record made before commit/push. The completion report records the actual commit and remote result; Actions deployment is not claimed."
+}

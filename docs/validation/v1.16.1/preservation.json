@@ -1,0 +1,15 @@
+{
+  "baseline": "v1.16.0",
+  "baselineZipSha256": "3ca6401343c812f2c4ff19862c778d070ed08aeba0e101714295d9e9da52c27f",
+  "preservedCounts": {
+    "sources": 1576,
+    "conversations": 68,
+    "allLessonBodies": 16,
+    "assets": 36,
+    "examples": 5,
+    "templates": 3
+  },
+  "AGENTS_preserved": true,
+  "catalogPreservedExceptVersionAndAddedContextFile": true,
+  "mismatches": []
+}

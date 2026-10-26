@@ -1,6 +1,6 @@
 {
   "title": "ERP AI 에이전트",
-  "version": "1.16.0",
+  "version": "1.16.1",
   "asOf": "2026-10-26",
   "groups": [
     "처음 이해하기",
@@ -238,7 +238,8 @@
           "title": "어떻게 이어갈 것인가",
           "text": "783개 MD의 고정 스냅샷과 관계 탐색을 기준으로 시작합니다. 담당자 정정→지식 갱신→회귀 사례 추가→다음 판단 확인의 순환을 마련하고, 스냅샷 이후 변경과 실제 답변 정확도는 추가 확인합니다."
         }
-      ]
+      ],
+      "contextFile": "lesson-contexts/11-worktime-agent.md"
     },
     {
       "id": "webgui",
@@ -353,7 +354,8 @@
             ]
           }
         ]
-      }
+      },
+      "contextFile": "lesson-contexts/12-webgui.md"
     },
     {
       "id": "publishing",
@@ -393,7 +395,8 @@
           "title": "어떻게 이어갈 것인가",
           "text": "요구사항을 카탈로그와 본문에 반영하고 빌드·링크·자료 무결성·화면을 확인한 뒤 변경 ZIP을 전달합니다. 사용자가 로컬 변경과 병합한 후 커밋·push하며, 배포물은 소스로부터 재생성합니다."
         }
-      ]
+      ],
+      "contextFile": "lesson-contexts/13-publishing.md"
     },
     {
       "id": "ess-attendance",
@@ -434,7 +437,8 @@
           "title": "어떻게 이어갈 것인가",
           "text": "화면 요구→R1 분리→저장 상태 추적→결재 경로 검토→회귀 시험 순으로 진행합니다. 특정 날짜 이동·반차 변경은 성공 보고가 있으며, 최종 SUBMIT_PRG01 적용 후 전체 재시험은 미확인입니다."
         }
-      ]
+      ],
+      "contextFile": "lesson-contexts/14-ess-attendance.md"
     },
     {
       "id": "weekly-timeline",
@@ -530,7 +534,8 @@
           }
         ],
         "icons": []
-      }
+      },
+      "contextFile": "lesson-contexts/15-weekly-timeline.md"
     },
     {
       "id": "smart-erp",
@@ -571,7 +576,8 @@
           "title": "어떻게 이어갈 것인가",
           "text": "시안 선택→전체 창 대응→국소 이미지 보정→글꼴 검토로 진행했습니다. 확보된 v9 ZIP은 불완전하므로 정상 패키지 확보와 실제 SAP 기능 확인이 다음 단계입니다."
         }
-      ]
+      ],
+      "contextFile": "lesson-contexts/16-smart-erp.md"
     }
   ],
   "sources": [

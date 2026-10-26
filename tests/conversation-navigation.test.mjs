@@ -22,6 +22,26 @@ function fixture(hash){
  return {context,elements,events,windowEvents,location,copied,presentationLifecycle,heroLifecycle};
 }
 function target(attribute,dataset){return {dataset,closest(){return this;},matches(selector){return selector===`[${attribute}]`;}};}
+test('활용사례의 새 맥락은 기존 요소 앞에 추가되고 기존 목차·검색·직접 이동을 유지한다',async()=>{
+ const f=fixture('#/learn/worktime-agent');await vm.runInContext(`(async()=>{${source}})()`,f.context);
+ for(const l of data.lessons){
+  f.location.hash='#/learn/'+l.id;f.windowEvents.hashchange();const html=f.elements.get('main').innerHTML;
+  assert.ok(html.includes(l.html),l.id+' 기존 본문');
+  if(l.number<11){assert.doesNotMatch(html,/class="prose case-context"/);continue;}
+  const start=html.indexOf('class="prose case-context"');assert.ok(start>=0);
+  assert.ok(html.indexOf('프로젝트의 네 가지 관점')<start);
+  assert.ok(html.indexOf('class="prose lesson-body"')>start);
+  if(l.showcase)assert.ok(html.indexOf('class="case-showcase"')>start);
+  if(l.id==='worktime-agent')assert.ok(html.indexOf('업무 지식의 전체 구조')>start);
+  const added=l.toc.filter(t=>t.id.startsWith('context-'));
+  assert.equal(added.length,4);assert.equal(new Set(l.toc.map(t=>t.id)).size,l.toc.length);
+  for(const t of l.toc){assert.ok(html.includes(`id="${t.id}"`));assert.ok(html.includes(`data-section="${t.id}"`));}
+ }
+ f.events.input({target:{id:'search-input',value:'원문에서 카드를 만들고',matches(){return false;}}});
+ assert.match(f.elements.get('search-results').innerHTML,/#\/learn\/weekly-timeline/);
+ let scrolled=false;f.context.document.getElementById('context-section-4').scrollIntoView=()=>{scrolled=true;};
+ f.location.hash='#/learn/weekly-timeline?section=context-section-4';f.windowEvents.hashchange();assert.equal(scrolled,true);
+});
 test('복사 버튼은 화면에 표시한 사용자 교육 문장과 AI 답변을 복사한다',async()=>{
  const f=fixture('#/conversations/erp-obsidian-knowledge-map/obs-e001');await vm.runInContext(`(async()=>{${source}})()`,f.context);
  const projectId='erp-obsidian-knowledge-map',chatCopy='obs-m001';
