@@ -1,4 +1,0 @@
-interface:
-  display_name: "ZHR5 근로시간 업무 질의"
-  short_description: "규정과 운영 이력 및 코드 근거를 구분하여 근로시간 질문에 답변"
-  default_prompt: "$zhr5-business-qa로 근로시간 질문을 근거와 함께 검토해줘."
