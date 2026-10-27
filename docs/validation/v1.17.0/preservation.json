@@ -1,0 +1,43 @@
+{
+  "baseline": "1.16.2",
+  "version": "1.17.0",
+  "changedExisting": [
+    "README.md",
+    "content/catalog.json",
+    "content/lessons/04-knowledge.md",
+    "content/lessons/05-maps.md",
+    "content/lessons/07-feedback.md",
+    "docs/CONTENT_WORKFLOW.md",
+    "docs/INTEGRATION_REVIEW.md",
+    "index.html",
+    "package.json",
+    "scripts/build.mjs",
+    "scripts/markdown.mjs",
+    "site/app.js",
+    "site/refinements.css",
+    "site/source-library.js"
+  ],
+  "deleted": [],
+  "unchangedCountsByRoot": {
+    ".gitattributes": 1,
+    ".github": 1,
+    ".gitignore": 1,
+    "AGENTS.md": 1,
+    "THIRD_PARTY_NOTICES.md": 1,
+    "assets": 36,
+    "content": 92,
+    "docs": 95,
+    "editorial-changes.json": 1,
+    "examples": 5,
+    "scripts": 13,
+    "site": 11,
+    "sources": 1576,
+    "tests": 15,
+    "vendor": 2
+  },
+  "unchangedOtherCourses": 13,
+  "unchangedCaseContexts": 6,
+  "unchangedConversationFiles": true,
+  "sourceMdDownloads": 867,
+  "worktimeSnapshotMd": 783
+}

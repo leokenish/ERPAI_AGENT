@@ -39,4 +39,6 @@
 
 [자료실](#/library/smart-erp)에 최신 intent·spec·plan·insight를 수록했다. 최신 insight는 업무 환경을 세심하게 가꾸는 가치와, 별도 개편이 조직에 필요한 이유가 충분히 입증됐는지를 나누어 살펴본다. 만드는 사람의 만족과 이용자의 경험이 같다고 가정하지 않는 학습 사례다.
 
-근거: 「ERP 개편 AI 추천 prompt」 공유 대화와 `KBS_ERP_Main_Portal_4MD_20261024.zip`. 실제 SAP 시험·운영 반영·최신 화면의 최종 사용자 수용은 미확인 상태다.
+## 근거 자료 확인
+
+- [스마트 ERP 메인화면 개편 자료확인](#/library/smart-erp)

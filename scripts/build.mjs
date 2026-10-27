@@ -3,6 +3,7 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {renderMarkdown} from './markdown.mjs';
+import {loadLessonTrees} from './lesson-trees.mjs';
 import {buildConversations} from './build-conversations.mjs';
 import {buildKnowledge} from './build-knowledge.mjs';
 import {buildCoreDocuments} from './build-core-documents.mjs';
@@ -13,6 +14,7 @@ await updateOliveFruits(root);
 const out=path.join(root,'dist.next');
 await rm(out,{recursive:true,force:true}); await mkdir(out,{recursive:true});
 const catalog=JSON.parse(await readFile(path.join(root,'content/catalog.json'),'utf8'));
+const lessonTrees=await loadLessonTrees(root,catalog.sources);
 // Move trusted SVG styles into the external stylesheet to preserve the CSP.
 let heroCSS='';
 async function loadHero(filename,rootId){
@@ -31,8 +33,9 @@ for(const lesson of catalog.lessons){
  if(ids.has(lesson.id))throw Error(`Duplicate lesson ${lesson.id}`); ids.add(lesson.id);
  if(!/^lessons\/[a-z0-9-]+\.md$/.test(lesson.file))throw Error('Invalid lesson path');
  const md=await readFile(path.join(root,'content',lesson.file),'utf8');
- const rendered=renderMarkdown(md);
+ const rendered=renderMarkdown(md,{renderDocumentTree:id=>lessonTrees.render(id)});
  Object.assign(lesson,rendered,{search:md.replace(/[#*`>|]/g,' ')});
+ for(const match of md.matchAll(/```document-tree\r?\n([^\n]+)\r?\n```/g))lesson.search+='\n'+lessonTrees.search(match[1]);
  if(lesson.contextFile){
   if(!/^lesson-contexts\/[a-z0-9-]+\.md$/.test(lesson.contextFile))throw Error('Invalid lesson context path');
   const contextMD=await readFile(path.join(root,'content',lesson.contextFile),'utf8');

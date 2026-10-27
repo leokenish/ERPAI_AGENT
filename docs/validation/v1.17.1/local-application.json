@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-28",
+  "release": "1.17.1",
+  "baseline": {
+    "version": "1.16.2",
+    "commit": "c3a4fdcf5f67daaac79c04e880393a3885a4fa4e",
+    "branch": "main",
+    "remote": "https://github.com/leokenish/ERPAI_AGENT",
+    "upstream": "origin/main",
+    "initialWorkingTree": "clean",
+    "fetchBeforeAndAfterValidation": "matched HEAD"
+  },
+  "application": {
+    "package": "KBS_ERP_AI_Agent_v1.17.1_Full.zip",
+    "packageSha256": "0777a0eb68bfdfc16d5e85925fd57029b799dac5dec61915be1dbfb59522d9f8",
+    "manifestBaseline": "1.17.0",
+    "manifestAfterHashesAndBytesVerified": 24,
+    "manifestBeforeHashesMatched": 13,
+    "fullPackageComparison": {
+      "differentOrAdded": 42,
+      "appliedIncludingIgnoredLogs": 41,
+      "deleted": 0,
+      "ignoredLogs": 6
+    },
+    "earlierReleaseIncluded": "v1.17.0: courses 05–07, trusted HTML document trees, exact MD path selection and four new tests",
+    "merges": [
+      "INTEGRATION_REVIEW: preserved all three existing local application records and merged incoming release sections",
+      "scripts/build-knowledge.mjs: retained the prior local missing-reference tooltip fix; incoming file would have reverted it",
+      "index.html: regenerated version token via build"
+    ],
+    "localAddition": "package.json preview is an alias for the existing preview:file generator, to support the exact command requested",
+    "unresolvedConflicts": [],
+    "otherUncommittedWork": []
+  },
+  "preservation": {
+    "outsideEvidenceUnchangedForOther13Courses": true,
+    "courses05To07MatchFullPackage": true,
+    "allCourseIdsTitlesOrderCaseContextsShowcasesAndProjectBriefsPreserved": true,
+    "sourcesDownloadsConversationsKnowledgeMapCoreDocumentsAndHeroBuiltDataUnchanged": true,
+    "gitConfigAGENTSGitHubLocalSettingsAndPriorReportsPreserved": true,
+    "evidenceLinks": 52,
+    "individualEvidenceLinks": 40,
+    "individualTreeAndBodyLinks": 61,
+    "sourceDownloads": 867,
+    "sourceFilesPreserved": 1576,
+    "conversationFilesPreserved": 68,
+    "assetFilesPreserved": 36,
+    "unchangedLocalFiles": 1845,
+    "conversationTotals": {
+      "projects": 9,
+      "messages": 1327,
+      "episodes": 147,
+      "verbatim": 1309,
+      "excerpt": 0,
+      "summary": 0,
+      "reconstructed": 0,
+      "unavailable": 18
+    },
+    "filesAtOrAbove100MiB": []
+  },
+  "validation": {
+    "node": "v24.19.0",
+    "npm": "12.2.1, temporary CLI outside repository",
+    "commandsInOrder": [
+      "npm run build",
+      "npm run preview",
+      "npm test",
+      "npm start"
+    ],
+    "build": "passed",
+    "preview": "passed",
+    "tests": {
+      "passed": 94,
+      "failed": 0,
+      "skipped": 0,
+      "existing90TestCodeUnchanged": true,
+      "newTestsFrom1170": 4
+    },
+    "browserChecks": [
+      "16 evidence sections contain only library links; all 52 links clicked; 40 individual paths select exactly one MD",
+      "Course 13 downloads all four portal MDs with original names and SHA-256",
+      "05–07 HTML trees, exact MD links, clear-search restoration to 787 files, TOC",
+      "Search indexes revised lessons and tree content",
+      "390px light/dark trees: visible content and no horizontal overflow",
+      "Offline preview: trees, individual MD selection and original downloads without network",
+      "No browser console errors or page exceptions"
+    ],
+    "clickedEvidenceLinks": 52,
+    "portalDownloadsCheckedByNameAndSha256": [
+      "insight.md",
+      "intent.md",
+      "plan.md",
+      "spec.md"
+    ],
+    "browserErrors": [],
+    "screenshotsVisuallyReviewed": 4,
+    "gitDiffCheck": "passed",
+    "generatedTrackedFiles": 0
+  },
+  "filesForCommit": [
+    "README.md",
+    "content/catalog.json",
+    "content/lesson-trees.json",
+    "content/lessons/01-overview.md",
+    "content/lessons/02-export.md",
+    "content/lessons/03-codex.md",
+    "content/lessons/03-workspace.md",
+    "content/lessons/04-knowledge.md",
+    "content/lessons/05-maps.md",
+    "content/lessons/06-diagnosis.md",
+    "content/lessons/07-feedback.md",
+    "content/lessons/08-collaboration.md",
+    "content/lessons/09-erp-mcp.md",
+    "content/lessons/10-webgui.md",
+    "content/lessons/11-worktime-agent.md",
+    "content/lessons/12-publishing.md",
+    "content/lessons/13-ess-attendance.md",
+    "content/lessons/14-weekly-timeline.md",
+    "content/lessons/15-smart-erp.md",
+    "docs/CONTENT_WORKFLOW.md",
+    "docs/INTEGRATION_REVIEW.md",
+    "docs/RELEASE_v1.17.0.md",
+    "docs/RELEASE_v1.17.1.md",
+    "docs/validation/v1.17.0/preservation.json",
+    "docs/validation/v1.17.0/ui-review.json",
+    "docs/validation/v1.17.1/references-audit.json",
+    "index.html",
+    "package.json",
+    "scripts/build.mjs",
+    "scripts/lesson-trees.mjs",
+    "scripts/markdown.mjs",
+    "site/app.js",
+    "site/refinements.css",
+    "site/source-library.js",
+    "tests/lesson-documents.test.mjs",
+    "docs/validation/v1.17.1/local-application.json"
+  ],
+  "publication": "Recorded before the user-authorized normal commit and push to the existing origin/main. Actual commit and push result are reported separately; Actions deployment is not claimed."
+}

@@ -87,9 +87,6 @@ AI가 규정을 찾아 설명하는 것과 실제 ERP에 적용해도 되는지�
 
 다음 [02. ERP 소스 추출하기](#/learn/export)에서 AI가 읽을 실제 자료를 준비한다. 활용 모습부터 보고 싶다면 [11. 근로시간 AI 에이전트 구축](#/learn/worktime-agent)이나 [12. ERP WEBGUI 개편](#/learn/webgui)을 먼저 읽어도 좋다.
 
-## 근거와 이어 읽기
+## 근거 자료 확인
 
-- 최초 목표와 범위: 소스 추출·진단 프로젝트 `SHARE-001`, `SHARE-081–082`.
-- 코드에 업무 지식을 더한 이유: 같은 프로젝트 `E06`, `PACKAGE_AGENT_BUILD_GUIDE.md`.
-- IAM 사례: `SRC-11.txt` 8–34행. [05. 업무 맥락 만들기](#/learn/knowledge)에 당시 발화와 해석을 수록했다.
-- [프로젝트 원천 자료](#/library/export-diag) · [전체 구성도](#/map)
+- [소스 추출 및 진단, 업무 에이전트 자료확인](#/library/export-diag)

@@ -75,12 +75,12 @@ sources 원본은 보존하고 build와 test를 실행해 결과를 알려줘.
 실제 운영 확인 없이 상태를 검증 완료로 올리지 마.
 ```
 
-## 근거
+## 근거 자료 확인
 
-- GitHub·정적 배포·맥 Node.js 운영 방향
-- `README.md`, `docs/MAC_SETUP.md`, `docs/CONTENT_WORKFLOW.md`
-- 운영 맥·KBS 도메인 연결: 현장 검증 필요
-
+- [ERP AI 에이전트 포털 구축 · intent.md](#/library/core-progress?file=intent.md)
+- [ERP AI 에이전트 포털 구축 · spec.md](#/library/core-progress?file=spec.md)
+- [ERP AI 에이전트 포털 구축 · plan.md](#/library/core-progress?file=plan.md)
+- [ERP AI 에이전트 포털 구축 · insight.md](#/library/core-progress?file=insight.md)
 
 ## 근로시간 에이전트의 MD를 갱신할 때
 

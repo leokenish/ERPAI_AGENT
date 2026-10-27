@@ -7,7 +7,7 @@ export function safeURL(value) {
   if (/^[\w./%-]+$/.test(s) && !s.split('/').includes('..') && !s.startsWith('/')) return s;
   return '#';
 }
-export function renderMarkdown(markdown, {headingPrefix='',keepTitle=false,headingOffset=0,resolveURL}={}) {
+export function renderMarkdown(markdown, {headingPrefix='',keepTitle=false,headingOffset=0,resolveURL,renderDocumentTree}={}) {
   const toc = []; let count = 0;
   const parser = new Marked({gfm:true,breaks:false});
   parser.use({renderer:{
@@ -29,7 +29,7 @@ export function renderMarkdown(markdown, {headingPrefix='',keepTitle=false,headi
       if(!url.startsWith('assets/'))return `<span>${escapeHTML(text)}</span>`;
       return `<figure><button class="image-zoom" data-image="${escapeHTML(url)}" aria-label="${escapeHTML(text)} 크게 보기"><img src="${escapeHTML(url)}" alt="${escapeHTML(text)}" loading="lazy"></button><figcaption>${escapeHTML(text)}</figcaption></figure>`;
     },
-    code({text,lang}) {return `<div class="codeblock"><div class="codebar"><span>${escapeHTML(lang||'예시')}</span><button type="button" data-copy>복사</button></div><pre><code>${escapeHTML(text)}</code></pre></div>`;}
+    code({text,lang}) {if(lang==='document-tree'&&renderDocumentTree)return renderDocumentTree(text);return `<div class="codeblock"><div class="codebar"><span>${escapeHTML(lang||'예시')}</span><button type="button" data-copy>복사</button></div><pre><code>${escapeHTML(text)}</code></pre></div>`;}
   }});
   const html=parser.parse(keepTitle?markdown:markdown.replace(/^# .+\r?\n/,''));
   return {html:html.replaceAll('<table>','<div class="table-wrap" tabindex="0"><table>').replaceAll('</table>','</table></div>'),toc};

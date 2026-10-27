@@ -30,7 +30,54 @@ AI의 답변이 그럴듯해도 적용일을 놓치거나 사용자 설정을 �
 
 예를 들어 업무 질문 스킬은 **대상·시점 확인 → INDEX → 규정과 후속 정정 → 필요한 원문·코드 → 근거와 미확인 사항을 포함한 답변** 순서로 작동하도록 구성한다. 평가용 기대 답안을 일반 업무 답변의 근거로 사용하는 방식은 피한다.
 
-## 4. 어떻게 반복하는가: 피드백 한 건을 끝까지 남기기
+## 4. 어떻게 만드는가: 정정 내용을 다음 답변에 남기는 파일들
+
+처음부터 큰 자동 평가 시스템을 만들 필요는 없다. ZHR5는 업무 답변이 잘못됐을 때 지식을 고치는 절차를 정하고, 실제 정정 사례를 MD로 남겼다. 여기에 다시 물어볼 질문과 검사 결과를 연결해 하네스의 기본 흐름을 만들었다. 하네스는 쉽게 말해 **답변을 다시 확인하는 작업대**다.
+
+### 1단계 · 공통 처리 방법을 정하고 AGENTS에서 연결하기
+
+`docs/BUSINESS_FEEDBACK_POLICY.md`에는 언제 피드백을 남길지, 어떤 파일을 고칠지, 결과를 어떻게 확인할지 적는다. `AGENTS.md`에는 “사용자가 업무 답변을 정정하면 이 정책을 읽고 적용한다”는 연결을 둔다. 규칙을 길게 중복해서 복사할 필요는 없다.
+
+### 2단계 · 실제 오류 한 건을 harness/feedback에 남기기
+
+`harness/feedback/FB-날짜-번호.md`를 만들고 원래 질문·당시 답변·담당자 정정·근거·수정 파일·재확인 결과를 적는다. 이 프로젝트에는 이런 피드백 MD가 네 개 보존돼 있다. 파일명만 만들고 ‘완료’라고 쓰는 대신 무엇을 왜 고쳤는지 다음 사람이 이해할 수 있어야 한다.
+
+이름이 비슷한 `knowledge/feedback/`는 과거 사용자 협의 자료를 업무별로 정리한 곳이다. **업무에서 오간 협의는 knowledge/feedback, AI 답변을 바로잡은 이력은 harness/feedback**으로 나눈다.
+
+### 3단계 · 틀린 원인에 맞는 문서와 회귀 질문 보완하기
+
+입력 방법을 잘못 알았다면 업무 설명을 고치고, 맞는 자료를 못 찾았다면 INDEX와 스킬의 탐색 순서를 고친다. 모든 피드백마다 세 스킬 전체를 수정하지는 않는다. 이후 `tests/business-qa.md`에 원래 질문과 조건을 바꾼 질문, 꼭 들어가야 할 답변 요소와 피해야 할 단정을 적는다.
+
+| 실제 문서 | 언제 만들거나 고치는가 | 남기는 내용 |
+|---|---|---|
+| `docs/BUSINESS_FEEDBACK_POLICY.md` | 피드백 처리 방식을 처음 정하거나 절차를 바꿀 때 | 기록·정정·재검증의 공통 순서 |
+| `harness/feedback/FB-…md` | 실제 답변에 정정이 생겼을 때 | 질문·오답·정정 근거·수정 경로·결과 |
+| `knowledge/…md`·`knowledge/INDEX.md` | 설명이나 찾아가는 길이 잘못됐을 때 | 올바른 조건과 출처, 문서 연결 |
+| `.agents/skills/…/SKILL.md` | 반복 오류의 원인이 읽는 절차에 있을 때 | 필요한 확인 단계와 탐색 순서 |
+| `tests/business-qa.md` | 같은 문제를 다시 확인할 때 | 질문·필수 답변 요소·금지 주장·관련 사례 |
+| `docs/VALIDATION.md` | 문서나 답변을 실제로 검사한 뒤 | 어떤 검사를 누가 했고 무엇이 남았는지 |
+
+```document-tree
+feedback-files
+```
+
+트리의 연결은 피드백을 처리하며 읽고 갱신하는 관계다. 현재 보존 자료에서 하네스 폴더의 실물 MD는 피드백 네 건이다. 정책에 적힌 `harness/evals/cases/`, `rubrics/`, Python 검사기는 사용할 수 있는 확장 경로이며, 이 묶음에 모두 구현돼 있다는 뜻은 아니다. 실제 회귀 기준은 기존 `tests/business-qa.md`에 연결한다.
+
+### 4단계 · Codex에 정정과 재확인을 함께 요청하기
+
+다음은 실제 정책과 피드백 파일을 바탕으로 만든 요청 예시다. 자신의 질문과 정정 근거를 넣어 사용한다.
+
+```text
+방금 답변은 화면 입력 방법을 확인하기 전에 코드 결함으로 판단했습니다.
+담당자가 확인한 입력 기준과 기존 협의 자료를 다시 대조해 주세요.
+docs/BUSINESS_FEEDBACK_POLICY.md에 따라 harness/feedback에 이번 일을 기록해 주세요.
+관련 업무 MD와 INDEX를 고치고, 검색 절차에 문제가 있었다면 해당 SKILL만 보완해 주세요.
+tests/business-qa.md에는 원래 질문과 조건을 바꾼 질문을 연결해 주세요.
+다시 답한 결과를 근거와 대조하고, 실제로 한 검사와 못 한 검사를 따로 기록해 주세요.
+추출 원본과 SAP 코드는 이번 업무 지식 정정에서 수정하지 마세요.
+```
+
+### 피드백 한 건의 확인 순서
 
 1. 질문과 당시 AI 답변, 대상·기간·입력 조건을 기록한다.
 2. 담당자 정정의 원문과 근거를 확인한다. 근거가 충돌하면 확정하지 않고 확인할 사람·자료를 적는다.
@@ -52,6 +99,17 @@ AI의 답변이 그럴듯해도 적용일을 놓치거나 사용자 설정을 �
 
 ### 5-1. 0원이 나온 반차 사례에서 코드 결함 판단을 철회했다
 
+다음 문답은 실제 피드백을 읽기 쉽게 재구성했다.
+
+**사용자 질문 ·** “오전 반차 후 18~23시를 입력했는데 실비가 0원이에요. 계산 오류인가요?”
+
+**당시 AI 판단 ·** 7시간 미달 시 0원을 표시하는 조건을 보고, 반차 예외가 빠졌다고 판단했다.
+
+**담당자 정정 ·** “이 사례는 원래 출근시각인 14시부터 전체 구간을 입력해야 합니다.”
+
+**남긴 파일 ·** `harness/feedback/FB-20261001-001.md`에 오판과 정정을 기록하고, `knowledge/processes/overtime-start-time.md`와 INDEX·FAQ를 보완했다. `tests/business-qa.md`의 Q37·Q38에는 같은 입력 오류와 조건 차이를 다시 확인하도록 남겼다.
+
+
 실제 피드백 `FB-20261001-001`에 남은 조건은 원래 14–22시 시차근무, 오전반차 승인, 실제 근무 18–23시, 휴게 19:30–20:00이다. 화면에 18–23시를 입력하자 금액이 0원으로 표시됐다.
 
 AI는 7시간에 미달하면 0원을 표시하는 코드 분기를 찾았다. 이를 보고 반차 예외가 빠진 결함이라고 추정했다. 하지만 담당자는 이 근무유형이 **원래 출근시각인 14시부터 전체 구간을 입력하고 반차를 별도로 반영하는 방식**이라고 정정했다.
@@ -59,6 +117,11 @@ AI는 7시간에 미달하면 0원을 표시하는 코드 분기를 찾았다. �
 코드 조건을 찾기 전에 화면의 입력 규칙을 확인했어야 했다. 결함 판단을 철회한 뒤 입력 안내·INDEX·FAQ를 보완하고 Q37·Q38을 회귀 질문으로 남겼다. 이 답변 정정 과정에서 ABAP 원본은 바꾸지 않았다. 입력을 수정한 뒤의 최종 지급액과 SAP 실행 결과는 아직 확보하지 못했다.
 
 ### 5-2. “왜 다시 되돌렸는가”도 지식이다
+
+**확인할 질문 ·** “누적시간에 가산시간을 다시 포함한 이유도 다음 답변에서 찾을 수 있나요?”
+
+이 사례에서는 코드 분석의 결론을 뒤집은 것이 아니라, 결정 이유가 빠른 질의응답과 용어집에 충분히 연결되지 않은 문제를 보완했다. `harness/feedback/FB-20261008-001.md`에 이유를 남기고, `knowledge/processes/selective-cumulative-display.md`·`knowledge/BUSINESS_GLOSSARY.md`·관련 지도와 Q39~Q41을 연결했다.
+
 
 `FB-20261008-001`은 누적근로시간 표시를 바꾼 이유를 보완한 사례다. 코드 주석과 협의 기록에 따르면 2024-10-15에는 대휴가 발생한 것으로 오해하지 않도록 가산시간을 표시에서 제외했다. 그러나 소정시간을 채우지 못했다고 오해하는 문제가 더 크다고 판단해, 10-28에는 가산시간을 포함하는 표시로 되돌렸다.
 
@@ -85,8 +148,18 @@ AI는 7시간에 미달하면 0원을 표시하는 코드 분기를 찾았다. �
 
 프로젝트의 피드백 정책은 한 건당 최대 3회의 수정·재검증을 기본으로 한다. 같은 문제가 계속되거나 근거가 부족하면 필요한 자료와 판단 지점을 남겨 담당자가 확인한다. 코드 변경이 필요한 것으로 확인됐다면 다음 [08. 코드 검증 및 적용](#/learn/diagnosis)에서 변경 전후와 실제 시스템 결과를 검토한다.
 
-## 근거와 이어 읽기
+## 근거 자료 확인
 
-- 업무 답변의 실패 기준과 피드백 정책: 소스 추출·진단 대화 `SHARE-119–125`, 에피소드 `E07`.
-- 실제 후속 기록: 근로시간 스냅샷 `harness/feedback/FB-20261001-001.md`, `FB-20261008-001.md`, `tests/business-qa.md`.
-- [소스 추출 및 진단, 업무 에이전트 자료확인](#/library/export-diag) · [근로시간 AI 에이전트 자료확인](#/library/worktime-agent)
+- [AGENTS.md](#/library/worktime-agent?file=AGENTS.md)
+- [docs/BUSINESS_FEEDBACK_POLICY.md](#/library/worktime-agent?file=docs%2FBUSINESS_FEEDBACK_POLICY.md)
+- [.agents/skills/zhr5-business-qa/SKILL.md](#/library/worktime-agent?file=.agents%2Fskills%2Fzhr5-business-qa%2FSKILL.md)
+- [.agents/skills/zhr5-knowledge-curation/SKILL.md](#/library/worktime-agent?file=.agents%2Fskills%2Fzhr5-knowledge-curation%2FSKILL.md)
+- [.agents/skills/zhr5-change-impact/SKILL.md](#/library/worktime-agent?file=.agents%2Fskills%2Fzhr5-change-impact%2FSKILL.md)
+- [harness/feedback/FB-20260923-001.md](#/library/worktime-agent?file=harness%2Ffeedback%2FFB-20260923-001.md)
+- [harness/feedback/FB-20260923-002.md](#/library/worktime-agent?file=harness%2Ffeedback%2FFB-20260923-002.md)
+- [harness/feedback/FB-20261001-001.md](#/library/worktime-agent?file=harness%2Ffeedback%2FFB-20261001-001.md)
+- [harness/feedback/FB-20261008-001.md](#/library/worktime-agent?file=harness%2Ffeedback%2FFB-20261008-001.md)
+- [knowledge/feedback/INDEX.md](#/library/worktime-agent?file=knowledge%2Ffeedback%2FINDEX.md)
+- [knowledge/processes/overtime-start-time.md](#/library/worktime-agent?file=knowledge%2Fprocesses%2Fovertime-start-time.md)
+- [tests/business-qa.md](#/library/worktime-agent?file=tests%2Fbusiness-qa.md)
+- [docs/VALIDATION.md](#/library/worktime-agent?file=docs%2FVALIDATION.md)

@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-27",
+  "desktop": {
+    "viewportWidth": 1363,
+    "contentWidth": 1348,
+    "courses": [
+      "knowledge",
+      "maps",
+      "feedback"
+    ],
+    "horizontalOverflow": false,
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "boldPhrases": true,
+    "toc": true
+  },
+  "mobileQaFrame": {
+    "width": 390,
+    "clientWidth": 375,
+    "scrollWidth": 375,
+    "courses": [
+      "knowledge",
+      "maps",
+      "feedback"
+    ],
+    "maxNodeRight": 338.40625,
+    "actualPhone": false
+  },
+  "resourceNavigation": {
+    "testedFile": ".agents/skills/zhr5-business-qa/SKILL.md",
+    "selectedCount": 1,
+    "clearSearchCount": 787
+  },
+  "limits": [
+    "Actual user PC and mobile device not tested",
+    "No GitHub push or deployment",
+    "No SAP execution"
+  ]
+}

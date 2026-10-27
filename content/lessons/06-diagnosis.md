@@ -127,9 +127,6 @@ BASIS 700에서 최신 문법·API를 쓸 수 있다고 가정한 것이 여러 
 
 검증 결과가 업무적으로 틀렸다면 [07. 업무 스킬 및 회귀](#/learn/feedback)에 이유를 남겨 같은 판단을 반복하지 않게 한다. 다른 담당 업무의 근거가 필요한 경우는 [09. 에이전트간 협업(계획 중)](#/learn/collaboration)으로 이어진다.
 
-## 근거와 이어 읽기
+## 근거 자료 확인
 
-- 읽기 전용으로 범위를 정한 대화: 소스 추출·진단 프로젝트 `E10`, `E16`.
-- 선택 반영과 SO2 XML 시행착오: `E20-webapply-review`, `E24-inactive-scope-cts`, `E26-so2-layout-evidence`.
-- [BSP 활성화 확인과 다음 범위](#/conversations/kbs-erp-export-diag-agents/E28-confirmed-bsp-next-scope) · [최신 한 앱 도구](#/conversations/kbs-erp-export-diag-agents/E29-single-app-zip)
-- 실제 DIAG 0.4.5 캡처 2장과 업로드 XLSX의 집계는 기존 자료를 유지했다. 원본은 자료실과 저장소 `sources/`에 보존한다.
+- [소스 추출 및 진단, 업무 에이전트 자료확인](#/library/export-diag)

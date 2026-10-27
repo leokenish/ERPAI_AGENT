@@ -159,8 +159,6 @@ npm run preview:file
 
 막혔을 때는 작업 경로 → 적용 지침 → 근거 자료 → 변경 차이 → 실행 결과 순서로 확인한다. 다음 [05. 업무 맥락 만들기](#/learn/knowledge)에서는 AI가 업무의 이유를 읽을 수 있도록 실제 사용자 대화를 정리한다.
 
-## 근거와 이어 읽기
+## 근거 자료 확인
 
-- 프로젝트 선택과 자료 구성: 소스 추출·진단 대화 `E05–E07`, `PACKAGE_AGENT_BUILD_GUIDE.md`.
-- [공식 데스크톱 앱](https://learn.chatgpt.com/docs/app) · [프로젝트와 폴더](https://learn.chatgpt.com/docs/projects) · [AGENTS.md 지침](https://learn.chatgpt.com/docs/agent-configuration/agents-md)
-- 공식 안내 확인일: 2026-10-26. 이 안내는 사용자의 PC에서 설치를 대신 실행한 기록이 아니다.
+- [소스 추출 및 진단, 업무 에이전트 자료확인](#/library/export-diag)

@@ -1,0 +1,399 @@
+{
+  "version": "1.17.1",
+  "baseline": "1.17.0",
+  "courses": [
+    {
+      "number": "01",
+      "id": "overview",
+      "referencesOnlyLinks": true,
+      "otherContentPreserved": true,
+      "links": [
+        {
+          "label": "소스 추출 및 진단, 업무 에이전트 자료확인",
+          "target": "#/library/export-diag",
+          "matchingDocuments": 24
+        }
+      ]
+    },
+    {
+      "number": "02",
+      "id": "export",
+      "referencesOnlyLinks": true,
+      "otherContentPreserved": true,
+      "links": [
+        {
+          "label": "소스 추출 및 진단, 업무 에이전트 자료확인",
+          "target": "#/library/export-diag",
+          "matchingDocuments": 24
+        }
+      ]
+    },
+    {
+      "number": "03",
+      "id": "workspace",
+      "referencesOnlyLinks": true,
+      "otherContentPreserved": true,
+      "links": [
+        {
+          "label": "소스 추출 및 진단, 업무 에이전트 자료확인",
+          "target": "#/library/export-diag",
+          "matchingDocuments": 24
+        }
+      ]
+    },
+    {
+      "number": "04",
+      "id": "codex",
+      "referencesOnlyLinks": true,
+      "otherContentPreserved": true,
+      "links": [
+        {
+          "label": "소스 추출 및 진단, 업무 에이전트 자료확인",
+          "target": "#/library/export-diag",
+          "matchingDocuments": 24
+        }
+      ]
+    },
+    {
+      "number": "05",
+      "id": "knowledge",
+      "referencesOnlyLinks": true,
+      "otherContentPreserved": true,
+      "links": [
+        {
+          "label": "README.md",
+          "target": "#/library/worktime-agent?file=README.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "AGENTS.md",
+          "target": "#/library/worktime-agent?file=AGENTS.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": ".agents/skills/zhr5-business-qa/SKILL.md",
+          "target": "#/library/worktime-agent?file=.agents%2Fskills%2Fzhr5-business-qa%2FSKILL.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": ".agents/skills/zhr5-knowledge-curation/SKILL.md",
+          "target": "#/library/worktime-agent?file=.agents%2Fskills%2Fzhr5-knowledge-curation%2FSKILL.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": ".agents/skills/zhr5-change-impact/SKILL.md",
+          "target": "#/library/worktime-agent?file=.agents%2Fskills%2Fzhr5-change-impact%2FSKILL.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "knowledge/INDEX.md",
+          "target": "#/library/worktime-agent?file=knowledge%2FINDEX.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "knowledge/hr/overview.md",
+          "target": "#/library/worktime-agent?file=knowledge%2Fhr%2Foverview.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "knowledge/hr/flows.md",
+          "target": "#/library/worktime-agent?file=knowledge%2Fhr%2Fflows.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "docs/PACKAGE_AGENT_BUILD_GUIDE.md",
+          "target": "#/library/worktime-agent?file=docs%2FPACKAGE_AGENT_BUILD_GUIDE.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "docs/EXPORT_GUIDE.md",
+          "target": "#/library/worktime-agent?file=docs%2FEXPORT_GUIDE.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "knowledge/processes/overtime-start-time.md",
+          "target": "#/library/worktime-agent?file=knowledge%2Fprocesses%2Fovertime-start-time.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "knowledge/processes/selective-cumulative-display.md",
+          "target": "#/library/worktime-agent?file=knowledge%2Fprocesses%2Fselective-cumulative-display.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "knowledge/policies/overtime-rate-20260901.md",
+          "target": "#/library/worktime-agent?file=knowledge%2Fpolicies%2Fovertime-rate-20260901.md",
+          "matchingDocuments": 1
+        }
+      ]
+    },
+    {
+      "number": "06",
+      "id": "maps",
+      "referencesOnlyLinks": true,
+      "otherContentPreserved": true,
+      "links": [
+        {
+          "label": "maps/DOCUMENT_INDEX.md",
+          "target": "#/library/worktime-agent?file=maps%2FDOCUMENT_INDEX.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "maps/INDEX.md",
+          "target": "#/library/worktime-agent?file=maps%2FINDEX.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "maps/FILE_SURVEY.md",
+          "target": "#/library/worktime-agent?file=maps%2FFILE_SURVEY.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "maps/topics/rates.md",
+          "target": "#/library/worktime-agent?file=maps%2Ftopics%2Frates.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "maps/topics/selective.md",
+          "target": "#/library/worktime-agent?file=maps%2Ftopics%2Fselective.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "maps/sources/INDEX.md",
+          "target": "#/library/worktime-agent?file=maps%2Fsources%2FINDEX.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "maps/sources/ZHR_52TM_GET_PERSONNEL_DATA_N.md",
+          "target": "#/library/worktime-agent?file=maps%2Fsources%2FZHR_52TM_GET_PERSONNEL_DATA_N.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "maps/sources/ZHR_52TM_CALC_NORM_OT_PAY.md",
+          "target": "#/library/worktime-agent?file=maps%2Fsources%2FZHR_52TM_CALC_NORM_OT_PAY.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "maps/verification.md",
+          "target": "#/library/worktime-agent?file=maps%2Fverification.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "knowledge/processes/selective-cumulative-display.md",
+          "target": "#/library/worktime-agent?file=knowledge%2Fprocesses%2Fselective-cumulative-display.md",
+          "matchingDocuments": 1
+        }
+      ]
+    },
+    {
+      "number": "07",
+      "id": "feedback",
+      "referencesOnlyLinks": true,
+      "otherContentPreserved": true,
+      "links": [
+        {
+          "label": "AGENTS.md",
+          "target": "#/library/worktime-agent?file=AGENTS.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "docs/BUSINESS_FEEDBACK_POLICY.md",
+          "target": "#/library/worktime-agent?file=docs%2FBUSINESS_FEEDBACK_POLICY.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": ".agents/skills/zhr5-business-qa/SKILL.md",
+          "target": "#/library/worktime-agent?file=.agents%2Fskills%2Fzhr5-business-qa%2FSKILL.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": ".agents/skills/zhr5-knowledge-curation/SKILL.md",
+          "target": "#/library/worktime-agent?file=.agents%2Fskills%2Fzhr5-knowledge-curation%2FSKILL.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": ".agents/skills/zhr5-change-impact/SKILL.md",
+          "target": "#/library/worktime-agent?file=.agents%2Fskills%2Fzhr5-change-impact%2FSKILL.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "harness/feedback/FB-20260923-001.md",
+          "target": "#/library/worktime-agent?file=harness%2Ffeedback%2FFB-20260923-001.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "harness/feedback/FB-20260923-002.md",
+          "target": "#/library/worktime-agent?file=harness%2Ffeedback%2FFB-20260923-002.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "harness/feedback/FB-20261001-001.md",
+          "target": "#/library/worktime-agent?file=harness%2Ffeedback%2FFB-20261001-001.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "harness/feedback/FB-20261008-001.md",
+          "target": "#/library/worktime-agent?file=harness%2Ffeedback%2FFB-20261008-001.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "knowledge/feedback/INDEX.md",
+          "target": "#/library/worktime-agent?file=knowledge%2Ffeedback%2FINDEX.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "knowledge/processes/overtime-start-time.md",
+          "target": "#/library/worktime-agent?file=knowledge%2Fprocesses%2Fovertime-start-time.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "tests/business-qa.md",
+          "target": "#/library/worktime-agent?file=tests%2Fbusiness-qa.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "docs/VALIDATION.md",
+          "target": "#/library/worktime-agent?file=docs%2FVALIDATION.md",
+          "matchingDocuments": 1
+        }
+      ]
+    },
+    {
+      "number": "08",
+      "id": "diagnosis",
+      "referencesOnlyLinks": true,
+      "otherContentPreserved": true,
+      "links": [
+        {
+          "label": "소스 추출 및 진단, 업무 에이전트 자료확인",
+          "target": "#/library/export-diag",
+          "matchingDocuments": 24
+        }
+      ]
+    },
+    {
+      "number": "09",
+      "id": "collaboration",
+      "referencesOnlyLinks": true,
+      "otherContentPreserved": true,
+      "links": [
+        {
+          "label": "에이전트 협업 자료확인",
+          "target": "#/library/agent-collaboration",
+          "matchingDocuments": 6
+        }
+      ]
+    },
+    {
+      "number": "10",
+      "id": "erp-mcp",
+      "referencesOnlyLinks": true,
+      "otherContentPreserved": true,
+      "links": [
+        {
+          "label": "ERP 데이터 연동 및 활용 자료확인",
+          "target": "#/library/erp-remote",
+          "matchingDocuments": 6
+        }
+      ]
+    },
+    {
+      "number": "11",
+      "id": "worktime-agent",
+      "referencesOnlyLinks": true,
+      "otherContentPreserved": true,
+      "links": [
+        {
+          "label": "근로시간 AI 에이전트 자료확인",
+          "target": "#/library/worktime-agent",
+          "matchingDocuments": 787
+        }
+      ]
+    },
+    {
+      "number": "12",
+      "id": "webgui",
+      "referencesOnlyLinks": true,
+      "otherContentPreserved": true,
+      "links": [
+        {
+          "label": "ERP WEBGUI 개편 자료확인",
+          "target": "#/library/webgui",
+          "matchingDocuments": 15
+        }
+      ]
+    },
+    {
+      "number": "13",
+      "id": "publishing",
+      "referencesOnlyLinks": true,
+      "otherContentPreserved": true,
+      "links": [
+        {
+          "label": "ERP AI 에이전트 포털 구축 · intent.md",
+          "target": "#/library/core-progress?file=intent.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "ERP AI 에이전트 포털 구축 · spec.md",
+          "target": "#/library/core-progress?file=spec.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "ERP AI 에이전트 포털 구축 · plan.md",
+          "target": "#/library/core-progress?file=plan.md",
+          "matchingDocuments": 1
+        },
+        {
+          "label": "ERP AI 에이전트 포털 구축 · insight.md",
+          "target": "#/library/core-progress?file=insight.md",
+          "matchingDocuments": 1
+        }
+      ]
+    },
+    {
+      "number": "14",
+      "id": "ess-attendance",
+      "referencesOnlyLinks": true,
+      "otherContentPreserved": true,
+      "links": [
+        {
+          "label": "ESS 근태시스템 개편 자료확인",
+          "target": "#/library/ess-attendance",
+          "matchingDocuments": 9
+        }
+      ]
+    },
+    {
+      "number": "15",
+      "id": "weekly-timeline",
+      "referencesOnlyLinks": true,
+      "otherContentPreserved": true,
+      "links": [
+        {
+          "label": "업무일지 타임라인 개발 자료확인",
+          "target": "#/library/weekly-timeline",
+          "matchingDocuments": 4
+        }
+      ]
+    },
+    {
+      "number": "16",
+      "id": "smart-erp",
+      "referencesOnlyLinks": true,
+      "otherContentPreserved": true,
+      "links": [
+        {
+          "label": "스마트 ERP 메인화면 개편 자료확인",
+          "target": "#/library/smart-erp",
+          "matchingDocuments": 4
+        }
+      ]
+    }
+  ],
+  "protectedFilesUnchanged": 1732,
+  "deletions": 0,
+  "courseBodiesOutsideReferencesPreserved": 16,
+  "existing050607ByteIdentical": true,
+  "allLinksResolve": true
+}

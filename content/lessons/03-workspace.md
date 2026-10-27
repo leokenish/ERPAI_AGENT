@@ -203,9 +203,6 @@ GitHub Actions는 Push 때 문서 링크 검사나 파일 묶음 생성 같은 �
 
 직접 연결을 다시 추진하려면 Basis 담당자와 TLS 설정·패치·접근 경로를 확인하거나 사내 중계를 검토해야 한다. 현재 학습에서는 로컬 전달 방식을 기준으로 진행한다. 다음 [04. 로컬 에이전트 구성](#/learn/codex)에서 방금 Clone한 같은 폴더를 연다.
 
-## 근거와 이어 읽기
+## 근거 자료 확인
 
-- 직접 연결 제안·오류·보류: 소스 추출·진단 대화 `SHARE-127–139`, 에피소드 `E08`.
-- Publish·Clone과 업무 에이전트: `SHARE-093–100`, 에피소드 `E05`.
-- [VS Code 소스 제어](https://code.visualstudio.com/docs/sourcecontrol/overview) · [첫 Commit](https://code.visualstudio.com/docs/sourcecontrol/quickstart) · [Git pull](https://git-scm.com/docs/git-pull)
-- 공식 설치·Git 안내 확인일: 2026-10-26. 실제 메뉴는 사용 중인 버전·언어에 따라 달라질 수 있다.
+- [소스 추출 및 진단, 업무 에이전트 자료확인](#/library/export-diag)

@@ -184,6 +184,7 @@ function route(){
  switch(parts[0]){case 'home':html=home();break;case 'courses':html=courses();break;case 'learn':html=lessonPage(parts[1]);break;case 'map':html=mapPage(parts[1]);break;case 'conversations':html=conversationsPage(parts[1]);break;case 'library':html=libraryPage(parts[1]);break;default:html=notFound();}
  $('#main').innerHTML=html;
  hydratePreviewAssets($('#main'));
+ if(parts[0]==='library'&&params.has('file')){const root=$('[data-source-documents]');if(root){const file=params.get('file');root.querySelector('[data-source-search]').value=file;filterSourceDocuments(root,file,{exactPath:true});}}
  if(parts[0]==='learn'&&parts[1]==='worktime-agent')knowledgeCleanup=mountKnowledge($('[data-knowledge]'),data.worktimeKnowledge,{docId:params.get('doc'),openDocument:params.get('read')==='1',hydrate:hydratePreviewAssets});
  if(parts[0]==='home')heroCleanup=mountHeroMotion($('.hero'));
  document.title=(parts[0]==='learn'?(data.lessons.find(l=>l.id===parts[1])?.title||'과정')+' | ':'')+data.title;

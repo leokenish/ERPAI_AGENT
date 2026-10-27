@@ -91,9 +91,6 @@
 
 첫 완료 목표는 **담당자가 확인한 조회 한 건을, 허용된 사용자가 같은 조건으로 요청해 같은 값과 기준시점을 받는 것**이다. 여기까지 검증한 뒤 업무와 도구 수를 늘린다. 이어지는 [11. 근로시간 AI 에이전트 구축](#/learn/worktime-agent)부터는 앞 과정의 자료·지식·검토 흐름을 실제 프로젝트에 적용한 사례를 읽는다.
 
-## 근거와 이어 읽기
+## 근거 자료 확인
 
-- 기존 ERP API와 역할 구분: ERP 데이터 연동 프로젝트 대화 `M001–018`.
-- 모바일 요구·long polling·한 장비 구성: `M019–026`.
-- 가상 조회 계약: `sources/erp-remote/examples/erp_readonly_contract.example.json`.
-- [ERP 데이터 연동 및 활용 자료확인](#/library/erp-remote) · Telegram API 확인일 2026-10-26.
+- [ERP 데이터 연동 및 활용 자료확인](#/library/erp-remote)

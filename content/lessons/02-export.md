@@ -129,8 +129,6 @@ baseline과 원천 파일은 수정하지 말고, 현재 SAP를 확인한 것처
 
 다음 [03. GITHUB 연동](#/learn/workspace)에서는 추출한 자료를 보존하고 변경 이력을 공유한다. 서버와의 실제 비교·선택 반영은 [08. 코드 검증 및 적용](#/learn/diagnosis)에서 이어간다.
 
-## 근거와 도구 찾기
+## 근거 자료 확인
 
-- 최초 범위·누락·구조 개선: 소스 추출·진단 대화 `E00-start`, `E00-export`, `E00-web`, `E01–E04`.
-- BSP 한 앱의 추가 이유와 최신 도구: [E28 · 범위 결정](#/conversations/kbs-erp-export-diag-agents/E28-confirmed-bsp-next-scope), [E29 · 한 앱 ZIP과 관련자료](#/conversations/kbs-erp-export-diag-agents/E29-single-app-zip).
-- 기존 가이드: [소스 추출 및 진단, 업무 에이전트 자료확인](#/library/export-diag)의 `DEVHUB_EXPORT_GUIDE.md`와 프로젝트 문서.
+- [소스 추출 및 진단, 업무 에이전트 자료확인](#/library/export-diag)
