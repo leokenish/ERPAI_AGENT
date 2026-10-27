@@ -1,0 +1,27 @@
+{
+  "desktopWidth": 1348,
+  "coursesChecked": 16,
+  "horizontalOverflow": false,
+  "worktimeContextAnchorTop": 100.234375,
+  "sourceSearch": {
+    "query": "근로시간 intent",
+    "results": 1
+  },
+  "globalSearch": {
+    "query": "같은 배경을 반복해서",
+    "course04Found": true
+  },
+  "conversationTab": "ESS 해설·시행착오",
+  "narrowFrame": {
+    "width": 390,
+    "contentWidth": 375,
+    "scrollWidth": 375,
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "course": "overview"
+  },
+  "actualPhoneTest": false,
+  "userPCGitHubSAPTest": false
+}

@@ -172,7 +172,7 @@ test('활용사례 지도는 독립 박스 여섯 개이며 자체 프로젝트 
  for(const [id,pid] of [['webgui','kbs-erp-webgui-refactor'],['ess-attendance','kbs-erp-ess-attendance'],['weekly-timeline','kbs-weekly-work-timeline'],['smart-erp','kbs-smart-erp-main']]){
   f.events.click({target:target('data-node',{node:'case-'+id})});assert.ok(f.elements.get('conversation-host').innerHTML.includes(`data-conversation-project="${pid}"`));assert.ok(f.location.hash.startsWith('#/map/cases?'));
  }
- f.events.click({target:target('data-node',{node:'case-publishing'})});assert.match(f.elements.get('conversation-host').innerHTML,/대화 전문은 아직 등록되지 않았습니다/);
+ f.events.click({target:target('data-node',{node:'case-publishing'})});assert.match(f.elements.get('conversation-host').innerHTML,/대화 전문은 아직 등록되지 않았다/);
 });
 test('핵심 MD 직접 주소에는 프로젝트·용도·다운로드를 제공하고 제거된 대화 탭은 노출하지 않는다',async()=>{
  for(const g of data.coreDocuments){const f=fixture('#/library/'+g.id);await vm.runInContext(`(async()=>{${source}})()`,f.context);const html=f.elements.get('main').innerHTML;assert.match(html,/source-document-purpose/);for(const d of g.mdDocuments){assert.ok(html.includes(d.download));assert.ok(html.includes(d.project));}}

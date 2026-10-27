@@ -1,10 +1,30 @@
 {
   "snapshot": "sources/github-erp-ai/520ac77046f5",
   "walkthrough": [
-    {"title":"업무를 선택", "path":"maps/topics/selective.md", "text":"선택근무의 입력·누적조회·정산을 구분합니다."},
-    {"title":"업무 이유 확인", "path":"knowledge/processes/selective-cumulative-display.md", "text":"가산시간 표시와 소정 충족·대휴 발생의 차이를 읽습니다."},
-    {"title":"코드 연결 확인", "path":"knowledge/code-map/working-time.md", "text":"문서상 후보와 날짜별 소스 대조 범위를 나눠 봅니다."},
-    {"title":"피드백 추적", "path":"harness/feedback/FB-20261008-001.md", "text":"용어 혼동을 어떻게 보완했고 어떤 MD를 함께 고쳤는지 확인합니다."},
-    {"title":"회귀 질문 확인", "path":"tests/business-qa.md", "text":"Q39–Q41과 검증 상태를 읽습니다. 평가 정답은 일반 업무 답변의 근거와 구별합니다."}
+    {
+      "title": "업무를 선택",
+      "path": "maps/topics/selective.md",
+      "text": "선택근무의 입력·누적조회·정산이 어떻게 다른지 구분한다."
+    },
+    {
+      "title": "업무 이유 확인",
+      "path": "knowledge/processes/selective-cumulative-display.md",
+      "text": "가산시간 표시와 소정 충족·대휴 발생의 차이를 읽는다."
+    },
+    {
+      "title": "코드 연결 확인",
+      "path": "knowledge/code-map/working-time.md",
+      "text": "문서에 적힌 코드 후보와 날짜별로 소스를 대조한 범위를 나눠 본다."
+    },
+    {
+      "title": "피드백 추적",
+      "path": "harness/feedback/FB-20261008-001.md",
+      "text": "용어 혼동을 어떻게 보완했고, 어떤 MD를 함께 고쳤는지 확인한다."
+    },
+    {
+      "title": "회귀 질문 확인",
+      "path": "tests/business-qa.md",
+      "text": "Q39–Q41과 검증 상태를 읽는다. 평가 정답은 일반 업무 답변의 근거와 구별한다."
+    }
   ]
 }

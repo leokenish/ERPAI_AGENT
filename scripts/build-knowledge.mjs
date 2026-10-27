@@ -5,13 +5,13 @@ import {deflateRawSync} from 'node:zlib';
 import {Marked} from '../vendor/marked.mjs';
 import {renderMarkdown} from './markdown.mjs';
 export const groups=[
- {id:'instructions',title:'지침·스킬',folder:'AGENTS.md · .agents/skills/',purpose:'어떤 범위에서, 어떤 순서로 읽고 판단할지 정합니다.',change:'역할·근거 원칙·작업 절차가 바뀔 때',entry:'AGENTS.md'},
- {id:'guides',title:'구축·유지 가이드',folder:'docs/',purpose:'구축 방법과 출처, 지식을 유지하는 기준을 기록합니다.',change:'새 원문·판본·갱신 절차가 추가될 때',entry:'docs/KNOWLEDGE_MAINTENANCE.md'},
- {id:'knowledge',title:'업무 지식',folder:'knowledge/',purpose:'규정·협의 이유·절차·예외와 미확인 질문을 보관합니다.',change:'정책·협의·사례를 추가하거나 정정할 때',entry:'knowledge/INDEX.md'},
- {id:'maps',title:'Obsidian 업무 지도',folder:'maps/ · maps/topics/',purpose:'업무 질문에서 필요한 근거와 소스 설명으로 안내합니다.',change:'문서·소스·업무 단계의 관계가 바뀔 때',entry:'maps/INDEX.md'},
- {id:'code',title:'소스 설명 MD',folder:'maps/sources/',purpose:'객체·화면·함수·데이터의 설명과 참조 위치를 연결합니다.',change:'추출 소스의 변경과 근거 위치를 확인한 뒤',entry:'maps/sources/INDEX.md'},
- {id:'feedback',title:'피드백·평가',folder:'harness/feedback/ · tests/ · evals/',purpose:'정정 이유와 다시 확인할 질문을 묶어 재발을 줄입니다.',change:'오류·반례·경계 조건을 발견했을 때',entry:'harness/feedback/FB-20261008-001.md'},
- {id:'support',title:'시작점·양식·안내',folder:'README.md · templates/ · exports/ 등',purpose:'처음 시작하는 방법과 반복 사용할 기록 양식을 둡니다.',change:'안내·기록 양식·추출 설명이 달라질 때',entry:'README.md'}
+ {id:'instructions',title:'지침·스킬',folder:'AGENTS.md · .agents/skills/',purpose:'어떤 범위에서, 어떤 순서로 읽고 판단할지 정한다.',change:'역할·근거 원칙·작업 절차가 바뀔 때',entry:'AGENTS.md'},
+ {id:'guides',title:'구축·유지 가이드',folder:'docs/',purpose:'구축 방법과 출처, 지식을 유지하는 기준을 기록한다.',change:'새 원문·판본·갱신 절차가 추가될 때',entry:'docs/KNOWLEDGE_MAINTENANCE.md'},
+ {id:'knowledge',title:'업무 지식',folder:'knowledge/',purpose:'규정·협의 이유·절차·예외와 미확인 질문을 보관한다.',change:'정책·협의·사례를 추가하거나 정정할 때',entry:'knowledge/INDEX.md'},
+ {id:'maps',title:'Obsidian 업무 지도',folder:'maps/ · maps/topics/',purpose:'업무 질문에 필요한 근거와 소스 설명을 찾아가도록 안내한다.',change:'문서·소스·업무 단계의 관계가 바뀔 때',entry:'maps/INDEX.md'},
+ {id:'code',title:'소스 설명 MD',folder:'maps/sources/',purpose:'객체·화면·함수·데이터의 설명과 참조 위치를 연결한다.',change:'추출 소스의 변경과 근거 위치를 확인한 뒤',entry:'maps/sources/INDEX.md'},
+ {id:'feedback',title:'피드백·평가',folder:'harness/feedback/ · tests/ · evals/',purpose:'정정 이유와 다시 확인할 질문을 묶어 같은 오류의 재발을 줄인다.',change:'오류·반례·경계 조건을 발견했을 때',entry:'harness/feedback/FB-20261008-001.md'},
+ {id:'support',title:'시작점·양식·안내',folder:'README.md · templates/ · exports/ 등',purpose:'처음 시작하는 방법과 반복 사용할 기록 양식을 둔다.',change:'안내·기록 양식·추출 설명이 달라질 때',entry:'README.md'}
 ];
 export function classify(p){if(p==='AGENTS.md'||p.startsWith('.agents/'))return 'instructions';if(p.startsWith('docs/'))return 'guides';if(p.startsWith('knowledge/'))return 'knowledge';if(p.startsWith('maps/sources/'))return 'code';if(p.startsWith('maps/'))return 'maps';if(/^(harness|tests|evals)\//.test(p))return 'feedback';return 'support';}
 const idFor=p=>'md-'+createHash('sha256').update(p).digest('hex').slice(0,14);
@@ -61,7 +61,7 @@ export async function buildKnowledge(root,out){
    else refs.push({from:d.id,path:target.path,label:f.label,line,referenceType:f.kind,original:f.href,kind:/\.md$/i.test(target.path)?'unresolved':'outside'});
   }
   const converted=body.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g,(_,href,label)=>`[${label||href}](${href})`);
-  d.html=renderMarkdown(converted,{keepTitle:true,headingPrefix:d.id+'-',headingOffset:2,resolveURL:href=>{const t=resolvePath(d.path,href,all);if(t.external)return /^https?:/.test(href)?href:null;if(t.missing)return null;return `#/learn/worktime-agent?doc=${docByPath.get(t.path).id}&read=1`;}}).html.replaceAll('당시 링크입니다. 현재 파일 확보 상태는 관련 자료에서 확인하세요.','이번 MD 수집 범위 밖이거나 대상을 연결하지 못한 참조입니다.');
+  d.html=renderMarkdown(converted,{keepTitle:true,headingPrefix:d.id+'-',headingOffset:2,resolveURL:href=>{const t=resolvePath(d.path,href,all);if(t.external)return /^https?:/.test(href)?href:null;if(t.missing)return null;return `#/learn/worktime-agent?doc=${docByPath.get(t.path).id}&read=1`;}}).html.replaceAll('당시의 링크다. 현재 파일 확보 상태는 관련 자료에서 확인할 수 있다.','이번 MD 수집 범위 밖이거나 대상을 연결하지 못한 참조다.');
  }
  const archive='downloads/ERP_AI_Markdown_'+snapshot.commit.slice(0,12)+'.zip';const archiveBytes=makeZip(zip);await writeFile(path.join(out,archive),archiveBytes);
  const inventory={repository:snapshot.repository,commit:snapshot.commit,asOf:snapshot.retrievedAt,files:docs.map(({html,...d})=>d)};

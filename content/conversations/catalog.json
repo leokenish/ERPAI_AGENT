@@ -80,12 +80,12 @@
         "diagnosis",
         "feedback"
       ],
-      "purpose": "SAP 소스와 업무 근거를 연결하고, 비교·검사에서 지원 웹자산의 선택 저장·활성화로 확장합니다.",
-      "environment": "ECC 6.0·SAP_BASIS 700 / SP0041·Unicode·Windows 11에서 시작해 GitHub·Mac Codex Desktop으로 확장했습니다.",
-      "turningPoint": "SAP 소스와 업무 근거를 연결하고, 비교·검사에서 지원 웹자산의 선택 저장·활성화로 확장합니다.",
-      "currentState": "Export 0.4.1 / DIAG 0.7.1 소스 확보. 0.6.11의 기존 I 버전 재사용·활성화·SE80는 사용자 확인, 최신 0.7.1 SAP 실행은 미확인입니다.",
+      "purpose": "SAP 소스와 업무 근거를 연결하고, 비교·검사에서 지원 웹자산의 선택 저장·활성화로 확장한다.",
+      "environment": "ECC 6.0·SAP_BASIS 700 / SP0041·Unicode·Windows 11에서 시작해 GitHub·Mac Codex Desktop으로 확장했다.",
+      "turningPoint": "SAP 소스와 업무 근거를 연결하고, 비교·검사에서 지원 웹자산의 선택 저장·활성화로 확장한다.",
+      "currentState": "Export 0.4.1 / DIAG 0.7.1 소스 확보. 0.6.11의 기존 I 버전 재사용·활성화·SE80는 사용자 확인, 최신 0.7.1 SAP 실행은 미확인이다.",
       "coverageNote": "사용자 요청 153개 · AI 본문 149개 · 본문 미확보 4곳",
-      "integrationNote": "해설은 교육용 설명이며 원문 발화와 별도로 표시합니다. 실제 확보 파일과 원문에만 언급된 미확보 자료를 구분합니다.",
+      "integrationNote": "해설은 교육용 설명이며 원문 발화와 별도로 표시한다. 실제 확보 파일과 원문에만 언급된 미확보 자료를 구분한다.",
       "supplementLesson": "diagnosis",
       "metaEpisodes": [
         "E18",
@@ -111,12 +111,12 @@
       "lessonIds": [
         "knowledge"
       ],
-      "purpose": "담당자 대화와 첨부 이미지를 출처가 있는 업무 지식으로 정리합니다.",
-      "environment": "기존 TXT→MD 정리 작업을 바탕으로 이미지 시각과 앞뒤 대화를 대조합니다.",
-      "turningPoint": "파일 시각과 전송 시각, 관찰 사실과 합의·완료 보고를 나누어 기록했습니다.",
-      "currentState": "연결 절차와 교육 문서 확보. 원래 이미지 묶음과 연결 검증 결과는 미확보입니다.",
+      "purpose": "담당자 대화와 첨부 이미지를 출처가 있는 업무 지식으로 정리한다.",
+      "environment": "기존 TXT→MD 정리 작업을 바탕으로 이미지 시각과 앞뒤 대화를 대조한다.",
+      "turningPoint": "파일 시각과 전송 시각, 관찰 사실과 합의·완료 보고를 나누어 기록했다.",
+      "currentState": "연결 절차와 교육 문서 확보. 원래 이미지 묶음과 연결 검증 결과는 미확보 상태다.",
       "coverageNote": "대화 10개 항목 · 이미지 연계 논의와 자료 정리 과정",
-      "integrationNote": "과정 04에서 별도로 확보한 SRC-11 TXT 사례를 읽을 수 있습니다.",
+      "integrationNote": "과정 04에서 별도로 확보한 SRC-11 TXT 사례를 읽을 수 있다.",
       "supplementLesson": "knowledge",
       "metaEpisodes": [
         "kwc-e02",
@@ -146,12 +146,12 @@
       "lessonIds": [
         "maps"
       ],
-      "purpose": "업무 기준·협의·코드·검증 문서를 연결해 사람과 AI가 같은 근거를 찾도록 합니다.",
-      "environment": "기존 스킬·knowledge·하네스·추출 소스의 폴더 구조를 유지합니다.",
-      "turningPoint": "기존 원본에 연결 MD를 추가하고, 관계의 의미를 문서에 기록했습니다.",
-      "currentState": "설계 대화·교육 문서 확보. Codex 자동 연동과 속도 개선은 미검증입니다.",
+      "purpose": "업무 기준·협의·코드·검증 문서를 연결해 사람과 AI가 같은 근거를 찾도록 한다.",
+      "environment": "기존 스킬·knowledge·하네스·추출 소스의 폴더 구조를 유지한다.",
+      "turningPoint": "기존 원본에 연결 MD를 추가하고, 관계의 의미를 문서에 기록했다.",
+      "currentState": "설계 대화·교육 문서 확보. Codex 자동 연동과 속도 개선은 미검증이다.",
       "coverageNote": "사용자 요청 9개 · AI 전문 9개 · 진행 안내 8개",
-      "integrationNote": "과정 05에서 실제 업무지도·전체 그래프 캡처 2장을 볼 수 있습니다. 링크 유효성과 성능은 추가 확인 대상입니다.",
+      "integrationNote": "과정 05에서 실제 업무지도·전체 그래프 캡처 2장을 볼 수 있다. 링크 유효성과 성능은 추가 확인 대상이다.",
       "supplementLesson": "maps",
       "metaEpisodes": [
         "obs-e006",
@@ -174,12 +174,12 @@
       "lessonIds": [
         "collaboration"
       ],
-      "purpose": "각 담당 에이전트가 자기 소스와 지식을 바탕으로 다른 담당의 질문에 답하도록 설계합니다.",
-      "environment": "담당자별 Mac에 자기 패키지를 클론합니다.",
-      "turningPoint": "수동 요청서에서 중앙 MCP와 담당 Mac 워커를 통한 자문 구조로 전환했습니다.",
-      "currentState": "Node.js 예제 0.1.0·모의 통신 검증 기록 확보. 실제 AI 워커는 미구현, 사내 운영 연결은 미확인입니다.",
+      "purpose": "각 담당 에이전트가 자기 소스와 지식을 바탕으로 다른 담당의 질문에 답하도록 설계한다.",
+      "environment": "담당자별 Mac에 자기 패키지를 클론한다.",
+      "turningPoint": "수동 요청서에서 중앙 MCP와 담당 Mac 워커를 통한 자문 구조로 전환했다.",
+      "currentState": "Node.js 예제 0.1.0·모의 통신 검증 기록 확보. 실제 AI 워커는 미구현, 사내 운영 연결은 미확인이다.",
       "coverageNote": "사용자 요청 11개 · AI 전문 11개 · 진행 안내 11개",
-      "integrationNote": "담당자 자문 구조는 과정 08, ERP 조회와 Telegram 설계는 과정 09에서 다룹니다.",
+      "integrationNote": "담당자 자문 구조는 과정 08, ERP 조회와 Telegram 설계는 과정 09에서 다룬다.",
       "supplementLesson": "collaboration",
       "metaEpisodes": [
         "eac-ep08",
@@ -202,12 +202,12 @@
       "lessonIds": [
         "erp-mcp"
       ],
-      "purpose": "ERP의 REST/RFC 조회 기능을 AI 도구로 연결하고 Telegram으로 질문을 받도록 설계합니다.",
-      "environment": "ECC 6.0의 기존 JSON REST·RFC 연동을 바탕으로 사내 서버와 Telegram 연결을 논의했습니다.",
-      "turningPoint": "AI 실행기와 MCP의 역할을 나누고, 모바일 채팅과 long polling 중심으로 설계했습니다.",
-      "currentState": "설계·예시 계약 확보. 실제 API·런타임 선정과 서버 설치·왕복 검증은 미확인입니다.",
+      "purpose": "ERP의 REST/RFC 조회 기능을 AI 도구로 연결하고 Telegram으로 질문을 받도록 설계한다.",
+      "environment": "ECC 6.0의 기존 JSON REST·RFC 연동을 바탕으로 사내 서버와 Telegram 연결을 논의했다.",
+      "turningPoint": "AI 실행기와 MCP의 역할을 나누고, 모바일 채팅과 long polling 중심으로 설계했다.",
+      "currentState": "설계·예시 계약 확보. 실제 API·런타임 선정과 서버 설치·왕복 검증은 미확인이다.",
       "coverageNote": "사용자 요청 16개 · AI 전문 16개 · 진행 안내 3개",
-      "integrationNote": "구축 시 사용할 장비·SDK·API 명세는 해당 환경의 버전으로 확인하세요.",
+      "integrationNote": "구축 시 사용할 장비·SDK·API 명세는 해당 환경의 버전으로 확인한다.",
       "supplementLesson": "erp-mcp",
       "metaEpisodes": [
         "E08"
@@ -229,12 +229,12 @@
       "lessonIds": [
         "webgui"
       ],
-      "purpose": "기존 업무 기능을 보존하며 결재 본문·다운로드·팝업·스크롤을 실제 오류 근거로 개선합니다.",
-      "environment": "WEBGUI·SYSTEMGUI의 JS/CSS·HTML과 Chrome DevTools 관찰 자료를 비교했습니다.",
-      "turningPoint": "기존 업무 기능을 보존하며 결재 본문·다운로드·팝업·스크롤을 실제 오류 근거로 개선합니다.",
-      "currentState": "V429 / UI 4.2.6 / 결재 렌더러 1.4.5 구현. 특정 화면·다운로드의 사용자 확인과 최신 SAP 재시험을 구분합니다.",
+      "purpose": "기존 업무 기능을 보존하며 결재 본문·다운로드·팝업·스크롤을 실제 오류 근거로 개선한다.",
+      "environment": "WEBGUI·SYSTEMGUI의 JS/CSS·HTML과 Chrome DevTools 관찰 자료를 비교했다.",
+      "turningPoint": "기존 업무 기능을 보존하며 결재 본문·다운로드·팝업·스크롤을 실제 오류 근거로 개선한다.",
+      "currentState": "V429 / UI 4.2.6 / 결재 렌더러 1.4.5 구현. 특정 화면·다운로드의 사용자 확인과 최신 SAP 재시험을 구분한다.",
       "coverageNote": "사용자 요청 113개 · AI 본문 135개 · 본문 미확보 3곳",
-      "integrationNote": "해설은 교육용 설명이며 원문 발화와 별도로 표시합니다. 실제 확보 파일과 원문에만 언급된 미확보 자료를 구분합니다.",
+      "integrationNote": "해설은 교육용 설명이며 원문 발화와 별도로 표시한다. 실제 확보 파일과 원문에만 언급된 미확보 자료를 구분한다.",
       "supplementLesson": "webgui",
       "metaEpisodes": [
         "wg-ep08",
@@ -260,12 +260,12 @@
       "lessonIds": [
         "ess-attendance"
       ],
-      "purpose": "근태 신청 화면을 개선하고 날짜·반차 변경이 저장·결재·잔여 연차에 반영되는지 확인합니다.",
+      "purpose": "근태 신청 화면을 개선하고 날짜·반차 변경이 저장·결재·잔여 연차에 반영되는지 확인한다.",
       "environment": "SAP ECC·SAP_BASIS 700 / BSP·MIME·ABAP·워크플로 / IE11·Chrome",
-      "turningPoint": "기존 화면을 보존하는 R1 분리 개발로 전환하고, 저장 상태와 기승인 변경을 나누어 추적했습니다.",
+      "turningPoint": "기존 화면을 보존하는 R1 분리 개발로 전환하고, 저장 상태와 기승인 변경을 나누어 추적했다.",
       "currentState": "날짜 이동·반차 변경: 사용자 성공 보고. 최종 SUBMIT_PRG01과 전체 회귀: 재시험 대기.",
       "coverageNote": "사용자 요청 254개 · AI 본문 245개 · 본문 미확보 9곳",
-      "integrationNote": "2026-10-24 네 공유 링크의 254턴·499본문을 재대조했습니다. 새 턴은 없으며 기존 26개 에피소드를 유지하고 미확보 이미지 51개를 복구했습니다. 최종 SUBMIT_PRG01 적용 후 재시험은 여전히 미확인입니다.",
+      "integrationNote": "2026-10-24 네 공유 링크의 254턴·499본문을 재대조했다. 새 턴은 없으며 기존 26개 에피소드를 유지하고 미확보 이미지 51개를 복구했다. 최종 SUBMIT_PRG01 적용 후 재시험은 여전히 미확인이다.",
       "supplementLesson": "ess-attendance",
       "metaEpisodes": [],
       "sourcePath": "content/conversations/business-full/kbs-erp-ess-attendance",
@@ -287,7 +287,7 @@
       "lessonIds": [
         "weekly-timeline"
       ],
-      "environment": "공유 대화와 제공한 실제 원본·프리뷰·프로젝트 MD를 기준으로 학습합니다.",
+      "environment": "공유 대화와 제공한 실제 원본·프리뷰·프로젝트 MD를 기준으로 학습한다.",
       "metaEpisodes": [
         "timeline-four-md-and-organizational-memory"
       ],
@@ -300,11 +300,11 @@
         "CHANGELOG.md"
       ],
       "supplementLesson": "weekly-timeline",
-      "purpose": "주간업무 기록을 국·업무·시점과 원문 근거로 연결해 조직의 업무 흐름을 읽습니다.",
-      "currentState": "UI 2.3 / 구조 2.0과 617개 HML 처리 보고. 전 기간 의미 연결 정확도와 최신 화면의 최종 사용자 수용은 미확인입니다.",
-      "integrationNote": "해설은 교육용 설명이며 원문 발화와 별도로 표시합니다. 실제 확보 파일과 원문에만 언급된 미확보 자료를 구분합니다.",
+      "purpose": "주간업무 기록을 국·업무·시점과 원문 근거로 연결해 조직의 업무 흐름을 읽는다.",
+      "currentState": "UI 2.3 / 구조 2.0과 617개 HML 처리 보고. 전 기간 의미 연결 정확도와 최신 화면의 최종 사용자 수용은 미확인이다.",
+      "integrationNote": "해설은 교육용 설명이며 원문 발화와 별도로 표시한다. 실제 확보 파일과 원문에만 언급된 미확보 자료를 구분한다.",
       "coverageNote": "사용자 요청 30개 · AI 본문 30개 · 본문 미확보 0곳",
-      "turningPoint": "주간업무 기록을 국·업무·시점과 원문 근거로 연결해 조직의 업무 흐름을 읽습니다.",
+      "turningPoint": "주간업무 기록을 국·업무·시점과 원문 근거로 연결해 조직의 업무 흐름을 읽는다.",
       "supplementEpisode": "timeline-intent-and-file-based-navigation",
       "supplementLabel": "첫 요청부터 설계 과정 읽기",
       "category": "에이전트 활용사례"
@@ -316,7 +316,7 @@
       "lessonIds": [
         "smart-erp"
       ],
-      "environment": "공유 대화와 제공한 실제 원본·프리뷰·프로젝트 MD를 기준으로 학습합니다.",
+      "environment": "공유 대화와 제공한 실제 원본·프리뷰·프로젝트 MD를 기준으로 학습한다.",
       "metaEpisodes": [],
       "sourcePath": "content/conversations/progress-20261024/kbs-smart-erp-main",
       "assetSourcePath": "sources/conversations/20261024-progress/kbs-smart-erp-main",
@@ -327,11 +327,11 @@
         "CHANGELOG.md"
       ],
       "supplementLesson": "smart-erp",
-      "purpose": "기존 ERP 기능을 유지하며 메인화면 배치·배경·글꼴을 반복 검토합니다.",
-      "currentState": "v9 소스·로컬 프리뷰 근거 확보. 전체 v9 ZIP 불완전 확인, 실제 SAP 검증·운영 반영·최종 수용은 미확인입니다.",
-      "integrationNote": "해설은 교육용 설명이며 원문 발화와 별도로 표시합니다. 실제 확보 파일과 원문에만 언급된 미확보 자료를 구분합니다.",
+      "purpose": "기존 ERP 기능을 유지하며 메인화면 배치·배경·글꼴을 반복 검토한다.",
+      "currentState": "v9 소스·로컬 프리뷰 근거 확보. 전체 v9 ZIP 불완전 확인, 실제 SAP 검증·운영 반영·최종 수용은 미확인이다.",
+      "integrationNote": "해설은 교육용 설명이며 원문 발화와 별도로 표시한다. 실제 확보 파일과 원문에만 언급된 미확보 자료를 구분한다.",
       "coverageNote": "사용자 요청 49개 · AI 본문 47개 · 본문 미확보 2곳",
-      "turningPoint": "기존 ERP 기능을 유지하며 메인화면 배치·배경·글꼴을 반복 검토합니다.",
+      "turningPoint": "기존 ERP 기능을 유지하며 메인화면 배치·배경·글꼴을 반복 검토한다.",
       "supplementEpisode": "smart-E01-preserve-and-package",
       "supplementLabel": "첫 요청부터 설계 과정 읽기",
       "category": "에이전트 활용사례"

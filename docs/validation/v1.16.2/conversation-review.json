@@ -1,0 +1,42 @@
+{
+  "reviewedProjects": 9,
+  "reviewedEpisodes": 147,
+  "originalKakaoEpisodesReviewedUnchanged": 4,
+  "suggestedEdits": 604,
+  "fields": {
+    "goal": 70,
+    "commentary_markdown": 102,
+    "outcome_markdown": 91,
+    "prerequisites": 32,
+    "purpose": 9,
+    "environment": 8,
+    "turningPoint": 9,
+    "currentState": 8,
+    "integrationNote": 9,
+    "description": 266
+  },
+  "files": {
+    "content/conversations/export-full/conversation-data.json": 49,
+    "content/conversations/shared-full/erp-obsidian-knowledge-map/conversation-data.json": 3,
+    "content/conversations/shared-full/erp-agent-communication/conversation-data.json": 3,
+    "content/conversations/shared-full/kbs-erp-mcp-telegram/conversation-data.json": 17,
+    "content/conversations/business-full/kbs-erp-webgui-refactor/conversation-data.json": 104,
+    "content/conversations/business-full/kbs-erp-ess-attendance/conversation-data.json": 325,
+    "content/conversations/progress-20261024/kbs-weekly-work-timeline/conversation-data.json": 19,
+    "content/conversations/progress-20261024/kbs-smart-erp-main/conversation-data.json": 41,
+    "content/conversations/catalog.json": 43
+  },
+  "beforeCharacters": 50816,
+  "afterCharacters": 50005,
+  "checks": {
+    "noOriginalSourcesModified": true,
+    "noTranscriptProposals": true,
+    "headingsParagraphCountsNumbersQuotesLinksPreserved": true
+  },
+  "issues": [],
+  "outOfScopeFindings": [
+    "content/conversations/catalog.json integrationNote retains old course numbers: kakao 04, Obsidian 05, collaboration 08, ERP 09. Preserved unchanged because this request is wording only.",
+    "Export episode E16 outcome says current educational baseline is read-only, while commentary has historical timing note and later episodes explain supported web asset writes. Did not change content.",
+    "Several shared attachment descriptions refer to initial CSS output even on other projects. This may need a later factual review; no classification or claim changed."
+  ]
+}

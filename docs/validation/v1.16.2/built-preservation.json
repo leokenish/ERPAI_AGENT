@@ -1,0 +1,91 @@
+{
+  "lessons": [
+    {
+      "id": "overview",
+      "headings": 12,
+      "anchorsPreserved": true
+    },
+    {
+      "id": "export",
+      "headings": 14,
+      "anchorsPreserved": true
+    },
+    {
+      "id": "workspace",
+      "headings": 15,
+      "anchorsPreserved": true
+    },
+    {
+      "id": "codex",
+      "headings": 14,
+      "anchorsPreserved": true
+    },
+    {
+      "id": "knowledge",
+      "headings": 11,
+      "anchorsPreserved": true
+    },
+    {
+      "id": "maps",
+      "headings": 10,
+      "anchorsPreserved": true
+    },
+    {
+      "id": "feedback",
+      "headings": 10,
+      "anchorsPreserved": true
+    },
+    {
+      "id": "diagnosis",
+      "headings": 13,
+      "anchorsPreserved": true
+    },
+    {
+      "id": "collaboration",
+      "headings": 7,
+      "anchorsPreserved": true
+    },
+    {
+      "id": "erp-mcp",
+      "headings": 10,
+      "anchorsPreserved": true
+    },
+    {
+      "id": "worktime-agent",
+      "headings": 9,
+      "anchorsPreserved": true
+    },
+    {
+      "id": "webgui",
+      "headings": 9,
+      "anchorsPreserved": true
+    },
+    {
+      "id": "publishing",
+      "headings": 12,
+      "anchorsPreserved": true
+    },
+    {
+      "id": "ess-attendance",
+      "headings": 14,
+      "anchorsPreserved": true
+    },
+    {
+      "id": "weekly-timeline",
+      "headings": 9,
+      "anchorsPreserved": true
+    },
+    {
+      "id": "smart-erp",
+      "headings": 10,
+      "anchorsPreserved": true
+    }
+  ],
+  "messages": 1327,
+  "episodes": 147,
+  "sourceDocuments": 867,
+  "projects": 9,
+  "knowledgeDocuments": 783,
+  "knowledgeEdgesUnchanged": true,
+  "coreDocumentMembershipUnchanged": true
+}

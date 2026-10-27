@@ -1,0 +1,356 @@
+{
+  "baselineVersion": "1.16.1",
+  "version": "1.16.2",
+  "protectedFiles": {
+    ".github": 1,
+    "AGENTS.md": 1,
+    "assets": 36,
+    "content": 2,
+    "examples": 5,
+    "sources": 1576,
+    "vendor": 2
+  },
+  "changedFiles": [
+    "README.md",
+    "content/catalog.json",
+    "content/conversations/business-full/kbs-erp-ess-attendance/conversation-data.json",
+    "content/conversations/business-full/kbs-erp-webgui-refactor/conversation-data.json",
+    "content/conversations/catalog.json",
+    "content/conversations/export-full/conversation-data.json",
+    "content/conversations/progress-20261024/kbs-smart-erp-main/conversation-data.json",
+    "content/conversations/progress-20261024/kbs-weekly-work-timeline/conversation-data.json",
+    "content/conversations/shared-full/erp-agent-communication/conversation-data.json",
+    "content/conversations/shared-full/erp-obsidian-knowledge-map/conversation-data.json",
+    "content/conversations/shared-full/kbs-erp-mcp-telegram/conversation-data.json",
+    "content/core-documents.json",
+    "content/lesson-contexts/11-worktime-agent.md",
+    "content/lesson-contexts/12-webgui.md",
+    "content/lesson-contexts/13-publishing.md",
+    "content/lesson-contexts/14-ess-attendance.md",
+    "content/lesson-contexts/15-weekly-timeline.md",
+    "content/lesson-contexts/16-smart-erp.md",
+    "content/lessons/01-overview.md",
+    "content/lessons/02-export.md",
+    "content/lessons/03-codex.md",
+    "content/lessons/03-workspace.md",
+    "content/lessons/04-knowledge.md",
+    "content/lessons/05-maps.md",
+    "content/lessons/06-diagnosis.md",
+    "content/lessons/07-feedback.md",
+    "content/lessons/08-collaboration.md",
+    "content/lessons/09-erp-mcp.md",
+    "content/lessons/10-webgui.md",
+    "content/lessons/11-worktime-agent.md",
+    "content/lessons/12-publishing.md",
+    "content/lessons/13-ess-attendance.md",
+    "content/lessons/14-weekly-timeline.md",
+    "content/lessons/15-smart-erp.md",
+    "content/templates/knowledge-record.md",
+    "content/worktime-knowledge.json",
+    "docs/CONTENT_WORKFLOW.md",
+    "docs/INTEGRATION_REVIEW.md",
+    "index.html",
+    "package.json",
+    "scripts/build-core-documents.mjs",
+    "scripts/build-knowledge.mjs",
+    "scripts/markdown.mjs",
+    "site/app.js",
+    "site/conversations.js",
+    "site/index.html",
+    "site/knowledge-map.js",
+    "site/knowledge.js",
+    "site/source-library.js",
+    "tests/conversation-navigation.test.mjs"
+  ],
+  "lessonChecks": [
+    {
+      "file": "content/lessons/02-export.md",
+      "beforeChars": 6924,
+      "afterChars": 6918,
+      "checks": {
+        "codeBlocks": true,
+        "inlineCode": true,
+        "quotes": true,
+        "numbers": true,
+        "headingLevels": true,
+        "title": true
+      }
+    },
+    {
+      "file": "content/lessons/03-codex.md",
+      "beforeChars": 6912,
+      "afterChars": 6884,
+      "checks": {
+        "codeBlocks": true,
+        "inlineCode": true,
+        "quotes": true,
+        "numbers": true,
+        "headingLevels": true,
+        "title": true
+      }
+    },
+    {
+      "file": "content/lessons/01-overview.md",
+      "beforeChars": 5019,
+      "afterChars": 4870,
+      "checks": {
+        "codeBlocks": true,
+        "inlineCode": true,
+        "quotes": true,
+        "numbers": true,
+        "headingLevels": true,
+        "title": true
+      }
+    },
+    {
+      "file": "content/lessons/03-workspace.md",
+      "beforeChars": 10159,
+      "afterChars": 10058,
+      "checks": {
+        "codeBlocks": true,
+        "inlineCode": true,
+        "quotes": true,
+        "numbers": true,
+        "headingLevels": true,
+        "title": true
+      }
+    },
+    {
+      "file": "content/lessons/06-diagnosis.md",
+      "beforeChars": 6379,
+      "afterChars": 6466,
+      "checks": {
+        "codeBlocks": true,
+        "inlineCode": true,
+        "quotes": true,
+        "numbers": true,
+        "headingLevels": true,
+        "title": true
+      }
+    },
+    {
+      "file": "content/lessons/05-maps.md",
+      "beforeChars": 4872,
+      "afterChars": 4873,
+      "checks": {
+        "codeBlocks": true,
+        "inlineCode": true,
+        "quotes": true,
+        "numbers": true,
+        "headingLevels": true,
+        "title": true
+      }
+    },
+    {
+      "file": "content/lessons/07-feedback.md",
+      "beforeChars": 4120,
+      "afterChars": 4138,
+      "checks": {
+        "codeBlocks": true,
+        "inlineCode": true,
+        "quotes": true,
+        "numbers": true,
+        "headingLevels": true,
+        "title": true
+      }
+    },
+    {
+      "file": "content/lessons/04-knowledge.md",
+      "beforeChars": 4742,
+      "afterChars": 4760,
+      "checks": {
+        "codeBlocks": true,
+        "inlineCode": true,
+        "quotes": true,
+        "numbers": true,
+        "headingLevels": true,
+        "title": true
+      }
+    },
+    {
+      "file": "content/lessons/08-collaboration.md",
+      "beforeChars": 3961,
+      "afterChars": 3979,
+      "checks": {
+        "codeBlocks": true,
+        "inlineCode": true,
+        "quotes": true,
+        "numbers": true,
+        "headingLevels": true,
+        "title": true
+      }
+    },
+    {
+      "file": "content/lessons/09-erp-mcp.md",
+      "beforeChars": 4659,
+      "afterChars": 4643,
+      "checks": {
+        "codeBlocks": true,
+        "inlineCode": true,
+        "quotes": true,
+        "numbers": true,
+        "headingLevels": true,
+        "title": true
+      }
+    },
+    {
+      "file": "content/lessons/11-worktime-agent.md",
+      "beforeChars": 2252,
+      "afterChars": 2357,
+      "checks": {
+        "codeBlocks": true,
+        "inlineCode": true,
+        "quotes": true,
+        "numbers": true,
+        "headingLevels": true,
+        "title": true
+      }
+    },
+    {
+      "file": "content/lessons/13-ess-attendance.md",
+      "beforeChars": 2328,
+      "afterChars": 2366,
+      "checks": {
+        "codeBlocks": true,
+        "inlineCode": true,
+        "quotes": true,
+        "numbers": true,
+        "headingLevels": true,
+        "title": true
+      }
+    },
+    {
+      "file": "content/lessons/15-smart-erp.md",
+      "beforeChars": 1562,
+      "afterChars": 1573,
+      "checks": {
+        "codeBlocks": true,
+        "inlineCode": true,
+        "quotes": true,
+        "numbers": true,
+        "headingLevels": true,
+        "title": true
+      }
+    },
+    {
+      "file": "content/lessons/10-webgui.md",
+      "beforeChars": 1992,
+      "afterChars": 2062,
+      "checks": {
+        "codeBlocks": true,
+        "inlineCode": true,
+        "quotes": true,
+        "numbers": true,
+        "headingLevels": true,
+        "title": true
+      }
+    },
+    {
+      "file": "content/lessons/14-weekly-timeline.md",
+      "beforeChars": 1792,
+      "afterChars": 1838,
+      "checks": {
+        "codeBlocks": true,
+        "inlineCode": true,
+        "quotes": true,
+        "numbers": true,
+        "headingLevels": true,
+        "title": true
+      }
+    },
+    {
+      "file": "content/lessons/12-publishing.md",
+      "beforeChars": 2170,
+      "afterChars": 2199,
+      "checks": {
+        "codeBlocks": true,
+        "inlineCode": true,
+        "quotes": true,
+        "numbers": true,
+        "headingLevels": true,
+        "title": true
+      }
+    },
+    {
+      "file": "content/lesson-contexts/11-worktime-agent.md",
+      "beforeChars": 1875,
+      "afterChars": 1902,
+      "checks": {
+        "codeBlocks": true,
+        "inlineCode": true,
+        "quotes": true,
+        "numbers": true,
+        "headingLevels": true,
+        "title": true
+      }
+    },
+    {
+      "file": "content/lesson-contexts/13-publishing.md",
+      "beforeChars": 1832,
+      "afterChars": 1811,
+      "checks": {
+        "codeBlocks": true,
+        "inlineCode": true,
+        "quotes": true,
+        "numbers": true,
+        "headingLevels": true,
+        "title": true
+      }
+    },
+    {
+      "file": "content/lesson-contexts/16-smart-erp.md",
+      "beforeChars": 1794,
+      "afterChars": 1771,
+      "checks": {
+        "codeBlocks": true,
+        "inlineCode": true,
+        "quotes": true,
+        "numbers": true,
+        "headingLevels": true,
+        "title": true
+      }
+    },
+    {
+      "file": "content/lesson-contexts/15-weekly-timeline.md",
+      "beforeChars": 1870,
+      "afterChars": 1859,
+      "checks": {
+        "codeBlocks": true,
+        "inlineCode": true,
+        "quotes": true,
+        "numbers": true,
+        "headingLevels": true,
+        "title": true
+      }
+    },
+    {
+      "file": "content/lesson-contexts/12-webgui.md",
+      "beforeChars": 1885,
+      "afterChars": 1868,
+      "checks": {
+        "codeBlocks": true,
+        "inlineCode": true,
+        "quotes": true,
+        "numbers": true,
+        "headingLevels": true,
+        "title": true
+      }
+    },
+    {
+      "file": "content/lesson-contexts/14-ess-attendance.md",
+      "beforeChars": 1781,
+      "afterChars": 1773,
+      "checks": {
+        "codeBlocks": true,
+        "inlineCode": true,
+        "quotes": true,
+        "numbers": true,
+        "headingLevels": true,
+        "title": true
+      }
+    }
+  ],
+  "copyFields": 907,
+  "headingEdits": 46,
+  "failures": []
+}
