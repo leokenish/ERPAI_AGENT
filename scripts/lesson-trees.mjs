@@ -20,7 +20,9 @@ export async function loadLessonTrees(root,sources){
     if(typeof n.path!=='string'||path.posix.isAbsolute(n.path)||n.path.includes('\\')||n.path.split('/').some(p=>p==='..'||p==='')||!n.path.endsWith('.md'))throw Error('Invalid tree document path');
     const actual=await realpath(path.join(sourceRoot,n.path));
     if(!actual.startsWith(sourceRoot+path.sep))throw Error('Tree document escapes source');
-    label=`<a href="#/library/${escapeHTML(source.id)}?file=${encodeURIComponent(n.path)}"><strong>${escapeHTML(n.label)}</strong><span class="document-tree-open" aria-label="자료확인">↗</span></a>`;
+    const document=source.mdDocuments?.find(d=>d.path===n.path);
+    if(!document||!/^downloads\/source-md\/[a-z0-9-]+\/\d+\.md$/.test(document.download))throw Error(`Missing tree download: ${source.id}/${n.path}`);
+    label=`<a href="${escapeHTML(document.download)}" download="${escapeHTML(path.posix.basename(n.path))}" aria-label="${escapeHTML(n.label)} 다운로드"><strong>${escapeHTML(n.label)}</strong></a>`;
     search.push(n.path);
    }
    const children=n.children?.length?`<ul>${(await Promise.all(n.children.map(c=>node(c,depth+1)))).join('')}</ul>`:'';

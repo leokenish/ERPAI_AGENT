@@ -11,7 +11,7 @@ export function renderSourceDocuments(source){
   <label class="source-document-search">파일 찾기<input type="search" data-source-search placeholder="프로젝트, 용도, 파일명 또는 경로" autocomplete="off"></label>
   <p class="source-document-count" data-source-result role="status">${documents.length}개 파일</p>
   <ul class="source-document-list">${documents.map(d=>`<li data-source-path="${esc(d.path)}" data-source-file="${esc([d.path,d.project,d.purpose,d.title].join(' ').toLocaleLowerCase())}"><div><strong>${esc(d.title||d.name)}</strong>${d.project?`<span class="source-document-project">${esc(d.project)}</span>`:''}${d.purpose?`<p class="source-document-purpose">${esc(d.purpose)}</p>`:''}${featured.includes(d.path)?'<span class="source-document-kind">프로젝트 MD</span>':''}<span class="source-document-path">${esc(d.path)}</span></div><a class="btn small" href="${esc(d.download)}" download="${esc(d.name)}" aria-label="${esc(d.path)} 다운로드">다운로드</a></li>`).join('')}</ul>
-  <p class="source-document-empty" data-source-empty ${documents.length?'hidden':''}>표시할 MD 파일이 없다.</p>
+  <p class="source-document-empty" data-source-empty ${documents.length?'hidden':''}>표시할 MD 파일이 없습니다.</p>
  </section>`;
 }
 

@@ -1,0 +1,121 @@
+{
+  "baseline": "v1.17.1",
+  "baselineZipSha256": "0777a0eb68bfdfc16d5e85925fd57029b799dac5dec61915be1dbfb59522d9f8",
+  "protectedFiles": 1687,
+  "protectedAllIdentical": true,
+  "lessonFilesReviewed": 22,
+  "executableCodePreserved": true,
+  "lessonImagesPreserved": true,
+  "lessons": [
+    {
+      "path": "content/lesson-contexts/11-worktime-agent.md",
+      "beforeCharacters": 1902,
+      "afterCharacters": 1523
+    },
+    {
+      "path": "content/lesson-contexts/12-webgui.md",
+      "beforeCharacters": 1868,
+      "afterCharacters": 1448
+    },
+    {
+      "path": "content/lesson-contexts/13-publishing.md",
+      "beforeCharacters": 1811,
+      "afterCharacters": 1496
+    },
+    {
+      "path": "content/lesson-contexts/14-ess-attendance.md",
+      "beforeCharacters": 1773,
+      "afterCharacters": 1270
+    },
+    {
+      "path": "content/lesson-contexts/15-weekly-timeline.md",
+      "beforeCharacters": 1859,
+      "afterCharacters": 1415
+    },
+    {
+      "path": "content/lesson-contexts/16-smart-erp.md",
+      "beforeCharacters": 1771,
+      "afterCharacters": 1350
+    },
+    {
+      "path": "content/lessons/01-overview.md",
+      "beforeCharacters": 4658,
+      "afterCharacters": 4351
+    },
+    {
+      "path": "content/lessons/02-export.md",
+      "beforeCharacters": 6595,
+      "afterCharacters": 5413
+    },
+    {
+      "path": "content/lessons/03-codex.md",
+      "beforeCharacters": 6618,
+      "afterCharacters": 5712
+    },
+    {
+      "path": "content/lessons/03-workspace.md",
+      "beforeCharacters": 9731,
+      "afterCharacters": 8793
+    },
+    {
+      "path": "content/lessons/04-knowledge.md",
+      "beforeCharacters": 9824,
+      "afterCharacters": 8885
+    },
+    {
+      "path": "content/lessons/05-maps.md",
+      "beforeCharacters": 8156,
+      "afterCharacters": 7268
+    },
+    {
+      "path": "content/lessons/06-diagnosis.md",
+      "beforeCharacters": 6116,
+      "afterCharacters": 5481
+    },
+    {
+      "path": "content/lessons/07-feedback.md",
+      "beforeCharacters": 8061,
+      "afterCharacters": 6992
+    },
+    {
+      "path": "content/lessons/08-collaboration.md",
+      "beforeCharacters": 3853,
+      "afterCharacters": 3238
+    },
+    {
+      "path": "content/lessons/09-erp-mcp.md",
+      "beforeCharacters": 4438,
+      "afterCharacters": 3908
+    },
+    {
+      "path": "content/lessons/10-webgui.md",
+      "beforeCharacters": 2012,
+      "afterCharacters": 1694
+    },
+    {
+      "path": "content/lessons/11-worktime-agent.md",
+      "beforeCharacters": 2419,
+      "afterCharacters": 2260
+    },
+    {
+      "path": "content/lessons/12-publishing.md",
+      "beforeCharacters": 2372,
+      "afterCharacters": 2358
+    },
+    {
+      "path": "content/lessons/13-ess-attendance.md",
+      "beforeCharacters": 2270,
+      "afterCharacters": 2057
+    },
+    {
+      "path": "content/lessons/14-weekly-timeline.md",
+      "beforeCharacters": 1806,
+      "afterCharacters": 1619
+    },
+    {
+      "path": "content/lessons/15-smart-erp.md",
+      "beforeCharacters": 1516,
+      "afterCharacters": 1216
+    }
+  ]
+}

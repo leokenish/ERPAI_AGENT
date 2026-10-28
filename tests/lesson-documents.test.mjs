@@ -54,7 +54,7 @@ test('관계도는 없는 문서·원천 밖 경로를 거부하고 표시문 HT
  await writeFile(path.join(dir,'sources/test/README.md'),'ok');
  const tree={sample:{source:'test',title:'<img>',description:'<script>',root:{label:'<svg>',path:'README.md'}}};
  const save=()=>writeFile(path.join(dir,'content/lesson-trees.json'),JSON.stringify(tree));
- await save();const compiled=await loadLessonTrees(dir,[{id:'test',path:'sources/test'}]);
+ await save();const compiled=await loadLessonTrees(dir,[{id:'test',path:'sources/test',mdDocuments:[{path:'README.md',download:'downloads/source-md/test/0001.md'}]}]);
  assert.match(compiled.render('sample'),/&lt;svg&gt;/);assert.doesNotMatch(compiled.render('sample'),/<img|<script|<svg/);
  assert.throws(()=>compiled.render('unknown'),/Unknown/);
  tree.sample.root.path='../outside.md';await save();await assert.rejects(loadLessonTrees(dir,[{id:'test',path:'sources/test'}]),/Invalid/);

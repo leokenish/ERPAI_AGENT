@@ -2,6 +2,7 @@ import {readFile,writeFile,mkdir,copyFile,stat} from 'node:fs/promises';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {renderMarkdown} from './markdown.mjs';
+import {applyReadingEdition} from './reading-edition.mjs';
 
 const allowedNodes=new Set(['sap','export','git','knowledge','codex','diag','maps','feedback','telegram','agent','lookup','worker','hub','erp-api','expert','portal']);
 const idPattern=/^[a-zA-Z0-9_-]+$/;
@@ -55,6 +56,8 @@ export function conversationResolver(assets,documents){
 }
 export async function buildConversations(root,out){
  const config=JSON.parse(await readFile(path.join(root,'content/conversations/catalog.json'),'utf8'));
+ const reading=JSON.parse(await readFile(path.join(root,'content/conversations/reading-edition.json'),'utf8'));
+ requireValue(reading.schema_version==='1.0'&&Object.keys(reading.projects).every(id=>config.projects.some(p=>p.id===id)),'invalid reading edition');
  const editorial=JSON.parse(await readFile(path.join(root,'content/conversations/editorial-prompts.json'),'utf8'));
  requireValue(editorial.schema_version==='1.0','unknown editorial schema');
  requireValue(Object.keys(editorial.projects).every(id=>config.projects.some(p=>p.id===id)),'unknown editorial project');
@@ -140,12 +143,13 @@ export async function buildConversations(root,out){
   const counts={messages:messages.length,episodes:episodes.length,verbatim:0,excerpt:0,summary:0,reconstructed:0,unavailable:0};
   for(const m of messages)counts[m.content_type]++;
   const context=await readFile(path.join(source,'01_PROJECT_CONTEXT.md'),'utf8');
-  projects.push({...meta,title:raw.project_title,coverage:raw.coverage,threads:raw.threads.map(({messages,...t})=>t),messages:preparedMessages,episodes,assets,counts,documents,contextHtml:render(context,'context'),sourcePath:`${sourcePath}/`});
+  projects.push(applyReadingEdition({...meta,title:raw.project_title,coverage:raw.coverage,threads:raw.threads.map(({messages,...t})=>t),messages:preparedMessages,episodes,assets,counts,documents,contextHtml:render(context,'context'),sourcePath:`${sourcePath}/`},reading.projects[meta.id],render));
  }
  const totals=projects.reduce((n,p)=>{for(const [k,v] of Object.entries(p.counts))n[k]=(n[k]||0)+v;return n;},{projects:projects.length});
  for(const [node,[pid,eid]] of Object.entries(config.preferredNodes)){
   const episode=projects.find(p=>p.id===pid)?.episodes.find(e=>e.id===eid);
   requireValue(episode?.map_nodes.includes(node),`invalid preferred episode for ${node}`);
  }
- return {asOf:config.asOf,preferredNodes:config.preferredNodes,projects,totals};
+ const readingTotals=projects.reduce((n,p)=>({projects:n.projects+(p.readingCounts.episodes?1:0),episodes:n.episodes+p.readingCounts.episodes,messages:n.messages+p.readingCounts.messages}),{projects:0,episodes:0,messages:0});
+ return {asOf:config.asOf,preferredNodes:config.preferredNodes,projects,totals,readingTotals};
 }

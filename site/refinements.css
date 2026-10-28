@@ -249,8 +249,16 @@
 .document-tree-node{position:relative;border:1px solid var(--line);border-radius:8px;padding:.8rem 1rem;background:var(--panel);overflow-wrap:anywhere;min-width:0}
 .document-tree-node>a{display:flex;gap:.5rem;align-items:baseline;justify-content:space-between;line-height:1.6}
 .document-tree-node strong{font-size:var(--text-small);font-weight:600;line-height:1.6}
-.document-tree-open{flex:none;font-size:1rem}
 .document-tree-role{display:block;color:var(--muted);font-size:var(--text-caption);margin-bottom:.3rem}
 .prose .document-tree-node p{font-size:var(--text-small);line-height:1.75;margin:.4rem 0 0;color:var(--muted)}
 @media(max-width:600px){.prose .document-tree{padding:.8rem}.prose .document-tree li>ul{margin-left:.25rem;padding-left:.65rem}.document-tree li>ul>li::before{left:-.65rem;width:.65rem}.document-tree-node{padding:.7rem}.document-tree-node strong{font-size:.9rem}}
 @media print{.document-tree-node{break-inside:avoid}.prose .document-tree{background:transparent}}
+
+/* Reading emphasis and direct document downloads. */
+:root{--reading-emphasis:#1649a0}
+:root[data-theme="dark"]{--reading-emphasis:#afc7ff}
+.prose p strong,.prose li strong,.prose blockquote strong{color:var(--reading-emphasis)}
+.prose .document-tree-node>a,.prose .document-tree-node>a:visited,.prose .document-tree-node>a strong{color:var(--brand);text-decoration:none;border-bottom:0;box-shadow:none}
+.prose .document-tree-node>a:hover{color:var(--reading-emphasis);text-decoration:none}
+.prose .document-tree-node>a:focus-visible{outline:2px solid var(--brand);outline-offset:4px;border-radius:2px}
+.prose .document-tree-node>strong{color:var(--ink)}

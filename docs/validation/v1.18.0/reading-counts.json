@@ -1,0 +1,47 @@
+{
+  "sourceMessages": 1327,
+  "readingMessages": 1064,
+  "readingEpisodes": 134,
+  "sourceEpisodes": 147,
+  "excludedByReview": 246,
+  "userRequestsRefined": 206,
+  "assistantDisplayEdits": 57,
+  "projects": {
+    "kbs-erp-export-diag-agents": {
+      "episodes": 32,
+      "messages": 247
+    },
+    "kakao-work-context": {
+      "episodes": 1,
+      "messages": 2
+    },
+    "erp-obsidian-knowledge-map": {
+      "episodes": 5,
+      "messages": 14
+    },
+    "erp-agent-communication": {
+      "episodes": 7,
+      "messages": 18
+    },
+    "kbs-erp-mcp-telegram": {
+      "episodes": 7,
+      "messages": 26
+    },
+    "kbs-erp-webgui-refactor": {
+      "episodes": 35,
+      "messages": 194
+    },
+    "kbs-erp-ess-attendance": {
+      "episodes": 26,
+      "messages": 431
+    },
+    "kbs-weekly-work-timeline": {
+      "episodes": 9,
+      "messages": 51
+    },
+    "kbs-smart-erp-main": {
+      "episodes": 12,
+      "messages": 81
+    }
+  }
+}

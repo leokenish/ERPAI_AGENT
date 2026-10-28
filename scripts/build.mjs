@@ -14,6 +14,7 @@ await updateOliveFruits(root);
 const out=path.join(root,'dist.next');
 await rm(out,{recursive:true,force:true}); await mkdir(out,{recursive:true});
 const catalog=JSON.parse(await readFile(path.join(root,'content/catalog.json'),'utf8'));
+await buildSourceDocuments(root,out,catalog.sources);
 const lessonTrees=await loadLessonTrees(root,catalog.sources);
 // Move trusted SVG styles into the external stylesheet to preserve the CSP.
 let heroCSS='';
@@ -29,11 +30,18 @@ async function loadHero(filename,rootId){
 catalog.heroScene=await loadHero('team-collaboration-animated.svg','erp-screen-scene');
 catalog.heroSceneDark=await loadHero('team-collaboration-dark.svg','dark-erp-screen-scene');
 const ids=new Set();
+// Keep existing section URLs when the reading edition removes editorial headings.
+// Retired headings link to the next retained section without restoring their notices.
+const lessonAnchors={
+ knowledge:{headingIds:{16:17},headingAliases:{16:[16]}},
+ 'ess-attendance':{headingIds:{2:3,3:4,4:5,5:6,6:7,7:8,8:9,9:10},headingAliases:{2:[2]}},
+ 'smart-erp':{headingIds:{4:5,5:6,6:7},headingAliases:{4:[4]}}
+};
 for(const lesson of catalog.lessons){
  if(ids.has(lesson.id))throw Error(`Duplicate lesson ${lesson.id}`); ids.add(lesson.id);
  if(!/^lessons\/[a-z0-9-]+\.md$/.test(lesson.file))throw Error('Invalid lesson path');
  const md=await readFile(path.join(root,'content',lesson.file),'utf8');
- const rendered=renderMarkdown(md,{renderDocumentTree:id=>lessonTrees.render(id)});
+ const rendered=renderMarkdown(md,{...lessonAnchors[lesson.id],renderDocumentTree:id=>lessonTrees.render(id)});
  Object.assign(lesson,rendered,{search:md.replace(/[#*`>|]/g,' ')});
  for(const match of md.matchAll(/```document-tree\r?\n([^\n]+)\r?\n```/g))lesson.search+='\n'+lessonTrees.search(match[1]);
  if(lesson.contextFile){
@@ -63,7 +71,6 @@ await writeFile(path.join(out,'styles.css'),(await readFile(path.join(root,'site
 await cp(path.join(root,'assets'),path.join(out,'assets'),{recursive:true});
 catalog.conversations=await buildConversations(root,out);
 catalog.worktimeKnowledge=await buildKnowledge(root,out);
-await buildSourceDocuments(root,out,catalog.sources);
 catalog.coreDocuments=await buildCoreDocuments(root,out,catalog.sources);
 catalog.sources.find(s=>s.id==='worktime-agent').sha256=catalog.worktimeKnowledge.archiveSha256;
 await mkdir(path.join(out,'downloads'),{recursive:true});

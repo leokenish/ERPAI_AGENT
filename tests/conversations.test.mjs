@@ -4,7 +4,7 @@ import {readFile,access} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {validateConversation,conversationResolver} from '../scripts/build-conversations.mjs';
 import {renderMarkdown} from '../scripts/markdown.mjs';
-import {conversationWorkspace,conversationIndex,resolveConversation,conversationVisibleCount,conversationTabs,conversationSearchEntries} from '../site/conversations.js';
+import {conversationWorkspace,conversationIndex,resolveConversation,conversationVisibleCount,conversationTabs,conversationSearchEntries,readingProjects} from '../site/conversations.js';
 const root=new URL('../',import.meta.url);
 const portal=JSON.parse(await readFile(new URL('dist/data/portal.json',root),'utf8'));
 const bundle=portal.conversations;
@@ -21,14 +21,14 @@ test('572개 사용자 문장은 교육용으로 구분하고 AI 전문·첨부 
  }
  assert.equal(edited,572);assert.equal(empty,66);
  const html=conversationWorkspace(bundle,{projectId:'erp-obsidian-knowledge-map',episodeId:'obs-e001',visible:999});
- assert.match(html,/>교육용 문장<\/span>/);
+ assert.match(html,/>학습용 편집<\/span>/);
  assert.match(html,/회사.*ERP 관련 업무 파일을 구조화/);
  assert.doesNotMatch(html,/message-original|원문 확인|원문 복사|저장해 놓고싶어/);
  assert.match(html,/교육용 문장 복사/);
  const blank=bundle.projects.find(p=>p.id==='kbs-erp-export-diag-agents');
  const episode=blank.episodes.find(e=>e.message_refs.includes('SHARE-077'));
  const emptyHtml=conversationWorkspace(bundle,{projectId:blank.id,episodeId:episode.id,visible:999});
- assert.match(emptyHtml,/첨부 자료만 전달된 항목입니다/);
+ assert.doesNotMatch(emptyHtml,/첨부 자료만 전달된 항목입니다/);assert.match(emptyHtml,/conversation-image/);
 });
 test('9개 프로젝트의 1327개 위치를 원문·발췌·요약·본문 없음으로 구분하고 순서를 보존한다',async()=>{
  assert.equal(bundle.projects.length,9);
@@ -43,7 +43,7 @@ test('9개 프로젝트의 1327개 위치를 원문·발췌·요약·본문 없�
 });
 test('구성도의 모든 요소에서 유효한 관련 프로젝트·에피소드를 선택한다',()=>{
  for(const [node,[pid,eid]] of Object.entries(bundle.preferredNodes)){
-  const s=resolveConversation(bundle,{node});assert.equal(s.project.id,pid);assert.equal(s.episode.id,eid);
+  const s=resolveConversation(bundle,{node});assert.ok(s);assert.ok(!s.episode.readingHidden);if(readingProjects(bundle).find(p=>p.id===pid)?.episodes.some(e=>e.id===eid)){assert.equal(s.project.id,pid);assert.equal(s.episode.id,eid);}
   for(const p of s.availableProjects)assert.ok(p.episodes.some(e=>e.map_nodes.includes(node)));
   const stale=resolveConversation(bundle,{node,projectId:'no-such-project',episodeId:'no-such-episode'});
   assert.ok(stale.episode.map_nodes.includes(node));
@@ -77,10 +77,10 @@ test('네 공유 프로젝트의 모든 표시 본문과 기존 발화 ID·첨�
  for(let i=2;i<=28;i+=2)assert.equal(mcp.messages.find(m=>m.id===`M${String(i).padStart(3,'0')}`).content_type,'verbatim');
  assert.equal(mcp.coverage.final_responses,16);
 });
-test('147개 에피소드의 각 화면에 중복 ID·깨진 자료·과정 링크가 없다',async()=>{
+test('선별한 에피소드의 각 화면에 중복 ID·깨진 자료·과정 링크가 없다',async()=>{
  const projectIds=new Set(bundle.projects.map(p=>p.id)),lessonIds=new Set(portal.lessons.map(l=>l.id));
  const publicLinks=new Set();
- for(const p of bundle.projects)for(const e of p.episodes)for(const [tab] of conversationTabs){
+ for(const p of readingProjects(bundle))for(const e of p.episodes)for(const [tab] of conversationTabs){
   const html=conversationWorkspace(bundle,{projectId:p.id,episodeId:e.id,tab,visible:999});
   assert.ok(html.includes(e.title.replaceAll('&','&amp;')),`${p.id}/${e.id}/${tab}`);
   const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);assert.equal(ids.length,new Set(ids).size,`${p.id}/${e.id}/${tab}: duplicate IDs`);
@@ -95,14 +95,14 @@ test('147개 에피소드의 각 화면에 중복 ID·깨진 자료·과정 링�
  assert.equal([...publicLinks].filter(p=>p.startsWith('assets/conversations/')).length,new Set(bundle.projects.flatMap(p=>p.assets.filter(a=>a.kind==='image'&&a.publicPath).map(a=>a.publicPath))).size);
  assert.ok(!conversationIndex(bundle).includes('원문 전사 1309개'));
 });
-test('미확보 AI 답변과 요약을 원문 응답으로 표시하지 않고 검색으로 찾을 수 있다',()=>{
+test('본문 없는 안내를 숨기고 핵심 기술 응답을 검색으로 찾을 수 있다',()=>{
  const missing=conversationWorkspace(bundle,{projectId:'kbs-erp-export-diag-agents',episodeId:'E12',visible:999});
- assert.ok(missing.includes('AI 답변 본문 미확보'));
- assert.equal((missing.match(/class="conversation-missing-response"/g)||[]).length,2);
+ assert.ok(!missing.includes('AI 답변 본문 미확보'));
+ assert.equal((missing.match(/class="conversation-missing-response"/g)||[]).length,0);
  assert.ok(!missing.includes('당시 AI 답변 원문은 확보하지 못했습니다'));
  const summary=conversationWorkspace(bundle,{projectId:'kbs-erp-mcp-telegram',episodeId:'E01',visible:999});
  assert.ok(!summary.includes('type-summary'));assert.ok(summary.includes('pip install'));assert.ok(summary.includes('MCPServer'));
- const entries=conversationSearchEntries(bundle);assert.equal(entries.length,147);
+ const entries=conversationSearchEntries(bundle);assert.equal(entries.length,bundle.readingTotals.episodes);
  assert.ok(entries.some(e=>e.text.includes('OnDestory')),'preserves the original typo for search and quotation');
 });
 test('공유 화면의 235개 본문 전체와 3개 빈 응답을 보존하며 모든 요청 뒤에 대응 위치가 연결된다',async()=>{
@@ -159,7 +159,7 @@ test('AI 경어체 편집은 해시와 확보 수준을 보존하며 요약을 �
  assert.equal(count,375); // v1.15.1: 59 new overlays; one existing overlay also revised.
  const project=bundle.projects.find(p=>p.id==='kbs-erp-mcp-telegram');
  const episode=project.episodes.find(e=>e.message_refs.includes('M002'));
- assert.match(conversationWorkspace(bundle,{projectId:project.id,episodeId:episode.id,visible:999}),/원문 전사 · 경어체 편집/);
+ assert.match(conversationWorkspace(bundle,{projectId:project.id,episodeId:episode.id,visible:999}),/학습용 편집/);
 });
 
 test('M008은 요약 대신 표와 예제를 포함한 전문을 기본으로 펼친다',()=>{
@@ -176,14 +176,12 @@ test('M008은 요약 대신 표와 예제를 포함한 전문을 기본으로 �
  assert.match(m.html,/<table>/);assert.match(m.html,/<pre>/);
  assert.doesNotMatch(html,/대체로 맞지만 API 선택의 판단 주체는 AI/);
 });
-test('진행 안내는 접고 해당 요청의 최종 전문까지 같은 에피소드에서 보여준다',()=>{
+test('진행 안내와 관리용 에피소드는 표시에서 제외하고 요청·최종 응답은 함께 펼친다',()=>{
  const selection=resolveConversation(bundle,{projectId:'kakao-work-context',episodeId:'kwc-e02'});
+ assert.equal(selection.episode.id,'kwc-e01');
  const html=conversationWorkspace(bundle,{projectId:selection.project.id,episodeId:selection.episode.id});
- assert.equal(selection.messages.at(-1).id,'kwc-m009');
- assert.equal((html.match(/class="conversation-progress"/g)||[]).length,5);
- assert.doesNotMatch(html,/<details class="conversation-progress"[^>]*\bopen/);
- assert.match(html,/id="message-kakao-work-context-kwc-m009"/);
- assert.equal(conversationVisibleCount(selection.messages,4),7);
+ assert.doesNotMatch(html,/conversation-progress|시각 미확인|본문 미확보/);
+ assert.ok(selection.messages.every(m=>m.delivery_kind!=='progress'));
  const messages=[{role:'user'},{role:'assistant',delivery_kind:'progress'},{role:'assistant',delivery_kind:'final'},{role:'user'},{role:'assistant'}];
  assert.equal(conversationVisibleCount(messages,1),3);assert.equal(conversationVisibleCount(messages,4),5);
 });

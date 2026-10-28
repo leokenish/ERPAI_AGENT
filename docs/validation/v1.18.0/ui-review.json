@@ -1,0 +1,17 @@
+{
+  "preview": "managed Linux preview",
+  "checked": [
+    "05 파일 관계도 파란 링크·밑줄 없음·화살표 없음",
+    "중요 본문 강조 색상 rgb(22,73,160)",
+    "다크 모드 관계도와 강조 가독성",
+    "프로젝트 대화 명사형 제목·선별 집계",
+    "해설·시행착오 인과 문단",
+    "관련자료의 실제 첨부 목록",
+    "데스크톱 가로 넘침 없음"
+  ],
+  "downloadVerification": "클라우드 브라우저 다운로드 이벤트는 제한 시간 내 반환되지 않았습니다. HTML download 속성·원래 파일명, 로컬 HTTP 200 응답·Content-Disposition 및 원본 바이트 일치 검사는 통과했습니다.",
+  "screenshots": [
+    "file-tree-light.jpg",
+    "conversation-flow.jpg"
+  ]
+}

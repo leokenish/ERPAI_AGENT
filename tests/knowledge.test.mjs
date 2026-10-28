@@ -42,9 +42,9 @@ test('문서 역할·폴더·여러 검색어를 함께 적용하고 빈 결과�
  assert.equal(filterDocuments(k,{query:'존재하지않는검색어-8172'}).length,0);
  const skills=filterDocuments(k,{group:'instructions',query:'SKILL.md'});assert.equal(skills.length,3);
 });
-test('문서 렌더링은 범위 밖 소스의 경로만 설명하며 문서 내부 HTML을 실행하지 않는다',()=>{
+test('문서 렌더링은 원문을 보존하고 편집 안내와 HTML 실행을 노출하지 않는다',()=>{
  for(const d of k.documents){assert.ok(!/<script\b|\son\w+=|href="javascript:/i.test(d.html),d.path);}
- const d=byPath('maps/sources/DAILY_WORK_INPUT.md');const html=renderDocumentDetail(k,d.id);assert.match(html,/이번 수집 범위 밖/);assert.match(html,/DAILY_WORK_INPUT\.htm/);assert.ok(!/src="[^\"]*\.htm/.test(html));
+ const d=byPath('maps/sources/DAILY_WORK_INPUT.md');const html=renderDocumentDetail(k,d.id);assert.doesNotMatch(html,/이번 수집 범위 밖/);assert.match(html,/DAILY_WORK_INPUT\.htm/);assert.ok(!/src="[^\"]*\.htm/.test(html));
  const empty=k.documents.find(d=>d.empty);assert.match(renderDocumentDetail(k,empty.id),/빈 문서/);
  assert.match(renderKnowledge(k),/전체 MD ZIP 받기/);
 });

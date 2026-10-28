@@ -7,20 +7,22 @@ export function safeURL(value) {
   if (/^[\w./%-]+$/.test(s) && !s.split('/').includes('..') && !s.startsWith('/')) return s;
   return '#';
 }
-export function renderMarkdown(markdown, {headingPrefix='',keepTitle=false,headingOffset=0,resolveURL,renderDocumentTree}={}) {
+export function renderMarkdown(markdown, {headingPrefix='',headingIds={},headingAliases={},keepTitle=false,headingOffset=0,resolveURL,renderDocumentTree}={}) {
   const toc = []; let count = 0;
   const parser = new Marked({gfm:true,breaks:false});
   parser.use({renderer:{
     html({text}) {return escapeHTML(text);},
     heading({tokens,depth,text}) {
-      const id = `${headingPrefix}section-${++count}`;
+      ++count;
+      const id = `${headingPrefix}section-${headingIds[count]??count}`;
+      const aliases=(headingAliases[count]??[]).map(n=>`<span id="${headingPrefix}section-${n}" aria-hidden="true"></span>`).join('');
       if (depth === 2 || depth === 3) toc.push({id,depth,text:text.replace(/[*`]/g,'')});
       const level=Math.min(6,depth+headingOffset);
-      return `<h${level} id="${id}">${this.parser.parseInline(tokens)}</h${level}>`;
+      return `${aliases}<h${level} id="${id}">${this.parser.parseInline(tokens)}</h${level}>`;
     },
     link({href,tokens}) {
       const resolved=resolveURL?resolveURL(href):href;
-      if(!resolved)return `<span class="source-link-unavailable" title="당시의 링크다. 현재 파일 확보 상태는 관련 자료에서 확인할 수 있다.">${this.parser.parseInline(tokens)}</span>`;
+      if(!resolved)return `<span class="source-link-unavailable">${this.parser.parseInline(tokens)}</span>`;
       const url=safeURL(resolved); const external=/^https?:/.test(url);
       return `<a href="${escapeHTML(url)}"${external?' target="_blank" rel="noopener noreferrer"':''}${url.startsWith('downloads/')?' download':''}>${this.parser.parseInline(tokens)}</a>`;
     },

@@ -1,0 +1,552 @@
+{
+  "version": "1.18.0",
+  "validatedOn": "2026-10-28",
+  "baseline": {
+    "head": "140f69bb544035ecea7175090d9bcaba815fd209",
+    "branch": "main",
+    "remote": "origin",
+    "remoteUrl": "https://github.com/leokenish/ERPAI_AGENT",
+    "upstream": "origin/main",
+    "initialWorktreeClean": true,
+    "unrelatedUncommittedChanges": []
+  },
+  "package": {
+    "name": "KBS_ERP_AI_Agent_v1.18.0_Full.zip",
+    "sha256": "0525a7eb3783ab0182e2a22af97b2ca4dafe8d936b35b1f42f09276a44db0bf5",
+    "baseVersion": "1.17.1",
+    "verifiedManifestFiles": 69,
+    "deletedPaths": [],
+    "appliedFiles": 68,
+    "excludedTemporaryCopy": "sources/conversations/20261024-progress/kbs-erp-webgui-refactor/.captured-dom-sanitized.json.NbOhc2",
+    "exclusionReason": "Truncated 6MiB prefix of the existing captured-dom-sanitized.json, not a new source record."
+  },
+  "mergeDecisions": {
+    "docs/INTEGRATION_REVIEW.md": "Preserved previous local application records; added package and local v1.18.0 decisions.",
+    "package.json": "Preserved preview alias; updated version.",
+    "scripts/build-knowledge.mjs": "Applied new copy and removed obsolete tooltip replacement after tooltip removal.",
+    "index.html": "Regenerated version and browser cache token from the merged build.",
+    "README.md": "Linked this local application record instead of the package-era no-commit statement."
+  },
+  "additionalFixes": [
+    "Preserved pre-v1.18.0 section URLs for knowledge, ess-attendance and smart-erp; retired notices link to the next retained section.",
+    "Wait for preceding lazy images to decode before TOC navigation; cancel superseded requests and navigation to detached targets."
+  ],
+  "validation": {
+    "node": "v24.19.0",
+    "commandsInOrder": [
+      "npm run build",
+      "npm run preview",
+      "npm test"
+    ],
+    "tests": {
+      "total": 102,
+      "passed": 102,
+      "failed": 0,
+      "skipped": 0
+    },
+    "preservation": {
+      "sourceFilesPreserved": 1576,
+      "assetFilesPreserved": 36,
+      "unchangedLocalFiles": 1832,
+      "originalMessages": 1327,
+      "originalEpisodes": 147,
+      "publishedAttachments": 424,
+      "verifiedMDDownloadsIncludingCoreCopies": 998,
+      "evidenceLinks": 52,
+      "readingTotals": {
+        "projects": 9,
+        "episodes": 134,
+        "messages": 1064
+      },
+      "filesAtOrAbove100MiB": []
+    },
+    "browser": {
+      "checks": [
+        "npm start: home page loads",
+        "16 course bodies, six contexts, TOCs and all 52 evidence links; portal intent/spec/plan/insight original downloads",
+        "Retired heading URLs resolve to preserved course content",
+        "All 25 diagram MD links download directly with original filenames and SHA-256",
+        "Course previous/next and lesson search",
+        "Nine projects: selected flow counts, displayed messages, previous/next, causal paragraphs, search and complete attachment lists",
+        "Hidden episode URL falls back to the same project learning flow",
+        "Gallery, image zoom, feature tabs and icon comparison preserved",
+        "783-document knowledge map and download connection preserved",
+        "Light/dark bold blue contrast >=4.5:1; diagram links blue without underline",
+        "390px light/dark courses, diagrams and conversations without horizontal overflow",
+        "Offline preview: direct MD download, selected conversations and searches without network",
+        "No browser console errors or page exceptions"
+      ],
+      "errors": [],
+      "clickedEvidenceLinks": 52,
+      "treeDownloads": [
+        {
+          "course": "knowledge",
+          "name": "README.md",
+          "sha256": "1af31b2ce29aca8c9e4f79bbfab3e9973910b9d677ff0c896ad3567677527c16"
+        },
+        {
+          "course": "knowledge",
+          "name": "AGENTS.md",
+          "sha256": "cb3b9165e1cdb6be0f10a0434e2f950fa34bfd5c9b94eac7f82b7d334d78b7d5"
+        },
+        {
+          "course": "knowledge",
+          "name": "SKILL.md",
+          "sha256": "0a8645bb3d9474691f6470e932a6a6c8d570b972947db3f1ec0aadbdad7d2b07"
+        },
+        {
+          "course": "knowledge",
+          "name": "SKILL.md",
+          "sha256": "8b6be1cba5153458a8f8a7f3d3b9de26f3cd2ec171679a291191d9e85c60177a"
+        },
+        {
+          "course": "knowledge",
+          "name": "SKILL.md",
+          "sha256": "afd76de883490996f0ed5f836ba17b904fa85c6ae8da90b54de24b6463d60294"
+        },
+        {
+          "course": "knowledge",
+          "name": "INDEX.md",
+          "sha256": "376bc10c9c2a4755883687f5c9e67f55f34209f49f2b4f6f73dc7c71fd753c87"
+        },
+        {
+          "course": "knowledge",
+          "name": "overtime-start-time.md",
+          "sha256": "40cfa63e732f6f25cdda45eeb33d24029ce58859e0d1027a2ea9374c5de0d355"
+        },
+        {
+          "course": "knowledge",
+          "name": "working-time.md",
+          "sha256": "cf1d458c0621e852308179c4f1910e4c0225f9515de14161eb36a6eed69b6344"
+        },
+        {
+          "course": "knowledge",
+          "name": "EXPORT_GUIDE.md",
+          "sha256": "4824081533aa0c377b27d04946d999ec281ff2038e42da7d96cfa8890bc4188f"
+        },
+        {
+          "course": "maps",
+          "name": "DOCUMENT_INDEX.md",
+          "sha256": "704ae09315c1760ccae91173eda409bd0f047fa60e23b2d8ce8f0f227dbb6343"
+        },
+        {
+          "course": "maps",
+          "name": "README.md",
+          "sha256": "1af31b2ce29aca8c9e4f79bbfab3e9973910b9d677ff0c896ad3567677527c16"
+        },
+        {
+          "course": "maps",
+          "name": "INDEX.md",
+          "sha256": "5729d354ae3d2a0b0f60b16438bf3bef5090266c45f89ab85e30e6478987b09d"
+        },
+        {
+          "course": "maps",
+          "name": "rates.md",
+          "sha256": "c06b4be679662540b30b6effc610d988ab65e4da3ec77b74be805d83b01c4d66"
+        },
+        {
+          "course": "maps",
+          "name": "overtime-rate-20260901.md",
+          "sha256": "09bc8d308a55fb95c929d64557d51d852e79d8a0d5fb850860051e7439caefb3"
+        },
+        {
+          "course": "maps",
+          "name": "FB-20260923-002.md",
+          "sha256": "3528b1a8e31edd5cb2668b57800f8e7fc6ddd45d33b327f35fed31655648274f"
+        },
+        {
+          "course": "maps",
+          "name": "ZHR_52TM_GET_PERSONNEL_DATA_N.md",
+          "sha256": "05440878139b914a9dac5860bd4379db9f44019a1500925d7921590fbca66c0b"
+        },
+        {
+          "course": "maps",
+          "name": "business-qa.md",
+          "sha256": "67facacca16034c53aa4243f0001a28fa195815da0d6cbdc588fbcc90adff757"
+        },
+        {
+          "course": "maps",
+          "name": "verification.md",
+          "sha256": "c4abf2d5583f1bc0edf615bdaf63f693f952ee46e0bac5cb816d28a615d2f89f"
+        },
+        {
+          "course": "feedback",
+          "name": "AGENTS.md",
+          "sha256": "cb3b9165e1cdb6be0f10a0434e2f950fa34bfd5c9b94eac7f82b7d334d78b7d5"
+        },
+        {
+          "course": "feedback",
+          "name": "BUSINESS_FEEDBACK_POLICY.md",
+          "sha256": "c51bb20b5a4128ce73eab79f23292fd2a7f50bb06532792fc35f7f1481bde295"
+        },
+        {
+          "course": "feedback",
+          "name": "FB-20261001-001.md",
+          "sha256": "31c3bb1457091aa184f855a69db9f4b512ba3c53fe9ea33890d40c96198f3a7b"
+        },
+        {
+          "course": "feedback",
+          "name": "overtime-start-time.md",
+          "sha256": "40cfa63e732f6f25cdda45eeb33d24029ce58859e0d1027a2ea9374c5de0d355"
+        },
+        {
+          "course": "feedback",
+          "name": "SKILL.md",
+          "sha256": "0a8645bb3d9474691f6470e932a6a6c8d570b972947db3f1ec0aadbdad7d2b07"
+        },
+        {
+          "course": "feedback",
+          "name": "business-qa.md",
+          "sha256": "67facacca16034c53aa4243f0001a28fa195815da0d6cbdc588fbcc90adff757"
+        },
+        {
+          "course": "feedback",
+          "name": "VALIDATION.md",
+          "sha256": "2a408baf700ea85d42dd367914b0afaad51b8edcd7daf80c212421c0395a3383"
+        }
+      ],
+      "attachmentDownloads": [
+        {
+          "project": "kbs-erp-export-diag-agents",
+          "name": "Z_PACKAGE_EXPORT.abap"
+        },
+        {
+          "project": "erp-obsidian-knowledge-map",
+          "name": "ERP_Obsidian_교육자료_20261008.zip"
+        },
+        {
+          "project": "erp-agent-communication",
+          "name": "ERP_MCP_NodeJS_Example.zip"
+        },
+        {
+          "project": "kbs-erp-mcp-telegram",
+          "name": "ERP_MCP서버구성_ERP연동과텔레그램에이전트_2026-10-08.zip"
+        },
+        {
+          "project": "kbs-erp-webgui-refactor",
+          "name": "ERP_WebGUI_Refactoring_교육자료추출_2026-10-08.zip"
+        },
+        {
+          "project": "kbs-erp-ess-attendance",
+          "name": "근태 입력화면.png"
+        },
+        {
+          "project": "kbs-weekly-work-timeline",
+          "name": "image.png"
+        },
+        {
+          "project": "kbs-smart-erp-main",
+          "name": "image.png"
+        }
+      ],
+      "colors": [
+        {
+          "theme": "light",
+          "bold": "rgb(22, 73, 160)",
+          "background": "rgb(255, 255, 255)",
+          "link": "rgb(36, 84, 214)",
+          "underline": "none",
+          "contrast": 8.417693599300666
+        },
+        {
+          "theme": "dark",
+          "bold": "rgb(175, 199, 255)",
+          "background": "rgb(17, 23, 34)",
+          "link": "rgb(154, 174, 255)",
+          "underline": "none",
+          "contrast": 10.633821878611442
+        }
+      ]
+    },
+    "browserScreenshotsReviewed": [
+      "tree-desktop-light.png",
+      "tree-mobile-dark.png",
+      "conversation-desktop-dark.png"
+    ],
+    "browserScreenshotsStoredOutsideRepository": true,
+    "gitDiffCheck": "passed",
+    "newCredentialPatternMatches": []
+  },
+  "preservedConfiguration": [
+    ".git/config",
+    ".github/workflows/deploy.yaml",
+    ".gitignore",
+    "local-only files"
+  ],
+  "excludedFromCommit": [
+    "dist/",
+    "dist.next/",
+    "preview.html",
+    "preview-data/",
+    "delivery ZIP",
+    "external extraction and backup directories",
+    "ignored build/preview logs",
+    "truncated temporary source copy"
+  ],
+  "reviewedFiles": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "282640fde7cc7edac2bfc8b4dcce8c3a084cf2465d4f0a80a1983e7ec449e254"
+    },
+    {
+      "path": "README.md",
+      "sha256": "8b4b0aae84b26e2d3769b66ee457c04988b03fb8269d5d9ef65ac2002be42659"
+    },
+    {
+      "path": "content/catalog.json",
+      "sha256": "f0b282a13c4687f5059b9296dc03941c9f9e7ba5e3bb3213d89c1635564326bf"
+    },
+    {
+      "path": "content/conversations/catalog.json",
+      "sha256": "aed4adaea7758c0d9570a63b9c4fbf3f4bc3629caa6b3ca596b109e685b304a3"
+    },
+    {
+      "path": "content/conversations/editorial-prompts.json",
+      "sha256": "d192185dbc1e6e8fbdf9b080f4a0caa8cde4eb779babf4a553f6abb963ac4483"
+    },
+    {
+      "path": "content/conversations/reading-edition.json",
+      "sha256": "f15953903893a819e910da637d3bd8f85389b5491102c7e81c9a26f331a8ed95"
+    },
+    {
+      "path": "content/core-documents.json",
+      "sha256": "d39e3ecc418d753316744fbcbe4bf59de349636a0b952c4bd141c1b98a829298"
+    },
+    {
+      "path": "content/lesson-contexts/11-worktime-agent.md",
+      "sha256": "0c26762a2815702973609d401898563ecf82996a391729f798b8791834bad5eb"
+    },
+    {
+      "path": "content/lesson-contexts/12-webgui.md",
+      "sha256": "f12ef01aba66405cc15b76ceb19f1a1bb480065917562b4ec9fd73bf20ad02fb"
+    },
+    {
+      "path": "content/lesson-contexts/13-publishing.md",
+      "sha256": "979f01bc420a2dc2ad70bdfb89f803ab1c4e079fcd2fbefba2d58ba9b55837a1"
+    },
+    {
+      "path": "content/lesson-contexts/14-ess-attendance.md",
+      "sha256": "0a99ee53349cd870f07dbc5d2cbc47fed5a549055e8aa298b3f8ecce5243a0ec"
+    },
+    {
+      "path": "content/lesson-contexts/15-weekly-timeline.md",
+      "sha256": "ce32cf4dfc2b9789c43a8cb220b941dbf33d7410cba0a22d03ebf6b8c11f053d"
+    },
+    {
+      "path": "content/lesson-contexts/16-smart-erp.md",
+      "sha256": "3a54886a02f5052537b2fd28e96e829a34c17475a901ed048d9e7f9eae85e93c"
+    },
+    {
+      "path": "content/lesson-trees.json",
+      "sha256": "d6323a842f95444f049a0f57d3aa55c00a9eb9f016fa81d43359bd732cd921c0"
+    },
+    {
+      "path": "content/lessons/01-overview.md",
+      "sha256": "8c6adb9b1aea9e09bdce16e0c4c680faedc6580d18a954a9ded121a1ffdca5fe"
+    },
+    {
+      "path": "content/lessons/02-export.md",
+      "sha256": "8581c1e7b5a082566b5f38b0204b91b82ecd7403852806abaf7857ac3e503d5d"
+    },
+    {
+      "path": "content/lessons/03-codex.md",
+      "sha256": "042db0fb0bf0ca812c18d9bec65340f5b9b30f2d3980467b4c4cc249e3d595d4"
+    },
+    {
+      "path": "content/lessons/03-workspace.md",
+      "sha256": "d81772a7dd1b0c44c3db421940bcb760aea5a2738be2da5b30e46d35722ec1ad"
+    },
+    {
+      "path": "content/lessons/04-knowledge.md",
+      "sha256": "b5bee55be283cdc132744939f428f89e1a704a6f129eb1c6da18cb6cff9942ea"
+    },
+    {
+      "path": "content/lessons/05-maps.md",
+      "sha256": "22d382eb89f73270334a7bcd564879edf281c03ca2e52195307b43a97707aa25"
+    },
+    {
+      "path": "content/lessons/06-diagnosis.md",
+      "sha256": "12b6751bc59dc700a47aaa665b55f325a395655159bd7d407457b814ad41a991"
+    },
+    {
+      "path": "content/lessons/07-feedback.md",
+      "sha256": "c4a1216ea79d50ba1b862d3801ff2bb29b4be8e994a7038a85e9533b3708bd07"
+    },
+    {
+      "path": "content/lessons/08-collaboration.md",
+      "sha256": "4f8fdd4a2d95fec65cc94b24d9afe6edeb11f76e0b3bb4cc9d1ab3ed0676eb66"
+    },
+    {
+      "path": "content/lessons/09-erp-mcp.md",
+      "sha256": "d0fa2e411d78cbf87e6ad902ec429dc60fac87249c6bd763e2d062b495320be9"
+    },
+    {
+      "path": "content/lessons/10-webgui.md",
+      "sha256": "f03d755b071659b9441c4c6f75f210fbb4e9ef42f3237f806611c6c4b724aad4"
+    },
+    {
+      "path": "content/lessons/11-worktime-agent.md",
+      "sha256": "16a440e40ea858229b1b0e40096bf006ab09e27886bd2f6e47d0fca7728af420"
+    },
+    {
+      "path": "content/lessons/12-publishing.md",
+      "sha256": "953462a1a7011bedd0ea02acbd2c45291a8a21ba43075bfaab583efc771ef096"
+    },
+    {
+      "path": "content/lessons/13-ess-attendance.md",
+      "sha256": "1d7ed4893f5c07eefd3a2b8aa20b61146c555415f8516eedc481e3b48266a8b8"
+    },
+    {
+      "path": "content/lessons/14-weekly-timeline.md",
+      "sha256": "8fb5b12c6232890ef5ec83e78b4f31dec0bfeb99a7fdb85ac0cda9e071f935d8"
+    },
+    {
+      "path": "content/lessons/15-smart-erp.md",
+      "sha256": "089c1def95eddb4603a02bbc703cd621a364a888469b5391a2da70436d3e9bb4"
+    },
+    {
+      "path": "content/worktime-knowledge.json",
+      "sha256": "839f3163462cf60326571e78125abe0bfe2cf5a969b7efc724a7f8c4f92df161"
+    },
+    {
+      "path": "docs/CONTENT_WORKFLOW.md",
+      "sha256": "710fd32325b4bcc80579677461fa9c815b04bd9d377e2e09da02eb7d40437882"
+    },
+    {
+      "path": "docs/EDITORIAL_STYLE.md",
+      "sha256": "ca749962696c9eeac47dd5458338e6a444629c01782c0bd04431a455020c19f2"
+    },
+    {
+      "path": "docs/INTEGRATION_REVIEW.md",
+      "sha256": "d027f3147eb9800c80c9741e86951eb7284f4b392bd232d0de41dade70704012"
+    },
+    {
+      "path": "docs/RELEASE_v1.18.0.md",
+      "sha256": "3371227569b2b516e29bc8f9e43f0685a61943144695cc49031676db8307e7c0"
+    },
+    {
+      "path": "docs/validation/v1.18.0/conversation-flow.jpg",
+      "sha256": "daf701724c791c72f9bdd09eba7727756c57f85fe465fadf70281e1e1afe1840"
+    },
+    {
+      "path": "docs/validation/v1.18.0/file-tree-light.jpg",
+      "sha256": "7ff4f3de467c06e3ef220a41c93c1bfa74e1d7a42ec2963d6f8a7abb3275a057"
+    },
+    {
+      "path": "docs/validation/v1.18.0/preservation.json",
+      "sha256": "93117ad305d1e64444649e8ac4865b2e544e73f2173ebce70bb4b0806dfe9a47"
+    },
+    {
+      "path": "docs/validation/v1.18.0/protected-files.json",
+      "sha256": "6183c72bf59ce004d2ab90aa02ae657ad62e5390712d1e634402cd42c2d8b9d0"
+    },
+    {
+      "path": "docs/validation/v1.18.0/reading-counts.json",
+      "sha256": "f89b7378bd92f0023a345034da2b40e79c190e2e4230ad6a14b54e0db59dc172"
+    },
+    {
+      "path": "docs/validation/v1.18.0/tests.tap",
+      "sha256": "625fac7d4f051c3eedb59d8aff7a8d31c64c12d3b291aabb98ff528f9d45d48d"
+    },
+    {
+      "path": "docs/validation/v1.18.0/ui-review.json",
+      "sha256": "914067ace028f1ad0e457efda73e3206948135c38e77cc6c60583173eca3f0dd"
+    },
+    {
+      "path": "index.html",
+      "sha256": "5ff46caf4098366da91948b496fbfcc0dd8a21d6720284f64df4202bc97410ac"
+    },
+    {
+      "path": "package.json",
+      "sha256": "39d5b292c71c98da4821f7df7e04b11fd5840831b991331a0ec7411c264299b9"
+    },
+    {
+      "path": "scripts/build-conversations.mjs",
+      "sha256": "505e55b97fbcf17818ccf822d3d6f1c82cd862f001222f7c09c8a5f6e05cd991"
+    },
+    {
+      "path": "scripts/build-core-documents.mjs",
+      "sha256": "058d699151f429e33f7e25758d6f5e27674fb21ca9b0a1a61b304135bd3e3c8e"
+    },
+    {
+      "path": "scripts/build-knowledge.mjs",
+      "sha256": "78fec4e5243e8a8fd1600e1ae56750e2c74639d1e396136401a2861245c51e90"
+    },
+    {
+      "path": "scripts/build.mjs",
+      "sha256": "40994fff0faffcd37c303c9b09a4e06361232d57e394f501f0181ed7383738b3"
+    },
+    {
+      "path": "scripts/lesson-trees.mjs",
+      "sha256": "82a4a648a69735bd2d134c9face00b37ae6c52874931b83c9c6700cf129529b6"
+    },
+    {
+      "path": "scripts/markdown.mjs",
+      "sha256": "bd502a46bb8bbee76ea016b3f4f473ee7f66f31862d035a2b4d928129368f0e6"
+    },
+    {
+      "path": "scripts/reading-edition.mjs",
+      "sha256": "0a12a04912001b73f3277c6acaa479521f2251b8ae6b63e30debddf5102721e6"
+    },
+    {
+      "path": "site/app.js",
+      "sha256": "0fbad6553c7e8b933655c6b239c69987c6e75f180dd709ece6cca3d219721c30"
+    },
+    {
+      "path": "site/conversations.js",
+      "sha256": "e28b8e1dda9f9684c06306aecd5c1ef364c0ba0e272835161db2c39282f85e21"
+    },
+    {
+      "path": "site/index.html",
+      "sha256": "8816c9306d60af15de59b3258165817e29441c73718f9464a48a1cf05367cf08"
+    },
+    {
+      "path": "site/knowledge-map.js",
+      "sha256": "58bf26de8e35b792e4f4f4928dfe205e391f587ef7e64bf8f71a10a271080129"
+    },
+    {
+      "path": "site/knowledge.js",
+      "sha256": "32cc0bbe2dde3f703d711217e90519f630a54260df0e9f68874db9fc636620ff"
+    },
+    {
+      "path": "site/refinements.css",
+      "sha256": "8c1cbf404403e5f9130c323b7e1e8c0f5ef68b17ef95caf73e3bc8b3a062edaf"
+    },
+    {
+      "path": "site/source-library.js",
+      "sha256": "8cca533d4dd99ad334fd4b994d33587f3f4841c376631972700e5087726dff49"
+    },
+    {
+      "path": "tests/business-conversations.test.mjs",
+      "sha256": "eaeecdd1fe0562cefd5bc2d5faf7b00c862093e869c039e078ae8ddf2e080b30"
+    },
+    {
+      "path": "tests/conversation-navigation.test.mjs",
+      "sha256": "173bd6a19804bd2ee0886c5bf8df9e37b40cf970cb732372b4b29a940c2490d4"
+    },
+    {
+      "path": "tests/conversations.test.mjs",
+      "sha256": "f96b0a37fb4b5b1988063fe550063beafbfe7e745f8626aed3c7462faa5dab57"
+    },
+    {
+      "path": "tests/knowledge.test.mjs",
+      "sha256": "c430d1b44f476533435cb6e77b24237a2f84df80cbe96de9ef94d0abfee3e5e3"
+    },
+    {
+      "path": "tests/lesson-documents.test.mjs",
+      "sha256": "e867d7472f410b5e2cef47eeb08d373c1a9c6bb7294e458e34b46bf3c024a932"
+    },
+    {
+      "path": "tests/portal-update.test.mjs",
+      "sha256": "058d7f8f4adfd55123c3ae1e999b24f199de72651bd40ee0e8fdf63f61a7db2b"
+    },
+    {
+      "path": "tests/progress-20261024.test.mjs",
+      "sha256": "0779a95e234713bf93ea0a9d1a79461b9265e196d3cb5d091320ce6164692e48"
+    },
+    {
+      "path": "tests/reading-edition.test.mjs",
+      "sha256": "1eb68daf76bc5c523f43781288296b5d8ad7904141799eec7cb98fb6d81c8a22"
+    }
+  ]
+}

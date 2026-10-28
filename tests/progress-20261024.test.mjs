@@ -47,7 +47,9 @@ test('생성 이미지가 있어도 없는 AI 텍스트를 만들어 원문으�
  assert.equal(m.content_type,'unavailable');assert.equal(m.content_markdown,'');
  const episode=p.episodes.find(e=>e.message_refs.includes(m.id));
  const view=conversationWorkspace(data.conversations,{projectId:p.id,episodeId:episode.id,visible:999});
- assert.ok(view.includes('AI 답변 본문 미확보'));assert.ok(view.includes('별도로 확보한 이미지'));assert.ok(!view.includes('공유 대화 undefined'));
+ assert.doesNotMatch(view,/AI 답변 본문 미확보|별도로 확보한 이미지|공유 대화 undefined/);
+ const assets=conversationWorkspace(data.conversations,{projectId:p.id,episodeId:episode.id,tab:'assets'});
+ for(const id of m.asset_ids){const asset=p.assets.find(a=>a.id===id);if(asset.publicPath)assert.ok(assets.includes(asset.publicPath));}
 });
 
 test('ABAP 및 프리뷰 HTML은 실행 화면이 아니라 첨부 다운로드로 제공한다',async t=>{

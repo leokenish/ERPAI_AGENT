@@ -22,6 +22,27 @@ function fixture(hash){
  return {context,elements,events,windowEvents,location,copied,presentationLifecycle,heroLifecycle};
 }
 function target(attribute,dataset){return {dataset,closest(){return this;},matches(selector){return selector===`[${attribute}]`;}};}
+test('목차는 앞선 지연 이미지의 높이가 확정된 뒤 이동하고 오래된 이동 요청은 취소한다',async()=>{
+ const f=fixture('#/learn/maps');await vm.runInContext(`(async()=>{${source}})()`,f.context);
+ const scrolled=[];
+ for(const id of ['section-16','section-17']){
+  const el=f.context.document.getElementById(id);el.isConnected=true;el.scrollIntoView=()=>scrolled.push(id);
+ }
+ let release,pending=new Promise(resolve=>{release=resolve;});
+ const image={loading:'lazy',compareDocumentPosition:()=>4,decode:()=>pending};
+ const query=f.context.document.querySelectorAll;
+ f.context.document.querySelectorAll=s=>s==='.article img'?[image]:query(s);
+ f.context.Node={DOCUMENT_POSITION_FOLLOWING:4};
+ const click=id=>f.events.click({target:target('data-section',{section:id}),preventDefault(){}});
+ click('section-17');assert.equal(image.loading,'eager');assert.deepEqual(scrolled,[]);
+ release();await new Promise(resolve=>setImmediate(resolve));assert.deepEqual(scrolled,['section-17']);
+ pending=new Promise(resolve=>{release=resolve;});
+ click('section-16');click('section-17');release();await new Promise(resolve=>setImmediate(resolve));
+ assert.deepEqual(scrolled,['section-17','section-17']);
+ pending=new Promise(resolve=>{release=resolve;});click('section-16');
+ f.context.document.getElementById('section-16').isConnected=false;
+ release();await new Promise(resolve=>setImmediate(resolve));assert.deepEqual(scrolled,['section-17','section-17']);
+});
 test('활용사례의 새 맥락은 기존 요소 앞에 추가되고 기존 목차·검색·직접 이동을 유지한다',async()=>{
  const f=fixture('#/learn/worktime-agent');await vm.runInContext(`(async()=>{${source}})()`,f.context);
  for(const l of data.lessons){
@@ -37,7 +58,7 @@ test('활용사례의 새 맥락은 기존 요소 앞에 추가되고 기존 목
   assert.equal(added.length,4);assert.equal(new Set(l.toc.map(t=>t.id)).size,l.toc.length);
   for(const t of l.toc){assert.ok(html.includes(`id="${t.id}"`));assert.ok(html.includes(`data-section="${t.id}"`));}
  }
- f.events.input({target:{id:'search-input',value:'원문에서 카드를 만들고',matches(){return false;}}});
+ f.events.input({target:{id:'search-input',value:'JSONL',matches(){return false;}}});
  assert.match(f.elements.get('search-results').innerHTML,/#\/learn\/weekly-timeline/);
  let scrolled=false;f.context.document.getElementById('context-section-4').scrollIntoView=()=>{scrolled=true;};
  f.location.hash='#/learn/weekly-timeline?section=context-section-4';f.windowEvents.hashchange();assert.equal(scrolled,true);
@@ -53,19 +74,19 @@ test('복사 버튼은 화면에 표시한 사용자 교육 문장과 AI 답변�
 });
 test('구성 요소 선택 후 프로젝트·에피소드·해설을 바꿔도 같은 화면에서 올바른 대화와 주소가 연결된다',async()=>{
  const f=fixture('#/map/core?node=export');await vm.runInContext(`(async()=>{${source}})()`,f.context);
- assert.ok(f.elements.get('main').innerHTML.includes('첫 추출기의 오류를 실행 결과로 줄이다'));
+ assert.ok(f.elements.get('main').innerHTML.includes('첫 추출기 오류 분석 및 수정'));
  f.events.click({target:target('data-node',{node:'maps'})});
- assert.ok(f.elements.get('conversation-host').innerHTML.includes('업무 자료를 연결하려는 목적과 도구의 역할'));
+ assert.ok(f.elements.get('conversation-host').innerHTML.includes('업무 자료 연결 목적 및 도구 역할'));
  assert.ok(f.location.hash.includes('node=maps'));
  const select={value:'erp-agent-communication',matches:s=>s==='[data-conversation-select]'};
  f.events.change({target:select});
- assert.ok(f.elements.get('conversation-host').innerHTML.includes('접점 MD를 업무 지도로 설명하기'));
+ assert.ok(f.elements.get('conversation-host').innerHTML.includes('업무 접점 MD 및 관계 시각화'));
  assert.ok(f.location.hash.includes('project=erp-agent-communication'));
  f.events.click({target:target('data-conversation-tab',{conversationTab:'review'})});
  assert.ok(f.elements.get('conversation-host').innerHTML.includes('conversation-outcome'));
  assert.ok(f.location.hash.includes('tab=review'));
  const reloaded=fixture(f.location.hash);await vm.runInContext(`(async()=>{${source}})()`,reloaded.context);
- assert.ok(reloaded.elements.get('main').innerHTML.includes('접점 MD를 업무 지도로 설명하기'));
+ assert.ok(reloaded.elements.get('main').innerHTML.includes('업무 접점 MD 및 관계 시각화'));
  assert.ok(reloaded.elements.get('main').innerHTML.includes('conversation-outcome'));
 });
 test('단독 대화에서 항목을 차례로 펼치고 다음 에피소드로 이동하면 기록 순서와 초기 표시 수가 유지된다',async()=>{
@@ -159,7 +180,7 @@ test('자료확인 직접 주소는 선택한 프로젝트 MD만 표시한다',a
 });
 
 test('16개 새 순서·4개 홈 묶음·메뉴와 제목이 일치한다',async()=>{
- const titles=['ERP AI 에이전트 전체 그림','ERP 소스 추출하기','GITHUB 연동','로컬 에이전트 구성','업무 맥락 만들기','업무 지도 만들기','업무 스킬 및 회귀','코드 검증 및 적용','에이전트간 협업(계획 중)','ERP 데이터 연동','근로시간 AI 에이전트 구축','ERP WEBGUI 개편','ERP AI 에이전트 포털 구축','ESS 근태시스템 개편','업무일지 타임라인 개발','스마트 ERP 메인화면 개편'];
+ const titles=['ERP AI 에이전트 전체 그림','ERP 소스 추출하기','GITHUB 연동','로컬 에이전트 구성','업무 맥락 만들기','업무 지도 만들기','업무 스킬 및 회귀','코드 검증 및 적용','에이전트간 협업','ERP 데이터 연동','근로시간 AI 에이전트 구축','ERP WEBGUI 개편','ERP AI 에이전트 포털 구축','ESS 근태시스템 개편','업무일지 타임라인 개발','스마트 ERP 메인화면 개편'];
  assert.deepEqual(data.lessons.map(l=>l.title),titles);assert.deepEqual(data.lessons.map(l=>l.number),Array.from({length:16},(_,i)=>i+1));
  const f=fixture('#/home');await vm.runInContext(`(async()=>{${source}})()`,f.context);
  assert.equal((f.elements.get('main').innerHTML.match(/class="path-entry"/g)||[]).length,4);
@@ -172,7 +193,7 @@ test('활용사례 지도는 독립 박스 여섯 개이며 자체 프로젝트 
  for(const [id,pid] of [['webgui','kbs-erp-webgui-refactor'],['ess-attendance','kbs-erp-ess-attendance'],['weekly-timeline','kbs-weekly-work-timeline'],['smart-erp','kbs-smart-erp-main']]){
   f.events.click({target:target('data-node',{node:'case-'+id})});assert.ok(f.elements.get('conversation-host').innerHTML.includes(`data-conversation-project="${pid}"`));assert.ok(f.location.hash.startsWith('#/map/cases?'));
  }
- f.events.click({target:target('data-node',{node:'case-publishing'})});assert.match(f.elements.get('conversation-host').innerHTML,/대화 전문은 아직 등록되지 않았다/);
+ f.events.click({target:target('data-node',{node:'case-publishing'})});assert.match(f.elements.get('conversation-host').innerHTML,/href="#\/learn\/publishing"/);assert.doesNotMatch(f.elements.get('conversation-host').innerHTML,/아직 등록/);
 });
 test('핵심 MD 직접 주소에는 프로젝트·용도·다운로드를 제공하고 제거된 대화 탭은 노출하지 않는다',async()=>{
  for(const g of data.coreDocuments){const f=fixture('#/library/'+g.id);await vm.runInContext(`(async()=>{${source}})()`,f.context);const html=f.elements.get('main').innerHTML;assert.match(html,/source-document-purpose/);for(const d of g.mdDocuments){assert.ok(html.includes(d.download));assert.ok(html.includes(d.project));}}

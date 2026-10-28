@@ -44,7 +44,7 @@ test('홈에서 16개 과정을 각각 선택하고 사례실습 링크를 노�
  assert.doesNotMatch(paths,/01[–-]03|04[–-]07|08[–-]12/);
  assert.doesNotMatch(html,/#\/cases|사례 실습|home-practice/);
  const htmlIndex=conversationIndex(portal.conversations);
- assert.match(htmlIndex,/data-count-to="1309"/);assert.doesNotMatch(htmlIndex,/data-count-to="1327"/);
+ assert.ok(htmlIndex.includes(`data-count-to="${portal.conversations.readingTotals.messages}"`));assert.doesNotMatch(htmlIndex,/data-count-to="1327"/);
 });
 
 test('확장 설계 다음에 10~15 활용 사례와 개별 과정·핵심 MD 링크를 제공한다',()=>{
