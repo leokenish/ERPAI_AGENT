@@ -3,6 +3,7 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {renderMarkdown} from './markdown.mjs';
+import {loadMessengerCases,decorateLessonQA} from './lesson-dialogue.mjs';
 import {loadLessonTrees} from './lesson-trees.mjs';
 import {buildConversations} from './build-conversations.mjs';
 import {buildKnowledge} from './build-knowledge.mjs';
@@ -16,6 +17,7 @@ await rm(out,{recursive:true,force:true}); await mkdir(out,{recursive:true});
 const catalog=JSON.parse(await readFile(path.join(root,'content/catalog.json'),'utf8'));
 await buildSourceDocuments(root,out,catalog.sources);
 const lessonTrees=await loadLessonTrees(root,catalog.sources);
+const messengerCases=await loadMessengerCases(root,out);
 // Move trusted SVG styles into the external stylesheet to preserve the CSP.
 let heroCSS='';
 async function loadHero(filename,rootId){
@@ -41,8 +43,10 @@ for(const lesson of catalog.lessons){
  if(ids.has(lesson.id))throw Error(`Duplicate lesson ${lesson.id}`); ids.add(lesson.id);
  if(!/^lessons\/[a-z0-9-]+\.md$/.test(lesson.file))throw Error('Invalid lesson path');
  const md=await readFile(path.join(root,'content',lesson.file),'utf8');
- const rendered=renderMarkdown(md,{...lessonAnchors[lesson.id],renderDocumentTree:id=>lessonTrees.render(id)});
+ const rendered=renderMarkdown(md,{...lessonAnchors[lesson.id],renderDocumentTree:id=>lessonTrees.render(id),renderWorkChat:id=>messengerCases.render(id)});
+ rendered.html=decorateLessonQA(rendered.html,lesson.id);
  Object.assign(lesson,rendered,{search:md.replace(/[#*`>|]/g,' ')});
+ if(md.includes('```work-chat'))lesson.search+='\n'+messengerCases.search;
  for(const match of md.matchAll(/```document-tree\r?\n([^\n]+)\r?\n```/g))lesson.search+='\n'+lessonTrees.search(match[1]);
  if(lesson.contextFile){
   if(!/^lesson-contexts\/[a-z0-9-]+\.md$/.test(lesson.contextFile))throw Error('Invalid lesson context path');
@@ -67,7 +71,7 @@ async function copySite(from,to){
  }
 }
 await copySite(path.join(root,'site'),out);
-await writeFile(path.join(out,'styles.css'),(await readFile(path.join(root,'site/styles.css'),'utf8'))+'\n'+(await readFile(path.join(root,'site/conversations.css'),'utf8'))+'\n'+(await readFile(path.join(root,'site/knowledge.css'),'utf8'))+'\n'+(await readFile(path.join(root,'site/refinements.css'),'utf8'))+'\n/* Screen-only hero animation */\n'+heroCSS);
+await writeFile(path.join(out,'styles.css'),(await readFile(path.join(root,'site/styles.css'),'utf8'))+'\n'+(await readFile(path.join(root,'site/conversations.css'),'utf8'))+'\n'+(await readFile(path.join(root,'site/knowledge.css'),'utf8'))+'\n'+(await readFile(path.join(root,'site/refinements.css'),'utf8'))+'\n'+(await readFile(path.join(root,'site/story-dialogue.css'),'utf8'))+'\n/* Screen-only hero animation */\n'+heroCSS);
 await cp(path.join(root,'assets'),path.join(out,'assets'),{recursive:true});
 catalog.conversations=await buildConversations(root,out);
 catalog.worktimeKnowledge=await buildKnowledge(root,out);

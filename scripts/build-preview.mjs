@@ -29,8 +29,10 @@ const heroMotion=(await readScript('hero-motion.js')).replace('export function',
 app=app.replace("import {mountHeroMotion} from './hero-motion.js';",()=>heroMotion);
 const countUp=(await readScript('count-up.js')).replace(/^export /gm,'');
 app=app.replace("import {countNumber,mountCountUps} from './count-up.js';",()=>countUp);
+const characterModule=(await readScript('dialogue-characters.js')).replace(/^export /gm,'');
 const conversations=(await readScript('conversations.js')).replace(/^export /gm,'').replace("import {countNumber} from './count-up.js';",'');
-app=app.replace(/^import \{[^\n]+\} from '\.\/conversations\.js';$/m,()=>`const {conversationIndex,conversationWorkspace,resolveConversation,conversationVisibleCount,relatedConversationCount,conversationLink,conversationSearchEntries}=(()=>{\n${conversations}\nreturn {conversationIndex,conversationWorkspace,resolveConversation,conversationVisibleCount,relatedConversationCount,conversationLink,conversationSearchEntries};\n})();`);
+const completeConversations=conversations.replace("import {avatarHTML,characterFor,characterNames,expressionFor} from './dialogue-characters.js';",()=>`const {avatarHTML,characterFor,characterNames,expressionFor}=(()=>{\n${characterModule}\nreturn {avatarHTML,characterFor,characterNames,expressionFor};\n})();`);
+app=app.replace(/^import \{[^\n]+\} from '\.\/conversations\.js';$/m,()=>`const {conversationIndex,conversationWorkspace,resolveConversation,conversationVisibleCount,relatedConversationCount,conversationLink,conversationSearchEntries}=(()=>{\n${completeConversations}\nreturn {conversationIndex,conversationWorkspace,resolveConversation,conversationVisibleCount,relatedConversationCount,conversationLink,conversationSearchEntries};\n})();`);
 app=app.replace("const r=await fetch('data/portal.json');if(!r.ok)throw Error('자료 응답 오류');data=await r.json();",()=>`data=${portal};`);
 // This trusted SVG is already inline in portal.heroScene; avoid embedding a duplicate.
 delete files['assets/images/team-collaboration-animated.svg'];

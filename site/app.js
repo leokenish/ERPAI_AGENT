@@ -218,6 +218,13 @@ function search(query){const terms=query.trim().toLocaleLowerCase().split(/\s+/)
 async function copy(text){try{if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(text);else{const t=document.createElement('textarea');t.value=text;t.style.position='fixed';t.style.opacity='0';document.body.append(t);t.select();const ok=document.execCommand('copy');t.remove();if(!ok)throw Error('copy');}notify('복사했습니다.');}catch{notify('자동 복사를 사용할 수 없습니다. 내용을 선택해 복사해 주세요.');}}
 document.addEventListener('click',e=>{
  const target=e.target.closest('a,button,[data-node]');if(!target)return;
+ if(target.matches('[data-case-view]')){
+  const root=target.closest('.messenger-case'),view=target.dataset.caseView;
+  for(const b of root.querySelectorAll('[data-case-view]'))b.setAttribute('aria-pressed',String(b===target));
+  for(const panel of root.querySelectorAll('[data-case-panel]'))panel.hidden=view!=='both'&&panel.dataset.casePanel!==view;
+  return;
+ }
+
  if(target.matches('[data-gallery],[data-feature]')){
   const root=target.closest('[data-showcase]'),l=data.lessons.find(l=>l.id===root.dataset.showcase);
   const isGallery=target.hasAttribute('data-gallery'),index=Number(isGallery?target.dataset.gallery:target.dataset.feature);

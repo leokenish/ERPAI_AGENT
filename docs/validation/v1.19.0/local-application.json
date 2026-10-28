@@ -1,0 +1,127 @@
+{
+  "version": "1.19.0",
+  "date": "2026-10-29",
+  "baseline": {
+    "version": "1.18.2",
+    "commit": "cb33b8f6ec2d2c831774f304c081e6c08b4bbb26",
+    "branch": "main",
+    "upstream": "origin/main",
+    "initialStatus": "clean",
+    "remoteDivergenceBeforeCommit": [
+      0,
+      0
+    ]
+  },
+  "package": {
+    "file": "KBS_ERP_AI_Agent_v1.19.0_Full.zip",
+    "sha256": "42af90526531d771dab453913b41fdb02a88d88b0a6915a2cfaa80ed879cb812",
+    "manifestEntriesVerified": 25,
+    "deleted": [],
+    "appliedEntries": 24,
+    "excludedTemporaryCopies": [
+      "sources/conversations/20261024-progress/kbs-erp-webgui-refactor/.captured-dom-sanitized.json.NbOhc2",
+      "sources/conversations/20261024-progress/kbs-erp-webgui-refactor/.captured-dom-sanitized.json.NbOhc2.KfkIov"
+    ],
+    "exclusionReason": "Incomplete prefix copies of the preserved captured-dom-sanitized.json; no original source deletion."
+  },
+  "integration": {
+    "preservedLocalFixes": [
+      "Published heading IDs and aliases",
+      "Image-decode-aware TOC scrolling and regression tests",
+      "npm run preview alias",
+      "Previous local validation and integration records",
+      "Obsolete missing-link tooltip removal"
+    ],
+    "testAdjustment": "The supplied new test expected the package-generated section-15. The existing published lesson Q&A address is section-12; assert that address and also the preserved meaning of section-15 plus messenger section-19. No existing tests removed or relaxed.",
+    "newCaptionSizing": "Use the existing --text-caption (.875rem) minimum for messenger dates, source references and small view buttons.",
+    "approvedCharacterPNGBytes": "All five files match the ZIP SHA-256; existing artwork unchanged."
+  },
+  "validation": {
+    "node": "24.19.0",
+    "commandsInOrder": [
+      "npm run build",
+      "npm run preview:file",
+      "npm test"
+    ],
+    "result": "passed",
+    "tests": {
+      "total": 111,
+      "passed": 111,
+      "failed": 0,
+      "skipped": 0
+    },
+    "logSha256": {
+      "build-final.log": "0ee1432216cb778431b16531bb3648489617f23dc0e8153134e1a5d113418350",
+      "preview-final.log": "51a878e8ba2900de3bcfe8f45dc818a64bb9c68c3f84c3956c9a187b40880b86",
+      "test-final.log": "9a346e79033f7a721651f5f0b6694a52a639cd34a9b246a6cb6c9327a86baa72"
+    },
+    "preservation": {
+      "untouchedOriginalFiles": 1903,
+      "preservedSourceFiles": 1576,
+      "preservedExistingAssets": 37,
+      "otherLessonMDsPreserved": 15,
+      "existingTOCEntriesPreserved": 199,
+      "originalConversationTotals": {
+        "projects": 9,
+        "messages": 1327,
+        "episodes": 147,
+        "verbatim": 1309,
+        "excerpt": 0,
+        "summary": 0,
+        "reconstructed": 0,
+        "unavailable": 18
+      },
+      "readingTotals": {
+        "projects": 9,
+        "episodes": 134,
+        "messages": 1064
+      },
+      "verifiedMDDownloads": 998,
+      "publishedAttachmentEntries": 424,
+      "filesAtOrAbove100MiB": []
+    },
+    "browser": {
+      "checks": [
+        "npm start serves v1.19.0 course 05 and its two messenger cases",
+        "Both cases: chat/card/both modes, selected buttons, real excerpts, cards and original MD filenames/bytes",
+        "All five approved character sheets load byte-for-byte under /ERPAI_AGENT/",
+        "All 19 course 05 TOC anchors, messenger search and previous/next course navigation",
+        "All six existing lesson question/answer pairs retain content and display fictional human/AI profiles",
+        "All 25 course 05–07 source MD downloads preserve original bytes and filenames under the Pages prefix",
+        "Both added evidence-library links select and download the exact registered MD",
+        "Nine projects: stable episode actors, AI roles, unchanged message counts, copy, previous/next, search and attachment downloads",
+        "1440px and 390px light/dark: messenger, cards and project profiles; no page overflow",
+        "Offline preview.html plus preview-data: portrait images, both case modes, MD downloads, project conversation and search without HTTP",
+        "No browser exceptions, console errors or failed resource requests"
+      ],
+      "downloadsVerified": 39,
+      "errors": [],
+      "failedRequests": [],
+      "finalLayoutChecks": [
+        "Pages prefix 1440px light: three modes, portraits, captions >= .875rem, no overflow",
+        "Pages prefix 1440px dark: three modes, portraits, captions >= .875rem, no overflow",
+        "Pages prefix 390px light: three modes, portraits, captions >= .875rem, no overflow",
+        "Pages prefix 390px dark: three modes, portraits, captions >= .875rem, no overflow",
+        "offline 1440px light: three modes, portraits, captions >= .875rem, no overflow",
+        "offline 1440px dark: three modes, portraits, captions >= .875rem, no overflow",
+        "offline 390px light: three modes, portraits, captions >= .875rem, no overflow",
+        "offline 390px dark: three modes, portraits, captions >= .875rem, no overflow"
+      ],
+      "finalLayoutErrors": [],
+      "visualReview": "Desktop and 390px light/dark screenshots inspected; original character crops retained."
+    }
+  },
+  "deployment": {
+    "workflow": ".github/workflows/deploy.yaml",
+    "node": 24,
+    "artifact": "dist",
+    "url": "https://leokenish.github.io/ERPAI_AGENT/",
+    "precommitCheck": "Verified local /ERPAI_AGENT/ mount; workflow and live-site results are checked after push and reported separately."
+  },
+  "git": {
+    "generatedFilesTracked": false,
+    "newFilesAtOrAbove100MiB": [],
+    "unrelatedUserChangesIncluded": false,
+    "temporaryFilesIncluded": false
+  }
+}
