@@ -255,10 +255,44 @@
 @media print{.document-tree-node{break-inside:avoid}.prose .document-tree{background:transparent}}
 
 /* Reading emphasis and direct document downloads. */
-:root{--reading-emphasis:#1649a0}
-:root[data-theme="dark"]{--reading-emphasis:#afc7ff}
+:root{--reading-emphasis:#a52b3c}
+:root[data-theme="dark"]{--reading-emphasis:#ffabb5}
 .prose p strong,.prose li strong,.prose blockquote strong{color:var(--reading-emphasis)}
 .prose .document-tree-node>a,.prose .document-tree-node>a:visited,.prose .document-tree-node>a strong{color:var(--brand);text-decoration:none;border-bottom:0;box-shadow:none}
-.prose .document-tree-node>a:hover{color:var(--reading-emphasis);text-decoration:none}
+.prose .document-tree-node>a:hover{color:var(--brand);text-decoration:none}
 .prose .document-tree-node>a:focus-visible{outline:2px solid var(--brand);outline-offset:4px;border-radius:2px}
 .prose .document-tree-node>strong{color:var(--ink)}
+
+/* v1.18.1 — focused radial MD relationships. Links remain blue; prose uses red. */
+.document-graph{min-width:0}
+.document-graph-toolbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.65rem 0;font-size:var(--text-caption);color:var(--muted)}
+.document-graph-toolbar button{font:inherit;background:var(--panel);color:var(--ink);border:1px solid var(--control-line);border-radius:6px;padding:.5rem .8rem;cursor:pointer}
+.document-graph-scroll{max-width:100%;overflow:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.document-graph-stage{position:relative;min-width:600px;height:680px;background-image:radial-gradient(var(--line) .8px,transparent .8px);background-size:18px 18px}
+.document-graph-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.document-graph-lines line{stroke:var(--control-line);stroke-width:1.5;vector-effect:non-scaling-stroke}
+.document-graph-lines line.is-connected{stroke:var(--brand);stroke-width:2}
+.document-graph-lines line.is-muted{opacity:.2}
+.document-graph-node{position:absolute;transform:translate(-50%,-50%);width:22%;min-height:104px;border:1px solid var(--control-line);border-radius:9px;background:var(--panel);padding:.65rem .75rem;box-sizing:border-box;overflow-wrap:anywhere;--document-kind:#9a6b17}
+.document-graph-node.is-selected{border:2px solid var(--brand);box-shadow:0 0 0 3px color-mix(in srgb,var(--brand) 12%,transparent)}
+.document-graph-node.is-muted{border-color:var(--line)}.document-graph-node.is-muted .document-graph-square{opacity:.4}
+.document-slot-0{left:50%;top:50%}.document-slot-1{left:50%;top:11.1111%}.document-slot-2{left:78%;top:24.4444%}.document-slot-3{left:86%;top:50%}.document-slot-4{left:78%;top:75.5556%}.document-slot-5{left:50%;top:88.8889%}.document-slot-6{left:22%;top:75.5556%}.document-slot-7{left:14%;top:50%}.document-slot-8{left:22%;top:24.4444%}
+.document-kind-skill{--document-kind:#315fc0}.document-kind-knowledge{--document-kind:#20856c}.document-kind-map{--document-kind:#1186a6}.document-kind-feedback{--document-kind:#b44b61}.document-kind-review{--document-kind:#8463af}
+[data-theme="dark"] .document-graph-node{--document-kind:#d6b264}[data-theme="dark"] .document-kind-skill{--document-kind:#a8baff}[data-theme="dark"] .document-kind-knowledge{--document-kind:#74cfb4}[data-theme="dark"] .document-kind-map{--document-kind:#76cce4}[data-theme="dark"] .document-kind-feedback{--document-kind:#f3a0b1}[data-theme="dark"] .document-kind-review{--document-kind:#c3ace8}
+.document-graph-select{display:flex;align-items:flex-start;gap:.4rem;width:100%;padding:0 0 .5rem;border:0;background:none;text-align:left;font:inherit;font-size:var(--text-caption);font-weight:600;line-height:1.5;color:var(--ink);cursor:pointer}
+.document-graph-square{flex:0 0 10px;width:10px;height:10px;background:var(--document-kind);margin-top:.35rem;border-radius:1px}
+.prose a.document-graph-download,.prose a.document-graph-download:visited,.prose a.document-graph-download:hover{display:inline-block;color:var(--brand);font-size:var(--text-caption);font-weight:600;line-height:1.5;text-decoration:none;border-bottom:0;box-shadow:none}
+.document-graph button:focus-visible,.document-graph a:focus-visible,.document-graph-scroll:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+.document-graph-status{padding:.85rem 0;font-size:var(--text-caption);color:var(--muted)}
+.document-graph-detail{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:1.4rem;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:1.2rem}
+.document-graph-detail[hidden]{display:none}.document-graph-detail-role{display:block;color:var(--brand);font-size:var(--text-caption);margin-bottom:.4rem}
+.document-graph-detail strong{display:block;color:var(--ink);font-size:1rem;overflow-wrap:anywhere;line-height:1.6}
+.prose .document-graph-detail p{margin:.6rem 0;font-size:var(--text-small);line-height:1.7}
+.document-graph-detail code{display:block;overflow-wrap:anywhere;font-size:var(--text-caption)}
+.prose .document-graph-detail h4{margin:0 0 .6rem;font-size:var(--text-small)}
+.prose .document-graph-detail li{margin:0 0 .7rem;line-height:1.6}
+.document-graph-detail li button{padding:0;border:0;background:none;color:var(--brand);font:inherit;font-size:var(--text-caption);text-align:left;cursor:pointer}
+.document-graph-detail li span{display:block;color:var(--muted);font-size:var(--text-caption)}
+.prose .document-graph-context p{font-size:var(--text-caption);line-height:1.7;margin:.7rem 0 0}
+@media(max-width:700px){.document-graph-detail{grid-template-columns:1fr;padding:1rem}.document-graph-toolbar{align-items:flex-start}.document-graph-toolbar button{white-space:nowrap}}
+@media print{.document-graph-scroll{overflow:visible}.document-graph-stage{min-width:0;height:700px}.document-graph-node{min-height:0;padding:.35rem}.document-graph-node.is-muted{opacity:1}.document-graph-detail[hidden]{display:grid}.document-graph-detail{break-inside:avoid;margin-top:1rem}.document-graph-lines line.is-muted{opacity:1}.document-graph-toolbar button{display:none}:root{--reading-emphasis:#a52b3c}}

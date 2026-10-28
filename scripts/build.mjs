@@ -33,7 +33,7 @@ const ids=new Set();
 // Keep existing section URLs when the reading edition removes editorial headings.
 // Retired headings link to the next retained section without restoring their notices.
 const lessonAnchors={
- knowledge:{headingIds:{16:17},headingAliases:{16:[16]}},
+ knowledge:{headingIds:{3:18,4:19,5:3,6:4,7:20,8:5,9:6,10:7,11:8,12:9,13:10,14:11,15:12,16:13,17:14,18:15,19:17},headingAliases:{19:[16]}},
  'ess-attendance':{headingIds:{2:3,3:4,4:5,5:6,6:7,7:8,8:9,9:10},headingAliases:{2:[2]}},
  'smart-erp':{headingIds:{4:5,5:6,6:7},headingAliases:{4:[4]}}
 };

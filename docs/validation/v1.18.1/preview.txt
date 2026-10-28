@@ -1,0 +1,6 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> kbs-erp-ai-learning-portal@1.18.1 preview:file
+> node scripts/build-preview.mjs
+
+Offline preview: /workspace/scratch/d3576fad4584/portal-v1.18.1/preview.html (3092400 bytes), preview-data/ (12 compressed parts)

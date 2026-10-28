@@ -17,6 +17,8 @@ html=html.replace('<script src="theme.js"></script>',()=>`<script>${theme.replac
 let css=await readFile(path.join(dist,'styles.css'),'utf8');
 css=css.replace(/url\("([^"]+)"\)/g,(all,url)=>files[url]?`url("${files[url]}")`:all);
 let app=await readScript('app.js');
+const documentGraphs=(await readScript('document-graphs.js')).replace(/^export /gm,'');
+app=app.replace("import {mountDocumentGraphs} from './document-graphs.js';",()=>`const {mountDocumentGraphs}=(()=>{\n${documentGraphs}\nreturn {mountDocumentGraphs};\n})();`);
 const portal=await readFile(path.join(dist,'data/portal.json'),'utf8');
 const sourceLibrary=(await readScript('source-library.js')).replace(/^export /gm,'');
 app=app.replace("import {renderSourceDocuments,filterSourceDocuments} from './source-library.js';",()=>`const {renderSourceDocuments,filterSourceDocuments}=(()=>{\n${sourceLibrary}\nreturn {renderSourceDocuments,filterSourceDocuments};\n})();`);

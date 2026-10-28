@@ -2,7 +2,7 @@
   "knowledge-files": {
     "source": "worktime-agent",
     "title": "업무 지침·스킬·근거 문서의 연결",
-    "description": "파일 이름을 누르면 해당 MD를 다운로드합니다.",
+    "description": "사각형 위쪽의 역할을 누르면 연결된 문서가 강조됩니다. 파란 파일 이름을 누르면 MD를 다운로드합니다.",
     "root": {
       "label": "ZHR5 근로시간 AI 에이전트",
       "role": "프로젝트",
@@ -81,12 +81,82 @@
           ]
         }
       ]
+    },
+    "graph": {
+      "center": "AGENTS.md",
+      "orbit": [
+        "README.md",
+        ".agents/skills/zhr5-knowledge-curation/SKILL.md",
+        ".agents/skills/zhr5-change-impact/SKILL.md",
+        "docs/EXPORT_GUIDE.md",
+        "knowledge/code-map/working-time.md",
+        "knowledge/processes/overtime-start-time.md",
+        "knowledge/INDEX.md",
+        ".agents/skills/zhr5-business-qa/SKILL.md"
+      ],
+      "links": [
+        {
+          "from": "README.md",
+          "to": "AGENTS.md",
+          "label": "공통 지침 안내"
+        },
+        {
+          "from": "AGENTS.md",
+          "to": ".agents/skills/zhr5-business-qa/SKILL.md",
+          "label": "업무 질문 절차 선택"
+        },
+        {
+          "from": "AGENTS.md",
+          "to": ".agents/skills/zhr5-knowledge-curation/SKILL.md",
+          "label": "새 자료 정리 절차 선택"
+        },
+        {
+          "from": "AGENTS.md",
+          "to": ".agents/skills/zhr5-change-impact/SKILL.md",
+          "label": "변경 영향 검토 절차 선택"
+        },
+        {
+          "from": ".agents/skills/zhr5-business-qa/SKILL.md",
+          "to": "knowledge/INDEX.md",
+          "label": "질문에 맞는 근거 탐색"
+        },
+        {
+          "from": ".agents/skills/zhr5-knowledge-curation/SKILL.md",
+          "to": "knowledge/INDEX.md",
+          "label": "정리한 지식과 목차 갱신"
+        },
+        {
+          "from": ".agents/skills/zhr5-change-impact/SKILL.md",
+          "to": "knowledge/code-map/working-time.md",
+          "label": "변경과 관련된 코드 위치 탐색"
+        },
+        {
+          "from": "knowledge/INDEX.md",
+          "to": "knowledge/processes/overtime-start-time.md",
+          "label": "입력 기준과 적용 조건 확인"
+        },
+        {
+          "from": "knowledge/INDEX.md",
+          "to": "knowledge/code-map/working-time.md",
+          "label": "업무와 관련된 코드 설명 탐색"
+        },
+        {
+          "from": ".agents/skills/zhr5-business-qa/SKILL.md",
+          "to": "knowledge/code-map/working-time.md",
+          "label": "코드 질문의 확인 위치 탐색"
+        },
+        {
+          "from": "knowledge/code-map/working-time.md",
+          "to": "docs/EXPORT_GUIDE.md",
+          "label": "추출본의 실제 파일 경로 확인"
+        }
+      ]
     }
   },
   "maps-files": {
     "source": "worktime-agent",
     "title": "문서 목록과 업무지도의 연결",
-    "description": "파일 이름을 누르면 해당 MD를 다운로드합니다.",
+    "description": "사각형 위쪽의 역할을 누르면 연결된 문서가 강조됩니다. 파란 파일 이름을 누르면 MD를 다운로드합니다.",
     "root": {
       "label": "기존 프로젝트 폴더",
       "role": "Obsidian 보관함",
@@ -115,7 +185,7 @@
             {
               "label": "maps/topics/rates.md",
               "role": "예시 · 시간외 단가",
-              "note": "기준·후속 정정·코드을 연결합니다.",
+              "note": "기준·후속 정정·코드를 연결합니다.",
               "path": "maps/topics/rates.md",
               "children": [
                 {
@@ -153,12 +223,67 @@
           "path": "maps/verification.md"
         }
       ]
+    },
+    "graph": {
+      "center": "maps/topics/rates.md",
+      "orbit": [
+        "maps/INDEX.md",
+        "maps/DOCUMENT_INDEX.md",
+        "README.md",
+        "maps/verification.md",
+        "tests/business-qa.md",
+        "maps/sources/ZHR_52TM_GET_PERSONNEL_DATA_N.md",
+        "harness/feedback/FB-20260923-002.md",
+        "knowledge/policies/overtime-rate-20260901.md"
+      ],
+      "links": [
+        {
+          "from": "maps/INDEX.md",
+          "to": "maps/topics/rates.md",
+          "label": "시간외 단가 업무 선택"
+        },
+        {
+          "from": "maps/INDEX.md",
+          "to": "maps/DOCUMENT_INDEX.md",
+          "label": "파일별 목차 탐색"
+        },
+        {
+          "from": "maps/DOCUMENT_INDEX.md",
+          "to": "README.md",
+          "label": "프로젝트 시작 안내 확인"
+        },
+        {
+          "from": "maps/topics/rates.md",
+          "to": "knowledge/policies/overtime-rate-20260901.md",
+          "label": "적용 대상·시점·기준 확인"
+        },
+        {
+          "from": "maps/topics/rates.md",
+          "to": "harness/feedback/FB-20260923-002.md",
+          "label": "직군 기준의 정정 이력 확인"
+        },
+        {
+          "from": "maps/topics/rates.md",
+          "to": "maps/sources/ZHR_52TM_GET_PERSONNEL_DATA_N.md",
+          "label": "인사·등급의 코드 설명 확인"
+        },
+        {
+          "from": "maps/topics/rates.md",
+          "to": "tests/business-qa.md",
+          "label": "관련 회귀 질문으로 답변 점검"
+        },
+        {
+          "from": "maps/topics/rates.md",
+          "to": "maps/verification.md",
+          "label": "문서 연결 검사 결과 확인"
+        }
+      ]
     }
   },
   "feedback-files": {
     "source": "worktime-agent",
     "title": "피드백·지식 갱신·회귀 질문의 연결",
-    "description": "파일 이름을 누르면 해당 MD를 다운로드합니다.",
+    "description": "사각형 위쪽의 역할을 누르면 연결된 문서가 강조됩니다. 파란 파일 이름을 누르면 MD를 다운로드합니다.",
     "root": {
       "label": "AGENTS.md",
       "role": "정정 요청을 받으면",
@@ -202,6 +327,54 @@
               "path": "docs/VALIDATION.md"
             }
           ]
+        }
+      ]
+    },
+    "graph": {
+      "center": "docs/BUSINESS_FEEDBACK_POLICY.md",
+      "orbit": [
+        "AGENTS.md",
+        "harness/feedback/FB-20261001-001.md",
+        "knowledge/processes/overtime-start-time.md",
+        ".agents/skills/zhr5-business-qa/SKILL.md",
+        "tests/business-qa.md",
+        "docs/VALIDATION.md"
+      ],
+      "links": [
+        {
+          "from": "AGENTS.md",
+          "to": "docs/BUSINESS_FEEDBACK_POLICY.md",
+          "label": "정정 요청의 처리 지침 확인"
+        },
+        {
+          "from": "docs/BUSINESS_FEEDBACK_POLICY.md",
+          "to": "harness/feedback/FB-20261001-001.md",
+          "label": "잘못된 답변과 정정 이유 기록"
+        },
+        {
+          "from": "harness/feedback/FB-20261001-001.md",
+          "to": "knowledge/processes/overtime-start-time.md",
+          "label": "확인한 입력 규칙으로 지식 보완"
+        },
+        {
+          "from": "docs/BUSINESS_FEEDBACK_POLICY.md",
+          "to": ".agents/skills/zhr5-business-qa/SKILL.md",
+          "label": "읽는 절차에 원인이 있을 때 보완"
+        },
+        {
+          "from": "docs/BUSINESS_FEEDBACK_POLICY.md",
+          "to": "tests/business-qa.md",
+          "label": "같은 오류를 확인할 질문 연결"
+        },
+        {
+          "from": "docs/BUSINESS_FEEDBACK_POLICY.md",
+          "to": "docs/VALIDATION.md",
+          "label": "검사와 답변 대조 결과 기록"
+        },
+        {
+          "from": "harness/feedback/FB-20261001-001.md",
+          "to": "tests/business-qa.md",
+          "label": "정정한 질문을 회귀 사례로 연결"
         }
       ]
     }

@@ -1,0 +1,17 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> kbs-erp-ai-learning-portal@1.18.2 build
+> node scripts/build.mjs
+
+Source MD downloads: export-diag=24, knowledge-images=8, obsidian=4, agent-collaboration=6, erp-remote=6, webgui=15, worktime-agent=787, ess-attendance=9, weekly-timeline=4, smart-erp=4
+Knowledge snapshot: {
+  documents: 783,
+  explicitLinks: 9425,
+  pathMentions: 64,
+  outside: 5061,
+  unresolved: 8,
+  topics: 23,
+  empty: 2
+}
+Source MD downloads: portal=4
+Built 16 lessons, 10 source summaries, 8 downloads. Output: dist/

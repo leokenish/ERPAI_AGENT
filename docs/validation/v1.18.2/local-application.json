@@ -1,0 +1,347 @@
+{
+  "version": "1.18.2",
+  "validatedOn": "2026-10-28",
+  "initialVersion": "1.18.0",
+  "initialHead": "950843f56e9d6e45d547437f096662147b2ec66c",
+  "git": {
+    "branch": "main",
+    "remote": "origin",
+    "url": "https://github.com/leokenish/ERPAI_AGENT",
+    "upstream": "origin/main",
+    "initialWorktreeClean": true,
+    "initialIndexClean": true
+  },
+  "package": {
+    "name": "KBS_ERP_AI_Agent_v1.18.2_Full.zip",
+    "sha256": "61eab955fd10fb7ce9170f4428eccec9515627f449a0f4db84ed4c583ba30c09",
+    "manifestBaseline": "1.18.1",
+    "manifestFilesVerified": 15,
+    "fullSourceDifferencesReviewed": 33,
+    "deletedPaths": []
+  },
+  "cumulativeChanges": [
+    "v1.18.1 initial business definition guidance and red prose emphasis",
+    "v1.18.1 radial diagrams for courses 05–07 with published MD downloads, selection and keyboard navigation",
+    "v1.18.2 approved four-step illustration at the specified location"
+  ],
+  "preservedLocalChanges": [
+    "Previous local validation records",
+    "npm run preview alias",
+    "Lazy-image-aware TOC navigation and its regression test",
+    "Legacy section IDs and removed-heading aliases",
+    "Removal of obsolete missing-link tooltip replacement"
+  ],
+  "anchorDecision": "Keep deployed v1.18.0 section meanings. Add knowledge section-18/19/20 for the three v1.18.1 headings and retain evidence section-17 plus retired section-16 alias. The illustration adds no heading.",
+  "excludedTemporaryCopy": "sources/conversations/20261024-progress/kbs-erp-webgui-refactor/.captured-dom-sanitized.json.NbOhc2",
+  "validation": {
+    "node": "v24.19.0",
+    "commandsInOrder": [
+      "npm run build",
+      "npm run preview:file",
+      "npm test"
+    ],
+    "previewFinishedBeforeTests": true,
+    "tests": {
+      "total": 106,
+      "passed": 106,
+      "failed": 0,
+      "skipped": 0
+    },
+    "preservation": {
+      "approvedPNG": {
+        "sha256": "d662100ae99646d5bc71ed6685fdf2f746171894e504050c27d935623d61c7a0",
+        "bytes": 2850473,
+        "dimensions": [
+          2911,
+          971
+        ]
+      },
+      "untouchedOriginalFiles": 1885,
+      "preservedSourceFiles": 1576,
+      "preservedExistingAssets": 36,
+      "otherLessonMDsPreserved": 15,
+      "oldTOCEntriesPreserved": 196,
+      "originalConversationTotals": {
+        "projects": 9,
+        "messages": 1327,
+        "episodes": 147,
+        "verbatim": 1309,
+        "excerpt": 0,
+        "summary": 0,
+        "reconstructed": 0,
+        "unavailable": 18
+      },
+      "readingTotals": {
+        "projects": 9,
+        "episodes": 134,
+        "messages": 1064
+      },
+      "verifiedMDDownloads": 867,
+      "filesAtOrAbove100MiB": []
+    },
+    "browser": {
+      "checks": [
+        "npm start serves the approved PNG byte-for-byte at its requested position; caption is not a TOC heading",
+        "Desktop light/dark: fit/original 2911px zoom, close, unfiltered artwork and v1.18.1 emphasis colors",
+        "All pre-existing course 05 TOC meanings/links, direct evidence URL, illustration search and previous/next courses",
+        "Cumulative v1.18.1 radial graphs: selections, keyboard, reset and all 25 original MD filenames/bytes",
+        "390px light/dark: illustration sizing, original zoom, close and internally scrolling graphs without page overflow",
+        "Offline preview.html + preview-data: exact PNG bytes, placement, zoom, search, interactive graph and original MD download without HTTP",
+        "No browser console errors or page exceptions"
+      ],
+      "errors": [],
+      "downloads": [
+        {
+          "course": "knowledge",
+          "name": "AGENTS.md"
+        },
+        {
+          "course": "knowledge",
+          "name": "README.md"
+        },
+        {
+          "course": "knowledge",
+          "name": "SKILL.md"
+        },
+        {
+          "course": "knowledge",
+          "name": "SKILL.md"
+        },
+        {
+          "course": "knowledge",
+          "name": "EXPORT_GUIDE.md"
+        },
+        {
+          "course": "knowledge",
+          "name": "working-time.md"
+        },
+        {
+          "course": "knowledge",
+          "name": "overtime-start-time.md"
+        },
+        {
+          "course": "knowledge",
+          "name": "INDEX.md"
+        },
+        {
+          "course": "knowledge",
+          "name": "SKILL.md"
+        },
+        {
+          "course": "maps",
+          "name": "rates.md"
+        },
+        {
+          "course": "maps",
+          "name": "INDEX.md"
+        },
+        {
+          "course": "maps",
+          "name": "DOCUMENT_INDEX.md"
+        },
+        {
+          "course": "maps",
+          "name": "README.md"
+        },
+        {
+          "course": "maps",
+          "name": "verification.md"
+        },
+        {
+          "course": "maps",
+          "name": "business-qa.md"
+        },
+        {
+          "course": "maps",
+          "name": "ZHR_52TM_GET_PERSONNEL_DATA_N.md"
+        },
+        {
+          "course": "maps",
+          "name": "FB-20260923-002.md"
+        },
+        {
+          "course": "maps",
+          "name": "overtime-rate-20260901.md"
+        },
+        {
+          "course": "feedback",
+          "name": "BUSINESS_FEEDBACK_POLICY.md"
+        },
+        {
+          "course": "feedback",
+          "name": "AGENTS.md"
+        },
+        {
+          "course": "feedback",
+          "name": "FB-20261001-001.md"
+        },
+        {
+          "course": "feedback",
+          "name": "overtime-start-time.md"
+        },
+        {
+          "course": "feedback",
+          "name": "SKILL.md"
+        },
+        {
+          "course": "feedback",
+          "name": "business-qa.md"
+        },
+        {
+          "course": "feedback",
+          "name": "VALIDATION.md"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "light",
+          "bold": "rgb(165, 43, 60)"
+        },
+        {
+          "theme": "dark",
+          "bold": "rgb(255, 171, 181)"
+        }
+      ]
+    },
+    "screenshotsReviewed": [
+      "illustration-desktop-light.png",
+      "illustration-mobile-dark.png",
+      "radial-desktop.png"
+    ],
+    "screenshotsStoredOutsideRepository": true,
+    "diffCheck": "passed",
+    "newCredentialPatternMatches": []
+  },
+  "excludedFromCommit": [
+    "dist/",
+    "dist.next/",
+    "preview.html",
+    "preview-data/",
+    "node_modules/",
+    "delivery ZIP",
+    "external extraction/backup/QA directory",
+    "truncated temporary source copy"
+  ],
+  "reviewedFiles": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "20eafbd4246bd2949667a102b2f732a0214ac3e065bfaec60bee43c04f646758"
+    },
+    {
+      "path": "README.md",
+      "sha256": "d5d8f7de0bd16f8c3ffa942c69bfe101f176ad8ee706d3d04b7494fbe3c8ba28"
+    },
+    {
+      "path": "assets/images/agent-four-steps-score-dream.png",
+      "sha256": "d662100ae99646d5bc71ed6685fdf2f746171894e504050c27d935623d61c7a0"
+    },
+    {
+      "path": "content/catalog.json",
+      "sha256": "efb2c92231bbedaa6b424833508fc8840ea5eba2b703aaad9533e9043e07d180"
+    },
+    {
+      "path": "content/lesson-trees.json",
+      "sha256": "d2ac2b53a67b58acdaa3c01e3f43e5f057e744844b94a72a19a2a120bedd8d95"
+    },
+    {
+      "path": "content/lessons/04-knowledge.md",
+      "sha256": "69dcf5657364d851411288dc1115e15535b06ae949f57b886e6883c3e5047698"
+    },
+    {
+      "path": "docs/CONTENT_WORKFLOW.md",
+      "sha256": "884a3fd3d54a962173ef972e31b456a5210402a9b49ffa0517afc073efe970e8"
+    },
+    {
+      "path": "docs/INTEGRATION_REVIEW.md",
+      "sha256": "24d0c8d34ed4115e4da1f18fc0984b528bf47492191754a7a9840d75a1ee7ae7"
+    },
+    {
+      "path": "docs/RELEASE_v1.18.1.md",
+      "sha256": "ebd5092b8cbcc53eb98e0e9acda5faa55ca7523228eece43d8235a4a2e67b89e"
+    },
+    {
+      "path": "docs/RELEASE_v1.18.2.md",
+      "sha256": "6893896352cf64e9aa85475df08ad51b774a965e4963105b37bd3889a5b2f4fa"
+    },
+    {
+      "path": "docs/validation/v1.18.1/build.txt",
+      "sha256": "4544c263621a705eeb3ac44af8636639a98abac39eee05988c8f6da708bfbef4"
+    },
+    {
+      "path": "docs/validation/v1.18.1/preservation.json",
+      "sha256": "a9db48112dd1e7d8473fe5515a83d961872270d61aebd9f9fb4c525ca2bc5476"
+    },
+    {
+      "path": "docs/validation/v1.18.1/preview.txt",
+      "sha256": "1c92ee0b8f18d28c940b3eb58c98d0fc821e7dd73a1ae21a319dc55d5c2147d7"
+    },
+    {
+      "path": "docs/validation/v1.18.1/tests.txt",
+      "sha256": "f30bd99b29af5bb81714785b35ca987d6a68caaed52bceaff08c2c47f4431c9d"
+    },
+    {
+      "path": "docs/validation/v1.18.2/build.txt",
+      "sha256": "c0e80e191b08297042d57271f5c0d895c8d42c8b48e32d24691f9ee8dfebbb52"
+    },
+    {
+      "path": "docs/validation/v1.18.2/offline-asset.json",
+      "sha256": "229d56caa8fb46410173f5f9f6c328a0e314769a57fa6d4aaef2d1c94d8354be"
+    },
+    {
+      "path": "docs/validation/v1.18.2/preservation.json",
+      "sha256": "4e03cfaeed89565faa162c1ba0dce7775fc35c6cec102bcedca753a16731e053"
+    },
+    {
+      "path": "docs/validation/v1.18.2/preview.txt",
+      "sha256": "3fa4bc33c9aa78729247cf380a8a024822235daa65f8dc9bfa812f3d57efe1ac"
+    },
+    {
+      "path": "docs/validation/v1.18.2/tests.txt",
+      "sha256": "fc5ba421056ebc131ae5dfda3fdb888a57228729f663f92b6e094af60c42b5e3"
+    },
+    {
+      "path": "index.html",
+      "sha256": "08f6256aa520bbf5c6b64ec0951d6a4be6d178b53f54a456658375f42498cd68"
+    },
+    {
+      "path": "package.json",
+      "sha256": "c64711a2bab0714b6d4894347bc1514163ed174c66f4efcf2de494cb0cce51c2"
+    },
+    {
+      "path": "scripts/build-preview.mjs",
+      "sha256": "8c36dcc025cc491585c2b4920d866a8b1036328839f17c6e599b6de4c8585cd8"
+    },
+    {
+      "path": "scripts/lesson-trees.mjs",
+      "sha256": "5b7af89bd2f79eb571691de5f4cdfb5e659d3fd63c97a1e36f439c8c22550776"
+    },
+    {
+      "path": "site/app.js",
+      "sha256": "9208ea047ffe027743b99df645e30c98d268beac923672b14db3188eac32050d"
+    },
+    {
+      "path": "site/document-graphs.js",
+      "sha256": "ab8a80f59108012607c450315b2e378bf0e0dbf5b6f40993f1a1ea9b5b0a5342"
+    },
+    {
+      "path": "site/refinements.css",
+      "sha256": "eba6b26e9407d1cd2cc23800d64b8d060182dbfa3adaddc774c2ae4e8efb27f1"
+    },
+    {
+      "path": "tests/conversation-navigation.test.mjs",
+      "sha256": "27a155dd9494bea31ac9b0f4f1d01a7ed4fac3c552afd4b28adcd9304b491cc2"
+    },
+    {
+      "path": "tests/document-graphs.test.mjs",
+      "sha256": "0493d83912620560b451f9ff2f11d9eb9935b9a543532091731d8715bd51855e"
+    },
+    {
+      "path": "tests/reading-edition.test.mjs",
+      "sha256": "f09ff7fceca92968a738fa5fa0d8115168998a1b9c93ea837741530d54231837"
+    },
+    {
+      "path": "scripts/build.mjs",
+      "sha256": "840231bca16ed6eb16ac0ed47601bb99a3322b3b8a5954a407f1e64e9e9b760d"
+    }
+  ]
+}

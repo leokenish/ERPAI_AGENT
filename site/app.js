@@ -1,9 +1,10 @@
+import {mountDocumentGraphs} from './document-graphs.js';
 import {renderSourceDocuments,filterSourceDocuments} from './source-library.js';
 import {countNumber,mountCountUps} from './count-up.js';
 import {renderKnowledge,mountKnowledge} from './knowledge.js';
 import {mountHeroMotion} from './hero-motion.js';
 import {conversationIndex,conversationWorkspace,resolveConversation,conversationVisibleCount,relatedConversationCount,conversationLink,conversationSearchEntries} from './conversations.js';
-let heroCleanup, knowledgeCleanup, countCleanup;
+let heroCleanup, knowledgeCleanup, countCleanup, documentGraphCleanup;
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icons={download:'<path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/>',home:'<path d="m3 10 9-7 9 7v10H3z"/><path d="M9 20v-7h6v7"/>',book:'<path d="M12 5v16M3 4c4-1 6 0 9 2 3-2 5-3 9-2v15c-4-1-6 0-9 2-3-2-5-3-9-2z"/>',map:'<rect x="8" y="2" width="8" height="5" rx="1"/><rect x="2" y="17" width="7" height="5" rx="1"/><rect x="15" y="17" width="7" height="5" rx="1"/><path d="M12 7v5M5.5 17v-5h13v5"/>',case:'<path d="M8 3H4v18h16V3h-4"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="m7 12 3 3 7-7"/>',folder:'<path d="M3 5h7l2 3h9v12H3z"/>',code:'<path d="m8 6-5 6 5 6m8-12 5 6-5 6m-3-15-2 18"/>',nodes:'<circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="12" cy="19" r="3"/><path d="m7 9 4 7m6-7-4 7M9 6h6"/>'};
@@ -174,6 +175,7 @@ function notFound(){return `<div class="error-state"><h1>페이지를 찾을 수
 function route(){
  $('#source-dialog')?.close();
  $('#source-dialog-content').innerHTML='';
+ documentGraphCleanup?.(); documentGraphCleanup=undefined;
  countCleanup?.(); countCleanup=undefined;
  heroCleanup?.(); heroCleanup=undefined;
  knowledgeCleanup?.(); knowledgeCleanup=undefined;
@@ -193,6 +195,7 @@ function route(){
  switch(parts[0]){case 'home':html=home();break;case 'courses':html=courses();break;case 'learn':html=lessonPage(parts[1]);break;case 'map':html=mapPage(parts[1]);break;case 'conversations':html=conversationsPage(parts[1]);break;case 'library':html=libraryPage(parts[1]);break;default:html=notFound();}
  $('#main').innerHTML=html;
  hydratePreviewAssets($('#main'));
+ documentGraphCleanup=mountDocumentGraphs($('#main'));
  if(parts[0]==='library'&&params.has('file')){const root=$('[data-source-documents]');if(root){const file=params.get('file');root.querySelector('[data-source-search]').value=file;filterSourceDocuments(root,file,{exactPath:true});}}
  if(parts[0]==='learn'&&parts[1]==='worktime-agent')knowledgeCleanup=mountKnowledge($('[data-knowledge]'),data.worktimeKnowledge,{docId:params.get('doc'),openDocument:params.get('read')==='1',hydrate:hydratePreviewAssets});
  if(parts[0]==='home')heroCleanup=mountHeroMotion($('.hero'));

@@ -22,6 +22,10 @@ test('편집 안내 절을 제거해도 기존 목차 주소와 뒤따르는 절
   assert.equal(lesson.toc.at(-1).text,'근거 자료 확인');
  }
  const ess=portal.lessons.find(l=>l.id==='ess-attendance');
+ const knowledge=portal.lessons.find(l=>l.id==='knowledge');
+ assert.equal(knowledge.toc.find(h=>h.id==='section-3').text,'3. 어떻게 정리하기로 했는가');
+ assert.equal(knowledge.toc.find(h=>h.id==='section-6').text,'1단계 · 추출 폴더의 핵심 업무 조사');
+ assert.equal(knowledge.toc.find(h=>h.id==='section-15').text,'5-3. 개별 조치와 과거 내역 처리 구분');
  assert.equal(ess.toc.find(h=>h.id==='section-4').text,'사례 1. 기존 화면과 R1 분리');
  const smart=portal.lessons.find(l=>l.id==='smart-erp');
  assert.equal(smart.toc.find(h=>h.id==='section-6').text,'프로젝트 문서와 가치 성찰');
@@ -73,7 +77,7 @@ test('관계도의 MD 파일은 실제 다운로드로 바로 연결되고 원�
   }
  }
  const css=await readFile(new URL('site/refinements.css',root),'utf8');
- assert.match(css,/--reading-emphasis:#1649a0/);assert.match(css,/document-tree-node>a[\s\S]*?text-decoration:none/);
+ assert.match(css,/--reading-emphasis:#a52b3c/);assert.match(css,/document-tree-node>a[\s\S]*?text-decoration:none/);
 });
 
 test('과정 제목과 설명은 합니다체·짧은 절 제목을 사용하며 편집 상태 해명을 노출하지 않는다',async()=>{
