@@ -7,7 +7,7 @@ import {createHash} from 'node:crypto';
 import {characterFor,expressionFor,avatarHTML,characterExpression,dialogueTone,dialogueHTML} from '../site/dialogue-characters.js';
 import {decorateLessonQA,loadMessengerCases} from '../scripts/lesson-dialogue.mjs';
 import {renderMarkdown} from '../scripts/markdown.mjs';
-import {conversationWorkspace} from '../site/conversations.js';
+import {conversationWorkspace,readingProjects} from '../site/conversations.js';
 const root=path.resolve(import.meta.dirname,'..');
 const portal=JSON.parse(await readFile(path.join(root,'dist/data/portal.json'),'utf8'));
 test('메신저 발췌는 해시가 맞는 실제 원문에서 생성하고 이름·사번을 치환한다',async()=>{
@@ -53,9 +53,9 @@ test('모든 기존 명시적 업무 문답의 내용과 안전한 마크업을 
  assert.equal(decorateLessonQA(code,'case'),code);
  assert.equal(portal.lessons.reduce((n,l)=>n+(l.html.match(/class="lesson-dialogue"/g)||[]).length,0),6);
 });
-test('가상 대역은 에피소드마다 안정적으로 배정하고 원래 사용자·AI 역할을 유지한다',()=>{
+test('가상 대역은 프로젝트마다 안정적으로 배정하고 원래 사용자·AI 역할을 유지한다',()=>{
  const actors=new Set();
- for(let i=0;i<30;i++){actors.add(characterFor('episode-'+i));assert.equal(characterFor('episode-'+i),characterFor('episode-'+i));}
+ for(let i=0;i<30;i++){actors.add(characterFor('project-'+i));assert.equal(characterFor('project-'+i),characterFor('project-'+i));}
  assert.equal(actors.size,4);
  const html=conversationWorkspace(portal.conversations,{projectId:'erp-obsidian-knowledge-map',episodeId:'obs-e001'});
  assert.match(html,/사용자 요청/);assert.match(html,/AI 에이전트 · AI 응답/);assert.match(html,/가상 인물 대역/);
@@ -90,7 +90,7 @@ test('메신저 표시 대사에는 상대와 말투를 명시하고 원문 발�
  const d=JSON.parse(await readFile(path.join(root,'content/messenger-cases.json'),'utf8'));
  for(const c of d.cases)for(const t of c.turns){assert.ok(t.recipient);assert.ok(t.displayText);for(const [privateName] of d.redactions)assert.ok(!t.displayText.includes(privateName));}
  const lesson=portal.lessons.find(l=>l.id==='knowledge');assert.match(lesson.html,/최팀장/);assert.doesNotMatch(lesson.html,/나팀장/);assert.match(lesson.html,/직급에 맞게 말투를 편집/);
- const css=await readFile(path.join(root,'site/story-dialogue.css'),'utf8');assert.match(css,/86.4px/);assert.match(css,/61.2px/);assert.doesNotMatch(css,/96px|68px/);
+ const css=await readFile(path.join(root,'site/story-dialogue.css'),'utf8');assert.match(css,/width:25px; height:25px/);assert.doesNotMatch(css,/86\.4px|61\.2px|96px|68px/);
 });
 
 test('AI 말투에서 보입니다와 명사 어미를 구분한다',()=>{
@@ -127,4 +127,22 @@ test('동일한 발화의 표정은 수신자·새로고침·반복 렌더링에
   assert.equal(characterExpression(actor,recipient,text,'b'),emotion);
   assert.equal(avatarHTML(actor,emotion),avatarHTML(actor,emotion));
  }
+});
+
+test('동일 프로젝트의 모든 표시 에피소드는 같은 대역을 사용한다',()=>{
+ let checked=0;
+ const projects=readingProjects(portal.conversations);
+ assert.equal(projects.length,9);
+ for(const p of projects){
+  const actors=new Set();
+  for(const e of p.episodes){
+   const html=conversationWorkspace(portal.conversations,{projectId:p.id,episodeId:e.id,visible:999});
+   assert.ok(html.includes(`data-conversation-current="${e.id}"`));
+   for(const m of html.matchAll(/data-character="(na|woo|lee|oh)"/g))actors.add(m[1]);
+   checked++;
+  }
+  assert.equal(actors.size,1,p.id);
+  assert.equal([...actors][0],characterFor(p.id));
+ }
+ assert.equal(checked,134);
 });

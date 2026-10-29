@@ -1,0 +1,105 @@
+{
+  "version": "1.19.4",
+  "baselineVersion": "1.19.3",
+  "baselineCommit": "6aefe9c1143f321d43e0976792363a03b0080323",
+  "branch": "main",
+  "upstream": "origin/main",
+  "remote": "https://github.com/leokenish/ERPAI_AGENT",
+  "initialWorktree": "clean",
+  "initialIndex": "clean",
+  "packageSha256": "ac0c86249d7150f84b6cb2d1e6fd0a582035cfcf8d71f35961046bf239d9aada",
+  "packageChangedPaths": [
+    "package.json",
+    "index.html",
+    "AGENTS.md",
+    "README.md",
+    "tests/story-dialogue.test.mjs",
+    "site/refinements.css",
+    "site/story-dialogue.css",
+    "site/conversations.js",
+    "content/catalog.json",
+    "docs/CONTENT_WORKFLOW.md"
+  ],
+  "manifestContainsHashes": false,
+  "merge": "Compared each manifest path using the previous v1.19.3 package as the common base; retained committed local fixes. Full package contents outside this change list were not restored over current source.",
+  "deletions": [],
+  "changes": [
+    "25x25px character portraits on desktop, mobile and print; original PNG/SVG bytes retained.",
+    "Project dialogue actor and rank-dependent tone use project.id across all episodes; emotion remains message-dependent and messenger speakers are unchanged.",
+    "General navigation and action text use the default text color; reference, download, library-document and external-address links use blue.",
+    "Preserved readable teal #087576 / #73d8cf, red warnings, safe quotes and existing anchor/scroll fixes.",
+    "Kept default text legible on selected navigation surfaces and reference buttons blue.",
+    "Updated the README title omitted by the package to v1.19.4."
+  ],
+  "preservation": {
+    "preservedOriginalFiles": 1918,
+    "preservedSourceFiles": 1576,
+    "preservedAssets": 42,
+    "originalConversations": {
+      "projects": 9,
+      "messages": 1327,
+      "episodes": 147,
+      "verbatim": 1309,
+      "excerpt": 0,
+      "summary": 0,
+      "reconstructed": 0,
+      "unavailable": 18
+    },
+    "readingConversations": {
+      "projects": 9,
+      "episodes": 134,
+      "messages": 1064
+    },
+    "tocEntries": 199,
+    "MDDownloadsVerified": 998,
+    "sourceHashesUnchangedAcrossBuild": 9,
+    "deletedFiles": [],
+    "filesAtOrAbove100MiB": []
+  },
+  "verification": {
+    "node": "24.19.0",
+    "commandsInOrder": [
+      "npm run build",
+      "npm run preview:file",
+      "npm test"
+    ],
+    "build": "passed",
+    "offlinePreview": "passed",
+    "tests": {
+      "passed": 122,
+      "failed": 0,
+      "skipped": 0,
+      "existingTests": 121,
+      "newProjectCastingRegression": 1,
+      "projectsChecked": 9,
+      "displayEpisodesChecked": 134
+    },
+    "browserChecks": [
+      "npm start: all 18 reviewed messenger texts and emotions match their display definitions",
+      "Pages subpath: stable messenger actors/emotions on reload, displayed-text search and original excerpts/cards downloads",
+      "All six lesson Q&A pairs use role-aware request tone and the official ChatGPT logo",
+      "Nine projects/all four roles: stable assignment and emotion on reload, logo, displayed-text copy, search and episode navigation",
+      "Neutral navigation/actions, blue reference/download/external links, teal emphasis and red warnings; contrast >=4.5:1 in both themes/sizes",
+      "1440px/390px light/dark: 25px portrait sizes, decoded faces/logo and no horizontal overflow",
+      "All 24 original face crops and ChatGPT logo captured at desktop/mobile sizes for visual review",
+      "Offline preview and preview-data: exact logo bytes, tone, stable profiles, downloads/search and 25px sizing without HTTP",
+      "No browser console errors or exceptions"
+    ],
+    "viewports": [
+      1440,
+      390
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "portraitSizePx": 25,
+    "browserErrors": [],
+    "minimumFixtureContrast": {
+      "light": 5.503,
+      "dark": 6.005
+    },
+    "visualReview": "Desktop/mobile messenger and project bubbles, 24 face crops, logo, neutral controls, blue references and warning colors reviewed."
+  },
+  "publication": "Local validation record prepared before commit. Push and GitHub Actions results are checked after committing and reported separately."
+}

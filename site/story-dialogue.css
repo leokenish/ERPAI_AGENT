@@ -1,13 +1,13 @@
 /* Reusable fictional-character presentation; original sheets remain unchanged. */
-.character-portrait { position:relative; display:inline-block; flex:0 0 var(--portrait-size,86.4px); width:var(--portrait-size,86.4px); height:var(--portrait-size,86.4px); overflow:hidden; border:2px solid var(--line); border-radius:50%; background:#fff; vertical-align:top; }
+.character-portrait { position:relative; display:inline-block; flex:0 0 var(--portrait-size,25px); width:var(--portrait-size,25px); height:var(--portrait-size,25px); overflow:hidden; border:1px solid var(--line); border-radius:50%; background:#fff; vertical-align:top; }
 .character-portrait img { position:absolute; display:block; max-width:none!important; max-height:none!important; height:auto!important; margin:0!important; border:0!important; border-radius:0!important; filter:none!important; }
-.chat-avatar { display:block; width:86.4px; height:86.4px; flex:0 0 86.4px; padding:0; margin-top:3px; background:transparent!important; border:0!important; }
-.chat-message { gap:18px; }
+.chat-avatar { display:block; width:25px; height:25px; flex:0 0 25px; padding:0; margin-top:3px; background:transparent!important; border:0!important; }
+.chat-message { gap:10px; }
 .chat-message-main { width:auto; flex:1; min-width:0; }
 .chat-message.from-user { margin-left:0; }
 .story-edition,.prose .story-edition { color:var(--muted); font-size:.875rem; line-height:1.7; font-weight:400; margin:.5rem 0 1.2rem; }
 .lesson-dialogue { margin:1.5rem 0 2rem; padding:1.2rem 0 .3rem; border-top:1px solid var(--line); }
-.story-message { display:flex; align-items:flex-start; gap:18px; margin:0 0 1.5rem; }
+.story-message { display:flex; align-items:flex-start; gap:10px; margin:0 0 1.5rem; }
 .story-message-main { min-width:0; flex:1; }
 .story-meta { display:flex; flex-wrap:wrap; align-items:center; gap:.3rem .7rem; margin:0 0 .55rem; font-size:.875rem; color:var(--muted); }
 .prose .story-meta strong { color:var(--ink); font-size:1rem; }
@@ -38,8 +38,8 @@
  .chat-avatar { display:block; }
 }
 @media(max-width:640px) {
- .character-portrait { --portrait-size:61.2px; }
- .chat-avatar { width:61.2px; height:61.2px; flex-basis:61.2px; }
+ .character-portrait { --portrait-size:25px; }
+ .chat-avatar { width:25px; height:25px; flex-basis:25px; }
  .chat-message,.story-message { gap:10px; }
  .chat-message-main { width:auto; }
  .chat-message-meta { gap:5px; }
@@ -57,7 +57,7 @@
 @media print {
  .messenger-switches { display:none; }
  .messenger-chat[hidden],.work-card[hidden] { display:block; }
- .character-portrait { --portrait-size:64px; }
+ .character-portrait { --portrait-size:25px; }
  .story-message { break-inside:avoid; }
 }
 

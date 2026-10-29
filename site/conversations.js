@@ -43,10 +43,10 @@ function dateLabel(value){
 }
 function imageAsset(a){return `<figure class="conversation-image"><button class="image-zoom" data-image="${esc(a.publicPath)}" aria-label="${esc(a.description)} 크게 보기"><img src="${esc(a.publicPath)}" alt="${esc(a.description)}" loading="lazy"></button><figcaption>${esc(a.description)} <span>· ${esc(a.id)}</span></figcaption></figure>`;}
 function plainSnippet(md){return md.replace(/[^]*/g,'').replace(/!\[([^\]]*)\]\([^)]*\)/g,'$1').replace(/\[([^\]]*)\]\([^)]*\)/g,'$1').replace(/[#*`>|]/g,'').replace(/\s+/g,' ').trim().slice(0,280);}
-function messageCard(project,message,castingKey){
+function messageCard(project,message){
  const m=message,imgs=project.assets.filter(a=>m.asset_ids.includes(a.id)&&a.kind==='image'&&a.publicPath);
  if(m.content_type==='unavailable')return '';
- const actor=m.role==='user'?characterFor(castingKey||project.id):'ai';
+ const actor=m.role==='user'?characterFor(project.id):'ai';
  const edited=m.role==='user'||Boolean(m.reading_markdown||m.editorial_markdown),text=m.reading_markdown??m.editorial_markdown??m.content_markdown,html=dialogueHTML(m.readingHtml??m.editorialHtml??m.html,actor,'ai');
  const files=project.assets.filter(a=>m.asset_ids.includes(a.id)&&a.kind!=='image'&&a.publicPath&&m.content_markdown.includes(a.original_filename||'\u0000')).filter((a,i,list)=>list.findIndex(b=>b.publicPath===a.publicPath)===i);
  const fileLinks=files.length?`<div class="conversation-message-files" aria-label="대화의 첨부파일"><strong>첨부파일</strong>${files.map(a=>`<a class="btn small" href="${esc(a.publicPath)}" download="${esc(a.original_filename)}">${esc(a.original_filename)} ↓</a>`).join('')}</div>`:'';
@@ -71,7 +71,7 @@ export function conversationWorkspace(bundle,state={}){
  let pane;
  if(tab==='review')pane=`<div class="conversation-pane-content"><div class="prose conversation-prose">${episode.commentaryHtml.replace(/<p>교육 해설 — 실제 AI 발화 아님[.]?<\/p>/g,'').replace(/교육 해설 — 실제 AI 발화 아님[.]?/g,'')}</div><section class="conversation-outcome"><h3>핵심 정리</h3><div class="prose conversation-prose">${episode.outcomeHtml}</div></section></div>`;
  else if(tab==='assets')pane=assetsPane(project,episode);
- else pane=`<div class="conversation-dialogue-intro"><p>요청과 AI 응답을 순서대로 읽습니다. 수정 이유와 검증 결과는 <button class="text-link" data-conversation-tab="review">해설·시행착오</button>에서 확인할 수 있습니다.</p><p class="story-edition">프로필과 말투는 가상 인물 대역에 맞춘 학습용 편집입니다. 사실·수치·근거는 원문을 따릅니다.</p></div><div class="conversation-transcript">${messages.slice(0,count).map(m=>messageCard(project,m,project.id+':'+episode.id)).join('')}</div><div class="conversation-reveal"><span>${count} / ${messages.length}개 항목</span>${count<messages.length?`<button class="btn primary" data-conversation-more>다음 대화 보기 ↓</button><button class="btn" data-conversation-all>전체 대화 펼치기</button>`:'<button class="btn primary" data-conversation-tab="review">이 대화의 시행착오 읽기 →</button>'}</div>`;
+ else pane=`<div class="conversation-dialogue-intro"><p>요청과 AI 응답을 순서대로 읽습니다. 수정 이유와 검증 결과는 <button class="text-link" data-conversation-tab="review">해설·시행착오</button>에서 확인할 수 있습니다.</p><p class="story-edition">프로필과 말투는 가상 인물 대역에 맞춘 학습용 편집입니다. 사실·수치·근거는 원문을 따릅니다.</p></div><div class="conversation-transcript">${messages.slice(0,count).map(m=>messageCard(project,m)).join('')}</div><div class="conversation-reveal"><span>${count} / ${messages.length}개 항목</span>${count<messages.length?`<button class="btn primary" data-conversation-more>다음 대화 보기 ↓</button><button class="btn" data-conversation-all>전체 대화 펼치기</button>`:'<button class="btn primary" data-conversation-tab="review">이 대화의 시행착오 읽기 →</button>'}</div>`;
  const selectedIndex=episodes.indexOf(episode),next=episodes[selectedIndex+1],prev=episodes[selectedIndex-1];
  const mainEpisodes=episodes.filter(e=>!e.isMeta),metaEpisodes=episodes.filter(e=>e.isMeta);
  const episodeButtons=list=>list.map(e=>`<button class="conversation-episode ${e.id===episode.id?'active':''}" data-conversation-episode="${esc(e.id)}" aria-pressed="${e.id===episode.id}"><span>${String(e.order).padStart(2,'0')}</span><span>${esc(e.title)}</span></button>`).join('');

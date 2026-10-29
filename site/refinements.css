@@ -301,17 +301,27 @@
 :root{--caution:#b42336;--caution-bg:#fff1f2;--caution-line:#e7a8b2}
 :root[data-theme="dark"]{--caution:#ffabb5;--caution-bg:#361e29;--caution-line:#8d4e60}
 .prose strong,.story-bubble strong,.chat-bubble strong{color:var(--reading-emphasis)}
-a,button,.btn,.text-link,.chat-bubble a,.from-user .chat-bubble a,.story-bubble a{color:var(--brand)}
+
 .prose a strong,.story-bubble a strong,.chat-bubble a strong,button strong,a strong{color:inherit}
 .btn.primary,.theme-option.active{color:var(--on-brand)}
-.expansion-card .home-card-action{color:var(--brand)}
+
 .prose .caution,.caution,.warning,.conversation-gap{color:var(--caution);border-color:var(--caution-line);background:var(--caution-bg)}
 .prose .caution strong,.caution strong,.warning strong{color:var(--caution)}
 .prose .caution a,.caution a,.warning a{color:var(--brand)}
 @media print{:root[data-theme]{--reading-emphasis:#087576;--caution:#b42336;--caution-bg:#fff1f2;--caution-line:#e7a8b2}}
-:root body a:any-link,:root body button:not(:disabled){color:var(--brand)}
-/* Filled controls keep a contrasting label; their blue background signals action. */
-:root body a.btn.primary,:root body button.btn.primary,:root body .theme-switch button[aria-pressed="true"],
-:root body .side-link.active,:root body .filter-tabs button.active,:root body .case-tabs a.active,
-:root body .showcase-tabs button.active,:root body .messenger-switches [aria-pressed="true"]{color:var(--on-brand)}
+
+
+
+/* v1.19.4: blue is reserved for reference destinations, not navigation. */
+:root body a:any-link,:root body button:not(:disabled){color:var(--ink)}
+:root body .home-card-action,:root body .lesson-link.active .num{color:var(--ink)}
+:root body .btn.primary{color:var(--ink);background:var(--surface);border-color:var(--control-line)}
+:root body .theme-choice[aria-pressed="true"],:root body .messenger-switches [aria-pressed="true"]{color:var(--ink);background:var(--card);border-color:var(--control-line)}
+/* Selected navigation keeps readable default text on a neutral surface. */
+:root body .side-link.active,:root body .filter-tabs button.active,:root body .case-tabs a.active,:root body .showcase-tabs button.active{color:var(--ink);background:var(--card);border-color:var(--control-line)}
+:root body a[download],:root body a[href^="downloads/"],:root body a[href^="#/library"],:root body a[href^="https://"],:root body a[href^="http://"]{color:var(--brand)}
+/* The library item in primary navigation is a menu, not a document action. */
+:root body #sidebar a:any-link,:root body .topbar a:any-link{color:var(--ink)}
+:root body a[download].btn.primary{color:var(--brand);background:var(--brand-tint);border-color:var(--brand)}
+:root body a.btn.primary:is([href^="downloads/"],[href^="#/library"],[href^="https://"],[href^="http://"]){color:var(--brand)}
 :root body :is(a:any-link,button) strong{color:inherit}
