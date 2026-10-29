@@ -1,0 +1,115 @@
+{
+  "version": "1.19.6",
+  "baselineVersion": "1.19.4",
+  "baselineCommit": "22d01ec17a6f7221a29a61f570c463693e14b201",
+  "packageBaseline": "1.19.5",
+  "branch": "main",
+  "upstream": "origin/main",
+  "remote": "https://github.com/leokenish/ERPAI_AGENT",
+  "initialWorktree": "clean",
+  "initialIndex": "clean",
+  "packageSha256": "22b74ba4b994aed8e92d6d0da7b3559c6a69ae3142d8a840a394710c3a2892a7",
+  "packageChangedPaths": [
+    "package.json",
+    "index.html",
+    "AGENTS.md",
+    "README.md",
+    "tests/story-dialogue.test.mjs",
+    "site/dialogue-characters.js",
+    "content/catalog.json",
+    "docs/CONTENT_WORKFLOW.md"
+  ],
+  "cumulativeAdditionalPaths": [
+    "site/story-dialogue.css"
+  ],
+  "manifestContainsHashes": false,
+  "merge": "Compared Full ZIP against the previous v1.19.4 package and current source. Included v1.19.5 62.5px portraits; preserved committed local quote, grammar, heading, scrolling and color-contrast fixes.",
+  "deletions": [],
+  "changes": [
+    "Explicit projectCast: Choi 3 projects, Lee/Woo/Oh 2 each, stable across all episodes.",
+    "Distinguish statements, requests, questions and collaborative proposals in display-only character dialogue.",
+    "Preserve original dialogue/code/quotes and AI responses; keep single-pass longest-ending replacement and inline quote protection.",
+    "Fix substring pronoun replacement corrupting 문제/유저, including words split by inline markup.",
+    "Apply 62.5x62.5px portraits on desktop/mobile/print while preserving image and official ChatGPT-logo bytes.",
+    "Keep neutral navigation/actions, blue reference/download/external-address links, readable teal emphasis and red cautions."
+  ],
+  "preservation": {
+    "preservedOriginalFiles": 1920,
+    "preservedSourceFiles": 1576,
+    "preservedAssets": 42,
+    "originalConversations": {
+      "projects": 9,
+      "messages": 1327,
+      "episodes": 147,
+      "verbatim": 1309,
+      "excerpt": 0,
+      "summary": 0,
+      "reconstructed": 0,
+      "unavailable": 18
+    },
+    "readingConversations": {
+      "projects": 9,
+      "episodes": 134,
+      "messages": 1064
+    },
+    "tocEntries": 199,
+    "MDDownloadsVerified": 998,
+    "sourceHashesUnchangedAcrossBuild": 8,
+    "deletedFiles": [],
+    "filesAtOrAbove100MiB": []
+  },
+  "dialogueCorpusAudit": {
+    "renderedMessageInstances": 1312,
+    "protectedCodeQuotesAndLinks": 4733,
+    "changedHumanDisplays": 404,
+    "malformedEndings": []
+  },
+  "verification": {
+    "node": "24.19.0",
+    "commandsInOrder": [
+      "npm run build",
+      "npm run preview:file",
+      "npm test"
+    ],
+    "build": "passed",
+    "offlinePreview": "passed",
+    "tests": {
+      "passed": 126,
+      "failed": 0,
+      "skipped": 0,
+      "existingTestsPreserved": 122,
+      "newTests": 4,
+      "projectDistribution": {
+        "na": 3,
+        "lee": 2,
+        "woo": 2,
+        "oh": 2
+      },
+      "displayEpisodesChecked": 134
+    },
+    "browserChecks": [
+      "npm start: all 18 reviewed messenger texts and emotions match their display definitions",
+      "Pages subpath: stable messenger actors/emotions on reload, displayed-text search and original excerpts/cards downloads",
+      "All six lesson Q&A pairs use role-aware request tone and the official ChatGPT logo",
+      "Balanced casting: Choi 3 projects, Lee/Woo/Oh 2 each",
+      "Nine projects/all four roles: stable assignment and emotion on reload, logo, displayed-text copy, search and episode navigation",
+      "Neutral navigation/actions, blue reference/download/external links, teal emphasis and red warnings; contrast >=4.5:1 in both themes/sizes",
+      "1440px/390px light/dark: 62.5px portrait sizes, decoded faces/logo and no horizontal overflow",
+      "All 24 original face crops and ChatGPT logo captured at desktop/mobile sizes for visual review",
+      "Offline preview and preview-data: exact logo bytes, tone, stable profiles, downloads/search and 62.5px sizing without HTTP",
+      "No browser console errors or exceptions"
+    ],
+    "viewports": [
+      1440,
+      390
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "portraitSizePx": 62.5,
+    "browserErrors": [],
+    "visualReview": "Actual messenger/project screens, all 24 original facial crops and ChatGPT logo reviewed at desktop/mobile sizes."
+  },
+  "publication": "Local validation record prepared before commit. Push and GitHub Actions results are checked after committing and reported separately."
+}

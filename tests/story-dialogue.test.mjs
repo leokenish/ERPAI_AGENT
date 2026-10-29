@@ -81,16 +81,16 @@ test('직급과 무관하게 발화 맥락으로 표정을 선택하며 AI는 �
  }
 });
 test('AI 요청의 높임말을 역할별로 바꾸고 코드와 인용·링크는 보존한다',()=>{
- for(const actor of ['na','lee'])assert.equal(dialogueTone('코드를 수정해 주세요. 확인했습니다.',actor),'코드를 수정해. 확인했어.');
+ for(const actor of ['na','lee'])assert.equal(dialogueTone('코드를 수정해 주세요. 확인했습니다.',actor),'코드를 수정해줘. 확인했어.');
  for(const actor of ['woo','oh'])assert.equal(dialogueTone('코드를 수정해줘.',actor),'코드를 수정해 주세요.');
  const h='<p>수정해 주세요.</p><pre><code>수정해 주세요.</code></pre><blockquote>수정해 주세요.</blockquote><a href="/수정해 주세요.">확인해 주세요.</a>';
- const out=dialogueHTML(h,'na');assert.match(out,/<p>수정해.<\/p>/);assert.match(out,/<code>수정해 주세요.<\/code>/);assert.match(out,/<blockquote>수정해 주세요.<\/blockquote>/);assert.match(out,/href="\/수정해 주세요."/);
+ const out=dialogueHTML(h,'na');assert.match(out,/<p>수정해줘.<\/p>/);assert.match(out,/<code>수정해 주세요.<\/code>/);assert.match(out,/<blockquote>수정해 주세요.<\/blockquote>/);assert.match(out,/href="\/수정해 주세요."/);
 });
 test('메신저 표시 대사에는 상대와 말투를 명시하고 원문 발췌와 분리한다',async()=>{
  const d=JSON.parse(await readFile(path.join(root,'content/messenger-cases.json'),'utf8'));
  for(const c of d.cases)for(const t of c.turns){assert.ok(t.recipient);assert.ok(t.displayText);for(const [privateName] of d.redactions)assert.ok(!t.displayText.includes(privateName));}
  const lesson=portal.lessons.find(l=>l.id==='knowledge');assert.match(lesson.html,/최팀장/);assert.doesNotMatch(lesson.html,/나팀장/);assert.match(lesson.html,/직급에 맞게 말투를 편집/);
- const css=await readFile(path.join(root,'site/story-dialogue.css'),'utf8');assert.match(css,/width:25px; height:25px/);assert.doesNotMatch(css,/86\.4px|61\.2px|96px|68px/);
+ const css=await readFile(path.join(root,'site/story-dialogue.css'),'utf8');assert.match(css,/width:62\.5px; height:62\.5px/);assert.doesNotMatch(css,/86\.4px|61\.2px|96px|68px/);
 });
 
 test('AI 말투에서 보입니다와 명사 어미를 구분한다',()=>{
@@ -103,7 +103,7 @@ test('AI 말투에서 보입니다와 명사 어미를 구분한다',()=>{
 test('표시용 말투 편집은 인라인 서식을 가로지르는 인용문도 보존한다',()=>{
  const html='<p>“<strong>완료했습니다</strong>”라는 문구와 &quot;확인했습니다.&quot;를 보여 주세요.</p><p><q>수정해 주세요.</q><code>보입니다.</code><strong>문서</strong>입니다.</p>';
  assert.equal(dialogueHTML(html,'na'),'<p>“<strong>완료했습니다</strong>”라는 문구와 &quot;확인했습니다.&quot;를 보여줘.</p><p><q>수정해 주세요.</q><code>보입니다.</code><strong>문서</strong>야.</p>');
- assert.equal(dialogueTone('"완료했습니다"라는 문구를 수정해 주세요.','lee'),'"완료했습니다"라는 문구를 수정해.');
+ assert.equal(dialogueTone('"완료했습니다"라는 문구를 수정해 주세요.','lee'),'"완료했습니다"라는 문구를 수정해줘.');
  assert.equal(dialogueHTML(html,'ai'),html);
 });
 test('동사·명사 어미를 구분하고 편집을 반복해도 같은 문장을 유지한다',()=>{
@@ -145,4 +145,26 @@ test('동일 프로젝트의 모든 표시 에피소드는 같은 대역을 사�
   assert.equal([...actors][0],characterFor(p.id));
  }
  assert.equal(checked,134);
+});
+
+test('프로젝트 대역은 네 명에게 균형 배정한다',()=>{
+ const counts={na:0,woo:0,lee:0,oh:0};
+ for(const p of portal.conversations.projects)counts[characterFor(p.id)]++;
+ assert.deepEqual(counts,{na:3,woo:2,lee:2,oh:2});
+});
+test('요청·질문·제안과 인물별 말투를 구분한다',()=>{
+ assert.equal(dialogueTone('수정해 주세요. 확인해 주세요. 함께 정리해 주세요.','na'),'수정해줘. 확인해봐. 함께 정리해보자.');
+ assert.equal(dialogueTone('설명해 주세요. 비교해 주세요. 할 수 있나요?','lee'),'설명해줄래? 비교해봐. 할 수 있어?');
+ assert.equal(dialogueTone('설명해줘.','woo'),'설명해 주세요.');
+ assert.equal(dialogueTone('설명해줘.','oh'),'설명해 주실 수 있나요?');
+ assert.equal(dialogueTone('확인이 필요해. 구현이 가능해.','na'),'확인이 필요해. 구현이 가능해.');
+});
+
+test('업무 현황 서술은 작업 요청으로 바꾸지 않는다',()=>{assert.equal(dialogueTone('회사는 매주 업무일지를 작성합니다.','lee'),'회사는 매주 업무일지를 작성해.');});
+
+test('인물의 대명사 편집은 문제·유저와 인라인 서식 속 단어를 훼손하지 않는다',()=>{
+ for(const actor of ['na','lee']){
+  assert.equal(dialogueTone('문제가 있습니다. 제가 확인했습니다. 유저는 요청합니다. 저는 검토했습니다.',actor),'문제가 있어. 내가 확인했어. 유저는 요청해. 나는 검토했어.');
+  assert.equal(dialogueHTML('<p>문<strong>제가</strong> 있습니다. 유<em>저는</em> 요청합니다.</p>',actor),'<p>문<strong>제가</strong> 있어. 유<em>저는</em> 요청해.</p>');
+ }
 });
