@@ -1,0 +1,107 @@
+{
+  "version": "1.19.2",
+  "baseline": {
+    "version": "1.19.0",
+    "commit": "42a6eda02ff2366f4854786d33e7bb428e32179f",
+    "branch": "main",
+    "upstream": "origin/main",
+    "initialWorktree": "clean",
+    "fetchDivergence": [
+      0,
+      0
+    ]
+  },
+  "package": {
+    "file": "KBS_ERP_AI_Agent_v1.19.2_Dialogue_Changes.zip",
+    "sha256": "6e72e98b12015f42668903a2520dd749d0ccb9642d037d050579c5e82d5d5753",
+    "files": 19,
+    "manifestIncluded": false,
+    "deleted": [],
+    "obsoleteDocumentExcluded": "docs/RELEASE_v1.19.1.md",
+    "reason": "The included v1.19.1 documentation prescribed fixed expressions by rank, contrary to the current request. Current v1.19.2 guidance and a release record replace it."
+  },
+  "changes": [
+    "Reviewed messenger displayText for 18 turns follows recipient rank; original source ranges, facts and declared emotions are unchanged.",
+    "AI requests use casual endings for na/lee and polite requests for woo/oh; AI response contents remain unchanged.",
+    "Longest-ending single-pass conversion distinguishes verbs and nouns, preserves inline quotations across formatting and keeps code/URLs intact.",
+    "Existing four human character sheets and six expressions preserved; assignment remains deterministic and expressions follow the utterance rather than recipient rank.",
+    "The supplied ChatGPT logo is used without byte changes; desktop/mobile CSS diameters are 86.4px/61.2px.",
+    "Original transcripts, source downloads, source settings, existing anchor IDs, local scroll fix, caption minimum and npm preview alias preserved."
+  ],
+  "validation": {
+    "node": "24.19.0",
+    "commandsInOrder": [
+      "npm run build",
+      "npm run preview:file",
+      "npm test"
+    ],
+    "tests": {
+      "passed": 119,
+      "failed": 0,
+      "skipped": 0
+    },
+    "sourceHashesBeforeAndAfterBuildEqual": true,
+    "sourceFilesChecked": 18,
+    "logs": {
+      "build-final.log": "91457f79f0d1e1c30c845760b3e3e7ed68aed609fc2abf5423d9abd984057fbe",
+      "preview-final.log": "c2ebff80ab307d063d7ff9ee70b17dd814dac62c8925071fccc6e6986be8babc",
+      "test-final.log": "8acd068335bf30b15500aa447b39434241a1cecea321d1067af303895d074b62"
+    },
+    "preservation": {
+      "untouchedOriginalFiles": 1911,
+      "preservedSourceFiles": 1576,
+      "preservedExistingAssets": 42,
+      "originalConversationTotals": {
+        "projects": 9,
+        "messages": 1327,
+        "episodes": 147,
+        "verbatim": 1309,
+        "excerpt": 0,
+        "summary": 0,
+        "reconstructed": 0,
+        "unavailable": 18
+      },
+      "existingTOCEntries": 199,
+      "verifiedMDDownloadPaths": 998,
+      "sourceFilesUnchangedThroughBuild": 18,
+      "logoSha256": "7be72f1fea831d3ba81a545cee79b7e0ae69449d5d7837c9571ccbfb4aa1e00b",
+      "filesAtOrAbove100MiB": []
+    },
+    "corpus": {
+      "renderedMessageInstances": 1312,
+      "protectedCodeQuotesAndLinks": 4733,
+      "changedHumanDisplays": 254,
+      "malformedEndings": []
+    },
+    "browserChecks": [
+      "npm start: all 18 reviewed messenger texts and emotions match their display definitions",
+      "Pages subpath: stable messenger actors/emotions on reload, displayed-text search and original excerpts/cards downloads",
+      "All six lesson Q&A pairs use role-aware request tone and the official ChatGPT logo",
+      "Nine projects/all four roles: stable assignment and emotion on reload, logo, displayed-text copy, search and episode navigation",
+      "1440px/390px light/dark: exact 90% portrait sizes, decoded faces/logo and no horizontal overflow",
+      "All 24 original face crops and ChatGPT logo captured at desktop/mobile sizes for visual review",
+      "Offline preview and preview-data: exact logo bytes, tone, stable profiles, downloads/search and 61.2px sizing without HTTP",
+      "No browser console errors or exceptions"
+    ],
+    "browserErrors": [],
+    "portraitSizes": {
+      "desktopCSS": 86.4,
+      "mobileCSS": 61.2,
+      "allowedBrowserRounding": 0.1
+    },
+    "visualReview": "All 24 face crops and logo inspected at both sizes; messenger and project bubbles reviewed in light/dark at 1440px/390px."
+  },
+  "git": {
+    "remote": "https://github.com/leokenish/ERPAI_AGENT",
+    "branch": "main",
+    "generatedFilesTracked": false,
+    "newZIPsOrTemporaryFiles": false,
+    "filesAtOrAbove100MiB": []
+  },
+  "deployment": {
+    "workflow": ".github/workflows/deploy.yaml",
+    "artifact": "dist",
+    "site": "https://leokenish.github.io/ERPAI_AGENT/",
+    "statusAtValidation": "Pre-commit local verification; deployment is checked separately after push."
+  }
+}

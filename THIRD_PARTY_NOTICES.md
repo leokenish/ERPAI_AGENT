@@ -23,3 +23,12 @@ The current supplied reference is docs/design/DESIGN-together.ai.md; DESIGN-clau
 The supplied KBS logo original is retained byte-for-byte in docs/brand/kbs-original.ai. Its horizontal first artboard was extracted as vector paths into assets/images/kbs-logo.svg, preserving geometry, proportions, and source colors. This is a use of the supplied KBS mark for the requested internal portal, not a new logo or a new redistribution license.
 
 assets/images/team-collaboration-animated.svg embeds the exact original v1.4 PNG bytes once; it is a hybrid SVG, not a pure-vector conversion. The original is preserved in docs/design/base/team-v1.4-original.png and was generated with the built-in image tool in v1.4. The people, screens and architectural scene are not redrawn. The existing plant's foliage uses clipped copies of the original; two added plants use newly authored vector leaves and clipped original pot shapes. Only leaves animate. The user's plant crop is retained in docs/design/references/plant-reference.png. Editable construction code is scripts/build-hero.py. No external image service or script is required at runtime.
+
+
+## OpenAI / ChatGPT 프로필 로고
+
+공식 OpenAI 로고 패키지의 검정 Blossom SVG를 바이트 그대로 사용합니다.
+출처: https://cdn.openai.com/brand/OpenAI-Logos-2025.zip
+파일: OpenAI-logos(new)/SVGs/OpenAI-black-monoblossom.svg
+사용 지침: https://openai.com/brand/
+ChatGPT 및 OpenAI 로고는 OpenAI의 상표입니다. 대화의 AI 응답 식별에만 사용하며 포털의 공식 제휴·후원을 의미하지 않습니다.

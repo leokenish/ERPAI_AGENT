@@ -1,7 +1,7 @@
 /* Reusable fictional-character presentation; original sheets remain unchanged. */
-.character-portrait { position:relative; display:inline-block; flex:0 0 var(--portrait-size,96px); width:var(--portrait-size,96px); height:var(--portrait-size,96px); overflow:hidden; border:2px solid var(--line); border-radius:50%; background:#fff; vertical-align:top; }
+.character-portrait { position:relative; display:inline-block; flex:0 0 var(--portrait-size,86.4px); width:var(--portrait-size,86.4px); height:var(--portrait-size,86.4px); overflow:hidden; border:2px solid var(--line); border-radius:50%; background:#fff; vertical-align:top; }
 .character-portrait img { position:absolute; display:block; max-width:none!important; max-height:none!important; height:auto!important; margin:0!important; border:0!important; border-radius:0!important; filter:none!important; }
-.chat-avatar { display:block; width:96px; height:96px; flex:0 0 96px; padding:0; margin-top:3px; background:transparent!important; border:0!important; }
+.chat-avatar { display:block; width:86.4px; height:86.4px; flex:0 0 86.4px; padding:0; margin-top:3px; background:transparent!important; border:0!important; }
 .chat-message { gap:18px; }
 .chat-message-main { width:auto; flex:1; min-width:0; }
 .chat-message.from-user { margin-left:0; }
@@ -38,8 +38,8 @@
  .chat-avatar { display:block; }
 }
 @media(max-width:640px) {
- .character-portrait { --portrait-size:68px; }
- .chat-avatar { width:68px; height:68px; flex-basis:68px; }
+ .character-portrait { --portrait-size:61.2px; }
+ .chat-avatar { width:61.2px; height:61.2px; flex-basis:61.2px; }
  .chat-message,.story-message { gap:10px; }
  .chat-message-main { width:auto; }
  .chat-message-meta { gap:5px; }
@@ -93,10 +93,5 @@
 .portrait-lee.expression-confident img { left:-11.78571%; top:-373.57143%; }
 .portrait-lee.expression-warm img { left:-121.42857%; top:-373.57143%; }
 
-.portrait-ai img { width:326.80851%!important; }
-.portrait-ai.expression-neutral img { left:-5.31915%; top:-5.10638%; }
-.portrait-ai.expression-smile img { left:-114.25532%; top:-5.10638%; }
-.portrait-ai.expression-concerned img { left:-223.19149%; top:-5.10638%; }
-.portrait-ai.expression-tired img { left:-5.31915%; top:-108.51064%; }
-.portrait-ai.expression-confident img { left:-114.25532%; top:-108.51064%; }
-.portrait-ai.expression-warm img { left:-223.19149%; top:-108.51064%; }
+.portrait-chatgpt { display:inline-flex; align-items:center; justify-content:center; background:#fff; }
+.character-portrait.portrait-chatgpt img { position:static; width:68%!important; height:68%!important; object-fit:contain; }

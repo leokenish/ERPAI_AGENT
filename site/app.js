@@ -239,7 +239,7 @@ document.addEventListener('click',e=>{
  if(target.matches('[data-filter]')){currentFilter=target.dataset.filter;route();}
  if(target.matches('[data-section]')){e.preventDefault();scrollToSection(target.dataset.section);}
  if(target.matches('[data-copy]'))copy(target.closest('.codeblock').querySelector('code').textContent);
- if(target.matches('[data-chat-copy]')){const m=data.conversations.projects.find(p=>p.id===target.dataset.projectId)?.messages.find(m=>m.id===target.dataset.chatCopy);if(m)copy(m.reading_markdown??m.editorial_markdown??m.content_markdown);}
+ if(target.matches('[data-chat-copy]')){const m=data.conversations.projects.find(p=>p.id===target.dataset.projectId)?.messages.find(m=>m.id===target.dataset.chatCopy);if(m){const shown=target.closest('.chat-message')?.querySelector?.('.conversation-prose');copy(shown?.innerText??m.reading_markdown??m.editorial_markdown??m.content_markdown);}}
  if(target.matches('[data-exercise-copy]')){const selection=resolveConversation(data.conversations,conversationState);if(selection)copy(selection.episode.exercise_markdown);}
  if(target.matches('[data-open-conversation]')){$('#conversation-heading')?.scrollIntoView({block:'start'});$('#conversation-heading')?.focus({preventScroll:true});}
  if(target.matches('[data-conversation-episode]')){conversationState.episodeId=target.dataset.conversationEpisode;conversationState.visible=4;conversationState.tab='dialogue';updateConversation('conversation-episode-title',true);}

@@ -2,7 +2,7 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import path from 'node:path';
 import {escapeHTML} from './markdown.mjs';
-import {characterFor,expressionFor,storyMessageHTML} from '../site/dialogue-characters.js';
+import {characterFor,expressionFor,storyMessageHTML,characterExpression,dialogueHTML} from '../site/dialogue-characters.js';
 
 export function decorateLessonQA(html,key) {
  let index=0;
@@ -12,7 +12,12 @@ export function decorateLessonQA(html,key) {
   const question=(a+b).trim();
   const cleanAnswer=answer.replace(/^<strong>답변\s*[·:]\s*<\/strong>\s*/,'');
   const plain=s=>s.replace(/<[^>]+>/g,'');
-  return `<section class="lesson-dialogue" aria-label="업무 질문과 답변"><p class="story-edition">근거를 바탕으로 정리한 사례 문답 · 가상 인물 연출</p>${storyMessageHTML({actor:characterFor(key+':'+index++),emotion:expressionFor(plain(question)),label:'질문',body:`<p>${question}</p>`})}${storyMessageHTML({actor:'ai',emotion:expressionFor(plain(cleanAnswer),'assistant'),label:'답변',body:`<p>${cleanAnswer}</p>`,kind:'ai'})}</section>`;
+  const actor=characterFor(key+':'+index++);
+  // The outer quotation marks frame the character's own speech, not a cited source.
+  const displayQuestion=question.startsWith('“')&&question.endsWith('”')
+   ?'“'+dialogueHTML(question.slice(1,-1),actor,'ai')+'”'
+   :dialogueHTML(question,actor,'ai');
+  return `<section class="lesson-dialogue" aria-label="업무 질문과 답변"><p class="story-edition">근거를 바탕으로 정리한 사례 문답 · 가상 인물 연출</p>${storyMessageHTML({actor,emotion:characterExpression(actor,'ai',plain(question)),label:'질문',body:`<p>${displayQuestion}</p>`})}${storyMessageHTML({actor:'ai',emotion:expressionFor(plain(cleanAnswer),'assistant'),label:'답변',body:`<p>${cleanAnswer}</p>`,kind:'ai'})}</section>`;
  });
 }
 
@@ -52,9 +57,9 @@ export async function loadMessengerCases(root,out) {
  await mkdir(path.join(out,'downloads'),{recursive:true});
  await writeFile(path.join(out,'downloads/messenger-excerpts.md'),exportText);
  await writeFile(path.join(out,'downloads/messenger-cards.md'),cardsText);
- return {search:resolved.map(c=>[c.title,...c.fields.flat(),...c.turns.map(t=>t.text)].join('\n')).join('\n'),render(id){
+ return {search:resolved.map(c=>[c.title,...c.fields.flat(),...c.turns.flatMap(t=>[t.text,t.displayText])].join('\n')).join('\n'),render(id){
   const c=resolved.find(x=>x.id===id.trim());if(!c)throw Error('Unknown messenger case: '+id);
-  const rows=c.turns.map(t=>storyMessageHTML({actor:t.actor,emotion:t.emotion,label:t.stage,body:`<p>${escapeHTML(t.text).replaceAll('\n','<br>')}</p>`,time:`${t.date} ${t.time}`,source:t.source})).join('');
-  return `<section class="messenger-case" id="${c.id}" aria-label="${escapeHTML(c.title)}"><header class="messenger-case-heading"><span class="eyebrow">MESSENGER → KNOWLEDGE</span><h4>${escapeHTML(c.title)}</h4><p class="story-edition">원문 발췌 · 이름·사번만 가상 인물과 사례명으로 치환했습니다. 표정은 학습용 연출입니다.</p></header><div class="messenger-switches" role="group" aria-label="사례 보기"><button class="btn small" data-case-view="chat" aria-pressed="true">메신저 대화</button><button class="btn small" data-case-view="card" aria-pressed="false">정리된 업무카드</button><button class="btn small" data-case-view="both" aria-pressed="false">함께 보기</button></div><div class="messenger-chat" data-case-panel="chat">${rows}</div><div class="work-card" data-case-panel="card" hidden><div class="work-card-heading"><span class="eyebrow">업무카드</span><span class="work-card-id">${escapeHTML(c.id)}</span></div><h4>${escapeHTML(c.title)}</h4><p class="story-edition">교육용 카드 ID · 원문 출처 SRC-11</p><dl>${c.fields.map(([key,value])=>`<div><dt>${escapeHTML(key)}</dt><dd>${escapeHTML(value)}</dd></div>`).join('')}</dl><p class="work-card-takeaway">${escapeHTML(c.takeaway)}</p><a href="downloads/messenger-cards.md" download>업무카드 MD 받기 ↓</a></div><p class="messenger-case-footer"><a href="downloads/messenger-excerpts.md" download>가상 인물로 치환한 원문 발췌 MD ↓</a></p></section>`;
+  const rows=c.turns.map(t=>storyMessageHTML({actor:t.actor,emotion:t.emotion || characterExpression(t.actor,t.recipient,t.displayText,t.start),label:t.stage,body:`<p>${escapeHTML(t.displayText).replaceAll('\n','<br>')}</p>`,time:`${t.date} ${t.time}`,source:t.source})).join('');
+  return `<section class="messenger-case" id="${c.id}" aria-label="${escapeHTML(c.title)}"><header class="messenger-case-heading"><span class="eyebrow">MESSENGER → KNOWLEDGE</span><h4>${escapeHTML(c.title)}</h4><p class="story-edition">실제 대화를 바탕으로 직급에 맞게 말투를 편집했습니다. 가상 인물의 관계와 표정은 연출이며, 원문 발췌는 아래 MD에서 확인합니다.</p></header><div class="messenger-switches" role="group" aria-label="사례 보기"><button class="btn small" data-case-view="chat" aria-pressed="true">메신저 대화</button><button class="btn small" data-case-view="card" aria-pressed="false">정리된 업무카드</button><button class="btn small" data-case-view="both" aria-pressed="false">함께 보기</button></div><div class="messenger-chat" data-case-panel="chat">${rows}</div><div class="work-card" data-case-panel="card" hidden><div class="work-card-heading"><span class="eyebrow">업무카드</span><span class="work-card-id">${escapeHTML(c.id)}</span></div><h4>${escapeHTML(c.title)}</h4><p class="story-edition">교육용 카드 ID · 원문 출처 SRC-11</p><dl>${c.fields.map(([key,value])=>`<div><dt>${escapeHTML(key)}</dt><dd>${escapeHTML(value)}</dd></div>`).join('')}</dl><p class="work-card-takeaway">${escapeHTML(c.takeaway)}</p><a href="downloads/messenger-cards.md" download>업무카드 MD 받기 ↓</a></div><p class="messenger-case-footer"><a href="downloads/messenger-excerpts.md" download>가상 인물로 치환한 원문 발췌 MD ↓</a></p></section>`;
  }};
 }
