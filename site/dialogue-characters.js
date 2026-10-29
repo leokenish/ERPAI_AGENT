@@ -20,7 +20,7 @@ export function avatarHTML(actor,emotion='neutral') {
  if(!Object.hasOwn(characterNames,actor))actor='oh';
  if(actor==='ai')return `<span class="character-portrait portrait-chatgpt" role="img" aria-label="ChatGPT 로고" data-character="ai"><img src="assets/characters/chatgpt-logo.svg" alt="" loading="lazy" decoding="async"></span>`;
  if(!Object.hasOwn(emotionNames,emotion))emotion='neutral';
- return `<span class="character-portrait portrait-${actor} expression-${emotion}" role="img" aria-label="${characterNames[actor]} · ${emotionNames[emotion]} 표정" data-character="${actor}" data-emotion="${emotion}"><img src="assets/characters/${actor}-expressions.png" alt="" loading="lazy" decoding="async"></span>`;
+ return `<span class="character-portrait portrait-${actor} expression-${emotion}" role="img" aria-label="${characterNames[actor]} · ${emotionNames[emotion]} 표정" data-character="${actor}" data-emotion="${emotion}"><img src="assets/characters/${actor==='na'?'choi':actor}-expressions.png" alt="" loading="lazy" decoding="async"></span>`;
 }
 export function storyMessageHTML({actor='oh',emotion='neutral',label='',body='',time='',source='',kind='human'}) {
  return `<article class="story-message story-${kind}">${avatarHTML(actor,emotion)}<div class="story-message-main"><div class="story-meta"><strong>${characterNames[actor]||characterNames.oh}</strong>${label?`<span>${encode(label)}</span>`:''}${time?`<time>${encode(time)}</time>`:''}</div><div class="story-bubble">${body}</div>${source?`<small class="story-source">${encode(source)}</small>`:''}</div></article>`;

@@ -255,8 +255,8 @@
 @media print{.document-tree-node{break-inside:avoid}.prose .document-tree{background:transparent}}
 
 /* Reading emphasis and direct document downloads. */
-:root{--reading-emphasis:#a52b3c}
-:root[data-theme="dark"]{--reading-emphasis:#ffabb5}
+:root{--reading-emphasis:#087576}
+:root[data-theme="dark"]{--reading-emphasis:#73d8cf}
 .prose p strong,.prose li strong,.prose blockquote strong{color:var(--reading-emphasis)}
 .prose .document-tree-node>a,.prose .document-tree-node>a:visited,.prose .document-tree-node>a strong{color:var(--brand);text-decoration:none;border-bottom:0;box-shadow:none}
 .prose .document-tree-node>a:hover{color:var(--brand);text-decoration:none}
@@ -295,4 +295,23 @@
 .document-graph-detail li span{display:block;color:var(--muted);font-size:var(--text-caption)}
 .prose .document-graph-context p{font-size:var(--text-caption);line-height:1.7;margin:.7rem 0 0}
 @media(max-width:700px){.document-graph-detail{grid-template-columns:1fr;padding:1rem}.document-graph-toolbar{align-items:flex-start}.document-graph-toolbar button{white-space:nowrap}}
-@media print{.document-graph-scroll{overflow:visible}.document-graph-stage{min-width:0;height:700px}.document-graph-node{min-height:0;padding:.35rem}.document-graph-node.is-muted{opacity:1}.document-graph-detail[hidden]{display:grid}.document-graph-detail{break-inside:avoid;margin-top:1rem}.document-graph-lines line.is-muted{opacity:1}.document-graph-toolbar button{display:none}:root{--reading-emphasis:#a52b3c}}
+@media print{.document-graph-scroll{overflow:visible}.document-graph-stage{min-width:0;height:700px}.document-graph-node{min-height:0;padding:.35rem}.document-graph-node.is-muted{opacity:1}.document-graph-detail[hidden]{display:grid}.document-graph-detail{break-inside:avoid;margin-top:1rem}.document-graph-lines line.is-muted{opacity:1}.document-graph-toolbar button{display:none}:root{--reading-emphasis:#087576}}
+
+/* Semantic colors: explanation teal, interactive blue, caution red. */
+:root{--caution:#b42336;--caution-bg:#fff1f2;--caution-line:#e7a8b2}
+:root[data-theme="dark"]{--caution:#ffabb5;--caution-bg:#361e29;--caution-line:#8d4e60}
+.prose strong,.story-bubble strong,.chat-bubble strong{color:var(--reading-emphasis)}
+a,button,.btn,.text-link,.chat-bubble a,.from-user .chat-bubble a,.story-bubble a{color:var(--brand)}
+.prose a strong,.story-bubble a strong,.chat-bubble a strong,button strong,a strong{color:inherit}
+.btn.primary,.theme-option.active{color:var(--on-brand)}
+.expansion-card .home-card-action{color:var(--brand)}
+.prose .caution,.caution,.warning,.conversation-gap{color:var(--caution);border-color:var(--caution-line);background:var(--caution-bg)}
+.prose .caution strong,.caution strong,.warning strong{color:var(--caution)}
+.prose .caution a,.caution a,.warning a{color:var(--brand)}
+@media print{:root[data-theme]{--reading-emphasis:#087576;--caution:#b42336;--caution-bg:#fff1f2;--caution-line:#e7a8b2}}
+:root body a:any-link,:root body button:not(:disabled){color:var(--brand)}
+/* Filled controls keep a contrasting label; their blue background signals action. */
+:root body a.btn.primary,:root body button.btn.primary,:root body .theme-switch button[aria-pressed="true"],
+:root body .side-link.active,:root body .filter-tabs button.active,:root body .case-tabs a.active,
+:root body .showcase-tabs button.active,:root body .messenger-switches [aria-pressed="true"]{color:var(--on-brand)}
+:root body :is(a:any-link,button) strong{color:inherit}

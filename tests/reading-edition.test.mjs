@@ -77,7 +77,7 @@ test('관계도의 MD 파일은 실제 다운로드로 바로 연결되고 원�
   }
  }
  const css=await readFile(new URL('site/refinements.css',root),'utf8');
- assert.match(css,/--reading-emphasis:#a52b3c/);assert.match(css,/document-tree-node>a[\s\S]*?text-decoration:none/);
+ assert.match(css,/--reading-emphasis:#087576/);assert.match(css,/document-tree-node>a[\s\S]*?text-decoration:none/);
 });
 
 test('과정 제목과 설명은 합니다체·짧은 절 제목을 사용하며 편집 상태 해명을 노출하지 않는다',async()=>{

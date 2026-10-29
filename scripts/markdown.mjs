@@ -12,6 +12,11 @@ export function renderMarkdown(markdown, {headingPrefix='',headingIds={},heading
   const parser = new Marked({gfm:true,breaks:false});
   parser.use({renderer:{
     html({text}) {return escapeHTML(text);},
+    blockquote({tokens,text}) {
+      const caution=/^\s*(?:\*\*)?(?:주의(?:사항)?|경고|CAUTION|WARNING)(?:\*\*)?(?:[：:\s]|$)/i.test(text);
+      if(!caution)return false;
+      return `<blockquote class="caution">\n${this.parser.parse(tokens)}</blockquote>\n`;
+    },
     heading({tokens,depth,text}) {
       ++count;
       const id = `${headingPrefix}section-${headingIds[count]??count}`;

@@ -1,0 +1,238 @@
+{
+  "version": "1.19.3",
+  "baselineVersion": "1.19.2",
+  "baselineCommit": "40090a4ae94cb2038e194667f60ef99fac2c346b",
+  "initialWorkingTree": "clean",
+  "initialIndex": "clean",
+  "branch": "main",
+  "upstream": "origin/main",
+  "remote": "https://github.com/leokenish/ERPAI_AGENT",
+  "packageSha256": "42d5fbf1514f8c092e8195ceed333da3be13ea0b1c2e1ced2b0b9332c46cb32a",
+  "manifestAfterHashesVerified": 13,
+  "mergeDecisions": [
+    "Preserved current v1.19.2 tone, quotations, stable expressions, profile dimensions, official logo, section anchors and local validation history.",
+    "Ignored stale v1.19.1 policy and unrelated truncated temporary image in the Full package.",
+    "Renamed the approved Choi image without modifying bytes; kept the internal na identity.",
+    "Kept readable labels on filled blue controls and blue links inside warnings. Darkened light/print teal to #087576 to keep normal-size text above 4.5:1 on conversation backgrounds.",
+    "Ordinary blockquote HTML remains unchanged; only explicitly labeled warnings receive caution styling."
+  ],
+  "deletions": [
+    {
+      "path": "docs/design/history/v1.5.2/team-screen-dark.png",
+      "status": "removed",
+      "beforeSha256": "9e7610697db75fc8af83e3c5d4420df822e26b317f839bcc0a9a5e81a6304ea6"
+    },
+    {
+      "path": "docs/design/history/v1.5.2/team-dark-palette.svg",
+      "status": "removed",
+      "beforeSha256": "8d92a378f61d6bd0eb4668a40668383ec1ba3305c1cf41bb8188d1047ba0be26"
+    },
+    {
+      "path": "docs/design/history/v1.5.2/build-dark-hero.mjs",
+      "status": "removed",
+      "beforeSha256": "9bb4b9005d2e6b5be3352ac5395f37cf07992d15befa02754778f784acb2deb7"
+    },
+    {
+      "path": "sources/conversations/20261024-progress/kbs-erp-webgui-refactor/.captured-dom-sanitized.json.NbOhc2.KfkIov",
+      "status": "already absent",
+      "beforeSha256": null
+    },
+    {
+      "path": "sources/conversations/20261024-progress/kbs-erp-webgui-refactor/.captured-dom-sanitized.json.NbOhc2",
+      "status": "already absent",
+      "beforeSha256": null
+    },
+    {
+      "path": "assets/characters/na-expressions.png",
+      "status": "removed",
+      "beforeSha256": "06ab92af10eeea49f626cf90ba7177b4aae1c4ccf4456792d7699634cc3eef57"
+    },
+    {
+      "path": "assets/characters/ai-expressions.png",
+      "status": "removed",
+      "beforeSha256": "9a084f68f6e94de18307ec2f3ff4bee079de0e21d45e10d5fef89077b8f0e89b"
+    }
+  ],
+  "preservation": {
+    "untouchedOriginalFiles": 1914,
+    "preservedSourceFiles": 1576,
+    "preservedExistingAssets": 41,
+    "originalConversationTotals": {
+      "projects": 9,
+      "messages": 1327,
+      "episodes": 147,
+      "verbatim": 1309,
+      "excerpt": 0,
+      "summary": 0,
+      "reconstructed": 0,
+      "unavailable": 18
+    },
+    "existingTOCEntries": 199,
+    "verifiedMDDownloadPaths": 998,
+    "verifiedSourceHashes": 13,
+    "logoSha256": "7be72f1fea831d3ba81a545cee79b7e0ae69449d5d7837c9571ccbfb4aa1e00b",
+    "filesAtOrAbove100MiB": [],
+    "deletedExistingPaths": 5,
+    "alreadyAbsentPaths": 2,
+    "byteIdenticalAssetRenames": 1,
+    "netBytesRemoved": 4960378
+  },
+  "verification": {
+    "node": "24.19.0",
+    "commandsInOrder": [
+      "npm run build",
+      "npm run preview:file",
+      "npm test"
+    ],
+    "build": "passed",
+    "preview": "passed (preview.html + 13 compressed preview-data parts)",
+    "tests": {
+      "passed": 121,
+      "failed": 0,
+      "skipped": 0,
+      "existingTestsPreserved": 119,
+      "newTests": 2
+    },
+    "browser": [
+      "npm start: all 18 reviewed messenger texts and emotions match their display definitions",
+      "Pages subpath: stable messenger actors/emotions on reload, displayed-text search and original excerpts/cards downloads",
+      "All six lesson Q&A pairs use role-aware request tone and the official ChatGPT logo",
+      "Nine projects/all four roles: stable assignment and emotion on reload, logo, displayed-text copy, search and episode navigation",
+      "Semantic teal/blue/red and selected-control contrast >=4.5:1 at both themes/sizes",
+      "1440px/390px light/dark: exact 90% portrait sizes, decoded faces/logo and no horizontal overflow",
+      "All 24 original face crops and ChatGPT logo captured at desktop/mobile sizes for visual review",
+      "Offline preview and preview-data: exact logo bytes, tone, stable profiles, downloads/search and 61.2px sizing without HTTP",
+      "No browser console errors or exceptions",
+      "Library dialog: original-named MD and full source ZIP downloads match source hashes",
+      "Course next/previous and existing section-12 TOC anchor",
+      "Choi profile on actual light/dark course page uses renamed image"
+    ],
+    "browserErrors": [],
+    "viewports": [
+      1440,
+      390
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "portraitDiametersPx": [
+      86.4,
+      61.2
+    ],
+    "semanticColorFixtureMinimumContrast": {
+      "light": 5.503,
+      "dark": 7.182
+    },
+    "actualContentContrast": [
+      {
+        "route": "learn/knowledge",
+        "theme": "light",
+        "values": [
+          {
+            "color": "rgb(8, 117, 118)",
+            "bg": "rgb(255, 255, 255)",
+            "size": "17px",
+            "weight": "600",
+            "ratio": 5.502507532931072,
+            "sample": "관찰한 현상·담당자 설명·안내 합의"
+          },
+          {
+            "color": "rgb(32, 40, 52)",
+            "bg": "rgb(255, 255, 255)",
+            "size": "17px",
+            "weight": "600",
+            "ratio": 14.846039902243414,
+            "sample": "AI 에이전트"
+          },
+          {
+            "color": "rgb(8, 117, 118)",
+            "bg": "rgb(244, 246, 249)",
+            "size": "19.55px",
+            "weight": "600",
+            "ratio": 5.082440035390023,
+            "sample": "업무 지침·스킬·근거 문서의 연결"
+          }
+        ]
+      },
+      {
+        "route": "learn/knowledge",
+        "theme": "dark",
+        "values": [
+          {
+            "color": "rgb(115, 216, 207)",
+            "bg": "rgb(17, 23, 34)",
+            "size": "17px",
+            "weight": "600",
+            "ratio": 10.647632604272694,
+            "sample": "관찰한 현상·담당자 설명·안내 합의"
+          },
+          {
+            "color": "rgb(240, 243, 250)",
+            "bg": "rgb(17, 23, 34)",
+            "size": "17px",
+            "weight": "600",
+            "ratio": 16.165760520762415,
+            "sample": "AI 에이전트"
+          },
+          {
+            "color": "rgb(115, 216, 207)",
+            "bg": "rgb(24, 31, 45)",
+            "size": "19.55px",
+            "weight": "600",
+            "ratio": 9.783978221765015,
+            "sample": "업무 지침·스킬·근거 문서의 연결"
+          },
+          {
+            "color": "rgb(115, 216, 207)",
+            "bg": "rgb(27, 36, 51)",
+            "size": "17px",
+            "weight": "600",
+            "ratio": 9.246152954734342,
+            "sample": "AGENTS.md"
+          }
+        ]
+      },
+      {
+        "route": "conversations/erp-obsidian-knowledge-map/obs-e001",
+        "theme": "light",
+        "values": [
+          {
+            "color": "rgb(8, 117, 118)",
+            "bg": "rgb(234, 240, 235)",
+            "size": "17px",
+            "weight": "600",
+            "ratio": 4.758922771881411,
+            "sample": "ERP 업무와 시스템 사이의 관계 정리"
+          }
+        ]
+      },
+      {
+        "route": "conversations/erp-obsidian-knowledge-map/obs-e001",
+        "theme": "dark",
+        "values": [
+          {
+            "color": "rgb(115, 216, 207)",
+            "bg": "rgb(37, 53, 47)",
+            "size": "17px",
+            "weight": "600",
+            "ratio": 7.644373856329049,
+            "sample": "ERP 업무와 시스템 사이의 관계 정리"
+          }
+        ]
+      }
+    ],
+    "libraryDownloads": [
+      "00_README.md",
+      "knowledge-images_MD.zip"
+    ],
+    "visualReview": "Choi profile, all 24 face crops, official logo, messenger/project bubbles and semantic-color fixtures reviewed."
+  },
+  "gitPolicy": {
+    "generatedTracked": false,
+    "largeFilesAtOrAbove100MiB": [],
+    "configurationAndWorkflowPreserved": true,
+    "historyRewritten": false
+  },
+  "publication": "Local validation record prepared before commit. Push and GitHub Actions results are checked after this commit and reported separately."
+}
