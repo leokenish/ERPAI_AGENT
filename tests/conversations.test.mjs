@@ -67,7 +67,7 @@ test('네 공유 프로젝트의 모든 표시 본문과 기존 발화 ID·첨�
    const input=(a.asset_root||p.assetSourcePath)+'/'+a.path;
    assert.deepEqual(await readFile(new URL('dist/'+a.publicPath,root)),await readFile(new URL(input,root)),a.id);
   }
-  for(const file of ['AI_RESPONSES_FULL.md','MISSING_RESPONSES.md','CHANGELOG.md']){
+  for(const file of ['MISSING_RESPONSES.md','CHANGELOG.md']){
    assert.deepEqual(await readFile(new URL('dist/'+p.documents[file],root)),await readFile(new URL(p.sourcePath+file,root)));
   }
  }
@@ -128,10 +128,8 @@ test('공유 화면의 235개 본문 전체와 3개 빈 응답을 보존하며 �
  const e01=conversationWorkspace(bundle,{projectId:p.id,episodeId:'E01',visible:999});
  assert.equal((e01.match(/class="chat-message from-assistant/g)||[]).length,4);
  assert.ok(!e01.includes('당시 AI 답변 원문은 확보하지 못했습니다'));
- const download=await readFile(new URL('dist/'+p.documents['AI_RESPONSES_FULL.md'],root));
- const updatedMd=await readFile(new URL(p.sourcePath+'AI_RESPONSES_FULL.md',root));
- assert.deepEqual(download,updatedMd);
- for(const m of p.messages.filter(m=>m.role==='assistant'&&m.content_type==='verbatim'))assert.ok(download.toString().includes(m.content_markdown),m.id);
+ assert.equal(p.documents['AI_RESPONSES_FULL.md'],undefined);
+ assert.equal(p.documents['conversation-data.json'],undefined);
 });
 test('대화 데이터의 누락 참조를 거부하고 원문 HTML·실행 링크는 표시용으로 처리한다',async()=>{
  const source=JSON.parse(await readFile(new URL(bundle.projects[0].sourcePath+'conversation-data.json',root),'utf8'));

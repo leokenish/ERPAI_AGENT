@@ -118,13 +118,14 @@ export async function buildConversations(root,out){
   const downloadDir=`downloads/conversations/${meta.id}`;
   await mkdir(path.join(out,downloadDir),{recursive:true});
   const documents={};
-  for(const filename of ['00_README.md','01_PROJECT_CONTEXT.md','02_LEARNING_GUIDE.md',...(meta.supplementDocuments||[])]){
+  for(const filename of ['00_README.md','01_PROJECT_CONTEXT.md','02_LEARNING_GUIDE.md',...(meta.supplementDocuments||[]).filter(f=>f!=='AI_RESPONSES_FULL.md')]){
    requireValue(['00_README.md','01_PROJECT_CONTEXT.md','02_LEARNING_GUIDE.md','AI_RESPONSES_FULL.md','MISSING_RESPONSES.md','CHANGELOG.md'].includes(filename),'unsupported conversation document');
    documents[filename]=`${downloadDir}/${filename}`;
-   await copyFile(path.join(source,filename),path.join(out,documents[filename]));
+   if(['00_README.md','01_PROJECT_CONTEXT.md','02_LEARNING_GUIDE.md'].includes(filename)){
+    const guide=await readFile(path.join(source,filename),'utf8');
+    await writeFile(path.join(out,documents[filename]),guide.split('\n').filter(line=>!/(?:\]\([^)]*(?:conversation-data\.json|AI_RESPONSES_FULL\.md)|https:\/\/chatgpt\.com\/share\/)/.test(line)).join('\n'));
+   }else await copyFile(path.join(source,filename),path.join(out,documents[filename]));
   }
-  documents['conversation-data.json']=`${downloadDir}/conversation-data.json`;
-  await copyFile(path.join(source,'conversation-data.json'),path.join(out,documents['conversation-data.json']));
   const resolveURL=conversationResolver(assets,documents);
   const render=(text,key)=>renderMarkdown(text.replace(/[^]*/g,'[당시 답변의 출처 표기]'),{headingPrefix:`cv-${meta.id}-${key}-`,keepTitle:true,headingOffset:2,resolveURL}).html;
   for(const [episodeId,additions] of Object.entries(meta.episodeMessageAdditions||{})){

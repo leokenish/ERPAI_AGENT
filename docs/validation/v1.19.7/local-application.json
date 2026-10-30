@@ -1,0 +1,115 @@
+{
+  "version": "1.19.7",
+  "baselineVersion": "1.19.6",
+  "baselineCommit": "6307fd8ce80a433e5eafb38ccd6fbf0d03e6de8c",
+  "branch": "main",
+  "upstream": "origin/main",
+  "remote": "https://github.com/leokenish/ERPAI_AGENT",
+  "initialWorktree": "clean",
+  "initialIndex": "clean",
+  "packageSha256": "cecaedcbf3752d2ef05573db7db6538ad43fc5cfbe1785f477b2d75bfa4334f5",
+  "manifestContainsHashes": false,
+  "merge": "Compared manifest paths with current source and the previous v1.19.6 package; preserved local quote, word-boundary, grammar, accessibility, anchor and color fixes. No source deletions.",
+  "changes": [
+    "Remove 18 original-transcript download outputs and their UI links/source disclosure; regenerate dist and offline payload.",
+    "Keep internal sources, screen learning dialogues, actual attachments and work-card download.",
+    "Use the exact approved Chae profile with six expressions for every smart ERP episode; preserve all other project assignments and tones.",
+    "Keep 62.5px portraits, official ChatGPT logo and semantic colors.",
+    "Protect pronoun substrings/inline words and preserve natural collaborative request phrasing for Chae."
+  ],
+  "preservation": {
+    "preservedOriginalFiles": 1887,
+    "preservedSourceFiles": 1576,
+    "preservedAssets": 42,
+    "originalConversations": {
+      "projects": 9,
+      "messages": 1327,
+      "episodes": 147,
+      "verbatim": 1309,
+      "excerpt": 0,
+      "summary": 0,
+      "reconstructed": 0,
+      "unavailable": 18
+    },
+    "readingConversations": {
+      "projects": 9,
+      "episodes": 134,
+      "messages": 1064
+    },
+    "tocEntries": 199,
+    "MDDownloadsVerified": 998,
+    "attachmentsVerified": 422,
+    "sourceHashesUnchangedAcrossBuild": 14,
+    "deletedSourceFiles": [],
+    "removedGeneratedFiles": [
+      "downloads/messenger-excerpts.md",
+      "downloads/conversations/kbs-erp-export-diag-agents/AI_RESPONSES_FULL.md",
+      "downloads/conversations/kbs-erp-export-diag-agents/conversation-data.json",
+      "downloads/conversations/kakao-work-context/conversation-data.json",
+      "downloads/conversations/erp-obsidian-knowledge-map/AI_RESPONSES_FULL.md",
+      "downloads/conversations/erp-obsidian-knowledge-map/conversation-data.json",
+      "downloads/conversations/erp-agent-communication/AI_RESPONSES_FULL.md",
+      "downloads/conversations/erp-agent-communication/conversation-data.json",
+      "downloads/conversations/kbs-erp-mcp-telegram/AI_RESPONSES_FULL.md",
+      "downloads/conversations/kbs-erp-mcp-telegram/conversation-data.json",
+      "downloads/conversations/kbs-erp-webgui-refactor/AI_RESPONSES_FULL.md",
+      "downloads/conversations/kbs-erp-webgui-refactor/conversation-data.json",
+      "downloads/conversations/kbs-erp-ess-attendance/AI_RESPONSES_FULL.md",
+      "downloads/conversations/kbs-erp-ess-attendance/conversation-data.json",
+      "downloads/conversations/kbs-weekly-work-timeline/AI_RESPONSES_FULL.md",
+      "downloads/conversations/kbs-weekly-work-timeline/conversation-data.json",
+      "downloads/conversations/kbs-smart-erp-main/AI_RESPONSES_FULL.md",
+      "downloads/conversations/kbs-smart-erp-main/conversation-data.json"
+    ],
+    "filesAtOrAbove100MiB": []
+  },
+  "dialogueCorpusAudit": {
+    "renderedMessageInstances": 1312,
+    "protectedCodeQuotesAndLinks": 4733,
+    "changedHumanDisplays": 388,
+    "malformedEndings": []
+  },
+  "verification": {
+    "node": "24.19.0",
+    "commandsInOrder": [
+      "npm run build",
+      "npm run preview:file",
+      "npm test"
+    ],
+    "build": "passed",
+    "offlinePreview": "passed",
+    "tests": {
+      "passed": 129,
+      "failed": 0,
+      "skipped": 0,
+      "existingTestsPreserved": 126,
+      "newTests": 3
+    },
+    "browserChecks": [
+      "npm start: all 18 reviewed messenger texts and emotions match their display definitions",
+      "Pages subpath: stable messenger actors/emotions on reload, displayed-text search and preserved cards downloads, no transcript links",
+      "All six lesson Q&A pairs use role-aware request tone and the official ChatGPT logo",
+      "Balanced casting: Chae 1 smart ERP project, all other assignments preserved",
+      "All projects omit original JSON/transcript download controls",
+      "Nine projects/all five roles: stable assignment and emotion on reload, logo, displayed-text copy, search and episode navigation",
+      "Neutral navigation/actions, blue reference/download/external links, teal emphasis and red warnings; contrast >=4.5:1 in both themes/sizes",
+      "1440px/390px light/dark: 62.5px portrait sizes, decoded faces/logo and no horizontal overflow",
+      "All 30 face crops and ChatGPT logo captured at desktop/mobile sizes for visual review",
+      "Offline payload contains none of the removed transcript downloads",
+      "Offline preview and preview-data: exact logo bytes, tone, stable profiles, downloads/search and 62.5px sizing without HTTP",
+      "No browser console errors or exceptions"
+    ],
+    "viewports": [
+      1440,
+      390
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "portraitSizePx": 62.5,
+    "browserErrors": [],
+    "visualReview": "Reviewed actual smart ERP mobile/dark dialogue and all thirty facial crops, including six Chae expressions; exact package PNG bytes preserved."
+  },
+  "publication": "Local validation record prepared before commit. Push and GitHub Actions results are checked after committing and reported separately."
+}

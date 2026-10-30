@@ -28,7 +28,6 @@ export async function loadMessengerCases(root,out) {
  const lines=bytes.toString('utf8').replace(/^\uFEFF/,'').split(/\r?\n/);
  const redactions=data.redactions;
  const redact=text=>redactions.reduce((value,[from,to])=>value.split(from).join(to),text);
- let exportText='# 업무 메신저 원문 발췌\n\n실제 SRC-11 대화의 이름·사번을 가상 인물과 사례명으로 치환했습니다. 말투와 시각은 유지했습니다.\n';
  let cardsText='# 업무 메신저의 업무카드\n\n아래 KC 식별자는 교육용으로 새로 부여했습니다. 원문 출처 식별자는 SRC-11입니다.\n';
  const resolved=data.cases.map(item=>{
   const turns=item.turns.map(turn=>{
@@ -50,16 +49,14 @@ export async function loadMessengerCases(root,out) {
    }).join('\n');
    return {...turn,text:redact(text),time:times.join('–'),source:`SRC-11 · ${turn.start}${turn.end===turn.start?'':'–'+turn.end}행`};
   });
-  exportText+=`\n## ${item.title}\n\n`+turns.map(t=>`[${data.names[t.actor]}] [${t.date} ${t.time}] ${t.text}\n출처: ${t.source}`).join('\n\n')+'\n';
   cardsText+=`\n## ${item.id} · ${item.title}\n\n`+item.fields.map(([k,v])=>`- ${k}: ${v}`).join('\n')+'\n';
   return {...item,turns};
  });
  await mkdir(path.join(out,'downloads'),{recursive:true});
- await writeFile(path.join(out,'downloads/messenger-excerpts.md'),exportText);
  await writeFile(path.join(out,'downloads/messenger-cards.md'),cardsText);
  return {search:resolved.map(c=>[c.title,...c.fields.flat(),...c.turns.flatMap(t=>[t.text,t.displayText])].join('\n')).join('\n'),render(id){
   const c=resolved.find(x=>x.id===id.trim());if(!c)throw Error('Unknown messenger case: '+id);
-  const rows=c.turns.map(t=>storyMessageHTML({actor:t.actor,emotion:t.emotion || characterExpression(t.actor,t.recipient,t.displayText,t.start),label:t.stage,body:`<p>${escapeHTML(t.displayText).replaceAll('\n','<br>')}</p>`,time:`${t.date} ${t.time}`,source:t.source})).join('');
-  return `<section class="messenger-case" id="${c.id}" aria-label="${escapeHTML(c.title)}"><header class="messenger-case-heading"><span class="eyebrow">MESSENGER → KNOWLEDGE</span><h4>${escapeHTML(c.title)}</h4><p class="story-edition">실제 대화를 바탕으로 직급에 맞게 말투를 편집했습니다. 가상 인물의 관계와 표정은 연출이며, 원문 발췌는 아래 MD에서 확인합니다.</p></header><div class="messenger-switches" role="group" aria-label="사례 보기"><button class="btn small" data-case-view="chat" aria-pressed="true">메신저 대화</button><button class="btn small" data-case-view="card" aria-pressed="false">정리된 업무카드</button><button class="btn small" data-case-view="both" aria-pressed="false">함께 보기</button></div><div class="messenger-chat" data-case-panel="chat">${rows}</div><div class="work-card" data-case-panel="card" hidden><div class="work-card-heading"><span class="eyebrow">업무카드</span><span class="work-card-id">${escapeHTML(c.id)}</span></div><h4>${escapeHTML(c.title)}</h4><p class="story-edition">교육용 카드 ID · 원문 출처 SRC-11</p><dl>${c.fields.map(([key,value])=>`<div><dt>${escapeHTML(key)}</dt><dd>${escapeHTML(value)}</dd></div>`).join('')}</dl><p class="work-card-takeaway">${escapeHTML(c.takeaway)}</p><a href="downloads/messenger-cards.md" download>업무카드 MD 받기 ↓</a></div><p class="messenger-case-footer"><a href="downloads/messenger-excerpts.md" download>가상 인물로 치환한 원문 발췌 MD ↓</a></p></section>`;
+  const rows=c.turns.map(t=>storyMessageHTML({actor:t.actor,emotion:t.emotion || characterExpression(t.actor,t.recipient,t.displayText,t.start),label:t.stage,body:`<p>${escapeHTML(t.displayText).replaceAll('\n','<br>')}</p>`,time:`${t.date} ${t.time}`})).join('');
+  return `<section class="messenger-case" id="${c.id}" aria-label="${escapeHTML(c.title)}"><header class="messenger-case-heading"><span class="eyebrow">MESSENGER → KNOWLEDGE</span><h4>${escapeHTML(c.title)}</h4><p class="story-edition">실제 대화를 바탕으로 직급에 맞게 말투를 편집했습니다. 가상 인물의 관계와 표정은 학습을 위한 연출입니다.</p></header><div class="messenger-switches" role="group" aria-label="사례 보기"><button class="btn small" data-case-view="chat" aria-pressed="true">메신저 대화</button><button class="btn small" data-case-view="card" aria-pressed="false">정리된 업무카드</button><button class="btn small" data-case-view="both" aria-pressed="false">함께 보기</button></div><div class="messenger-chat" data-case-panel="chat">${rows}</div><div class="work-card" data-case-panel="card" hidden><div class="work-card-heading"><span class="eyebrow">업무카드</span><span class="work-card-id">${escapeHTML(c.id)}</span></div><h4>${escapeHTML(c.title)}</h4><p class="story-edition">교육용 카드 ID</p><dl>${c.fields.map(([key,value])=>`<div><dt>${escapeHTML(key)}</dt><dd>${escapeHTML(value)}</dd></div>`).join('')}</dl><p class="work-card-takeaway">${escapeHTML(c.takeaway)}</p><a href="downloads/messenger-cards.md" download>업무카드 MD 받기 ↓</a></div></section>`;
  }};
 }

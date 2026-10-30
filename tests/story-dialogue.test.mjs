@@ -10,17 +10,11 @@ import {renderMarkdown} from '../scripts/markdown.mjs';
 import {conversationWorkspace,readingProjects} from '../site/conversations.js';
 const root=path.resolve(import.meta.dirname,'..');
 const portal=JSON.parse(await readFile(path.join(root,'dist/data/portal.json'),'utf8'));
-test('메신저 발췌는 해시가 맞는 실제 원문에서 생성하고 이름·사번을 치환한다',async()=>{
+test('메신저 원천 해시를 보존하고 발췌 다운로드를 게시하지 않는다',async()=>{
  const data=JSON.parse(await readFile(path.join(root,'content/messenger-cases.json'),'utf8'));
  const original=await readFile(path.join(root,data.source));
  assert.equal(createHash('sha256').update(original).digest('hex'),data.sourceSha256);
- const published=await readFile(path.join(root,'dist/downloads/messenger-excerpts.md'),'utf8');
- for(const [privateText] of data.redactions)assert.ok(!published.includes(privateText));
- for(const speaker of Object.keys(data.cast))assert.ok(!published.includes(speaker));
- assert.match(published,/그럼 IAM을 지우라고 할게요! ㅋㅋ/);
- assert.match(published,/2026-09-17 오전 9:50/);
- assert.match(published,/SRC-11 · 348행/);
- assert.match(published,/과거 내역은 아직 못했네요/);
+ await assert.rejects(readFile(path.join(root,'dist/downloads/messenger-excerpts.md')),{code:'ENOENT'});
  const temp=await mkdtemp(path.join(os.tmpdir(),'messenger-hash-'));
  try {
   await mkdir(path.join(temp,'content'),{recursive:true});
@@ -59,7 +53,7 @@ test('가상 대역은 프로젝트마다 안정적으로 배정하고 원래 �
  assert.equal(actors.size,4);
  const html=conversationWorkspace(portal.conversations,{projectId:'erp-obsidian-knowledge-map',episodeId:'obs-e001'});
  assert.match(html,/사용자 요청/);assert.match(html,/AI 에이전트 · AI 응답/);assert.match(html,/가상 인물 대역/);
- assert.match(html,/character-portrait/);assert.match(html,/data-chat-copy/);assert.match(html,/출처 · obs-m001/);
+ assert.match(html,/character-portrait/);assert.match(html,/data-chat-copy/);assert.doesNotMatch(html,/message-source/);
 });
 test('금액의 0은 오류 감정으로 잘못 읽지 않고 표정·이미지 경로를 제한한다',()=>{
  assert.equal(expressionFor('8,400원을 써도 되나요?'),'neutral');
@@ -138,7 +132,7 @@ test('동일 프로젝트의 모든 표시 에피소드는 같은 대역을 사�
   for(const e of p.episodes){
    const html=conversationWorkspace(portal.conversations,{projectId:p.id,episodeId:e.id,visible:999});
    assert.ok(html.includes(`data-conversation-current="${e.id}"`));
-   for(const m of html.matchAll(/data-character="(na|woo|lee|oh)"/g))actors.add(m[1]);
+   for(const m of html.matchAll(/data-character="(na|woo|lee|oh|chae)"/g))actors.add(m[1]);
    checked++;
   }
   assert.equal(actors.size,1,p.id);
@@ -147,10 +141,10 @@ test('동일 프로젝트의 모든 표시 에피소드는 같은 대역을 사�
  assert.equal(checked,134);
 });
 
-test('프로젝트 대역은 네 명에게 균형 배정한다',()=>{
- const counts={na:0,woo:0,lee:0,oh:0};
+test('프로젝트 대역은 다섯 명에게 균형 배정한다',()=>{
+ const counts={na:0,woo:0,lee:0,oh:0,chae:0};
  for(const p of portal.conversations.projects)counts[characterFor(p.id)]++;
- assert.deepEqual(counts,{na:3,woo:2,lee:2,oh:2});
+ assert.deepEqual(counts,{na:2,woo:2,lee:2,oh:2,chae:1});
 });
 test('요청·질문·제안과 인물별 말투를 구분한다',()=>{
  assert.equal(dialogueTone('수정해 주세요. 확인해 주세요. 함께 정리해 주세요.','na'),'수정해줘. 확인해봐. 함께 정리해보자.');
@@ -166,5 +160,44 @@ test('인물의 대명사 편집은 문제·유저와 인라인 서식 속 단�
  for(const actor of ['na','lee']){
   assert.equal(dialogueTone('문제가 있습니다. 제가 확인했습니다. 유저는 요청합니다. 저는 검토했습니다.',actor),'문제가 있어. 내가 확인했어. 유저는 요청해. 나는 검토했어.');
   assert.equal(dialogueHTML('<p>문<strong>제가</strong> 있습니다. 유<em>저는</em> 요청합니다.</p>',actor),'<p>문<strong>제가</strong> 있어. 유<em>저는</em> 요청해.</p>');
+ }
+});
+
+test('채주임은 스마트 ERP의 모든 에피소드를 맡고 AI에게 정중하게 요청한다',()=>{
+ assert.equal(characterFor('kbs-smart-erp-main'),'chae');
+ assert.match(avatarHTML('chae'),/chae-expressions.png/);
+ assert.equal(dialogueTone('좋아. 수정해줘. 보여줘.','chae'),'네, 좋습니다! 수정해 주시면 감사하겠습니다. 보여 주실 수 있을까요?');
+ for(const p of portal.conversations.projects){
+  const html=conversationWorkspace(portal.conversations,{projectId:p.id,tab:'assets'});
+  assert.doesNotMatch(html,/대화 원본 JSON|대화 기록 MD|messenger-excerpts/);
+ }
+ const lesson=portal.lessons.find(l=>l.id==='knowledge');
+ assert.doesNotMatch(lesson.html,/messenger-excerpts|원문 발췌는 아래/);
+});
+
+test('채주임 말투는 단어와 인용을 보존하고 공동 제안을 자연스럽게 표현한다',()=>{
+ assert.equal(dialogueTone('신나는 화면 안에서 내가 확인했어. 나는 검토했어.','chae'),'신나는 화면 안에서 제가 확인했습니다. 저는 검토했습니다.');
+ assert.equal(dialogueHTML('<p>빛<em>나는</em> 화면에서 <strong>나는</strong> 확인했어.</p>','chae'),'<p>빛<em>나는</em> 화면에서 <strong>저는</strong> 확인했습니다.</p>');
+ assert.equal(dialogueTone('함께 검토해보자. 수정해줄래?','chae'),'함께 검토해 주시면 좋겠습니다. 수정해 주실 수 있을까요?');
+ const html='<p>“<strong>나는</strong> 수정해줘.”라는 문구를 보여줘.</p><code>내가</code>';
+ assert.equal(dialogueHTML(html,'chae'),'<p>“<strong>나는</strong> 수정해줘.”라는 문구를 보여 주실 수 있을까요?</p><code>내가</code>');
+});
+
+test('모든 프로젝트는 원문 다운로드를 제외하고 내부 원천과 실제 첨부를 보존한다',async()=>{
+ for(const p of portal.conversations.projects){
+  for(const file of ['conversation-data.json','AI_RESPONSES_FULL.md']){
+   assert.equal(p.documents[file],undefined,p.id+'/'+file);
+   await assert.rejects(readFile(path.join(root,'dist/downloads/conversations',p.id,file)),{code:'ENOENT'});
+  }
+  const source=await readFile(path.join(root,p.sourcePath,'conversation-data.json'));
+  assert.ok(source.length,p.id);
+  for(const e of readingProjects({projects:[p]} )[0].episodes){
+   const html=conversationWorkspace(portal.conversations,{projectId:p.id,episodeId:e.id,visible:999});
+   assert.doesNotMatch(html,/class="message-source"|대화 원본 JSON|대화 기록 MD/);
+  }
+  for(const [file,url] of Object.entries(p.documents))if(['00_README.md','01_PROJECT_CONTEXT.md','02_LEARNING_GUIDE.md'].includes(file)){
+   const guide=await readFile(path.join(root,'dist',url),'utf8');
+   assert.doesNotMatch(guide,/\]\([^)]*(?:conversation-data\.json|AI_RESPONSES_FULL\.md)/,p.id+'/'+file);
+  }
  }
 });

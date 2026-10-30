@@ -1,6 +1,6 @@
 // Presentation only: fictional actors never replace the recorded author/role.
 const encode = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-export const characterNames = {na:'최팀장',woo:'우대리',lee:'이과장',oh:'오사원',ai:'AI 에이전트'};
+export const characterNames = {na:'최팀장',woo:'우대리',lee:'이과장',oh:'오사원',chae:'채주임',ai:'AI 에이전트'};
 export const emotionNames = {neutral:'차분한',smile:'웃는',concerned:'당황한',tired:'피곤한',confident:'매력적인',warm:'사랑스러운'};
 // Explicit project casting prevents hash collisions from concentrating projects on one actor.
 export const projectCast = Object.freeze({
@@ -12,7 +12,7 @@ export const projectCast = Object.freeze({
  'kbs-erp-webgui-refactor':'lee',
  'kbs-erp-ess-attendance':'oh',
  'kbs-weekly-work-timeline':'lee',
- 'kbs-smart-erp-main':'na'
+ 'kbs-smart-erp-main':'chae'
 });
 export function characterFor(seed) {
  if(Object.hasOwn(projectCast,seed))return projectCast[seed];
@@ -99,6 +99,18 @@ function toneSegment(text,actor,recipient='ai',previous='') {
   if(actor==='oh')out=out.replace(/알려 주세요\./g,'알려 주실 수 있나요?').replace(/설명해 주세요\./g,'설명해 주실 수 있나요?');
  }
  if(casual)out=out.replace(/(해줄래|해줄 수 있어)\./g,'$1?');
+ if(actor==='chae'&&recipient==='ai'){
+  out=out.replace(/(?<![가-힣A-Za-z0-9_])(내가|나는)/g,(word,_pronoun,offset)=>
+   offset===0&&/[가-힣A-Za-z0-9_]$/.test(previous)?word:word==='내가'?'제가':'저는'
+  )
+   .replace(/해\s?봐(?=[.!?]|$)/g,'해 주세요')
+   .replace(/해보자(?=[.!?]|$)/g,'해 주시면 좋겠습니다')
+   .replace(/해줄래[.?]?/g,'해 주실 수 있을까요?')
+   .replace(/알려\s?주세요[.!]?/g,'알려 주시면 감사하겠습니다.')
+   .replace(/보여\s?주세요[.!]?/g,'보여 주실 수 있을까요?')
+   .replace(/해\s?주세요[.!]?/g,'해 주시면 감사하겠습니다.')
+   .replace(/좋습니다[.!]/g,'네, 좋습니다!');
+ }
  return out;
 }
 

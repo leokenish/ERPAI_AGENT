@@ -88,7 +88,7 @@ TXT의 ‘사진’ 표시는 첨부를 찾는 위치로 사용합니다. 대화
 원문은 수정하지 말고 카드 초안을 담당자가 검토할 수 있게 작성해 주세요.
 ```
 
-[업무카드 MD 받기](downloads/messenger-cards.md) · [가상 인물로 치환한 원문 발췌 MD 받기](downloads/messenger-excerpts.md)
+[업무카드 MD 받기](downloads/messenger-cards.md)
 
 ## 3. 어떻게 정리하기로 했는가
 

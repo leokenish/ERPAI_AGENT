@@ -95,3 +95,12 @@
 
 .portrait-chatgpt { display:inline-flex; align-items:center; justify-content:center; background:#fff; }
 .character-portrait.portrait-chatgpt img { position:static; width:68%!important; height:68%!important; object-fit:contain; }
+
+/* Chae: same sheet grid as Choi; portraits keep the existing 62.5px size. */
+.portrait-chae img { width:402.22222%!important; }
+.portrait-chae.expression-neutral img { left:-14.81481%; top:-101.11111%; }
+.portrait-chae.expression-smile img { left:-126.66667%; top:-101.11111%; }
+.portrait-chae.expression-concerned img { left:-14.81481%; top:-241.11111%; }
+.portrait-chae.expression-tired img { left:-126.66667%; top:-241.11111%; }
+.portrait-chae.expression-confident img { left:-14.81481%; top:-379.62963%; }
+.portrait-chae.expression-warm img { left:-126.66667%; top:-379.62963%; }
