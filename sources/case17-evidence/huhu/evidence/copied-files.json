@@ -1,0 +1,410 @@
+[
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/F03.patch",
+    "file": "source/proposal/F03.patch",
+    "sha256": "6951d49480294e3b53091a5060e0a9c6082014a3a16cefa1090d31f485903315",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/README.md",
+    "file": "source/proposal/README.md",
+    "sha256": "90f60d3366e0cd6d5bb99ec0a5b05c17ae7f52d017cca34ae276b550f5c703b6",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/SAVE.patch",
+    "file": "source/proposal/SAVE.patch",
+    "sha256": "67a1c8cf74a61c432500dfde99dd631ab21a8ddfddda6d5a35ceb8534d07fe14",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/source-hashes-before.json",
+    "file": "source/proposal/source-hashes-before.json",
+    "sha256": "2b89e010106bde31464ab69b7f02feb5e96d95b64a583d0acb666ec62514748b",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/changes.json",
+    "file": "source/proposal/changes.json",
+    "sha256": "f0c841533ae52de785b2906ed7dcefd78f256fceef01cfc11dd090a5399736fa",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/report.html",
+    "file": "source/proposal/report.html",
+    "sha256": "a1016c14d87711c73ed15504c50665dfda934a15d34215ef7bd0c2dbd6b93486",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/snippets/F03-01.abap",
+    "file": "source/proposal/snippets/F03-01.abap",
+    "sha256": "112dac78d3a417e341ed4482d1565c5e82835791230122a45233177e85766f3f",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/snippets/SAVE-01.abap",
+    "file": "source/proposal/snippets/SAVE-01.abap",
+    "sha256": "12461d319bae94d3e2c1028a11438e1e4c537e253e3ecb37c6f72f5345d1b3f3",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/snippets/SAVE-03.abap",
+    "file": "source/proposal/snippets/SAVE-03.abap",
+    "sha256": "abc55abc4a2b145001af668a7b88e1972e0deddcd09b807a1909b0d7c59e6fcf",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/snippets/SAVE-02.abap",
+    "file": "source/proposal/snippets/SAVE-02.abap",
+    "sha256": "fc8f8cd7f3d727c3b8cdc929d77413ab33927aa191f833ed2a455616a0251dc3",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/snippets/F03-03.abap",
+    "file": "source/proposal/snippets/F03-03.abap",
+    "sha256": "6432a532163817189833c4ff6d68be8189bbc57b8ccd6051135449e388c83cf7",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/snippets/SAVE-05.abap",
+    "file": "source/proposal/snippets/SAVE-05.abap",
+    "sha256": "9d28c7b0a88e761aac0b35e1e62e503f3c54efd555a3ee276242cfbd9837d48a",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/snippets/SAVE-04.abap",
+    "file": "source/proposal/snippets/SAVE-04.abap",
+    "sha256": "e6ac174687300b5e6f62199f46e70039fb31de5be90236c601bdd1a84c610d3f",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/snippets/F03-02.abap",
+    "file": "source/proposal/snippets/F03-02.abap",
+    "sha256": "f7eff258ad03467c353ab2be3f8c32dd9d4ed5f08e3abe6b656bdb655b87d502",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/tools/check_html.cjs",
+    "file": "source/proposal/tools/check_html.cjs",
+    "sha256": "4fc0079e4a02d754e2901d410fde3c6e6d7f8bdb1b5925f1e62d296cb9853c13",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/tools/build_report.py",
+    "file": "source/proposal/tools/build_report.py",
+    "sha256": "91b5d643e1c43aa0ca88cea54e6d6d42caaa96fab784d3c846a4c53e57b9afc9",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/tools/check_abap.cjs",
+    "file": "source/proposal/tools/check_abap.cjs",
+    "sha256": "a937b9a71de93c3fc1a1b5504843fad2d5531d45a0c4e0aa10f0d0d3a6ca1d16",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/tools/report.css",
+    "file": "source/proposal/tools/report.css",
+    "sha256": "226e284ff5c6864d113627010c6f1d5fb78294834aac60935caabfe2dc507cf2",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/tools/report.js",
+    "file": "source/proposal/tools/report.js",
+    "sha256": "7deb9ada65d06fafed79f85061d3cd269fefbc737b4352149b28a1c9c79df77d",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/tools/verify.py",
+    "file": "source/proposal/tools/verify.py",
+    "sha256": "c712629ad5b2c4804ee6e2dc7acbe452115faa8d9f68a79ed6997b5f8d77d627",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/checks/report-mobile.png",
+    "file": "source/proposal/checks/report-mobile.png",
+    "sha256": "5da3b00d01726057518ac4a0e2d68b076c956c852e7a2193d2cb2889f0c862e7",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/checks/links.json",
+    "file": "source/proposal/checks/links.json",
+    "sha256": "25f02c76c8c616d03f76f5d8b73fad66574ba7f72906ebc53a7ca182edea33b7",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/checks/report-desktop.png",
+    "file": "source/proposal/checks/report-desktop.png",
+    "sha256": "ee226a4def80e1fb18e75c0ec279d04002f3580d3fbddf785e532b7db9435e28",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/checks/code-hashes.json",
+    "file": "source/proposal/checks/code-hashes.json",
+    "sha256": "77fda0cce574649954a8b7c578ad88ebf1136f5f278c204d20a77331612e106b",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/checks/report-comparison.png",
+    "file": "source/proposal/checks/report-comparison.png",
+    "sha256": "4792bb485799840d81b155a7035db5b59d50bb99490bf657d1a59e36ab64a600",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/checks/validation.json",
+    "file": "source/proposal/checks/validation.json",
+    "sha256": "ef6e569d7a6b0448c3a552cc3d829ae97309309ed6e1184d6c4e403e73bbceee",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/checks/grammar.json",
+    "file": "source/proposal/checks/grammar.json",
+    "sha256": "9f54c5879be15040c3b39b5f117fc80af00570d5be1e52fb89eb02b4eb6e086d",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/checks/html.json",
+    "file": "source/proposal/checks/html.json",
+    "sha256": "e776b84e03fabf6e8bee9cb57c667452ba946f7a11b07c194b36a9ddb1dd5e40",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/checks/scenarios.json",
+    "file": "source/proposal/checks/scenarios.json",
+    "sha256": "edaac214ae2f05eb05076613318f8aaae5efcd6d78f6ce45bf26688409f86dbc",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/originals/LZHR008_2F03.abap",
+    "file": "source/proposal/originals/LZHR008_2F03.abap",
+    "sha256": "56315f03face19a05fe2f133a0ce12f74add846d9a92cfa555f6ae31b1853493",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/originals/ZHR_52TM_GET_OVERTIME_SAVE.abap",
+    "file": "source/proposal/originals/ZHR_52TM_GET_OVERTIME_SAVE.abap",
+    "sha256": "03decc75281958df2e7ae8ca7565c1d39b9f23b0128646d8cac2baafc247e630",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/proposed/LZHR008_2F03.abap",
+    "file": "source/proposal/proposed/LZHR008_2F03.abap",
+    "sha256": "3736dae7298751cdcdfa2b9cf49deb9dda05741150a93db1f335785f81e42b8c",
+    "kind": "proposal"
+  },
+  {
+    "source": "proposals/20261031-huhu-jorgeh-comparison/proposed/ZHR_52TM_GET_OVERTIME_SAVE.abap",
+    "file": "source/proposal/proposed/ZHR_52TM_GET_OVERTIME_SAVE.abap",
+    "sha256": "a309f67617a37d14216cb46e3d06befaf22142d526610c25695d76f1db49db2c",
+    "kind": "proposal"
+  },
+  {
+    "source": "reviews/20261031-huhu-jorgeh/verification-split-pay.json",
+    "file": "research/reviews/verification-split-pay.json",
+    "sha256": "b41bdbb6227e94d222a25d17c710d3b76cf8bc50d29a913998578f84039b66d8",
+    "kind": "research"
+  },
+  {
+    "source": "reviews/20261031-huhu-jorgeh/verification-nonhuhu-reason.json",
+    "file": "research/reviews/verification-nonhuhu-reason.json",
+    "sha256": "c361469eb68a2802efdff40ba51b15b7633024e9b7783a56d4fbb3997e828c98",
+    "kind": "research"
+  },
+  {
+    "source": "reviews/20261031-huhu-jorgeh/verification-scope-review.json",
+    "file": "research/reviews/verification-scope-review.json",
+    "sha256": "c1bfe6b98043bcfb7a5b4f77aa2b1d7da614a1d1877d1dd56eb63209bf98efb3",
+    "kind": "research"
+  },
+  {
+    "source": "reviews/20261031-huhu-jorgeh/check_scenarios.py",
+    "file": "research/reviews/check_scenarios.py",
+    "sha256": "ba54b13ac10fdfa1751396e80a4f33f0fd5c9c922ac58a94ba279bf553927bc1",
+    "kind": "research"
+  },
+  {
+    "source": "reviews/20261031-huhu-jorgeh/verification-selective-scope.json",
+    "file": "research/reviews/verification-selective-scope.json",
+    "sha256": "7171984905879e5c2035b5248daff2373452c1e7c634858e72926de3090ea39a",
+    "kind": "research"
+  },
+  {
+    "source": "reviews/20261031-huhu-jorgeh/verification-followup.json",
+    "file": "research/reviews/verification-followup.json",
+    "sha256": "93d57b4d6bb7713986988af189481bb0778411bd7c7a072e4fe4ec7a9a3533ad",
+    "kind": "research"
+  },
+  {
+    "source": "reviews/20261031-huhu-jorgeh/verification.json",
+    "file": "research/reviews/verification.json",
+    "sha256": "5c7b137cd1c16082cecc5a06cd68a3b78463ddca45ea347aed7ae475b8645c44",
+    "kind": "research"
+  },
+  {
+    "source": "reviews/20261031-huhu-jorgeh/scenario-results.json",
+    "file": "research/reviews/scenario-results.json",
+    "sha256": "0372f7779cc96ca36b965319939969dce21fbd5e6dee04a26bf80eb0e3944abb",
+    "kind": "research"
+  },
+  {
+    "source": "knowledge/processes/huhu-jorgeh-investigation.md",
+    "file": "research/workspace/knowledge/processes/huhu-jorgeh-investigation.md",
+    "sha256": "580275a8d9c6cbbbce76089b021da9c6562b7bfc71532ea9d7cbf4b208449ffd",
+    "kind": "context"
+  },
+  {
+    "source": "knowledge/OPEN_QUESTIONS.md",
+    "file": "research/workspace/knowledge/OPEN_QUESTIONS.md",
+    "sha256": "30f0b9d4c5794db82eeee2754f1dc4b983beb4ab15ec707b1de843cffc7b8220",
+    "kind": "context"
+  },
+  {
+    "source": "docs/EXPORT_GUIDE.md",
+    "file": "research/workspace/docs/EXPORT_GUIDE.md",
+    "sha256": "3b52d937cb42debca52c69890c9db26823039cd9138762598afdd7fb215720de",
+    "kind": "context"
+  },
+  {
+    "source": "knowledge/reference/erp-environment.md",
+    "file": "research/workspace/knowledge/reference/erp-environment.md",
+    "sha256": "e7214bc056aaa9a11dcbe912642482cad7483e59c16c323e1fcaf802a77c9903",
+    "kind": "context"
+  },
+  {
+    "source": "harness/feedback/FB-20261031-001.md",
+    "file": "research/workspace/harness/feedback/FB-20261031-001.md",
+    "sha256": "965c90b3168854df212c94044cc0a205ba0c838a9466908e51a7462b34474dd1",
+    "kind": "context"
+  },
+  {
+    "source": "harness/feedback/FB-20261031-002.md",
+    "file": "research/workspace/harness/feedback/FB-20261031-002.md",
+    "sha256": "f0f9bccb1bce65929afbbdcce9d6f6d208429ae31a1d9d32fb8e096b048a0c42",
+    "kind": "context"
+  },
+  {
+    "source": "harness/feedback/FB-20261031-003.md",
+    "file": "research/workspace/harness/feedback/FB-20261031-003.md",
+    "sha256": "164a6c78b3dbc006e07335f6bf145afd01e634be050bc410ab6853030aab3d9a",
+    "kind": "context"
+  },
+  {
+    "source": "harness/feedback/FB-20261031-004.md",
+    "file": "research/workspace/harness/feedback/FB-20261031-004.md",
+    "sha256": "793c9ce96b68486398633abbc90dea5faf9dac4437b927f8cfb3e66f339ee25e",
+    "kind": "context"
+  },
+  {
+    "source": "harness/feedback/FB-20261031-005.md",
+    "file": "research/workspace/harness/feedback/FB-20261031-005.md",
+    "sha256": "bb7d5abfacaa86fd3521e72fb39dfe91ecc07d81c983bbce534f912196c0fd72",
+    "kind": "context"
+  },
+  {
+    "source": "harness/feedback/FB-20261031-006.md",
+    "file": "research/workspace/harness/feedback/FB-20261031-006.md",
+    "sha256": "3e7209da826bd304c54162d47d7ea61ce9e2bb074bac1199f71bcd02c87e7a42",
+    "kind": "context"
+  },
+  {
+    "source": "exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH415F01/source/ZRPTH415F01.abap",
+    "file": "source/evidence/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH415F01/source/ZRPTH415F01.abap",
+    "sha256": "e986d6dfb3e60c01b03f42a3ac50b5835b3da392c3a72115b1b5ef960137a39b",
+    "kind": "read_only_evidence"
+  },
+  {
+    "source": "exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH410F01/source/ZRPTH410F01.abap",
+    "file": "source/evidence/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH410F01/source/ZRPTH410F01.abap",
+    "sha256": "930833523b09f20689a2eb8030158d1e7f158954645c0c5a1e230d197c08708c",
+    "kind": "read_only_evidence"
+  },
+  {
+    "source": "exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH409F01/source/ZRPTH409F01.abap",
+    "file": "source/evidence/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH409F01/source/ZRPTH409F01.abap",
+    "sha256": "4b917b4c04876d9999f1303d8b227f9f2df417ed7aff77efff2a37f4e8f02ece",
+    "kind": "read_only_evidence"
+  },
+  {
+    "source": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CHECK_ZDAEH/Source code/ZHR_52TM_CHECK_ZDAEH.abap",
+    "file": "source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CHECK_ZDAEH/Source code/ZHR_52TM_CHECK_ZDAEH.abap",
+    "sha256": "419baac81feb216cccf852021463cad37292bc12c9547522f692de95e5da5fc5",
+    "kind": "read_only_evidence"
+  },
+  {
+    "source": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_NORM_OT_PAY/Source code/ZHR_52TM_CALC_NORM_OT_PAY.abap",
+    "file": "source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_NORM_OT_PAY/Source code/ZHR_52TM_CALC_NORM_OT_PAY.abap",
+    "sha256": "2d4857ba97b3d161d8521abe34bb3e2c4c298d8238d01171744c5732cea4775c",
+    "kind": "read_only_evidence"
+  },
+  {
+    "source": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Function Module/ZHR_52TM_CW_CAL_AND_DAEH/Source code/ZHR_52TM_CW_CAL_AND_DAEH.abap",
+    "file": "source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Function Module/ZHR_52TM_CW_CAL_AND_DAEH/Source code/ZHR_52TM_CW_CAL_AND_DAEH.abap",
+    "sha256": "53a5eb0924859e46453d2f7148722b32a62949d6ed941825a472060d1070053d",
+    "kind": "read_only_evidence"
+  },
+  {
+    "source": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap",
+    "file": "source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap",
+    "sha256": "56315f03face19a05fe2f133a0ce12f74add846d9a92cfa555f6ae31b1853493",
+    "kind": "read_only_evidence"
+  },
+  {
+    "source": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap",
+    "file": "source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap",
+    "sha256": "03decc75281958df2e7ae8ca7565c1d39b9f23b0128646d8cac2baafc247e630",
+    "kind": "read_only_evidence"
+  },
+  {
+    "source": "exports/ZHR5/packages/ZHR5/Dictionary Object/DBtable/ZHRDAEHUAMT/definition.xml",
+    "file": "source/evidence/exports/ZHR5/packages/ZHR5/Dictionary Object/DBtable/ZHRDAEHUAMT/definition.xml",
+    "sha256": "1875732ca7afc2976f51767f110a289432639b31a73e441b162e2272ee762fdd",
+    "kind": "read_only_evidence"
+  },
+  {
+    "source": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap",
+    "file": "source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap",
+    "sha256": "426e7edcf50c124466d59dfdde120aab0c258662931fd8827dc08baa586cc23d",
+    "kind": "read_only_evidence"
+  },
+  {
+    "source": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap",
+    "file": "source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap",
+    "sha256": "763ece2e049a59bd7488a984194937b400ef7e8ee7c7858ac04459196ce0c119",
+    "kind": "read_only_evidence"
+  },
+  {
+    "source": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F05.abap",
+    "file": "source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F05.abap",
+    "sha256": "4f3f0781f414755abd3906cd6e0dce86c7726b5fd01f67aa4a05b741324579ac",
+    "kind": "read_only_evidence"
+  },
+  {
+    "source": "knowledge/processes/huhu-jorgeh-investigation.md",
+    "file": "source/evidence/knowledge/processes/huhu-jorgeh-investigation.md",
+    "sha256": "580275a8d9c6cbbbce76089b021da9c6562b7bfc71532ea9d7cbf4b208449ffd",
+    "kind": "read_only_evidence"
+  },
+  {
+    "source": "exports/ZHR5/packages/ZHR5/Dictionary Object/Domain/ZBSGUBUN1/definition.xml",
+    "file": "source/evidence/exports/ZHR5/packages/ZHR5/Dictionary Object/Domain/ZBSGUBUN1/definition.xml",
+    "sha256": "1bb73eecf6d1029e3ac62d53d8857c52377fe597e2a0e4eed6a4d0ff8bdbf9eb",
+    "kind": "read_only_evidence"
+  },
+  {
+    "source": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Include/LZHR008_3F02.abap",
+    "file": "source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Include/LZHR008_3F02.abap",
+    "sha256": "8ac0dde604058e2132f9d694f0a6d9c08c8c3743744ebfd24eaa516ef451b617",
+    "kind": "read_only_evidence"
+  },
+  {
+    "source": "exports/ZHR5/packages/ZHR5/Dictionary Object/Structures/ZSHR0131/definition.xml",
+    "file": "source/evidence/exports/ZHR5/packages/ZHR5/Dictionary Object/Structures/ZSHR0131/definition.xml",
+    "sha256": "74058e9bf5cfec64e9449de270d1419f1666c7aa227c29e0f193dc553daf8fbc",
+    "kind": "read_only_evidence"
+  },
+  {
+    "source": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_MOBILE_OVERTIME_APPR/Source code/ZHR_52TM_MOBILE_OVERTIME_APPR.abap",
+    "file": "source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_MOBILE_OVERTIME_APPR/Source code/ZHR_52TM_MOBILE_OVERTIME_APPR.abap",
+    "sha256": "405138af417e2abb0e9b1e0429bfe17e6eb091de5e4f6702808a7734932eb92e",
+    "kind": "read_only_evidence"
+  }
+]

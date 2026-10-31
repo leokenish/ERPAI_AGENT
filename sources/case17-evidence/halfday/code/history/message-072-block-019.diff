@@ -1,0 +1,17 @@
+     IF lv_flag = 'X'.
+       c_code = 'E63'.
+       c_text = text-e63.
+       RETURN.
+     ENDIF.
+   ENDIF.
++
++* 차단 오류가 없고 기존 반환 코드도 없을 때 안내한다.
++  IF lv_halfday_notice = 'X'
++     AND c_code IS INITIAL.
++
++    c_code = 'I95'.
++    c_text = text-e95.
++
++  ENDIF.
++
+ ENDFORM.                    " CHECK_ABSENCE_DATA

@@ -1,0 +1,165 @@
+--- originals/ZHR_52TM_GET_OVERTIME_SAVE.abap
++++ proposed/ZHR_52TM_GET_OVERTIME_SAVE.abap
+@@ -58,6 +58,13 @@
+       c_ztomoh         = c_ztomoh   " 익휴
+       c_zdaeh          = c_zdaeh.    " 대휴
+ 
++* 계산 오류일 때는 기존 오류 코드와 문구를 호출자에게 돌려준다.
++* 실패한 계산값을 새 정산금액으로 저장하지 않는다.
++  IF lv_code+0(1) EQ 'E'.
++    e_code = lv_code.
++    e_text = lv_text.
++    RETURN.
++  ENDIF.
+ 
+   MOVE-CORRESPONDING is_zthrbs01 TO ls_zthrbs01.
+ 
+@@ -73,7 +80,9 @@
+          ls_overtime_data-zn_money    TO ls_zthrbs01-zn_money,
+          ls_overtime_data-zh_money    TO ls_zthrbs01-zh_money,
+          ls_overtime_data-zs_money    TO ls_zthrbs01-zs_money,
+-         ls_overtime_data-zd_money    TO ls_zthrbs01-zd_money,    "2011.04.
++         ls_overtime_data-zd_money    TO ls_zthrbs01-zd_money,
++* 현재 신청의 새 정산금액도 복사한다. 정상 계산값 0도 반영한다.
++         ls_overtime_data-jorgeh      TO ls_zthrbs01-jorgeh,
+          ls_overtime_data-zmoney      TO ls_zthrbs01-zmoney,
+          ls_overtime_data-zdaeh       TO ls_zthrbs01-zdaeh,
+          ls_overtime_data-zgubn       TO ls_zthrbs01-zgubn,
+@@ -113,40 +122,55 @@
+ *    ENDIF.
+   ENDIF.
+ 
+-*...// 대휴여부에 따라서 처리
+-  lv_zdaeh_c = LINES( lt_zdaeh ).
+-
+-*..//  일자별로 합치기
+-  DATA: lt_zdaeh_tmp TYPE TABLE OF  zshr0121 WITH HEADER LINE.
+-  DATA: l_first , l_last, l_chg.
+-  DATA: l_time_e TYPE time.
+-  CLEAR: lt_zdaeh_tmp[], l_first, l_chg.
+-
+-  IF lv_zdaeh_c > 1.
+-    LOOP AT lt_zdaeh INTO ls_zdaeh.
+-
+-      IF l_first = ''.
+-        MOVE ls_zdaeh TO lt_zdaeh_tmp.
+-      ENDIF.
+-      l_first = 'X'.
+-
+-      l_time_e = ls_zdaeh-zendtm.
+-      AT END OF datum.
+-        l_chg = 'X'.
+-      ENDAT.
+-      IF l_chg = 'X'.
+-        lt_zdaeh_tmp-zendtm = l_time_e.
+-        APPEND lt_zdaeh_tmp.
+-        CLEAR: l_first, l_chg.
+-      ENDIF.
+-
+-    ENDLOOP.
+-
+-    lt_zdaeh[] = lt_zdaeh_tmp[].
+-  ENDIF.
+-** // <<---
+-
+-
++* 날짜 묶음 수와 실제 대휴 발생일 수를 구분한다.
++* 기존 상세 구조를 사용하므로 DDIC나 함수 인수 추가가 없다.
++  DATA: lt_zdaeh_day TYPE TABLE OF zshr0121,
++        ls_zdaeh_day TYPE zshr0121,
++        lv_daeh_days TYPE i.
++
++  REFRESH lt_zdaeh_day.
++  CLEAR: ls_zdaeh_day, lv_daeh_days.
++
++* 토8 / 일6 / 토2를 토8 / 토2 / 일6 순서로 정렬한다.
++  SORT lt_zdaeh BY datum zbegtm zendtm.
++
++  LOOP AT lt_zdaeh INTO ls_zdaeh.
++    IF ls_zdaeh_day-datum IS INITIAL.
++* 첫 구간의 시작시각과 기존 휴게정보를 보관한다.
++      MOVE ls_zdaeh TO ls_zdaeh_day.
++
++    ELSEIF ls_zdaeh_day-datum EQ ls_zdaeh-datum.
++* 같은 날짜의 종료시각은 가장 늦은 시각을 사용한다.
++      IF ls_zdaeh-zendtm GT ls_zdaeh_day-zendtm.
++        ls_zdaeh_day-zendtm = ls_zdaeh-zendtm.
++      ENDIF.
++
++* 금액만 더한다. 날짜나 다른 숫자 필드를 함께 더하지 않는다.
++      ADD ls_zdaeh-zjorgehamt TO ls_zdaeh_day-zjorgehamt.
++      IF ls_zdaeh-zdaeh EQ 'X'.
++        ls_zdaeh_day-zdaeh = 'X'.
++      ENDIF.
++
++    ELSE.
++* 날짜가 바뀌면 앞 날짜를 확정하고 다음 날짜를 시작한다.
++      APPEND ls_zdaeh_day TO lt_zdaeh_day.
++      MOVE ls_zdaeh TO ls_zdaeh_day.
++    ENDIF.
++  ENDLOOP.
++
++* 마지막 날짜는 반복문이 끝난 뒤 한 번 추가한다.
++  IF ls_zdaeh_day-datum IS NOT INITIAL.
++    APPEND ls_zdaeh_day TO lt_zdaeh_day.
++  ENDIF.
++
++  lt_zdaeh[] = lt_zdaeh_day[].
++
++* 이틀 근무라도 실제 대휴는 한 개일 수 있다.
++  LOOP AT lt_zdaeh INTO ls_zdaeh WHERE zdaeh EQ 'X'.
++    ADD 1 TO lv_daeh_days.
++  ENDLOOP.
++
++* 기존 1일 / 2일 저장 분기에는 날짜 묶음 수를 사용한다.
+   lv_zdaeh_c = LINES( lt_zdaeh ).
+ 
+   IF lv_zdaeh_c EQ 1.
+@@ -160,14 +184,10 @@
+    CHANGING ls_zthrbs01-zdbeg  " 사용시작일.
+             ls_zthrbs01-zdend. " 사용종료일.
+ 
+-  "20251029-NGY-휴일 휴일이 양일로 나눠지므로 각 날짜에 맞는 대휴 금액이 들어가야 함
+-  "휴일-휴일용 양일 대휴 실비는 여기서 꺼내서 계산 함
+-     SELECT SINGLE zjorgehamt FROM zhrdaehuamt INTO ls_zthrbs01-jorgeh
+-     WHERE pernr = ls_zthrbs01-pernr AND datum = ls_zthrbs01-rdate.
+-     IF sy-subrc = 0.
+-       "사용하고 해당 라인 삭제
+-       DELETE FROM zhrdaehuamt WHERE pernr = ls_zthrbs01-pernr AND datum = ls_zthrbs01-rdate.
+-     ENDIF.
++* 한 날짜 묶음에 저장하는 건은 이번 신청의 전체 금액을 사용한다.
++* 합산 대휴의 다른 날짜 기여분도 전체 금액에 포함되어 있다.
++* 임시 DB를 조회하지 않으며 이전 신청의 값으로 대체하지 않는다.
++    ls_zthrbs01-jorgeh = ls_overtime_data-jorgeh.
+ 
+     APPEND ls_zthrbs01 TO t_data.
+ 
+@@ -203,14 +223,20 @@
+       MOVE-CORRESPONDING ls_zthrbs01_d TO ls_zthrbs01.
+ *      LOOP AT t_data INTO ls_zthrbs01.
+ 
+-  "20231116-NGY-휴일 휴일이 양일로 나눠지므로 각 날짜에 맞는 대휴 금액이 들어가야 함
+-  "휴일-휴일용 양일 대휴 실비는 여기서 꺼내서 날짜별로 계산 함
+-     SELECT SINGLE zjorgehamt FROM zhrdaehuamt INTO ls_zthrbs01-jorgeh
+-     WHERE pernr = ls_zthrbs01-pernr AND datum = ls_zthrbs01-rdate.
+-     IF sy-subrc = 0.
+-       "사용하고 해당 라인 삭제
+-       DELETE FROM zhrdaehuamt WHERE pernr = ls_zthrbs01-pernr AND datum = ls_zthrbs01-rdate.
+-     ENDIF.
++* F05의 하루별 재계산이 끝난 뒤 정산금액을 최종 설정한다.
++* 원래 양일 계산에서 나온 이번 신청의 금액을 사용한다.
++    CLEAR ls_zthrbs01-jorgeh.
++
++    IF ls_zdaeh-zdaeh EQ 'X'.
++      IF lv_daeh_days EQ 1.
++* 실제 대휴가 하나이면 전체 정산금액을 그 대휴에 귀속한다.
++        ls_zthrbs01-jorgeh = ls_overtime_data-jorgeh.
++      ELSE.
++* 대휴가 둘이면 해당 날짜의 합계만 저장한다.
++* 상세 금액에는 기존 저장 단위 변환 * 100을 한 번 적용한다.
++        ls_zthrbs01-jorgeh = ls_zdaeh-zjorgehamt * 100.
++      ENDIF.
++    ENDIF.
+ 
+         IF i_mode <> 'M'.
+           MOVE: '0'      TO ls_zthrbs01-state,     " 진행상태=0(신청).

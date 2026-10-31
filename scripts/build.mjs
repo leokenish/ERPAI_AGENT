@@ -2,6 +2,7 @@ import {readFile,writeFile,mkdir,cp,rm,readdir,rename} from 'node:fs/promises';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
+import {renderWorktimeLab} from '../site/worktime-labs.js';
 import {renderMarkdown} from './markdown.mjs';
 import {loadMessengerCases,decorateLessonQA} from './lesson-dialogue.mjs';
 import {loadLessonTrees} from './lesson-trees.mjs';
@@ -43,7 +44,7 @@ for(const lesson of catalog.lessons){
  if(ids.has(lesson.id))throw Error(`Duplicate lesson ${lesson.id}`); ids.add(lesson.id);
  if(!/^lessons\/[a-z0-9-]+\.md$/.test(lesson.file))throw Error('Invalid lesson path');
  const md=await readFile(path.join(root,'content',lesson.file),'utf8');
- const rendered=renderMarkdown(md,{...lessonAnchors[lesson.id],renderDocumentTree:id=>lessonTrees.render(id),renderWorkChat:id=>messengerCases.render(id)});
+ const rendered=renderMarkdown(md,{...lessonAnchors[lesson.id],renderDocumentTree:id=>lessonTrees.render(id),renderWorkChat:id=>messengerCases.render(id),renderWorktimeLab});
  rendered.html=decorateLessonQA(rendered.html,lesson.id);
  Object.assign(lesson,rendered,{search:md.replace(/[#*`>|]/g,' ')});
  if(md.includes('```work-chat'))lesson.search+='\n'+messengerCases.search;
@@ -71,7 +72,7 @@ async function copySite(from,to){
  }
 }
 await copySite(path.join(root,'site'),out);
-await writeFile(path.join(out,'styles.css'),(await readFile(path.join(root,'site/styles.css'),'utf8'))+'\n'+(await readFile(path.join(root,'site/conversations.css'),'utf8'))+'\n'+(await readFile(path.join(root,'site/knowledge.css'),'utf8'))+'\n'+(await readFile(path.join(root,'site/refinements.css'),'utf8'))+'\n'+(await readFile(path.join(root,'site/story-dialogue.css'),'utf8'))+'\n/* Screen-only hero animation */\n'+heroCSS);
+await writeFile(path.join(out,'styles.css'),(await readFile(path.join(root,'site/styles.css'),'utf8'))+'\n'+(await readFile(path.join(root,'site/conversations.css'),'utf8'))+'\n'+(await readFile(path.join(root,'site/knowledge.css'),'utf8'))+'\n'+(await readFile(path.join(root,'site/refinements.css'),'utf8'))+'\n'+(await readFile(path.join(root,'site/story-dialogue.css'),'utf8'))+'\n'+(await readFile(path.join(root,'site/worktime-labs.css'),'utf8'))+'\n/* Screen-only hero animation */\n'+heroCSS);
 await cp(path.join(root,'assets'),path.join(out,'assets'),{recursive:true});
 catalog.conversations=await buildConversations(root,out);
 catalog.worktimeKnowledge=await buildKnowledge(root,out);

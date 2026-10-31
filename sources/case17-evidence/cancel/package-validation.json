@@ -1,0 +1,15 @@
+{
+  "checks": {
+    "report_latest_equals_abap": true,
+    "report_original_equals_snapshot": true,
+    "all_diff_line_numbers_match": true,
+    "offline_html_links_exist": true,
+    "latest_abap_snapshot_matches_workspace": true,
+    "transcript_message_count": true,
+    "no_images_claimed": true
+  },
+  "broken_links": [],
+  "browser_render": "NOT_RUN: local file URL blocked by browser policy; no workaround attempted",
+  "javascript_syntax": "PASS: Node.js --check (syntax only)",
+  "sap_execution": "NOT_RUN"
+}

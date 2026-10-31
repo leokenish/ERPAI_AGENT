@@ -1,0 +1,11 @@
+{
+  "markdown_files": 895,
+  "links": 31872,
+  "missing_or_anchor": 354,
+  "maps_broken": 0,
+  "evidence_errors": 0,
+  "external_links": "not requested / not fetched",
+  "protected_change_count": 286,
+  "status": "GLOBAL_AUDIT_NOT_CLEAN; MAP_LINKS_AND_EVIDENCE_CHECKS_PASS",
+  "note": "전역 감사에는 기존 미해결 항목 및 위치를 옮기지 않고 보존한 사본 문서의 원래 상대 링크가 포함된다. 새 HTML의 이동 가능한 링크와 원본 5077개 보존은 package-check.json에서 별도로 검사한다. 원문 사본의 링크를 고쳐 원형을 바꾸지 않았다."
+}

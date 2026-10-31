@@ -1,0 +1,6 @@
+{
+  "before_sha256": "f3c2f86fb91a359535cd7bfef54c44763bf704e8f1fc5cda5c251a05a8ba885a",
+  "after_sha256": "1be8ca5a1c2c7d6d45a67857af9c64182ae8b97020fef0ec0846e82b762d65ea",
+  "reason": "사용자 요청: 인사마스터 조회/비교/삭제 제외, 선택기간과 실적만 삭제",
+  "sap_execution": "NOT_RUN"
+}

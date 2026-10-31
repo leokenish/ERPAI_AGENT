@@ -1,0 +1,41 @@
+{
+  "scope": "static contracts only; SAP execution NOT_RUN",
+  "baseline": "proposals/20261024-selective-settlement-compare/revisions/20261026-awart-empty/source-baseline.json",
+  "source_files_compared": 2534,
+  "changed_sources": [],
+  "checks": {
+    "export_files_unchanged": true,
+    "no_db_mutations": true,
+    "no_commit_rollback_submit_or_transaction": true,
+    "no_original_settlement_fm_call": true,
+    "core_has_no_sql_select": true,
+    "core_does_not_reload_work_or_awart": true,
+    "three_leave_flags_reset_only_on_copy": true,
+    "same_snapshot_for_c_and_b": true,
+    "full_source_key_overlay": true,
+    "output_count_and_time_crosscheck": true,
+    "settled_exact_period_cohort": true,
+    "bs01_restricted_to_selective_source_date": true,
+    "failed_calculation_not_displayed_as_zero": true,
+    "both_amount_signs_preserved": true,
+    "no_clock_dependent_algorithm_branch": true,
+    "line_length_at_most_255": true,
+    "all_local_forms_resolved": true,
+    "no_duplicate_form_names": true,
+    "known_empty_return_is_narrowly_classified": true,
+    "caller_uses_return_gate_before_calculation": true,
+    "empty_message_uses_function_group_text": true
+  },
+  "direct_function_dependencies": [
+    "DAY_ATTRIBUTES_GET",
+    "REUSE_ALV_COMMENTARY_WRITE",
+    "REUSE_ALV_GRID_DISPLAY",
+    "RP_CALC_DATE_IN_INTERVAL",
+    "ZHR_52TM_AWART_LIST",
+    "ZHR_52TM_CALC_WORK_TIME_DAYILY",
+    "ZHR_GET_DAY_DATA",
+    "ZHR_GET_PERSONNEL_RANK_N",
+    "ZHR_MINUS_TIME_N"
+  ],
+  "report_sha256": "fd75b6d93d6400e64272e4818a4b211f5a9ddef6958232d86838db58a52396fc"
+}

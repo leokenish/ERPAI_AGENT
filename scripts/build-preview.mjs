@@ -6,9 +6,18 @@ import {gzipSync} from 'node:zlib';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const dist=path.join(root,'dist');
 const readScript=async name=>(await readFile(path.join(dist,name),'utf8')).replace(/((?:\.\/|data\/)[\w./-]+\.(?:js|json))\?v=[a-f0-9]+/g,'$1');
-const mime={'.otf':'font/otf','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.md':'text/markdown;charset=utf-8','.zip':'application/zip','.json':'application/json','.py':'text/plain;charset=utf-8','.mjs':'text/plain;charset=utf-8','.js':'text/plain;charset=utf-8','.diff':'text/plain;charset=utf-8','.txt':'text/plain;charset=utf-8','.css':'text/plain;charset=utf-8'};
+const mime={'.html':'text/html;charset=utf-8','.abap':'text/plain;charset=utf-8','.otf':'font/otf','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.md':'text/markdown;charset=utf-8','.zip':'application/zip','.json':'application/json','.py':'text/plain;charset=utf-8','.mjs':'text/plain;charset=utf-8','.js':'text/plain;charset=utf-8','.diff':'text/plain;charset=utf-8','.txt':'text/plain;charset=utf-8','.css':'text/plain;charset=utf-8'};
 const files={};
-async function collect(directory){for(const e of await readdir(directory,{withFileTypes:true})){const f=path.join(directory,e.name);if(e.isDirectory())await collect(f);else{const relative=path.relative(dist,f).split(path.sep).join('/');files[relative]=`data:${mime[path.extname(f)]||'application/octet-stream'};base64,${(await readFile(f)).toString('base64')}`;}}}
+async function collect(directory){for(const e of await readdir(directory,{withFileTypes:true})){const f=path.join(directory,e.name);if(e.isDirectory())await collect(f);else{const relative=path.relative(dist,f).split(path.sep).join('/');let bytes=await readFile(f);
+if(/^assets\/worktime-modernization\/[^/]+\/report\.html$/.test(relative)){
+ const localCSS=await readFile(path.join(path.dirname(f),'report.css'),'utf8');
+ const localJS=await readFile(path.join(path.dirname(f),'report.js'),'utf8');
+ let report=bytes.toString('utf8');
+ report=report.replace('<script src="report.js"></script>',()=>'<script>'+localJS.replace(/<\/script/gi,'<\\/script')+'</script>');
+ report=report.replace(/<link[^>]*href="report.css"[^>]*>/g,()=>'<style>'+localCSS+'</style>');
+ bytes=Buffer.from(report);
+}
+files[relative]=`data:${mime[path.extname(f)]||'application/octet-stream'};base64,${bytes.toString('base64')}`;}}}
 for(const name of ['assets','content','downloads'])await collect(path.join(dist,name));
 let html=await readFile(path.join(dist,'index.html'),'utf8');
 html=html.replace(/((?:src|href)="[^"?]+)\?v=[a-f0-9]+"/g,'$1"');
@@ -17,6 +26,8 @@ html=html.replace('<script src="theme.js"></script>',()=>`<script>${theme.replac
 let css=await readFile(path.join(dist,'styles.css'),'utf8');
 css=css.replace(/url\("([^"]+)"\)/g,(all,url)=>files[url]?`url("${files[url]}")`:all);
 let app=await readScript('app.js');
+const worktimeLabs=(await readScript('worktime-labs.js')).replace(/^export /gm,'');
+app=app.replace("import {mountWorktimeLabs} from './worktime-labs.js';",()=>`const {mountWorktimeLabs}=(()=>{\n${worktimeLabs}\nreturn {mountWorktimeLabs};\n})();`);
 const documentGraphs=(await readScript('document-graphs.js')).replace(/^export /gm,'');
 app=app.replace("import {mountDocumentGraphs} from './document-graphs.js';",()=>`const {mountDocumentGraphs}=(()=>{\n${documentGraphs}\nreturn {mountDocumentGraphs};\n})();`);
 const portal=await readFile(path.join(dist,'data/portal.json'),'utf8');

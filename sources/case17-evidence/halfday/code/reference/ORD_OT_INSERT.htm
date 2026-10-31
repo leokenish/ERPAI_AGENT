@@ -1,0 +1,3441 @@
+<?xml version="1.0" encoding="utf-8"?><so2:page o="0" x="1" y="1" language="javascript"><so2:static o="32" x="1" y="33">
+</so2:static> <so2:include o="34" x="2" y="1" src="../zweb_common/server_util3.ssjs"/><so2:static o="87" x="2" y="54">
+</so2:static><so2:script o="89" x="3" y="1" status="enabled"><![CDATA[ generate_header_for_html10_zhr('KBS ESS'); ]]></so2:script><so2:static o="137" x="3" y="49"><![CDATA[
+<head>
+<style>
+.divZPBEG  {
+  display :none;
+}
+</style>
+</head>
+
+<div class="contents">
+  <div class="input_group" style="display: none">
+    <form name="searchForm" id="searchForm">
+      <div>사원번호</div>
+      <input type="text" name="I_PERNR" id="I_PERNR">
+      <div>시작일</div>
+      <input type="text" name="SBEGDA" id="SBEGDA">
+      <div>종료일</div>
+      <input type="text" name="SENDDA" id="SENDDA">
+      <div>구분</div>
+      <input type="text" name="I_ZGUBUN" id="I_ZGUBUN">
+      <div>구분</div>
+      <input type="text" name="I_MODE" id="I_MODE">
+      <div>순번</div>
+      <input type="text" name="I_SEQNR" id="I_SEQNR">
+    </form>
+  </div>
+  <h1>시간외 신청 - 입력</h1>
+
+  <form id="reg_form" name="reg_form" method="post" >
+    <input type="hidden" name="PERNR" id="PERNR">
+    <input type="hidden" name="WKBEGDA" id="WKBEGDA">
+    <input type="hidden" name="WKENDDA" id="WKENDDA">
+    <input type="hidden" name="DATUM" id="DATUM">
+    <input type="hidden" name="SEQNR" id="SEQNR">
+    <input type="hidden" name="WKTYPE" id="WKTYPE">
+    <input type="hidden" name="ZGUBUN" id="ZGUBUN">
+    <input type="hidden" name="ZYUHYUNG" id="ZYUHYUNG">
+    <input type="hidden" name="ZYOIL" id="ZYOIL">
+    <input type="hidden" name="ZBEGT" id="ZBEGT">
+    <input type="hidden" name="ZENDT" id="ZENDT">
+    <input type="hidden" name="ZPBEG1" id="ZPBEG1">
+    <input type="hidden" name="ZPEND1" id="ZPEND1">
+    <input type="hidden" name="ZPBEG2" id="ZPBEG2">
+    <input type="hidden" name="ZPEND2" id="ZPEND2">
+    <input type="hidden" name="ZPBEG3" id="ZPBEG3">
+    <input type="hidden" name="ZPEND3" id="ZPEND3">
+    <input type="hidden" name="ZPBEG4" id="ZPBEG4">
+    <input type="hidden" name="ZPEND4" id="ZPEND4">
+    <input type="hidden" name="ZPBEG5" id="ZPBEG5">
+    <input type="hidden" name="ZPEND5" id="ZPEND5">
+    <input type="hidden" name="ZPDWK_TM" id="ZPDWK_TM">
+    <input type="hidden" name="ZTBASE_TM" id="ZTBASE_TM">
+    <input type="hidden" name="ZOBLWKHR" id="ZOBLWKHR">
+    <input type="hidden" name="ZPUBHWKHR" id="ZPUBHWKHR">
+    <input type="hidden" name="ZPOVERWKHR" id="ZPOVERWKHR">
+    <input type="hidden" name="ZTOTWKHR" id="ZTOTWKHR">
+    <input type="hidden" name="ZRLWKHR" id="ZRLWKHR">
+    <input type="hidden" name="ZRLOVRWKHR" id="ZRLOVRWKHR">
+    <input type="hidden" name="ZRESTWKHR" id="ZRESTWKHR">
+
+    <input type="hidden" name="ATEXT" id="ATEXT">
+    <input type="hidden" name="KIND" id="KIND">
+    <input type="hidden" name="ZE_TIME_S" id="ZE_TIME_S">
+    <input type="hidden" name="ZMONEY" id="ZMONEY">
+    <input type="hidden" name="ZCOSA" id="ZCOSA">
+    <input type="hidden" name="ZCID" id="ZCID">
+    <input type="hidden" name="ZDAEH_DAY" id="ZDAEH_DAY">
+    <input type="hidden" name="ZEMCWK_S" id="ZEMCWK_S">
+    <input type="hidden" name="ZTOICH_S" id="ZTOICH_S">
+    <input type="hidden" name="ZTOMOH_S" id="ZTOMOH_S">
+    <input type="hidden" name="ZDAEH_S" id="ZDAEH_S">
+    <input type="hidden" name="ZEMCWK_O" id="ZEMCWK_O">
+    <input type="hidden" name="ZTOICH_O" id="ZTOICH_O">
+    <input type="hidden" name="ZTOMOH_O" id="ZTOMOH_O">
+    <input type="hidden" name="ZDAEH_O" id="ZDAEH_O">
+    <input type="hidden" name="ZDAEH_DAY_O" id="ZDAEH_DAY_O">
+    <input type="hidden" name="ZEMCWK_C" id="ZEMCWK_C">
+    <input type="hidden" name="ZTOICH_C" id="ZTOICH_C">
+    <input type="hidden" name="ZTOMOH_C" id="ZTOMOH_C">
+    <input type="hidden" name="ZDAEH_C" id="ZDAEH_C">
+
+    <input type="hidden" name="ZBREAK_TM" id="ZBREAK_TM">
+    <input type="hidden" name="ZRLWK_TM" id="ZRLWK_TM">
+    <input type="hidden" name="ZBEGTM" id="ZBEGTM">
+    <input type="hidden" name="ZENDTM" id="ZENDTM">
+
+    <input type="hidden" name="STATE_C" id="STATE_C">
+    <input type="hidden" name="STATE_TXT" id="STATE_TXT">
+
+    <input type="hidden" name="ZTOMOH_B" id="ZTOMOH_B">
+    <input type="hidden" name="ZDAEH_B" id="ZDAEH_B">
+    <input type="hidden" name="ZEMCWK_B" id="ZEMCWK_B"><!-- 특별연장근로 -->
+
+    <input type="hidden" name="CHNG_BREAK" id="CHNG_BREAK" value="N"><!-- 휴게시간 팝업창 변경 저장 여부 -->
+    <input type="hidden" name="IS_FIRST" id="IS_FIRST" value="Y">
+
+      <div class="container">
+       <div class="info_wrap type5 timeinfo">
+            <div class="week_state">
+               <div class="img"><img src="/sap/bc/bsp/sap/z52_flex_time/images/img_total_s.png"></div>
+               <div class="cont">
+                  <div class="cols">주간 시간외 현황</div>
+                  <div class="week_total">
+                      <div class="row">
+                        <div class="left"><span class="t-gray">대상기간</span></div>
+                        <div class="right"><span class="n-black pl20" id="SP_BEDA"></span></div>
+                      </div>
+
+                      <div class="row" id='D_ZRLOVRWKHR' style='display:none'>
+                        <div class="left"><span class="t-gray">연장합계</span></div>
+                        <div class="right"><span class="n-blue" id="SP_ZRLOVRWKHR"></span>
+]]></so2:static><so2:script o="5194" x="114" y="1" status="disabled">                        (68시간기준)</so2:script><so2:static o="5234" x="114" y="41">
+</so2:static><so2:script o="5236" x="115" y="1" status="disabled"><![CDATA[                        <a href="javascript:fn_cm4Toggle();" class="btnimg_ques"></a>]]></so2:script><so2:static o="5329" x="115" y="94"><![CDATA[
+                        </div>
+                      </div>
+
+                      <div class="row" id='D_ZTOTWKHR' style='display:none'>
+                        <div class="left"><span class="t-gray">주간총근로시간</span></div>
+                        <div class="right"><span class="n-blue" id="SP_ZTOTWKHR"></span>
+                        <a href="javascript:fn_cm3Toggle();"><img align=absmiddle src="/sap/bc/bsp/sap/z52_flex_time/images/ico_ques.png" style="width:1.5em; height:1.5em;"></a></div>
+                      </div>
+                  </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="conts_box no_mgt">
+     <table class="tbl st_2cols_none">
+         <colgroup>
+          <col width="180">
+          <col width="">
+         </colgroup>
+         <tr>
+           <th><span class="label">근무일자</span></th>
+           <td class="btn_pos"><span class="input_wrap">
+              <span class="date_input" style="width: 11em !important;">
+                <input type="text" style="width: 9em !important;" name="I_DATUM" id="I_DATUM"/>
+                <a class="date_btn" onclick="callCalendar();">날짜조회</a>
+              </span>
+              <span class="mobile_block">
+                <span class="note_box" id="SP_WEEK"> </span>
+                <span class="note_box text_pink" id="SP_ATEXT"> </span>
+                <span class="note_box text_skyblue" id="SP_KIND"></span>
+              </span>
+            </span>
+            <a href="javascript:fn_iam()" class="btnstyle_icon pos"><span class="btn_my">I AM</a>
+          </td>
+        </tr>
+        <tr>
+          <th><span class="label">근무형태</span></th>
+          <td>
+            <select class="st_sel txt-4" name="I_WKTYPE" id="I_WKTYPE" data-role="none">
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th class="pb"><span class="label">근무시간</span></th>
+          <td class="pb"><span class="input_wrap">
+]]></so2:static><so2:script o="7312" x="162" y="1" status="disabled">            // 시작시간 00:00 ~ 23:30
+            // 종료시간 00:30 ~ 24:00</so2:script><so2:static o="7388" x="163" y="38"><![CDATA[
+              <select class="st_sel txt-2" name="ZBEGTM_H" id="ZBEGTM_H" data-role="none">
+                <option value="00">00</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+              </select>
+              <select class="st_sel txt-2" name="ZBEGTM_M" id="ZBEGTM_M" data-role="none">
+                <option value="00">00</option>
+                <option value="30">30</option>
+              </select>
+              ~
+              <select class="st_sel txt-2" name="ZENDTM_H" id="ZENDTM_H" data-role="none">
+                 <option value="00">00</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+              </select>
+              <select class="st_sel txt-2" name="ZENDTM_M" id="ZENDTM_M" data-role="none">
+                <option value="00">00</option>
+                <option value="30">30</option>
+              </select>
+              <input type="checkbox" name="ZTOMO" id="ZTOMO" data-role="none"> <label for="chb_ZTOMO">익일 </label>
+            </span>
+           </td>
+          </tr>
+         </table>
+    </div>
+
+    <div class="check_wrap" style="background:#fff;">
+        <div id="DIV_ZTOICH_S" style="display: inline-block; margin-right:0.5em; width:4em;">
+          <input type="checkbox" id="ZTOICH" name="ZTOICH" onClick="toichcheck(this)">
+          <span class="checklabel">퇴출</span>
+        </div>
+        <div id="DIV_ZTOMOH_S" style="display: inline-block; margin-right:0.5em; width:4em;">
+          <input type="checkbox" id="ZTOMOH" name="ZTOMOH" onclick="fn_checkZTOMOH();">
+          <span class="checklabel">익휴</span>
+        </div>
+        <div id="DIV_ZDAEH_S" style="display: inline-block; margin-right:0.5em; width:9em;">
+          <input type="checkbox" id="ZDAEH" name="ZDAEH" onclick="fn_checkZDAEH();">
+          <span class="checklabel">
+            대휴(대휴수
+            <span id="DIV_ZDAEH_DAY"></span>
+            )
+          </span>
+        </div>
+        <div id="DIV_ZEMCWK_S" style="display: inline-block;">
+          <input type="checkbox" id="ZEMCWK" name="ZEMCWK" onclick="fn_checkZEMCWK();">
+          <span class="checklabel">특별연장근로</span>
+]]></so2:static><so2:script o="11706" x="253" y="1" status="disabled"><![CDATA[          <a href="javascript:fn_cm1Toggle();" class="btnimg_ques"></a>]]></so2:script><so2:static o="11785" x="253" y="80"><![CDATA[
+        </div>
+   </div>
+
+   <div class="contents_area_none bg-w" style="display:none">
+       <div class="p-tb05">
+        <div id="divZPBEG1">
+         <table class="tbl_none p-tb03">
+          <colgroup>
+           <col width="17%">
+           <col width="83%">
+         </colgroup>
+         <tr>
+           <th><span class="label">휴게시간1</span></th>
+           <td class="btn">
+            <span class="input_wrap">
+             <span class="mobile_block wave">
+              <select class="small" name="ZPBEG1_H" id="ZPBEG1_H" data-role="none">
+               <option value="00">00</option>
+               <option value="01">01</option>
+               <option value="02">02</option>
+               <option value="03">03</option>
+               <option value="04">04</option>
+               <option value="05">05</option>
+               <option value="06">06</option>
+               <option value="07">07</option>
+               <option value="08">08</option>
+               <option value="09">09</option>
+               <option value="10">10</option>
+               <option value="11">11</option>
+               <option value="12">12</option>
+               <option value="13">13</option>
+               <option value="14">14</option>
+               <option value="15">15</option>
+               <option value="16">16</option>
+               <option value="17">17</option>
+               <option value="18">18</option>
+               <option value="19">19</option>
+               <option value="20">20</option>
+               <option value="21">21</option>
+               <option value="22">22</option>
+               <option value="23">23</option>
+
+              </select>
+              <select class="small" name="ZPBEG1_M" id="ZPBEG1_M" data-role="none">
+                <option value="00">00</option>
+                <option value="30">30</option>
+              </select>
+              <input type="checkbox" id="ZPBTM1" name="ZPBTM1" data-role="none"> <label for="chb_ZPBTM1">익일</label>
+            </span>
+            <span class="mobile_block pt5">
+              ~
+             <select class="small" name="ZPEND1_H" id="ZPEND1_H" data-role="none">
+               <option value="00">00</option>
+               <option value="01">01</option>
+               <option value="02">02</option>
+               <option value="03">03</option>
+               <option value="04">04</option>
+               <option value="05">05</option>
+               <option value="06">06</option>
+               <option value="07">07</option>
+               <option value="08">08</option>
+               <option value="09">09</option>
+               <option value="10">10</option>
+               <option value="11">11</option>
+               <option value="12">12</option>
+               <option value="13">13</option>
+               <option value="14">14</option>
+               <option value="15">15</option>
+               <option value="16">16</option>
+               <option value="17">17</option>
+               <option value="18">18</option>
+               <option value="19">19</option>
+               <option value="20">20</option>
+               <option value="21">21</option>
+               <option value="22">22</option>
+               <option value="23">23</option>
+               <option value="24">24</option>
+              </select>
+              <select class="small" name="ZPEND1_M" id="ZPEND1_M" data-role="none">
+                <option value="00">00</option>
+                <option value="30">30</option>
+              </select>
+              <input type="checkbox" id="ZPETM1" name="ZPETM1" data-role="none"> <label for="chb_ZPETM1">익일</label>
+            </span>
+            </span>
+             <span class="btn_wrap2" id="btnZPBE1">
+               <a class="btn_add" onclick="fn_addBreakDiv('divZPBEG2','add');">추가</a>
+             </span>
+            <td>
+          </tr>
+         </table>
+        </div>
+
+        <div id="divZPBEG2">
+         <table class="tbl_none p-tb03">
+          <colgroup>
+           <col width="17%">
+           <col width="83%">
+          </colgroup>
+          <tr>
+             <th><span class="label">휴게시간2</span></th>
+             <td class="btn">
+               <span class="input_wrap">
+                <span class="mobile_block wave">
+                  <select class="small" name="ZPBEG2_H" id="ZPBEG2_H" data-role="none">
+                   <option value="00">00</option>
+                   <option value="01">01</option>
+                   <option value="02">02</option>
+                   <option value="03">03</option>
+                   <option value="04">04</option>
+                   <option value="05">05</option>
+                   <option value="06">06</option>
+                   <option value="07">07</option>
+                   <option value="08">08</option>
+                   <option value="09">09</option>
+                   <option value="10">10</option>
+                   <option value="11">11</option>
+                   <option value="12">12</option>
+                   <option value="13">13</option>
+                   <option value="14">14</option>
+                   <option value="15">15</option>
+                   <option value="16">16</option>
+                   <option value="17">17</option>
+                   <option value="18">18</option>
+                   <option value="19">19</option>
+                   <option value="20">20</option>
+                   <option value="21">21</option>
+                   <option value="22">22</option>
+                   <option value="23">23</option>
+
+                  </select>
+                  <select class="small" name="ZPBEG2_M" id="ZPBEG2_M" data-role="none">
+                    <option value="00">00</option>
+                    <option value="30">30</option>
+                  </select>
+                  <input type="checkbox" id="ZPBTM2" name="ZPBTM2" data-role="none"> <label for="chb_ZPBTM1">익일</label>
+                </span>
+                <span class="mobile_block pt5">
+                  ~
+                 <select class="small" name="ZPEND2_H" id="ZPEND2_H" data-role="none">
+                   <option value="00">00</option>
+                   <option value="01">01</option>
+                   <option value="02">02</option>
+                   <option value="03">03</option>
+                   <option value="04">04</option>
+                   <option value="05">05</option>
+                   <option value="06">06</option>
+                   <option value="07">07</option>
+                   <option value="08">08</option>
+                   <option value="09">09</option>
+                   <option value="10">10</option>
+                   <option value="11">11</option>
+                   <option value="12">12</option>
+                   <option value="13">13</option>
+                   <option value="14">14</option>
+                   <option value="15">15</option>
+                   <option value="16">16</option>
+                   <option value="17">17</option>
+                   <option value="18">18</option>
+                   <option value="19">19</option>
+                   <option value="20">20</option>
+                   <option value="21">21</option>
+                   <option value="22">22</option>
+                   <option value="23">23</option>
+                   <option value="24">24</option>
+                  </select>
+                  <select class="small" name="ZPEND2_M" id="ZPEND2_M" data-role="none">
+                    <option value="00">00</option>
+                    <option value="30">30</option>
+                  </select>
+                  <input type="checkbox" id="ZPETM2" name="ZPETM2" data-role="none"> <label for="chb_ZPETM2">익일</label>
+                </span>
+               </span>
+               <span class="btn_wrap2" id="btnZPBE2">
+                <a class="btn_del" onclick="fn_addBreakDiv('divZPBEG2','delete');">삭제</a>&nbsp;&nbsp;
+                <a class="btn_add" onclick="fn_addBreakDiv('divZPBEG3','add');">추가</a>
+               </span>
+              </td>
+             </tr>
+            </table>
+           </div>
+
+           <div id="divZPBEG3">
+            <table class="tbl_none p-tb03">
+              <colgroup>
+              <col width="17%">
+              <col width="83%">
+             </colgroup>
+             <tr>
+               <th><span class="label">휴게시간3</span></th>
+               <td class="btn">
+                <span class="input_wrap">
+                 <span class="mobile_block wave">
+                  <select class="small" name="ZPBEG3_H" id="ZPBEG3_H" data-role="none">
+                   <option value="00">00</option>
+                   <option value="01">01</option>
+                   <option value="02">02</option>
+                   <option value="03">03</option>
+                   <option value="04">04</option>
+                   <option value="05">05</option>
+                   <option value="06">06</option>
+                   <option value="07">07</option>
+                   <option value="08">08</option>
+                   <option value="09">09</option>
+                   <option value="10">10</option>
+                   <option value="11">11</option>
+                   <option value="12">12</option>
+                   <option value="13">13</option>
+                   <option value="14">14</option>
+                   <option value="15">15</option>
+                   <option value="16">16</option>
+                   <option value="17">17</option>
+                   <option value="18">18</option>
+                   <option value="19">19</option>
+                   <option value="20">20</option>
+                   <option value="21">21</option>
+                   <option value="22">22</option>
+                   <option value="23">23</option>
+
+                  </select>
+                  <select class="small" name="ZPBEG3_M" id="ZPBEG3_M" data-role="none">
+                    <option value="00">00</option>
+                    <option value="30">30</option>
+                  </select>
+                  <input type="checkbox" id="ZPBTM3" name="ZPBTM3" data-role="none"> <label for="chb_ZPBTM3">익일</label>
+                </span>
+                <span class="mobile_block pt5">
+                  ~
+                 <select class="small" name="ZPEND3_H" id="ZPEND3_H" data-role="none">
+                   <option value="00">00</option>
+                   <option value="01">01</option>
+                   <option value="02">02</option>
+                   <option value="03">03</option>
+                   <option value="04">04</option>
+                   <option value="05">05</option>
+                   <option value="06">06</option>
+                   <option value="07">07</option>
+                   <option value="08">08</option>
+                   <option value="09">09</option>
+                   <option value="10">10</option>
+                   <option value="11">11</option>
+                   <option value="12">12</option>
+                   <option value="13">13</option>
+                   <option value="14">14</option>
+                   <option value="15">15</option>
+                   <option value="16">16</option>
+                   <option value="17">17</option>
+                   <option value="18">18</option>
+                   <option value="19">19</option>
+                   <option value="20">20</option>
+                   <option value="21">21</option>
+                   <option value="22">22</option>
+                   <option value="23">23</option>
+                   <option value="24">24</option>
+                  </select>
+                  <select class="small" name="ZPEND3_M" id="ZPEND3_M" data-role="none">
+                    <option value="00">00</option>
+                    <option value="30">30</option>
+                  </select>
+                  <input type="checkbox" id="ZPETM3" name="ZPETM3" data-role="none"> <label for="chb_ZPETM3">익일</label>
+                </span>
+              </span>
+              <span class="btn_wrap2" id="btnZPBE3">
+                <a class="btn_del" onclick="fn_addBreakDiv('divZPBEG3','delete');">삭제</a>&nbsp;&nbsp;
+                <a class="btn_add" onclick="fn_addBreakDiv('divZPBEG4','add');">추가</a>
+              </span>
+             </td>
+            </tr>
+           </table>
+          </div>
+
+          <div id="divZPBEG4">
+           <table class="tbl_none p-tb03">
+            <colgroup>
+             <col width="17%">
+             <col width="83%">
+            </colgroup>
+            <tr>
+              <th><span class="label">휴게시간4</span></th>
+              <td class="btn">
+               <span class="input_wrap">
+                <span class="mobile_block wave">
+                  <select class="small" name="ZPBEG4_H" id="ZPBEG4_H" data-role="none">
+                   <option value="00">00</option>
+                   <option value="01">01</option>
+                   <option value="02">02</option>
+                   <option value="03">03</option>
+                   <option value="04">04</option>
+                   <option value="05">05</option>
+                   <option value="06">06</option>
+                   <option value="07">07</option>
+                   <option value="08">08</option>
+                   <option value="09">09</option>
+                   <option value="10">10</option>
+                   <option value="11">11</option>
+                   <option value="12">12</option>
+                   <option value="13">13</option>
+                   <option value="14">14</option>
+                   <option value="15">15</option>
+                   <option value="16">16</option>
+                   <option value="17">17</option>
+                   <option value="18">18</option>
+                   <option value="19">19</option>
+                   <option value="20">20</option>
+                   <option value="21">21</option>
+                   <option value="22">22</option>
+                   <option value="23">23</option>
+
+                  </select>
+                  <select class="small" name="ZPBEG4_M" id="ZPBEG4_M" data-role="none">
+                    <option value="00">00</option>
+                    <option value="30">30</option>
+                  </select>
+                  <input type="checkbox" id="ZPBTM4" name="ZPBTM4" data-role="none"> <label for="chb_ZPBTM1">익일</label>
+                </span>
+                <span class="mobile_block pt5">
+                  ~
+                 <select class="small" name="ZPEND4_H" id="ZPEND4_H" data-role="none">
+                   <option value="00">00</option>
+                   <option value="01">01</option>
+                   <option value="02">02</option>
+                   <option value="03">03</option>
+                   <option value="04">04</option>
+                   <option value="05">05</option>
+                   <option value="06">06</option>
+                   <option value="07">07</option>
+                   <option value="08">08</option>
+                   <option value="09">09</option>
+                   <option value="10">10</option>
+                   <option value="11">11</option>
+                   <option value="12">12</option>
+                   <option value="13">13</option>
+                   <option value="14">14</option>
+                   <option value="15">15</option>
+                   <option value="16">16</option>
+                   <option value="17">17</option>
+                   <option value="18">18</option>
+                   <option value="19">19</option>
+                   <option value="20">20</option>
+                   <option value="21">21</option>
+                   <option value="22">22</option>
+                   <option value="23">23</option>
+                   <option value="24">24</option>
+                  </select>
+                  <select class="small" name="ZPEND4_M" id="ZPEND4_M" data-role="none">
+                    <option value="00">00</option>
+                    <option value="30">30</option>
+                  </select>
+                  <input type="checkbox" id="ZPETM4" name="ZPETM4" data-role="none"> <label for="chb_ZPETM4">익일</label>
+                </span>
+              </span>
+              <span class="btn_wrap2" id="btnZPBE4">
+                <a class="btn_del" onclick="fn_addBreakDiv('divZPBEG4','delete');">삭제</a>&nbsp;&nbsp;
+                <a class="btn_add" onclick="fn_addBreakDiv('divZPBEG5','add');">추가</a>
+              </span>
+             </td>
+            </tr>
+           </table>
+          </div>
+
+          <div id="divZPBEG5">
+           <table class="tbl_none p-tb03">
+            <colgroup>
+             <col width="17%">
+             <col width="83%">
+            </colgroup>
+            <tr>
+             <th><span class="label">휴게시간5</span></th>
+             <td class="btn">
+               <span class="input_wrap">
+                <span class="mobile_block wave">
+                  <select class="small" name="ZPBEG5_H" id="ZPBEG5_H" data-role="none">
+                   <option value="00">00</option>
+                   <option value="01">01</option>
+                   <option value="02">02</option>
+                   <option value="03">03</option>
+                   <option value="04">04</option>
+                   <option value="05">05</option>
+                   <option value="06">06</option>
+                   <option value="07">07</option>
+                   <option value="08">08</option>
+                   <option value="09">09</option>
+                   <option value="10">10</option>
+                   <option value="11">11</option>
+                   <option value="12">12</option>
+                   <option value="13">13</option>
+                   <option value="14">14</option>
+                   <option value="15">15</option>
+                   <option value="16">16</option>
+                   <option value="17">17</option>
+                   <option value="18">18</option>
+                   <option value="19">19</option>
+                   <option value="20">20</option>
+                   <option value="21">21</option>
+                   <option value="22">22</option>
+                   <option value="23">23</option>
+
+                  </select>
+                  <select class="small" name="ZPBEG5_M" id="ZPBEG5_M" data-role="none">
+                    <option value="00">00</option>
+                    <option value="30">30</option>
+                  </select>
+                  <input type="checkbox" id="ZPBTM5" name="ZPBTM5" data-role="none"> <label for="chb_ZPBTM5">익일</label>
+                </span>
+                <span class="mobile_block pt5">
+                  ~
+                 <select class="small" name="ZPEND5_H" id="ZPEND5_H" data-role="none">
+                   <option value="00">00</option>
+                   <option value="01">01</option>
+                   <option value="02">02</option>
+                   <option value="03">03</option>
+                   <option value="04">04</option>
+                   <option value="05">05</option>
+                   <option value="06">06</option>
+                   <option value="07">07</option>
+                   <option value="08">08</option>
+                   <option value="09">09</option>
+                   <option value="10">10</option>
+                   <option value="11">11</option>
+                   <option value="12">12</option>
+                   <option value="13">13</option>
+                   <option value="14">14</option>
+                   <option value="15">15</option>
+                   <option value="16">16</option>
+                   <option value="17">17</option>
+                   <option value="18">18</option>
+                   <option value="19">19</option>
+                   <option value="20">20</option>
+                   <option value="21">21</option>
+                   <option value="22">22</option>
+                   <option value="23">23</option>
+                   <option value="24">24</option>
+                  </select>
+                  <select class="small" name="ZPEND5_M" id="ZPEND5_M" data-role="none">
+                    <option value="00">00</option>
+                    <option value="30">30</option>
+                  </select>
+                  <input type="checkbox" id="ZPETM5" name="ZPETM5" data-role="none"> <label for="chb_ZPETM5">익일</label>
+                </span>
+              </span>
+              <span class="btn_wrap2" id="btnZPBE5">
+                <a class="btn_del" onclick="fn_addBreakDiv('divZPBEG5','delete');">삭제</a>
+              </span>
+             </td>
+            </tr>
+           </table>
+         </div>
+        </div>
+       </div>
+
+       <div class="conts_box ot_time no_mgt">
+          <div class="times_sum">
+            <span class="txt1">총근무시간</span><strong id="SP_ZRLWK_TM" class="n-blue n-st longsp"></strong>
+            <span class="txt2">총휴게시간</span><strong id="SP_ZBREAK_TM" class="n-green n-st middlesp"></strong>
+            <span class="txt3">의무휴게시간</span><strong id="SP_ZPDWK_TM" class="n-green n-st num"></strong>
+            <span class="sp"><a href="javascript:fn_cm2Toggle()" class="btnimg_ques" id='img_cm2'></a></span>
+            &nbsp;<a href="#" id='change_btn' class="btnstyle_icon" onClick="fn_change();"><span class="btn_change">휴게시간 변경</span></a>
+         </div>
+
+
+        <div class="box">
+           <div class="cell_box">
+             <div class="w-50">연장시간
+              <span class="num" id="SP_ZE_TIME_S"></span>
+             </div>
+             <div class="w-50">실비금액
+              <span class="num" id="SP_ZMONEY"></span>
+             </div>
+          </div>
+
+          <div class="time">
+            <!-- <span class="label_cmt red"> -->
+              <span id="SP_ZTBASE"></span>
+            <!-- </span> -->
+           </div>
+        </div>
+     </div>
+
+    <div class="conts_box no_mgt">
+     <table class="tbl st_2cols_none">
+       <colgroup>
+        <col width="180">
+        <col width="">
+       </colgroup>
+       <tr>
+         <th class="lineno"><span class="label">업무내용</span></th>
+         <td class="p-r05"><input type="text" style="width:90%" name="ZTEXT" id="ZTEXT" /></td>
+       </tr>
+       <tr>
+         <th class="lineno pb"><span class="label">결재자</span></th>
+         <td class="pb">
+             <span class="input_wrap">
+              <input type="text" id="ZCOPE" name="ZCOPE" style="width:4em;"/>
+              <input type="text" id="CORGTX" name="CORGTX" disabled="disabled" />
+              &nbsp;<a class="btnstyle_icon" onclick="fn_ZEP_SEARCH_ENAME();"><span class="btn_search">검색</span></a>
+            </span>
+         </td>
+       </tr>
+      </table>
+
+
+      <!--<div class="nb_box">
+        <span class="label">업무내용</span>
+        <input type="text" name="ZTEXT" id="ZTEXT" />
+      </div>-->
+
+    </div>
+
+
+
+  </form>
+
+  <div class="btn_wrap">
+    <a href="#" id='appr_btn' style='display:none' class="btnstyle_la blue" onClick="fn_approval('APPR');">결재 상신</a> &nbsp;&nbsp;
+    <a href="#" id='save_btn' class="btnstyle_la blue" onClick="fn_save();">저장</a>&nbsp;&nbsp;
+    <a href="#" class="btnstyle_la" onClick="fn_cancel();">취소</a>
+  </div>
+
+  <div class="comment_wrap over">
+    <p>알립니다</p>
+    <ul>
+      <li>
+         2018.6.11.부터 <span class="under">근무종료 후 3일(단체협약상의 휴일 제외) 이내 결재상신을 마쳐야하며</span>, 결재상신 후 2일(단체협약상의 휴일 제외) 이내 수정 및 결재 가능<br>
+            ※ 결재상신 후 수정 방법 : <회수> 후 <수정>하여 재상신
+      </li>
+      <li>
+         <span class="under">해외출장, 1주 이상 국내출장, 휴가 기간 중 근무, 기타 불가피한 경우(개인 또는 결재권자 부주의 제외)</span>는 5일(단체협약상의 휴일 제외) 이내 부장급 부서장의 코비스 내부결재를 받아 신청가능 (공람지정 또는 팩스송부 / FAX : 1449,
+문의 : 1412 )
+         <a href="../../sap/zcommon/notice/ot_app_n5.hwp"><신청 양식 다운받기></a>
+      </li>
+      <li>
+         해외출장 결재 완료 시, 자동으로 시간외 신청 시 총 근무시간 9시간(휴게시간 제외) 초과분부터 연장실비 발생
+      </li>
+      <li>
+        통상(시차) 익휴 관련안내 : 우측 도움말 참조 <a href="javascript:fnPdfDown();"><통상(시차) 익휴 도움말 조회하기></a>
+      </li>
+      <li>
+        시간외 신청 순서 : 입력사항 입력 → <저장>버튼 클릭 → <결재상신>버튼 클릭
+      </li>
+      <li>
+        결재상신전 변경 순서 : '시간외 근무내역'에서 미상신건 선택 → <수정>버튼 클릭 → 내용변경 후, <저장>버튼 클릭
+      </li>
+      <li>
+        회수 후 재상신 순서 : '시간외 근무내역'에서 결재중건 선택 → <회수>버튼 클릭 → '시간외 근무내역'에서 회수건 선택 → <수정>버튼 클릭 → 내용변경 후, <저장>버튼 클릭 → <결재상신>버튼 클릭
+      </li>
+      <li>
+        삭제 : 결재상신전이나 결재완료후 신청건 삭제할 수 있음 ( 단, 지급완료건은 삭제불가! )
+      </li>
+    </ul>
+  </div>
+
+
+<div class="pop_content" id="cm" style="position: absolute; width:auto; height:auto; display:none; z-index:9999">
+  <div class="infowrap">
+    <p>특별 연장근로 동의</p>
+    <table class="tbl_bbs tbl_info">
+      <colgroup>
+        <col width="500">
+      </colgroup>
+      <tr>
+        <td class="one">
+            ※ 재난 방송 등 특별연장근로 사유에 해당하는 경우에만 체크하시기 바랍니다. 특별연장근로 사유에 해당하지 않는 경우 추후 시간외실비 환수 등의 불이익이 있을 수 있습니다.
+            <br><br>
+            ※ 특별연장근로 대상자는 고용노동부 고시에 따라 국민건강보험법에 따른 건강검진(일반검진) 신청이 가능합니다.(매년 실시하는 정기검진과는 별도/ 건강검진 관련 사항은 후생부 T.2481로 문의)
+            <br><br>
+        </td>
+      </tr>
+    </table>
+    <div class="btn_wrap alignC pt10">
+     <a href="javascript:fn_agreement('Y')" class="btnstyle_la">확인</a>
+          <!--<a href="javascript:fn_agreement('N')" class="urBtnStd"><img align=absmiddle src="/sap/bc/bsp/sap/z52_flex_time/images/icon_clo.gif">&nbsp;미동의</a>-->
+    </div>
+ </div>
+ </div>
+
+ <div class="comm_content" id="cm1" style="position: absolute; width:auto; height:auto; display:none; z-index:9999">
+     <p>특별연장근로</p>
+     <a href="javascript:hideLayer1()"><img align=absmiddle src="/sap/bc/bsp/sap/z52_flex_time/images/icon_close.svg"></a>
+     <div class="comment">재난 선택 시 특별연장근로 간주하여 연장시간에 미포함</div>
+ </div>
+
+ <div class="comm_content" id="cm2" style="position: absolute; width:auto; height:auto; display:none; z-index:9999">
+    <p>휴게시간</p>
+    <a href="javascript:hideLayer2()"><img align=absmiddle src="/sap/bc/bsp/sap/z52_flex_time/images/icon_close.svg"></a>
+    <div class="comment">근무시간 4시간당 30분의 휴게시간 입력 필요</div>
+ </div>
+
+ <div class="comm_content" id="cm3" style="position: absolute; width:auto; height:auto; display:none; z-index:9999">
+    <p>52시간 기준</p>
+    <a href="javascript:hideLayer3()"><img align=absmiddle src="/sap/bc/bsp/sap/z52_flex_time/images/icon_close.svg
+    "></a>
+    <div class="comment">최대 주 52시간까지 가능</div>
+ </div>
+
+ <div class="comm_content" id="cm4" style="position: absolute; width:auto;  display:none;  height:auto; z-index:9999">
+    <p>68시간 기준</p>
+    <a href="javascript:hideLayer4()"><img align=absmiddle src="/sap/bc/bsp/sap/z52_flex_time/images/icon_close.svg
+    "></a>
+    <div class="comment">근로기준법상 소정근로 40시간(5일x8시간)·휴일근로 16시간(2일x8시간)·연장근로 12시간</div>
+ </div>
+
+<script>
+  var paramPERNR = getParameter("PERNR");
+  var paramDATUM = getParameter("DATUM");
+  var paramSEQNR = '000';
+
+  var paramSBEGDA = getParameter("SBEGDA");
+  var paramSENDDA = getParameter("SENDDA");
+
+  var I_GUBUN = '';
+
+  $(document).ready(function() {
+
+//  alert(  moment().format("YYYYMMDD") );
+//  alert(  moment().format("YYYY-MM-DD") );
+
+    $("#I_DATUM").datepicker({
+        //showOn: "button",
+        dateFormat:"yy-mm-dd",
+        buttonImage: "/sap/bc/bsp/sap/zmobile_common/jquery-v1.8.0/images/calendar.gif",
+        buttonImageOnly: true,
+        beforeShow: function(input, inst) {
+          setTimeout(function() {
+            inst.dpDiv.css({
+
+            });
+          }, 0);
+      }
+    });
+
+    //기준일
+    $("#I_DATUM").change(function() {
+      chkNum = 0;
+      before_fn_ZHR_52TM_MOBILE_OVERTIME_CHECK();
+
+      //fn_disInit();
+      //$('#I_ZGUBUN').val('');
+      //$("#I_WKTYPE").append('<option value= " "></option>');
+      //$('#I_WKTYPE').val(' ');
+      // fn_ZHR_52TM_MOBILE_OVERTIME_CHECK();
+    });
+
+  function before_fn_ZHR_52TM_MOBILE_OVERTIME_CHECK()
+  {
+      var PERNR = $('#I_PERNR').val();
+      var DATUM = $("#I_DATUM").val().replace(/-/g, ""); ;
+        submit_data = {
+            FUNCTION_NAME : 'ZHR_52TM_CHECK_WKTYPE',
+            I_PERNR    : PERNR,   //사원 번호
+            I_DATUM     : DATUM   //검색년월
+        };
+        onAjaxProc('../ZWEB_COMMON/AJAX_COMMON.HTM', submit_data, fn_callbackZHR_52TM_CHECK_WKTYPE);
+  }
+  //callback
+  function fn_callbackZHR_52TM_CHECK_WKTYPE(ret_data){
+
+// 교대근무 테스트 위해 주석.
+    if(ret_data.E_RETURN.TYPE == "E")
+    {
+        alert('(구) 시간 외 화면에서 입력하세요.');
+        location.href='/kbs/zweb_ess/ess_list.htm';
+        return;
+    }
+    else
+    {
+       fn_disInit();
+       $('#I_ZGUBUN').val('');
+       $("#I_WKTYPE").append('<option value= " "></option>');
+       $('#I_WKTYPE').val(' ');
+       fn_ZHR_52TM_MOBILE_OVERTIME_CHECK();
+    }
+  }
+
+    //근로형태
+    $("#I_WKTYPE").on({
+      "change": function () {
+        fn_disInit();
+        $('#I_ZGUBUN').val('');
+        fn_ZHR_52TM_MOBILE_OVERTIME_CHECK();
+      }
+    });
+
+    //근무시작시간
+    $("#ZBEGTM_H").change(function() {
+      $('#I_ZGUBUN').val('M');
+      fn_ZHR_52TM_CALC_BREAK_TIME();
+    });
+
+    //근무시작분
+    $('#ZBEGTM_M').on({
+      "change": function () {
+        $('#I_ZGUBUN').val('M');
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+      }
+    });
+
+    //근무종료시간
+    $("#ZENDTM_H").change(function() {
+      $('#I_ZGUBUN').val('M');
+      fn_ZHR_52TM_CALC_BREAK_TIME();
+    });
+    //근무종료분
+    $('#ZENDTM_M').on({
+      "change": function () {
+        $('#I_ZGUBUN').val('M');
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+      }
+    });
+    //근무시간 익일여부
+    $('#ZTOMO').on({
+      "change": function () {
+        if($('input:checkbox[name="ZTOMO"]').is(":checked")){
+          $("#ZPBTM1").prop("disabled",false);
+          $("#ZPETM1").prop("disabled",false);
+          $("#ZPBTM2").prop("disabled",false);
+          $("#ZPETM2").prop("disabled",false);
+          $("#ZPBTM3").prop("disabled",false);
+          $("#ZPETM3").prop("disabled",false);
+          $("#ZPBTM4").prop("disabled",false);
+          $("#ZPETM4").prop("disabled",false);
+          $("#ZPBTM5").prop("disabled",false);
+          $("#ZPETM5").prop("disabled",false);
+        }else{
+          $("#ZPBTM1").prop("disabled",true);
+          $("#ZPETM1").prop("disabled",true);
+          $("#ZPBTM2").prop("disabled",true);
+          $("#ZPETM2").prop("disabled",true);
+          $("#ZPBTM3").prop("disabled",true);
+          $("#ZPETM3").prop("disabled",true);
+          $("#ZPBTM4").prop("disabled",true);
+          $("#ZPETM4").prop("disabled",true);
+          $("#ZPBTM5").prop("disabled",true);
+          $("#ZPETM5").prop("disabled",true);
+
+          $("#ZPBTM1").prop("checked",false);
+          $("#ZPETM1").prop("checked",false);
+          $("#ZPBTM2").prop("checked",false);
+          $("#ZPETM2").prop("checked",false);
+          $("#ZPBTM3").prop("checked",false);
+          $("#ZPETM3").prop("checked",false);
+          $("#ZPBTM4").prop("checked",false);
+          $("#ZPETM4").prop("checked",false);
+          $("#ZPBTM5").prop("checked",false);
+          $("#ZPETM5").prop("checked",false);
+        }
+        $('#I_ZGUBUN').val('M');
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+        }
+    });
+
+    //휴게시간 1
+    $("#ZPBEG1_H").change(function() {
+      $('#I_ZGUBUN').val('M');
+      fn_ZHR_52TM_CALC_BREAK_TIME();
+    });
+    $('#ZPBEG1_M').on({
+      "change": function () {
+        $('#I_ZGUBUN').val('M');
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+      }
+    });
+    $("#ZPEND1_H").change(function() {
+      $('#I_ZGUBUN').val('M');
+      fn_ZHR_52TM_CALC_BREAK_TIME();
+   	});
+    $('#ZPEND1_M').on({
+      "change": function () {
+        $('#I_ZGUBUN').val('M');
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+      }
+    });
+    $('#ZPBTM1').on({
+      "change": function () {
+        if($('input:checkbox[name="ZPBTM1"]').is(":checked")){
+          $("#ZPETM1").prop("checked",true);
+        }
+        $('#I_ZGUBUN').val('M');
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+        }
+    });
+    $('#ZPETM1').on({
+      "change": function () {
+        if(!$('input:checkbox[name="ZPETM1"]').is(":checked")){
+          $("#ZPBTM1").prop("checked",false);
+        }
+        $('#I_ZGUBUN').val('M');
+      fn_ZHR_52TM_CALC_BREAK_TIME();
+        }
+    });
+
+    //휴게시간 2
+    $("#ZPBEG2_H").change(function() {
+      $('#I_ZGUBUN').val('M');
+      fn_ZHR_52TM_CALC_BREAK_TIME();
+    });
+    $('#ZPBEG2_M').on({
+      "change": function () {
+        $('#I_ZGUBUN').val('M');
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+      }
+    });
+    $("#ZPEND2_H").change(function() {
+      $('#I_ZGUBUN').val('M');
+      fn_ZHR_52TM_CALC_BREAK_TIME();
+    });
+    $('#ZPEND2_M').on({
+      "change": function () {
+        $('#I_ZGUBUN').val('M');
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+      }
+    });
+    $('#ZPBTM2').on({
+      "change": function () {
+        if($('input:checkbox[name="ZPBTM2"]').is(":checked")){
+          $("#ZPETM2").prop("checked",true);
+        }
+        $('#I_ZGUBUN').val('M');
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+      }
+    });
+    $('#ZPETM2').on({
+      "change": function () {
+        if(!$('input:checkbox[name="ZPETM2"]').is(":checked")){
+          $("#ZPBTM2").prop("checked",false);
+        }
+        $('#I_ZGUBUN').val('M');
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+      }
+    });
+
+    //휴게시간 3
+    $("#ZPBEG3_H").change(function() {
+      $('#I_ZGUBUN').val('M');
+      fn_ZHR_52TM_CALC_BREAK_TIME();
+    });
+    $('#ZPBEG3_M').on({
+      "change": function () {
+        $('#I_ZGUBUN').val('M');
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+      }
+    });
+    $("#ZPEND3_H").change(function() {
+      $('#I_ZGUBUN').val('M');
+      fn_ZHR_52TM_CALC_BREAK_TIME();
+    });
+    $('#ZPEND3_M').on({
+      "change": function () {
+        $('#I_ZGUBUN').val('M');
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+      }
+    });
+    $('#ZPBTM3').on({
+      "change": function () {
+        if($('input:checkbox[name="ZPBTM3"]').is(":checked")){
+          $("#ZPETM3").prop("checked",true);
+        }
+        $('#I_ZGUBUN').val('M');
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+      }
+    });
+    $('#ZPETM3').on({
+      "change": function () {
+        if(!$('input:checkbox[name="ZPETM3"]').is(":checked")){
+          $("#ZPBTM3").prop("checked",false);
+        }
+        $('#I_ZGUBUN').val('M');
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+      }
+    });
+
+    //휴게시간 4
+    $("#ZPBEG4_H").change(function() {
+      $('#I_ZGUBUN').val('M');
+      fn_ZHR_52TM_CALC_BREAK_TIME();
+    });
+    $('#ZPBEG4_M').on({
+      "change": function () {
+        $('#I_ZGUBUN').val('M');
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+      }
+    });
+    $("#ZPEND4_H").change(function() {
+      $('#I_ZGUBUN').val('M');
+      fn_ZHR_52TM_CALC_BREAK_TIME();
+    });
+    $('#ZPEND4_M').on({
+      "change": function () {
+        $('#I_ZGUBUN').val('M');
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+      }
+    });
+    $('#ZPBTM4').on({
+      "change": function () {
+        if($('input:checkbox[name="ZPBTM4"]').is(":checked")){
+          $("#ZPETM4").prop("checked",true);
+        }
+        $('#I_ZGUBUN').val('M');
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+      }
+    });
+    $('#ZPETM4').on({
+      "change": function () {
+        if(!$('input:checkbox[name="ZPETM4"]').is(":checked")){
+          $("#ZPBTM4").prop("checked",false);
+        }
+        $('#I_ZGUBUN').val('M');
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+      }
+    });
+
+    //휴게시간 5
+    $("#ZPBEG5_H").change(function() {
+      $('#I_ZGUBUN').val('M');
+      fn_ZHR_52TM_CALC_BREAK_TIME();
+    });
+    $('#ZPBEG5_M').on({
+      "change": function () {
+        $('#I_ZGUBUN').val('M');
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+      }
+    });
+    $("#ZPEND5_H").change(function() {
+      $('#I_ZGUBUN').val('M');
+      fn_ZHR_52TM_CALC_BREAK_TIME();
+    });
+    $('#ZPEND5_M').on({
+      "change": function () {
+        $('#I_ZGUBUN').val('M');
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+      }
+    });
+    $('#ZPBTM5').on({
+      "change": function () {
+        if($('input:checkbox[name="ZPBTM5"]').is(":checked")){
+          $("#ZPETM5").prop("checked",true);
+        }
+        $('#I_ZGUBUN').val('M');
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+      }
+    });
+    $('#ZPETM5').on({
+      "change": function () {
+        if(!$('input:checkbox[name="ZPETM5"]').is(":checked")){
+          $("#ZPBTM5").prop("checked",false);
+        }
+        $('#I_ZGUBUN').val('M');
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+      }
+    });
+    //퇴출
+    $('#ZTOICH').on({
+      "change": function () {
+        $('#I_ZGUBUN').val('M');
+        fn_ZHR_52TM_MOBILE_OVERTIME_CHECK();
+      }
+    });
+    focus('ZTEXT');
+    fn_ZWEB_COMMON_GET_LOGIN_INFO();
+
+    //결재자 엔터처리
+    $("#ZCOPE").keydown(function(e){
+        if(e.keyCode == 13){
+        fn_ZEP_SEARCH_ENAME();
+        }
+    });
+  });
+
+  //기준일 선택
+  function callCalendar(){
+    $("#I_DATUM").datepicker().datepicker('show');
+  }
+
+  //익휴 클릭시
+  function fn_checkZTOMOH(){
+    if($('input:checkbox[name="ZTOMOH"]').prop('checked')){
+      $('#I_ZGUBUN').val('M');
+      $('#ZTOMOH_B').val('X');
+    }else{
+      $('#ZTOMOH_B').val('');
+    }
+    fn_ZHR_52TM_MOBILE_OVERTIME_CHECK();
+  }
+
+  //대휴 클릭시
+  function fn_checkZDAEH(){
+    if($('input:checkbox[name="ZDAEH"]').prop('checked')){
+      $('#I_ZGUBUN').val('M');
+      $('#ZDAEH_B').val('X');
+    }else{
+      $('#I_ZGUBUN').val('M');
+      $('#ZDAEH_B').val('');
+    }
+    fn_ZHR_52TM_MOBILE_OVERTIME_CHECK();
+  }
+
+  //특별연장근로 클릭시
+  function fn_checkZEMCWK(){
+    if($('input:checkbox[name="ZEMCWK"]').prop('checked')){
+        displayLayer();
+        return;
+    }else{
+      $('#ZEMCWK_B').val('');
+    }
+    fn_ZHR_52TM_MOBILE_OVERTIME_CHECK();
+  }
+
+  function fn_cm1Toggle(){
+    displayLayer1();
+  }
+
+  function fn_cm2Toggle(){
+    displayLayer2();
+  }
+
+  function fn_cm3Toggle(){
+    displayLayer3();
+  }
+
+  function fn_cm4Toggle(){
+    displayLayer4();
+  }
+
+  function displayLayer4(){
+    var x = $("#SP_ZRLOVRWKHR").offset();
+    var t = x.top;
+    cm4.style.top = (t+25)+'px';
+    cm4.style.left = '300px';
+    cm4.style.display='';
+  }
+  function hideLayer4(){
+    cm4.style.display = 'none';
+  }
+
+  function fn_init(){
+
+    //fn_disInit();
+
+    $('#ZTOMOH_B').val('');	//익휴
+    $('#ZDAEH_B').val('');  //대휴
+    $('#ZEMCWK_B').val('');	//특별연장근로
+
+    if('' == paramPERNR){
+      paramPERNR = $('#I_PERNR').val();
+    }
+    if('' == paramDATUM){
+      paramDATUM = moment().format("YYYY-MM-DD");
+    }
+    if('' == paramSEQNR){
+      paramSEQNR = $('#I_SEQNR').val();
+    }
+    $('#I_ZGUBUN').val('');
+    $('#I_MODE').val('');
+    $("#I_PERNR").val(paramPERNR);
+    $("#I_DATUM").val(paramDATUM);
+    $("#I_SEQNR").val(paramSEQNR);
+    fn_ZHR_52TM_MOBILE_OVERTIME_CHECK();
+  }
+
+   var chkOverTime = true;
+   var chkFirst = 'X';
+  //[52시간] Mobile_통상/교대 시간외실비 신청 Validation Check
+  function fn_ZHR_52TM_MOBILE_OVERTIME_CHECK(){
+
+    if(!chkOverTime) return;
+    chkOverTime = false;
+
+    var I_ZGUBUN = $('#I_ZGUBUN').val();
+    var I_MODE = $('#I_MODE').val();
+    if(chkSave == 1) I_MODE = 'M';//수정
+
+    var I_PERNR = $('#I_PERNR').val();
+    var I_DATUM = $('#I_DATUM').val();
+    var I_SEQNR = $("#I_SEQNR").val();
+    var I_WKTYPE = $("#I_WKTYPE").val();
+
+    fn_setForm();
+
+    $('#I_DATUM').val($('#I_DATUM').val().replace(/-/g,''));
+    $('#DATUM').val($('#DATUM').val().replace(/-/g,''));
+
+    var ZSHR0131 = fn_stringify(fn_toStructure('reg_form'));
+
+    submit_data = {
+            FUNCTION_NAME : 'ZHR_52TM_MOBILE_OVERTIME_CHECK',
+            I_ZGUBUN    : I_ZGUBUN,   //'': 신규, 'M': 수정
+            I_MODE      : I_MODE,     //'': 신규, 'M': 수정
+            I_PERNR     : I_PERNR,    //사원 번호
+            I_DATUM     : I_DATUM.replace(/-/g,''),    //일자
+            I_SEQNR     : I_SEQNR,    //순번
+            I_WKTYPE    : I_WKTYPE,  //순번
+            I_ISFST     : chkFirst,
+            CS_ZSHR0131 : ZSHR0131
+        };
+console.log(submit_data);
+
+        onAjaxProc('../ZWEB_COMMON/AJAX_COMMON.HTM', submit_data, fn_callbackZHR_52TM_MOBILE_OVERTIME_CHECK);
+  }
+  //callback
+  function fn_callbackZHR_52TM_MOBILE_OVERTIME_CHECK(ret_data){
+
+    chkFirst = '';
+    var str = "";
+console.log(ret_data);
+
+    if(ret_data.E_RETURN.MESSAGE != '')
+    {
+        alert(ret_data.E_RETURN.MESSAGE);
+    }
+    if(ret_data.E_RETURN.TYPE == 'E'){
+      if(ret_data.E_RETURN.MESSAGE == '<통상근무>로 입력하시기 바랍니다!' )
+      {
+          return;
+      }
+      else
+      {
+          fn_cancel();
+      }
+
+/*
+      if( $('#I_DATUM').val().replace(/-/g,'') != moment().format("YYYYMMDD") )
+      {
+          //$('#I_DATUM').val(moment().format("YYYY-MM-DD"));
+          chkOverTime = true;
+          return;
+      }
+      else
+      {
+          fn_cancel();
+      }
+*/
+    }
+
+    $('#ZTOMOH_B').val(''); //익휴
+    $('#ZDAEH_B').val('');  //대휴
+    $('#ZEMCWK_B').val('');  //특별연장근로
+
+    fn_ResetSelectBox("reg_form","I_WKTYPE"); //초기화
+
+    //근무형태
+    $.each(ret_data.LT_WKTP, function(i,v){
+      $("#I_WKTYPE").append('<option value='+ v.DOMVALUE +'>'+ v.DDTEXT +'</option>');
+    });
+    if(ret_data.E_RETURN.TYPE == 'E'){
+      fn_cancel();
+
+      $('#ZE_TIME_S').val('0000');    //초과근로시간_화면
+      $('#ZMONEY').val(0);            //실비금액
+
+      $('#SP_ZE_TIME_S').html(fn_formatTime($('#ZE_TIME_S').val()));      //연장시간
+    }else{
+     	if('' != ret_data.E_RETURN.MESSAGE){
+        //alert(ret_data.E_RETURN.MESSAGE);
+     	}
+    }
+
+    $('#ZBREAK_TM').val(ret_data.E_ZPDWK_TM);//합산휴게시간
+    $('#ZRLWK_TM').val(ret_data.E_ZRLWK_TM);//총근로시간
+
+    //$('#SP_ZBREAK_TM').text(fn_formatTime($('#ZBREAK_TM').val()));  //휴게시간
+    $('#SP_ZRLWK_TM').text(fn_formatTime($('#ZRLWK_TM').val()));    //총근로시간
+
+    var data = ret_data.CS_ZSHR0131;
+    if(ret_data.E_RETURN.TYPE == 'S'){
+      $('#ZE_TIME_S').val(data.WKBEGDA);    //초과근로시간_화면
+      $('#ZMONEY').val(data.WKBEGDA);           //실비금액
+      $('#SP_ZE_TIME_S').html(fn_formatTime($('#ZE_TIME_S').val()));      //연장시간
+    }
+
+    $('#PERNR').val(data.PERNR);
+    $('#WKBEGDA').val(data.WKBEGDA);
+    $('#WKENDDA').val(data.WKENDDA);
+    $('#DATUM').val(data.DATUM);
+    $('#SEQNR').val(data.SEQNR);
+    $('#WKTYPE').val(data.WKTYPE);          //근로형태
+    $('#ZGUBUN').val(data.ZGUBUN);          //입력구분
+    $('#ZYUHYUNG').val(data.ZYUHYUNG);      //교대근무유형
+    $('#ZYOIL').val(data.ZYOIL);            //요일
+    $('#ZBEGT').val(data.ZBEGT);            //시작 시간
+    $('#ZENDT').val(data.ZENDT);            //종료 시간
+
+    $('#ZPBEG1').val(data.ZPBEG1);
+    $('#ZPEND1').val(data.ZPEND1);
+    $('#ZPBEG2').val(data.ZPBEG2);
+    $('#ZPEND2').val(data.ZPEND2);
+    $('#ZPBEG3').val(data.ZPBEG3);
+    $('#ZPEND3').val(data.ZPEND3);
+    $('#ZPBEG4').val(data.ZPBEG4);
+    $('#ZPEND4').val(data.ZPEND4);
+    $('#ZPBEG5').val(data.ZPBEG5);
+    $('#ZPEND5').val(data.ZPEND5);
+
+    $('#ZTOMO').val(data.ZTOMO);            //익일여부
+    $('#ZPDWK_TM').val(data.ZPDWK_TM);      //휴게시간
+    $('#ZTBASE_TM').val(data.ZTBASE_TM);    //해외출장 적용기준시간
+    $('#ZOBLWKHR').val(data.ZOBLWKHR);      //필수근로시간
+    $('#ZPUBHWKHR').val(data.ZPUBHWKHR);    //주중공휴일시간
+    $('#ZPOVERWKHR').val(data.ZPOVERWKHR);  //연장근로가능시간
+    $('#ZTOTWKHR').val(data.ZTOTWKHR);      //총근로시간
+    $('#ZRLWKHR').val(data.ZRLWKHR);        //근로시간
+    $('#ZRLOVRWKHR').val(data.ZRLOVRWKHR);  //연장근로시간
+    $('#ZRESTWKHR').val(data.ZRESTWKHR);    //연장근로잔여시간
+    $('#ATEXT').val(data.ATEXT);            //근무/휴무 유형 텍스트
+    $('#KIND').val(data.KIND);              //근무유형
+    $('#ZE_TIME_S').val(data.ZE_TIME_S);    //초과근로시간_화면
+
+    $('#ZMONEY').val(data.ZMONEY);          //실비금액
+    $('#ZEMCWK').val(data.ZEMCWK);
+    $('#ZTOICH').val(data.ZTOICH);
+    $('#ZTOMOH').val(data.ZTOMOH);
+    $('#ZTEXT').val(data.ZTEXT);
+
+    $('#ZCOSA').val(data.ZCOSA);
+    $('#ZCOPE').val(data.ZCOPE);
+    $('#CORGTX').val(data.CORGTX);
+
+    $('#ZCID').val(data.ZCID);
+    $('#ZDAEH').val(data.ZDAEH);
+    $('#ZDAEH_DAY').val(data.ZDAEH_DAY);
+    $('#ZEMCWK_S').val(data.ZEMCWK_S);
+    $('#ZTOICH_S').val(data.ZTOICH_S);
+    $('#ZTOMOH_S').val(data.ZTOMOH_S);
+    $('#ZDAEH_S').val(data.ZDAEH_S);
+    $('#ZEMCWK_O').val(data.ZEMCWK_O);
+
+    $('#ZTOICH_O').val(data.ZTOICH_O);
+    $('#ZTOMOH_O').val(data.ZTOMOH_O);
+    $('#ZDAEH_O').val(data.ZDAEH_O);
+    $('#ZDAEH_DAY_O').val(data.ZDAEH_DAY_O);
+    $('#ZEMCWK_C').val(data.ZEMCWK_C);
+    $('#ZTOICH_C').val(data.ZTOICH_C);
+    $('#ZTOMOH_C').val(data.ZTOMOH_C);
+    $('#ZDAEH_C').val(data.ZDAEH_C);
+
+    //화면설정
+    $('#SP_BEDA').text(fn_formatDay(data.WKBEGDA, "-") + "~" + fn_formatDay(data.WKENDDA, "-"));
+    $('#SP_ZRLOVRWKHR').text(fn_formatTime(data.ZRLOVRWKHR));
+//  $('#SP_ZRESTWKHR').text(fn_formatTime(data.ZRESTWKHR));
+// 실근로시간 주석 20190525. 임재하.
+    $('#SP_ZTOTWKHR').text(fn_formatTime(data.ZTOTWKHR));
+
+    var aText = data.ATEXT;
+    //if(aText.length > 2) aText = aText.substr(0,2);
+
+    $('#SP_WEEK').html(data.ZYOIL);    //요일
+    $('#SP_ATEXT').html(aText);    //비번,휴무
+    $('#SP_KIND').html(data.KIND);      //비번,휴무
+    if('' == data.ATEXT){
+      $('#SP_ATEXT').hide();
+    }else{
+      $('#SP_ATEXT').show();
+    }
+    if('' == data.KIND){
+      $('#SP_KIND').hide();
+    }else{
+      $('#SP_KIND').show();
+    }
+
+    $('#SP_ZPDWK_TM').html('<span class="n-green">'+fn_formatTime(data.ZPDWK_TM)+'</font>'); //의무휴게시간
+
+    if( $('#ZBREAK_TM').val() < data.ZPDWK_TM )
+        $('#SP_ZBREAK_TM').html('<span class="n-red">'+fn_formatTime($('#ZBREAK_TM').val())+'</font>'); //총휴게시간
+    else
+        $('#SP_ZBREAK_TM').html('<span class="n-blue">'+fn_formatTime($('#ZBREAK_TM').val())+'</font>'); //총휴게시간
+
+    $('#SP_ZE_TIME_S').html(fn_formatTime(data.ZE_TIME_S));     //연장시간
+    $('#SP_ZMONEY').html(numberWithCommas(fn_toCurrency(data.ZMONEY)));
+
+    var D_ZTBASE_TM = data.ZTBASE_TM == '000000' ? '' : '<span class="label_cmt red text_bold"><span>해외출장자 기준시간'+fn_formatTime(data.ZTBASE_TM)+'</span></span>';
+    $('#SP_ZTBASE').html(D_ZTBASE_TM);            //해외출장자기준시간
+
+    $('#I_DATUM').val(data.DATUM.substring(0,4)+"-"+data.DATUM.substring(4,6)+"-"+data.DATUM.substring(6,8));
+    $('#I_SEQNR').val(data.SEQNR);
+    $('#I_WKTYPE').val(data.WKTYPE);              //[52시간] 근로형태
+
+    $('#ZBEGTM_H').val((data.ZBEGT).substring(0,2));
+    $('#ZBEGTM_M').val((data.ZBEGT).substring(2,4));
+    $('#ZENDTM_H').val((data.ZENDT).substring(0,2));
+    $('#ZENDTM_M').val((data.ZENDT).substring(2,4));
+    if('X' == data.ZTOMO){
+      $('#ZTOMO').prop("checked",true);
+    }else{
+      $('#ZTOMO').prop("checked",false);
+    }
+
+    $('#ZPBEG1_H').val((data.ZPBEG1).substring(0,2));
+    $('#ZPBEG1_M').val((data.ZPBEG1).substring(2,4));
+    $('#ZPEND1_H').val((data.ZPEND1).substring(0,2));
+    $('#ZPEND1_M').val((data.ZPEND1).substring(2,4));
+
+    if('X' == data.ZPBTM1){
+      $('#ZPBTM1').prop("checked",true);
+    }else{
+      $('#ZPBTM1').prop("checked",false);
+    }
+    if('X' == data.ZPETM1){
+      $('#ZPETM1').prop("checked",true);
+    }else{
+      $('#ZPETM1').prop("checked",false);
+    }
+
+    if(('' != data.ZPBEG2 && '' != data.ZPEND2)
+        && ('000000' != data.ZPBEG2 && '000000' != data.ZPEND2)){
+      fn_addBreakDiv('divZPBEG2','add');
+    }
+    $('#ZPBEG2_H').val((data.ZPBEG2).substring(0,2));
+    $('#ZPBEG2_M').val((data.ZPBEG2).substring(2,4));
+    $('#ZPEND2_H').val((data.ZPEND2).substring(0,2));
+    $('#ZPEND3_M').val((data.ZPEND2).substring(2,4));
+    if('X' == data.ZPBTM2){
+      $('#ZPBTM2').prop("checked",true);
+    }else{
+      $('#ZPBTM2').prop("checked",false);
+    }
+    if('X' == data.ZPETM2){
+      $('#ZPETM2').prop("checked",true);
+    }else{
+      $('#ZPETM2').prop("checked",false);
+    }
+
+    $('#ZPBEG3_H').val((data.ZPBEG3).substring(0,2));
+    $('#ZPBEG3_M').val((data.ZPBEG3).substring(2,4));
+    $('#ZPEND3_H').val((data.ZPEND3).substring(0,2));
+    $('#ZPEND3_M').val((data.ZPEND3).substring(2,4));
+    if('X' == data.ZPBTM3){
+      $('#ZPBTM3').prop("checked",true);
+    }else{
+      $('#ZPBTM3').prop("checked",false);
+    }
+    if('X' == data.ZPETM3){
+      $('#ZPETM3').prop("checked",true);
+    }else{
+      $('#ZPETM3').prop("checked",false);
+    }
+
+    $('#ZPBEG4_H').val((data.ZPBEG4).substring(0,2));
+    $('#ZPBEG4_M').val((data.ZPBEG4).substring(2,4));
+    $('#ZPEND4_H').val((data.ZPEND4).substring(0,2));
+    $('#ZPEND4_M').val((data.ZPEND4).substring(2,4));
+    if('X' == data.ZPBTM4){
+      $('#ZPBTM4').prop("checked",true);
+    }else{
+      $('#ZPBTM4').prop("checked",false);
+    }
+    if('X' == data.ZPETM4){
+      $('#ZPETM4').prop("checked",true);
+    }else{
+      $('#ZPETM4').prop("checked",false);
+    }
+
+    $('#ZPBEG5_H').val((data.ZPBEG5).substring(0,2));
+    $('#ZPBEG5_M').val((data.ZPBEG5).substring(2,4));
+    $('#ZPEND5_H').val((data.ZPEND5).substring(0,2));
+    $('#ZPEND5_M').val((data.ZPEND5).substring(2,4));
+    if('X' == data.ZPBTM5){
+      $('#ZPBTM5').prop("checked",true);
+    }else{
+      $('#ZPBTM5').prop("checked",false);
+    }
+    if('X' == data.ZPETM5){
+      $('#ZPETM5').prop("checked",true);
+    }else{
+      $('#ZPETM5').prop("checked",false);
+    }
+
+    //퇴출
+    if('X' == data.ZTOICH){
+      $("#ZTOICH").prop("checked",true);
+    }else{
+      $("#ZTOICH").prop("checked",false);
+    }
+
+    if('X' == data.ZTOICH_S){
+      //퇴출(화면표기여부)
+      $('#DIV_ZTOICH_S').css("display","inline-block");
+    }else{
+      $('#DIV_ZTOICH_S').css("display","none");
+    }
+
+    if('X' == data.ZTOICH_O){
+      $("#ZTOICH").prop("disabled",false);
+    }else{
+      $("#ZTOICH").prop("disabled",true);
+    }
+
+    //익휴
+    if('X' == data.ZTOMOH){
+      $("#ZTOMOH").prop("checked",true);
+    }else{
+      $("#ZTOMOH").prop("checked",false);
+    }
+    if('X' == data.ZTOMOH_S){
+      //익휴(화면표기여부)
+      $('#DIV_ZTOMOH_S').css("display","inline-block");
+    }else{
+      $('#DIV_ZTOMOH_S').css("display","none");
+    }
+    if('X' == data.ZTOMOH_O){
+      $("#ZTOMOH").prop("disabled",false);
+    }else{
+      $("#ZTOMOH").prop("disabled",true);
+    }
+
+    //대휴
+    if('X' == data.ZDAEH){
+      $("#ZDAEH").prop("checked",true);
+    }else{
+      $("#ZDAEH").prop("checked",false);
+    }
+    if('X' == data.ZDAEH_S){
+      //대휴(화면표기여부)
+      $('#DIV_ZDAEH_S').css("display","inline-block");
+    }else{
+      $('#DIV_ZDAEH_S').css("display","none");
+    }
+    if('X' == data.ZDAEH_O){
+      $("#ZDAEH").prop("disabled",false);
+    }else{
+      $("#ZDAEH").prop("disabled",true);
+    }
+    //대휴일수(화면표기여부)
+    $('#DIV_ZDAEH_DAY').html(data.ZDAEH_DAY); //대휴일수(
+
+    //특별연장근로
+    if('X' == data.ZEMCWK){
+      $("#ZEMCWK").prop("checked",true);
+    }else{
+      $("#ZEMCWK").prop("checked",false);
+    }
+    if('X' == data.ZEMCWK_S){
+      //특별연장근로(화면표기여부)
+      $('#DIV_ZEMCWK_S').css("display","inline-block");
+    }else{
+      $('#DIV_ZEMCWK_S').css("display","none");
+    }
+
+    if('X' == data.ZEMCWK_O){
+      $("#ZEMCWK").prop("disabled",false);
+    }else{
+      $("#ZEMCWK").prop("disabled",true);
+    }
+
+    if(data.ZGUBUN == 'C')
+    {
+        $('#D_ZRLOVRWKHR').css("display","none");
+        $('#D_ZTOTWKHR').css("display","");
+    }else{
+        $('#D_ZRLOVRWKHR').css("display","");
+        $('#D_ZTOTWKHR').css("display","none");
+    }
+
+    chkOverTime = true;
+
+    //I AM 이 있는 경우 셋팅된 값에 따른 금액을 호출하기 위함. 20190507 임재하.
+    if( $('#IS_FIRST').val() == 'Y' ) {
+      $('#IS_FIRST').val('N');
+      $('#I_ZGUBUN').val('M');
+      fn_ZHR_52TM_MOBILE_OVERTIME_CHECK();
+    }
+
+    fn_settimeinputable();
+  }
+
+  function fn_settimeinputable(){
+    //교대, 휴일 일경우 입력을 시간 입력을 금지 한다. 20190610. 임재하.
+    if( $('#I_WKTYPE').val() == 'S2' || $('#I_WKTYPE').val() == 'S5' )
+    {
+      $('#ZBEGTM_H').attr('disabled', true);
+      $('#ZBEGTM_M').attr('disabled', true);
+      $('#ZENDTM_H').attr('disabled', true);
+      $('#ZENDTM_M').attr('disabled', true);
+      $('#ZTOMO').attr('disabled', true);
+    }else{
+      $('#ZBEGTM_H').attr('disabled', false);
+      $('#ZBEGTM_M').attr('disabled', false);
+      $('#ZENDTM_H').attr('disabled', false);
+      $('#ZENDTM_M').attr('disabled', false);
+      $('#ZTOMO').attr('disabled', false);
+    }
+  }
+
+  function fn_validation(){
+    if($('#ZBEGTM_H').val() == '' || $('#ZENDTM_H').val() == '' ){
+       //시작시간 ,종료시간
+      alert("근무시간 확인");
+      $('#ZBEGTM_H').focus();
+      return false;
+    }else if(($('#ZBEGTM').val() > $('#ZENDTM').val()) && ($('input:checkbox[name="ZTOMO"]').is(":checked") == false)){
+      alert("근무시간 익일여부 확인");
+      return false;
+    }else if(($('#ZPBEG1').val() > $('#ZPEND1').val()) && ($('input:checkbox[name="ZPETM1"]').is(":checked") == false)){
+      alert("휴게시간1 익일여부 확인");
+      return false;
+    }else if(!fn_validateBtDup()){
+      return false;
+    }else if(!fn_timeLimit()){
+      return false;
+    }else if(($('#ZTEXT').val()).length == 0 ){
+      alert('업무내용 필수');
+      $('#ZTEXT').focus();
+      return false;
+    }
+    return true;
+  }
+
+  var chkSave = 0;
+  function fn_save(){
+    if( $('#SP_ATEXT').text()=='국외출장' && $('#I_WKTYPE').val()=='N3')
+    {
+        alert('국외출장자는 시차근무를 입력할 수 없습니다.');
+        return;
+    }
+
+    if(fn_validation()){
+      I_GUBUN = 'SAVE';
+      before_fn_ZHR_52TM_MOBILE_OVERTIME_APPR(I_GUBUN);
+    }
+  }
+  function fn_approval(){
+    var msg = "";
+    msg = '상신하시겠습니까?';
+
+    if(confirm(msg)){
+      if(fn_validation()){
+        $('#appr_btn').prop("disabled", true);
+        I_GUBUN = 'APPR';
+        before_fn_ZHR_52TM_MOBILE_OVERTIME_APPR(I_GUBUN);
+      }
+    }
+  }
+
+  var chkGubun = "";
+  //저장,상신 전 체크
+  function before_fn_ZHR_52TM_MOBILE_OVERTIME_APPR(GUBUN){
+      $('#ZTEXT').val( $('#ZTEXT').val().replace(/"/g,'') );
+      //"
+
+       chkGubun = GUBUN;
+
+        var I_ZGUBUN = $('#I_ZGUBUN').val();
+        var I_MODE = $('#I_MODE').val();
+        var I_PERNR = $('#I_PERNR').val();
+        var I_DATUM = $('#I_DATUM').val();
+        var I_SEQNR = $("#I_SEQNR").val();
+        var I_WKTYPE = $("#I_WKTYPE").val();
+
+        if(chkSave == 1) I_MODE = 'M';//수정
+
+        fn_setForm();
+
+        $('#I_DATUM').val($('#I_DATUM').val().replace(/-/g,''));
+        $('#DATUM').val($('#DATUM').val().replace(/-/g,''));
+
+        var ZSHR0131 = fn_stringify(fn_toStructure('reg_form'));
+
+        submit_data = {
+                FUNCTION_NAME : 'ZHR_52TM_MOBILE_OVERTIME_CHECK',
+                I_ZGUBUN    : I_ZGUBUN,   //'': 신규, 'M': 수정
+                I_MODE      : I_MODE,     //'': 신규, 'M': 수정
+                I_PERNR     : I_PERNR,    //사원 번호
+                I_DATUM     : I_DATUM.replace(/-/g,''),    //일자
+                I_SEQNR     : I_SEQNR,    //순번
+                I_WKTYPE    : I_WKTYPE,  //순번
+                I_ISFST     : chkFirst,
+                CS_ZSHR0131 : ZSHR0131
+            };
+        console.log(submit_data);
+
+        onAjaxProc('../ZWEB_COMMON/AJAX_COMMON.HTM', submit_data, fn_callbackBefore_fn_ZHR_52TM_MOBILE_OVERTIME_APPR);
+  }
+  function fn_callbackBefore_fn_ZHR_52TM_MOBILE_OVERTIME_APPR(ret_data)
+  {
+      if(ret_data.E_RETURN.TYPE == 'E'){
+          alert(ret_data.E_RETURN.MESSAGE);
+      }
+      else
+      {
+          fn_ZHR_52TM_MOBILE_OVERTIME_APPR(chkGubun);
+      }
+  }
+
+  //[52시간] Mobile_통상/교대 시간외실비 신청/상신
+  function fn_ZHR_52TM_MOBILE_OVERTIME_APPR(GUBUN){
+
+    var I_MODE = '';
+    var I_PERNR = $('#I_PERNR').val();
+    var I_DATUM = $('#I_DATUM').val().replace(/-/g,'');
+    var DATUM = $('#DATUM').val().replace(/-/g,'');
+    var I_SEQNR = $("#I_SEQNR").val();
+
+    if(chkSave == 1) I_MODE = 'M';//수정
+
+    $('#I_DATUM').val($('#I_DATUM').val().replace(/-/g,''));
+    $('#DATUM').val($('#DATUM').val().replace(/-/g,''));
+
+
+     if($('input:checkbox[name="ZPBTM1"]').prop('checked')) $('#ZPBTM1').val('X');
+     else $('#ZPBTM1').val('');
+     if($('input:checkbox[name="ZPETM1"]').prop('checked')) $('#ZPETM1').val('X');
+     else $('#ZPETM1').val('');
+
+     if($('input:checkbox[name="ZPBTM2"]').prop('checked')) $('#ZPBTM2').val('X');
+     else $('#ZPBTM2').val('');
+     if($('input:checkbox[name="ZPETM2"]').prop('checked')) $('#ZPETM2').val('X');
+     else $('#ZPETM2').val('');
+
+     if($('input:checkbox[name="ZPBTM3"]').prop('checked')) $('#ZPBTM3').val('X');
+     else $('#ZPBTM3').val('');
+     if($('input:checkbox[name="ZPETM3"]').prop('checked')) $('#ZPETM3').val('X');
+     else $('#ZPETM3').val('');
+
+    var ZSHR0131 = fn_stringify(fn_toStructure('reg_form'));
+    if(GUBUN == 'APPR'){
+        GUBUN = 'SAVE';
+        //I_MODE = 'M';   //항상 저장 후 상신
+    }
+    submit_data = {
+            FUNCTION_NAME : 'ZHR_52TM_MOBILE_OVERTIME_APPR',
+            I_MODE      : I_MODE,     //'': 신규, 'M': 수정
+            I_ACTION    : GUBUN,     //'SAVE':저장, 'APPR':결재상신, 'RETR':회수, 'DELE':삭제
+            I_SEQNR     : $('#SEQNR').val(),
+            IS_ZSHR0131 : ZSHR0131
+        };
+
+      onAjaxProc('../ZWEB_COMMON/AJAX_COMMON.HTM', submit_data, fn_callbackZHR_52TM_MOBILE_OVERTIME_APPR);
+  }
+  //callback
+  function fn_callbackZHR_52TM_MOBILE_OVERTIME_APPR(ret_data){
+
+    var str = "";
+    if(ret_data.E_RETURN.TYPE == 'S'){
+
+      fn_setForm();
+
+      $('#I_PERNR').val('Y');
+
+      $('#I_PERNR').val(ret_data.E_PERNR);
+
+      $('#I_DATUM').val(fn_formatDay(ret_data.E_DATUM,'-'));
+      $('#I_SEQNR').val(ret_data.E_SEQNR);
+
+      if('SAVE' == I_GUBUN){
+        I_GUBUN = '';
+        chkSave = 1;
+        alert(ret_data.E_RETURN.MESSAGE);
+        var str = "?PERNR="+paramPERNR+"&SBEGDA="+paramSBEGDA+"&SENDDA="+paramSENDDA;
+        var url = "/sap/bc/bsp/sap/z52_flex_time/ord_ot_list.htm"+str;
+        //$(location).attr('href',url);
+
+        $("#appr_btn").css("display","inline-block");
+        //$("#save_btn").css("display","none");
+
+        $('#SEQNR').val(ret_data.E_SEQNR);
+
+        //fn_ZHR_52TM_MOBILE_OVERTIME_CHECK();
+        window.location = url;
+
+      }else if('APPR' == I_GUBUN){
+        fn_ZHR_52TM_MOBILE_OVERTIME_DETL();
+      }
+    }else{
+      alert(ret_data.E_RETURN.MESSAGE);
+
+      $('#I_DATUM').val(fn_formatDay($('#I_DATUM').val(),'-'));
+      $('#DATUM').val(fn_formatDay($('#DATUM').val(),'-'));
+
+      //fn_ZHR_52TM_MOBILE_OVERTIME_CHECK();
+    }
+  }
+
+  function fn_ZHR_52TM_MOBILE_OVERTIME_DETL(){
+    var I_PERNR = $('#I_PERNR').val();
+    var I_DATUM = $('#I_DATUM').val();
+    var I_SEQNR = $('#I_SEQNR').val();
+
+    submit_data = {
+          FUNCTION_NAME : 'ZHR_52TM_MOBILE_OVERTIME_DETL',
+          I_PERNR     : I_PERNR,    //사원 번호
+          I_DATUM     : I_DATUM.replace(/-/g,''),    //일자
+          I_SEQNR     : I_SEQNR     //순번
+      };
+      onAjaxProc('../ZWEB_COMMON/AJAX_COMMON.HTM', submit_data, fn_callbackZHR_52TM_MOBILE_OVERTIME_DETL);
+  }
+  function fn_callbackZHR_52TM_MOBILE_OVERTIME_DETL(ret_data){
+
+    if(ret_data.E_RETURN.TYPE == 'S'){
+
+      //근무형태
+      $.each(ret_data.LT_WKTP, function(i,v){
+        $("#I_WKTYPE").append('<option value='+ v.DOMVALUE +'>'+ v.DDTEXT +'</option>');
+      });
+
+      var data = ret_data.E_ZSHR0131;
+      $('#PERNR').val(data.PERNR);
+      $('#WKBEGDA').val(data.WKBEGDA);
+      $('#WKENDDA').val(data.WKENDDA);
+      $('#DATUM').val(data.DATUM);
+
+      $('#SEQNR').val(data.SEQNR);
+      $("#I_SEQNR").val(data.SEQNR);
+
+      $('#WKTYPE').val(data.WKTYPE);
+      $('#ZGUBUN').val(data.ZGUBUN);
+      $('#ZYUHYUNG').val(data.ZYUHYUNG);
+      $('#ZYOIL').val(data.ZYOIL);
+
+      $('#ZBEGT').val(data.ZBEGT);
+      $('#ZENDT').val(data.ZENDT);
+      $('#ZPBEG1').val(data.ZPBEG1);
+      $('#ZPEND1').val(data.ZPEND1);
+      $('#ZPBEG2').val(data.ZPBEG2);
+      $('#ZPEND2').val(data.ZPEND2);
+      $('#ZPBEG3').val(data.ZPBEG3);
+      $('#ZPEND3').val(data.ZPEND3);
+      $('#ZPBEG4').val(data.ZPBEG4);
+      $('#ZPEND4').val(data.ZPEND4);
+      $('#ZPBEG5').val(data.ZPBEG5);
+      $('#ZPEND5').val(data.ZPEND5);
+
+      $('#ZTOMO').val(data.ZTOMO);
+      $('#ZPDWK_TM').val(data.ZPDWK_TM);
+      $('#ZTBASE_TM').val(data.ZTBASE_TM);
+      $('#ZOBLWKHR').val(data.ZOBLWKHR);
+      $('#ZPUBHWKHR').val(data.ZPUBHWKHR);
+      $('#ZPOVERWKHR').val(data.ZPOVERWKHR);
+      $('#ZTOTWKHR').val(data.ZTOTWKHR);
+      $('#ZRLWKHR').val(data.ZRLWKHR);
+      $('#ZRLOVRWKHR').val(data.ZRLOVRWKHR);
+      $('#ZRESTWKHR').val(data.ZRESTWKHR);    //연장근로잔여시간
+      $('#ATEXT').val(data.ATEXT);
+      $('#KIND').val(data.KIND);
+      $('#ZE_TIME_S').val(data.ZE_TIME_S);
+
+      $('#ZMONEY').val(data.ZMONEY);
+      $('#ZEMCWK').val(data.ZEMCWK);
+      $('#ZTOICH').val(data.ZTOICH);
+      $('#ZTOMOH').val(data.ZTOMOH);
+      $('#ZTEXT').val(data.ZTEXT);
+      $('#ZCOSA').val(data.ZCOSA);
+      $('#ZCOPE').val(data.ZCOPE);
+      $('#ZCID').val(data.ZCID);
+      $('#ZDAEH').val(data.ZDAEH);
+      $('#ZDAEH_DAY').val(data.ZDAEH_DAY);
+      $('#ZEMCWK_S').val(data.ZEMCWK_S);
+      $('#ZTOICH_S').val(data.ZTOICH_S);
+      $('#ZTOMOH_S').val(data.ZTOMOH_S);
+      $('#ZDAEH_S').val(data.ZDAEH_S);
+      $('#ZEMCWK_O').val(data.ZEMCWK_O);
+
+      $('#ZTOICH_O').val(data.ZTOICH_O);
+      $('#ZTOMOH_O').val(data.ZTOMOH_O);
+      $('#ZDAEH_O').val(data.ZDAEH_O);
+      $('#ZDAEH_DAY_O').val(data.ZDAEH_DAY_O);
+      $('#ZEMCWK_C').val(data.ZEMCWK_C);
+      $('#ZTOICH_C').val(data.ZTOICH_C);
+      $('#ZTOMOH_C').val(data.ZTOMOH_C);
+      $('#ZDAEH_C').val(data.ZDAEH_C);
+
+      fn_ZHR_52TM_MOBILE_OVERTIME_CHANG('APPR');
+    }
+  }
+
+  //저장,상신 전 체크
+  function fn_ZHR_52TM_MOBILE_OVERTIME_CHANG(GUBUN){
+
+    var I_PERNR = $('#I_PERNR').val();
+    var I_DATUM = $('#I_DATUM').val();
+    var I_SEQNR = $("#I_SEQNR").val();
+
+    submit_data = {
+          FUNCTION_NAME : 'ZHR_52TM_MOBILE_OVERTIME_CHANG',
+          I_ACTION    : GUBUN,    //'MODI':변경, 'APPR':결재상신, 'RETR':회수, 'DELE':삭제
+          I_PERNR     : I_PERNR,
+          I_DATUM     : I_DATUM.replace(/-/g,''),
+          I_SEQNR     : I_SEQNR
+      };
+      onAjaxProc('../ZWEB_COMMON/AJAX_COMMON.HTM', submit_data, fn_callbackZHR_52TM_MOBILE_OVERTIME_CHANG);
+  }
+  function fn_callbackZHR_52TM_MOBILE_OVERTIME_CHANG(ret_data){
+
+      if(ret_data.E_RETURN.TYPE == 'S'){
+
+        var I_MODE = '';
+        var I_PERNR = $('#I_PERNR').val();
+        var I_DATUM = $('#I_DATUM').val();
+        var I_SEQNR = $("#I_SEQNR").val();
+
+        fn_setForm();
+
+        $('#I_DATUM').val($('#I_DATUM').val().replace(/-/g,''));
+        $('#DATUM').val($('#DATUM').val().replace(/-/g,''));
+
+        if($('input:checkbox[name="ZPBTM1"]').prop('checked')) $('#ZPBTM1').val('X');
+        else $('#ZPBTM1').val('');
+        if($('input:checkbox[name="ZPETM1"]').prop('checked')) $('#ZPETM1').val('X');
+        else $('#ZPETM1').val('');
+
+        if($('input:checkbox[name="ZPBTM2"]').prop('checked')) $('#ZPBTM2').val('X');
+        else $('#ZPBTM2').val('');
+        if($('input:checkbox[name="ZPETM2"]').prop('checked')) $('#ZPETM2').val('X');
+        else $('#ZPETM2').val('');
+
+        if($('input:checkbox[name="ZPBTM3"]').prop('checked')) $('#ZPBTM3').val('X');
+        else $('#ZPBTM3').val('');
+        if($('input:checkbox[name="ZPETM3"]').prop('checked')) $('#ZPETM3').val('X');
+        else $('#ZPETM3').val('');
+
+        var ZSHR0131 = fn_stringify(fn_toStructure('reg_form'));
+
+        submit_data = {
+                FUNCTION_NAME : 'ZHR_52TM_MOBILE_OVERTIME_APPR',
+                I_MODE      : I_MODE,     //'': 신규, 'M': 수정
+                I_ACTION    : 'APPR',     //'SAVE':저장, 'APPR':결재상신, 'RETR':회수, 'DELE':삭제
+                IS_ZSHR0131 : ZSHR0131
+            };
+          onAjaxProc('../ZWEB_COMMON/AJAX_COMMON.HTM', submit_data, fn_callbackZHR_52TM_MOBILE_OVERTIME_APPR1);
+
+      }else{
+        alert(ret_data.E_RETURN.MESSAGE);
+      }
+  }
+
+  //callback
+  function fn_callbackZHR_52TM_MOBILE_OVERTIME_APPR1(ret_data){
+    I_GUBUN = '';
+    var str = "";
+
+    if(ret_data.E_RETURN.TYPE == 'S'){
+      var str = "?PERNR="+paramPERNR+"&SBEGDA="+paramSBEGDA+"&SENDDA="+paramSENDDA;
+      var url = "/sap/bc/bsp/sap/z52_flex_time/ord_ot_list.htm"+str;
+      $(location).attr('href',url);
+    }else{
+      alert(ret_data.E_RETURN.MESSAGE);
+    }
+  }
+
+
+  <!-- 시간포맷 생성-->
+  function fn_makeForamt(args){
+    var argsF = args.toString();
+    var argsL = argsF.length;
+    var fd = "";
+    if(argsL > 6){
+      alert("format 오류");
+    }else if(argsL < 6){
+      var k = 6 - argsL;
+      for(var i=0; i<k; i++){
+        fd += "0";
+      }
+      args = fd + args;
+    }
+    return args;
+  }
+
+  <!-- 시간 형식-->
+  function fn_formatTime(args){
+    var returnTime = "";
+    if(args.length == 6 || args.length == 4){
+      returnTime = args.substring(0,2) + ":" + args.substring(2,4);
+    }else if(args.length == 5 || args.length == 3){
+      returnTime = args.substring(0,1) + ":" + args.substring(1,3);
+    }else if(args.length == 2){
+      returnTime = "00:" + args.substring(0,2);
+    }else if(args.length == 1){
+      returnTime = "00:0" +args;
+    }
+    return returnTime;
+  }
+
+  <!-- 날짜 형식-->
+  //인자,return 자리수,구분자
+  function fn_formatDay(args, delimeter){
+    var returnDay = "";
+    if(args.length == 4){
+      returnDay = args.substring(0,2) + delimeter + args.substring(2,4);
+    }else if(args.length == 8){
+      returnDay = args.substring(0,4) + delimeter + args.substring(4,6) + delimeter + args.substring(6,8);
+    }else if(args.length == 10){
+      returnDay = args;
+    }else{
+      //alert("yyyymmdd 자리수 확인");
+      returnDay = "0000-00-00";
+    }
+    return returnDay;
+  }
+
+  //display 초기화
+  function fn_disInit(){
+//    fn_addBreakDiv('divZPBEG2','delete');
+//    fn_addBreakDiv('divZPBEG3','delete');
+//    fn_addBreakDiv('divZPBEG4','delete');
+//    fn_addBreakDiv('divZPBEG5','delete');
+
+    $('#ZBEGTM').val('');
+    $('#ZENDTM').val('');
+
+    $('#ZPBEG1').val('');
+    $('#ZPEND1').val('');
+
+    $('#ZPBEG2').val('');
+    $('#ZPEND2').val('');
+
+    $('#ZPBEG3').val('');
+    $('#ZPEND3').val('');
+
+    $('#ZPBEG4').val('');
+    $('#ZPEND4').val('');
+
+    $('#ZPBEG5').val('');
+    $('#ZPEND5').val('');
+
+    /*
+    $('input:checkbox[id="ZTOMO"]').prop("checked",false);
+    $('input:checkbox[id="ZPBTM1"]').prop("checked",false);     //휴게시간 익일여부
+    $('input:checkbox[id="ZPETM1"]').prop("checked",false);     //휴게시간 익일여부
+    */
+  }
+
+  <!-- 휴게시간 display-->
+  function fn_addBreakDiv(args1,args2){
+    /*
+    if($('input:checkbox[name="ZTOMO"]').is(":checked")){
+      $('input:checkbox[id="ZPBTM2"]').prop("disabled",false);     //휴게시간 익일여부
+      $('input:checkbox[id="ZPETM2"]').prop("disabled",false);     //휴게시간 익일여부
+      $('input:checkbox[id="ZPBTM3"]').prop("disabled",false);     //휴게시간 익일여부
+      $('input:checkbox[id="ZPETM3"]').prop("disabled",false);     //휴게시간 익일여부
+      $('input:checkbox[id="ZPBTM4"]').prop("disabled",false);     //휴게시간 익일여부
+      $('input:checkbox[id="ZPETM4"]').prop("disabled",false);     //휴게시간 익일여부
+      $('input:checkbox[id="ZPBTM5"]').prop("disabled",false);     //휴게시간 익일여부
+      $('input:checkbox[id="ZPETM5"]').prop("disabled",false);     //휴게시간 익일여부
+    }else{
+      $('input:checkbox[id="ZPBTM2"]').prop("disabled",true);     //휴게시간 익일여부
+      $('input:checkbox[id="ZPETM2"]').prop("disabled",true);     //휴게시간 익일여부
+      $('input:checkbox[id="ZPBTM3"]').prop("disabled",true);     //휴게시간 익일여부
+      $('input:checkbox[id="ZPETM3"]').prop("disabled",true);     //휴게시간 익일여부
+      $('input:checkbox[id="ZPBTM4"]').prop("disabled",true);     //휴게시간 익일여부
+      $('input:checkbox[id="ZPETM4"]').prop("disabled",true);     //휴게시간 익일여부
+      $('input:checkbox[id="ZPBTM5"]').prop("disabled",true);     //휴게시간 익일여부
+      $('input:checkbox[id="ZPETM5"]').prop("disabled",true);     //휴게시간 익일여부
+    }
+    */
+    $('input:checkbox[id="ZPBTM2"]').prop("checked",false);     //휴게시간 익일여부
+    $('input:checkbox[id="ZPETM2"]').prop("checked",false);     //휴게시간 익일여부
+    $('input:checkbox[id="ZPBTM3"]').prop("checked",false);     //휴게시간 익일여부
+    $('input:checkbox[id="ZPETM3"]').prop("checked",false);     //휴게시간 익일여부
+    $('input:checkbox[id="ZPBTM4"]').prop("checked",false);     //휴게시간 익일여부
+    $('input:checkbox[id="ZPETM4"]').prop("checked",false);     //휴게시간 익일여부
+    $('input:checkbox[id="ZPBTM5"]').prop("checked",false);     //휴게시간 익일여부
+    $('input:checkbox[id="ZPETM5"]').prop("checked",false);     //휴게시간 익일여부
+
+    if('divZPBEG2' == args1){
+      if('add' == args2){
+          $('#divZPBEG2').css("display","block");
+      }else if('delete' == args2){
+        $('#ZPBEG2_H').val("00");
+        $('#ZPBEG2_M').val("00");
+        $('#ZPEND2_H').val("00");
+        $('#ZPEND2_M').val("00");
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+        $('#divZPBEG2').css("display","none");
+      }
+    }else if('divZPBEG3' == args1){
+      if('add' == args2){
+        $('#divZPBEG3').css("display","block");
+      }else if('delete' == args2){
+        $('#ZPBEG3_H').val("00");
+        $('#ZPBEG3_M').val("00");
+        $('#ZPEND3_H').val("00");
+        $('#ZPEND3_M').val("00");
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+        $('#divZPBEG3').css("display","none");
+      }
+    }else if('divZPBEG4' == args1){
+      if('add' == args2){
+        $('#divZPBEG4').css("display","block");
+      }else if('delete' == args2){
+        $('#ZPBEG4_H').val("00");
+        $('#ZPBEG4_M').val("00");
+        $('#ZPEND4_H').val("00");
+        $('#ZPEND4_M').val("00");
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+        $('#divZPBEG4').css("display","none");
+      }
+    }else if('divZPBEG5' == args1){
+      if('add' == args2){
+        $('#divZPBEG5').css("display","block");
+      }else if('delete' == args2){
+        $('#ZPBEG5_H').val("00");
+        $('#ZPBEG5_M').val("00");
+        $('#ZPEND5_H').val("00");
+        $('#ZPEND5_M').val("00");
+        fn_ZHR_52TM_CALC_BREAK_TIME();
+        $('#divZPBEG5').css("display","none");
+      }
+    }
+  }
+
+  function fn_cancel(){
+    var str = "";
+    str = "?SBEGDA="+$('#SBEGDA').val()+"&SENDDA="+$('#SENDDA').val();
+    var url = "ord_ot_list.htm"+str;
+    $(location).attr('href',url);
+  }
+
+  //select box 초기화
+  function fn_ResetSelectBox(formName,objId){
+    // $("form[name='"+formName+  "'] select[name='"+objId+"'] option").not("[value=' ']").remove();
+     $("form[name='"+formName+  "'] select[name='"+objId+"'] option").remove();
+  }
+
+  var chkNum = 0;
+  //reg_form 셋팅
+  function fn_setForm(){
+
+    $('#PERNR').val($('#I_PERNR').val());
+    $('#DATUM').val($('#I_DATUM').val());
+    $('#SEQNR').val($('#I_SEQNR').val());
+    $('#WKTYPE').val($('#I_WKTYPE').val());
+
+    var ZTOMO = $('input:checkbox[name="ZTOMO"]').is(":checked") == true ? "X" : "";
+    $('#ZBEGT').val($('#ZBEGTM_H').val() + $('#ZBEGTM_M').val() + "00");
+    $('#ZENDT').val($('#ZENDTM_H').val() + $('#ZENDTM_M').val() + "00");
+    $('#ZTOMO').val(ZTOMO);	//익일여부
+
+    var ZPBTM1 = $('input:checkbox[name="ZPBTM1"]').is(":checked") == true ? "X" : "";
+    var ZPETM1 = $('input:checkbox[name="ZPETM1"]').is(":checked") == true ? "X" : "";
+    $('#ZPBEG1').val($('#ZPBEG1_H').val() + $('#ZPBEG1_M').val() + "00");
+    $('#ZPEND1').val($('#ZPEND1_H').val() + $('#ZPEND1_M').val() + "00");
+    $('#ZPBTM1').val(ZPBTM1);	//익일여부
+    $('#ZPETM1').val(ZPETM1);	//익일여부
+
+    var ZPBTM2 = $('input:checkbox[name="ZPBTM2"]').is(":checked") == true ? "X" : "";
+    var ZPETM2 = $('input:checkbox[name="ZPETM2"]').is(":checked") == true ? "X" : "";
+    $('#ZPBEG2').val($('#ZPBEG2_H').val() + $('#ZPBEG2_M').val() + "00");
+    $('#ZPEND2').val($('#ZPEND2_H').val() + $('#ZPEND2_M').val() + "00");
+    $('#ZPBTM2').val(ZPBTM2);	//익일여부
+    $('#ZPETM2').val(ZPETM2);	//익일여부
+
+    var ZPBTM3 = $('input:checkbox[name="ZPBTM3"]').is(":checked") == true ? "X" : "";
+    var ZPETM3 = $('input:checkbox[name="ZPETM3"]').is(":checked") == true ? "X" : "";
+    $('#ZPBEG3').val($('#ZPBEG3_H').val() + $('#ZPBEG3_M').val() + "00");
+    $('#ZPEND3').val($('#ZPEND3_H').val() + $('#ZPEND3_M').val() + "00");
+    $('#ZPBTM3').val(ZPBTM3);	//익일여부
+    $('#ZPETM3').val(ZPETM3);	//익일여부
+
+    var ZPBTM4 = $('input:checkbox[name="ZPBTM4"]').is(":checked") == true ? "X" : "";
+    var ZPETM4 = $('input:checkbox[name="ZPETM4"]').is(":checked") == true ? "X" : "";
+    $('#ZPBEG4').val($('#ZPBEG4_H').val() + $('#ZPBEG4_M').val() + "00");
+    $('#ZPEND4').val($('#ZPEND4_H').val() + $('#ZPEND4_M').val() + "00");
+    $('#ZPBTM4').val(ZPBTM4);	//익일여부
+    $('#ZPETM4').val(ZPETM4);	//익일여부
+
+    var ZPBTM5 = $('input:checkbox[name="ZPBTM5"]').is(":checked") == true ? "X" : "";
+    var ZPETM5 = $('input:checkbox[name="ZPETM5"]').is(":checked") == true ? "X" : "";
+    $('#ZPBEG5').val($('#ZPBEG5_H').val() + $('#ZPBEG5_M').val() + "00");
+    $('#ZPEND5').val($('#ZPEND5_H').val() + $('#ZPEND5_M').val() + "00");
+    $('#ZPBTM5').val(ZPBTM5);	//익일여부
+    $('#ZPETM5').val(ZPETM5);	//익일여부
+
+    //퇴출
+    var ZTOICH = $('input:checkbox[name="ZTOICH"]').is(":checked") == true ? "X" : "";
+    $('#ZTOICH').val(ZTOICH);
+    //익휴
+    var ZTOMOH = $('input:checkbox[name="ZTOMOH"]').is(":checked") == true ? "X" : "";
+    $('#ZTOMOH').val(ZTOMOH);
+    //대휴
+    var ZDAEH = $('input:checkbox[name="ZDAEH"]').is(":checked") == true ? "X" : "";
+    $('#ZDAEH').val(ZDAEH);
+    //대휴수
+    if('X' != ZDAEH){
+      $('#ZDAEH_DAY').val('0');
+    }
+    //특별연장근로
+    var ZEMCWK = $('input:checkbox[name="ZEMCWK"]').is(":checked") == true ? "X" : "";
+    $('#ZEMCWK').val(ZEMCWK);
+
+    if(chkNum == 0)
+    {
+        $('#ZTOICH').prop("disabled",false);
+        $('#ZTOMOH').prop("disabled",false);
+        $('#ZDAEH').prop("disabled",false);
+        $('#ZEMCWK').prop("disabled",false);
+        chkNum++;
+    }
+  }
+
+  <!-- 의무휴게시간-->
+  function fn_ZHR_52TM_CALC_BREAK_TIME(){
+
+    if(($('#ZBEGTM_H').val() != '' && $('#ZBEGTM_M').val() != '')
+        && ($('#ZENDTM_H').val() != '' && $('#ZENDTM_M').val() != '')){
+
+      var ZBEGT = $('#ZBEGTM_H').val() + $('#ZBEGTM_M').val();
+      var ZENDT = $('#ZENDTM_H').val() + $('#ZENDTM_M').val();
+
+      if( (parseInt(ZBEGT) != "0000") && (parseInt(ZENDT) != "0000") )
+      {
+       if(parseInt(ZBEGT) < parseInt(0000) || parseInt(ZBEGT) > parseInt(2330)){
+        alert('시작시간 입력가능 시간 : 00:00~23:30');
+        return false;
+     	 }else if(parseInt(ZENDT) < parseInt(0030) || parseInt(ZENDT) > parseInt(2400)){
+        alert('종료시간 입력가능 시간 : 00:30~24:00');
+        return false;
+        }
+      }
+
+      $('#ZBEGT').val(ZBEGT+"00");
+      $('#ZENDT').val(ZENDT+"00");
+
+
+      submit_data = {
+                FUNCTION_NAME : 'ZHR_52TM_CALC_BREAK_TIME',
+                I_ZBEGTM    : $('#ZBEGT').val(),   //시작시간
+                I_ZENDTM    : $('#ZENDT').val(),    //종료시간
+                I_ZGUBUN    : $('#ZENDT').val(),    //종료시간
+                I_WKTYPE    : $("#I_WKTYPE").val()  //근무형태
+            };
+            onAjaxProc('../ZWEB_COMMON/AJAX_COMMON.HTM', submit_data, fn_callBackZHR_52TM_CALC_BREAK_TIME);
+    }
+  }
+
+//callback
+  function fn_callBackZHR_52TM_CALC_BREAK_TIME(ret_data){
+
+    if(ret_data.E_RETURN.TYPE != "E"){
+
+     /*  $('#ZPBEG1_H').val((ret_data.E_ZBEGTM).substring(0,2));
+      $('#ZPBEG1_M').val((ret_data.E_ZBEGTM).substring(2,4));
+      $('#ZPEND1_H').val((ret_data.E_ZENDTM).substring(0,2));
+      $('#ZPEND1_M').val((ret_data.E_ZENDTM).substring(2,4)); */
+
+      //의무휴게시간(시차근무 재조회) - ZHR_52TM_CALC_WORK_TIME_DAYILY
+      //$('#ZPDWK_TM').val(ret_data.E_ZPDWK_TM);        //의무휴게시간
+      //$('#SP_ZPDWK_TM').html('<span class="n-green">'+fn_formatTime($('#ZPDWK_TM').val())+'</font>'); //의무휴게시간
+
+      if('N' == $('#CHNG_BREAK').val() )//팝업창 휴게시간 저장버튼 클릭 유무
+          fn_ZHR_52TM_SET_BREAK_TIME();
+      else
+          fn_ZHR_52TM_CALC_WORK_TIME_DAYILY();
+    }
+  }
+
+  <!-- 근무시간에 따른 기본 휴게시간 설정-->
+  function fn_ZHR_52TM_SET_BREAK_TIME(){
+
+      var I_PERNR = $('#I_PERNR').val();
+      var I_ZNAL =  $('#I_DATUM').val();
+      var I_WKTYPE = $('#WKTYPE').val();
+      var I_ZBEGT = $('#ZBEGTM_H').val()+$('#ZBEGTM_M').val()+'00';
+      var I_ZENDT = $('#ZENDTM_H').val()+$('#ZENDTM_M').val()+'00';
+
+      var ZGUBUN = $('#ZGUBUN').val();
+
+
+       submit_data = {
+            FUNCTION_NAME : 'ZHR_52TM_SET_BREAK_TIME',
+            I_PERNR     : I_PERNR,
+            I_ZNAL      : I_ZNAL.replace(/-/g,''),
+            I_ZBEGT     : I_ZBEGT,
+            I_ZENDT     : I_ZENDT,
+            I_ZGUBUN    : ZGUBUN
+        };
+     onAjaxProc('../ZWEB_COMMON/AJAX_COMMON.HTM', submit_data, fn_callbackZHR_52TM_SET_BREAK_TIME);
+  }
+  //callback
+  function  fn_callbackZHR_52TM_SET_BREAK_TIME(ret_data){
+
+    if(ret_data.E_RETURN.MESSAGE != ''){
+        alert(ret_data.E_RETURN.MESSAGE);
+    }
+
+    if(ret_data.E_RETURN.TYPE == 'S'){
+        var data = ret_data.CS_ZSHR0131;
+
+        $('#ZPBEG1_H').val((data.ZPBEG1).substring(0,2));
+        $('#ZPBEG1_M').val((data.ZPBEG1).substring(2,4));
+        $('#ZPEND1_H').val((data.ZPEND1).substring(0,2));
+        $('#ZPEND1_M').val((data.ZPEND1).substring(2,4));
+        if('X' == data.ZPBTM1){
+          $('#ZPBTM1').prop("checked",true);
+        }else{
+          $('#ZPBTM1').prop("checked",false);
+        }
+        if('X' == data.ZPETM1){
+          $('#ZPETM1').prop("checked",true);
+        }else{
+          $('#ZPETM1').prop("checked",false);
+        }
+        $('#ZPBEG2_H').val((data.ZPBEG2).substring(0,2));
+        $('#ZPBEG2_M').val((data.ZPBEG2).substring(2,4));
+        $('#ZPEND2_H').val((data.ZPEND2).substring(0,2));
+        $('#ZPEND3_M').val((data.ZPEND2).substring(2,4));
+        if('X' == data.ZPBTM2){
+          $('#ZPBTM2').prop("checked",true);
+        }else{
+          $('#ZPBTM2').prop("checked",false);
+        }
+        if('X' == data.ZPETM2){
+          $('#ZPETM2').prop("checked",true);
+        }else{
+          $('#ZPETM2').prop("checked",false);
+        }
+
+        $('#ZPBEG3_H').val((data.ZPBEG3).substring(0,2));
+        $('#ZPBEG3_M').val((data.ZPBEG3).substring(2,4));
+        $('#ZPEND3_H').val((data.ZPEND3).substring(0,2));
+        $('#ZPEND3_M').val((data.ZPEND3).substring(2,4));
+        if('X' == data.ZPBTM3){
+          $('#ZPBTM3').prop("checked",true);
+        }else{
+          $('#ZPBTM3').prop("checked",false);
+        }
+        if('X' == data.ZPETM3){
+          $('#ZPETM3').prop("checked",true);
+        }else{
+          $('#ZPETM3').prop("checked",false);
+        }
+
+        $('#ZPBEG4_H').val((data.ZPBEG4).substring(0,2));
+        $('#ZPBEG4_M').val((data.ZPBEG4).substring(2,4));
+        $('#ZPEND4_H').val((data.ZPEND4).substring(0,2));
+        $('#ZPEND4_M').val((data.ZPEND4).substring(2,4));
+        if('X' == data.ZPBTM4){
+          $('#ZPBTM4').prop("checked",true);
+        }else{
+          $('#ZPBTM4').prop("checked",false);
+        }
+        if('X' == data.ZPETM4){
+          $('#ZPETM4').prop("checked",true);
+        }else{
+          $('#ZPETM4').prop("checked",false);
+        }
+
+        $('#ZPBEG5_H').val((data.ZPBEG5).substring(0,2));
+        $('#ZPBEG5_M').val((data.ZPBEG5).substring(2,4));
+        $('#ZPEND5_H').val((data.ZPEND5).substring(0,2));
+        $('#ZPEND5_M').val((data.ZPEND5).substring(2,4));
+        if('X' == data.ZPBTM5){
+          $('#ZPBTM5').prop("checked",true);
+        }else{
+          $('#ZPBTM5').prop("checked",false);
+        }
+        if('X' == data.ZPETM5){
+          $('#ZPETM5').prop("checked",true);
+        }else{
+          $('#ZPETM5').prop("checked",false);
+        }
+
+        fn_ZHR_52TM_CALC_WORK_TIME_DAYILY();
+    }
+  }
+
+  <!-- 일일근로시간 계산-->
+  function fn_ZHR_52TM_CALC_WORK_TIME_DAYILY(){
+
+    //근로시간
+    var ZBEGTM_H = $('#ZBEGTM_H').val() == '' ? '00' : $('#ZBEGTM_H').val();    //근무시작시간
+    var ZBEGTM_M = $('#ZBEGTM_M').val();                      //근무시작시간
+    var ZENDTM_H = $('#ZENDTM_H').val() == '' ? '00' : $('#ZENDTM_H').val();    //근무종료시간
+    var ZENDTM_M = $('#ZENDTM_M').val();                      //근무종료시간
+
+    var ZBEGTM = ZBEGTM_H + ZBEGTM_M;
+    var ZENDTM = ZENDTM_H + ZENDTM_M;
+
+    //휴게시간
+    var ZPBEG1_H = $('#ZPBEG1_H').val();
+    var ZPBEG1_M = $('#ZPBEG1_M').val();
+    var ZPEND1_H = $('#ZPEND1_H').val();
+    var ZPEND1_M = $('#ZPEND1_M').val();
+
+    var ZPBEG2_H = $('#ZPBEG2_H').val();
+    var ZPBEG2_M = $('#ZPBEG2_M').val();
+    var ZPEND2_H = $('#ZPEND2_H').val();
+    var ZPEND2_M = $('#ZPEND2_M').val();
+
+    var ZPBEG3_H = $('#ZPBEG3_H').val();
+    var ZPBEG3_M = $('#ZPBEG3_M').val();
+    var ZPEND3_H = $('#ZPEND3_H').val();
+    var ZPEND3_M = $('#ZPEND3_M').val();
+
+    var ZPBEG4_H = $('#ZPBEG4_H').val();
+    var ZPBEG4_M = $('#ZPBEG4_M').val();
+    var ZPEND4_H = $('#ZPEND4_H').val();
+    var ZPEND4_M = $('#ZPEND4_M').val();
+
+    var ZPBEG5_H = $('#ZPBEG5_H').val();
+    var ZPBEG5_M = $('#ZPBEG5_M').val();
+    var ZPEND5_H = $('#ZPEND5_H').val();
+    var ZPEND5_M = $('#ZPEND5_M').val();
+
+    var DATUM = $('#I_DATUM').val();
+    var ZTOMO = $('input:checkbox[name="ZTOMO"]').is(":checked") == true ? "X" : "";      //익일여부
+    var ZPBTM1 = $('input:checkbox[name="ZPBTM1"]').is(":checked") == true ? "X" : "";
+    var ZPETM1 = $('input:checkbox[name="ZPETM1"]').is(":checked") == true ? "X" : "";
+    var ZPBTM2 = $('input:checkbox[name="ZPBTM2"]').is(":checked") == true ? "X" : "";
+    var ZPETM2 = $('input:checkbox[name="ZPETM2"]').is(":checked") == true ? "X" : "";
+    var ZPBTM3 = $('input:checkbox[name="ZPBTM3"]').is(":checked") == true ? "X" : "";
+    var ZPETM3 = $('input:checkbox[name="ZPETM3"]').is(":checked") == true ? "X" : "";
+    var ZPBTM4 = $('input:checkbox[name="ZPBTM4"]').is(":checked") == true ? "X" : "";
+    var ZPETM4 = $('input:checkbox[name="ZPETM4"]').is(":checked") == true ? "X" : "";
+    var ZPBTM5 = $('input:checkbox[name="ZPBTM5"]').is(":checked") == true ? "X" : "";
+    var ZPETM5 = $('input:checkbox[name="ZPETM5"]').is(":checked") == true ? "X" : "";
+
+    fn_timeLimit();
+
+    $('#PERNR').val($('#I_PERNR').val());
+    $('#DATUM').val(DATUM.replace(/-/g,'')) ;                        //일자
+    $('#ZBEGTM').val(ZBEGTM_H+ZBEGTM_M+"00") ;      //
+    $('#ZENDTM').val(ZENDTM_H+ZENDTM_M+"00") ;      //
+    $('#ZTOMO').val(ZTOMO);
+
+    $('#ZPBEG1').val(ZPBEG1_H+ZPBEG1_M+"00") ;      //
+    $('#ZPEND1').val(ZPEND1_H+ZPEND1_M+"00") ;      //
+    $('#ZPBEG2').val(ZPBEG2_H+ZPBEG2_M+"00") ;      //
+    $('#ZPEND2').val(ZPEND2_H+ZPEND2_M+"00") ;      //
+    $('#ZPBEG3').val(ZPBEG3_H+ZPBEG3_M+"00") ;      //
+    $('#ZPEND3').val(ZPEND3_H+ZPEND3_M+"00") ;      //
+    $('#ZPBEG4').val(ZPBEG4_H+ZPBEG4_M+"00") ;      //
+    $('#ZPEND4').val(ZPEND4_H+ZPEND4_M+"00") ;      //
+    $('#ZPBEG5').val(ZPBEG5_H+ZPBEG5_M+"00") ;      //
+    $('#ZPEND5').val(ZPEND5_H+ZPEND5_M+"00") ;      //
+
+    $('#ZPBTM1').val(ZPBTM1);
+    $('#ZPETM1').val(ZPETM1);
+    $('#ZPBTM2').val(ZPBTM2);
+    $('#ZPETM2').val(ZPETM2);
+    $('#ZPBTM3').val(ZPBTM3);
+    $('#ZPETM3').val(ZPETM3);
+    $('#ZPBTM4').val(ZPBTM4);
+    $('#ZPETM4').val(ZPETM4);
+    $('#ZPBTM5').val(ZPBTM5);
+    $('#ZPETM5').val(ZPETM5);
+console.log(fn_toStructure('reg_form'));
+    submit_data = {
+          FUNCTION_NAME : 'ZHR_52TM_CALC_WORK_TIME_DAYILY',
+          IS_DAY      :   fn_stringify(fn_toStructure('reg_form'))    //
+      };
+      onAjaxProc('../ZWEB_COMMON/AJAX_COMMON.HTM', submit_data, fn_callBackZHR_52TM_CALC_WORK_TIME_DAYILY);
+
+  }
+  //callback
+  function fn_callBackZHR_52TM_CALC_WORK_TIME_DAYILY(ret_data){
+
+      var ZRLWK_TM = 0;
+      var ZBREAK_TM = 0;
+
+      if(ret_data != null){
+        ZRLWK_TM = ret_data.E_ZRLWK_TM;
+        ZBREAK_TM = ret_data.E_ZPDWK_TM;
+      }
+
+      $('#ZRLWK_TM').val(ZRLWK_TM);
+      $('#ZBREAK_TM').val(ZBREAK_TM);
+
+      $('#ZPDWK_TM').val(ret_data.E_ZPDWK_D_TM);//의무휴게시간(시차근무 재조회)
+
+      $('#SP_ZPDWK_TM').html('<span class="n-green">'+fn_formatTime(ret_data.E_ZPDWK_D_TM)+'</font>'); //의무휴게시간
+      fn_addBreakTime();    //휴게시간 합계
+  }
+
+  <!-- 휴게시간 추가-->
+  function fn_addBreakTime(){
+    //휴게시간 계산
+    var DATUM = $('#DATUM').val();    //일자
+    var ZPBEG1 = $('#ZPBEG1').val();  //휴게시작시간 1
+    var ZPEND1 = $('#ZPEND1').val();  //휴게종료시간 1
+    var ZPBEG2 = $('#ZPBEG2').val();  //휴게시작시간 2
+    var ZPEND2 = $('#ZPEND2').val();  //휴게종료시간 2
+    var ZPBEG3 = $('#ZPBEG3').val();  //휴게시작시간 3
+    var ZPEND3 = $('#ZPEND3').val();  //휴게종료시간 3
+    var ZPBEG4 = $('#ZPBEG4').val();  //휴게시작시간 4
+    var ZPEND4 = $('#ZPEND4').val();  //휴게종료시간 4
+    var ZPBEG5 = $('#ZPBEG5').val();  //휴게시작시간 5
+    var ZPEND5 = $('#ZPEND5').val();  //휴게종료시간 5
+
+    var ZBREAK1_STR = moment(fn_formatDay(DATUM,'-')+"T"+fn_formatTime(ZPBEG1)).format();
+    var ZBREAK1_END = moment(fn_formatDay(DATUM,'-')+"T"+fn_formatTime(ZPEND1)).format();
+    var ZBREAK2_STR = moment(fn_formatDay(DATUM,'-')+"T"+fn_formatTime(ZPBEG2)).format();
+    var ZBREAK2_END = moment(fn_formatDay(DATUM,'-')+"T"+fn_formatTime(ZPEND2)).format();
+    var ZBREAK3_STR = moment(fn_formatDay(DATUM,'-')+"T"+fn_formatTime(ZPBEG3)).format();
+    var ZBREAK3_END = moment(fn_formatDay(DATUM,'-')+"T"+fn_formatTime(ZPEND3)).format();
+    var ZBREAK4_STR = moment(fn_formatDay(DATUM,'-')+"T"+fn_formatTime(ZPBEG4)).format();
+    var ZBREAK4_END = moment(fn_formatDay(DATUM,'-')+"T"+fn_formatTime(ZPEND4)).format();
+    var ZBREAK5_STR = moment(fn_formatDay(DATUM,'-')+"T"+fn_formatTime(ZPBEG5)).format();
+    var ZBREAK5_END = moment(fn_formatDay(DATUM,'-')+"T"+fn_formatTime(ZPEND5)).format();
+
+    var duration1 = moment.duration(moment(ZBREAK1_END).diff(moment(ZBREAK1_STR)));
+    var diffHour1 = duration1.asHours();
+
+    var duration2 = moment.duration(moment(ZBREAK2_END).diff(moment(ZBREAK2_STR)));
+    var diffHour2 = duration2.asHours();
+
+    var duration3 = moment.duration(moment(ZBREAK3_END).diff(moment(ZBREAK3_STR)));
+    var diffHour3 = duration3.asHours();
+
+    var duration4 = moment.duration(moment(ZBREAK4_END).diff(moment(ZBREAK4_STR)));
+    var diffHour4 = duration4.asHours();
+
+    var duration5 = moment.duration(moment(ZBREAK5_END).diff(moment(ZBREAK5_STR)));
+    var diffHour5 = duration5.asHours();
+
+    var BREAK_H = "";
+    var BREAK_M = "";
+    var ZBREAK_TM = "";
+
+    var TOT_BREAK_TIME = diffHour1 + diffHour2 + diffHour3 + diffHour4 + diffHour5;
+    var TOT_BREAK_TIME_ARR = (TOT_BREAK_TIME.toString()).split(".");
+    var LEN_I = TOT_BREAK_TIME_ARR.length;
+
+    if(LEN_I == 2){
+      BREAK_H = TOT_BREAK_TIME_ARR[0];
+      BREAK_M = TOT_BREAK_TIME_ARR[1]*6;
+      if(parseInt(BREAK_H) >= 10){
+        BREAK_H = BREAK_H;
+      }else if(parseInt(BREAK_H) < 10 || parseInt(BREAK_H) == 0){
+        BREAK_H = "0"+BREAK_H;
+      }
+      if(parseInt(BREAK_M) == 0){
+        BREAK_M = "0"+BREAK_M;
+      }
+
+    }else if(LEN_I == 1){
+      BREAK_H = TOT_BREAK_TIME_ARR[0];
+      if(parseInt(BREAK_H) >= 10){
+        BREAK_H = BREAK_H;
+      }else if(parseInt(BREAK_H) < 10 || parseInt(BREAK_H) == 0 ){
+        BREAK_H = "0"+BREAK_H;
+      }
+      BREAK_M = "00";
+    }
+
+    ZBREAK_TM = BREAK_H + BREAK_M+"00";
+    //$('#ZBREAK_TM').val(ZBREAK_TM);
+
+
+
+    $('#SP_ZPDWK_TM').html('<span class="n-green">'+fn_formatTime($('#ZPDWK_TM').val())+'</span>');    //의무휴게시간
+    //$('#SP_ZBREAK_TM').text(fn_formatTime($('#ZBREAK_TM').val()));  //휴게시간
+
+    if( $('#ZBREAK_TM').val() < $('#ZPDWK_TM').val() )
+        $('#SP_ZBREAK_TM').html('<span class="n-red">'+fn_formatTime($('#ZBREAK_TM').val())+'</font>'); //총휴게시간
+    else
+        $('#SP_ZBREAK_TM').html('<span class="n-blue">'+fn_formatTime($('#ZBREAK_TM').val())+'</font>'); //총휴게시간
+
+    $('#SP_ZRLWK_TM').text(fn_formatTime($('#ZRLWK_TM').val()));    //총근로시간
+
+    if(fn_validateBtDup()){
+      fn_ZHR_52TM_MOBILE_OVERTIME_CHECK();
+    }
+  }
+
+  <!-- 시간포맷 생성-->
+  function fn_makeForamt(args){
+    var argsF = args.toString();
+    var argsL = argsF.length;
+    var fd = "";
+    if(argsL > 6){
+      alert("format 오류");
+    }else if(argsL < 6){
+      var k = 6 - argsL;
+      for(var i=0; i<k; i++){
+        fd += "0";
+      }
+      args = fd + args;
+    }
+    return args;
+  }
+  <!-- 휴게시간 입력 가능기간 -->
+  function fn_getStrdTime(){
+
+    var arrStrdTime = new Array();
+    var DATUM1 = "";      //입력일자
+    var DATUM2 = "";      //입력익일자
+
+    var STD_DATUM1 = "";    //근무기준 시작시간
+    var STD_DATUM2 = "";    //근무기준 종료시간
+    var STD_DATUM3 = "";    //근무종료 입력제한시간
+
+    DATUM1 = $('#I_DATUM').val();
+    DATUM2 = (moment(DATUM1,"YYYYMMDD").add(1,"days")).format("YYYYMMDD");  //익일체크시 일자
+
+    var STD_TIME1 = $('#ZBEGTM_H').val() + ":" + $('#ZBEGTM_M').val();    //근무시작시간
+    var STD_TIME2 = $('#ZENDTM_H').val() + ":" + $('#ZENDTM_M').val();    //근무종료시간
+
+    STD_DATUM1 = fn_formatDay(DATUM1,"-")+"T"+STD_TIME1+":00Z";
+    STD_DATUM1 = moment(STD_DATUM1,"YYYY-MM-DDTHH:mm:ss").format("YYYY-MM-DDTHH:mm:ss");
+
+    if($('input:checkbox[name="ZTOMO"]').is(":checked")){
+      STD_DATUM2 = fn_formatDay(DATUM2,"-")+"T"+STD_TIME2+":00Z";
+      STD_DATUM2 = moment(STD_DATUM2,"YYYY-MM-DDTHH:mm:ss").format("YYYY-MM-DDTHH:mm:ss");
+    }else{
+      STD_DATUM2 = fn_formatDay(DATUM1,"-")+"T"+STD_TIME2+":00Z";
+      STD_DATUM2 = moment(STD_DATUM2,"YYYY-MM-DDTHH:mm:ss").format("YYYY-MM-DDTHH:mm:ss");
+    }
+
+    STD_DATUM3 = moment(STD_DATUM1).add(moment.duration(1,'days'));    //근무기준 종료제한 시간
+    STD_DATUM1 = moment(STD_DATUM1).add(moment.duration(30,'minutes'));   //근무기준 시작시간
+    STD_DATUM2 = moment(STD_DATUM2).add(moment.duration(-30,'minutes'));  //근무기준 종료시간
+
+    STD_DATUM1 = moment(STD_DATUM1,"YYYY-MM-DDTHH:mm:ss").format("YYYYMMDDHHmmss");
+    STD_DATUM2 = moment(STD_DATUM2,"YYYY-MM-DDTHH:mm:ss").format("YYYYMMDDHHmmss");
+    STD_DATUM3 = moment(STD_DATUM3,"YYYY-MM-DDTHH:mm:ss").format("YYYYMMDDHHmmss");
+
+    var strdList = sApprList = {};
+    strdList["STD_DATUM1"] = STD_DATUM1;
+    strdList["STD_DATUM2"] = STD_DATUM2;
+    strdList["STD_DATUM3"] = STD_DATUM3;
+    strdList["DATUM1"] = DATUM1;
+    strdList["DATUM2"] = DATUM2;
+    arrStrdTime.push(strdList);
+
+    return arrStrdTime;
+  }
+
+  <!-- 휴게시간 중복 확인 -->
+  function fn_validateBtDup(){
+    var arrStrdTime = fn_getStrdTime();       //근무기준 시간 호출
+    if(arrStrdTime.length == 0){
+      return false;
+    }
+    var STD_DATUM1 = arrStrdTime[0].STD_DATUM1;   //근무기준 시작시간
+    var STD_DATUM2 = arrStrdTime[0].STD_DATUM2;   //근무기준 종료시간
+    var STD_DATUM3 = arrStrdTime[0].STD_DATUM3;
+    var DATUM1 = arrStrdTime[0].DATUM1;
+    var DATUM2 = arrStrdTime[0].DATUM2;
+
+    var ZPBEG1 = $('#ZPBEG1_H').val() + ":" + $('#ZPBEG1_M').val();
+    var ZPEND1 = $('#ZPEND1_H').val() + ":" + $('#ZPEND1_M').val();
+    var ZPBEG2 = $('#ZPBEG2_H').val() + ":" + $('#ZPBEG2_M').val();
+    var ZPEND2 = $('#ZPEND2_H').val() + ":" + $('#ZPEND2_M').val();
+    var ZPBEG3 = $('#ZPBEG3_H').val() + ":" + $('#ZPBEG3_M').val();
+    var ZPEND3 = $('#ZPEND3_H').val() + ":" + $('#ZPEND3_M').val();
+    var ZPBEG4 = $('#ZPBEG4_H').val() + ":" + $('#ZPBEG4_M').val();
+    var ZPEND4 = $('#ZPEND4_H').val() + ":" + $('#ZPEND4_M').val();
+    var ZPBEG5 = $('#ZPBEG5_H').val() + ":" + $('#ZPBEG5_M').val();
+    var ZPEND5 = $('#ZPEND5_H').val() + ":" + $('#ZPEND5_M').val();
+
+    //휴게 1
+    if($('input:checkbox[name="ZPBTM1"]').is(":checked")){
+      ZPBEG1 = fn_formatDay(DATUM2,"-") +"T"+ZPBEG1+":00Z";
+    }else{
+      ZPBEG1 = fn_formatDay(DATUM1,"-") +"T"+ZPBEG1+":00Z";
+    }
+    if($('input:checkbox[name="ZPETM1"]').is(":checked")){
+      ZPEND1 = fn_formatDay(DATUM2,"-") +"T"+ZPEND1+":00Z";
+    }else{
+      ZPEND1 = fn_formatDay(DATUM1,"-") +"T"+ZPEND1+":00Z";
+    }
+
+    // 휴게 2
+    if($('input:checkbox[name="ZPBTM2"]').is(":checked")){
+      ZPBEG2 = fn_formatDay(DATUM2,"-") +"T"+ZPBEG2+":00Z";
+    }else{
+      ZPBEG2 = fn_formatDay(DATUM1,"-") +"T"+ZPBEG2+":00Z";
+    }
+    if($('input:checkbox[name="ZPETM2"]').is(":checked")){
+      ZPEND2 = fn_formatDay(DATUM2,"-") +"T"+ZPEND2+":00Z";
+    }else{
+      ZPEND2 = fn_formatDay(DATUM1,"-") +"T"+ZPEND2+":00Z";
+    }
+
+    // 휴게 3
+    if($('input:checkbox[name="ZPBTM3"]').is(":checked")){
+      ZPBEG3 = fn_formatDay(DATUM2,"-") +"T"+ZPBEG3+":00Z";
+    }else{
+      ZPBEG3 = fn_formatDay(DATUM1,"-") +"T"+ZPBEG3+":00Z";
+    }
+    if($('input:checkbox[name="ZPETM3"]').is(":checked")){
+      ZPEND3 = fn_formatDay(DATUM2,"-") +"T"+ZPEND3+":00Z";
+    }else{
+      ZPEND3 = fn_formatDay(DATUM1,"-") +"T"+ZPEND3+":00Z";
+    }
+
+    // 휴게 4
+    if($('input:checkbox[name="ZPBTM4"]').is(":checked")){
+      ZPBEG4 = fn_formatDay(DATUM2,"-") +"T"+ZPBEG4+":00Z";
+    }else{
+      ZPBEG4 = fn_formatDay(DATUM1,"-") +"T"+ZPBEG4+":00Z";
+    }
+    if($('input:checkbox[name="ZPETM4"]').is(":checked")){
+      ZPEND4 = fn_formatDay(DATUM2,"-") +"T"+ZPEND4+":00Z";
+    }else{
+      ZPEND4 = fn_formatDay(DATUM1,"-") +"T"+ZPEND4+":00Z";
+    }
+
+    // 휴게 5
+    if($('input:checkbox[name="ZPBTM5"]').is(":checked")){
+      ZPBEG5 = fn_formatDay(DATUM2,"-") +"T"+ZPBEG5+":00Z";
+    }else{
+      ZPBEG5 = fn_formatDay(DATUM1,"-") +"T"+ZPBEG5+":00Z";
+    }
+    if($('input:checkbox[name="ZPETM5"]').is(":checked")){
+      ZPEND5 = fn_formatDay(DATUM2,"-") +"T"+ZPEND5+":00Z";
+    }else{
+      ZPEND5 = fn_formatDay(DATUM1,"-") +"T"+ZPEND5+":00Z";
+    }
+
+    ZPBEG1 = moment(ZPBEG1,"YYYY-MM-DDTHH:mm:ss").format("YYYYMMDDHHmmss");
+    ZPEND1 = moment(ZPEND1,"YYYY-MM-DDTHH:mm:ss").format("YYYYMMDDHHmmss");
+    ZPBEG2 = moment(ZPBEG2,"YYYY-MM-DDTHH:mm:ss").format("YYYYMMDDHHmmss");
+    ZPEND2 = moment(ZPEND2,"YYYY-MM-DDTHH:mm:ss").format("YYYYMMDDHHmmss");
+    ZPBEG3 = moment(ZPBEG3,"YYYY-MM-DDTHH:mm:ss").format("YYYYMMDDHHmmss");
+    ZPEND3 = moment(ZPEND3,"YYYY-MM-DDTHH:mm:ss").format("YYYYMMDDHHmmss");
+    ZPBEG4 = moment(ZPBEG4,"YYYY-MM-DDTHH:mm:ss").format("YYYYMMDDHHmmss");
+    ZPEND4 = moment(ZPEND4,"YYYY-MM-DDTHH:mm:ss").format("YYYYMMDDHHmmss");
+    ZPBEG5 = moment(ZPBEG5,"YYYY-MM-DDTHH:mm:ss").format("YYYYMMDDHHmmss");
+    ZPEND5 = moment(ZPEND5,"YYYY-MM-DDTHH:mm:ss").format("YYYYMMDDHHmmss");
+
+    var ZPDWK_TM = $('#ZPDWK_TM').val();    //의무휴게시간
+    var ZRLWK_TM = $('#ZRLWK_TM').val();    //근무시간
+    var ZBREAK_TM = $('#ZBREAK_TM').val();  //휴게시간 합계
+
+    if(parseInt(ZRLWK_TM) < parseInt(ZBREAK_TM)){
+      alert('총휴식시간 이 총근무시간을 넘지 못함');
+      return false;
+    }else if(STD_DATUM2 > STD_DATUM3){
+      alert('휴게시간 포함 근무시간 24시간이 넘을 경우 분리해서 입력하시기 바랍니다.');
+      return false;
+    }
+
+    //기준시간 범위
+    if( ($('#ZPBEG1_H').val() != "00" && $('#ZPBEG1_H').val() != '')
+        && ($('#ZPEND1_H').val() != "00" && $('#ZPEND1_H').val() != '')){
+
+      if(!((ZPBEG1 >= STD_DATUM1 && ZPBEG1 <= STD_DATUM2)
+          && (ZPEND1 >= STD_DATUM1 && ZPEND1 <= STD_DATUM2)
+          && (ZPBEG1 < ZPEND1)))
+      {
+          if(ZPBEG1 >= ZPEND1)
+          {
+            alert('휴게시간 1 확인\n시작시간/종료시간 확인');
+          }
+          else
+          {
+            alert('휴게시간 1 확인\n근무시간을 벗어남');
+          }
+        return false;
+      }
+    }
+
+    if( ($('#ZPBEG2_H').val() != "00" && $('#ZPBEG2_H').val() != '')
+        && ($('#ZPEND2_H').val() != "00" && $('#ZPEND2_H').val() != '')){
+
+      if(!((ZPBEG2 >= STD_DATUM1 && ZPBEG2 <= STD_DATUM2)
+          && (ZPEND2 >= STD_DATUM1 && ZPEND2 <= STD_DATUM2)
+          && (ZPBEG2 < ZPEND2)
+          //&& (ZPBEG2 > ZPBEG1 && ZPBEG2 >= ZPEND1)
+          //&& (ZPEND2 > ZPBEG1 && ZPEND2 > ZPEND1)
+          ))
+      {
+          if(ZPBEG2 >= ZPEND2)
+          {
+            alert('휴게시간 2 확인\n시작시간/종료시간 확인');
+          }
+          else
+          {
+            alert('휴게시간 2 확인\n근무시간을 벗어남');
+          }
+        return false;
+      }
+    }
+
+    if( ($('#ZPBEG3_H').val() != "00" && $('#ZPBEG3_H').val() != '')
+        && ($('#ZPEND3_H').val() != "00" && $('#ZPEND3_H').val() != '')){
+
+      if(!((ZPBEG3 >= STD_DATUM1 && ZPBEG3 <= STD_DATUM2)
+          && (ZPEND3 >= STD_DATUM1 && ZPEND3 <= STD_DATUM2)
+          && (ZPBEG3 < ZPEND3)
+          //&& (ZPBEG3 > ZPBEG2 && ZPBEG3 >= ZPEND2)
+          //&& (ZPEND3 > ZPBEG2 && ZPEND3 > ZPEND2)
+          ))
+       {
+          if(ZPBEG3 >= ZPEND3)
+          {
+            alert('휴게시간 3 확인\n시작시간/종료시간 확인');
+          }
+          else
+          {
+            alert('휴게시간 3 확인\n근무시간을 벗어남');
+          }
+        return false;
+      }
+    }
+
+    if( ($('#ZPBEG4_H').val() != "00" && $('#ZPBEG4_H').val() != '')
+        && ($('#ZPEND4_H').val() != "00" && $('#ZPEND4_H').val() != '')){
+
+      if(!((ZPBEG4 >= STD_DATUM1 && ZPBEG4 <= STD_DATUM2)
+          && (ZPEND4 >= STD_DATUM1 && ZPEND4 <= STD_DATUM2)
+          && (ZPBEG4 < ZPEND4)
+          //&& (ZPBEG4 > ZPBEG3 && ZPBEG4 >= ZPEND3)
+          //&& (ZPEND4 > ZPBEG3 && ZPEND4 > ZPEND3)
+          ))
+      {
+          if(ZPBEG4 >= ZPEND4)
+          {
+            alert('휴게시간 4 확인\n시작시간/종료시간 확인');
+          }
+          else
+          {
+            alert('휴게시간 4 확인\n근무시간을 벗어남');
+          }
+        return false;
+      }
+    }
+
+    if( ($('#ZPBEG5_H').val() != "00" && $('#ZPBEG5_H').val() != '')
+        && ($('#ZPEND5_H').val() != "00" && $('#ZPEND5_H').val() != '')){
+
+      if(!((ZPBEG5 >= STD_DATUM1 && ZPBEG5 <= STD_DATUM2)
+          && (ZPEND5 >= STD_DATUM1 && ZPEND5 <= STD_DATUM2)
+          && (ZPBEG5 < ZPEND5)
+          //&& (ZPBEG5 > ZPBEG4 && ZPBEG5 >= ZPEND4)
+          //&& (ZPEND5 > ZPBEG4 && ZPEND5 > ZPEND4)
+          ))
+      {
+          if(ZPBEG5 >= ZPEND5)
+          {
+            alert('휴게시간 5 확인\n시작시간/종료시간 확인');
+          }
+          else
+          {
+            alert('휴게시간 5 확인\n근무시간을 벗어남');
+          }
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  //로그인정보
+  function fn_ZWEB_COMMON_GET_LOGIN_INFO(){
+
+    submit_data = {
+          //FUNCTION_NAME: 'ZFBT_GET_MYINFO'
+        FUNCTION_NAME : 'ZWEB_COMMON_GET_LOGIN_INFO'
+      };
+      onAjaxProc('../ZWEB_COMMON/AJAX_COMMON.HTM', submit_data, fn_callBackZWEB_COMMON_GET_LOGIN_INFO);
+  }
+  //callback
+  function fn_callBackZWEB_COMMON_GET_LOGIN_INFO(ret_data){
+
+    var str = "";
+    /*
+    E_DEPT_CODE:""
+    E_DEPT_NAME:""
+    E_DEPT_SHORT_NAME:"ERPHR3"
+    E_EMAIL:""
+    E_ENGLISH_FIRST_NAME:""
+    E_ENGLISH_LAST_NAME:""
+    E_EXT:""
+    E_ID:"ERPHR3"
+    E_JIKGEUP_NAME:""
+    E_JIKWI_NAME:""
+    E_MOBILE_PHONE:""
+    E_NAME:"ERPHR3"
+    E_WEBGUI_ONLY:""
+    */
+    $('#I_PERNR').val(ret_data.E_ID);
+    //$('#I_PERNR').val('00015891');
+    if ((ret_data.E_ID).substring(0,5) == 'ERPHR' ){
+      //$('#I_PERNR').val('00030936');
+      //$('#I_PERNR').val('00030073');
+      //$('#I_PERNR').val('00030894');
+      $('#I_PERNR').val('00030592');
+
+      //$('#I_PERNR').val('00016409');
+      //$('#I_PERNR').val('00031524');
+      //$('#I_PERNR').val('00031535');
+    }
+
+    fn_init();
+  }
+
+  function fn_ename_close()
+  {
+      $('#ename_layer').remove();
+  }
+
+  <!-- 결재자정보조회-->
+  function fn_ZEP_SEARCH_ENAME(){
+    var contents = lfn_getEnameLayerHtml();
+
+    createLayer({
+        id:'ename_layer'
+        ,width:'100%'
+        ,height:'300px'
+        ,html:contents
+        ,show:true
+      });
+
+    $("#I_PARAM").val($('#ZCOPE').val());
+
+    //결재자 엔터처리
+    $("#I_PARAM").keydown(function(e){
+        if(e.keyCode == 13){
+            fn_ZEP_SEARCH_ENAME1();
+        }
+    });
+
+    if( '' == $("#I_PARAM").val() )
+    {
+        //alert('결재자 명을 입력 하세요.');
+        $("#I_PARAM").focus();
+        return;
+    }
+
+    submit_data = {
+              FUNCTION_NAME : 'ZEP_SEARCH_ENAME',
+              I_GUBUN     : '1',
+              I_PARAM     : $("#I_PARAM").val()
+          };
+          onAjaxProc('../ZWEB_COMMON/AJAX_COMMON.HTM', submit_data, fn_setEnameList);
+  }
+  //callback
+  function fn_setEnameList(ret_data){
+
+    var contents = lfn_getEnameLayerHtml();
+    listHtml = '';
+    if(ret_data.ITAB1.length > 0) {
+    listHtml = '<p class="resultnum"><span>'+ ret_data.ITAB1.length +'건</span>이 검색되었습니다.</p>';
+    listHtml += '<div class="popup_aarea">';
+      listHtml += '<dl>';
+
+        $.each(ret_data.ITAB1, function (i, list) {
+          listHtml += "<dd class='popup_abodyl'><a href=\"javascript:fn_setEname('" + list.PERNR + "','" + list.ENAME  + "','" + list.ORGEH +"', '" + list.ORGTX + "', '" + list.JIKWINAME_1 + "');\">"
+                   + list.PERNR + "&nbsp;&nbsp;" + list.ENAME + "&nbsp;&nbsp;" + list.ORGTX + "&nbsp;&nbsp;" + list.JIKWINAME_1 + "</a></dd>";
+        });
+    } else {
+        listHtml += '<div class="popup_aarea">';
+        listHtml += '<dl>';
+        listHtml += "<dd class='popup_abodyl'>검색된 내역이 없습니다.</dd>";
+    }
+    listHtml += '</dl>';
+
+    $("#ename_list").html(listHtml);
+    $("#I_PARAM").focus();
+    document.getElementById('I_PARAM').selectionStart = document.getElementById('I_PARAM').value.length;
+    // 레이어 리사이즈
+    writeLayer({
+      id:"ename_layer"
+    });
+
+    // 결재 검색 X 버튼
+    $('#cancel_btn', contents).css("cursor", "pointer").click(function() {
+      $('#ename_layer').remove();
+    });
+
+    $('#cancel_btn').click(function() {
+      $('#ename_layer').remove();
+    });
+
+    $("#BT_PERNR").buttonMarkup();
+
+    $('#BT_PERNR').click(function() {
+      fn_ZEP_SEARCH_ENAME1();
+    });
+  }
+
+  function fn_ZEP_SEARCH_ENAME1(){
+
+    submit_data = {
+          FUNCTION_NAME : 'ZEP_SEARCH_ENAME',
+          I_GUBUN     : '1',
+          I_PARAM     : $("#I_PARAM").val()
+      };
+      onAjaxProc('../ZWEB_COMMON/AJAX_COMMON.HTM', submit_data, fn_setEnameList1);
+  }
+
+
+  function fn_setEnameList1(ret_data){
+        listHtml = '';
+        if(ret_data.ITAB1.length > 0) {
+
+            listHtml = '<p class="resultnum"><span>'+ ret_data.ITAB1.length +'건</span>이 검색되었습니다.</p>';
+            listHtml += '<div class="popup_aarea">';
+            listHtml += '<dl>';
+
+            $.each(ret_data.ITAB1, function (i, list) {
+                listHtml += "<dd class='popup_abodyl'><a href=\"javascript:fn_setEname('" + list.PERNR + "','" + list.ENAME  + "','" + list.ORGEH +"', '" + list.ORGTX + "', '" + list.JIKWINAME_1 + "');\">"
+                       + list.PERNR + "&nbsp;&nbsp;" + list.ENAME + "&nbsp;&nbsp;" + list.ORGTX + "&nbsp;&nbsp;" + list.JIKWINAME_1 + "</a></dd>";
+            });
+
+        } else {
+          listHtml += '<div class="popup_aarea">';
+            listHtml += '<dl>';
+            listHtml += "<dd class='popup_abodyl'>검색된 내역이 없습니다.</dd>";
+        }
+            listHtml += '</dl>';
+
+        $("#ename_list").html(listHtml);
+
+        // 레이어 리사이즈
+        writeLayer({
+        id:"ename_layer"
+        });
+  }
+
+  function fn_setEname(PERNR, ENAME, ORGEH, ORGTX, JIKWINAME_1){
+
+    // 결재자 추가시 체크
+    submit_data = {
+      FUNCTION_NAME : 'ZMOBILE_OVERTIME_APPROR_CHECK',
+      I_PERNR     : $('#I_PERNR').val(),          //[시간외] 신청자 사원 번호
+      I_ZNAL      : moment().format('YYYYMMDD'),  //[시간외] 신청일
+      I_ZCOSA     : PERNR,                        //[시간외] 결재자 사번
+      I_ZCOPE     : ENAME                         //[시간외] 결재자 이름
+    };
+    onAjaxProc('../ZWEB_COMMON/AJAX_COMMON.HTM', submit_data, callBackApprChk);
+  }
+
+  function callBackApprChk(ret_data){
+    if (ret_data.E_RETURN.TYPE == 'S') {
+        $('#ZCOSA').val(ret_data.E_PERSON.PERNR);
+        $('#ZCID').val(ret_data.E_PERSON.T_PERNR);
+        $('#ZCOPE').val(ret_data.E_PERSON.ENAME);
+        $('#ZCO_ORGEH').val(ret_data.E_PERSON.ORGEH);
+        $('#ZCO_ORGTX').val(ret_data.E_PERSON.ORGTX);
+        $('#ZCO_JIKWI').val(ret_data.E_PERSON.JIKWINAME_1);
+        $('#CNAME-CORGEH_TXT').val(ret_data.E_PERSON.ENAME + '  ' + ret_data.E_PERSON.ORGTX + '  ' + ret_data.E_PERSON.JIKWINAME_1);
+
+        $('#ZCOPE').val(ret_data.E_PERSON.ENAME);
+        $('#CORGTX').val(ret_data.E_PERSON.ORGTX+'  '+ret_data.E_PERSON.JIKWINAME_1);
+
+        $('#ename_layer').remove();
+      } else {
+        alert(ret_data.E_RETURN.MESSAGE);
+      }
+  }
+
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  // 숫자만 입력 (편집키사용가능)
+  function onlyNumber(event){
+    event = event || window.event;
+    var keyID = (event.which) ? event.which : event.keyCode;
+    if ( (keyID >= 48 && keyID <= 57) || (keyID >= 96 && keyID <= 105) || keyID == 8 || keyID == 46 || keyID == 37 || keyID == 39 || keyID == 13 || keyID == 9)
+      return;
+    else
+      return false;
+  }
+  // 숫자가 아닌 문자 삭제
+  function removeChar(event) {
+    event = event || window.event;
+    var keyID = (event.which) ? event.which : event.keyCode;
+    if ( keyID == 8 || keyID == 46 || keyID == 37 || keyID == 39 ) {
+      return;
+    }
+    else {
+      event.target.value = event.target.value.replace(/[^0-9]/g, "");
+    }
+  }
+
+  function fn_timeLimit(){
+
+    //근로시간
+    var ZBEGTM_H = $('#ZBEGTM_H').val() == '' ? '00' : $('#ZBEGTM_H').val();    //근무시작시간
+    var ZBEGTM_M = $('#ZBEGTM_M').val();                      //근무시작시간
+    var ZENDTM_H = $('#ZENDTM_H').val() == '' ? '00' : $('#ZENDTM_H').val();    //근무종료시간
+    var ZENDTM_M = $('#ZENDTM_M').val();                      //근무종료시간
+
+    var ZBEGTM = ZBEGTM_H + ZBEGTM_M;
+    var ZENDTM = ZENDTM_H + ZENDTM_M;
+
+    //휴게시간
+    var ZPBEG1_H = $('#ZPBEG1_H').val();
+    var ZPBEG1_M = $('#ZPBEG1_M').val();
+    var ZPEND1_H = $('#ZPEND1_H').val();
+    var ZPEND1_M = $('#ZPEND1_M').val();
+    var ZPBEG2_H = $('#ZPBEG2_H').val();
+    var ZPBEG2_M = $('#ZPBEG2_M').val();
+    var ZPEND2_H = $('#ZPEND2_H').val();
+    var ZPEND2_M = $('#ZPEND2_M').val();
+    var ZPBEG3_H = $('#ZPBEG3_H').val();
+    var ZPBEG3_M = $('#ZPBEG3_M').val();
+    var ZPEND3_H = $('#ZPEND3_H').val();
+    var ZPEND3_M = $('#ZPEND3_M').val();
+    var ZPBEG4_H = $('#ZPBEG4_H').val();
+    var ZPBEG4_M = $('#ZPBEG4_M').val();
+    var ZPEND4_H = $('#ZPEND4_H').val();
+    var ZPEND4_M = $('#ZPEND4_M').val();
+    var ZPBEG5_H = $('#ZPBEG5_H').val();
+    var ZPBEG5_M = $('#ZPBEG5_M').val();
+    var ZPEND5_H = $('#ZPEND5_H').val();
+    var ZPEND5_M = $('#ZPEND5_M').val();
+
+    var ZPBEG1 = ZPBEG1_H+ZPBEG1_M;
+    var ZPEND1 = ZPEND1_H+ZPEND1_M;
+    var ZPBEG2 = ZPBEG2_H+ZPBEG2_M;
+    var ZPEND2 = ZPEND2_H+ZPEND2_M;
+    var ZPBEG3 = ZPBEG3_H+ZPBEG3_M;
+    var ZPEND3 = ZPEND3_H+ZPEND3_M;
+    var ZPBEG4 = ZPBEG4_H+ZPBEG4_M;
+    var ZPEND4 = ZPEND4_H+ZPEND4_M;
+    var ZPBEG5 = ZPBEG5_H+ZPBEG5_M;
+    var ZPEND5 = ZPEND5_H+ZPEND5_M;
+
+    if(($('#divZPBEG1').css('display') == 'block') && !(parseInt(ZPBEG1) == parseInt(0000) && parseInt(ZPEND1) == parseInt(0000))){
+      if(parseInt(ZPBEG1) < parseInt(0000) || parseInt(ZPBEG1) > parseInt(2330)){
+        alert('휴게시간1 시작 입력가능 시간 : 00:00~23:30');
+        return false;
+      }else if(parseInt(ZPEND1) < parseInt(0030) || parseInt(ZPEND1) > parseInt(2400)){
+        alert('휴게시간1 종료 입력가능 시간 : 00:30~24:00');
+        return false;
+      }
+    }else if(($('#divZPBEG2').css('display') == 'block') && !(parseInt(ZPBEG2) == parseInt(0000) && parseInt(ZPEND2) == parseInt(0000))){
+      if(parseInt(ZPBEG2) < parseInt(0000) || parseInt(ZPBEG2) > parseInt(2330)){
+        alert('휴게시간2 시작 입력가능 시간 : 00:00~23:30');
+        return false;
+      }else if(parseInt(ZPEND2) < parseInt(0030) || parseInt(ZPEND2) > parseInt(2400)){
+        alert('휴게시간2종료 입력가능 시간 : 00:30~24:00');
+        return false;
+      }
+    }else if(($('#divZPBEG3').css('display') == 'block')  && !(parseInt(ZPBEG3) == parseInt(0000) && parseInt(ZPEND3) == parseInt(0000))){
+      if(parseInt(ZPBEG3) < parseInt(0000) || parseInt(ZPBEG3) > parseInt(2330)){
+        alert('휴게시간3 시작 입력가능 시간 : 00:00~23:30');
+        return false;
+      }else if(parseInt(ZPEND3) < parseInt(0030) || parseInt(ZPEND3) > parseInt(2400)){
+        alert('휴게시간3 종료 입력가능 시간 : 00:30~24:00');
+        return false;
+      }
+    }else if(($('#divZPBEG4').css('display') == 'block') && !(parseInt(ZPBEG4) == parseInt(0000) && parseInt(ZPEND4) == parseInt(0000))){
+      if(parseInt(ZPBEG4) < parseInt(0000) || parseInt(ZPBEG4) > parseInt(2330)){
+        alert('휴게시간4 시작 입력가능 시간 : 00:00~23:30');
+        return false;
+      }else if(parseInt(ZPEND4) < parseInt(0030) || parseInt(ZPEND4) > parseInt(2400)){
+        alert('휴게시간4 종료 입력가능 시간 : 00:30~24:00');
+        return false;
+      }
+    }else if(($('#divZPBEG5').css('display') == 'block') && !(parseInt(ZPBEG5) == parseInt(0000) && parseInt(ZPEND5) == parseInt(0000))){
+      if(parseInt(ZPBEG5) < parseInt(0000) || parseInt(ZPBEG5) > parseInt(2330)){
+        alert('휴게시간5 시작 입력가능 시간 : 00:00~23:30');
+        return false;
+      }else if(parseInt(ZPEND5) < parseInt(0030) || parseInt(ZPEND5) > parseInt(2400)){
+        alert('휴게시간5 종료 입력가능 시간 : 00:30~24:00');
+        return false;
+      }
+    }
+    return true;
+  }
+
+  //결재자 선택 팝업 레이어
+  function lfn_getEnameLayerHtml()
+  {
+    var contents =
+      '<div id="ename_layer" class="wrap contents" style="left: 0px; top: 320px; display: block; position: absolute; z-index: 100;">' +
+      '<div id="ename_layer_CONTAINER" style="width: 100%;display: block; position: absolute; top:0px; background:#fff; border:5px solid #d8dce1;">' +
+      '<div id="ename_layer">' +
+      '<div class="popup_xarea">' +
+      '<dl>' +
+      '<dt><span style="padding-top: 9px; display: inline-block;">결재자 검색</span></dt>' +
+      '<dd class="popup_x"><img id="cancel_btn" id="cancel_btn" src="/sap/bc/bsp/sap/z52_flex_time/images/icon_close.svg" onclick=fn_ename_close()></dd>' +
+      '</dl>' +
+      '</div>' +
+      '<div class="pop_center popup_pad">' +
+      '<div class="popup_larea">' +
+      '<dl>' +
+      '<dd class="popup_bbodyl2" valign="center">' +
+      '<span class="title">결재자</span> ' +
+      '<input name="SCH_ORGTX" class="popup_input" id="I_PARAM" style="width:197px; margin-left: 0px;" type="text" value="" data-role="none">' +
+    '&nbsp;&nbsp;<a class="btnstyle_sm gray" onclick="fn_ZEP_SEARCH_ENAME1();">검색</a><br>'+
+    '<span class="comment">* 검색조건을 입력후 검색해 주세요.</span></dd>' +
+      '</dl>' +
+      '</div>' +
+      '</div>' +
+      '<div id="ename_list" class="pop_center popup_pad">' +
+      '</div>' +
+      '</div>' +
+      '</div>';
+
+    return contents;
+  }
+
+  //특별연장근로동의 Layer보여주기
+  function displayLayer(){
+    $('input:checkbox[id="ZEMCWK"]').prop("checked",false);
+    var x = $("#ZEMCWK").offset();
+    var t = x.top;
+    var l = x.left+65;
+
+    cm.style.top = t+'px';
+   //cm.style.left = l+'px';
+   cm.style.left = '0px';
+
+
+    cm.style.display='';
+  }
+  function hideLayer(){
+    cm.style.display = 'none';
+  }
+
+  function displayLayer1(){
+    var x = 250
+    var t = 375;
+    var l = 260;
+
+    cm1.style.top = t+'px';
+    cm1.style.left = l +'px';
+    cm1.style.display='';
+  }
+  function hideLayer1(){
+    cm1.style.display = 'none';
+  }
+
+  function displayLayer2(){
+    var x = $("#img_cm2").offset();
+    var t = x.top;
+    var l = x.left;
+
+
+    cm2.style.top = (t+30)+'px';
+    cm2.style.left = l+'px';
+    cm2.style.display='';
+  }
+  function hideLayer2(){
+    cm2.style.display = 'none';
+  }
+
+  function displayLayer3(){
+    var x = 150
+    var t = 160;
+    var l = 350;
+
+    cm3.style.top = t+'px';
+    cm3.style.left = l +'px';
+    cm3.style.display='';
+  }
+  function hideLayer3(){
+    cm3.style.display = 'none';
+  }
+
+  function fn_agreement(tmp)
+  {
+      if('Y' == tmp)
+      {
+          $('input:checkbox[id="ZEMCWK"]').prop("checked",true);
+          $('#I_ZGUBUN').val('M');
+          $('#ZEMCWK_B').val('X');
+      }
+      else
+      {
+          $('input:checkbox[id="ZEMCWK"]').prop("checked",false);
+          $('#ZEMCWK_B').val('');
+      }
+      hideLayer();
+      fn_ZHR_52TM_MOBILE_OVERTIME_CHECK();
+  }
+
+  function fn_change()
+  {
+        var url="./ord_ot_time.htm";
+        var w=700;
+        var h=470;
+        window.open(url,'change','width='+w+',height='+h);
+  }
+
+  function fn_iam()
+  {
+        var url="./iam_list.htm";
+        var w=700;
+        var h=400;
+        window.open(url,'iam','width='+w+',height='+h);
+  }
+  //PDF 도움말 down
+  function fnPdfDown(){
+    url = "../../sap/zcommon/notice/ot_app1.pdf";
+    gShowWindow(url,'' ,900, 600, '');
+  }
+  function gShowWindow(strPageURL, strWindowName, lngWidth, lngHeight, strOptions)
+  {
+    var lngTop, lngLeft;
+    if(strOptions == "") {
+        strOptions = "titlebar=yes, toolbar=no, location=no, menubar=no, scrollbars=auto, status=yes, resizable=yes";
+    }
+
+    lngTop = (window.screen.height - lngHeight) / 2;
+    lngLeft = (window.screen.width - lngWidth) / 2;
+    strOptions = strOptions + ", width=" + lngWidth + ", height=" + lngHeight + ", top=" + lngTop + ", left=" + lngLeft;
+    win = window.open( strPageURL,strWindowName,strOptions );
+    win.focus();
+  }
+</script>
+
+
+]]></so2:static><so2:script o="125662" x="3440" y="1" status="enabled"> generate_footer_for_html10(); </so2:script><so2:static o="125697" x="3440" y="36">
+</so2:static></so2:page>

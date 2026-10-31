@@ -1,3 +1,4 @@
+import {mountWorktimeLabs} from '../site/worktime-labs.js';
 import {mountDocumentGraphs} from '../site/document-graphs.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -19,7 +20,7 @@ function fixture(hash){
  for(const id of ['sap','export','git','knowledge','codex','diag','maps','feedback'])graphNodes.push({dataset:{node:id},classList:classes(),setAttribute(){}});
  const location={hash,replace(next){this.hash=next;}};
  const document={body:{classList:classes()},querySelector(s){if(s==='#compare-preset'||s==='dialog[open]'||s==='.hero')return null;if(s==='[data-presentation]')return element('presentation');return s.startsWith('#')?element(s.slice(1)):null;},querySelectorAll(s){return s==='.graph-node'?graphNodes:[];},getElementById:element,addEventListener(type,fn){events[type]=fn;}};
- const context=vm.createContext({...conversations,mountDocumentGraphs,renderSourceDocuments,filterSourceDocuments,countNumber,mountCountUps,renderKnowledge,mountKnowledge,mountPresentation(root){assert.equal(root.id,'presentation');presentationLifecycle.push('mount');return ()=>presentationLifecycle.push('cleanup');},mountHeroMotion(root,options){assert.equal(options?.alreadyTyped,undefined);heroLifecycle.push('mount');return ()=>heroLifecycle.push('cleanup');},document,location,history:{replaceState(a,b,url){location.hash=url;}},localStorage:{getItem(){return null;}},window:{scrollTo(){},addEventListener(type,fn){windowEvents[type]=fn;},isSecureContext:true},navigator:{clipboard:{async writeText(text){copied.push(text);}}},URLSearchParams,fetch:async()=>({ok:true,json:async()=>data}),console,setTimeout,clearTimeout});
+ const context=vm.createContext({...conversations,mountWorktimeLabs,mountDocumentGraphs,renderSourceDocuments,filterSourceDocuments,countNumber,mountCountUps,renderKnowledge,mountKnowledge,mountPresentation(root){assert.equal(root.id,'presentation');presentationLifecycle.push('mount');return ()=>presentationLifecycle.push('cleanup');},mountHeroMotion(root,options){assert.equal(options?.alreadyTyped,undefined);heroLifecycle.push('mount');return ()=>heroLifecycle.push('cleanup');},document,location,history:{replaceState(a,b,url){location.hash=url;}},localStorage:{getItem(){return null;}},window:{scrollTo(){},addEventListener(type,fn){windowEvents[type]=fn;},isSecureContext:true},navigator:{clipboard:{async writeText(text){copied.push(text);}}},URLSearchParams,fetch:async()=>({ok:true,json:async()=>data}),console,setTimeout,clearTimeout});
  return {context,elements,events,windowEvents,location,copied,presentationLifecycle,heroLifecycle};
 }
 function target(attribute,dataset){return {dataset,closest(){return this;},matches(selector){return selector===`[${attribute}]`;}};}
@@ -49,7 +50,7 @@ test('활용사례의 새 맥락은 기존 요소 앞에 추가되고 기존 목
  for(const l of data.lessons){
   f.location.hash='#/learn/'+l.id;f.windowEvents.hashchange();const html=f.elements.get('main').innerHTML;
   assert.ok(html.includes(l.html),l.id+' 기존 본문');
-  if(l.number<11){assert.doesNotMatch(html,/class="prose case-context"/);continue;}
+  if(l.number<11||l.number===17){assert.doesNotMatch(html,/class="prose case-context"/);continue;}
   const start=html.indexOf('class="prose case-context"');assert.ok(start>=0);
   assert.ok(html.indexOf('프로젝트의 네 가지 관점')<start);
   assert.ok(html.indexOf('class="prose lesson-body"')>start);
@@ -181,8 +182,8 @@ test('자료확인 직접 주소는 선택한 프로젝트 MD만 표시한다',a
 });
 
 test('16개 새 순서·4개 홈 묶음·메뉴와 제목이 일치한다',async()=>{
- const titles=['ERP AI 에이전트 전체 그림','ERP 소스 추출하기','GITHUB 연동','로컬 에이전트 구성','업무 맥락 만들기','업무 지도 만들기','업무 스킬 및 회귀','코드 검증 및 적용','에이전트간 협업','ERP 데이터 연동','근로시간 AI 에이전트 구축','ERP WEBGUI 개편','ERP AI 에이전트 포털 구축','ESS 근태시스템 개편','업무일지 타임라인 개발','스마트 ERP 메인화면 개편'];
- assert.deepEqual(data.lessons.map(l=>l.title),titles);assert.deepEqual(data.lessons.map(l=>l.number),Array.from({length:16},(_,i)=>i+1));
+ const titles=['ERP AI 에이전트 전체 그림','ERP 소스 추출하기','GITHUB 연동','로컬 에이전트 구성','업무 맥락 만들기','업무 지도 만들기','업무 스킬 및 회귀','코드 검증 및 적용','에이전트간 협업','ERP 데이터 연동','근로시간 AI 에이전트 구축','ERP WEBGUI 개편','ERP AI 에이전트 포털 구축','ESS 근태시스템 개편','업무일지 타임라인 개발','스마트 ERP 메인화면 개편','근로시간 시스템 고도화'];
+ assert.deepEqual(data.lessons.map(l=>l.title),titles);assert.deepEqual(data.lessons.map(l=>l.number),Array.from({length:17},(_,i)=>i+1));
  const f=fixture('#/home');await vm.runInContext(`(async()=>{${source}})()`,f.context);
  assert.equal((f.elements.get('main').innerHTML.match(/class="path-entry"/g)||[]).length,4);
  assert.doesNotMatch(f.elements.get('sidebar').innerHTML,/워크플로/);
@@ -190,7 +191,7 @@ test('16개 새 순서·4개 홈 묶음·메뉴와 제목이 일치한다',async
 });
 test('활용사례 지도는 독립 박스 여섯 개이며 자체 프로젝트 대화만 선택한다',async()=>{
  const f=fixture('#/map/cases');await vm.runInContext(`(async()=>{${source}})()`,f.context);
- assert.equal((f.elements.get('main').innerHTML.match(/data-node="case-/g)||[]).length,6);assert.doesNotMatch(f.elements.get('main').innerHTML,/class="graph-line/);
+ assert.equal((f.elements.get('main').innerHTML.match(/data-node="case-/g)||[]).length,7);assert.doesNotMatch(f.elements.get('main').innerHTML,/class="graph-line/);
  for(const [id,pid] of [['webgui','kbs-erp-webgui-refactor'],['ess-attendance','kbs-erp-ess-attendance'],['weekly-timeline','kbs-weekly-work-timeline'],['smart-erp','kbs-smart-erp-main']]){
   f.events.click({target:target('data-node',{node:'case-'+id})});assert.ok(f.elements.get('conversation-host').innerHTML.includes(`data-conversation-project="${pid}"`));assert.ok(f.location.hash.startsWith('#/map/cases?'));
  }
@@ -200,4 +201,10 @@ test('핵심 MD 직접 주소에는 프로젝트·용도·다운로드를 제공
  for(const g of data.coreDocuments){const f=fixture('#/library/'+g.id);await vm.runInContext(`(async()=>{${source}})()`,f.context);const html=f.elements.get('main').innerHTML;assert.match(html,/source-document-purpose/);for(const d of g.mdDocuments){assert.ok(html.includes(d.download));assert.ok(html.includes(d.project));}}
  assert.deepEqual(conversations.conversationTabs.map(t=>t[0]),['dialogue','review','assets']);
  for(const p of data.conversations.projects){const html=conversations.conversationWorkspace(data.conversations,{projectId:p.id,tab:'review'});assert.doesNotMatch(html,/선택한 요소와 연결된 에피소드만|교육 해설 — 실제 AI 발화 아님|교육 해설 · 당시 AI 답변과 구분|대화 확보 범위 ·/);}
+});
+
+test('17과정 하단에서 일곱 세부 대화에 각각 접근한다',async()=>{
+ const f=fixture('#/learn/worktime-modernization');await vm.runInContext(`(async()=>{${source}})()`,f.context);
+ const html=f.elements.get('main').innerHTML;
+ for(const p of data.conversations.projects.filter(p=>p.id.startsWith('worktime-')))assert.ok(html.includes(conversations.conversationLink(p.id,p.episodes[0].id)),p.id);
 });

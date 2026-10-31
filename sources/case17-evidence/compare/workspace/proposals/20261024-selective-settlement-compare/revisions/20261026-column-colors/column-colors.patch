@@ -1,0 +1,118 @@
+--- before/ZRPTH411_COMPARE.abap
++++ after/ZRPTH411_COMPARE.abap
+@@ -3,10 +3,18 @@
+ * New read-only report. SAP_BASIS 700. No changes to original objects.
+ * Basis: SRC-17 KSP/300 export 2026-10-22. See accompanying README.md.
+ * 2026-10-26: accept AWART's known empty-result return; preserve other errors.
++* 2026-10-26: color comparison columns by settled/current/new/difference.
+ * No database INSERT/UPDATE/MODIFY/DELETE, COMMIT, SUBMIT or save callback.
+ * Amounts shown in won. Stored period CURR values are multiplied by 100;
+ * BS01-ZD_MONEY is already in the generation routine's external won unit.
+ TYPE-POOLS: slis.
++
++CONSTANTS: gc_col_settled TYPE c LENGTH 4 VALUE 'C410',
++           gc_col_current TYPE c LENGTH 4 VALUE 'C210',
++           gc_col_new TYPE c LENGTH 4 VALUE 'C510',
++           gc_col_diff TYPE c LENGTH 4 VALUE 'C310',
++           gc_color_legend TYPE c LENGTH 79 VALUE
++             '열 색상: 파랑=정산 당시 / 회색=현재 등록 / 녹색=재계산 / 노랑=차액·증감'.
+ 
+ TYPES: ty_money TYPE p LENGTH 12 DECIMALS 2,
+        ty_money_text TYPE c LENGTH 24,
+@@ -802,6 +810,37 @@
+   APPEND ls_cat TO pt_cat.
+ ENDFORM.
+ 
++FORM color_columns USING pv_view TYPE c
++                   CHANGING pt_cat TYPE slis_t_fieldcat_alv.
++  FIELD-SYMBOLS <ls_cat> TYPE slis_fieldcat_alv.
++* S = summary, R = current leave detail, I = settled amount detail.
++* Colors describe the column's role, not success/failure or payment status.
++  LOOP AT pt_cat ASSIGNING <ls_cat>.
++    CASE <ls_cat>-fieldname.
++      WHEN 'OLD_AMT'.
++        IF pv_view = 'R'.
++          <ls_cat>-emphasize = gc_col_current.
++        ELSE.
++          <ls_cat>-emphasize = gc_col_settled.
++        ENDIF.
++      WHEN 'SETTLED_COUNT' OR 'SETTLED_HOURS'.
++* In leave detail, SETTLED_COUNT means cash-settlement status, not before.
++        IF pv_view = 'S'.
++          <ls_cat>-emphasize = gc_col_settled.
++        ENDIF.
++      WHEN 'CURRENT_COUNT' OR 'CURRENT_HOURS' OR 'CURRENT_DAEH_AMT'
++        OR 'OLD_COUNT' OR 'OLD_HOURS'.
++        <ls_cat>-emphasize = gc_col_current.
++      WHEN 'NEW_AMT' OR 'NEW_COUNT' OR 'NEW_COUNT_TEXT' OR 'NEW_HOURS'
++        OR 'NEW_DAEH_AMT'.
++        <ls_cat>-emphasize = gc_col_new.
++      WHEN 'DIFF_AMT' OR 'DELTA_AMT' OR 'COUNT_DIFF' OR 'HOUR_DIFF'
++        OR 'ADDED' OR 'REMOVED' OR 'CHANGED'.
++        <ls_cat>-emphasize = gc_col_diff.
++    ENDCASE.
++  ENDLOOP.
++ENDFORM.
++
+ FORM display_summary.
+   DATA: lt_cat TYPE slis_t_fieldcat_alv,
+         ls_layout TYPE slis_layout_alv,
+@@ -846,6 +885,7 @@
+     CHANGING lt_cat.
+   PERFORM field USING 'DETAIL' '대휴 일자 상세' 16 'X' CHANGING lt_cat.
+   PERFORM field USING 'NOTE' '확인 사항' 80 space CHANGING lt_cat.
++  PERFORM color_columns USING 'S' CHANGING lt_cat.
+   ls_layout-zebra = 'X'.
+   lv_title = gv_title.
+   CALL FUNCTION 'REUSE_ALV_GRID_DISPLAY'
+@@ -877,6 +917,10 @@
+   ls_header-typ = 'S'.
+   ls_header-info = '조회 전용 / 기간 차액은 다음 달 최종 지급액이 아닙니다.'.
+   APPEND ls_header TO lt_header.
++  CLEAR ls_header.
++  ls_header-typ = 'S'.
++  ls_header-info = gc_color_legend.
++  APPEND ls_header TO lt_header.
+   IF gv_denied > 0.
+     CLEAR ls_header.
+     WRITE gv_denied TO lv_count LEFT-JUSTIFIED.
+@@ -885,6 +929,16 @@
+       INTO ls_header-info SEPARATED BY space.
+     APPEND ls_header TO lt_header.
+   ENDIF.
++  CALL FUNCTION 'REUSE_ALV_COMMENTARY_WRITE'
++    EXPORTING it_list_commentary = lt_header.
++ENDFORM.
++
++FORM color_top_of_page.
++  DATA: lt_header TYPE slis_t_listheader,
++        ls_header TYPE slis_listheader.
++  ls_header-typ = 'S'.
++  ls_header-info = gc_color_legend.
++  APPEND ls_header TO lt_header.
+   CALL FUNCTION 'REUSE_ALV_COMMENTARY_WRITE'
+     EXPORTING it_list_commentary = lt_header.
+ ENDFORM.
+@@ -930,9 +984,11 @@
+   PERFORM field USING 'USED_COUNT' '사용표시' 10 space CHANGING lt_cat.
+   PERFORM field USING 'SETTLED_COUNT' '정산표시' 10 space CHANGING lt_cat.
+   PERFORM field USING 'NOTE' '확인 사항' 60 space CHANGING lt_cat.
++  PERFORM color_columns USING 'R' CHANGING lt_cat.
+   ls_layout-zebra = 'X'.
+   CALL FUNCTION 'REUSE_ALV_GRID_DISPLAY'
+     EXPORTING i_callback_program = sy-repid
++      i_callback_top_of_page = 'COLOR_TOP_OF_PAGE'
+       i_grid_title = '대휴 발생일·원천 실적별 전후 비교(현재 원장 기준)'
+       is_layout = ls_layout it_fieldcat = lt_cat i_save = space
+     TABLES t_outtab = lt_rows
+@@ -953,8 +1009,10 @@
+   PERFORM field USING 'OLD_AMT' '정산 당시(원)' 24 space CHANGING lt_cat.
+   PERFORM field USING 'NEW_AMT' '재계산(원)' 24 space CHANGING lt_cat.
+   PERFORM field USING 'DELTA_AMT' '차액(원)' 24 space CHANGING lt_cat.
++  PERFORM color_columns USING 'I' CHANGING lt_cat.
+   CALL FUNCTION 'REUSE_ALV_GRID_DISPLAY'
+     EXPORTING i_callback_program = sy-repid
++      i_callback_top_of_page = 'COLOR_TOP_OF_PAGE'
+       i_grid_title = '기간실비 항목별 비교(기지급 소급분 제외)'
+       it_fieldcat = lt_cat i_save = space
+     TABLES t_outtab = lt_rows

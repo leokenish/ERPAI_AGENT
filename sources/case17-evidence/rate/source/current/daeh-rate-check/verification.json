@@ -1,0 +1,13 @@
+{
+  "source_sha256": "1a7748c30080d632e8c65f666ac0175976f6f92314682eae20dd38f9c359eded",
+  "decimal_cases": 8,
+  "persk_source_policy_cases": 7,
+  "history_boundary_cases": 4,
+  "persk_policy_history_contract": "PASS (local source/reference checks only)",
+  "money_assignment_regression": "PASS: original 231, corrected 23100; JORGEH preserved",
+  "arithmetic_and_source_contract": "PASS",
+  "basis700_condition_regression": "PASS: original rejected, fixed source accepted",
+  "basis700_manual_review": "limited review only; previous PASS did not establish compatibility",
+  "abap_grammar_tool": "NOT_RUN: node/abaplint unavailable in shell",
+  "sap_syntax_execution_ddic_authorization": "NOT_RUN"
+}

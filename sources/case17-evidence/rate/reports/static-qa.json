@@ -1,0 +1,19 @@
+{
+  "javascript_syntax_checks": [
+    {
+      "file": "reports/code-comparison-complete.html",
+      "script": 1,
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "file": "conversation/transcript.html",
+      "script": 0,
+      "status": "PASS",
+      "error": ""
+    }
+  ],
+  "historical_python_ast": "PASS",
+  "visual_browser_review": "NOT_RUN: file protocol denied by browser policy; no workaround attempted",
+  "sap_execution": "NOT_RUN"
+}

@@ -1,7 +1,7 @@
 {
   "title": "ERP AI 에이전트",
-  "version": "1.19.7",
-  "asOf": "2026-10-26",
+  "version": "1.20.0",
+  "asOf": "2026-10-31",
   "groups": [
     "처음 이해하기",
     "내 업무에 적용하기",
@@ -578,6 +578,43 @@
         }
       ],
       "contextFile": "lesson-contexts/16-smart-erp.md"
+    },
+    {
+      "id": "worktime-modernization",
+      "file": "lessons/17-worktime-modernization.md",
+      "number": 17,
+      "displayNumber": "17",
+      "title": "근로시간 시스템 고도화",
+      "summary": "복잡한 근로시간 업무를 이해한 AI 에이전트와 일곱 과제를 해결합니다. 담당자의 업무 판단이 계산 검증·화면 개선·ABAP 코드로 이어진 과정을 살펴봅니다.",
+      "group": "에이전트 활용사례",
+      "category": "에이전트 활용사례",
+      "source": "worktime-modernization",
+      "status": "구현 자료",
+      "tag": "일곱 세부 사례",
+      "goals": [],
+      "asOf": "2026-10-31",
+      "projectBrief": [
+        {
+          "key": "insight",
+          "title": "프로젝트 가치",
+          "text": "업무 담당자의 판단을 코드와 연결하면 복잡한 정산도 근거를 따라 설명할 수 있습니다. AI의 제안을 검토하고 실제 결과로 바로잡는 과정이 조직의 업무 지식이 됩니다."
+        },
+        {
+          "key": "intent",
+          "title": "프로젝트 목표",
+          "text": "근로시간 AI 에이전트를 활용해 계산 점검, 소급 표시, 지급 제외, 등록 취소와 입력 안내의 일곱 과제를 구체적인 코드로 연결합니다."
+        },
+        {
+          "key": "spec",
+          "title": "구현 범위",
+          "text": "SAP ECC 6.0·SAP_BASIS 700의 실제 소스와 업무 기준을 바탕으로 조회 리포트와 수정안을 작성합니다. 시간 계산·저장·정산·표시의 역할을 구분합니다."
+        },
+        {
+          "key": "plan",
+          "title": "진행 과정",
+          "text": "업무 질문에서 출발해 관련 지식과 소스를 확인하고 범위를 정했습니다. 이후 코드 작성, 실행 피드백, 수정 전후 비교를 통해 각 과제를 구체화했습니다."
+        }
+      ]
     }
   ],
   "sources": [
@@ -848,6 +885,29 @@
         "project-md/20261024/spec.md",
         "project-md/20261024/plan.md",
         "project-md/20261024/insight.md"
+      ]
+    },
+    {
+      "id": "worktime-modernization",
+      "title": "근로시간 시스템 고도화",
+      "category": "에이전트 활용사례",
+      "version": "2026-10-31",
+      "status": "구현 자료",
+      "summary": "일곱 가지 근로시간 업무의 실제 대화와 코드 구현 과정",
+      "findings": [],
+      "lessons": [
+        "worktime-agent",
+        "worktime-modernization"
+      ],
+      "path": "sources/worktime-modernization/",
+      "archive": "worktime-modernization_MD.zip",
+      "fileCount": 38,
+      "mdCount": 38,
+      "projectDocuments": [
+        "project-md/intent.md",
+        "project-md/spec.md",
+        "project-md/plan.md",
+        "project-md/insight.md"
       ]
     }
   ],

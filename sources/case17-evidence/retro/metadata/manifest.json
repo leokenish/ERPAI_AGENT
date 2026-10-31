@@ -1,0 +1,202 @@
+[
+  {
+    "path": "README.md",
+    "bytes": 3932,
+    "sha256": "b971f26be94a48e690c10c3d1bef563f29ee7d759f8293e83468788f1ee65cbe"
+  },
+  {
+    "path": "code/00-original/ZHR_52TM_CW_PAYMENT_WKPRD.abap",
+    "bytes": 4793,
+    "sha256": "600b5be48d445133a569a0d970cc6972b7bf48ccb284ad14308892333b110252"
+  },
+  {
+    "path": "code/00-original/ZRPTH411.abap",
+    "bytes": 6724,
+    "sha256": "4e1d1e9e705964101520179b917c0234d44a980991179829298793c1b1728f42"
+  },
+  {
+    "path": "code/00-original/ZRPTH411F01.abap",
+    "bytes": 50943,
+    "sha256": "6788433a0d928fe90db65240c18ec9980802710d7a7dcfa657ab75f8095f3b41"
+  },
+  {
+    "path": "code/00-original/ZRPTH411F02.abap",
+    "bytes": 20736,
+    "sha256": "3b755df3d51241529fc0a1ab1cd5e0a6736829703a5cb57d30b9c030e255b1bc"
+  },
+  {
+    "path": "code/00-original/ZRPTH411TOP.abap",
+    "bytes": 8528,
+    "sha256": "103b7f5fdec0b860456d116165bfab1c7b3cb7c83fbcf17113a3cbf353525c9b"
+  },
+  {
+    "path": "code/01-first-incomplete/ZHR_52TM_CW_PAYMENT_WKPRD.abap",
+    "bytes": 5068,
+    "sha256": "b8d4976160bb7c9edf2c497357e88580cc2a09cca01c00296d6ef07ebf29201d"
+  },
+  {
+    "path": "code/01-first-incomplete/ZRPTH411.abap",
+    "bytes": 6781,
+    "sha256": "b87d9b8935f9a25ae157adc2e9a90f260b5b93999911d28ed6b9773b4020d185"
+  },
+  {
+    "path": "code/01-first-incomplete/ZRPTH411F01.abap",
+    "bytes": 53115,
+    "sha256": "6678cefec083cb39e41ee6ff617624bb8551c112b6a47fdef8a691ab89141900"
+  },
+  {
+    "path": "code/01-first-incomplete/ZRPTH411F02.abap",
+    "bytes": 21498,
+    "sha256": "0318f0e24c2183fff8175d5c35412a0057fab0203c4326ed9d211cb31b455a59"
+  },
+  {
+    "path": "code/01-first-incomplete/ZRPTH411TOP.abap",
+    "bytes": 9287,
+    "sha256": "fd657e362d15991e51f0712c5e19333477b4a3b2963f25a1d29d72b950095c6c"
+  },
+  {
+    "path": "code/02-complete-proposal/ZHR_52TM_CW_PAYMENT_WKPRD.abap",
+    "bytes": 5068,
+    "sha256": "b8d4976160bb7c9edf2c497357e88580cc2a09cca01c00296d6ef07ebf29201d"
+  },
+  {
+    "path": "code/02-complete-proposal/ZRPTH411.abap",
+    "bytes": 6926,
+    "sha256": "7bd9adda8801f211ee050abf3c4b1da78c55a9fa12b34799f532c874458d5c2c"
+  },
+  {
+    "path": "code/02-complete-proposal/ZRPTH411F01.abap",
+    "bytes": 59051,
+    "sha256": "7ac25ad2bd003b65883ff268ef8d1755ea4fa9e1e3bddede3d1255ec1273a29a"
+  },
+  {
+    "path": "code/02-complete-proposal/ZRPTH411F02.abap",
+    "bytes": 21498,
+    "sha256": "0318f0e24c2183fff8175d5c35412a0057fab0203c4326ed9d211cb31b455a59"
+  },
+  {
+    "path": "code/02-complete-proposal/ZRPTH411TOP.abap",
+    "bytes": 9283,
+    "sha256": "290d0c6700596ce293ae5362b19d9d0e3e82c560e2a2b30a330c204dcb01f52b"
+  },
+  {
+    "path": "code/03-applied-additional/ZHR_52TM_CW_PAYMENT_WKPRD.abap",
+    "bytes": 5068,
+    "sha256": "b8d4976160bb7c9edf2c497357e88580cc2a09cca01c00296d6ef07ebf29201d"
+  },
+  {
+    "path": "code/03-applied-additional/ZRPTH411.abap",
+    "bytes": 6926,
+    "sha256": "7bd9adda8801f211ee050abf3c4b1da78c55a9fa12b34799f532c874458d5c2c"
+  },
+  {
+    "path": "code/03-applied-additional/ZRPTH411F01.abap",
+    "bytes": 58987,
+    "sha256": "aa4c0cd145b4dc26eb9c9c32e15e00a770cf53da787ea0dbfa5836381188e428"
+  },
+  {
+    "path": "code/03-applied-additional/ZRPTH411F02.abap",
+    "bytes": 21498,
+    "sha256": "0318f0e24c2183fff8175d5c35412a0057fab0203c4326ed9d211cb31b455a59"
+  },
+  {
+    "path": "code/03-applied-additional/ZRPTH411TOP.abap",
+    "bytes": 9283,
+    "sha256": "290d0c6700596ce293ae5362b19d9d0e3e82c560e2a2b30a330c204dcb01f52b"
+  },
+  {
+    "path": "code/04-latest-proposal/ZHR_52TM_CW_PAYMENT_WKPRD.abap",
+    "bytes": 5068,
+    "sha256": "b8d4976160bb7c9edf2c497357e88580cc2a09cca01c00296d6ef07ebf29201d"
+  },
+  {
+    "path": "code/04-latest-proposal/ZRPTH411.abap",
+    "bytes": 6926,
+    "sha256": "7bd9adda8801f211ee050abf3c4b1da78c55a9fa12b34799f532c874458d5c2c"
+  },
+  {
+    "path": "code/04-latest-proposal/ZRPTH411F01.abap",
+    "bytes": 57535,
+    "sha256": "17e578f32dea5ae992c86324e7d6e727382528b0f2d1c605ef26933cf9e4e260"
+  },
+  {
+    "path": "code/04-latest-proposal/ZRPTH411F02.abap",
+    "bytes": 21667,
+    "sha256": "6effb592a150ee1dec4bedee5e1f3505a0294f30904b2e6e82424e7fd3c7cb38"
+  },
+  {
+    "path": "code/04-latest-proposal/ZRPTH411TOP.abap",
+    "bytes": 9283,
+    "sha256": "290d0c6700596ce293ae5362b19d9d0e3e82c560e2a2b30a330c204dcb01f52b"
+  },
+  {
+    "path": "conversation/messages.json",
+    "bytes": 89073,
+    "sha256": "46aac64f4441bb17eecc40e5a095b9cf0e31668b9465b4044b9cf0da9adc0d70"
+  },
+  {
+    "path": "conversation/transcript.html",
+    "bytes": 88529,
+    "sha256": "0d01cde9db4eb64fb36b2fd824fd44d6fabdd1604f538c2860291d917d8e7dbd"
+  },
+  {
+    "path": "conversation/transcript.md",
+    "bytes": 83276,
+    "sha256": "61ed48e178a197ced3f6850108b6c8bb444455fd0e2a5039d84df226acb7fda6"
+  },
+  {
+    "path": "images/codex-clipboard-3f262c6d-577e-4d5f-8654-3146de37f882.jpg",
+    "bytes": 47709,
+    "sha256": "f86f8662b966ffab0e2eeccad4e5b2ec91ad7dd5bcd8ee8b1add98e9b64c10d4"
+  },
+  {
+    "path": "index.html",
+    "bytes": 5470,
+    "sha256": "95c018e4d191f615107024c2cee161832cd0f083ff90c034ad48ab1f8c6ee383"
+  },
+  {
+    "path": "metadata/final-code-comparison.json",
+    "bytes": 313235,
+    "sha256": "174b31ba8dc8f98dd820e90e32677c7a5417ed5e3e66b9f5a4c08c24f8f456d0"
+  },
+  {
+    "path": "metadata/package.json",
+    "bytes": 2536,
+    "sha256": "8cac32fea59ffc54c593ee208b264d0de58c39be3df8d2a1fba2c921488311d0"
+  },
+  {
+    "path": "metadata/stages.json",
+    "bytes": 721,
+    "sha256": "b7b9e867999cf47ba5898cecfc34ecebed89276edaf9fb267bc79bf204e63911"
+  },
+  {
+    "path": "reference/user-attached-code-comparison-complete.html",
+    "bytes": 286143,
+    "sha256": "8512afcda929a24967c1264a3e1d141c4fd06246661f3811b06bbf0994d1e18d"
+  },
+  {
+    "path": "reports/final-code-report.html",
+    "bytes": 275508,
+    "sha256": "cbb9c3c9817f5c43e2634062d748b330e6fdf2318ebbf8a2116af2595c0ed486"
+  },
+  {
+    "path": "reports/history/01-first-incomplete.html",
+    "bytes": 114989,
+    "sha256": "3a816f8075421892b10c5b3b9b22c435c7467471fbfecee5b8b91b3fec167fd6"
+  },
+  {
+    "path": "reports/history/02-complete-proposal.html",
+    "bytes": 286143,
+    "sha256": "8512afcda929a24967c1264a3e1d141c4fd06246661f3811b06bbf0994d1e18d"
+  },
+  {
+    "path": "reports/history/03-additional-after-first.html",
+    "bytes": 166364,
+    "sha256": "f96a1642618e0b5a95f66666e5e2fbf39504ad649cb24af92f9b7d93cb1ee23c"
+  },
+  {
+    "path": "reports/history/04-latest-display-additional.html",
+    "bytes": 35925,
+    "sha256": "2ddc79a3c206c1b67d10eb6c7c34108a581abd07b9794f389c72da08eddb73ee"
+  }
+]

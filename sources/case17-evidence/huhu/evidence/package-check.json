@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "checked_at_utc": "2026-10-31T10:05:31.367817+00:00",
+  "scope": "Local educational-package validation; no SAP connection or execution",
+  "public_messages_exact": 65,
+  "app_receipt_match": "PASS",
+  "user_uploaded_images_in_this_thread": 0,
+  "source_copies_hash_verified": 68,
+  "protected_export_files_unchanged": 5077,
+  "before_after_line_mappings": 16,
+  "full_candidate_reconstruction": "PASS",
+  "historical_code_blocks": 10,
+  "educational_rate_cases": 5,
+  "educational_split_cases": 2,
+  "svg_png_pairs": 9,
+  "local_html_links": 385,
+  "source_catalog_exact_files": 90,
+  "browser": "PASS",
+  "sap_syntax_check": "NOT_RUN",
+  "sap_runtime_or_activation": "NOT_RUN",
+  "known_limits": [
+    "No user image attachments found in this chat",
+    "Actual production correction causes and transaction persistence are unverified",
+    "F05 final flags/date/expense for combined 3+2 leave require SAP review",
+    "Fixed transcript cutoff is the education-package request; later packaging messages are excluded"
+  ]
+}

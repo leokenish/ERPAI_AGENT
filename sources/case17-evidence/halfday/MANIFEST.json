@@ -1,0 +1,283 @@
+{
+  "created": "2026-10-30",
+  "chat_id": "01a18614-534c-7822-80da-ed2c12362ca8",
+  "message_count": 81,
+  "code_block_count": 21,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2542,
+      "sha256": "055150856d8d7ee9a8db46bc0b10963a8dfe5ad5c005263168e5778a883df74d"
+    },
+    {
+      "path": "code/CHECK_ABSENCE_DATA.patch",
+      "bytes": 8067,
+      "sha256": "dfcb703fe1d6b4dd28acc97e5b87b16682d0d5c200651ff764ba0b69221a7bc0"
+    },
+    {
+      "path": "code/CHECK_ABSENCE_DATA_before.abap",
+      "bytes": 4364,
+      "sha256": "59f62c818fcd0e79a5480f9e78ae8cbaea76aeec1bc8aaf932d464acc81d9723"
+    },
+    {
+      "path": "code/CHECK_ABSENCE_DATA_proposed.abap",
+      "bytes": 4871,
+      "sha256": "aff64458f489f28ab3f007d7333178c6af56a851d039b188335f327fb26e20ec"
+    },
+    {
+      "path": "code/history/index.json",
+      "bytes": 2233,
+      "sha256": "7e2e3d578be6739db90dc88ed33129bb3fd9af2102a5ce8344efadc40ec8a809"
+    },
+    {
+      "path": "code/history/message-024-block-001.abap",
+      "bytes": 2333,
+      "sha256": "33fcd31c7e2b0e9b14d01e7a1caab1929ca307da1d24602e4c28b53b15876687"
+    },
+    {
+      "path": "code/history/message-024-block-002.abap",
+      "bytes": 1232,
+      "sha256": "c8810af788668ef6e541f5f3ee0bce0bc0834e5d65b90d51a9f9c80619588e41"
+    },
+    {
+      "path": "code/history/message-024-block-003.abap",
+      "bytes": 2468,
+      "sha256": "a3a4f4d491e9ac6bc71435146eaa3619783ef32e8d41e93a01863e1dab523057"
+    },
+    {
+      "path": "code/history/message-024-block-004.abap",
+      "bytes": 1607,
+      "sha256": "1f3725c58585e1992aa743ef4a843143a60c648016fb81dac574ba98c93abd35"
+    },
+    {
+      "path": "code/history/message-028-block-005.abap",
+      "bytes": 35,
+      "sha256": "ea17ca136c022e9bf12ac8cc983241d187fa1733ade1eef008205366a5cbeccc"
+    },
+    {
+      "path": "code/history/message-033-block-006.abap",
+      "bytes": 216,
+      "sha256": "81929bc8b3e453f4366930a0c2effec07a174128ac577c19478abd63c61ca972"
+    },
+    {
+      "path": "code/history/message-033-block-007.abap",
+      "bytes": 129,
+      "sha256": "1ee1edc8de81fcd95d71df183b4c51e4d1099d394d2b5d49e67e38e99fb2bbaf"
+    },
+    {
+      "path": "code/history/message-033-block-008.abap",
+      "bytes": 1934,
+      "sha256": "948c4716131a906a5999ed1a3775a563f52dee03b17886ece02f9320ee5d1d43"
+    },
+    {
+      "path": "code/history/message-035-block-009.abap",
+      "bytes": 216,
+      "sha256": "81929bc8b3e453f4366930a0c2effec07a174128ac577c19478abd63c61ca972"
+    },
+    {
+      "path": "code/history/message-035-block-010.abap",
+      "bytes": 146,
+      "sha256": "a5c839fbd04f5845861a91f2816d6e187c33cee5de2d47ca0cd3c0519432f0ff"
+    },
+    {
+      "path": "code/history/message-035-block-011.abap",
+      "bytes": 1934,
+      "sha256": "948c4716131a906a5999ed1a3775a563f52dee03b17886ece02f9320ee5d1d43"
+    },
+    {
+      "path": "code/history/message-040-block-012.abap",
+      "bytes": 43,
+      "sha256": "9287f42704aabed4acc5f2fe6d4fecdcf2d4d2509bc784015700e29c3ef68553"
+    },
+    {
+      "path": "code/history/message-049-block-013.abap",
+      "bytes": 4906,
+      "sha256": "3de6eb804d17a0bc6b229b9fe5c1c90510b813532bac469acb10a5badae5e880"
+    },
+    {
+      "path": "code/history/message-051-block-014.abap",
+      "bytes": 4871,
+      "sha256": "aff64458f489f28ab3f007d7333178c6af56a851d039b188335f327fb26e20ec"
+    },
+    {
+      "path": "code/history/message-054-block-015.abap",
+      "bytes": 4364,
+      "sha256": "59f62c818fcd0e79a5480f9e78ae8cbaea76aeec1bc8aaf932d464acc81d9723"
+    },
+    {
+      "path": "code/history/message-072-block-016.diff",
+      "bytes": 211,
+      "sha256": "722fab2c64df40bd34cec566f1e50d2a80fde4771d08cda54ec6fbbdac4916d4"
+    },
+    {
+      "path": "code/history/message-072-block-017.diff",
+      "bytes": 493,
+      "sha256": "1ad49ce139cda838c06874644b702c3ec7530bbcebc5e0c62a694a55887599c3"
+    },
+    {
+      "path": "code/history/message-072-block-018.diff",
+      "bytes": 1112,
+      "sha256": "29a635640080ab6ea3c91284b3fa8322f5c69f634224815b0590b6a403f00e26"
+    },
+    {
+      "path": "code/history/message-072-block-019.diff",
+      "bytes": 357,
+      "sha256": "814ce8d5acf4c692cd2ac9e586403b4b7f62a38c25be1f890a6484b0bbeee345"
+    },
+    {
+      "path": "code/history/message-077-block-020.abap",
+      "bytes": 179,
+      "sha256": "c5d9dd51b81181d59cfc08d318643b93e0a4480fc4a4d7a443f78b5c8a02e344"
+    },
+    {
+      "path": "code/history/message-077-block-021.txt",
+      "bytes": 294,
+      "sha256": "8aced6e34fd3402730f3bab7e356e03107c2fa98a7dcae3d8015722e99c1f1a1"
+    },
+    {
+      "path": "code/reference/LZHR008_2F03.abap",
+      "bytes": 222272,
+      "sha256": "56315f03face19a05fe2f133a0ce12f74add846d9a92cfa555f6ae31b1853493"
+    },
+    {
+      "path": "code/reference/LZHR008_2F06.abap",
+      "bytes": 61486,
+      "sha256": "763ece2e049a59bd7488a984194937b400ef7e8ee7c7858ac04459196ce0c119"
+    },
+    {
+      "path": "code/reference/MORD_OT_INSERT.htm",
+      "bytes": 136019,
+      "sha256": "7b2fc4592f17abef353f6a973dafb32d4a301098d18e1fed6b5e81935e1a07c7"
+    },
+    {
+      "path": "code/reference/MZH4110F01.abap",
+      "bytes": 75390,
+      "sha256": "c1929b75eb9ce22e4a3dd9a49131e658d33e949c2d3f65eecf1292eabda0903f"
+    },
+    {
+      "path": "code/reference/ORD_OT_INSERT.htm",
+      "bytes": 132415,
+      "sha256": "db98ec0241529d849f9e4b4e31eeb4063321e51f7e5c0b321fca9604ce1525f5"
+    },
+    {
+      "path": "code/reference/SAPLZHR008_2.xml",
+      "bytes": 30176,
+      "sha256": "25dd90632c19aae341eb53ed0a0479b5c140cef73579c925f306f4184e0910e8"
+    },
+    {
+      "path": "code/reference/ZHR_52TM_CHECK_INPUT_DATA.abap",
+      "bytes": 38991,
+      "sha256": "5adf53f05cb2a5502d186108bb8b8a650a56c8459e6c85ae479345dddcb7f208"
+    },
+    {
+      "path": "code/reference/ZHR_52TM_CHECK_INPUT_DATA_M.abap",
+      "bytes": 18070,
+      "sha256": "55cc2b98117cc6c930f754698da17895f16599ef20d46e860efaf8d5be8816a3"
+    },
+    {
+      "path": "code/reference/ZHR_52TM_MOBILE_OVERTIME_CHECK.abap",
+      "bytes": 11503,
+      "sha256": "9f589ea5163a1b540b117b2d39b38c12c6208db15a9ed6ded1315098b6e2f9b6"
+    },
+    {
+      "path": "conversation/messages.json",
+      "bytes": 107361,
+      "sha256": "a2c9d0737ed91d7695f4a6a27e0dc19e2e17258c6cf7726059bb3a3c5d7ad7ec"
+    },
+    {
+      "path": "conversation/transcript.html",
+      "bytes": 109476,
+      "sha256": "a157e8807eee00e3915c79df095e8f554d830899ceb3a439e05cf4aab06b2536"
+    },
+    {
+      "path": "conversation/transcript.md",
+      "bytes": 99892,
+      "sha256": "c43e5740b853ed46ecf36f51ec1285198575de76448d81530dd309f6bf9a9194"
+    },
+    {
+      "path": "documents/AGENTS.md",
+      "bytes": 10371,
+      "sha256": "5a717a336a0e9460ff6ff5dff677bfcbcc9df417760995f442d1b5d287d160bc"
+    },
+    {
+      "path": "documents/FB-20261029-002.md",
+      "bytes": 1517,
+      "sha256": "61c350eb43428ac5738026bd5b24c229edf20adf571a499560ec9c75652c2f66"
+    },
+    {
+      "path": "documents/FB-20261029-004.md",
+      "bytes": 1361,
+      "sha256": "56b1ab957f159eaf0995af14185f709211dd4618e04de8144ec6ddd91168e498"
+    },
+    {
+      "path": "documents/FB-20261030-001.md",
+      "bytes": 1007,
+      "sha256": "3e7887c87d43f060f8b9f19f8f52432447a83d97c62bb9a858b2773e55a83727"
+    },
+    {
+      "path": "documents/FB-20261030-002.md",
+      "bytes": 819,
+      "sha256": "683bf3eb387b7c3dfcbbb1459c9e0cda04147ef4ffff0cc04e92435b405ade40"
+    },
+    {
+      "path": "documents/halfday-notice-review.md",
+      "bytes": 16646,
+      "sha256": "c066ffb09db566f47c4a20de0c6c72f57683ac04d6ebfb81488df33093a7a11c"
+    },
+    {
+      "path": "documents/local-20261022-overtime-attendance.md",
+      "bytes": 5989,
+      "sha256": "fd85d6cdc505f63ddf391342192a02ee6fb46a3797409256792b60067a7e1536"
+    },
+    {
+      "path": "documents/overtime-start-time.md",
+      "bytes": 13221,
+      "sha256": "2024c5596f6d7c87f114865ba27b41035bf1205940c135bd41845ce89bfa5ae6"
+    },
+    {
+      "path": "images/attachment-01.png",
+      "bytes": 726789,
+      "sha256": "7312d0e01c0cf560a7843d4a2aabf868ebd7921f4b051f1207efd683c98cfae9"
+    },
+    {
+      "path": "images/attachment-02.png",
+      "bytes": 271346,
+      "sha256": "a0b7836febe6b638d0934c500f23a758c90ab4d314d6d547ce5d846713290846"
+    },
+    {
+      "path": "images/codex-clipboard-b4a24630-7376-476f-b323-7a00df1b99db.png",
+      "bytes": 780030,
+      "sha256": "fdf2f0800e410a65d096b456704720bb3c938e011b84558d8846b25b6b993c3d"
+    },
+    {
+      "path": "images/codex-clipboard-c3a7b28b-4134-4b4f-96fe-3a0cc97ba06a.png",
+      "bytes": 271346,
+      "sha256": "a0b7836febe6b638d0934c500f23a758c90ab4d314d6d547ce5d846713290846"
+    },
+    {
+      "path": "images/manifest.json",
+      "bytes": 850,
+      "sha256": "2765737f9c28cc8e9bcf4c7d5efc7ae8008019cf8467a52075caef71c98f71ae"
+    },
+    {
+      "path": "index.html",
+      "bytes": 3394,
+      "sha256": "f481d01a9f0fb97ffae4954e4ad8886742356db1e10d411506ee746f4de9b90d"
+    },
+    {
+      "path": "reference/code-comparison-complete.html",
+      "bytes": 286143,
+      "sha256": "8512afcda929a24967c1264a3e1d141c4fd06246661f3811b06bbf0994d1e18d"
+    },
+    {
+      "path": "reports/code-comparison.html",
+      "bytes": 164356,
+      "sha256": "681d141a3a4e2c00a88d16a9254e284b869f8bc756b442477863af6b0628d6bf"
+    },
+    {
+      "path": "VALIDATION.txt",
+      "bytes": 215,
+      "sha256": "3de309b3162e786c2cc5b04918232450c4826996bbebc0e4e443c574c19735de"
+    }
+  ]
+}

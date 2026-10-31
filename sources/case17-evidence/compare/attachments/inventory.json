@@ -1,0 +1,26 @@
+{
+  "attachments": [
+    {
+      "name": "code-comparison-complete.html",
+      "status": "included",
+      "file": "attachments/reference-code-comparison-complete.html",
+      "sha256": "8512afcda929a24967c1264a3e1d141c4fd06246661f3811b06bbf0994d1e18d",
+      "role": "보고서 형식 참고. 안에 든 5개 소스는 이 방에서 구현한 코드로 분류하지 않음."
+    },
+    {
+      "name": "선택근무 정산 전후 변경비교.xlsx",
+      "status": "missing_original",
+      "file": null,
+      "original_path": "/Users/naviolgu/Downloads/선택근무 정산 전후 변경비교.xlsx",
+      "previously_recorded_sha256": "699d918679d38ffa3be5a84747eed2fa40cea4b284f31e62abea719ba3213149",
+      "search_scope": [
+        "original path",
+        "Documents/Downloads/Desktop filenames",
+        "Spotlight filename"
+      ],
+      "note": "분석 당시 대화는 보존. 원본을 복원하거나 새 엑셀로 가장하지 않음."
+    }
+  ],
+  "uploaded_image_count": 0,
+  "image_status": "이 방의 사용자 메시지 전체에서 이미지 첨부 0건. 참고 HTML도 img 태그 0건."
+}

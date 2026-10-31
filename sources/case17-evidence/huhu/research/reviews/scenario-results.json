@@ -1,0 +1,175 @@
+{
+  "scope": "조건부 Python 산술·상태 전이, SAP/ABAP 미실행",
+  "unit": "시간단가 U의 배수; DB/표시 단위 변환 미검증",
+  "guards": [
+    {
+      "source": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap",
+      "line": 5850,
+      "token": "lv_zjorgehamt =  ls_result-zjorgehamt."
+    },
+    {
+      "source": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap",
+      "line": 5780,
+      "token": "MODIFY zhrdaehuamt FROM ls_zhrdaehuamt."
+    },
+    {
+      "source": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap",
+      "line": 166,
+      "token": "datum = ls_zthrbs01-rdate"
+    },
+    {
+      "source": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap",
+      "line": 134,
+      "token": "AT END OF datum."
+    },
+    {
+      "source": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap",
+      "line": 819,
+      "token": "APPEND t_day_time."
+    },
+    {
+      "source": "exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH415F01/source/ZRPTH415F01.abap",
+      "line": 548,
+      "token": "ls_tmp-jorgeh = 0."
+    },
+    {
+      "source": "exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH415F01/source/ZRPTH415F01.abap",
+      "line": 1664,
+      "token": "SET  jorgeh_txt = ''"
+    }
+  ],
+  "sources": {
+    "norm": {
+      "path": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_NORM_OT_PAY/Source code/ZHR_52TM_CALC_NORM_OT_PAY.abap",
+      "sha256": "2d4857ba97b3d161d8521abe34bb3e2c4c298d8238d01171744c5732cea4775c"
+    },
+    "daily": {
+      "path": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap",
+      "sha256": "426e7edcf50c124466d59dfdde120aab0c258662931fd8827dc08baa586cc23d"
+    },
+    "save": {
+      "path": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap",
+      "sha256": "03decc75281958df2e7ae8ca7565c1d39b9f23b0128646d8cac2baafc247e630"
+    },
+    "f03": {
+      "path": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap",
+      "sha256": "56315f03face19a05fe2f133a0ce12f74add846d9a92cfa555f6ae31b1853493"
+    },
+    "f05": {
+      "path": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F05.abap",
+      "sha256": "4f3f0781f414755abd3906cd6e0dce86c7726b5fd01f67aa4a05b741324579ac"
+    },
+    "f06": {
+      "path": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap",
+      "sha256": "763ece2e049a59bd7488a984194937b400ef7e8ee7c7858ac04459196ce0c119"
+    },
+    "settle": {
+      "path": "exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH415F01/source/ZRPTH415F01.abap",
+      "sha256": "e986d6dfb3e60c01b03f42a3ac50b5835b3da392c3a72115b1b5ef960137a39b"
+    }
+  },
+  "cases": [
+    {
+      "id": "M01_joined_one",
+      "observed": "3",
+      "meaning": "합산 필요 5U에 대해 시작일 3U만 회수",
+      "model_check": "PASS"
+    },
+    {
+      "id": "M02_leftover",
+      "observed": {},
+      "meaning": "합산 1건 저장 뒤 다음날 2U 잔존",
+      "model_check": "PASS"
+    },
+    {
+      "id": "M03_second_day_only",
+      "observed": [
+        "0",
+        "12.0"
+      ],
+      "meaning": "일요일 6U 필요; 시작일 0U 회수 후 12U fallback",
+      "model_check": "PASS"
+    },
+    {
+      "id": "M04_two_day_control",
+      "observed": {
+        "0": "5",
+        "1": "5"
+      },
+      "meaning": "날짜당 한 행인 양일 발생은 임시 금액 합계 보존",
+      "model_check": "PASS"
+    },
+    {
+      "id": "M05_same_day_overwrite",
+      "observed": {
+        "0": "2",
+        "1": "6"
+      },
+      "meaning": "토요일 10U가 마지막 2U로 덮어써짐; 최종 저장은 M06 분기도 고려",
+      "model_check": "PASS"
+    },
+    {
+      "id": "M06_unsorted_group",
+      "observed": [
+        0,
+        1,
+        0
+      ],
+      "meaning": "실제 날짜 2개인데 인접 그룹 3개: EQ 2 분기 미진입",
+      "model_check": "PASS"
+    },
+    {
+      "id": "M07_stale_to_single",
+      "observed": "2",
+      "meaning": "단일일 신규 계산 6U를 남은 임시 2U가 대체",
+      "model_check": "PASS"
+    },
+    {
+      "id": "M08_unmapped_fresh",
+      "observed": {
+        "inherited": "8",
+        "fresh": "6",
+        "saved_if_lookup_misses": "8"
+      },
+      "meaning": "재계산 JORGEH 미복사+조회 실패 시 입력에서 상속된 8U 잔존",
+      "model_check": "PASS"
+    },
+    {
+      "id": "M09_cancel_repeat",
+      "observed": [
+        "7.0",
+        "12"
+      ],
+      "meaning": "입력·사용개수 불변, 정상 확정/취소 성공 가정: 총 정산 7U→12U",
+      "model_check": "PASS"
+    },
+    {
+      "id": "M10_staggered_branch",
+      "observed": [
+        [
+          "0",
+          "0"
+        ],
+        "4.0"
+      ],
+      "meaning": "B는 lv_zboth 미설정: JORGEH 미산출·양일 모두 0.5. B 업무 예외 확인 필요",
+      "model_check": "PASS"
+    },
+    {
+      "id": "M11_non_huhu_output",
+      "observed": "6",
+      "meaning": "일반 A 단일 휴일도 계산 출력 J=6U; F06은 휴휴 조건 없이 복사",
+      "model_check": "PASS"
+    },
+    {
+      "id": "M12_first_day_control",
+      "observed": [
+        "0",
+        "6"
+      ],
+      "meaning": "스칼라 마지막값 0U여도 날짜별 회수 6U로 보완됨: 무조건 합산 수정 금지",
+      "model_check": "PASS"
+    }
+  ],
+  "sap_execution": "NOT_RUN"
+}

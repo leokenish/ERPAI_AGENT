@@ -1,0 +1,81 @@
+REPORT zrpth411_compare_test.
+* Optional SAP regression probe for the actual report's pure return gate.
+* No business data reads/writes. Does not execute the report's selection flow.
+* Create as a separate executable program only when running these tests.
+PARAMETERS p_report TYPE sy-repid DEFAULT 'ZRPTH411_COMPARE'.
+DATA: gs_return TYPE bapireturn1,
+      gv_empty_text TYPE bapireturn1-message,
+      gv_missing_text TYPE bapireturn1-message,
+      gv_tests TYPE i,
+      gv_failed TYPE i.
+
+START-OF-SELECTION.
+  gv_empty_text = '해당 데이터가 없습니다.'.
+  CLEAR gs_return.
+  gs_return-type = 'S'.
+  PERFORM assert_gate USING 'Success with zero rows'
+    gs_return 0 gv_empty_text space.
+  PERFORM assert_gate USING 'Success with attendance rows'
+    gs_return 2 gv_empty_text space.
+
+  CLEAR gs_return.
+  gs_return-type = 'E'.
+  gs_return-message = gv_empty_text.
+  PERFORM assert_gate USING 'Known empty result continues'
+    gs_return 0 gv_empty_text space.
+  PERFORM assert_gate USING 'Same E message with rows is inconsistent'
+    gs_return 1 gv_empty_text 'X'.
+  PERFORM assert_gate USING 'Unknown expected empty message stays blocked'
+    gs_return 0 gv_missing_text 'X'.
+
+  gs_return-code = '00001'.
+  PERFORM assert_gate USING 'Extra error code must not be swallowed'
+    gs_return 0 gv_empty_text 'X'.
+  CLEAR gs_return-code.
+  gs_return-log_no = '1'.
+  PERFORM assert_gate USING 'Extra error log must not be swallowed'
+    gs_return 0 gv_empty_text 'X'.
+  CLEAR gs_return-log_no.
+
+  gs_return-message = '근태 조회 처리 오류'.
+  PERFORM assert_gate USING 'Different E message stays blocked'
+    gs_return 0 gv_empty_text 'X'.
+  CLEAR gs_return-message.
+  PERFORM assert_gate USING 'Blank E message stays blocked'
+    gs_return 0 gv_empty_text 'X'.
+
+  gs_return-type = 'A'.
+  gs_return-message = gv_empty_text.
+  PERFORM assert_gate USING 'Abort always stays blocked'
+    gs_return 0 gv_empty_text 'X'.
+
+  CLEAR gs_return.
+  gs_return-type = 'E'.
+  gv_empty_text = 'No matching data'.
+  gs_return-message = gv_empty_text.
+  PERFORM assert_gate USING 'Matching translated empty message continues'
+    gs_return 0 gv_empty_text space.
+
+  WRITE: / 'Tests:', gv_tests, 'Failures:', gv_failed.
+  IF gv_failed = 0.
+    WRITE: / 'PASS: return-gate tests only; payroll calculation not tested.'.
+  ELSE.
+    WRITE: / 'FAIL: inspect the cases above.'.
+  ENDIF.
+
+FORM assert_gate USING pv_name ps_return TYPE bapireturn1
+                       pv_rows TYPE i
+                       pv_empty_text TYPE bapireturn1-message
+                       pv_expected TYPE c.
+  DATA lv_blocked TYPE c.
+  ADD 1 TO gv_tests.
+  PERFORM check_awart_result IN PROGRAM (p_report)
+    USING ps_return pv_rows pv_empty_text CHANGING lv_blocked.
+  IF lv_blocked = pv_expected.
+    WRITE: / 'PASS', pv_name.
+  ELSE.
+    ADD 1 TO gv_failed.
+    WRITE: / 'FAIL', pv_name,
+      'Expected blocked:', pv_expected, 'Actual:', lv_blocked.
+  ENDIF.
+ENDFORM.

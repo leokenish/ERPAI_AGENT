@@ -1,0 +1,368 @@
+{
+  "metadata": {
+    "thread_id": "01a18ba3-36f2-74d2-bbc8-2d3aa544f665",
+    "title": "대휴 퇴직정산 검증안 검토",
+    "cutoff_utc": "2026-10-30T14:43:04.325Z",
+    "scope": "All user and assistant text messages through packaging request, including assistant commentary; tools/internal reasoning/system/developer prompts excluded.",
+    "message_count": 31,
+    "role_counts": {
+      "user": 11,
+      "assistant": 20
+    },
+    "images": [
+      {
+        "path": "assets/image-01-transmitted.jpg",
+        "origin": "message embedded image (transmitted representation)",
+        "sha256": "0bfff19ade756061ec4ac66a1e9c6966eb58793d874460b2a854888dcc879d18"
+      },
+      {
+        "path": "assets/image-01-original.jpg",
+        "origin": "original local attachment",
+        "sha256": "0bfff19ade756061ec4ac66a1e9c6966eb58793d874460b2a854888dcc879d18"
+      }
+    ],
+    "user_workspace_context_records": 3
+  },
+  "versions": [
+    {
+      "id": "00",
+      "title": "최초 로컬 작성본(전달 전)",
+      "path": "source/versions/00-initial-local/ZHR_DAEH_RATE_CHECK.abap",
+      "line_count": 247,
+      "sha256": "d4f1058ba020666c208e303cae2e188e43838614a38091dddac258b8c0028ecc"
+    },
+    {
+      "id": "01",
+      "title": "최초 전달본 — 조건문 곱셈·금액 단위 오류 포함",
+      "path": "source/versions/01-first-delivered/ZHR_DAEH_RATE_CHECK.abap",
+      "line_count": 254,
+      "sha256": "3936ee85ccf2b9ed4d0aa4cabd39a5035c4fa8fc0fc8465ccf9e234f7cce6c5a"
+    },
+    {
+      "id": "02",
+      "title": "SAP_BASIS 700 조건문 수정 후",
+      "path": "source/versions/02-basis700-fixed/ZHR_DAEH_RATE_CHECK.abap",
+      "line_count": 259,
+      "sha256": "9af8caea6617fad40263c1841e1aed3810725e9eac45caed002206203c1a21c5"
+    },
+    {
+      "id": "03",
+      "title": "금액 /100 오류 수정 후",
+      "path": "source/versions/03-money-unit-fixed/ZHR_DAEH_RATE_CHECK.abap",
+      "line_count": 261,
+      "sha256": "73ed1fe315aa09d8a3074d76e6315954202e79ab2ac90473058ef76ad7a8806a"
+    },
+    {
+      "id": "04",
+      "title": "최종 — PERSK별 단가와 PA0001 유효기간 적용",
+      "path": "source/versions/04-persk-final/ZHR_DAEH_RATE_CHECK.abap",
+      "line_count": 351,
+      "sha256": "1a7748c30080d632e8c65f666ac0175976f6f92314682eae20dd38f9c359eded"
+    },
+    {
+      "id": "checker00",
+      "title": "최초 검사기(금액 단위 오류를 놓친 버전)",
+      "path": "source/versions/checker00/check_local.py",
+      "line_count": 47,
+      "sha256": "6a1f50fe3b795ddda652a96f3290aaabc814886bdbd5089b4598c51e59c190d0"
+    },
+    {
+      "id": "checker01",
+      "title": "조건문 회귀 추가 후 검사기",
+      "path": "source/versions/checker01/check_local.py",
+      "line_count": 69,
+      "sha256": "a12fb6770c11c50aa6df90490ee70f80855923964aad6d0a1462fe7c952e4a48"
+    },
+    {
+      "id": "checker02",
+      "title": "금액 단위 회귀 추가 후 검사기",
+      "path": "source/versions/checker02/check_local.py",
+      "line_count": 103,
+      "sha256": "7e07c5a2b1e1c45ea9786d03b09ac23dbcaaa022fbcae03448d05c33ffb6c603"
+    },
+    {
+      "id": "checker03",
+      "title": "최종 검사기 — PERSK·인사이력 회귀 추가",
+      "path": "source/versions/checker03/check_local.py",
+      "line_count": 150,
+      "sha256": "32d2a626f8e8dce5a64899c0265d13742153d15bd9f39e43f2f8e31a4e7a8bfd"
+    }
+  ],
+  "files": [
+    {
+      "path": "PORTAL_HANDOFF.md",
+      "bytes": 1917,
+      "sha256": "2682e5222f4c5bbb06a374b8e45e6a6ae2d8dc2969719c58870c1160bf3d2e39"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2947,
+      "sha256": "b05a595e92db5e3c8757e5c223fd37eaad4305e9d6fb4083fee2d80b0e2f0984"
+    },
+    {
+      "path": "assets/image-01-original.jpg",
+      "bytes": 26870,
+      "sha256": "0bfff19ade756061ec4ac66a1e9c6966eb58793d874460b2a854888dcc879d18"
+    },
+    {
+      "path": "assets/image-01-transmitted.jpg",
+      "bytes": 26870,
+      "sha256": "0bfff19ade756061ec4ac66a1e9c6966eb58793d874460b2a854888dcc879d18"
+    },
+    {
+      "path": "conversation/messages.json",
+      "bytes": 34173,
+      "sha256": "25ef3039ec8e02bb10339e6c2de44176e5cb38015a0d44836c485b9d625016ba"
+    },
+    {
+      "path": "conversation/transcript.html",
+      "bytes": 34282,
+      "sha256": "30b9fdfeba7dd471a5da9b3c45b35ac9ce38261cf620d3f4716dbfad91d74d5d"
+    },
+    {
+      "path": "conversation/transcript.md",
+      "bytes": 26276,
+      "sha256": "afcdb42004121b7980e3257c074506c19c44713cebc8ed290848767990d25521"
+    },
+    {
+      "path": "conversation/user-workspace-context.json",
+      "bytes": 13193,
+      "sha256": "d26745811b3a0d821fb3998b8d0e9cb1d7eeb3d99b7d742efd4a1a4b44e320fa"
+    },
+    {
+      "path": "evidence/docs/BUSINESS_FEEDBACK_POLICY.md",
+      "bytes": 10862,
+      "sha256": "c51bb20b5a4128ce73eab79f23292fd2a7f50bb06532792fc35f7f1481bde295"
+    },
+    {
+      "path": "evidence/docs/EXPORT_GUIDE.md",
+      "bytes": 6754,
+      "sha256": "3b52d937cb42debca52c69890c9db26823039cd9138762598afdd7fb215720de"
+    },
+    {
+      "path": "evidence/docs/SOURCE_REGISTER.md",
+      "bytes": 35876,
+      "sha256": "f4c67aeb7a3b7216bdc695c047f5e7b6e8f7fa500f8e4f218cb401b66c05a548"
+    },
+    {
+      "path": "evidence/harness/feedback/FB-20261030-003.md",
+      "bytes": 1442,
+      "sha256": "21384635578435c0b8e1c17dd6ba22384c1af1c870a423cbe5b74a0512a2ee94"
+    },
+    {
+      "path": "evidence/harness/feedback/FB-20261030-004.md",
+      "bytes": 1701,
+      "sha256": "17be0354adf8b6290eb925826a55d382e8fb841f046382f5841115aa2d060a62"
+    },
+    {
+      "path": "evidence/harness/feedback/FB-20261030-005.md",
+      "bytes": 1654,
+      "sha256": "a605aebc04a2c5a02935873f6375499277a988b4c7e5259d8b8fc276cb2b75e9"
+    },
+    {
+      "path": "evidence/knowledge/INDEX.md",
+      "bytes": 9908,
+      "sha256": "9bc1ef8acc13d9a691f4290705f45068b37df0361b0ae7ff12999c7a140382df"
+    },
+    {
+      "path": "evidence/knowledge/OPEN_QUESTIONS.md",
+      "bytes": 14124,
+      "sha256": "3647b700cccc8d376dd5132407f78875ff6d69184d219b377e3e90c7e63eac76"
+    },
+    {
+      "path": "evidence/knowledge/code-map/working-time.md",
+      "bytes": 13359,
+      "sha256": "2d340161b72de419df37e498c44bfde6b092e04df4239f52a76115299bfb47fa"
+    },
+    {
+      "path": "evidence/knowledge/policies/overtime-rate-20260901.md",
+      "bytes": 7811,
+      "sha256": "aee46d813ece5850d80ea8701b756e12ec79036a36c9ff519693d64d39f8e5c4"
+    },
+    {
+      "path": "evidence/knowledge/processes/selective-rate-boundary-review.md",
+      "bytes": 17569,
+      "sha256": "8e8b94a448c4742c56444ca5537a7c5d8fddf94ab22be04c31a6520b3d08fd1e"
+    },
+    {
+      "path": "evidence/maps/topics/rest.md",
+      "bytes": 12246,
+      "sha256": "b2a411ca94bfd78dfcd56df9afe4f023215a9de619a2a16e4a7a37a52459ff40"
+    },
+    {
+      "path": "evidence/read-only-code-excerpts.json",
+      "bytes": 13397,
+      "sha256": "266b835e96fbc7b66e11453ba6e8cc27f312d569d66bded5d5aa4f05144a9045"
+    },
+    {
+      "path": "evidence/tests/business-qa.md",
+      "bytes": 40788,
+      "sha256": "24f0b86711cc0ca1b0b1ef1006bdce7683317e83e7c7b065b02eac9c8c7355d1"
+    },
+    {
+      "path": "index.html",
+      "bytes": 6275,
+      "sha256": "05a7b098e4bf6e7c9655c0da4cc00b78217e77168d2a7238901fc957792cb4b3"
+    },
+    {
+      "path": "reference/code-comparison-complete.html",
+      "bytes": 286143,
+      "sha256": "8512afcda929a24967c1264a3e1d141c4fd06246661f3811b06bbf0994d1e18d"
+    },
+    {
+      "path": "reports/change-index.json",
+      "bytes": 136466,
+      "sha256": "0c6f0819191046bd79fbd199aee5f20ee7dca996665be5da83e050382f832082"
+    },
+    {
+      "path": "reports/code-comparison-complete.html",
+      "bytes": 803839,
+      "sha256": "582582c046e921f790e9a6a365b8def613ed76e5fc9732635c16f7bb9d5c1387"
+    },
+    {
+      "path": "reports/full-source.html",
+      "bytes": 227499,
+      "sha256": "a170c94cb0bbee39d8f82af075d637964a538803615d58eac472014f11f4dc7b"
+    },
+    {
+      "path": "reports/read-only-evidence.html",
+      "bytes": 16630,
+      "sha256": "5c024185f53e88d8b20eef42ae591b6bc6fa4360a6acb1bae9535cd5506d4034"
+    },
+    {
+      "path": "reports/static-qa.json",
+      "bytes": 456,
+      "sha256": "3935966bbf8f43a91e016d77459551133ceb6c77025616abc065027615c444f0"
+    },
+    {
+      "path": "source/current/daeh-rate-check/README.md",
+      "bytes": 12679,
+      "sha256": "d5283c3e2cab5d31f5325d563610be40daa5285146d0c52ac902baca24a18a1e"
+    },
+    {
+      "path": "source/current/daeh-rate-check/ZHR_DAEH_RATE_CHECK.abap",
+      "bytes": 14075,
+      "sha256": "1a7748c30080d632e8c65f666ac0175976f6f92314682eae20dd38f9c359eded"
+    },
+    {
+      "path": "source/current/daeh-rate-check/revisions/20261030-basis700-condition/ZHR_DAEH_RATE_CHECK.abap",
+      "bytes": 10053,
+      "sha256": "3936ee85ccf2b9ed4d0aa4cabd39a5035c4fa8fc0fc8465ccf9e234f7cce6c5a"
+    },
+    {
+      "path": "source/current/daeh-rate-check/revisions/20261030-basis700-condition/change.patch",
+      "bytes": 971,
+      "sha256": "9237b01baeab743ce26ebdf3e133dc476e0f0bf5ac06e2bbdc6142fc910b4218"
+    },
+    {
+      "path": "source/current/daeh-rate-check/revisions/20261030-basis700-condition/hashes.json",
+      "bytes": 304,
+      "sha256": "929c8c1e9f6336cbcf5e4c25124eb8c2a7c1da907ed10187275532fb7a945e2a"
+    },
+    {
+      "path": "source/current/daeh-rate-check/revisions/20261030-money-unit/ZHR_DAEH_RATE_CHECK.abap",
+      "bytes": 10278,
+      "sha256": "9af8caea6617fad40263c1841e1aed3810725e9eac45caed002206203c1a21c5"
+    },
+    {
+      "path": "source/current/daeh-rate-check/revisions/20261030-money-unit/change.patch",
+      "bytes": 1177,
+      "sha256": "b802df81ea9b144adc211d72da6c67fd84d59ec4bc81a41104622b30853e39e6"
+    },
+    {
+      "path": "source/current/daeh-rate-check/revisions/20261030-money-unit/hashes.json",
+      "bytes": 303,
+      "sha256": "ab1fe63573d513923b76ebf2531a5029f2ab1e74f776b5fc928a9e0b000f22a9"
+    },
+    {
+      "path": "source/current/daeh-rate-check/revisions/20261030-persk-rate/ZHR_DAEH_RATE_CHECK.abap",
+      "bytes": 10428,
+      "sha256": "73ed1fe315aa09d8a3074d76e6315954202e79ab2ac90473058ef76ad7a8806a"
+    },
+    {
+      "path": "source/current/daeh-rate-check/revisions/20261030-persk-rate/change.patch",
+      "bytes": 7465,
+      "sha256": "691f60456c75d43e46ed919bc0605045c528a991fc3e462c6d58b5444c50ec16"
+    },
+    {
+      "path": "source/current/daeh-rate-check/revisions/20261030-persk-rate/hashes.json",
+      "bytes": 292,
+      "sha256": "e475d1cd24677cddaacceaa1765db479c05323f7709f4cb24c6d0f754ef4e3de"
+    },
+    {
+      "path": "source/current/daeh-rate-check/tools/check_local.py",
+      "bytes": 8175,
+      "sha256": "32d2a626f8e8dce5a64899c0265d13742153d15bd9f39e43f2f8e31a4e7a8bfd"
+    },
+    {
+      "path": "source/current/daeh-rate-check/verification.json",
+      "bytes": 700,
+      "sha256": "dd8e063d0252744fde1d8cea2c8461b2aad7d7223cea2d3840a70b2ddb3300ab"
+    },
+    {
+      "path": "source/versions/00-initial-local/README.md",
+      "bytes": 6858,
+      "sha256": "a4b97f8a83bfc361cffccc9744460b5dc9ac87ac397c7c4970bda986b5c873b1"
+    },
+    {
+      "path": "source/versions/00-initial-local/ZHR_DAEH_RATE_CHECK.abap",
+      "bytes": 9776,
+      "sha256": "d4f1058ba020666c208e303cae2e188e43838614a38091dddac258b8c0028ecc"
+    },
+    {
+      "path": "source/versions/00-initial-local/check_local.py",
+      "bytes": 2411,
+      "sha256": "6a1f50fe3b795ddda652a96f3290aaabc814886bdbd5089b4598c51e59c190d0"
+    },
+    {
+      "path": "source/versions/01-first-delivered/ZHR_DAEH_RATE_CHECK.abap",
+      "bytes": 10053,
+      "sha256": "3936ee85ccf2b9ed4d0aa4cabd39a5035c4fa8fc0fc8465ccf9e234f7cce6c5a"
+    },
+    {
+      "path": "source/versions/02-basis700-fixed/ZHR_DAEH_RATE_CHECK.abap",
+      "bytes": 10278,
+      "sha256": "9af8caea6617fad40263c1841e1aed3810725e9eac45caed002206203c1a21c5"
+    },
+    {
+      "path": "source/versions/03-money-unit-fixed/ZHR_DAEH_RATE_CHECK.abap",
+      "bytes": 10428,
+      "sha256": "73ed1fe315aa09d8a3074d76e6315954202e79ab2ac90473058ef76ad7a8806a"
+    },
+    {
+      "path": "source/versions/04-persk-final/ZHR_DAEH_RATE_CHECK.abap",
+      "bytes": 14075,
+      "sha256": "1a7748c30080d632e8c65f666ac0175976f6f92314682eae20dd38f9c359eded"
+    },
+    {
+      "path": "source/versions/checker00/check_local.py",
+      "bytes": 2411,
+      "sha256": "6a1f50fe3b795ddda652a96f3290aaabc814886bdbd5089b4598c51e59c190d0"
+    },
+    {
+      "path": "source/versions/checker01/check_local.py",
+      "bytes": 3658,
+      "sha256": "a12fb6770c11c50aa6df90490ee70f80855923964aad6d0a1462fe7c952e4a48"
+    },
+    {
+      "path": "source/versions/checker02/check_local.py",
+      "bytes": 5499,
+      "sha256": "7e07c5a2b1e1c45ea9786d03b09ac23dbcaaa022fbcae03448d05c33ffb6c603"
+    },
+    {
+      "path": "source/versions/checker03/check_local.py",
+      "bytes": 8175,
+      "sha256": "32d2a626f8e8dce5a64899c0265d13742153d15bd9f39e43f2f8e31a4e7a8bfd"
+    },
+    {
+      "path": "tools/build_training_package.py",
+      "bytes": 29382,
+      "sha256": "c2bcdbc80b32753627f9158f221198fb38e612037c8c8cede1fc2d178ea6e077"
+    },
+    {
+      "path": "tools/check_package.py",
+      "bytes": 2866,
+      "sha256": "7983f9b2f7dc3f81b64971eecadb6845c774ffb0703f99de853e1f517499ab62"
+    }
+  ]
+}

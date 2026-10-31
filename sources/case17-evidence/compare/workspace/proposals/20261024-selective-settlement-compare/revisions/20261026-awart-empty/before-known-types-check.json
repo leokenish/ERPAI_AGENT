@@ -1,0 +1,18 @@
+{
+  "scope": "partial known-field type analysis; unknown dependencies skipped",
+  "source_sha256": "9bdc987d2167a72ce2ffddac01aa075eec05de7c6a000242f3aed893aed0eb2e",
+  "loaded": [
+    "ZTHR0112",
+    "ZTHR0113",
+    "ZTHR0132",
+    "ZSHR0141",
+    "ZSHR0143",
+    "ZSHR0145",
+    "ZSHR0146",
+    "ZSHR0111",
+    "ZSHR0115",
+    "ZSHR0137",
+    "ZTHREDITCOST"
+  ],
+  "issues": []
+}

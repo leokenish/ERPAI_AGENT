@@ -1,0 +1,34 @@
+{
+  "status": "PASS_WITH_DOCUMENTED_MISSING_ATTACHMENT",
+  "date_kst": "2026-10-31",
+  "visible_messages": 34,
+  "source_entries": 8,
+  "diff_hunks": 16,
+  "validated_source_line_references": 2609,
+  "local_entry_html_links_checked": 28,
+  "broken_entry_links": [],
+  "workspace_snapshot_files_byte_equal": 50,
+  "posted_abap_sha256_matches_current": true,
+  "html_visual_review": "PASS: desktop index, side-by-side diff; mobile index overflow test",
+  "ui_checks": [
+    "index desktop/mobile rendering",
+    "8 source entries / 16 diff sections",
+    "full ABAP 1914 line numbers",
+    "copy text byte-equivalent",
+    "download text byte-equivalent",
+    "checklist persistence/reset",
+    "old source full line count",
+    "34 transcript messages and 10 user filter",
+    "transcript text exact JSON equality",
+    "6 document panels",
+    "zero page errors",
+    "mobile index no overflow"
+  ],
+  "missing_originals": [
+    "선택근무 정산 전후 변경비교.xlsx"
+  ],
+  "uploaded_images_found": 0,
+  "original_source_modified": false,
+  "sap_syntax_execution": "NOT_RUN",
+  "scope_note": "Existing Markdown source snapshots retain repository links outside the selected bundle. UI entry links are portable. Private reasoning, internal instructions and raw execution logs are excluded."
+}

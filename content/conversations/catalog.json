@@ -335,6 +335,118 @@
       "supplementEpisode": "smart-E01-preserve-and-package",
       "supplementLabel": "첫 요청부터 설계 과정 읽기",
       "category": "에이전트 활용사례"
+    },
+    {
+      "id": "worktime-huhu",
+      "shortTitle": "17-1. 휴일을 넘긴 대휴 금액 추적",
+      "sourceId": "worktime-modernization",
+      "lessonIds": [
+        "worktime-modernization"
+      ],
+      "metaEpisodes": [],
+      "sourcePath": "content/conversations/worktime-modernization/worktime-huhu",
+      "assetSourcePath": "sources/case17-evidence/huhu",
+      "publishAttachments": true,
+      "supplementDocuments": [],
+      "purpose": "휴일을 넘긴 대휴 금액 추적 과정에서 실제 업무 질문을 ABAP 코드로 연결한 사례입니다.",
+      "turningPoint": "입력·계산·저장 경로를 나눠 최초 저장값의 원인을 추적했습니다.",
+      "category": "에이전트 활용사례"
+    },
+    {
+      "id": "worktime-rate",
+      "shortTitle": "17-2. 단가 인상 전후 금액 점검",
+      "sourceId": "worktime-modernization",
+      "lessonIds": [
+        "worktime-modernization"
+      ],
+      "metaEpisodes": [],
+      "sourcePath": "content/conversations/worktime-modernization/worktime-rate",
+      "assetSourcePath": "sources/case17-evidence/rate",
+      "publishAttachments": true,
+      "supplementDocuments": [],
+      "purpose": "단가 인상 전후 금액 점검 과정에서 실제 업무 질문을 ABAP 코드로 연결한 사례입니다.",
+      "turningPoint": "정밀 재계산 대신 구단가 의심 건을 빠르게 찾는 선별 도구로 범위를 정했습니다.",
+      "category": "에이전트 활용사례"
+    },
+    {
+      "id": "worktime-compare",
+      "shortTitle": "17-3. 정산 전후 차이와 단가 기준",
+      "sourceId": "worktime-modernization",
+      "lessonIds": [
+        "worktime-modernization"
+      ],
+      "metaEpisodes": [],
+      "sourcePath": "content/conversations/worktime-modernization/worktime-compare",
+      "assetSourcePath": "sources/case17-evidence/compare",
+      "publishAttachments": true,
+      "supplementDocuments": [],
+      "purpose": "정산 전후 차이와 단가 기준 과정에서 실제 업무 질문을 ABAP 코드로 연결한 사례입니다.",
+      "turningPoint": "금액 차이를 실적 변경과 수기보정·단가 기준의 차이로 구분했습니다.",
+      "category": "에이전트 활용사례"
+    },
+    {
+      "id": "worktime-retro",
+      "shortTitle": "17-4. 소급 차액의 월별 분리",
+      "sourceId": "worktime-modernization",
+      "lessonIds": [
+        "worktime-modernization"
+      ],
+      "metaEpisodes": [],
+      "sourcePath": "content/conversations/worktime-modernization/worktime-retro",
+      "assetSourcePath": "sources/case17-evidence/retro",
+      "publishAttachments": true,
+      "supplementDocuments": [],
+      "purpose": "소급 차액의 월별 분리 과정에서 실제 업무 질문을 ABAP 코드로 연결한 사례입니다.",
+      "turningPoint": "상세 표시 행과 실제 확정·지급 데이터를 분리했습니다.",
+      "category": "에이전트 활용사례"
+    },
+    {
+      "id": "worktime-retired",
+      "shortTitle": "17-5. 정산 후 지급 항목 제외",
+      "sourceId": "worktime-modernization",
+      "lessonIds": [
+        "worktime-modernization"
+      ],
+      "metaEpisodes": [],
+      "sourcePath": "content/conversations/worktime-modernization/worktime-retired",
+      "assetSourcePath": "sources/case17-evidence/retired",
+      "publishAttachments": true,
+      "supplementDocuments": [],
+      "purpose": "정산 후 지급 항목 제외 과정에서 실제 업무 질문을 ABAP 코드로 연결한 사례입니다.",
+      "turningPoint": "퇴직자 제한을 해제하면서 지급 항목의 범위는 유지했습니다.",
+      "category": "에이전트 활용사례"
+    },
+    {
+      "id": "worktime-cancel",
+      "shortTitle": "17-6. 선택근무 등록 직후 취소",
+      "sourceId": "worktime-modernization",
+      "lessonIds": [
+        "worktime-modernization"
+      ],
+      "metaEpisodes": [],
+      "sourcePath": "content/conversations/worktime-modernization/worktime-cancel",
+      "assetSourcePath": "sources/case17-evidence/cancel",
+      "publishAttachments": true,
+      "supplementDocuments": [],
+      "purpose": "선택근무 등록 직후 취소 과정에서 실제 업무 질문을 ABAP 코드로 연결한 사례입니다.",
+      "turningPoint": "등록원장을 보존하고 기간과 실적 두 종류만 처리하도록 범위를 좁혔습니다.",
+      "category": "에이전트 활용사례"
+    },
+    {
+      "id": "worktime-halfday",
+      "shortTitle": "17-7. 반일 휴가의 시간외 입력 안내",
+      "sourceId": "worktime-modernization",
+      "lessonIds": [
+        "worktime-modernization"
+      ],
+      "metaEpisodes": [],
+      "sourcePath": "content/conversations/worktime-modernization/worktime-halfday",
+      "assetSourcePath": "sources/case17-evidence/halfday",
+      "publishAttachments": true,
+      "supplementDocuments": [],
+      "purpose": "반일 휴가의 시간외 입력 안내 과정에서 실제 업무 질문을 ABAP 코드로 연결한 사례입니다.",
+      "turningPoint": "계산식에 앞서 입력 기준을 확인하고 기존 안내 처리를 재사용했습니다.",
+      "category": "에이전트 활용사례"
     }
   ]
 }

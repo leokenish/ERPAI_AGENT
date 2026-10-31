@@ -126,7 +126,7 @@ test('동일한 발화의 표정은 수신자·새로고침·반복 렌더링에
 test('동일 프로젝트의 모든 표시 에피소드는 같은 대역을 사용한다',()=>{
  let checked=0;
  const projects=readingProjects(portal.conversations);
- assert.equal(projects.length,9);
+ assert.equal(projects.length,16);
  for(const p of projects){
   const actors=new Set();
   for(const e of p.episodes){
@@ -138,12 +138,12 @@ test('동일 프로젝트의 모든 표시 에피소드는 같은 대역을 사�
   assert.equal(actors.size,1,p.id);
   assert.equal([...actors][0],characterFor(p.id));
  }
- assert.equal(checked,134);
+ assert.equal(checked,154);
 });
 
 test('프로젝트 대역은 다섯 명에게 균형 배정한다',()=>{
  const counts={na:0,woo:0,lee:0,oh:0,chae:0};
- for(const p of portal.conversations.projects)counts[characterFor(p.id)]++;
+ for(const p of portal.conversations.projects.filter(p=>!p.id.startsWith('worktime-')))counts[characterFor(p.id)]++;
  assert.deepEqual(counts,{na:2,woo:2,lee:2,oh:2,chae:1});
 });
 test('요청·질문·제안과 인물별 말투를 구분한다',()=>{

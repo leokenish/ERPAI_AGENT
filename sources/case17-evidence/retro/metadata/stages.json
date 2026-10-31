@@ -1,0 +1,32 @@
+[
+  {
+    "id": "00",
+    "name": "SAP 로컬 추출 원본",
+    "status": "reference",
+    "path": "code/00-original"
+  },
+  {
+    "id": "01",
+    "name": "첫 HTML 미완성안",
+    "status": "incomplete_do_not_apply",
+    "path": "code/01-first-incomplete"
+  },
+  {
+    "id": "02",
+    "name": "전체 보완 제안",
+    "status": "historical_proposal",
+    "path": "code/02-complete-proposal"
+  },
+  {
+    "id": "03",
+    "name": "첫 HTML 이후 추가 보완",
+    "status": "user_reported_tested",
+    "path": "code/03-applied-additional"
+  },
+  {
+    "id": "04",
+    "name": "최신 정렬·당월 금액 표시안",
+    "status": "latest_proposal_sap_not_verified",
+    "path": "code/04-latest-proposal"
+  }
+]

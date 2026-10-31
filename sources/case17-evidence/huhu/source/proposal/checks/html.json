@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "viewport_desktop": "1600x1100",
+  "viewport_mobile": "390x844",
+  "comparison_cards": 8,
+  "copy_buttons": 16,
+  "clipboard_tests": "exact code payloads; Clipboard API and execCommand fallback mocked to avoid changing OS clipboard",
+  "source_filters": "PASS",
+  "desktop_columns": "PASS",
+  "page_overflow": "NONE",
+  "page_errors": [],
+  "external_requests": [],
+  "screenshots": [
+    "report-desktop.png",
+    "report-comparison.png",
+    "report-mobile.png"
+  ]
+}

@@ -1,0 +1,89 @@
+"""Static contracts and unchanged-export check. Does not execute ABAP."""
+from pathlib import Path
+import hashlib
+import json
+import re
+import sys
+from build_core import clean, MARKER
+
+OUT = Path(__file__).resolve().parents[1]
+ROOT = OUT.parents[1]
+source = (OUT / 'ZRPTH411_COMPARE.abap').read_text()
+code = clean(source)
+core = clean(source.split(MARKER)[1])
+checks = {}
+
+def check(name, condition):
+    checks[name] = bool(condition)
+
+baseline_path = Path(sys.argv[1]) if len(sys.argv) > 1 else OUT / 'source-baseline.json'
+baseline = json.loads(baseline_path.read_text())['sha256']
+changed = [name for name, old in baseline.items()
+           if not (ROOT / name).exists()
+           or hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != old]
+now = {str(p.relative_to(ROOT)) for p in (ROOT / 'exports/ZHR5/packages').rglob('*')
+       if p.is_file() and p.name != '.DS_Store'}
+check('export_files_unchanged', not changed and now == set(baseline))
+check('no_db_mutations', not re.search(
+    r'^\s*(?:UPDATE|INSERT|MODIFY|DELETE)\s+(?!(?:lt_|gt_)\w+\b)\w+',
+    code, re.I | re.M))
+check('no_commit_rollback_submit_or_transaction', not re.search(
+    r'\b(?:COMMIT|ROLLBACK|SUBMIT)\b|CALL\s+TRANSACTION|IN\s+UPDATE\s+TASK', code, re.I))
+check('no_original_settlement_fm_call', not re.search(
+    r"CALL FUNCTION 'ZHR_52TM_CW_CAL_AND_DAEH'", code, re.I))
+check('core_has_no_sql_select', not re.search(r'^\s*SELECT\b', core, re.I | re.M))
+check('core_does_not_reload_work_or_awart', not re.search(
+    r'\bZTHR0112\b|\bZTHRBS01\b|ZHR_52TM_AWART_LIST|g_cw_get_data', core, re.I))
+check('three_leave_flags_reset_only_on_copy',
+      'lt_virtual[] = lt_work[].' in code and
+      'CLEAR: ls_work-zdaeh, ls_work-zdaeh_day, ls_work-zdaeh_tm.' in code)
+check('same_snapshot_for_c_and_b', all(x in code for x in [
+    "lt_calc lt_new lt_save USING 'C' ls_rate.",
+    "lt_calc lt_dummy_daeh lt_dummy_save USING 'B' ls_rate."]))
+check('full_source_key_overlay', all(x in code for x in [
+    'pernr = ls_save-pernr datum = ls_save-datum',
+    'begda = ls_save-begda endda = ls_save-endda',
+    'z52wktp = ls_save-z52wktp z52prsq = ls_save-z52prsq',
+    'seqnr = ls_save-seqnr']))
+check('output_count_and_time_crosscheck',
+      'lv_save_count <> lv_new_count OR lv_save_min <> lv_new_min' in code)
+check('settled_exact_period_cohort',
+      code.count("AND zadmit_dt <> '00000000'.") == 2 and
+      'begda = p_begda AND endda = p_endda' in code)
+check('bs01_restricted_to_selective_source_date', all(x in code for x in [
+    'rdate >= ps_old-begda', 'rdate <= ps_old-endda',
+    "zsourflex = 'S'", "state = '3' AND zdaeh = 'Y'"]))
+check('failed_calculation_not_displayed_as_zero',
+      "ls_line-new_count_text = '미계산'." in code and
+      "ps_out-new_amt = '미계산'." in code)
+check('both_amount_signs_preserved',
+      'lv_diff_money = ( ls_calc-zrlprdamt - ps_old-zrlprdamt ) * 100.' in code)
+check('no_clock_dependent_algorithm_branch',
+      not re.search(r'IF\s+sy-datum', core, re.I))
+check('line_length_at_most_255', max(map(len, source.splitlines())) <= 255)
+forms = re.findall(r'^FORM\s+(\w+)', code, re.I | re.M)
+performs = re.findall(r'\bPERFORM\s+(\w+)', code, re.I)
+check('all_local_forms_resolved', not (set(map(str.lower, performs)) - set(map(str.lower, forms))))
+check('no_duplicate_form_names', len(forms) == len(set(map(str.lower, forms))))
+check('known_empty_return_is_narrowly_classified', all(s in code for s in [
+    "ps_return-type = 'E' AND pv_rows = 0",
+    'AND pv_empty_text IS NOT INITIAL.',
+    "ls_empty_return-type = 'E'.", 'ls_empty_return-message = pv_empty_text.',
+    'IF ps_return = ls_empty_return.',
+    "IF ps_return-type = 'E' OR ps_return-type = 'A'."]))
+check('caller_uses_return_gate_before_calculation',
+      code.index('PERFORM check_awart_result USING') < code.index('PERFORM rc_calculate TABLES')
+      and "IF lv_awart_blocked = 'X'." in code)
+check('empty_message_uses_function_group_text',
+      "READ TEXTPOOL 'SAPLZHR008_2'" in code and "key = 'M01'" in code)
+functions = sorted(set(re.findall(r"CALL FUNCTION '([^']+)'", code, re.I)))
+report = {
+    'scope': 'static contracts only; SAP execution NOT_RUN',
+    'baseline': str(baseline_path),
+    'source_files_compared': len(baseline), 'changed_sources': changed,
+    'checks': checks, 'direct_function_dependencies': functions,
+    'report_sha256': hashlib.sha256(source.encode()).hexdigest(),
+}
+(OUT / 'contract-check.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
+print(json.dumps(report, ensure_ascii=False, indent=2))
+raise SystemExit(0 if all(checks.values()) else 1)

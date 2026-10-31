@@ -1,0 +1,179 @@
+--- before/ZHR_DAEH_RATE_CHECK.abap
++++ after/ZHR_DAEH_RATE_CHECK.abap
+@@ -10,6 +10,13 @@
+ TABLES: zthrbs01.
+ TYPES: ty_money TYPE p LENGTH 16 DECIMALS 2,
+        ty_number TYPE p LENGTH 16 DECIMALS 8.
++* 인사이력은 조회기간과 겹치는 자료만 한 번 읽는다.
++TYPES: BEGIN OF ty_person,
++         pernr TYPE pa0001-pernr,
++         begda TYPE pa0001-begda,
++         endda TYPE pa0001-endda,
++         persk TYPE pa0001-persk,
++       END OF ty_person.
+ TYPES: BEGIN OF ty_out,
+          pernr TYPE zthrbs01-pernr,
+          rdate TYPE zthrbs01-rdate,
+@@ -25,6 +32,12 @@
+          ztomo TYPE zthrbs01-ztomo,
+          zdchk TYPE zthrbs01-zdchk,
+          jorgeh_txt TYPE zthrbs01-jorgeh_txt,
++         persk TYPE pa0001-persk,
++         rate_group TYPE c LENGTH 30,
++         old_rate TYPE ty_money,
++         new_rate TYPE ty_money,
++         old_step TYPE ty_money,
++         new_step TYPE ty_money,
+          amount TYPE ty_money,
+          settle TYPE ty_money,
+          old_ok TYPE c,
+@@ -36,7 +49,11 @@
+          difference TYPE ty_money,
+          note TYPE c LENGTH 120,
+        END OF ty_out.
+-DATA: gt_source TYPE STANDARD TABLE OF zthrbs01,
++CONSTANTS: gc_special_rate TYPE ty_money VALUE '5400'.
++DATA: gt_person TYPE STANDARD TABLE OF ty_person,
++      gs_person TYPE ty_person,
++      gv_person_ok TYPE c,
++      gt_source TYPE STANDARD TABLE OF zthrbs01,
+       gs_source TYPE zthrbs01,
+       gt_out TYPE STANDARD TABLE OF ty_out,
+       gs_out TYPE ty_out,
+@@ -121,6 +138,59 @@
+       AND ( zsourflex = 'S'
+          OR ( zsourflex = space AND zgubun IN s_gubun ) ).
+   SORT gt_source BY pernr rdate seqnr.
++* 사번과 기간을 제한하고, 퇴직 후 현재 인사정보로 과거를 덮어쓰지 않는다.
++* FOR ALL ENTRIES가 빈 조건으로 전체 조회되지 않도록 먼저 검사한다.
++  CLEAR gt_person.
++  IF gt_source[] IS NOT INITIAL.
++    SELECT pernr begda endda persk INTO TABLE gt_person FROM pa0001
++      FOR ALL ENTRIES IN gt_source
++      WHERE pernr = gt_source-pernr
++        AND begda <= gv_to
++        AND endda >= gv_from
++        AND sprps = space.
++    SORT gt_person BY pernr begda endda.
++  ENDIF.
++ENDFORM.
++
++FORM determine_rates.
++  DATA: lv_count TYPE i.
++  CLEAR: gv_person_ok, lv_count.
++* RDATE에 실제로 유효한 이력을 찾는다. 인사이력 공백/중복은 추측 금지.
++  LOOP AT gt_person INTO gs_person
++    WHERE pernr = gs_source-pernr
++      AND begda <= gs_source-rdate
++      AND endda >= gs_source-rdate.
++    ADD 1 TO lv_count.
++    gs_out-persk = gs_person-persk.
++  ENDLOOP.
++  IF lv_count = 0.
++    gs_out-result = '별도확인: 인사이력 없음'.
++    gs_out-note = '근무 시작일에 유효한 PA0001 미조회. 단가 판정 제외'.
++    RETURN.
++  ELSEIF lv_count > 1.
++    CLEAR gs_out-persk.
++    gs_out-result = '별도확인: 인사이력 중복'.
++    gs_out-note = '근무 시작일에 유효한 PA0001 복수건. 단가 판정 제외'.
++    RETURN.
++  ENDIF.
++
++* 기본 그룹은 기존 입력단가를 사용하고 확인된 PERSK만 예외 적용한다.
++  gs_out-rate_group = '기본 인상 대상'.
++  gs_out-old_rate = p_old.
++  gs_out-new_rate = p_new.
++  CASE gs_out-persk.
++    WHEN 'E1' OR 'E4' OR 'E5' OR 'E6' OR 'E7'.
++      gs_out-rate_group = '비정규 인상 대상'.
++      gs_out-old_rate = gc_special_rate.
++    WHEN 'E8'.
++      gs_out-rate_group = '방송지원직 단가 유지'.
++      gs_out-old_rate = gc_special_rate.
++      gs_out-new_rate = gc_special_rate.
++  ENDCASE.
++* 시간외 단가의 50%를 반시간 단위로 검사하므로 기준단가 /4.
++  gs_out-old_step = gs_out-old_rate / 4.
++  gs_out-new_step = gs_out-new_rate / 4.
++  gv_person_ok = 'X'.
+ ENDFORM.
+ 
+ FORM check_data.
+@@ -133,20 +203,32 @@
+     gs_out-amount = gs_source-zd_money.
+     gs_out-settle = gs_source-jorgeh.
+     gs_out-month_ok = '-'.
++    PERFORM determine_rates.
++    IF gv_person_ok IS INITIAL.
++      APPEND gs_out TO gt_out.
++      CONTINUE.
++    ENDIF.
+     IF gs_out-amount <= 0.
+       gs_out-result = '확인: 0원 또는 음수'.
+       gs_out-note = '0원을 정상 배수로 판정하지 않음. 면제/보정 등 확인'.
+     ELSE.
+-      PERFORM check_multiple USING gs_out-amount gv_old_step
++      PERFORM check_multiple USING gs_out-amount gs_out-old_step
+                              CHANGING gs_out-old_ok.
+-      PERFORM check_multiple USING gs_out-amount gv_new_step
++      PERFORM check_multiple USING gs_out-amount gs_out-new_step
+                              CHANGING gs_out-new_ok.
+       IF gs_out-rdate < gv_change.
+         gs_out-month_ok = gs_out-old_ok.
+       ELSE.
+         gs_out-month_ok = gs_out-new_ok.
+       ENDIF.
+-      IF gs_out-old_ok = 'Y' AND gs_out-new_ok = 'Y'.
++* E8은 두 단가가 동일하므로 양쪽 Y여도 공배수 판별불가가 아니다.
++      IF gs_out-old_rate = gs_out-new_rate.
++        IF gs_out-month_ok = 'Y'.
++          gs_out-result = '유지단가 배수 일치(추정)'.
++        ELSE.
++          gs_out-result = '확인: 유지단가 배수 불일치'.
++        ENDIF.
++      ELSEIF gs_out-old_ok = 'Y' AND gs_out-new_ok = 'Y'.
+         gs_out-result = '판별불가: 양쪽 배수 일치'.
+       ELSEIF gs_out-month_ok = 'Y'.
+         gs_out-result = '기준월 배수 일치(추정)'.
+@@ -154,12 +236,12 @@
+         IF gs_out-rdate >= gv_change.
+           gs_out-result = '구단가 적용 의심'.
+ * 실제 인정시간 대신 구단가 금액에서 0.5시간 단위 수를 역산.
+-          lv_units = gs_out-amount / gv_old_step.
+-          gs_out-estimate = lv_units * gv_new_step.
++          lv_units = gs_out-amount / gs_out-old_step.
++          gs_out-estimate = lv_units * gs_out-new_step.
+         ELSE.
+           gs_out-result = '8월 건 신단가 적용 의심'.
+-          lv_units = gs_out-amount / gv_new_step.
+-          gs_out-estimate = lv_units * gv_old_step.
++          lv_units = gs_out-amount / gs_out-new_step.
++          gs_out-estimate = lv_units * gs_out-old_step.
+         ENDIF.
+         gs_out-diff_ok = 'Y'.
+         gs_out-difference = gs_out-estimate - gs_out-amount.
+@@ -208,7 +290,9 @@
+   gs_fcat-seltext_s = p_text.
+   gs_fcat-outputlen = p_length.
+   IF p_field = 'AMOUNT' OR p_field = 'SETTLE'
+-     OR p_field = 'ESTIMATE' OR p_field = 'DIFFERENCE'.
++     OR p_field = 'ESTIMATE' OR p_field = 'DIFFERENCE'
++     OR p_field = 'OLD_RATE' OR p_field = 'NEW_RATE'
++     OR p_field = 'OLD_STEP' OR p_field = 'NEW_STEP'.
+ * 통화 참조 없이 실제 원 단위 숫자를 표시. KRW 추가 배율 적용 금지.
+     gs_fcat-datatype = 'DEC'.
+     gs_fcat-decimals_out = 2.
+@@ -230,6 +314,12 @@
+   PERFORM add_column USING 'ZSOURFLEX' '대휴생성구분' 10.
+   PERFORM add_column USING 'ZD_TIME' '저장 인정시간(참고)' 15.
+   PERFORM add_column USING 'ZTOMO' '익일여부' 8.
++  PERFORM add_column USING 'PERSK' '기준일 PERSK' 12.
++  PERFORM add_column USING 'RATE_GROUP' '적용 단가그룹' 24.
++  PERFORM add_column USING 'OLD_RATE' '8월 시간외 단가(원)' 20.
++  PERFORM add_column USING 'NEW_RATE' '9월 시간외 단가(원)' 20.
++  PERFORM add_column USING 'OLD_STEP' '8월 반시간 검사단위(원)' 22.
++  PERFORM add_column USING 'NEW_STEP' '9월 반시간 검사단위(원)' 22.
+   PERFORM add_column USING 'AMOUNT' '대휴 실비 금액(원)' 18.
+   PERFORM add_column USING 'OLD_OK' '구단가 배수 Y/N' 14.
+   PERFORM add_column USING 'NEW_OK' '신단가 배수 Y/N' 14.

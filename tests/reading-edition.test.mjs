@@ -40,7 +40,7 @@ test('선별판은 원본 해시가 바뀐 제외·응답 편집을 거부한다
 
 test('제외한 대화는 학습 화면과 검색에서 사라지고 이전 에피소드 주소는 유효한 흐름으로 연결된다',()=>{
  const visible=readingProjects(bundle),search=conversationSearchEntries(bundle);
- assert.equal(visible.length,9);assert.ok(bundle.readingTotals.messages<bundle.totals.messages-200);
+ assert.equal(visible.length,16);assert.ok(bundle.readingTotals.messages<bundle.totals.messages-200);
  for(const p of visible){
   const hidden=Object.keys(edition.projects[p.id].excludedMessages);
   assert.ok(p.messages.every(m=>!hidden.includes(m.id)&&!m.readingHidden));

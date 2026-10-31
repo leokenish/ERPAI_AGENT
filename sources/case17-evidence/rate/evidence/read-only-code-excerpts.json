@@ -1,0 +1,498 @@
+[
+  {
+    "path": "exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH410F01/source/ZRPTH410F01.abap",
+    "status": "read-only reference; unchanged in this chat",
+    "ranges": [
+      {
+        "start": 1244,
+        "end": 1284,
+        "lines": [
+          {
+            "line": 1244,
+            "text": "  \"사원정보"
+          },
+          {
+            "line": 1245,
+            "text": "  CALL FUNCTION 'ZHR_GET_PERSONNEL_DATA_N'"
+          },
+          {
+            "line": 1246,
+            "text": "    EXPORTING"
+          },
+          {
+            "line": 1247,
+            "text": "      pernr          = ps_daeh-pernr"
+          },
+          {
+            "line": 1248,
+            "text": "      znal           = ps_daeh-daeh_dt"
+          },
+          {
+            "line": 1249,
+            "text": "    IMPORTING"
+          },
+          {
+            "line": 1250,
+            "text": "      zthrbs01       = ls_zdata"
+          },
+          {
+            "line": 1251,
+            "text": "      personnel_data = ls_pdata."
+          },
+          {
+            "line": 1252,
+            "text": ""
+          },
+          {
+            "line": 1253,
+            "text": "  MOVE-CORRESPONDING ls_pdata TO ls_zthrbs01."
+          },
+          {
+            "line": 1254,
+            "text": "  ls_zthrbs01-btrtx = ls_pdata-btrtl_txt."
+          },
+          {
+            "line": 1255,
+            "text": "  ls_zthrbs01-gtext = ls_pdata-gsber_txt."
+          },
+          {
+            "line": 1256,
+            "text": "  ls_zthrbs01-vdsk1_txt = ls_pdata-vdsk1_ftxt."
+          },
+          {
+            "line": 1257,
+            "text": "  ls_zthrbs01-zkost = ls_pdata-kostl."
+          },
+          {
+            "line": 1258,
+            "text": "  ls_zthrbs01-jikk = ls_zdata-jikk."
+          },
+          {
+            "line": 1259,
+            "text": "  ls_zthrbs01-jikj = ls_zdata-jikj."
+          },
+          {
+            "line": 1260,
+            "text": "  ls_zthrbs01-zzj = ls_zdata-zzj."
+          },
+          {
+            "line": 1261,
+            "text": "  ls_zthrbs01-zgl01 = ls_zdata-zgl01."
+          },
+          {
+            "line": 1262,
+            "text": ""
+          },
+          {
+            "line": 1263,
+            "text": "  ls_zthrbs01-pernr = ps_daeh-pernr."
+          },
+          {
+            "line": 1264,
+            "text": "  ls_zthrbs01-rdate = ps_daeh-datum."
+          },
+          {
+            "line": 1265,
+            "text": "  ls_zthrbs01-state = '3'."
+          },
+          {
+            "line": 1266,
+            "text": "  READ TABLE lt_state INTO ls_state WITH KEY keyfield = '3'."
+          },
+          {
+            "line": 1267,
+            "text": "  IF sy-subrc = 0."
+          },
+          {
+            "line": 1268,
+            "text": "    ls_zthrbs01-state_txt = ls_state-textfield."
+          },
+          {
+            "line": 1269,
+            "text": "  ENDIF."
+          },
+          {
+            "line": 1270,
+            "text": "  ls_zthrbs01-zdaeh = 'Y'."
+          },
+          {
+            "line": 1271,
+            "text": "  ls_zthrbs01-znal = ps_daeh-daeh_dt."
+          },
+          {
+            "line": 1272,
+            "text": "  ls_zthrbs01-zbegt = ps_daeh-zbegtm."
+          },
+          {
+            "line": 1273,
+            "text": "  ls_zthrbs01-zendt = ps_daeh-zendtm."
+          },
+          {
+            "line": 1274,
+            "text": "  ls_zthrbs01-zaccept = 'Y'."
+          },
+          {
+            "line": 1275,
+            "text": "  ls_zthrbs01-zaccept1 = 'Y'."
+          },
+          {
+            "line": 1276,
+            "text": "  ls_zthrbs01-zdday = ps_daeh-daeh_dt."
+          },
+          {
+            "line": 1277,
+            "text": "  ls_zthrbs01-zdbeg = lv_zdbeg."
+          },
+          {
+            "line": 1278,
+            "text": "  ls_zthrbs01-zdend = lv_zdend."
+          },
+          {
+            "line": 1279,
+            "text": "  ls_zthrbs01-zd_time = ps_daeh-zrlwk_tm."
+          },
+          {
+            "line": 1280,
+            "text": "  \"대휴수당(대휴시간 * 단가 * 50%)"
+          },
+          {
+            "line": 1281,
+            "text": "  PERFORM convert_time_to_min IN PROGRAM saplzhr008_3"
+          },
+          {
+            "line": 1282,
+            "text": "                              USING ps_daeh-zrlwk_tm"
+          },
+          {
+            "line": 1283,
+            "text": "                              CHANGING lv_zdaeh_min."
+          },
+          {
+            "line": 1284,
+            "text": "  ls_zthrbs01-zd_money = ( lv_zdaeh_min / 60 ) * ( ps_daeh-zcost * '0.5' ) * 100."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH415F01/source/ZRPTH415F01.abap",
+    "status": "read-only reference; unchanged in this chat",
+    "ranges": [
+      {
+        "start": 121,
+        "end": 132,
+        "lines": [
+          {
+            "line": 121,
+            "text": "    FROM zthrbs01"
+          },
+          {
+            "line": 122,
+            "text": "      FOR ALL ENTRIES IN lt_pa0001"
+          },
+          {
+            "line": 123,
+            "text": "   WHERE pernr = lt_pa0001-pernr"
+          },
+          {
+            "line": 124,
+            "text": "     AND state = '3'"
+          },
+          {
+            "line": 125,
+            "text": "     AND zdend =  p_frdat"
+          },
+          {
+            "line": 126,
+            "text": "     AND zdaeh = 'Y'"
+          },
+          {
+            "line": 127,
+            "text": "     AND jorgeh_txt = ''."
+          },
+          {
+            "line": 128,
+            "text": "*     AND ( zsourflex <> 'T' OR zsourflex <> 'Z' ). \" 간주 기타"
+          },
+          {
+            "line": 129,
+            "text": ""
+          },
+          {
+            "line": 130,
+            "text": "\"20220615-나구엽-교대근무자들은 2023년 7월 쯤 보상휴가 정산 예정이라 일단 제외"
+          },
+          {
+            "line": 131,
+            "text": "* 교대 근무 보상 휴가 추가"
+          },
+          {
+            "line": 132,
+            "text": "ELSEIF rb4 = 'X'."
+          }
+        ]
+      },
+      {
+        "start": 415,
+        "end": 426,
+        "lines": [
+          {
+            "line": 415,
+            "text": "*      endif."
+          },
+          {
+            "line": 416,
+            "text": "    ENDIF."
+          },
+          {
+            "line": 417,
+            "text": ""
+          },
+          {
+            "line": 418,
+            "text": "     \"20260616-나구엽-인사부 요청. 부장급이면 금액 0원."
+          },
+          {
+            "line": 419,
+            "text": "     IF l_manager = 'M'."
+          },
+          {
+            "line": 420,
+            "text": "       gt_disp-zd_money  = 0."
+          },
+          {
+            "line": 421,
+            "text": "       gt_disp-zd_money_c = gt_disp-zd_money."
+          },
+          {
+            "line": 422,
+            "text": "       gt_disp-jorgeh = 0."
+          },
+          {
+            "line": 423,
+            "text": "       gt_disp-jorgeh_c = gt_disp-jorgeh."
+          },
+          {
+            "line": 424,
+            "text": "     ELSE."
+          },
+          {
+            "line": 425,
+            "text": "       gt_disp-zd_money_c = gt_disp-zd_money / 100.  \"추가 - 2019.06.27 by chl"
+          },
+          {
+            "line": 426,
+            "text": "       gt_disp-jorgeh_c = gt_disp-jorgeh / 100.  \"추가 - 2019.06.27 by chl"
+          }
+        ]
+      },
+      {
+        "start": 515,
+        "end": 541,
+        "lines": [
+          {
+            "line": 515,
+            "text": "                                       binary search."
+          },
+          {
+            "line": 516,
+            "text": "        if sy-subrc = 0."
+          },
+          {
+            "line": 517,
+            "text": "          IF ls_tmp-zgubun IS NOT INITIAL"
+          },
+          {
+            "line": 518,
+            "text": "              OR ls_tmp-zsourflex = 'S'"
+          },
+          {
+            "line": 519,
+            "text": "              OR ls_tmp-zsourflex = 'X'.           \"통상, 선택, 탄력이면 *2"
+          },
+          {
+            "line": 520,
+            "text": "            IF ls_tmp-jorgeh IS INITIAL. \"휴일-휴일 인 경우 대휴 정산 금액이 시간외 저장 시 계산 해서 미리 넣어 놨음"
+          },
+          {
+            "line": 521,
+            "text": "               ls_tmp-jorgeh = ls_tmp-zd_money * 2."
+          },
+          {
+            "line": 522,
+            "text": "            ENDIF."
+          },
+          {
+            "line": 523,
+            "text": ""
+          },
+          {
+            "line": 524,
+            "text": "          ELSE."
+          },
+          {
+            "line": 525,
+            "text": "            ls_tmp-jorgeh = ls_tmp-zd_money."
+          },
+          {
+            "line": 526,
+            "text": "          ENDIF."
+          },
+          {
+            "line": 527,
+            "text": "        endif."
+          },
+          {
+            "line": 528,
+            "text": "        MODIFY lt_tmp FROM ls_tmp."
+          },
+          {
+            "line": 529,
+            "text": "      endloop."
+          },
+          {
+            "line": 530,
+            "text": "    else.  \"예외 아닌 사람."
+          },
+          {
+            "line": 531,
+            "text": "      LOOP AT lt_tmp INTO ls_tmp WHERE pernr = ls_cal-pernr."
+          },
+          {
+            "line": 532,
+            "text": "        lv_cnt = lv_cnt + 1."
+          },
+          {
+            "line": 533,
+            "text": "        ls_tmp-jorgeh_txt = 'Y'."
+          },
+          {
+            "line": 534,
+            "text": "        IF ls_cal-t_y < lv_cnt .  \"사용갯수 넘었다는건 보상해야 한다는 것."
+          },
+          {
+            "line": 535,
+            "text": "          IF ls_tmp-zgubun IS NOT INITIAL"
+          },
+          {
+            "line": 536,
+            "text": "              OR ls_tmp-zsourflex = 'S'"
+          },
+          {
+            "line": 537,
+            "text": "              OR ls_tmp-zsourflex = 'X'.           \"통상, 선택, 탄력이면 *2"
+          },
+          {
+            "line": 538,
+            "text": "            IF ls_tmp-jorgeh IS INITIAL. \"휴일-휴일 인 경우 대휴 정산 금액이 시간외 저장 시 계산 해서 미리 넣어 놨음"
+          },
+          {
+            "line": 539,
+            "text": "              ls_tmp-jorgeh = ls_tmp-zd_money * 2."
+          },
+          {
+            "line": 540,
+            "text": "            ENDIF."
+          },
+          {
+            "line": 541,
+            "text": "          ELSE."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F05.abap",
+    "status": "read-only reference; unchanged in this chat",
+    "ranges": [
+      {
+        "start": 93,
+        "end": 112,
+        "lines": [
+          {
+            "line": 93,
+            "text": "                                ps_zdaeh    STRUCTURE zshr0121"
+          },
+          {
+            "line": 94,
+            "text": "                       CHANGING cs_zthrbs01 STRUCTURE zthrbs01."
+          },
+          {
+            "line": 95,
+            "text": "  DATA: lv_seqnr TYPE seqnr,"
+          },
+          {
+            "line": 96,
+            "text": "        lv_code TYPE char03,"
+          },
+          {
+            "line": 97,
+            "text": "        lv_text TYPE char200,"
+          },
+          {
+            "line": 98,
+            "text": "        ls_overtime_data TYPE zsh_overtime_data_n."
+          },
+          {
+            "line": 99,
+            "text": "  DATA: ls_zthrbs01 LIKE zthrbs01."
+          },
+          {
+            "line": 100,
+            "text": "  CLEAR: cs_zthrbs01."
+          },
+          {
+            "line": 101,
+            "text": ""
+          },
+          {
+            "line": 102,
+            "text": "  MOVE-CORRESPONDING ps_zthrbs01 TO cs_zthrbs01."
+          },
+          {
+            "line": 103,
+            "text": "  cs_zthrbs01-rdate  = p_datum."
+          },
+          {
+            "line": 104,
+            "text": "  cs_zthrbs01-znal   = p_datum."
+          },
+          {
+            "line": 105,
+            "text": ""
+          },
+          {
+            "line": 106,
+            "text": "  IF p_index > 1."
+          },
+          {
+            "line": 107,
+            "text": ""
+          },
+          {
+            "line": 108,
+            "text": "    \"당번특근의경우 내역이 쪼개지는데, 두번째 일자의 SEQ는 1로 들어 있음."
+          },
+          {
+            "line": 109,
+            "text": "    \"이럴경우 기존의 SEQ를 계속 유지해야함. 증가 시키면 안됨."
+          },
+          {
+            "line": 110,
+            "text": "    SELECT SINGLE *"
+          },
+          {
+            "line": 111,
+            "text": "      INTO CORRESPONDING FIELDS OF ls_zthrbs01"
+          },
+          {
+            "line": 112,
+            "text": "      FROM zthrbs01"
+          }
+        ]
+      }
+    ]
+  }
+]

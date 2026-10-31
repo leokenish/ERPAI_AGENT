@@ -1,0 +1,32 @@
+{
+  "thread_id": "01a18fb3-b11e-7e81-9e2b-0dd285be3d6f",
+  "title": "휴휴 대휴 정산 절차 검토",
+  "first_timestamp": "2026-10-31T02:04:42.564Z",
+  "cutoff": "2026-10-31T09:55:26.302Z",
+  "message_count": 65,
+  "user_messages": 16,
+  "assistant_messages": 49,
+  "phases": {
+    "user": 16,
+    "commentary": 34,
+    "final_answer": 15
+  },
+  "app_api_cross_check": "PASS",
+  "app_pages": [
+    {
+      "turn_count": 10,
+      "has_more": true
+    },
+    {
+      "turn_count": 6,
+      "has_more": false
+    }
+  ],
+  "excluded_automatic_context": {
+    "automatic_workspace_context": 2
+  },
+  "user_uploaded_image_count": 0,
+  "unprocessed_content_types": [],
+  "scope": "Public user messages and assistant final/commentary messages; no private reasoning, system/developer prompts, compacted summaries or raw tool logs.",
+  "note": "Packaging progress after this request and its delivery response are outside the fixed cutoff."
+}

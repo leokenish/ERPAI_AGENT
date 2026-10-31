@@ -1,3 +1,4 @@
+import {mountWorktimeLabs} from './worktime-labs.js';
 import {mountDocumentGraphs} from './document-graphs.js';
 import {renderSourceDocuments,filterSourceDocuments} from './source-library.js';
 import {countNumber,mountCountUps} from './count-up.js';
@@ -34,13 +35,26 @@ const groupIcon=g=>`<span class="group-icon" aria-hidden="true"><svg viewBox="0 
 const lessonLink=id=>`#/learn/${id}`;
 const lessonNumber=l=>l.displayNumber||String(l.number).padStart(2,'0');
 const footer=()=>`<footer class="site-footer"><span>KBS · ERP AI 에이전트</span><span>자료 기준 ${data.asOf} · v${data.version}</span></footer>`;
+const previewReportURLs=new Map();
 function hydratePreviewAssets(root){
  const files=globalThis.erpPreviewFiles;if(!files||!root)return;
  for(const el of root.querySelectorAll('[href],[src],[data-image]'))for(const attr of ['href','src','data-image']){
-  const url=el.getAttribute(attr);if(files[url]){el.setAttribute(attr,files[url]);if(attr==='href'&&el.hasAttribute('download')&&!el.getAttribute('download'))el.setAttribute('download',url.split('/').at(-1));}
+  const url=el.getAttribute(attr);if(files[url]){let target=files[url];
+  if(attr==='href'&&/^assets\/worktime-modernization\/[^/]+\/report\.html$/.test(url)){
+   if(!previewReportURLs.has(url)){
+    const bytes=Uint8Array.from(atob(target.split(',')[1]),c=>c.charCodeAt(0));
+    previewReportURLs.set(url,URL.createObjectURL(new Blob([bytes],{type:'text/html;charset=utf-8'})));
+   }
+   target=previewReportURLs.get(url);el.setAttribute('target','_blank');el.setAttribute('rel','noopener');
+  }
+  el.setAttribute(attr,target);if(attr==='href'&&el.hasAttribute('download')&&!el.getAttribute('download'))el.setAttribute('download',url.split('/').at(-1));}
  }
 }
 function conversationForLesson(id){
+ if(id==='worktime-modernization'){
+  const projects=data.conversations.projects.filter(p=>p.lessonIds.includes(id));
+  return `<section class="worktime-conversation-list" aria-label="이 과정의 실제 대화"><h2>이 과정의 실제 대화</h2>${projects.map(p=>`<a class="lesson-conversation-link" href="${conversationLink(p.id,p.episodes[0].id)}">${icon('nodes',24)}<span><strong>${esc(p.shortTitle)}</strong><span>${esc(p.turningPoint)}</span></span></a>`).join('')}</section>`;
+ }
  const project=data.conversations.projects.find(p=>p.lessonIds.includes(id));if(!project)return '';
  const preferred={overview:'E01',export:'E01',workspace:'E05',codex:'E05',diagnosis:'E11',feedback:'E07'};
  const episode=preferred[id]||project.episodes[0].id;
@@ -84,7 +98,7 @@ function home(){
  // Keep the home as a curated entry point; new content can live in the full indexes.
  const expansion=['collaboration','erp-mcp'].map(id=>data.lessons.find(l=>l.id===id));
  const applications=data.lessons.filter(l=>l.number>=11);
- const paths=[['01','처음 이해하기',1,4],['02','내 업무에 적용하기',5,8],['03','팀으로 확장하기',9,10],['04','에이전트 활용사례',11,16]];
+ const paths=[['01','처음 이해하기',1,4],['02','내 업무에 적용하기',5,8],['03','팀으로 확장하기',9,10],['04','에이전트 활용사례',11,17]];
  return `<div class="page home-page"><section class="hero-band"><div class="home-inner"><div class="hero-meta"><span>KBS / ERP AI AGENTS</span><span>v${esc(data.version)} · 자료 기준 ${esc(data.asOf.replaceAll('-','.'))}</span></div><div class="hero"><div class="hero-copy"><div class="eyebrow">BUILD · UNDERSTAND · COLLABORATE</div><h1 class="hero-title" aria-label="ERP AI 에이전트, 이해에서 실무로."><span class="type-line signature-word" aria-hidden="true"><span class="type-reserve">ERP AI 에이전트,</span><span class="type-output" data-type-output data-text="ERP AI 에이전트,">ERP AI 에이전트,</span></span><span class="type-line" aria-hidden="true"><span class="type-reserve">이해에서 실무로.</span><span class="type-output" data-type-output data-text="이해에서 실무로.">이해에서 실무로.</span></span></h1><p>소스와 업무 맥락을 연결하고,<br>우리 팀의 에이전트 환경을 만들어 갑니다.</p><div class="hero-actions"><a class="btn primary" href="${lessonLink(next.id)}">워크플로 살펴보기 <span aria-hidden="true">↗</span></a><a class="btn hero-secondary" href="#/map">전체 구성도 보기 <span aria-hidden="true">↗</span></a></div></div><div class="hero-media" role="img" aria-label="올리브 나무를 중심으로 협업하는 사람들. 컴퓨터 화면의 카드와 글자가 차례로 나타납니다."><div class="hero-art hero-art-light" aria-hidden="true">${data.heroScene}</div><div class="hero-art hero-art-dark" aria-hidden="true">${data.heroSceneDark}</div></div></div><div class="hero-foot"><span>현행 기능부터 확장 설계까지</span><a href="#/courses">${countNumber(data.lessons.length)}개 과정 둘러보기 <span aria-hidden="true">↓</span></a></div></div></section>
  <div class="home-inner home-content"><section class="intro-section" aria-label="프로젝트 자료 구성"><div class="section-top"><div><div class="eyebrow">BUILT FROM OUR WORK</div><h2>AI 에이전트와<br>프로젝트의 시작</h2></div><p>프로젝트의 목적과 선택한 방법을 살펴봅니다. 이어 실제 대화와 자료에서 판단의 근거를 찾습니다.</p></div><div class="stats-strip"><a href="#/library" class="stat"><span class="stat-label">SOURCES</span><strong>${countNumber(data.sources.length,2)}</strong><span>원천 자료 묶음 <b aria-hidden="true">↗</b></span></a><a href="#/conversations" class="stat"><span class="stat-label">EPISODES</span><strong>${countNumber((data.conversations.readingTotals||data.conversations.totals).episodes)}</strong><span>프로젝트 대화 에피소드 <b aria-hidden="true">↗</b></span></a><a href="#/courses" class="stat"><span class="stat-label">WORK. FLOW</span><strong>${countNumber(data.lessons.length)}</strong><span>에이전트 구축·활용 과정 <b aria-hidden="true">↗</b></span></a></div></section>
  <section class="learning-paths"><div class="section-top"><div><div class="eyebrow">WORK FLOW</div><h2>한 단계씩, 다음으로.</h2><p>전체 구조를 이해한 뒤 내 업무에 적용하고, 팀으로 확장해 갑니다.</p></div><a class="text-link" href="#/courses">전체 과정 보기 ↗</a></div><div class="path-list">${paths.map(([n,title,start,end])=>`<section class="path-entry"><span class="path-number">STEP / ${n}</span><div class="path-title"><h3>${title}</h3></div><ol class="path-courses" start="${start}">${data.lessons.filter(l=>l.number>=start&&l.number<=end).map(l=>`<li><a href="${lessonLink(l.id)}"><span class="path-course-number">${lessonNumber(l)}.</span><span>${esc(l.title)}</span></a></li>`).join('')}</ol></section>`).join('')}</div></section></div>
@@ -135,7 +149,8 @@ graphModes.cases={title:'에이전트 활용사례',nodes:[
  ['case-publishing', 0, 0, 'ERP AI 에이전트 포털 구축', '13', '프로젝트의 과정과 결과물을 함께 읽을 수 있는 포털을 만듭니다.', '', 'publishing', ''],
  ['case-ess-attendance', 0, 0, 'ESS 근태시스템 개편', '14', '근태 신청과 변경·결재의 업무 흐름을 개선합니다.', '', 'ess-attendance', ''],
  ['case-weekly-timeline', 0, 0, '업무일지 타임라인 개발', '15', '주간 기록을 연결해 업무의 연속성을 살피고 원문 근거를 확인합니다.', '', 'weekly-timeline', ''],
- ['case-smart-erp', 0, 0, '스마트 ERP 메인화면 개편', '16', '기존 업무 기능을 유지하면서 메인화면의 배치와 시각적 체계를 개선합니다.', '', 'smart-erp', '']
+ ['case-smart-erp', 0, 0, '스마트 ERP 메인화면 개편', '16', '기존 업무 기능을 유지하면서 메인화면의 배치와 시각적 체계를 개선합니다.', '', 'smart-erp', ''],
+ ['case-worktime-modernization',0,0,'근로시간 시스템 고도화','17','일곱 업무 과제를 실제 대화와 ABAP 코드로 연결합니다.','','worktime-modernization','']
 ],edges:[]};
 const mapMode=()=>location.hash.split('?')[0].split('/')[2] in graphModes?location.hash.split('?')[0].split('/')[2]:'core';
 function graphSVG(mode){
@@ -172,7 +187,9 @@ function openSourceDocuments(id,trigger){
  hydratePreviewAssets(dialog);dialog.showModal();document.body.classList.add('source-modal-open');dialog.querySelector('[data-source-search]')?.focus();
 }
 function notFound(){return `<div class="error-state"><h1>페이지를 찾을 수 없습니다.</h1><p>과정 목록에서 원하는 과정을 선택해 주세요.</p><a class="btn primary" href="#/courses">워크플로 보기</a></div>`;}
+let worktimeLabCleanup;
 function route(){
+ worktimeLabCleanup?.();
  $('#source-dialog')?.close();
  $('#source-dialog-content').innerHTML='';
  documentGraphCleanup?.(); documentGraphCleanup=undefined;
@@ -196,6 +213,7 @@ function route(){
  $('#main').innerHTML=html;
  hydratePreviewAssets($('#main'));
  documentGraphCleanup=mountDocumentGraphs($('#main'));
+ worktimeLabCleanup=mountWorktimeLabs($('#main'));
  if(parts[0]==='library'&&params.has('file')){const root=$('[data-source-documents]');if(root){const file=params.get('file');root.querySelector('[data-source-search]').value=file;filterSourceDocuments(root,file,{exactPath:true});}}
  if(parts[0]==='learn'&&parts[1]==='worktime-agent')knowledgeCleanup=mountKnowledge($('[data-knowledge]'),data.worktimeKnowledge,{docId:params.get('doc'),openDocument:params.get('read')==='1',hydrate:hydratePreviewAssets});
  if(parts[0]==='home')heroCleanup=mountHeroMotion($('.hero'));

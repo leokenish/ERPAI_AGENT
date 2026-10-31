@@ -1,0 +1,88 @@
+{
+  "thread": {
+    "id": "01a17858-9646-7762-ba81-9d5a443360f3",
+    "kind": "codex",
+    "hostId": "local",
+    "title": "폴더 이관 후 동작 확인",
+    "preview": "폴더를 이관했어. 잘동작하는거야?",
+    "status": {
+      "type": "active",
+      "activeFlags": []
+    },
+    "cwd": "/Users/naviolgu/Documents/ZHR5 근로시간 에이전트",
+    "createdAt": 1793020434,
+    "updatedAt": 1793371413
+  },
+  "page": {
+    "order": "newest_first",
+    "limit": 10,
+    "nextCursor": null,
+    "hasMore": false
+  },
+  "turns": [
+    {
+      "id": "01a18d43-6f6d-7d81-967d-d46e7f62b070",
+      "status": "inProgress",
+      "startedAt": 1793371369,
+      "completedAt": null,
+      "publicMessageItems": 2
+    },
+    {
+      "id": "01a1864c-be1e-7e60-bf92-42aa7b3010b9",
+      "status": "completed",
+      "startedAt": 1793254538,
+      "completedAt": 1793254960,
+      "publicMessageItems": 4
+    },
+    {
+      "id": "01a185ce-9b34-76e1-8df2-a1605ed26e8d",
+      "status": "completed",
+      "startedAt": 1793246272,
+      "completedAt": 1793247039,
+      "publicMessageItems": 6
+    },
+    {
+      "id": "01a185c0-d76b-7441-8615-ada0afd5e605",
+      "status": "completed",
+      "startedAt": 1793245370,
+      "completedAt": 1793245656,
+      "publicMessageItems": 7
+    },
+    {
+      "id": "01a17aa4-c95d-77c1-a204-ccaccc48c11f",
+      "status": "completed",
+      "startedAt": 1793058982,
+      "completedAt": 1793058994,
+      "publicMessageItems": 3
+    },
+    {
+      "id": "01a17a9e-5c08-7151-a09e-71f7f3a72785",
+      "status": "completed",
+      "startedAt": 1793058561,
+      "completedAt": 1793058569,
+      "publicMessageItems": 3
+    },
+    {
+      "id": "01a17861-943c-7be2-b785-21a18ecf36f9",
+      "status": "completed",
+      "startedAt": 1793021023,
+      "completedAt": 1793021289,
+      "publicMessageItems": 3
+    },
+    {
+      "id": "01a1785f-9efc-7d51-b753-13985f500bd3",
+      "status": "completed",
+      "startedAt": 1793020894,
+      "completedAt": 1793020917,
+      "publicMessageItems": 4
+    },
+    {
+      "id": "01a17858-ac7b-7460-9e9b-5b871e1d71bb",
+      "status": "completed",
+      "startedAt": 1793020439,
+      "completedAt": 1793020484,
+      "publicMessageItems": 3
+    }
+  ],
+  "note": "앱 대화 조회 범위 확인용 메타데이터. 전문은 로컬 공개 메시지 기록에서 추출했으며 도구·내부 추론을 포함하지 않음."
+}

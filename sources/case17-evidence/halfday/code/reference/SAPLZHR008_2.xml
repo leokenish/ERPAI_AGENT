@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+    <LANGUAGE>3</LANGUAGE>
+    <ISO_LANGUAGE>KO</ISO_LANGUAGE>
+    <READ_SUBRC>0</READ_SUBRC>
+    <ENTRIES>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>001</KEY>
+        <ENTRY>저장되었습니다. 확인 후, 결재 상신하시기 바랍니다!</ENTRY>
+        <LENGTH>50</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>002</KEY>
+        <ENTRY>변경사항을 저장했습니다. 확인 후, 결재 상신하세요!</ENTRY>
+        <LENGTH>50</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>003</KEY>
+        <ENTRY>저장에 실패했습니다. 다시 시도하시기 바랍니다!</ENTRY>
+        <LENGTH>46</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>004</KEY>
+        <ENTRY>간편설정을 저장하였습니다.</ENTRY>
+        <LENGTH>26</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>005</KEY>
+        <ENTRY>E85</ENTRY>
+        <LENGTH>3</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E00</KEY>
+        <ENTRY>인사정보를 확인할 수 없습니다.사번을 확인하세요!</ENTRY>
+        <LENGTH>48</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E01</KEY>
+        <ENTRY>인사정보를 확인할 수 없습니다.사번을 확인하세요!</ENTRY>
+        <LENGTH>48</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E02</KEY>
+        <ENTRY>부장급 이상 직위자분은 신청 불가합니다. 단) 휴일 대휴신청은 "부장대휴신청"에서 입력하세요!</ENTRY>
+        <LENGTH>90</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E03</KEY>
+        <ENTRY>부장급 이상 직위자만 사용 가능합니다. 확인하세요!</ENTRY>
+        <LENGTH>49</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E04</KEY>
+        <ENTRY>등록된 출제위원이 아닙니다.</ENTRY>
+        <LENGTH>27</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E05</KEY>
+        <ENTRY>입사 후,3개월 미만자는 신청할 수 없습니다.확인하세요!</ENTRY>
+        <LENGTH>53</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E06</KEY>
+        <ENTRY>시간외실비가 연봉에 포함된 사원입니다.신청 불가능합니다.</ENTRY>
+        <LENGTH>56</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E07</KEY>
+        <ENTRY>시간외 등급을 확인할 수 없습니다. 인사기획부 문의 바랍니다.(연봉계약직 T.1426, 특정업무직/방송지원직은 T.1422)</ENTRY>
+        <LENGTH>110</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E08</KEY>
+        <ENTRY>시간외신청이 불가합니다.</ENTRY>
+        <LENGTH>24</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E10</KEY>
+        <ENTRY>이미 삭제되었습니다.</ENTRY>
+        <LENGTH>20</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E11</KEY>
+        <ENTRY>이미 회수되었습니다.</ENTRY>
+        <LENGTH>20</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E12</KEY>
+        <ENTRY>이미 반려되었습니다.</ENTRY>
+        <LENGTH>20</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E13</KEY>
+        <ENTRY>시간외 마감처리 전까지, 미상신 혹은 결재 미처리로 "미결" 처리되었습니다.</ENTRY>
+        <LENGTH>72</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E14</KEY>
+        <ENTRY>이미 상신되었습니다.</ENTRY>
+        <LENGTH>20</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E15</KEY>
+        <ENTRY>이미 시간외 마감작업으로 지급되었습니다.</ENTRY>
+        <LENGTH>40</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E16</KEY>
+        <ENTRY>이미 결재승인 되었습니다.</ENTRY>
+        <LENGTH>25</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E17</KEY>
+        <ENTRY>미상신 되었습니다.</ENTRY>
+        <LENGTH>18</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E18</KEY>
+        <ENTRY>이미 대휴를 사용하였습니다.</ENTRY>
+        <LENGTH>27</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E19</KEY>
+        <ENTRY>결재기한이 지났습니다. 결재 할 수 없습니다.</ENTRY>
+        <LENGTH>43</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E20</KEY>
+        <ENTRY>입력가능한 시간범위를 초과했습니다. 익휴(익일일근면제)선택시에는 익일 24:00까지 입력가능합니다. 확인하세요.</ENTRY>
+        <LENGTH>132</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E21</KEY>
+        <ENTRY>입력가능한 시간범위를 초과했습니다. 확인하세요!</ENTRY>
+        <LENGTH>47</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E22</KEY>
+        <ENTRY>실비금액이 발생하지 않아, 저장 불가합니다. 확인하세요!</ENTRY>
+        <LENGTH>54</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E23</KEY>
+        <ENTRY>휴일에 연속근무 분리입력이 불가합니다. 확인하세요!</ENTRY>
+        <LENGTH>50</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E24</KEY>
+        <ENTRY>당일 두 번째 시간외 입력 시 반드시 '퇴출'을  선택 바랍니다.</ENTRY>
+        <LENGTH>60</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E25</KEY>
+        <ENTRY>결재(승인/반려)처리를 하였습니다. 확인하시기 바랍니다!</ENTRY>
+        <LENGTH>54</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E26</KEY>
+        <ENTRY>결재(승인/반려)처리에 실패하였습니다. 다시 시도하세요!</ENTRY>
+        <LENGTH>54</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E27</KEY>
+        <ENTRY>해당 결재 요청건은 이미 회수되었습니다. 인사부에 문의하세요!</ENTRY>
+        <LENGTH>60</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E28</KEY>
+        <ENTRY>결재 승인에 실패하였습니다. 다시 시도하시기 바랍니다!</ENTRY>
+        <LENGTH>53</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E29</KEY>
+        <ENTRY>해당 결재 요청건이 존재하지 않습니다. 인사부에 문의하세요!</ENTRY>
+        <LENGTH>58</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E30</KEY>
+        <ENTRY>근태(반차) 신청건이 없습니다. 반차버튼을 해제하고 신청하시기 바랍니다!</ENTRY>
+        <LENGTH>70</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E31</KEY>
+        <ENTRY>신규신청 : 근무종료일 + 3일, 현재일 + 5일, 재신청 : 근무일 이후 반려/회수/삭제건이 있을 경우 상신일 + 2일내</ENTRY>
+        <LENGTH>107</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E32</KEY>
+        <ENTRY>동일기간에 기 신청된 탄력근로가 존재합니다.</ENTRY>
+        <LENGTH>43</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E33</KEY>
+        <ENTRY>출제위원은 시간외를 입력할 수 없습니다. 확인하세요!</ENTRY>
+        <LENGTH>51</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E34</KEY>
+        <ENTRY>근무종료일 + 3일, 현재일 + 5일을 초과한 신규 신청건은 결재상신 및 수정 불가 합니다. 필요시 삭제 후 신규입력 바랍니다.</ENTRY>
+        <LENGTH>117</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E50</KEY>
+        <ENTRY>신제도는 (2007.06.01)일 부터 입력가능합니다. 근무일을 확인하세요!</ENTRY>
+        <LENGTH>132</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E51</KEY>
+        <ENTRY>신제도는 (2010.04.01)일 부터 입력가능합니다. 근무일을 확인하세요!</ENTRY>
+        <LENGTH>65</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E52</KEY>
+        <ENTRY>시간외 근무시간은 출장 목적지의 역일 기준으로 적용하되, 이동시간과 입·출국 관련 비행시간을 제외하고 입력하시기 바랍니다.</ENTRY>
+        <LENGTH>121</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E53</KEY>
+        <ENTRY>필수 입력사항 입니다. 확인하세요!</ENTRY>
+        <LENGTH>33</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E54</KEY>
+        <ENTRY>유효하지 않습니다.확인하세요!</ENTRY>
+        <LENGTH>29</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E55</KEY>
+        <ENTRY>종료시간이 시작시간보다 빠릅니다.익일 체크여부 등을 확인하세요!</ENTRY>
+        <LENGTH>63</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E56</KEY>
+        <ENTRY>선택할 수 없습니다. 확인하세요!</ENTRY>
+        <LENGTH>31</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E57</KEY>
+        <ENTRY>휴일에는 당직후근무 입력이 불가합니다. &lt;통상근무&gt; 혹은 &lt;시차근무&gt;에서 입력하세요!</ENTRY>
+        <LENGTH>81</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E58</KEY>
+        <ENTRY>&lt;통상근무&gt;로 입력하시기 바랍니다!</ENTRY>
+        <LENGTH>33</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E59</KEY>
+        <ENTRY>승인된 해외출장 내역이 없습니다.</ENTRY>
+        <LENGTH>32</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E60</KEY>
+        <ENTRY>현재 교대근무자 등록자로, "교대근무" 형태만 입력가능 합니다. 확인하세요!</ENTRY>
+        <LENGTH>72</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E61</KEY>
+        <ENTRY>해외출장중 시간외 대상이 아닙니다.</ENTRY>
+        <LENGTH>34</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E62</KEY>
+        <ENTRY>해외출장 기간중(시작일/종료일 제외)에는 시간외신청 불가능합니다.확인하세요!</ENTRY>
+        <LENGTH>75</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E63</KEY>
+        <ENTRY>근태 신청건이 있습니다. 확인하세요!</ENTRY>
+        <LENGTH>35</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E64</KEY>
+        <ENTRY>금일은 익휴입니다. 시간외를 신청하기 위해서는 퇴출을 체크해주세요.</ENTRY>
+        <LENGTH>66</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E65</KEY>
+        <ENTRY>동 시간대에 신청건이 있습니다.확인하세요!</ENTRY>
+        <LENGTH>41</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E66</KEY>
+        <ENTRY>연속된 근무의 분리입력은 불가합니다. 확인하세요!</ENTRY>
+        <LENGTH>48</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E67</KEY>
+        <ENTRY>기입력된 교대근무시에, 타 근무형태 입력은 불가합니다. 확인하세요!</ENTRY>
+        <LENGTH>65</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E68</KEY>
+        <ENTRY>동일 교대근무 입력과 타 근무형태 입력 조합은 불가합니다. 확인하세요!</ENTRY>
+        <LENGTH>68</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E69</KEY>
+        <ENTRY>휴일의 경우, 신청가능 건수는 1회로 제한됩니다. 확인하세요!</ENTRY>
+        <LENGTH>58</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E70</KEY>
+        <ENTRY>동일 일자로, 신청가능 건수는 3회로 제한됩니다. 확인하세요!</ENTRY>
+        <LENGTH>58</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E71</KEY>
+        <ENTRY>시간외 근무는 2일을 초과할 수 없습니다. 확인하세요!</ENTRY>
+        <LENGTH>51</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E72</KEY>
+        <ENTRY>입력 가능 시간대가 아닙니다. 확인하세요!</ENTRY>
+        <LENGTH>40</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E73</KEY>
+        <ENTRY>교대조 휴일근무는 휴일.공휴일만 가능합니다.</ENTRY>
+        <LENGTH>71</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E74</KEY>
+        <ENTRY>해당 근무유형은 선택 불가 (※ "휴일"근무유형은 근무시작일이 휴일에만 가능함)합니다. 확인하세요!</ENTRY>
+        <LENGTH>95</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E75</KEY>
+        <ENTRY>신청유형에 해당하는 근로형태가 없습니다.</ENTRY>
+        <LENGTH>40</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E76</KEY>
+        <ENTRY>휴게시간은 30분 단위로 입력을 하세요.</ENTRY>
+        <LENGTH>37</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E77</KEY>
+        <ENTRY>휴게시간은 근로시작 시간 30분이후, 근로종료 시간 30분 이전까지 입력이 가능합니다.</ENTRY>
+        <LENGTH>132</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E78</KEY>
+        <ENTRY>휴게시간을 의무휴게 시간 이상 입력 하세요.</ENTRY>
+        <LENGTH>44</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E79</KEY>
+        <ENTRY>휴게시간이 근무시간을 초과합니다. 확인하세요.</ENTRY>
+        <LENGTH>45</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E80</KEY>
+        <ENTRY>시간외 근무는 24시간을 초과할 수 없습니다. 확인하세요!</ENTRY>
+        <LENGTH>54</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E81</KEY>
+        <ENTRY>근로일 휴게시간을 의무휴게시간 이상 입력 하세요 .</ENTRY>
+        <LENGTH>60</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E82</KEY>
+        <ENTRY>가 동일 이전시간에 입력되어, 당직후근무 입력이 불가합니다. 확인하세요!</ENTRY>
+        <LENGTH>70</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E83</KEY>
+        <ENTRY>다음날 당직후근무가 입력되어 있습니다.</ENTRY>
+        <LENGTH>38</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E84</KEY>
+        <ENTRY>안식년 대상자는 시간외를 신청할 수 없습니다.</ENTRY>
+        <LENGTH>44</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E85</KEY>
+        <ENTRY>추가근로가능시간 초과하여 신청할 수 없습니다.</ENTRY>
+        <LENGTH>47</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E86</KEY>
+        <ENTRY>입력시간은 30분 단위로 가능합니다.</ENTRY>
+        <LENGTH>34</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E87</KEY>
+        <ENTRY>휴게시간이 중복 됩니다. 확인하세요!</ENTRY>
+        <LENGTH>35</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E88</KEY>
+        <ENTRY>부장직급 및 출제위원의 경우 시간외신청 불가합니다.</ENTRY>
+        <LENGTH>132</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E89</KEY>
+        <ENTRY>휴게시간을 확인하세요!</ENTRY>
+        <LENGTH>22</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E90</KEY>
+        <ENTRY>워크스케쥴과 겹치는 시간대는 입력이 불가능합니다.</ENTRY>
+        <LENGTH>50</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E91</KEY>
+        <ENTRY>익일 휴게시간을 의무휴게시간 이상 입력 하세요</ENTRY>
+        <LENGTH>60</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E92</KEY>
+        <ENTRY>주간 최대 근로시간을 초과했습니다.</ENTRY>
+        <LENGTH>34</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E93</KEY>
+        <ENTRY>주간 최대 연장 근로시간을 초과했습니다.</ENTRY>
+        <LENGTH>39</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E94</KEY>
+        <ENTRY>평일 일일 최대 근로시간을 초과했습니다.</ENTRY>
+        <LENGTH>39</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E98</KEY>
+        <ENTRY>시스템 오류입니다. 인사부에 문의하세요!</ENTRY>
+        <LENGTH>39</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>E99</KEY>
+        <ENTRY>처리하고자 하는 항목이 존재하지 않습니다.</ENTRY>
+        <LENGTH>41</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>EA1</KEY>
+        <ENTRY>주중공휴일 또는 주말인 경우 시차근로 선택이 불가합니다.</ENTRY>
+        <LENGTH>55</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>EA2</KEY>
+        <ENTRY>간주근로는 시간외 신청 불가합니다.</ENTRY>
+        <LENGTH>45</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M01</KEY>
+        <ENTRY>해당 데이터가 없습니다.</ENTRY>
+        <LENGTH>23</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M02</KEY>
+        <ENTRY>종료일보다 시작일이 큽니다. 시작/종료일자를 확인해 주시기 바랍니다.</ENTRY>
+        <LENGTH>67</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M03</KEY>
+        <ENTRY>선택하신 일자는 신청가능 기간이 아닙니다.</ENTRY>
+        <LENGTH>45</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M04</KEY>
+        <ENTRY>유연근로제 신청가능 대상자가 아닙니다.</ENTRY>
+        <LENGTH>38</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M05</KEY>
+        <ENTRY>결재상신이 가능한 기간이 아닙니다.</ENTRY>
+        <LENGTH>34</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M06</KEY>
+        <ENTRY>결재상신이 불가능합니다.(계획근로시간이 필수근로시간보다 미달됨)</ENTRY>
+        <LENGTH>64</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M07</KEY>
+        <ENTRY>결재자정보가 없습니다.</ENTRY>
+        <LENGTH>22</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M08</KEY>
+        <ENTRY>결재권한이 없습니다.</ENTRY>
+        <LENGTH>20</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M09</KEY>
+        <ENTRY>해당 기간에 실적데이터가 존재하므로, 삭제할 수 없습니다.</ENTRY>
+        <LENGTH>56</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M10</KEY>
+        <ENTRY>근무계획수립한 내역이 없습니다.</ENTRY>
+        <LENGTH>31</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M11</KEY>
+        <ENTRY>결재상신이 불가능합니다.(실제근로시간이 필수근로시간보다 미달됨)</ENTRY>
+        <LENGTH>64</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M12</KEY>
+        <ENTRY>선택하신 일자는 계획데이터가 존재하므로, 근무계획수립이 불가능합니다.</ENTRY>
+        <LENGTH>69</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M13</KEY>
+        <ENTRY>대휴를 이미 사용하였으므로, 삭제할 수 없습니다.</ENTRY>
+        <LENGTH>47</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M14</KEY>
+        <ENTRY>대휴 발생 대상자가 아닙니다.</ENTRY>
+        <LENGTH>28</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M15</KEY>
+        <ENTRY>근무계획과 실적이 동일하므로, 결재상신이 불가능합니다.</ENTRY>
+        <LENGTH>54</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M16</KEY>
+        <ENTRY>실적 상신시, '사유'는 필수로 기재하셔야 합니다.</ENTRY>
+        <LENGTH>47</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M17</KEY>
+        <ENTRY>직위가 부장/팀장 이상인 경우에만 조회가능합니</ENTRY>
+        <LENGTH>46</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M18</KEY>
+        <ENTRY>근무 계획/실적 데이터가 없습니다.</ENTRY>
+        <LENGTH>33</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M19</KEY>
+        <ENTRY>재량근로제인 경우, 선택/탄력/간주제를 신청할 수 없습니다.</ENTRY>
+        <LENGTH>57</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M20</KEY>
+        <ENTRY>익일 실적데이터가 있으므로, 특근(철야)을 신청할 수 없습니다.</ENTRY>
+        <LENGTH>60</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M21</KEY>
+        <ENTRY>익일 근태가 등록되어 있으므로 , 특근(철야)을 신청할 수 없습니다.</ENTRY>
+        <LENGTH>64</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M22</KEY>
+        <ENTRY>전일 대휴시간을 확인하세요!</ENTRY>
+        <LENGTH>27</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M23</KEY>
+        <ENTRY>익일 대휴시간을 확인하세요!</ENTRY>
+        <LENGTH>27</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M24</KEY>
+        <ENTRY>전일 및 익일 대휴시간을 확인하세요!</ENTRY>
+        <LENGTH>35</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M25</KEY>
+        <ENTRY>해당 주 마지막 근무일에 특근(철야)을 한 경우, 익일데이터는 별도 신청하셔야 합니다.</ENTRY>
+        <LENGTH>82</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M26</KEY>
+        <ENTRY>사번이 존재하지 않습니다.</ENTRY>
+        <LENGTH>25</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M29</KEY>
+        <ENTRY>신청기간중 휴직 또는 퇴직기간이 존재합니다.</ENTRY>
+        <LENGTH>44</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M30</KEY>
+        <ENTRY>일반직 직원만 유연근로 사용 가능 합니다.</ENTRY>
+        <LENGTH>40</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M31</KEY>
+        <ENTRY>[승인건 삭제 알림] 메일 발송이 실패하였습니다.</ENTRY>
+        <LENGTH>55</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M32</KEY>
+        <ENTRY>입력된 데이터가 없습니다.</ENTRY>
+        <LENGTH>25</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M33</KEY>
+        <ENTRY>조회할 DATA가 없습니다.</ENTRY>
+        <LENGTH>23</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M34</KEY>
+        <ENTRY>해당 근무시작 시간대는 기본 휴게시간을 제공하지 않으므로 필요할 경우 직접 휴게시간을 입력하시기 바랍니다.</ENTRY>
+        <LENGTH>105</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M35</KEY>
+        <ENTRY>I AM에 등록된 기본정보가 설정되었습니다.</ENTRY>
+        <LENGTH>40</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M36</KEY>
+        <ENTRY>근무계획수립 작성 전입니다.</ENTRY>
+        <LENGTH>27</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M37</KEY>
+        <ENTRY>재직중인 직원이 아닙니다.</ENTRY>
+        <LENGTH>25</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M38</KEY>
+        <ENTRY>안식년 시작 1년 6개월 미만인 경우 신청이 불가합니다.</ENTRY>
+        <LENGTH>52</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>M39</KEY>
+        <ENTRY>관리자(부서장) 인경우 신청 불가능 합니다.</ENTRY>
+        <LENGTH>41</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>MOO</KEY>
+        <ENTRY>사번을 입력해주시기 바랍니다.</ENTRY>
+        <LENGTH>29</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>S01</KEY>
+        <ENTRY>선택한 시간외근무 정보를 변경하시고, "저장" 버튼을 클릭하세요!</ENTRY>
+        <LENGTH>62</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>S06</KEY>
+        <ENTRY>해외출장 시작/종료일입니다.근무시간을 반드시 확인 후, 입력하시기 바랍니다.</ENTRY>
+        <LENGTH>74</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>S10</KEY>
+        <ENTRY>삭제표시를 하였습니다.</ENTRY>
+        <LENGTH>22</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>S11</KEY>
+        <ENTRY>삭제하였습니다.</ENTRY>
+        <LENGTH>15</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>S12</KEY>
+        <ENTRY>삭제에 실패했습니다. 다시 시도하시기 바랍니다!</ENTRY>
+        <LENGTH>46</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>S20</KEY>
+        <ENTRY>결재 상신을 완료했습니다.</ENTRY>
+        <LENGTH>25</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>S21</KEY>
+        <ENTRY>결재 상신에 실패했습니다. 다시 시도하시기 바랍니다!</ENTRY>
+        <LENGTH>51</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>S26</KEY>
+        <ENTRY>결재 처리를 하였습니다.</ENTRY>
+        <LENGTH>23</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>S30</KEY>
+        <ENTRY>결재 회수처리를 완료했습니다.</ENTRY>
+        <LENGTH>29</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>S31</KEY>
+        <ENTRY>결재 회수에 실패했습니다.다시 시도하시기 바랍니다!</ENTRY>
+        <LENGTH>50</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>S40</KEY>
+        <ENTRY>안식년 대상자는 시간외를 신청할 수 없습니다.</ENTRY>
+        <LENGTH>44</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>S52</KEY>
+        <ENTRY>기준근로시간을 공제하고, 금액이 계산됩니다. 확인하세요!</ENTRY>
+        <LENGTH>55</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>S53</KEY>
+        <ENTRY>초과 근무시 대휴선택이 가능합니다. 확인하세요!</ENTRY>
+        <LENGTH>46</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>S54</KEY>
+        <ENTRY>초과 근무시, 강제 대휴를 지정합니다. 또한, 실비는 기준단가의 50%만 지급됩니다.</ENTRY>
+        <LENGTH>78</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>S55</KEY>
+        <ENTRY>초과 근무하셨으므로, 대휴를 지정합니다. 부장의 경우, 실비는 지급되지 않습니다.</ENTRY>
+        <LENGTH>78</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>S56</KEY>
+        <ENTRY>역일(00:00~24:00)기준 휴일근무에 대한 대휴발생은 1회로 제한합니다. 대휴가 발생하지 않습니다.</ENTRY>
+        <LENGTH>92</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>S57</KEY>
+        <ENTRY>평일근무 종료시간이 익일09시 경우에 자동으로 "익휴"가 체크되며,  해제하려면 인사운영부(1452)로 문의하세요!</ENTRY>
+        <LENGTH>106</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>S58</KEY>
+        <ENTRY>선택가능한 요건(익일 기준근로시간 이상근무, 통상철야)을 충족하지 못합니다. 익휴선택이 불가하오니, 확인하세요!</ENTRY>
+        <LENGTH>109</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>S59</KEY>
+        <ENTRY>&lt;익휴&gt;를 선택하지 않았습니다. 익일 일근를 면제받은 경우, 반드시 익휴를 선택하세요.</ENTRY>
+        <LENGTH>82</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>S60</KEY>
+        <ENTRY>해외출장중에는 "익휴" 가 발생되지 않습니다.</ENTRY>
+        <LENGTH>43</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>S61</KEY>
+        <ENTRY>본인은 자연재해, 「재난 및 안전관리 기본법」에 따른 재난, 이에 준하는 사고가 발생하여 이를 수습하기 위해 불가피한</ENTRY>
+        <LENGTH>132</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>S62</KEY>
+        <ENTRY>‘특별연장근로’를 실시하였으며, 1주 12시간을 초과한 특별연장근로에 동의합니다.</ENTRY>
+        <LENGTH>79</LENGTH>
+      </TEXTPOOL>
+      <TEXTPOOL>
+        <ID>I</ID>
+        <KEY>S63</KEY>
+        <ENTRY>(관련 근거 : 근로기준법 제53조 4항, 근로기준법 시행규칙 제9조 1,2항)</ENTRY>
+        <LENGTH>132</LENGTH>
+      </TEXTPOOL>
+    </ENTRIES>
+  </asx:values>
+</asx:abap>

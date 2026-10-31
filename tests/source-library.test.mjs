@@ -34,7 +34,7 @@ test('각 프로젝트 MD 목록·개별 파일·전체 ZIP은 해당 원천의 
   }
   assert.equal(count,source.mdCount);assert.equal(expected.size,0);
  }
- assert.equal(total,867);
+ assert.equal(total,905);
 });
 
 test('자료확인 화면은 프로젝트별 링크·원래 파일명을 사용하고 HTML 문자를 이스케이프한다',()=>{

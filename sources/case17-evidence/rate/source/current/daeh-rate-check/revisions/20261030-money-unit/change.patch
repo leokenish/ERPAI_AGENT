@@ -1,0 +1,24 @@
+--- before/ZHR_DAEH_RATE_CHECK.abap
++++ after/ZHR_DAEH_RATE_CHECK.abap
+@@ -4,7 +4,7 @@
+ * 대휴 실비 단가 인상 누락 후보 조회 / SAP_BASIS 700
+ * 인정시간은 재계산하지 않는다. 0.5시간 단위 금액 배수만 검사한다.
+ * 추정차액은 금액에서 역산한 값이며 확정 지급차액이 아니다.
+-* ZTHRBS01의 금액은 기존 ZRPTH415처럼 /100하여 원으로 비교한다.
++* ZTHRBS01 조회 금액을 그대로 원 단위로 비교한다. 임의 /100 금지.
+ *---------------------------------------------------------------------*
+ TYPE-POOLS: slis.
+ TABLES: zthrbs01.
+@@ -128,8 +128,10 @@
+   LOOP AT gt_source INTO gs_source.
+     CLEAR gs_out.
+     MOVE-CORRESPONDING gs_source TO gs_out.
+-    gs_out-amount = gs_source-zd_money / 100.
+-    gs_out-settle = gs_source-jorgeh / 100.
++* 사용자 SAP 표본: ZD_MONEY 23100은 23,100원이다.
++* 다른 보고서의 /100 표시식을 가져오면 231원이 되어 배수 검사가 틀린다.
++    gs_out-amount = gs_source-zd_money.
++    gs_out-settle = gs_source-jorgeh.
+     gs_out-month_ok = '-'.
+     IF gs_out-amount <= 0.
+       gs_out-result = '확인: 0원 또는 음수'.

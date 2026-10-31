@@ -1,0 +1,11 @@
+// 메시지가 있으면 안내창 표시
+if (ret_data.E_RETURN.MESSAGE != '') {
+    alert(ret_data.E_RETURN.MESSAGE);
+}
+
+// 오류 응답인 경우에만 취소·중단 처리
+if (ret_data.E_RETURN.TYPE == 'E') {
+    // 기존 오류 처리
+}
+
+// 정상 응답은 이후 화면 처리 계속

@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "svg_png_pairs": [
+    {
+      "id": "rates",
+      "rendered": true,
+      "outside_canvas": []
+    },
+    {
+      "id": "split-two",
+      "rendered": true,
+      "outside_canvas": []
+    },
+    {
+      "id": "split-six",
+      "rendered": true,
+      "outside_canvas": []
+    },
+    {
+      "id": "lifecycle",
+      "rendered": true,
+      "outside_canvas": []
+    },
+    {
+      "id": "copy",
+      "rendered": true,
+      "outside_canvas": []
+    },
+    {
+      "id": "allocation",
+      "rendered": true,
+      "outside_canvas": []
+    },
+    {
+      "id": "duplicate",
+      "rendered": true,
+      "outside_canvas": []
+    },
+    {
+      "id": "memory",
+      "rendered": true,
+      "outside_canvas": []
+    },
+    {
+      "id": "error",
+      "rendered": true,
+      "outside_canvas": []
+    }
+  ],
+  "desktop": "1500x1050",
+  "mobile": "390x844",
+  "rate_presets": 5,
+  "split_presets": 2,
+  "lifecycle_steps": 4,
+  "changes": 8,
+  "exact_code_copies": 16,
+  "public_messages": 65,
+  "user_messages": 16,
+  "source_viewer_line_85": "PASS",
+  "verbatim_clipboard": "PASS (API mocked; OS clipboard untouched)",
+  "page_errors": [],
+  "external_requests": []
+}

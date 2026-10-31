@@ -1,0 +1,24 @@
+{
+  "title": "선택근로 대상자 제외 절차 확인",
+  "thread_id": "01a18147-5af4-7b72-8565-b7341d4806c2",
+  "created_date_kst": "2026-10-30",
+  "cutoff_utc": "2026-10-30T14:45:10.427Z",
+  "message_count": 24,
+  "user_context_count": 7,
+  "image_attachment_count": 0,
+  "transcript_source": "현재 방 로컬 세션 response_item 사용자/어시스턴트 표시 메시지",
+  "excluded": [
+    "시스템/개발자 지침",
+    "내부 추론",
+    "원시 도구 내부 로그",
+    "수집 기준 이후 포장 작업"
+  ],
+  "latest_code": "sources/versions/v3-current-two-tables.abap",
+  "intermediate_recovered": true,
+  "sap_validation": "NOT_RUN",
+  "notes": [
+    "이미지 첨부는 이 방 기록에서 확인되지 않음",
+    "참고 HTML의 다른 업무 코드는 원본 참고자료이며 현재 방 결과가 아님",
+    "초기 미배포 초안은 세션 작성 명령에서 회수한 작업 중간본"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "before": "3936ee85ccf2b9ed4d0aa4cabd39a5035c4fa8fc0fc8465ccf9e234f7cce6c5a",
+  "after": "9af8caea6617fad40263c1841e1aed3810725e9eac45caed002206203c1a21c5",
+  "reason": "SAP_BASIS 700 relational operator * error reported by user; precompute both arithmetic operands",
+  "sap_validation": "NOT_RUN"
+}

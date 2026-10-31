@@ -1,0 +1,54 @@
+{
+  "thread_id": "01a18c5e-7eba-7da1-bd39-6e05137ff3ef",
+  "thread_title": "선택근로 소급분 반영 로직 확인",
+  "messages": 48,
+  "users": 17,
+  "assistant": 31,
+  "image_count": 1,
+  "dialogue_cutoff_utc": "2026-10-30T14:43:54.534Z",
+  "excluded": [
+    "system/developer context",
+    "internal reasoning",
+    "tool raw logs"
+  ],
+  "attached_reference_sha256": "8512afcda929a24967c1264a3e1d141c4fd06246661f3811b06bbf0994d1e18d",
+  "source_hashes": {
+    "/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH411/source/ZRPTH411.abap": "4e1d1e9e705964101520179b917c0234d44a980991179829298793c1b1728f42",
+    "/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH411TOP/source/ZRPTH411TOP.abap": "103b7f5fdec0b860456d116165bfab1c7b3cb7c83fbcf17113a3cbf353525c9b",
+    "/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH411F01/source/ZRPTH411F01.abap": "6788433a0d928fe90db65240c18ec9980802710d7a7dcfa657ab75f8095f3b41",
+    "/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH411F02/source/ZRPTH411F02.abap": "3b755df3d51241529fc0a1ab1cd5e0a6736829703a5cb57d30b9c030e255b1bc",
+    "/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Function Module/ZHR_52TM_CW_PAYMENT_WKPRD/Source code/ZHR_52TM_CW_PAYMENT_WKPRD.abap": "600b5be48d445133a569a0d970cc6972b7bf48ccb284ad14308892333b110252"
+  },
+  "stages": [
+    {
+      "id": "00",
+      "name": "SAP 로컬 추출 원본",
+      "status": "reference",
+      "path": "code/00-original"
+    },
+    {
+      "id": "01",
+      "name": "첫 HTML 미완성안",
+      "status": "incomplete_do_not_apply",
+      "path": "code/01-first-incomplete"
+    },
+    {
+      "id": "02",
+      "name": "전체 보완 제안",
+      "status": "historical_proposal",
+      "path": "code/02-complete-proposal"
+    },
+    {
+      "id": "03",
+      "name": "첫 HTML 이후 추가 보완",
+      "status": "user_reported_tested",
+      "path": "code/03-applied-additional"
+    },
+    {
+      "id": "04",
+      "name": "최신 정렬·당월 금액 표시안",
+      "status": "latest_proposal_sap_not_verified",
+      "path": "code/04-latest-proposal"
+    }
+  ]
+}

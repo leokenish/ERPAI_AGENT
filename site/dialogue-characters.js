@@ -12,7 +12,14 @@ export const projectCast = Object.freeze({
  'kbs-erp-webgui-refactor':'lee',
  'kbs-erp-ess-attendance':'oh',
  'kbs-weekly-work-timeline':'lee',
- 'kbs-smart-erp-main':'chae'
+ 'kbs-smart-erp-main':'chae',
+ 'worktime-huhu':'na',
+ 'worktime-rate':'woo',
+ 'worktime-compare':'lee',
+ 'worktime-retro':'chae',
+ 'worktime-retired':'na',
+ 'worktime-cancel':'lee',
+ 'worktime-halfday':'oh'
 });
 export function characterFor(seed) {
  if(Object.hasOwn(projectCast,seed))return projectCast[seed];

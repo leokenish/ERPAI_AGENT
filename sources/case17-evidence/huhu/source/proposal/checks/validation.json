@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "scope": "proposal-only; source/context/snippet/static/conditional-model checks",
+  "protected_file_count": 5077,
+  "source_preservation": "PASS",
+  "exact_before_snippets": "PASS",
+  "candidate_reconstruction": "PASS",
+  "static_contracts": "PASS",
+  "v700_grammar": "PASS",
+  "model_cases": 16,
+  "abap_runtime_execution": "NOT_RUN",
+  "sap_execution": "NOT_RUN",
+  "full_f05_business_result": "REVIEW_REQUIRED",
+  "note": "Python models receive already-calculated rows. No DAILY/NORM/F05/DB runtime or policy validation."
+}

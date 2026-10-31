@@ -1,0 +1,26 @@
+--- before/ZHR_DAEH_RATE_CHECK.abap
++++ after/ZHR_DAEH_RATE_CHECK.abap
+@@ -47,7 +47,9 @@
+       gv_to TYPE d,
+       gv_change TYPE d,
+       gv_old_step TYPE ty_money,
+-      gv_new_step TYPE ty_money.
++      gv_new_step TYPE ty_money,
++      gv_old_check TYPE ty_money,
++      gv_new_check TYPE ty_money.
+ 
+ SELECTION-SCREEN BEGIN OF BLOCK b1 WITH FRAME TITLE text-t01.
+ PARAMETERS: p_year TYPE n LENGTH 4 DEFAULT '2026' OBLIGATORY.
+@@ -74,8 +76,11 @@
+   ENDIF.
+   gv_old_step = p_old / 4.
+   gv_new_step = p_new / 4.
++* SAP_BASIS 700: 조건문 안에서 계산하지 않고 먼저 계산한 값을 비교한다.
++  gv_old_check = gv_old_step * 4.
++  gv_new_check = gv_new_step * 4.
+   IF gv_old_step <= 0 OR gv_new_step <= 0
+-     OR gv_old_step * 4 <> p_old OR gv_new_step * 4 <> p_new.
++     OR gv_old_check <> p_old OR gv_new_check <> p_new.
+     MESSAGE '반시간 검사단위가 0.01원까지 표현되는 단가를 입력하세요.'
+       TYPE 'E'.
+   ENDIF.

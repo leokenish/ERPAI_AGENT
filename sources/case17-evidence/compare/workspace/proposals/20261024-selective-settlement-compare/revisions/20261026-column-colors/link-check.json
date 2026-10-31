@@ -1,0 +1,9 @@
+{
+  "command": "python3 maps/tools/audit_links.py",
+  "exit_code": 1,
+  "maps_broken": 0,
+  "evidence_errors": 0,
+  "existing_missing_source_links": 11,
+  "historical_inventory_changes": 284,
+  "scope": "Existing original source links and historical inventory differences remain; no new broken comparison-report links."
+}

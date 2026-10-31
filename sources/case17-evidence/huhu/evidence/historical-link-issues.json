@@ -1,0 +1,11 @@
+{
+  "missing": [],
+  "navigation_corrections": {
+    "/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR_52TM_CALC_NORM_OT_PAY/Source code/ZHR_52TM_CALC_NORM_OT_PAY.abap:86": {
+      "file": "source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_NORM_OT_PAY/Source code/ZHR_52TM_CALC_NORM_OT_PAY.abap",
+      "line": 86,
+      "canonical_correction": "/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_NORM_OT_PAY/Source code/ZHR_52TM_CALC_NORM_OT_PAY.abap"
+    }
+  },
+  "note": "Original public text is unchanged. Only educational navigation can use the verified canonical path."
+}

@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-31",
+  "feedback": "FB-20261031-005",
+  "scope": "분할 휴일실비 비교 및 재계산 값 전달의 조건부 예시",
+  "status": "LOCAL_REVIEW_COMPLETE",
+  "source_review": "실제 소스의 날짜별 대휴표시/비C 휴일분류/NORM 산식/실비 합산/SAVE·F06 전달 직접 대조",
+  "arithmetic": {
+    "status": "PASS",
+    "cases": [
+      {
+        "case": "단일 D/B 대휴 8+2 실비",
+        "split_or_saved": 50000.0,
+        "whole_or_expected": 50000.0,
+        "status": "PASS"
+      },
+      {
+        "case": "단일 T 대휴 9+2 실비",
+        "split_or_saved": 55000.0,
+        "whole_or_expected": 55000.0,
+        "status": "PASS"
+      },
+      {
+        "case": "D/T 양일 8+6+2 실비",
+        "split_or_saved": 80000.0,
+        "whole_or_expected": 80000.0,
+        "status": "PASS"
+      },
+      {
+        "case": "D/T 양일 계산 행 J 합계",
+        "split_or_saved": 160000.0,
+        "whole_or_expected": 160000.0,
+        "status": "PASS"
+      },
+      {
+        "case": "D/T 토10 대휴·일2 비대휴 실비",
+        "split_or_saved": 80000.0,
+        "whole_or_expected": 80000.0,
+        "status": "PASS"
+      },
+      {
+        "case": "단일 A 6시간 정확한 사전J와 일반2배",
+        "split_or_saved": 60000.0,
+        "whole_or_expected": 60000.0,
+        "status": "PASS"
+      },
+      {
+        "case": "이전J 잔존 가정의 차액",
+        "split_or_saved": 20000.0,
+        "whole_or_expected": 20000.0,
+        "status": "PASS"
+      }
+    ],
+    "scope_note": "정수시간·동일단가·동일 휴게후 시간합계·대휴표시 가정. SAP 또는 DAILY 실행 모형 아님."
+  },
+  "source_preservation": {
+    "status": "PASS",
+    "root": "exports/ZHR5/packages",
+    "files": 2534
+  },
+  "qa": {
+    "new_ids": [
+      "Q101",
+      "Q102",
+      "Q103"
+    ],
+    "Q85_to_Q103_uniqueness": "PASS",
+    "review": "소스 대조 후 작성·AI 자체 검토. 독립 자동 업무평가 NOT_RUN"
+  },
+  "diff_check": 0,
+  "sap_execution": "NOT_RUN",
+  "operating_cause": "REVIEW_REQUIRED",
+  "scoped_links": {
+    "status": "PASS",
+    "checked": 15
+  },
+  "repository_audit": {
+    "status": "FAIL",
+    "exit_code": 1,
+    "maps_broken": 0,
+    "evidence_errors": 0,
+    "missing_or_anchor": 298,
+    "protected_changes": 286,
+    "note": "기존 전체 감사 미통과 상태와 동일한 건수. 이번 관련 링크 오류0, 작업 전후 packages 소스2534개 해시 일치. 보호 스냅샷 미변경."
+  }
+}

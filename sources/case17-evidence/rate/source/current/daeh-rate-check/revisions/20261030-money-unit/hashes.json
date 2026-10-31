@@ -1,0 +1,6 @@
+{
+  "before": "9af8caea6617fad40263c1841e1aed3810725e9eac45caed002206203c1a21c5",
+  "after": "73ed1fe315aa09d8a3074d76e6315954202e79ab2ac90473058ef76ad7a8806a",
+  "reason": "User SAP sample ZD_MONEY 23100 displayed 231.00: remove erroneous /100 in both monetary assignments",
+  "sap_rerun": "NOT_RUN"
+}

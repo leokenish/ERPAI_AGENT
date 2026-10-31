@@ -2591,6 +2591,200 @@
           "content_markdown": "케이블을 **코발트 블루로 통일하고 교차부와 연결점을 정리**했습니다.\n\n이번에 생성한 파일의 실제 크기는 **1672×941**입니다.\n\n**해상도를 직접 지정할 수 있는 이미지 API 방식으로 전환할까요?** 이 방식은 API 키가 필요합니다. 키를 채팅에 보내지는 마세요.\n\n확인이 필요한 이유는 이미지 생성 스킬의 “Use when the user explicitly asks for or confirms the CLI/API/model path.” 지침에 따라 API 방식 전환에 명시적인 동의가 필요하기 때문입니다.\n\nSKILL.md"
         }
       }
+    },
+    "worktime-huhu": {
+      "excludedMessages": {
+        "huhu-m065": {
+          "source_sha256": "fceaed01e37498bb2e3e6b870b095c8a1feec490aa8cabce0c2dbbd6e61d8c83",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        }
+      },
+      "responseEdits": {},
+      "episodes": {}
+    },
+    "worktime-rate": {
+      "excludedMessages": {
+        "rate-m031": {
+          "source_sha256": "607cf5e05be2976e38f788d66b31b8661c74bc149bafabf137c696649a6a8c96",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        }
+      },
+      "responseEdits": {},
+      "episodes": {}
+    },
+    "worktime-compare": {
+      "excludedMessages": {
+        "compare-m001": {
+          "source_sha256": "ca02c4d7cebfeb0ed2db054bcd4dc2cd8dd24f58008e0cfa12cc8cdc632b6e56",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "compare-m002": {
+          "source_sha256": "7e08dacd38c9bcaecd5787fd69d6e01c27b202df8b6859522ec9aac98e8f4451",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "compare-m003": {
+          "source_sha256": "3cdd959271e4b368db098d9b2df998f8b80a84a9d09d03ab4a9f8f6ee2c61abf",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "compare-m004": {
+          "source_sha256": "568c56ca00b8aa87d04d1a56cfbb0aea7b4703c02bb90a0a93bfa63da33e806a",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "compare-m005": {
+          "source_sha256": "6270956a094288f22e58db1e6b9cc6367faed0faf9f93f9f39b166136eaf4085",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "compare-m006": {
+          "source_sha256": "330588e37e188e85bcce303d21176444eba663cb8b80fd5b9428dddce16a995b",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "compare-m007": {
+          "source_sha256": "0ca3107f61bb5fc18f9c0947db49c7caf526cba8dee4a68814db9d57964b1c08",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "compare-m011": {
+          "source_sha256": "df6207e3365235514e840c0bb1539b69d4f89976bee7284c3f21fc4d270c651e",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "compare-m012": {
+          "source_sha256": "3a350ca529d71933eab29c8097228c1c41117d43932ba0fb920b64be127d7769",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "compare-m013": {
+          "source_sha256": "48eb2ba25b08db52c53bd948f78559a7b13b7e206b6c6153ad6c14d3f2ba1edb",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "compare-m014": {
+          "source_sha256": "b537175c0fa40d3b0fd20e7b6ed4292e08c94d3d4fe8d36a48a3ccc08bd4bb14",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "compare-m015": {
+          "source_sha256": "b7c08ddc9a3f500d0472a3d04156ff02551a06d0f8740b58881603d727aae764",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "compare-m016": {
+          "source_sha256": "2ff30ead2d9633fb89c956470ec216661705af4c0163a7b1364fb37be78d0dcf",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "compare-m034": {
+          "source_sha256": "607cf5e05be2976e38f788d66b31b8661c74bc149bafabf137c696649a6a8c96",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        }
+      },
+      "responseEdits": {},
+      "episodes": {}
+    },
+    "worktime-retro": {
+      "excludedMessages": {
+        "retro-m017": {
+          "source_sha256": "77cf1c25646a55876846bae431dc158c0da01d7ba408996ba8246a5e7c577b88",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "retro-m018": {
+          "source_sha256": "7e92b8ccf8d2b20989d97c219d7df4aa566baf8256b2048f76aa12fb5dfcfbcb",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "retro-m046": {
+          "source_sha256": "607cf5e05be2976e38f788d66b31b8661c74bc149bafabf137c696649a6a8c96",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "retro-m047": {
+          "source_sha256": "01a07a33357a83e8b27f50ffc0d0f7437a7149be456616dfec9108852d01efc0",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "retro-m048": {
+          "source_sha256": "ac9764f733019cdbcb7693d2bf6a6d045698ed3189f1d7d63ff53b2fb59b4fb9",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        }
+      },
+      "responseEdits": {},
+      "episodes": {}
+    },
+    "worktime-retired": {
+      "excludedMessages": {
+        "retired-m007": {
+          "source_sha256": "7997b9dd207ee845ca998c0f8a059ba668e03cea6f499db17e21204ea5ffb050",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "retired-m008": {
+          "source_sha256": "0cd5f3d01ed3c77fb0d3afb392bc2eaa079b368051f4e7e40fd042096cef80a7",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "retired-m009": {
+          "source_sha256": "607cf5e05be2976e38f788d66b31b8661c74bc149bafabf137c696649a6a8c96",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "retired-m010": {
+          "source_sha256": "8e996ae0881f834281ceeaa9e45e5f69b446cfddc294d3ef0b95565528960f5c",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        }
+      },
+      "responseEdits": {},
+      "episodes": {}
+    },
+    "worktime-cancel": {
+      "excludedMessages": {
+        "cancel-m023": {
+          "source_sha256": "607cf5e05be2976e38f788d66b31b8661c74bc149bafabf137c696649a6a8c96",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "cancel-m024": {
+          "source_sha256": "62227441911d19c717d3cc0edc134a4f6963db04539043ac749117cef104bf7c",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        }
+      },
+      "responseEdits": {},
+      "episodes": {}
+    },
+    "worktime-halfday": {
+      "excludedMessages": {
+        "halfday-m001": {
+          "source_sha256": "332ed036b3142f0ca94a4bc55ac8d4f032ad0d99e39cd3bf702eee2548012705",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "halfday-m002": {
+          "source_sha256": "fd02e491279cf3f5e7a5cf100143825b838ad36806ebb221e657bdc3efe61ef7",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "halfday-m036": {
+          "source_sha256": "789856019715db075d2554a4d69a6f7223bffb3e07c52e37212b52466880ae76",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "halfday-m061": {
+          "source_sha256": "cc90b7a99dbfe6490b5703d25d9edb4633aee3feff125bb3567c6e00e9f5de44",
+          "reason": "자동 주입 맥락 또는 포장 요청"
+        },
+        "halfday-m080": {
+          "source_sha256": "0cddbd636dcecd63ae57adf949930c10881d08b98af687cb5d8645d25a974033",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "halfday-m081": {
+          "source_sha256": "2c374b57f176a5b8888546f02c47c6cb4b016e426aeee06b407aa006696460c1",
+          "reason": "자동 주입 맥락 또는 자료 이관·포장 대화"
+        },
+        "halfday-m062": {
+          "source_sha256": "fd02e491279cf3f5e7a5cf100143825b838ad36806ebb221e657bdc3efe61ef7",
+          "reason": "자동 주입 맥락 또는 포장 요청"
+        },
+        "halfday-m067": {
+          "source_sha256": "fd02e491279cf3f5e7a5cf100143825b838ad36806ebb221e657bdc3efe61ef7",
+          "reason": "자동 주입 맥락 또는 포장 요청"
+        },
+        "halfday-m078": {
+          "source_sha256": "fd02e491279cf3f5e7a5cf100143825b838ad36806ebb221e657bdc3efe61ef7",
+          "reason": "자동 주입 맥락 또는 포장 요청"
+        },
+        "halfday-m079": {
+          "source_sha256": "607cf5e05be2976e38f788d66b31b8661c74bc149bafabf137c696649a6a8c96",
+          "reason": "자동 주입 맥락 또는 포장 요청"
+        },
+        "halfday-m037": {
+          "source_sha256": "fd02e491279cf3f5e7a5cf100143825b838ad36806ebb221e657bdc3efe61ef7",
+          "reason": "페이지 열기 도구 호출"
+        }
+      },
+      "responseEdits": {},
+      "episodes": {}
     }
   }
 }

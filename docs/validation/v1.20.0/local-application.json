@@ -1,0 +1,109 @@
+{
+  "version": "1.20.0",
+  "baselineVersion": "1.19.7",
+  "baselineCommit": "2683a7e73ea73ffb663581b7f3ae928015fb2fcf",
+  "branch": "main",
+  "upstream": "origin/main",
+  "remote": "https://github.com/leokenish/ERPAI_AGENT",
+  "initialWorktree": "clean",
+  "initialIndex": "clean",
+  "packageSha256": "7011b54884f3116ab2e06018cbdf055d5f9a8ec5e25c6941019b309cc69e97ad",
+  "merge": "Verified all 541 before/after package hashes against the v1.19.7 package. Merged local anchor aliases, grammar/quotation safeguards, regression checks, deployment and local settings. No source deletions.",
+  "changes": [
+    "Course 17 added to home/menu/course index/map/search/library. Seven cases, 293 source messages, 20 episodes, five fixed actors and seven interactive/visual examples.",
+    "Seven HTML reports, 38 source MDs, 12 ABAP attachments and five conversation images connected. All 424 new evidence files preserved byte-for-byte.",
+    "Fixed 16 broken original-file/patch links in the comparison report using byte-identical embedded downloads, including offline use; explicit empty report favicons avoid missing-resource requests.",
+    "Preserved old 16 courses/199 anchors, nine conversation projects, 62.5px profiles, ChatGPT logo, colors and transcript-download removal."
+  ],
+  "preservation": {
+    "preservedOriginalTrackedFiles": 1879,
+    "preservedOriginalSources": 1576,
+    "newSourceFiles": 424,
+    "newFiles": 517,
+    "packageHashPairsVerified": 541,
+    "originalCoursesUnchanged": 16,
+    "originalTOCAnchors": 199,
+    "originalProjectsUnchanged": 9,
+    "originalConversations": {
+      "projects": 9,
+      "messages": 1327,
+      "episodes": 147,
+      "verbatim": 1309,
+      "excerpt": 0,
+      "summary": 0,
+      "reconstructed": 0,
+      "unavailable": 18
+    },
+    "currentConversations": {
+      "projects": 16,
+      "messages": 1620,
+      "episodes": 167,
+      "verbatim": 1602,
+      "excerpt": 0,
+      "summary": 0,
+      "reconstructed": 0,
+      "unavailable": 18
+    },
+    "readingConversations": {
+      "projects": 16,
+      "episodes": 154,
+      "messages": 1319
+    },
+    "MDDownloadsVerified": 1056,
+    "newSourceMDs": 38,
+    "newReports": 7,
+    "allAttachmentsVerified": 439,
+    "newABAPAttachments": 12,
+    "newImageAttachments": 5,
+    "deletedSourceFiles": [],
+    "filesAtOrAbove100MiB": [],
+    "sourceHashesStableAcrossBuild": 539
+  },
+  "dialogueCorpusAudit": {
+    "renderedMessageInstances": 1605,
+    "protectedCodeQuotesAndLinks": 5591,
+    "changedHumanDisplays": 409,
+    "malformedEndings": []
+  },
+  "verification": {
+    "node": "24.19.0",
+    "commandsInOrder": [
+      "npm run build",
+      "npm run preview:file",
+      "npm test"
+    ],
+    "build": "passed",
+    "offlinePreview": "passed",
+    "tests": {
+      "passed": 136,
+      "failed": 0,
+      "skipped": 0,
+      "existingTestsPreserved": 129,
+      "newTests": 7
+    },
+    "browserChecks": [
+      "npm start serves course 17",
+      "Home, menu, course index and case map link course 17",
+      "HTTP seven reports render; Huhu source filters/code copy verified",
+      "Course search and rate/retro/cancel/retired interactive examples pass",
+      "All seven bottom links: fixed actors/emotions, ChatGPT logo, navigation, original attachment downloads",
+      "Library 38 MD files and exact-byte MD download",
+      "Desktop/mobile light/dark course, calculations and no horizontal overflow",
+      "Offline seven reports render; Huhu source filters/code copy verified",
+      "Offline preview, all seven self-contained reports and no removed transcript downloads",
+      "No browser console errors or exceptions"
+    ],
+    "browserErrors": [],
+    "viewports": [
+      1440,
+      390
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "visualReview": "Reviewed actual course/calculation desktop-light and mobile-dark screens, plus mobile HTML report. No overflow.",
+    "sourceHashNote": "539 package sources unchanged across final build/preview/test. README current totals were updated afterward as documentation only."
+  },
+  "publication": "Prepared before commit. Push, Actions and public site results are checked after committing and reported separately."
+}

@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-31",
+  "feedback": "FB-20261031-006",
+  "scope": "후보3/4/5 수정 범위 검토와 신규/수정 웹 복사 적용 범위",
+  "status": "REVIEW_ONLY",
+  "source_review": "MOBILE SAVE의 M조건/공통F06호출·새J복사, GET_DATA 인터페이스, F03 원행·중복상세·임시저장, SAVE 그룹/조회, F05 일별재계산 대조",
+  "source_preservation": {
+    "status": "PASS",
+    "root": "exports/ZHR5/packages",
+    "files": 2534
+  },
+  "qa": {
+    "new_ids": [
+      "Q104",
+      "Q105",
+      "Q106"
+    ],
+    "Q85_to_Q106_uniqueness": "PASS",
+    "review": "소스 대조 후 작성·AI 자체 검토. 독립 자동 업무평가 NOT_RUN"
+  },
+  "diff_check": 0,
+  "implementation": "NOT_RUN",
+  "sap_execution": "NOT_RUN",
+  "operating_cause": "REVIEW_REQUIRED",
+  "scoped_links": {
+    "status": "PASS",
+    "checked": 16
+  },
+  "repository_audit": {
+    "status": "FAIL",
+    "exit_code": 1,
+    "maps_broken": 0,
+    "evidence_errors": 0,
+    "missing_or_anchor": 298,
+    "protected_changes": 286,
+    "note": "기존 전체 감사 미통과 건수 동일. 이번 관련 링크 오류0, 작업 전후 packages 소스2534개 해시 일치. 보호 스냅샷 미변경."
+  }
+}

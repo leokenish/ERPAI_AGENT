@@ -1,0 +1,18 @@
+{
+  "source_sha256": "1be8ca5a1c2c7d6d45a67857af9c64182ae8b97020fef0ec0846e82b762d65ea",
+  "checks": {
+    "no_pa9021_reference": true,
+    "no_pa0001_read": true,
+    "no_info9021_authority": true,
+    "dedicated_hr_authority": true,
+    "required_inputs": true,
+    "single_commit": true,
+    "rollback": true,
+    "settlement_guards": true,
+    "two_delete_tables": true,
+    "recheck_two_tables": true
+  },
+  "sap_syntax": "NOT_RUN",
+  "sap_execution": "NOT_RUN",
+  "grammar_parser": "NOT_AVAILABLE"
+}

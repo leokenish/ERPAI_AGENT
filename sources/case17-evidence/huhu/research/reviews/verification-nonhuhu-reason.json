@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-31",
+  "feedback": "FB-20261031-004",
+  "scope": "D/T/B 정의 및 비휴휴 JORGEH 생성의 실제 분기 설명",
+  "status": "LOCAL_REVIEW_COMPLETE",
+  "sap_execution": "NOT_RUN",
+  "operating_cause_and_intent": "REVIEW_REQUIRED",
+  "source_review": "DDIC, NORM 분기, F03/F06/SAVE/MOBILE 저장, SETTLE 소비 직접 대조",
+  "source_preservation": {
+    "status": "PASS",
+    "files": 2543
+  },
+  "qa": {
+    "new_ids": [
+      "Q99",
+      "Q100"
+    ],
+    "Q85_to_Q100_uniqueness": "PASS",
+    "review": "소스 대조 후 기준 작성·AI 자체 검토; 독립 자동평가 NOT_RUN"
+  },
+  "diff_check": 0,
+  "scoped_links": {
+    "status": "PASS",
+    "checked": 13
+  },
+  "repository_audit": {
+    "status": "FAIL",
+    "exit_code": 1,
+    "maps_broken": 0,
+    "evidence_errors": 0,
+    "missing_or_anchor": 298,
+    "protected_changes": 286,
+    "note": "기존 전체 감사 미통과 상태 유지. 이번 관련 링크 오류0; 보호 스냅샷 미변경."
+  }
+}

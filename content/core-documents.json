@@ -1135,6 +1135,206 @@
       ],
       "purpose": "요구사항과 화면·데이터·연동 계약, 수용 기준을 정리합니다. 구현 범위와 기대 동작을 검토하고 무엇을 시험해야 하는지 확인할 때 사용합니다.",
       "sha256": "20d4bb20d4cbb4f3b2e33f7460a241e7a12480fbd40a3a9a7514172d8be04c9b"
+    },
+    {
+      "sourceId": "worktime-modernization",
+      "path": "project-md/plan.md",
+      "title": "근로시간 시스템 고도화 · 진행 과정",
+      "categories": [
+        "progress"
+      ],
+      "purpose": "근로시간 시스템 고도화의 업무 판단과 변경 이유를 확인하는 자료입니다. 실제 사례의 조건과 코드 변경 범위를 연결해 다음 검토의 기준으로 활용합니다.",
+      "sha256": "e0e46b052fac8736488f495694eadc5cbfa9a3cb25545ff24be29f93d35c5db9"
+    },
+    {
+      "sourceId": "worktime-modernization",
+      "path": "project-md/intent.md",
+      "title": "근로시간 시스템 고도화 · 프로젝트 목표",
+      "categories": [
+        "progress"
+      ],
+      "purpose": "근로시간 시스템 고도화의 업무 판단과 변경 이유를 확인하는 자료입니다. 실제 사례의 조건과 코드 변경 범위를 연결해 다음 검토의 기준으로 활용합니다.",
+      "sha256": "e62b16cb704ea590d00e55bc0be13bc518e5361768d88c8880bd4c91bd585f65"
+    },
+    {
+      "sourceId": "worktime-modernization",
+      "path": "project-md/insight.md",
+      "title": "근로시간 시스템 고도화 · 프로젝트 가치",
+      "categories": [
+        "progress"
+      ],
+      "purpose": "근로시간 시스템 고도화의 업무 판단과 변경 이유를 확인하는 자료입니다. 실제 사례의 조건과 코드 변경 범위를 연결해 다음 검토의 기준으로 활용합니다.",
+      "sha256": "84aa54c74e382021e7b93f95d6802e87a478790e261d7f45a25b75085e331616"
+    },
+    {
+      "sourceId": "worktime-modernization",
+      "path": "project-md/spec.md",
+      "title": "근로시간 시스템 고도화 · 구현 범위",
+      "categories": [
+        "progress"
+      ],
+      "purpose": "근로시간 시스템 고도화의 업무 판단과 변경 이유를 확인하는 자료입니다. 실제 사례의 조건과 코드 변경 범위를 연결해 다음 검토의 기준으로 활용합니다.",
+      "sha256": "6b5f36f0fd0c46ff33b7217063945b31c974dad3df098f190a604e83e94eca9a"
+    },
+    {
+      "sourceId": "worktime-modernization",
+      "path": "compare/FB-20261029-003.md",
+      "title": "업무 피드백",
+      "categories": [
+        "feedback"
+      ],
+      "purpose": "근로시간 시스템 고도화의 업무 판단과 변경 이유를 확인하는 자료입니다. 실제 사례의 조건과 코드 변경 범위를 연결해 다음 검토의 기준으로 활용합니다.",
+      "sha256": "f593f5b90452042522d43fbc05412ca265f2e8cb54c94736c2e65adee07d1b72"
+    },
+    {
+      "sourceId": "worktime-modernization",
+      "path": "compare/FB-20261026-001.md",
+      "title": "업무 피드백",
+      "categories": [
+        "feedback"
+      ],
+      "purpose": "근로시간 시스템 고도화의 업무 판단과 변경 이유를 확인하는 자료입니다. 실제 사례의 조건과 코드 변경 범위를 연결해 다음 검토의 기준으로 활용합니다.",
+      "sha256": "940607553e0827921c7b0113ce03952185d3d5d3ada5439009c73936653d9fd8"
+    },
+    {
+      "sourceId": "worktime-modernization",
+      "path": "compare/FB-20261029-001.md",
+      "title": "업무 피드백",
+      "categories": [
+        "feedback"
+      ],
+      "purpose": "근로시간 시스템 고도화의 업무 판단과 변경 이유를 확인하는 자료입니다. 실제 사례의 조건과 코드 변경 범위를 연결해 다음 검토의 기준으로 활용합니다.",
+      "sha256": "4ae564c23b1b8a511de2989997009d353b87a59d5c538e323eaa155b2dd50913"
+    },
+    {
+      "sourceId": "worktime-modernization",
+      "path": "huhu/FB-20261031-001.md",
+      "title": "업무 피드백",
+      "categories": [
+        "feedback"
+      ],
+      "purpose": "근로시간 시스템 고도화의 업무 판단과 변경 이유를 확인하는 자료입니다. 실제 사례의 조건과 코드 변경 범위를 연결해 다음 검토의 기준으로 활용합니다.",
+      "sha256": "965c90b3168854df212c94044cc0a205ba0c838a9466908e51a7462b34474dd1"
+    },
+    {
+      "sourceId": "worktime-modernization",
+      "path": "huhu/FB-20261031-006.md",
+      "title": "업무 피드백",
+      "categories": [
+        "feedback"
+      ],
+      "purpose": "근로시간 시스템 고도화의 업무 판단과 변경 이유를 확인하는 자료입니다. 실제 사례의 조건과 코드 변경 범위를 연결해 다음 검토의 기준으로 활용합니다.",
+      "sha256": "3e7209da826bd304c54162d47d7ea61ce9e2bb074bac1199f71bcd02c87e7a42"
+    },
+    {
+      "sourceId": "worktime-modernization",
+      "path": "huhu/FB-20261031-002.md",
+      "title": "업무 피드백",
+      "categories": [
+        "feedback"
+      ],
+      "purpose": "근로시간 시스템 고도화의 업무 판단과 변경 이유를 확인하는 자료입니다. 실제 사례의 조건과 코드 변경 범위를 연결해 다음 검토의 기준으로 활용합니다.",
+      "sha256": "f0f9bccb1bce65929afbbdcce9d6f6d208429ae31a1d9d32fb8e096b048a0c42"
+    },
+    {
+      "sourceId": "worktime-modernization",
+      "path": "huhu/FB-20261031-004.md",
+      "title": "업무 피드백",
+      "categories": [
+        "feedback"
+      ],
+      "purpose": "근로시간 시스템 고도화의 업무 판단과 변경 이유를 확인하는 자료입니다. 실제 사례의 조건과 코드 변경 범위를 연결해 다음 검토의 기준으로 활용합니다.",
+      "sha256": "793c9ce96b68486398633abbc90dea5faf9dac4437b927f8cfb3e66f339ee25e"
+    },
+    {
+      "sourceId": "worktime-modernization",
+      "path": "huhu/FB-20261031-003.md",
+      "title": "업무 피드백",
+      "categories": [
+        "feedback"
+      ],
+      "purpose": "근로시간 시스템 고도화의 업무 판단과 변경 이유를 확인하는 자료입니다. 실제 사례의 조건과 코드 변경 범위를 연결해 다음 검토의 기준으로 활용합니다.",
+      "sha256": "164a6c78b3dbc006e07335f6bf145afd01e634be050bc410ab6853030aab3d9a"
+    },
+    {
+      "sourceId": "worktime-modernization",
+      "path": "huhu/FB-20261031-005.md",
+      "title": "업무 피드백",
+      "categories": [
+        "feedback"
+      ],
+      "purpose": "근로시간 시스템 고도화의 업무 판단과 변경 이유를 확인하는 자료입니다. 실제 사례의 조건과 코드 변경 범위를 연결해 다음 검토의 기준으로 활용합니다.",
+      "sha256": "bb7d5abfacaa86fd3521e72fb39dfe91ecc07d81c983bbce534f912196c0fd72"
+    },
+    {
+      "sourceId": "worktime-modernization",
+      "path": "rate/FB-20261030-004.md",
+      "title": "업무 피드백",
+      "categories": [
+        "feedback"
+      ],
+      "purpose": "근로시간 시스템 고도화의 업무 판단과 변경 이유를 확인하는 자료입니다. 실제 사례의 조건과 코드 변경 범위를 연결해 다음 검토의 기준으로 활용합니다.",
+      "sha256": "17be0354adf8b6290eb925826a55d382e8fb841f046382f5841115aa2d060a62"
+    },
+    {
+      "sourceId": "worktime-modernization",
+      "path": "rate/FB-20261030-003.md",
+      "title": "업무 피드백",
+      "categories": [
+        "feedback"
+      ],
+      "purpose": "근로시간 시스템 고도화의 업무 판단과 변경 이유를 확인하는 자료입니다. 실제 사례의 조건과 코드 변경 범위를 연결해 다음 검토의 기준으로 활용합니다.",
+      "sha256": "21384635578435c0b8e1c17dd6ba22384c1af1c870a423cbe5b74a0512a2ee94"
+    },
+    {
+      "sourceId": "worktime-modernization",
+      "path": "rate/FB-20261030-005.md",
+      "title": "업무 피드백",
+      "categories": [
+        "feedback"
+      ],
+      "purpose": "근로시간 시스템 고도화의 업무 판단과 변경 이유를 확인하는 자료입니다. 실제 사례의 조건과 코드 변경 범위를 연결해 다음 검토의 기준으로 활용합니다.",
+      "sha256": "a605aebc04a2c5a02935873f6375499277a988b4c7e5259d8b8fc276cb2b75e9"
+    },
+    {
+      "sourceId": "worktime-modernization",
+      "path": "halfday/FB-20261029-004.md",
+      "title": "업무 피드백",
+      "categories": [
+        "feedback"
+      ],
+      "purpose": "근로시간 시스템 고도화의 업무 판단과 변경 이유를 확인하는 자료입니다. 실제 사례의 조건과 코드 변경 범위를 연결해 다음 검토의 기준으로 활용합니다.",
+      "sha256": "56b1ab957f159eaf0995af14185f709211dd4618e04de8144ec6ddd91168e498"
+    },
+    {
+      "sourceId": "worktime-modernization",
+      "path": "halfday/FB-20261030-001.md",
+      "title": "업무 피드백",
+      "categories": [
+        "feedback"
+      ],
+      "purpose": "근로시간 시스템 고도화의 업무 판단과 변경 이유를 확인하는 자료입니다. 실제 사례의 조건과 코드 변경 범위를 연결해 다음 검토의 기준으로 활용합니다.",
+      "sha256": "3e7887c87d43f060f8b9f19f8f52432447a83d97c62bb9a858b2773e55a83727"
+    },
+    {
+      "sourceId": "worktime-modernization",
+      "path": "halfday/FB-20261030-002.md",
+      "title": "개발 지침 피드백",
+      "categories": [
+        "feedback"
+      ],
+      "purpose": "근로시간 시스템 고도화의 업무 판단과 변경 이유를 확인하는 자료입니다. 실제 사례의 조건과 코드 변경 범위를 연결해 다음 검토의 기준으로 활용합니다.",
+      "sha256": "683bf3eb387b7c3dfcbbb1459c9e0cda04147ef4ffff0cc04e92435b405ade40"
+    },
+    {
+      "sourceId": "worktime-modernization",
+      "path": "halfday/FB-20261029-002.md",
+      "title": "업무 피드백",
+      "categories": [
+        "feedback"
+      ],
+      "purpose": "근로시간 시스템 고도화의 업무 판단과 변경 이유를 확인하는 자료입니다. 실제 사례의 조건과 코드 변경 범위를 연결해 다음 검토의 기준으로 활용합니다.",
+      "sha256": "61c350eb43428ac5738026bd5b24c229edf20adf571a499560ec9c75652c2f66"
     }
   ],
   "classificationNotes": [

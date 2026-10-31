@@ -1,0 +1,33 @@
+{
+  "thread_id": "01a17858-9646-7762-ba81-9d5a443360f3",
+  "thread_title": "폴더 이관 후 동작 확인",
+  "source": "local saved visible message records; app read_thread cross-check",
+  "first_message": "2026-10-26T22:14:00.158000+09:00",
+  "cutoff": "2026-10-30T23:42:49.621000+09:00",
+  "message_count": 34,
+  "user_messages": 10,
+  "assistant_messages_including_question": 24,
+  "included_phases": {
+    "user": 10,
+    "commentary": 15,
+    "final_answer": 8,
+    "question": 1
+  },
+  "excluded_context_records": {
+    "automatic_workspace_or_page_context": 11
+  },
+  "unprocessed_content_types": {},
+  "images_found": 0,
+  "code_block_matches_current_file": true,
+  "current_code_sha256": "6487e6d6198bc2be4a1a25430d5c7fa4a9a886891291bf1d741a9a4d7f3fa748",
+  "unavailable_originals": [
+    "선택근무 정산 전후 변경비교.xlsx"
+  ],
+  "notes": [
+    "사용자·AI 공개 발화는 축약하지 않음.",
+    "앱 자동 주입 환경/지침과 내부 추론·도구 원시 로그는 대화 전문에 포함하지 않음.",
+    "이번 압축 요청까지를 수록하며 압축 제작 진행 메시지와 전달 답변은 제외.",
+    "이 방에 직접 업로드된 이미지가 없음. 다른 방의 이미지는 포함하지 않음.",
+    "기존 관련 작업에서 작성한 코드와 수정 이력은 맥락 자료로 포함. 이 방의 신규 구현으로 표시하지 않음."
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "as_of": "2026-10-26",
+  "review_status": "pending_business_review",
+  "scope": "Local proposal report only; no SAP connection, activation or database mutation",
+  "before": {
+    "path": "proposals/20261024-selective-settlement-compare/revisions/20261026-awart-empty/before-ZRPTH411_COMPARE.abap",
+    "sha256": "9bdc987d2167a72ce2ffddac01aa075eec05de7c6a000242f3aed893aed0eb2e"
+  },
+  "after": {
+    "path": "proposals/20261024-selective-settlement-compare/ZRPTH411_COMPARE.abap",
+    "sha256": "fd75b6d93d6400e64272e4818a4b211f5a9ddef6958232d86838db58a52396fc"
+  },
+  "patch": {
+    "path": "proposals/20261024-selective-settlement-compare/revisions/20261026-awart-empty/awart-empty.patch",
+    "sha256": "c8267b52fba2ed83a60a864ea5d18b5dea27e6d05561171416d1657eba8093fa"
+  },
+  "reason": "Accept only the known empty AWART result; keep other E/A responses blocked.",
+  "source_evidence": {
+    "source": "SRC-17, 2026-10-22",
+    "AWART_LIST": "L503-509",
+    "CW_CAL_AND_DAEH": "L166-173,L562-569",
+    "textpool": "SAPLZHR008_2 I/M01"
+  },
+  "user_result_before_fix": {
+    "sha256": "bdd20bb0a2188fde764f197308a3c3bef1c4193d615164fce64111277585c4b3",
+    "period": [
+      "2026-06-08",
+      "2026-07-05"
+    ],
+    "total": 71,
+    "calculated": 60,
+    "not_calculated": 11,
+    "contains_employee_identifiers": false
+  },
+  "validation": {
+    "grammar_v700": "PASS",
+    "partial_known_ddic_types": "PASS",
+    "static_contracts": {
+      "status": "PASS",
+      "checks": 21
+    },
+    "generated_calculation_core_unchanged": "PASS",
+    "exports_unchanged_since_revision_start": {
+      "status": "PASS",
+      "files": 2534,
+      "baseline": "proposals/20261024-selective-settlement-compare/revisions/20261026-awart-empty/source-baseline.json"
+    },
+    "sap_syntax_and_activation": "NOT_RUN",
+    "sap_return_gate_11_test_cases": "NOT_RUN",
+    "sap_11_employee_recalculation": "NOT_RUN",
+    "sap_database_unchanged_execution_check": "NOT_RUN"
+  },
+  "validation_files": {
+    "grammar-check.json": "a85d16db01edbf63afa37a4c7475b350255fd801878dd4d7f9eee532374b887a",
+    "known-types-check.json": "0bfdd8d3169be1cdc0f9000a97051275fc205b7d5fddb3193ae9c1d2de6a3817",
+    "contract-check.json": "a497e010a48800d8939fe0d498f4a31c7fa8f3a3dc3a417b1b5ea7a1dbc1f6bb"
+  },
+  "test_program": {
+    "path": "proposals/20261024-selective-settlement-compare/tests/ZRPTH411_COMPARE_TEST.abap",
+    "sha256": "b010f47325631678962b250a42a663a24dac098486465aefa4f419d8aebede70"
+  }
+}

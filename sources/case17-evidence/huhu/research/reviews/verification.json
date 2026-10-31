@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-31",
+  "scope": "휴휴 JORGEH 조사; ABAP 수정 없음",
+  "source_preservation": {
+    "status": "PASS",
+    "files": 2543,
+    "changed": []
+  },
+  "local_model": {
+    "status": "PASS",
+    "source_guards": 7,
+    "conditional_cases": 12,
+    "not_sap_execution": true
+  },
+  "new_report_links": "PASS",
+  "repository_audit": {
+    "status": "FAIL",
+    "exit_code": 1,
+    "maps_broken": 0,
+    "evidence_errors": 0,
+    "missing_or_anchor": 298,
+    "protected_changes_count": 286,
+    "note": "전체 감사는 누적 보호 스냅샷 변경으로 종료1. 지도 링크/근거줄 오류0; 새 문서/추가 링크 오류0. 검사기/스냅샷 미변경. 최초 검사에서 이번 문단 삽입으로 이동한 OPEN_QUESTIONS 근거줄 3건은 신규 절을 문서 끝으로 옮겨 해소."
+  },
+  "qa": {
+    "new_ids": [
+      "Q85",
+      "Q86",
+      "Q87",
+      "Q88"
+    ],
+    "new_id_uniqueness": "PASS",
+    "repository_existing_duplicate_ids": [
+      "Q78",
+      "Q79",
+      "Q80"
+    ],
+    "review": "AI 자체 근거 대조; 독립평가 NOT_RUN",
+    "note": "최초 전체 유일성 검사는 기존 Q78–Q80 중복으로 FAIL. 기존 참조 ID는 변경하지 않고 신규 Q85–Q88의 유일성 별도 PASS."
+  },
+  "diff_check": {
+    "exit_code": 0,
+    "output": ""
+  },
+  "sap_execution": "NOT_RUN",
+  "business_cause_confirmation": "REVIEW_REQUIRED"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "browser": "Playwright Chromium / file URL",
+  "checks": [
+    "index desktop/mobile rendering",
+    "8 source entries / 16 diff sections",
+    "full ABAP 1914 line numbers",
+    "copy text byte-equivalent",
+    "download text byte-equivalent",
+    "checklist persistence/reset",
+    "old source full line count",
+    "34 transcript messages and 10 user filter",
+    "transcript text exact JSON equality",
+    "6 document panels",
+    "zero page errors",
+    "mobile index no overflow"
+  ],
+  "note": "UI copy test uses a clipboard stub to inspect exact copied text; OS clipboard not asserted."
+}

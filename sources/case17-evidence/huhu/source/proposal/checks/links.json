@@ -1,0 +1,9 @@
+{
+  "related_links": "PASS",
+  "checked_links": 24,
+  "maps_broken": 0,
+  "evidence_errors": 0,
+  "repository_existing_missing_or_anchor": 298,
+  "repository_inventory_changes": 286,
+  "note": "The global inventory comparison includes existing repository changes; proposal source preservation is separately verified for all 5077 exports files."
+}

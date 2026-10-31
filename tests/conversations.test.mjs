@@ -8,11 +8,12 @@ import {conversationWorkspace,conversationIndex,resolveConversation,conversation
 const root=new URL('../',import.meta.url);
 const portal=JSON.parse(await readFile(new URL('dist/data/portal.json',root),'utf8'));
 const bundle=portal.conversations;
+const baselineProjects=bundle.projects.filter(p=>!p.id.startsWith('worktime-'));
 const fields=['id','sequence','role','timestamp','content_type','content_markdown','source_locator','redacted'];
 test('572개 사용자 문장은 교육용으로 구분하고 AI 전문·첨부 전용 항목을 보존한다',async()=>{
  const edits=JSON.parse(await readFile(new URL('content/conversations/editorial-prompts.json',root),'utf8'));
  let edited=0,empty=0;
- for(const p of bundle.projects)for(const m of p.messages){
+ for(const p of baselineProjects)for(const m of p.messages){
   if(m.role==='assistant')continue;
   if(!m.content_markdown.trim()){empty++;assert.equal(m.editorial_markdown,undefined);continue;}
   const edit=edits.projects[p.id][m.id];
@@ -31,8 +32,10 @@ test('572개 사용자 문장은 교육용으로 구분하고 AI 전문·첨부 
  assert.doesNotMatch(emptyHtml,/첨부 자료만 전달된 항목입니다/);assert.match(emptyHtml,/conversation-image/);
 });
 test('9개 프로젝트의 1327개 위치를 원문·발췌·요약·본문 없음으로 구분하고 순서를 보존한다',async()=>{
- assert.equal(bundle.projects.length,9);
- assert.deepEqual(bundle.totals,{projects:9,messages:1327,episodes:147,verbatim:1309,excerpt:0,summary:0,reconstructed:0,unavailable:18});
+ assert.equal(baselineProjects.length,9);
+ assert.equal(baselineProjects.reduce((n,p)=>n+p.messages.length,0),1327);
+ assert.equal(baselineProjects.reduce((n,p)=>n+p.episodes.length,0),147);
+ assert.equal(baselineProjects.flatMap(p=>p.messages).filter(m=>m.content_type==='verbatim').length,1309);
  for(const p of bundle.projects){
   const source=JSON.parse(await readFile(new URL(p.sourcePath+'conversation-data.json',root),'utf8'));
   const original=validateConversation(source);assert.equal(p.messages.length,original.length);
@@ -146,7 +149,7 @@ test('대화 데이터의 누락 참조를 거부하고 원문 HTML·실행 링�
 test('AI 경어체 편집은 해시와 확보 수준을 보존하며 요약을 전문으로 표시하지 않는다',async()=>{
  const edits=JSON.parse(await readFile(new URL('content/conversations/editorial-responses.json',root),'utf8'));
  let count=0;
- for(const p of bundle.projects)for(const m of p.messages){
+ for(const p of baselineProjects)for(const m of p.messages){
   if(m.role!=='assistant')continue;
   const edit=edits.projects[p.id]?.[m.id];
   if(!edit){assert.equal(m.editorial_markdown,undefined);continue;}

@@ -1,0 +1,84 @@
+--- before/ZRPTH411_RET_DEL.abap
++++ after/ZRPTH411_RET_DEL.abap
+@@ -1,6 +1,6 @@
+ *&---------------------------------------------------------------------*
+ *& 프로그램 : ZRPTH411_RET_DEL
+-*& 용도     : 선택근무 월정산 후 퇴직자 PA2010 제외 (한 명씩)
++*& 용도     : 선택근무 월정산 후 대상자 PA2010 제외 (한 명씩)
+ *& 작성일   : 2026.10.24 / SAP_BASIS 700 기준 개발안
+ *& 상태     : SAP 구문검사 및 업무 테스트 전
+ *& 준비     : SE93에서 ZHR5_RET_DEL 생성 후 담당자 실행권한 부여
+@@ -46,8 +46,8 @@
+ RANGES gr_date FOR gs_2010-begda.
+ 
+ INITIALIZATION.
+-  gv_title = '선택근무 퇴직자 지급 항목 삭제'.
+-  gv_lper  = '퇴직자 사번'.
++  gv_title = '선택근무 지급 항목 삭제'.
++  gv_lper  = '대상자 사번'.
+   gv_lmon  = '정산 대상연월'.
+   gv_note  = '연월은 YYYYMM 형식입니다. 기존 선택근무 정산의 대상연월을 입력하세요.'.
+ 
+@@ -58,7 +58,7 @@
+       TYPE 'E'.
+   ENDIF.
+   IF p_pernr IS INITIAL.
+-    MESSAGE '퇴직자 사번 한 명을 입력하세요.' TYPE 'E'.
++    MESSAGE '대상자 사번 한 명을 입력하세요.' TYPE 'E'.
+   ENDIF.
+ 
+ START-OF-SELECTION.
+@@ -78,7 +78,7 @@
+     EXIT.
+   ENDIF.
+ 
+-* 2. 현재 퇴직 여부, 월마감, 해당 월의 선택 지급 항목을 확인한다.
++* 2. 월마감과 해당 월의 선택 지급 항목을 확인한다.
+   PERFORM read_target CHANGING gv_error.
+   IF gv_error IS NOT INITIAL.
+     MESSAGE gv_error TYPE 'S' DISPLAY LIKE 'E'.
+@@ -96,7 +96,7 @@
+          INTO gv_text SEPARATED BY space.
+   CALL FUNCTION 'POPUP_TO_CONFIRM'
+     EXPORTING
+-      titlebar              = '퇴직자 삭제 최종 확인'
++      titlebar              = '지급 항목 삭제 최종 확인'
+       text_question         = gv_text
+       text_button_1         = '예, 삭제'
+       text_button_2         = '아니오'
+@@ -164,33 +164,15 @@
+ *& 삭제 대상 읽기: 이 FORM은 조회만 수행한다.
+ *&---------------------------------------------------------------------*
+ FORM read_target CHANGING pv_error TYPE string.
+-  DATA: lt_0000 TYPE STANDARD TABLE OF pa0000,
+-        ls_0000 TYPE pa0000,
+-        lt_0113 TYPE STANDARD TABLE OF zthr0113,
++  DATA: lt_0113 TYPE STANDARD TABLE OF zthr0113,
+         ls_0113 TYPE zthr0113,
+-        lv_lines TYPE i,
+         lv_month TYPE zthr0160-zmonth,
+         lv_pernr TYPE pa2010-pernr.
+ 
+   CLEAR pv_error.
+   REFRESH: gt_2010, gr_date.
+ 
+-* 실행일 현재 퇴직(STAT2 = 0)인 한 명만 처리한다.
+-  SELECT * INTO TABLE lt_0000 FROM pa0000
+-   WHERE pernr = p_pernr
+-     AND begda <= sy-datum AND endda >= sy-datum
+-     AND sprps = space.
+-  DESCRIBE TABLE lt_0000 LINES lv_lines.
+-  IF lv_lines <> 1.
+-    pv_error = '현재 유효한 인사상태가 한 건이 아닙니다. 인사기록을 확인하세요.'.
+-    RETURN.
+-  ENDIF.
+-  READ TABLE lt_0000 INTO ls_0000 INDEX 1.
+-  IF ls_0000-stat2 <> '0'.
+-    pv_error = '현재 퇴직자가 아닙니다. 삭제할 수 없습니다.'.
+-    RETURN.
+-  ENDIF.
+-
++* 재직·퇴직 상태와 관계없이 입력 사번의 정산 자료를 확인한다.
+ * 기존 선택 월정산의 마감확정 표식을 확인한다.
+   SELECT SINGLE zmonth INTO lv_month FROM zthr0160
+    WHERE zmonth = p_month AND z52wktp = gc_wktp.

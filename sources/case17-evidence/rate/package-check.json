@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "manifest_files": 55,
+  "generated_html_files": 5,
+  "messages": 31,
+  "code_versions": 9,
+  "comparison_sections": 9,
+  "checks": [
+    "SHA256",
+    "local HTML href/src/anchors",
+    "all source line IDs",
+    "before/after complete code",
+    "message and image counts"
+  ],
+  "errors": [],
+  "sap_validation": "NOT_RUN"
+}

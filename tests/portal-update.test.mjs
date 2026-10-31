@@ -39,7 +39,7 @@ test('홈에서 16개 과정을 각각 선택하고 사례실습 링크를 노�
  vm.runInContext(app.slice(start,end),context);
  const html=vm.runInContext('home()',context);
  const paths=html.match(/<div class="path-list">([\s\S]*?)<\/section><\/div>/)[1];
- assert.equal((paths.match(/class="path-course-number"/g)||[]).length,16);
+ assert.equal((paths.match(/class="path-course-number"/g)||[]).length,17);
  for(const l of portal.lessons)assert.match(paths,new RegExp(`href="#/learn/${l.id}"`));
  assert.doesNotMatch(paths,/01[–-]03|04[–-]07|08[–-]12/);
  assert.doesNotMatch(html,/#\/cases|사례 실습|home-practice/);
@@ -53,12 +53,12 @@ test('확장 설계 다음에 10~15 활용 사례와 개별 과정·핵심 MD �
  const html=vm.runInContext('home()',context);
  assert.ok(html.indexOf('home-applications-title')>html.indexOf('home-expansion-title'));
  const cards=[...html.matchAll(/<article class="home-card application-card">([\s\S]*?)<\/article>/g)].map(m=>m[1]);
- assert.equal(cards.length,6);
- for(const [i,id] of ['worktime-agent','webgui','publishing','ess-attendance','weekly-timeline','smart-erp'].entries()){
+ assert.equal(cards.length,7);
+ for(const [i,id] of ['worktime-agent','webgui','publishing','ess-attendance','weekly-timeline','smart-erp','worktime-modernization'].entries()){
   assert.ok(cards[i].includes(`href="#/learn/${id}">설계 과정 읽기`));
   assert.match(cards[i],/href="#\/library\?section=core-md-title"/);
  }
- assert.equal(new Set(portal.lessons.map(l=>l.displayNumber||String(l.number))).size,16);
+ assert.equal(new Set(portal.lessons.map(l=>l.displayNumber||String(l.number))).size,17);
 });
 
 test('실제 DIAG 엑셀 다운로드는 보존된 원본 바이트와 같다',async()=>{
@@ -87,7 +87,7 @@ test('생성된 배포 화면의 16개 과정과 자료실이 새 구성을 사�
  assert.doesNotMatch(home,/#\/cases|home-practice|사례 실습/);
  assert.match(home,/ERP AI 에이전트, 이해에서 실무로/);
  const library=vm.runInContext('libraryPage()',context);
- assert.equal((library.match(/data-source-open=/g)||[]).length,15);
+ assert.equal((library.match(/data-source-open=/g)||[]).length,16);
  assert.match(library,/핵심 MD 자료/);
  assert.match(library,/core-progress/);
  assert.doesNotMatch(library,/자료 범위|근거와 실습|프로젝트별 근거|바로 사용할 실습 자료|실제 화면으로 보완|전체 \d+파일|MD 지도/);

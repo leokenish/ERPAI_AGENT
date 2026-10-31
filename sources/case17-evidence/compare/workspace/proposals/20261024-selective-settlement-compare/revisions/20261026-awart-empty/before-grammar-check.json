@@ -1,0 +1,8 @@
+{
+  "tool": "@abaplint/core",
+  "version": "2.120.86",
+  "source_sha256": "9bdc987d2167a72ce2ffddac01aa075eec05de7c6a000242f3aed893aed0eb2e",
+  "language": "v700",
+  "scope": "grammar only; not SAP activation or execution",
+  "issues": []
+}

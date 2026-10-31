@@ -1,0 +1,160 @@
+--- before/ZHR_CW_MEMBER_DEL.abap
++++ after/ZHR_CW_MEMBER_DEL.abap
+@@ -3,22 +3,20 @@
+ *---------------------------------------------------------------------*
+ * 선택근로 등록 직후 취소 전용 / SAP_BASIS 700
+ * 입력한 사번, 시작일, 종료일이 모두 일치하는 한 기간만 처리한다.
+-* 세 테이블을 정확한 키로 직접 물리 삭제하고 한 번만 저장한다.
++* 두 테이블을 정확한 키로 직접 물리 삭제하고 한 번만 저장한다.
+ * 결재 연결과 실적 상태는 삭제 차단 조건으로 사용하지 않는다.
+ * 대휴 및 결재 테이블, 정산 이력과 지급 자료는 변경하지 않는다.
+ * 설치: 전용 T-code ZHR_CW_DEL을 만들고 인사부에만 부여한다.
+-* 중요: README의 PA9021 직접 삭제 및 동시 작업 제한을 확인한다.
+-*---------------------------------------------------------------------*
+-CONSTANTS: gc_wktp TYPE pa9021-z52wktp VALUE '0110',
++* 인사마스터는 조회/삭제하지 않는다. 동시 작업 제한은 README 참조.
++*---------------------------------------------------------------------*
++CONSTANTS: gc_wktp TYPE zthr0132-z52wktp VALUE '0110',
+            gc_tcode TYPE tstc-tcode VALUE 'ZHR_CW_DEL'.
+-PARAMETERS: p_pernr TYPE pa9021-pernr OBLIGATORY,
+-            p_begda TYPE pa9021-begda OBLIGATORY,
+-            p_endda TYPE pa9021-endda OBLIGATORY.
+-
+-DATA: gt_9021 TYPE STANDARD TABLE OF pa9021,
+-      gt_0132 TYPE STANDARD TABLE OF zthr0132,
++PARAMETERS: p_pernr TYPE zthr0132-pernr OBLIGATORY,
++            p_begda TYPE zthr0132-begda OBLIGATORY,
++            p_endda TYPE zthr0132-endda OBLIGATORY.
++
++DATA: gt_0132 TYPE STANDARD TABLE OF zthr0132,
+       gt_0112 TYPE STANDARD TABLE OF zthr0112,
+-      gs_9021 TYPE pa9021,
+       gs_0132 TYPE zthr0132,
+       gs_return TYPE bapireturn1,
+       gv_error TYPE string,
+@@ -82,7 +80,7 @@
+   WRITE gv_count TO gv_count_text LEFT-JUSTIFIED.
+   CONDENSE gv_count_text.
+   CONCATENATE '사번' p_pernr '기간' p_begda '~' p_endda
+-    '등록/기간 각 1건과 실적' gv_count_text
++    '선택기간 1건과 실적' gv_count_text
+     '건을 영구 삭제합니다. 결재 연결이 있어도 삭제합니다. 계속할까요?'
+     INTO gv_question SEPARATED BY space.
+   CALL FUNCTION 'POPUP_TO_CONFIRM'
+@@ -126,7 +124,7 @@
+          / '사번:', p_pernr,
+          / '시작일:', p_begda, '종료일:', p_endda,
+          / '정산연월:', gv_month,
+-         / 'PA9021:', 1, 'ZTHR0132:', 1,
++         / 'ZTHR0132:', 1,
+          / 'ZTHR0112:', gv_deleted,
+          / '처리자:', sy-uname, '처리일시:', sy-datum, sy-uzeit.
+ 
+@@ -135,45 +133,12 @@
+ *---------------------------------------------------------------------*
+ FORM read_and_check.
+   DATA: lv_count TYPE i,
+-        lv_month TYPE zthr0160-zmonth,
+-        lt_org TYPE STANDARD TABLE OF pa0001,
+-        ls_org TYPE pa0001.
++        lv_month TYPE zthr0160-zmonth.
+   CLEAR gv_error.
+-  REFRESH: gt_9021, gt_0132, gt_0112.
+-
+-  SELECT * INTO TABLE gt_9021 FROM pa9021
+-    WHERE pernr = p_pernr AND begda = p_begda
+-      AND endda = p_endda AND z52wktp = gc_wktp.
+-  DESCRIBE TABLE gt_9021 LINES lv_count.
+-  IF lv_count <> 1.
+-    gv_error = 'PA9021의 선택근로 등록이 정확히 1건이어야 합니다.'.
+-    RETURN.
+-  ENDIF.
+-  READ TABLE gt_9021 INTO gs_9021 INDEX 1.
+-
+-* 인사정보형 쓰기 권한도 확인한다. 조회기간 내 조직이력 전체 검사.
+-* P_ORGXX/구조권한 등 회사 추가 권한은 설치 시 담당자가 검증한다.
+-  SELECT * INTO TABLE lt_org FROM pa0001
+-    WHERE pernr = p_pernr AND begda <= p_endda AND endda >= p_begda.
+-  IF lt_org IS INITIAL.
+-    gv_error = '기간 내 조직정보가 없어 권한을 확인할 수 없습니다.'.
+-    RETURN.
+-  ENDIF.
+-  LOOP AT lt_org INTO ls_org.
+-    AUTHORITY-CHECK OBJECT 'P_ORGIN'
+-      ID 'INFTY' FIELD '9021'
+-      ID 'SUBTY' FIELD gs_9021-subty
+-      ID 'AUTHC' FIELD 'W'
+-      ID 'PERSA' FIELD ls_org-werks
+-      ID 'PERSG' FIELD ls_org-persg
+-      ID 'PERSK' FIELD ls_org-persk
+-      ID 'VDSK1' FIELD ls_org-vdsk1.
+-    IF sy-subrc <> 0.
+-      gv_error = '대상 직원의 정보형 9021 변경 권한이 없습니다.'.
+-      RETURN.
+-    ENDIF.
+-  ENDLOOP.
+-
++  REFRESH: gt_0132, gt_0112.
++
++* 전용 인사부 트랜잭션 권한은 실행 진입 시 검사한다.
++* 인사마스터 및 정보형 9021의 권한/등록은 이번 검사 대상이 아니다.
+   SELECT * INTO TABLE gt_0132 FROM zthr0132
+     WHERE pernr = p_pernr AND begda = p_begda
+       AND endda = p_endda AND z52wktp = gc_wktp.
+@@ -183,11 +148,6 @@
+     RETURN.
+   ENDIF.
+   READ TABLE gt_0132 INTO gs_0132 INDEX 1.
+-  IF gs_9021-z52prsq <> gs_0132-z52prsq.
+-    gv_error = '등록과 선택기간의 근무주기가 다릅니다.'.
+-    RETURN.
+-  ENDIF.
+-
+ * 근무일 월이 아닌 선택기간 종료월로 마감을 확인한다.
+   SELECT SINGLE zmonth INTO lv_month FROM zthr0160
+     WHERE zmonth = gv_month AND z52wktp = gc_wktp.
+@@ -256,39 +216,27 @@
+ ENDFORM.
+ 
+ FORM recheck_target.
+-  DATA: lt_before_9021 TYPE STANDARD TABLE OF pa9021,
+-        lt_before_0132 TYPE STANDARD TABLE OF zthr0132,
++  DATA: lt_before_0132 TYPE STANDARD TABLE OF zthr0132,
+         lt_before_0112 TYPE STANDARD TABLE OF zthr0112.
+-  lt_before_9021[] = gt_9021[].
+   lt_before_0132[] = gt_0132[].
+   lt_before_0112[] = gt_0112[].
+   PERFORM read_and_check.
+   IF gv_error IS NOT INITIAL.
+     RETURN.
+   ENDIF.
+-  IF lt_before_9021[] <> gt_9021[] OR
+-     lt_before_0132[] <> gt_0132[] OR
++  IF lt_before_0132[] <> gt_0132[] OR
+      lt_before_0112[] <> gt_0112[].
+     gv_error = '확인 중 자료가 변경됐습니다. 다시 조회하여 실행하세요.'.
+   ENDIF.
+ ENDFORM.
+ 
+ *---------------------------------------------------------------------*
+-* 중간 COMMIT 없이 세 테이블을 직접 삭제한다.
+-* PA9021은 정보형 함수를 거치지 않는다. 기간 자동 조정/사용자 출구를
+-* 실행하지 않고 정확한 원본 키 1건만 지우기 위한 전용 처리이다.
+-* 따라서 HR 표준 변경문서/버퍼/확장 로직은 자동 실행되지 않는다.
+-* 회사 정보형 9021의 부가 저장 및 변경문서 요건을 설치 전 확인한다.
++* 중간 COMMIT 없이 선택기간과 실적만 직접 삭제한다.
++* 인사마스터는 조회하거나 삭제하지 않는다.
++* 두 삭제 중 하나라도 실패하면 호출부에서 전체 ROLLBACK한다.
+ *---------------------------------------------------------------------*
+ FORM delete_target.
+   DATA lv_count TYPE i.
+-
+-* 읽어 둔 원본의 전체 기본키로 삭제하므로 다른 등록을 건드리지 않는다.
+-  DELETE pa9021 FROM TABLE gt_9021.
+-  IF sy-dbcnt <> 1.
+-    gv_error = '인사마스터 삭제 건수가 달라 전체 취소합니다.'.
+-    RETURN.
+-  ENDIF.
+ 
+ * 결재 연결 및 실적 상태와 관계없이 해당 기간 실적을 물리 삭제.
+   DELETE FROM zthr0112 WHERE pernr = p_pernr

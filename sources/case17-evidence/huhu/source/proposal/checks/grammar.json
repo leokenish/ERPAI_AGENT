@@ -1,0 +1,8 @@
+{
+  "tool": "@abaplint/core",
+  "version": "2.120.86",
+  "language": "v700",
+  "status": "PASS",
+  "scope": "target FORM and function grammar only; no SAP DDIC/FMs/activation/execution",
+  "issues": []
+}

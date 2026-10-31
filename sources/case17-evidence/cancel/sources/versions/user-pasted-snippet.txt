@@ -1,0 +1,81 @@
+FORM recheck_target.
+  DATA: lt_before_9021 TYPE STANDARD TABLE OF pa9021,
+        lt_before_0132 TYPE STANDARD TABLE OF zthr0132,
+        lt_before_0112 TYPE STANDARD TABLE OF zthr0112.
+  lt_before_9021[] = gt_9021[].
+  lt_before_0132[] = gt_0132[].
+  lt_before_0112[] = gt_0112[].
+  PERFORM read_and_check.
+  IF gv_error IS NOT INITIAL.
+    RETURN.
+  ENDIF.
+  IF lt_before_9021[] <> gt_9021[] OR
+     lt_before_0132[] <> gt_0132[] OR
+     lt_before_0112[] <> gt_0112[].
+    gv_error = '확인 중 자료가 변경됐습니다. 다시 조회하여 실행하세요.'.
+  ENDIF.
+ENDFORM.
+
+*\*---------------------------------------------------------------------\**
+*\* 중간 COMMIT 없이 세 테이블을 직접 삭제한다.*
+*\* PA9021은 정보형 함수를 거치지 않는다. 기간 자동 조정/사용자 출구를*
+*\* 실행하지 않고 정확한 원본 키 1건만 지우기 위한 전용 처리이다.*
+*\* 따라서 HR 표준 변경문서/버퍼/확장 로직은 자동 실행되지 않는다.*
+*\* 회사 정보형 9021의 부가 저장 및 변경문서 요건을 설치 전 확인한다.*
+*\*---------------------------------------------------------------------\**
+FORM delete_target.
+  DATA lv_count TYPE i.
+
+*\* 읽어 둔 원본의 전체 기본키로 삭제하므로 다른 등록을 건드리지 않는다.*
+  DELETE pa9021 FROM TABLE gt_9021.
+  IF sy-dbcnt <> 1.
+    gv_error = '인사마스터 삭제 건수가 달라 전체 취소합니다.'.
+    RETURN.
+  ENDIF.
+
+*\* 결재 연결 및 실적 상태와 관계없이 해당 기간 실적을 물리 삭제.*
+  DELETE FROM zthr0112 WHERE pernr = p_pernr
+    AND begda = p_begda AND endda = p_endda
+    AND z52wktp = gc_wktp AND z52prsq = gs_0132-z52prsq.
+  gv_deleted = sy-dbcnt.
+  IF gv_deleted <> gv_count.
+    gv_error = '실적 삭제 건수가 달라 전체 취소합니다.'.
+    RETURN.
+  ENDIF.
+  DELETE FROM zthr0132 WHERE pernr = p_pernr
+    AND begda = p_begda AND endda = p_endda
+    AND z52wktp = gc_wktp AND z52prsq = gs_0132-z52prsq.
+  IF sy-dbcnt <> 1.
+    gv_error = '선택기간 삭제 건수가 달라 전체 취소합니다.'.
+    RETURN.
+  ENDIF.
+
+*\* 저장 직전 마감 표시를 한 번 더 확인한다.*
+  SELECT COUNT( \* ) INTO lv_count FROM zthr0160
+    WHERE zmonth = gv_month AND z52wktp = gc_wktp.
+  IF lv_count > 0.
+    gv_error = '처리 중 마감이 확인되어 전체 취소합니다.'.
+    RETURN.
+  ENDIF.
+  COMMIT WORK AND WAIT.
+  IF sy-subrc <> 0.
+    gv_error = '갱신 오류입니다. 시스템 담당자가 저장 결과를 확인해야 합니다.'.
+  ENDIF.
+ENDFORM.
+
+FORM unlock_target.
+  LOOP AT gt_locks INTO gv_tabname.
+    CALL FUNCTION 'DEQUEUE_E_TABLE'
+      EXPORTING tabname = gv_tabname varkey = space \_scope = '1'.
+  ENDLOOP.
+  REFRESH gt_locks.
+  IF gv_locked = 'X'.
+    CALL FUNCTION 'BAPI_EMPLOYEE_DEQUEUE'
+      EXPORTING number = p_pernr
+      IMPORTING return = gs_return.
+    CLEAR gv_locked.
+  ENDIF.
+ENDFORM.
+
+
+내가 조금 수정한 코드야. 여기서 pa9021 은 보지말고 zthr132와 zthr0112만 삭제하게 해줘

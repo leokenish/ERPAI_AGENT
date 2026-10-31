@@ -1,0 +1,28 @@
+/* Local grammar check only; SAP DDIC/FMs and business execution are separate. */
+const fs = require('fs');
+const path = require('path');
+const crypto = require('crypto');
+const core = require(process.env.ABAPLINT_CORE || '@abaplint/core');
+const root = path.resolve(__dirname, '..');
+const source = fs.readFileSync(path.join(root, 'ZRPTH411_COMPARE.abap'), 'utf8');
+const config = new core.Config(JSON.stringify({
+  global: {files: '/src/**/*.*'},
+  syntax: {version: 'v700', errorNamespace: '^$'},
+  rules: {parser_error: true},
+}));
+const registry = new core.Registry(config);
+registry.addFile(new core.MemoryFile('zrpth411_compare.prog.abap', source));
+const testSource = fs.readFileSync(path.join(root, 'tests/ZRPTH411_COMPARE_TEST.abap'), 'utf8');
+registry.addFile(new core.MemoryFile('zrpth411_compare_test.prog.abap', testSource));
+registry.parse();
+const issues = registry.findIssues().map(i => ({
+  file: i.getFilename(), line: i.getStart().getRow(), message: i.getMessage(), rule: i.getKey(),
+}));
+const report = {tool: '@abaplint/core', version: '2.120.86',
+  source_sha256: crypto.createHash('sha256').update(source).digest('hex'),
+  test_source_sha256: crypto.createHash('sha256').update(testSource).digest('hex'),
+  language: 'v700', scope: 'grammar only; not SAP activation or execution',
+  issues};
+fs.writeFileSync(path.join(root, 'grammar-check.json'), JSON.stringify(report, null, 2) + '\n');
+console.log(JSON.stringify(report, null, 2));
+process.exitCode = issues.length ? 1 : 0;

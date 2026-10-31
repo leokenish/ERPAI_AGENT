@@ -1,0 +1,74 @@
+[
+  {
+    "type": "replace",
+    "before_start": 3,
+    "before_end": 3,
+    "after_start": 3,
+    "after_end": 3,
+    "deleted_lines": 1,
+    "added_lines": 1
+  },
+  {
+    "type": "replace",
+    "before_start": 49,
+    "before_end": 50,
+    "after_start": 49,
+    "after_end": 50,
+    "deleted_lines": 2,
+    "added_lines": 2
+  },
+  {
+    "type": "replace",
+    "before_start": 61,
+    "before_end": 61,
+    "after_start": 61,
+    "after_end": 61,
+    "deleted_lines": 1,
+    "added_lines": 1
+  },
+  {
+    "type": "replace",
+    "before_start": 81,
+    "before_end": 81,
+    "after_start": 81,
+    "after_end": 81,
+    "deleted_lines": 1,
+    "added_lines": 1
+  },
+  {
+    "type": "replace",
+    "before_start": 99,
+    "before_end": 99,
+    "after_start": 99,
+    "after_end": 99,
+    "deleted_lines": 1,
+    "added_lines": 1
+  },
+  {
+    "type": "replace",
+    "before_start": 167,
+    "before_end": 169,
+    "after_start": 167,
+    "after_end": 167,
+    "deleted_lines": 3,
+    "added_lines": 1
+  },
+  {
+    "type": "delete",
+    "before_start": 171,
+    "before_end": 171,
+    "after_start": 169,
+    "after_end": 168,
+    "deleted_lines": 1,
+    "added_lines": 0
+  },
+  {
+    "type": "replace",
+    "before_start": 178,
+    "before_end": 193,
+    "after_start": 175,
+    "after_end": 175,
+    "deleted_lines": 16,
+    "added_lines": 1
+  }
+]

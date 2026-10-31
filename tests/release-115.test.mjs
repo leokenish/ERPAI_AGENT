@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {readFile,access} from 'node:fs/promises';import {createHash} from 'node:crypto';import {inflateRawSync} from 'node:zlib';
 const root=new URL('../',import.meta.url),read=p=>readFile(new URL(p,root));const data=JSON.parse(await read('dist/data/portal.json'));
 test('핵심 MD 5종의 용도·원본 해시·ZIP 파일이 일치한다',async()=>{
- assert.deepEqual(data.coreDocuments.map(g=>g.mdCount),[12,19,35,33,32]);
+ assert.deepEqual(data.coreDocuments.map(g=>g.mdCount),[12,19,51,33,36]);
  for(const g of data.coreDocuments){const expected=new Map();for(const d of g.mdDocuments){assert.ok(d.project&&d.purpose.length>30);const bytes=await read('dist/'+d.download);assert.equal(createHash('sha256').update(bytes).digest('hex'),d.sha256);expected.set(d.sourceId+'/'+d.path,bytes);}
  const z=await read('dist/'+g.mdArchive);let o=0;while(z.readUInt32LE(o)===0x04034b50){const len=z.readUInt32LE(o+18),n=z.readUInt16LE(o+26),extra=z.readUInt16LE(o+28),name=z.subarray(o+30,o+30+n).toString(),start=o+30+n+extra;assert.deepEqual(inflateRawSync(z.subarray(start,start+len)),expected.get(name));expected.delete(name);o=start+len;}assert.equal(expected.size,0);
  }

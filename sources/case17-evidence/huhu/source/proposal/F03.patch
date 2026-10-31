@@ -1,0 +1,70 @@
+--- originals/LZHR008_2F03.abap
++++ proposed/LZHR008_2F03.abap
+@@ -5531,10 +5531,12 @@
+         lt_day_time2 TYPE ztshr0115,  "일자별
+         lt_result   TYPE ztshr0121. "[52시간] 통상시간외 금액계산 결과
+ 
+-DATA: lt_zhrdaehuamt TYPE TABLE OF zhrdaehuamt.
+-DATA: ls_zhrdaehuamt LIKE LINE OF lt_zhrdaehuamt.
+-
+-  CLEAR:  p_zemcwk_o,   p_ztoich_o,    p_ztomoh_o,   p_zdaeh_o.
++* 이번 호출에서 반환할 대휴 상세와 정산금액을 초기화한다.
++* 정산금액 전달에 사용하던 임시 DB용 변수는 삭제한다.
++  REFRESH pt_zdaeh.
++  CLEAR lv_zjorgehamt.
++
++  CLEAR: p_zemcwk_o, p_ztoich_o, p_ztomoh_o, p_zdaeh_o.
+ 
+ 
+ *...// 근로시간을 계산하기전 입력받은 '근로시작~근로종료' 시간이 유효한지 CHECK
+@@ -5771,15 +5773,9 @@
+ 
+   CLEAR: lv_za_time, lv_zr_time, lv_ze_time.
+ 
+-"20231116-NGY-당번특근 .교대철야/휴일 양일 일 경우 양일 대휴 정산 금액을 별도로 저장
+- IF cs_overtime_data-ztomo EQ 'X'.
+-  LOOP AT lt_result INTO ls_result.
+-    ls_zhrdaehuamt-pernr = cs_overtime_data-pernr.
+-    ls_zhrdaehuamt-datum = ls_result-datum.
+-    ls_zhrdaehuamt-zjorgehamt = ls_result-zjorgehamt * 100.
+-  MODIFY zhrdaehuamt FROM ls_zhrdaehuamt.
+-  ENDLOOP.
+- ENDIF.
++* 이번 계산 결과는 기존 반환 구조와 PT_ZDAEH로 직접 전달한다.
++* 신청끼리 공유하는 ZHRDAEHUAMT에는 기록하지 않는다.
++* 아래 LT_RESULT 반복문에서 금액과 대휴 상세를 집계한다.
+ 
+   LOOP AT lt_result INTO ls_result.
+     CASE ls_result-regtp.
+@@ -5841,24 +5837,16 @@
+       lv_zd_time  = lv_zd_time  + lv_min.
+       lv_zdaehamt = lv_zdaehamt + ls_result-zdaehamt.
+     ENDIF.
+-*...// 대휴상세 발생정보
+-    IF ls_result-zdaeh EQ 'X'.
++* 대휴 상세는 같은 계산 행을 한 번만 반환한다.
++* 두 조건이 모두 맞아도 APPEND는 한 번만 실행한다.
++    IF ls_result-zdaeh EQ 'X' OR lv_ngt EQ 'Y'.
+       APPEND ls_result TO pt_zdaeh.
+     ENDIF.
+ 
+-*...// 대휴정산 실비 합계
+-     lv_zjorgehamt =  ls_result-zjorgehamt.
+-
+-***********************************
+-* ZDWKTYPE 특근 N1  /   교대근로 철야 S1  양일 워킹DAY 여야함
+-***********************************
+-*    IF ls_result-zdaeh  EQ ''  AND
+-*       (  p_wktype = 'N2' OR  p_wktype = 'S1' ) .
+-*      APPEND ls_result TO pt_zdaeh.
+-*    ENDIF.
+-    IF lv_ngt = 'Y'.
+-      APPEND ls_result TO pt_zdaeh.
+-    ENDIF.
++* 신청 전체의 정산금액을 원래 계산 행에서 합산한다.
++* 대휴 상세에 포함되지 않은 다른 날짜의 기여분도 더한다.
++* 뒤의 기존 반올림 및 * 100 반환 처리는 그대로 사용한다.
++    ADD ls_result-zjorgehamt TO lv_zjorgehamt.
+ 
+ *...// 단가
+     IF cs_overtime_data-zcost IS INITIAL.

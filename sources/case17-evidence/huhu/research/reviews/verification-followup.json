@@ -1,0 +1,83 @@
+{
+  "date": "2026-10-31",
+  "feedback": "FB-20261031-002",
+  "scope": "후보 성립 조건 정정; ABAP/SAP 수정 없음",
+  "source_preservation": {
+    "status": "PASS",
+    "files": 2543,
+    "changed": []
+  },
+  "source_branch_checks": {
+    "status": "PASS",
+    "assertions": 7,
+    "method": "소스 분기·대입 위치 확인, 실행 재현 아님"
+  },
+  "qa": {
+    "updated_ids": [
+      "Q86",
+      "Q88"
+    ],
+    "new_ids": [
+      "Q89",
+      "Q90",
+      "Q91",
+      "Q92"
+    ],
+    "uniqueness_Q85_to_Q92": "PASS",
+    "review": "소스 기반 AI 자체 대조; 독립 자동평가 NOT_RUN"
+  },
+  "sap_execution": "NOT_RUN",
+  "operating_cause": "REVIEW_REQUIRED",
+  "staggered_policy": "REVIEW_REQUIRED",
+  "scoped_links": {
+    "status": "PASS",
+    "checked": 11
+  },
+  "repository_audit": {
+    "status": "FAIL",
+    "exit_code": 1,
+    "maps_broken": 0,
+    "evidence_errors": 0,
+    "missing_or_anchor": 298,
+    "protected_changes_count": 286,
+    "note": "전체 감사는 기존 누락 링크·보호 스냅샷 차이로 미통과. 최초 이번 검사에 검증 장부 생성 시점 때문에 새 링크 누락1건이 있어 파일 생성 후 재검사했고 해소. 최종 새 관련 링크 오류0. 감사 기준·보호 스냅샷은 수정하지 않음."
+  },
+  "diff_check": {
+    "exit_code": 0,
+    "output": ""
+  },
+  "additional_code_explanation": {
+    "scope": [
+      "DAILY 같은 날짜 정상/초과 분리 후 휴일 재분류",
+      "메모리 초기화와 DB 미소비 행 삭제 구별",
+      "단일 휴일 NORM→F03→F06→SAVE→MOBILE JORGEH 경로 및 GET_DATA 후처리"
+    ],
+    "review": "직접 소스 대조; SAP 미실행",
+    "updated_qa": [
+      "Q91"
+    ],
+    "new_qa": [
+      "Q93",
+      "Q94"
+    ],
+    "qa_Q85_to_Q94_uniqueness": "PASS",
+    "source_preservation": {
+      "status": "PASS",
+      "files": 2543
+    },
+    "scoped_links": {
+      "status": "PASS",
+      "checked": 11
+    },
+    "diff_check": 0,
+    "full_audit": {
+      "status": "FAIL",
+      "maps_broken": 0,
+      "evidence_errors": 0,
+      "missing_or_anchor": 298,
+      "protected_changes": 286,
+      "note": "기존 전체 감사 미통과 상태 유지; 이번 관련 링크 오류0"
+    },
+    "sap_execution": "NOT_RUN"
+  }
+}

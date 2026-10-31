@@ -1,0 +1,970 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>대화 전문 · 휴휴 대휴 AI 사례</title><link rel="stylesheet" href="assets/site.css"></head><body><header class="top"><a href="index.html" class="brand">계산에서 저장까지 <small>AI CASE STUDY / ZHR5</small></a><nav><a href="scenarios.html">그림으로 이해</a><a href="code-review.html">코드와 발견 과정</a><a href="transcript.html">대화 전문</a><a href="files.html">파일·이미지</a></nav></header><main><section class="hero"><div class="eyebrow">공개 발화 원문 · 65개 메시지</div><h1>질문과 답변을<br><span class="light">정정 과정까지 그대로</span></h1><p class="lead">2026년 10월 31일 최초 질문부터 교육자료 압축 요청까지. 사용자 16개, AI 공개 답변·진행 안내 49개를 수록했습니다. 원문 오탈자와 과거 설명을 교정하지 않았습니다.</p></section><div class="notice">아래 초기 답변을 현재 확정 결론으로 인용하지 마세요. 선택 CW 분할 제외, 웹 신규·수정 공통 복사, DB 잔존의 조건부 설명 등 뒤의 정정을 함께 봐야 합니다. 시스템 지침·비공개 추론·도구 원시 로그는 공개 대화 전문에 포함하지 않습니다.</div><div class="actions"><a href="conversation/transcript.md" download>Markdown 전문</a><a href="conversation/transcript.txt" download>텍스트 전문</a><a href="conversation/messages.json" download>메시지 JSON</a></div><div class="searchbar"><input id="conversation-search" type="search" aria-label="대화 검색" placeholder="대화 내용 검색"><select id="conversation-role" aria-label="발화자"><option value="all">전체 발화자</option><option value="user">사용자</option><option value="assistant">AI</option></select><label><input type="checkbox" id="hide-commentary"> 진행 안내 숨기기</label><span id="conversation-count"></span></div><article id="M001" class="message user user" data-role="user" data-phase="user"><div class="message-head"><b>M001 · 사용자</b><span>user</span><span>2026-10-31T11:04:42.564000+09:00</span><button class="copy" data-copy="M001">원문 복사</button></div><div class="message-body">선택근무는 반기별로 대휴를 정산하게 되어있어. 대휴실비는 보통은 시간외 발생금액 zthrbs01테이블을 참조하고 거기 금액에서 곱하기2를 해서 정산해. 반기별로 말이야. 그런데 대충 3년전부터 휴일-휴일에 걸쳐서 대휴가 발생하는 경우 단순히 곱하기 2를 하면 안된는 문제가 있어. 왜냐하면 앞에 휴일과 뒤에 휴일을 각각 토요일 일요일이라고 한다면 양일에 걸쳐서 시간외 근무를 할 수있는거야. 그럼 토요일 5시간이 넘으면서 토요일 대휴로 생성될수도 있고 일요일 5시간이 넘으면 일요일 대휴로 생성될수도있고 둘다 5시간 넘으면 대휴가 2개 각각 생성되고 토요일 3시간 일요일 2시간이면 토요일 대휴로 또 1개 대휴를 만들어 주게 되어있어. 그리고 원래 휴일근무는 시간외 단가  곱하기 1.5해서 주고 있어. 그런데 토요일에 생기면 토요일 분은 곱하기 0.5이고 일요일분은 1.5배야. 이런식으로 굉장히 복잡하게 돌아가고 있고 이 로직이 z..norm..pay? 이런 코드에 들어가 있어. 이걸 휴휴 대휴정산이라고해. 그리고 휴휴 대휴 정산 금액은 사용자가 입력할때 계산해서 zthrbs01테이블 jorgeh 필드에 들어갈거야. 우선 이 절차가 맞는지 확인해주고 내가 말한 내용이 맞는지 세밀하게 검토해줘 
+</div></article><article id="M002" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M002 · AI</b><span>commentary</span><span>2026-10-31T11:04:45.508000+09:00</span><button class="copy" data-copy="M002">원문 복사</button></div><div class="message-body">`zhr5-business-qa` 스킬로 관련 업무 문서와 실제 코드를 대조하겠습니다. 휴일→휴일 근무의 대휴 생성 조건, 금액 계산, `ZTHRBS01-JORGEH` 저장, 반기 정산에서 사용하는 경로를 나눠 확인하겠습니다.
+</div></article><article id="M003" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M003 · AI</b><span>commentary</span><span>2026-10-31T11:05:01.278000+09:00</span><button class="copy" data-copy="M003">원문 복사</button></div><div class="message-body">말씀하신 함수는 `ZHR_52TM_CALC_NORM_OT_PAY`가 맞습니다. 반기 정산에서도 `JORGEH`에 금액이 있으면 그 값을 쓰고, 없으면 `ZD_MONEY × 2`를 계산하는 분기를 찾았습니다. 다만 선택근무의 대휴 생성 경로가 이 함수와 연결되는지, “5시간”이 코드의 휴게 차감 후 “4.5시간”과 어떻게 대응하는지는 더 확인하고 있습니다.
+</div></article><article id="M004" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M004 · AI</b><span>commentary</span><span>2026-10-31T11:05:34.307000+09:00</span><button class="copy" data-copy="M004">원문 복사</button></div><div class="message-body">중요한 차이가 확인됐습니다. 말씀하신 0.5배·1.5배 계산과 `JORGEH` 사전 저장은 통상 시간외 입력 경로에서 확인됩니다. 선택근무는 별도의 대휴 생성 프로그램이 `ZD_MONEY`를 만들고, 그 저장 구간에는 `JORGEH` 대입이 없습니다. 또 휴휴 합산 1건의 정산액을 날짜별로 저장·회수하는 부분에 금액 누락 가능성이 보여, 계산 의도와 실제 저장 결과를 구분해 검토하겠습니다.
+</div></article><article id="M005" class="message assistant final_answer" data-role="assistant" data-phase="final_answer"><div class="message-head"><b>M005 · AI</b><span>final_answer</span><span>2026-10-31T11:07:11.487000+09:00</span><button class="copy" data-copy="M005">원문 복사</button></div><div class="message-body">**말씀하신 휴휴 정산의 핵심 원리와 함수·필드 이름은 맞습니다. 다만, “선택근무의 처리 경로”, “5시간 기준”, “JORGEH에 정확한 금액이 저장되는지”는 구분해야 합니다.** 특히 현재 소스에는 합산 대휴의 정산액이 일부만 저장될 수 있는 의심 구간도 있습니다.
+
+확인 기준은 **2026-10-22 KSP/300 추출 소스(SRC-17)**입니다. 실제 운영 데이터로 재현한 결과는 아닙니다.
+
+**반기 정산과 ×2 처리는 확인됩니다.**
+
+`ZRPTH415F01`은 `ZTHRBS01`에서 승인 상태이고, 지정한 대휴 사용종료일에 해당하는 미정산 대휴를 조회합니다. 통상·선택·탄력의 보상 대상 금액은 다음처럼 정합니다.
+
+| 조건 | 정산금액 처리 |
+|---|---|
+| `JORGEH`가 초기값 | `ZD_MONEY × 2` |
+| `JORGEH`에 금액이 있음 | 기존 `JORGEH` 사용 |
+
+따라서 말씀하신 “시간외 발생금액의 두 배”는 정확히는 **대휴 실비 금액인 `ZD_MONEY`의 두 배**입니다. 연장·야간 등을 포함한 시간외 총액 전체의 두 배가 아닙니다. 사용한 대휴 개수를 반영한 뒤 보상 대상을 계산하는 과정도 있습니다. [SRC-17 · ZRPTH415F01 L119–127, L460–549](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH415F01/source/ZRPTH415F01.abap:504&gt;)
+
+일반 직원의 선택 대휴는 **선택기간 종료일**을 기준으로 상반기 종료분은 그해 12월 31일, 하반기 종료분은 다음 해 6월 30일을 사용종료일로 설정합니다. 반기 정산은 이 만료일을 기준으로 이해하는 것이 정확합니다. [SRC-17 · ZRPTH410F01 L1222–1227](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH410F01/source/ZRPTH410F01.abap:1222&gt;), [ZRPTH409F01 L508–562](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH409F01/source/ZRPTH409F01.abap:508&gt;)
+
+**말씀하신 휴휴 계산 함수는 `ZHR_52TM_CALC_NORM_OT_PAY`가 맞습니다.**
+
+이 함수의 일반 휴휴 분기에는 말씀하신 경우들이 실제로 구현돼 있습니다. 아래 시간은 **휴게를 반영한 계산시간**이며, 중복 대휴 등 다른 제한이 없는 경우입니다.
+
+| 토요일 계산시간 | 일요일 계산시간 | 대휴 발생 | 최초 지급하는 휴일분 | 미사용 대휴 추가 정산의 계산 취지 |
+|---|---|---|---|---|
+| 4.5시간 이상 | 4.5시간 이상 | 각 날짜에 1개씩 | 양일 각각 단가×시간×0.5 | 각 날짜에 단가×시간×1.0 |
+| 4.5시간 이상 | 4.5시간 미만 | 토요일 1개 | 토요일 0.5배, 일요일 1.5배 | 토요일 시간분 1.0배 |
+| 4.5시간 미만 | 4.5시간 이상 | 일요일 1개 | 토요일 1.5배, 일요일 0.5배 | 일요일 시간분 1.0배 |
+| 각각 4.5시간 미만, 합계 4.5시간 이상 | ← | 시작일에 1개 | 양일 합계에 0.5배 | 양일 합계에 1.0배 |
+| 양일 합계도 4.5시간 미만 | ← | 없음 | 양일 합계에 1.5배 | 없음 |
+
+따라서 **토요일 3시간＋일요일 2시간으로 시작일에 대휴 1개를 만드는 설명도 맞습니다.** 다만 코드의 정확한 경계는 **`4.5시간 이상`**입니다. “5시간 근무 중 휴게 30분”이라면 대응하지만, 모든 입력에서 “5시간 초과”와 같은 조건은 아닙니다. [SRC-17 · CHECK_ZDAEH L54–100](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CHECK_ZDAEH/Source code/ZHR_52TM_CHECK_ZDAEH.abap:54&gt;), [NORM_OT_PAY L259–350](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_NORM_OT_PAY/Source code/ZHR_52TM_CALC_NORM_OT_PAY.abap:259&gt;)
+
+**×2가 틀어지는 핵심은 한 금액 안에 0.5배분과 1.5배분이 섞이는 경우입니다.**
+
+예를 들어 휴게 반영 후 토요일 6시간·일요일 2시간, 설명용 단가 8,400원이라면 다음과 같습니다.
+
+- 최초 휴일분: `6×8,400×0.5 ＋ 2×8,400×1.5 = 50,400원`
+- 토요일 대휴 미사용 추가 정산: `6×8,400×1.0 = 50,400원`
+- 최초 금액 전체를 두 배로 하면 `100,800원`이므로 과다 계산됩니다.
+
+반면 **양일 모두 대휴가 발생해 각각 0.5배를 지급한 경우**, 또는 **양일 합산 1개에 전체 0.5배를 지급한 경우**에는 해당 금액의 ×2가 산술적으로 맞습니다. 즉 휴휴 전체에서 ×2가 틀리는 것이 아니라, **무엇을 합친 금액에 ×2를 하는지가 중요합니다.**
+
+**다만, 선택근무와 통상 시간외의 저장 경로는 다릅니다.**
+
+현재 추출본에서 확인한 연결은 다음과 같습니다.
+
+| 구분 | 계산·저장 경로 |
+|---|---|
+| 통상 시간외의 휴휴 처리 | `CALC_NORM_OT_PAY`에서 금액 계산 → `ZHRDAEHUAMT`에 날짜별 임시 저장 → 저장 함수가 `ZTHRBS01-JORGEH`에 전달 |
+| 선택근무 대휴 생성 | `ZRPTH410` → `CW_CAL_AND_DAEH`의 C 분기 → 대휴 생성 → `ZTHRBS01-ZD_MONEY`에 대휴시간×단가×0.5 저장 |
+
+**선택근무의 `MAKE_ZTHRBS01`에는 `JORGEH`를 넣는 구문이 없습니다.** 따라서 “선택근무자가 실적을 입력할 때 NORM 함수로 휴휴 정산금액을 계산하여 JORGEH에 저장한다”는 연결은 현재 확인한 선택근무 표준 경로와 일치하지 않습니다. 선택근무는 소정 부족시간 충당 여부도 대휴 발생에 영향을 줍니다. [SRC-17 · ZRPTH410F01 L1263–1302, L1661–1667](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH410F01/source/ZRPTH410F01.abap:1263&gt;), [CW_CAL_AND_DAEH L1898–1933](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Function Module/ZHR_52TM_CW_CAL_AND_DAEH/Source code/ZHR_52TM_CW_CAL_AND_DAEH.abap:1898&gt;)
+
+**또한, “사전 계산하는 구조가 있다”와 “현재 저장액이 정확하다”는 별개입니다. 실제로 두 지점이 의심됩니다.**
+
+- **합계를 누적하지 않는 구문:** `LZHR008_2F03`의 “대휴정산 실비 합계” 아래는 `lv_zjorgehamt = ls_result-zjorgehamt`입니다. 반복문마다 덮어쓰므로 마지막 계산 행의 금액이 남습니다. 다만 저장 단계에서 날짜별 임시 금액으로 다시 대체하므로, 이 구문만으로 최종 저장액 오류를 단정할 수는 없습니다. [SRC-17 · L5849–5850, L5918](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5849&gt;)
+- **합산 대휴 1개인데 시작일 금액만 가져오는 구문:** 임시 금액은 날짜별로 저장하지만, 대휴 1건 저장 분기는 `RDATE`에 해당하는 날짜의 금액 하나만 읽습니다. 따라서 **3＋2시간 합산 대휴에서는 필요한 5시간분 대신 시작일 3시간분만 가져갈 가능성**이 있습니다. 일요일에만 대휴가 발생하는 역방향 사례도 발생일과 조회일을 대조해야 합니다. 이는 정적 추적에서 발견한 오류 후보이며 SAP 재현은 아직 하지 않았습니다. [SRC-17 · 날짜별 임시 저장 L5774–5781](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5774&gt;), [GET_OVERTIME_SAVE L152–170](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:152&gt;)
+
+시점에 관한 기억도 근거가 있습니다. 계산 함수에는 **2022-08-18 요청 주석**, 날짜별 금액 저장에는 **2023-11-16 주석**, 대휴 1건의 금액 회수에는 **2025-10-29 주석**이 있습니다. “2023년 무렵부터 보완해 온 문제”라는 설명과 부합하지만, 주석 날짜를 최초 운영 적용일로 확정할 수는 없습니다.
+
+남은 핵심 확인은 **실제 문제 건이 선택 생성분(`ZSOURFLEX=&#x27;S&#x27;`)인지 통상 입력분인지**, 그리고 **3＋2·6＋2·2＋6·양일 각각 발생 사례의 `ZD_MONEY`, `JORGEH`, 발생일·입력일이 어떻게 저장되는지**입니다. 현재 단계에서는 계산 취지와 저장 경로까지 확인했으며, 운영 금액의 정상 여부나 오류 수정 완료까지 확인한 것은 아닙니다.</div><details><summary>이 메시지에서 인용한 로컬 근거 열기</summary><div class="file-list"><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH415F01/source/ZRPTH415F01.abap&amp;line=504">ZRPTH415F01.abap · L504</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH410F01/source/ZRPTH410F01.abap&amp;line=1222">ZRPTH410F01.abap · L1222</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH409F01/source/ZRPTH409F01.abap&amp;line=508">ZRPTH409F01.abap · L508</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_CHECK_ZDAEH/Source%20code/ZHR_52TM_CHECK_ZDAEH.abap&amp;line=54">ZHR_52TM_CHECK_ZDAEH.abap · L54</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_CALC_NORM_OT_PAY/Source%20code/ZHR_52TM_CALC_NORM_OT_PAY.abap&amp;line=259">ZHR_52TM_CALC_NORM_OT_PAY.abap · L259</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH410F01/source/ZRPTH410F01.abap&amp;line=1263">ZRPTH410F01.abap · L1263</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Function%20Module/ZHR_52TM_CW_CAL_AND_DAEH/Source%20code/ZHR_52TM_CW_CAL_AND_DAEH.abap&amp;line=1898">ZHR_52TM_CW_CAL_AND_DAEH.abap · L1898</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap&amp;line=5849">LZHR008_2F03.abap · L5849</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap&amp;line=5774">LZHR008_2F03.abap · L5774</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_GET_OVERTIME_SAVE/Source%20code/ZHR_52TM_GET_OVERTIME_SAVE.abap&amp;line=152">ZHR_52TM_GET_OVERTIME_SAVE.abap · L152</a></div></details></article><article id="M006" class="message user user" data-role="user" data-phase="user"><div class="message-head"><b>M006 · 사용자</b><span>user</span><span>2026-10-31T11:12:57.308000+09:00</span><button class="copy" data-copy="M006">원문 복사</button></div><div class="message-body">안그래도 인사 담당자가 우리한테 반기별로 jorgeh를 보정한 금액을 보내와. 그럼 우리는  그게 틀어진 원인이 파악안되어서 그걸 수동으로 jorgeh에 반영 해주고 있어. 그래서 그렇게 틀어지는 오류를 찾아 보고 싶었어. jorgeh는 이처럼 휴휴로 입력되는 경우의 대휴 금액을 사용자가 입력하고 저장할때 계산해서 넣어놓도록 되어있어. 휴휴가 아닌 다른 대휴 실비는 이렇게 안해. 대휴 정산 메뉴에서 그냥 실시간으로 곱하기 2하도록 되어있어. 너는 현재 저장액이 정확하다”는 별개입니다. 실제로 두 지점이 의심된다고했어 이거말고도 의심되는 부문이 있는지 보고 구체적으로 어떤 부문이 왜 문제가 의심되는지 설명해줘
+</div></article><article id="M007" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M007 · AI</b><span>commentary</span><span>2026-10-31T11:13:01.313000+09:00</span><button class="copy" data-copy="M007">원문 복사</button></div><div class="message-body">`zhr5-business-qa`와 `zhr5-change-impact` 스킬로 계산부터 임시 저장, 최종 `JORGEH` 저장, 반기 정산·취소까지 추적하겠습니다. 인사부 보정액을 수동 반영한다는 운영 설명도 기록하고, 각 의심 지점의 발생 조건과 금액이 틀어지는 이유를 구체적인 사례로 설명하겠습니다.
+</div></article><article id="M008" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M008 · AI</b><span>commentary</span><span>2026-10-31T11:13:44.220000+09:00</span><button class="copy" data-copy="M008">원문 복사</button></div><div class="message-body">추가로, 날짜별 임시 테이블의 키가 사번·날짜뿐이라는 점을 확인했습니다. 같은 날의 계산 결과가 여러 행으로 나뉘면 금액을 합산하지 않고 마지막 행으로 덮어씁니다. 또 대휴 1개를 저장한 뒤 다음 날 임시 금액이 남는 경로가 있어, 이후 다른 신청에서 그 값을 읽을 가능성도 확인하고 있습니다. 반기 정산에서 금액을 지우거나 보존하는 방식도 함께 살펴보겠습니다.
+</div></article><article id="M009" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M009 · AI</b><span>commentary</span><span>2026-10-31T11:14:49.657000+09:00</span><button class="copy" data-copy="M009">원문 복사</button></div><div class="message-body">정산 후 취소·재정산 과정에서도 원인을 찾았습니다. 사용 개수에 따라 정산에서 제외된 대휴는 `JORGEH`를 0으로 저장하고, 취소할 때 원래 사전 계산액을 복원하지 않습니다. 다음 정산에서는 그 0을 “사전 계산액 없음”으로 보고 `ZD_MONEY × 2`로 되돌아갈 수 있습니다. 이때 금액뿐 아니라 차감 순서도 바뀔 수 있어, 수동 보정이 반복되는 현상과 직접 대조할 후보입니다.
+</div></article><article id="M010" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M010 · AI</b><span>commentary</span><span>2026-10-31T11:18:07.687000+09:00</span><button class="copy" data-copy="M010">원문 복사</button></div><div class="message-body">기존 두 지점 외에 같은 날짜 금액 덮어쓰기, 날짜 순서에 따른 분할 누락, 임시 금액의 다음 신청 혼입, 확정취소 후 사전 금액 소실 등을 확인했습니다. 정상인 반례를 포함해 12개 조건부 사례를 로컬 모형으로 대조했고, 시차근무처럼 업무 예외 확인이 필요한 후보는 따로 표시했습니다. 상세 근거와 재현 조건을 문서에 정리했으며 SAP 원본 코드는 수정하지 않았습니다.
+</div></article><article id="M011" class="message assistant final_answer" data-role="assistant" data-phase="final_answer"><div class="message-head"><b>M011 · AI</b><span>final_answer</span><span>2026-10-31T11:19:28.408000+09:00</span><button class="copy" data-copy="M011">원문 복사</button></div><div class="message-body">**추가로 의심되는 곳이 있습니다. 특히 “임시 금액이 다른 계산 행·신청에 섞이는 문제”와 “정산 확정 과정에서 원래 사전 계산액이 없어지는 문제”를 우선 확인해야 합니다.** 둘 다 인사부 보정이 반복되는 현상을 설명할 수 있는 후보입니다.
+
+말씀하신 **휴휴는 입력·저장 시 사전 계산, 일반 대휴는 정산 시 ×2**라는 운영 의도를 기준으로 검토했습니다. 아래는 SRC-17 추출 소스에서 확인한 조건과 그에 따른 재현 가설이며, 실제 운영 건의 원인을 확정한 결과는 아닙니다.
+
+**1. 정산 확정 때 휴휴 사전 금액을 0으로 저장하고, 취소 후에는 복구하지 않습니다.**
+
+이번에 추가로 발견한 것 중 가장 먼저 확인할 부분입니다.
+
+`ZRPTH415F01`은 다음 순서로 처리합니다.
+
+1. `JORGEH` 또는 `ZD_MONEY × 2` 금액으로 대휴를 정렬합니다.
+2. 사용한 대휴 개수만큼 앞쪽 대휴의 `JORGEH`를 0으로 만듭니다.
+3. 확정하면 그 **0을 실제 BS01에 저장**합니다.
+4. 확정취소는 `JORGEH_TXT`만 지웁니다.
+5. 재정산하면 0이 된 휴휴를 “사전 금액 없음”으로 판단하여 다시 ×2합니다.
+
+예를 들어 같은 직원에게 다음 두 대휴가 있고, 사용 개수가 1개라고 가정하겠습니다. 설명용 단가는 8,400원입니다.
+
+| 대휴 | 최초 정산 기준금액 | 최초 정산 결과 | 취소 후 재정산 결과 |
+|---|---:|---:|---:|
+| 휴휴: 토6시간＋일2시간 | 사전 `JORGEH` 50,400원 | 먼저 차감 → **0원 저장** | 사전액 소실 → `ZD_MONEY 50,400 × 2` = **100,800원** |
+| 일반 대휴: 7시간 | `ZD_MONEY 29,400 × 2` = 58,800원 | **58,800원** | 이제 금액이 작은 쪽이므로 차감 → 0원 |
+| 합계 | | **58,800원** | **100,800원** |
+
+**시간·단가·사용 개수가 그대로인데도 확정취소와 재정산만으로 금액과 차감 순서가 바뀔 수 있습니다.** 정상적으로 확정·취소가 완료되고 다른 예외가 없다는 조건의 모형입니다.
+
+“취소할 때 JORGEH를 보존한다”는 조치만으로는 부족합니다. **확정할 때 이미 원래 금액을 0으로 덮어썼기 때문입니다.**  
+[SRC-17 · ZRPTH415F01 L531–549, L1460–1468, L1658–1664](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH415F01/source/ZRPTH415F01.abap:531&gt;)
+
+**2. 같은 날의 금액이 여러 계산 행으로 나뉘면 임시 테이블에서 마지막 금액만 남습니다.**
+
+앞서 지적한 `lv_zjorgehamt` 변수 덮어쓰기와는 **별개의 DB 저장 문제**입니다.
+
+`ZHRDAEHUAMT`의 키는 **사번＋날짜**입니다. 그런데 계산 결과를 날짜별로 합산하지 않고 행마다 다음처럼 저장합니다.
+
+</div><button class="copy" data-copy="M011-code-1">이 코드 복사</button><pre>ls_zhrdaehuamt-datum = ls_result-datum.
+ls_zhrdaehuamt-zjorgehamt = ls_result-zjorgehamt * 100.
+MODIFY zhrdaehuamt FROM ls_zhrdaehuamt.
+</pre><div class="message-body">
+
+당번특근 등에서는 하루 10시간이 **8시간＋2시간**으로 나뉠 수 있습니다. 해당 날짜의 정산액도 두 행으로 계산되면 다음처럼 됩니다.
+
+- 첫 행: 8시간분 저장
+- 두 번째 행: 같은 사번·날짜에 2시간분 저장
+- 결과: **10시간분이 아닌 2시간분만 남음**
+
+이것은 중간 변수 합계를 고쳐도 남는 문제입니다. 실제 최종 저장액은 아래 3번의 분할 처리까지 함께 봐야 합니다.  
+[SRC-17 · F03 L5775–5781](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5775&gt;), [ZHRDAEHUAMT 키 정의](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/Dictionary Object/DBtable/ZHRDAEHUAMT/definition.xml:62&gt;)
+
+**3. 날짜 순서가 섞이면 실제로는 이틀인데 ‘3건’으로 판단하여 양일 분할을 건너뛸 수 있습니다.**
+
+시간 계산 함수는 하루의 초과 구간을 테이블 **맨 뒤에 추가**합니다. 따라서 다음 순서가 생길 수 있습니다.
+
+</div><button class="copy" data-copy="M011-code-3">이 코드 복사</button><pre>토요일 8시간 → 일요일 6시간 → 토요일 초과 2시간
+</pre><div class="message-body">
+
+그런데 저장 함수는 날짜순으로 정렬하지 않고 `AT END OF DATUM`으로 **연속해서 붙어 있는 날짜끼리** 묶습니다.
+
+</div><button class="copy" data-copy="M011-code-5">이 코드 복사</button><pre>토요일 그룹 → 일요일 그룹 → 토요일 그룹 = 3개
+</pre><div class="message-body">
+
+이후 코드는 그룹 수가 **정확히 2개일 때만** 양일 분할 저장을 합니다. 3개면 그 분기를 통과하지 못할 수 있습니다.
+
+따라서 이 후보는 금액만이 아니라 **“양일 모두 대휴 조건을 충족했는데 저장행이나 대휴가 하나로 남는다”**는 증상과도 대조해야 합니다.  
+[SRC-17 · 일일 계산 L744–819](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap:744&gt;), [저장 함수 L119–174](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:119&gt;)
+
+**4. 소비하지 않은 임시 금액이 다음 신청으로 넘어갈 수 있습니다.**
+
+앞선 답변의 “합산 대휴인데 시작일 금액만 읽는다”는 문제에서 파생됩니다.
+
+구체적으로 다음 흐름이 가능합니다.
+
+- 토요일 3시간＋일요일 2시간으로 토요일 대휴 1개 생성
+- 임시 테이블에는 토요일 3시간분·일요일 2시간분 저장
+- 저장 함수가 토요일 금액만 읽고 삭제
+- **일요일 2시간분은 임시 테이블에 남음**
+- 이후 같은 직원이 일요일의 다른 시간대에 단일 휴일근무 6시간을 신청
+- 이번에는 익일근무가 아니므로 임시 금액을 새로 쓰지 않음
+- 저장 함수가 남아 있던 **일요일 2시간분을 JORGEH로 읽음**
+
+즉, **휴휴가 아닌 새 대휴에 이전 휴휴의 금액이 들어갈 수 있는 경로**입니다. 이전 근무와 시간이 겹치지 않고, 기존 대휴 발생일은 토요일이라는 조건입니다.
+
+임시 테이블에 신청 순번이나 원 신청 식별자가 없고, 읽는 곳에도 “이번 휴휴 계산에서 만든 값인가”를 확인하는 조건이 없습니다.  
+[SRC-17 · 저장 함수 L152–170](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:152&gt;)
+
+또한 화면에서 시간·휴게를 계산할 때도 이 임시 테이블을 쓰는 함수가 호출됩니다. **저장하지 않고 화면을 닫았을 때도 값이 남는지**는 별도로 트랜잭션을 확인해야 합니다. 이 부분은 아직 확정하지 않았습니다.
+
+**5. 새 계산값을 전달하는 위치가 일관되지 않습니다. 비휴휴 사전 저장도 점검 대상입니다.**
+
+웹 저장 전 처리인 `F06`은 계산 결과의 `JORGEH`를 입력 구조에 복사합니다. 반면 다음 두 곳의 재계산 결과 복사 목록에는 `JORGEH`가 없습니다.
+
+- `GET_OVERTIME_SAVE`
+- 양일 분할 처리 `SPLIT_OVERTIME_DATA`
+
+따라서 임시 금액을 읽지 못하는 경로에서는 **새 계산값 대신 입력 구조에 들어 있던 예전 값이 남을 수 있습니다.**
+
+또 하나는, NORM의 정산액 계산 구간과 F06의 복사 구문에 **명시적인 ‘휴휴일 때만’ 조건이 없다는 점**입니다. 일반 A 유형의 단일 휴일 6시간도 계산 출력에 6시간분 정산액이 만들어질 수 있습니다.
+
+이 금액은 처음에는 ×2 결과와 같아서 정상으로 보일 수 있습니다. 하지만 말씀하신 운영 의도와 실제 저장 조건이 일치하는지, 수정·재상신 때 오래된 값이 남는지는 확인해야 합니다. **사용자의 업무 설명을 잘못됐다고 보는 것이 아니라, 구현이 그 의도를 지키는지 점검하는 항목입니다.**  
+[SRC-17 · F06 L1048–1063](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap:1048&gt;), [분할 결과 복사 L179–197](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F05.abap:179&gt;)
+
+**6. 시차근무 B는 양일 여부 판정에서 빠져 있습니다.**
+
+NORM에서 `LV_ZBOTH`를 설정하는 대상은 **T·D**인데, 뒤에서 이 변수를 검사하는 조건은 **T·D·B**입니다.
+
+따라서 B는 실제로 이틀에 걸쳐 근무해도 `LV_ZBOTH`가 비어 있어 별도 분기로 들어갑니다. 토6＋일2 사례라면 그 분기에서는:
+
+- 양일 모두 0.5배 적용
+- `ZJORGEHAMT` 계산 생략
+
+으로 처리됩니다.
+
+**시차 B에도 일반 휴휴의 0.5배·1.5배 구분을 적용해야 한다면 결함 후보**입니다. 다만 시차에 별도 업무 예외가 있는지는 확인해야 하므로 앞의 후보들과 같은 확실도로 단정하지 않았습니다.  
+[SRC-17 · NORM L86–92, L284–299](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR_52TM_CALC_NORM_OT_PAY/Source code/ZHR_52TM_CALC_NORM_OT_PAY.abap:86&gt;)
+
+앞서 지적한 변수 덮어쓰기는 **단순히 누적 합산으로 바꾸면 해결된다고 볼 수 없습니다.** 날짜별 임시값이 정상 금액을 보완하는 경우도 있고, 위처럼 임시값 자체가 잘못되거나 정산 확정 후 원래 값이 사라지는 경우도 있습니다.
+
+실제 보정 자료에서는 우선 **① 최초 저장 직후부터 틀렸는지, ② 확정·취소 후 틀어졌는지, ③ 직전 익일 신청의 잔여 금액과 일치하는지**를 나누어 보면 원인을 빠르게 좁힐 수 있습니다. 보정 후 값뿐 아니라 **보정 전 JORGEH**가 특히 중요합니다.
+
+[상세 검토서와 재현 조건](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/knowledge/processes/huhu-jorgeh-investigation.md&gt;)에 기록하고 회귀 사례 Q85–Q88을 추가했습니다. 조건부 모형 12건을 확인했으며, **SAP 실행과 실제 보정 건 대사는 미수행**입니다. 추출 파일 2,543개는 변경되지 않았습니다.</div><details><summary>이 메시지에서 인용한 로컬 근거 열기</summary><div class="file-list"><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_GET_OVERTIME_SAVE/Source%20code/ZHR_52TM_GET_OVERTIME_SAVE.abap&amp;line=152">ZHR_52TM_GET_OVERTIME_SAVE.abap · L152</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH415F01/source/ZRPTH415F01.abap&amp;line=531">ZRPTH415F01.abap · L531</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap&amp;line=5775">LZHR008_2F03.abap · L5775</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/Dictionary%20Object/DBtable/ZHRDAEHUAMT/definition.xml&amp;line=62">definition.xml · L62</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source%20code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap&amp;line=744">ZHR_52TM_CALC_WORK_TIME_DAYILY.abap · L744</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_GET_OVERTIME_SAVE/Source%20code/ZHR_52TM_GET_OVERTIME_SAVE.abap&amp;line=119">ZHR_52TM_GET_OVERTIME_SAVE.abap · L119</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap&amp;line=1048">LZHR008_2F06.abap · L1048</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F05.abap&amp;line=179">LZHR008_2F05.abap · L179</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_CALC_NORM_OT_PAY/Source%20code/ZHR_52TM_CALC_NORM_OT_PAY.abap&amp;line=86">ZHR_52TM_CALC_NORM_OT_PAY.abap · L86</a><a href="source-viewer.html?file=source/evidence/knowledge/processes/huhu-jorgeh-investigation.md">huhu-jorgeh-investigation.md</a></div></details></article><article id="M012" class="message user user" data-role="user" data-phase="user"><div class="message-head"><b>M012 · 사용자</b><span>user</span><span>2026-10-31T11:44:05.214000+09:00</span><button class="copy" data-copy="M012">원문 복사</button></div><div class="message-body">1\. 정산 확정 때 휴휴 사전 금액을 0으로 저장하고, 취소 후에는 복구하지 않습니다.
+
+-&gt; 맞아 이부분도 문제긴해. 하지만 지금 시급한건 이 정산 확정 작업 하기 몇달전에 우리한테 제공한 orgeh가 안맞아. 그러니 이미 정산 전에 값이 잘못들어간걸로보여
+
+2\. 같은 날의 금액이 여러 계산 행으로 나뉘면 임시 테이블에서 마지막 금액만 남습니다.
+
+-&gt; 이 문제라면 심각한대? 그럼 지금 휴휴 양일을 입력하면 아예 앞날짜건은 덮어져서 금액이 반영 안된다는 소리야?
+
+3. 날짜 순서가 섞이면 실제로는 이틀인데 ‘3건’으로 판단하여 양일 분할을 건너뛸 수 있습니다.
+
+-&gt; 이건 조금 이해가 안가; 지금 토요일8시간 일요일 6시간해서 총 14시간을 입력하면 토요일8, 일요일6 두 행만 가지고 루프돌면서계산하는걸로 알고있어. 근데 갑자기 토요일 초과분 2시간? 이건 어디서 나온거고 이게 왜 뒤에 붙는다는거야?
+
+4\. 소비하지 않은 임시 금액이 다음 신청으로 넘어갈 수 있습니다.
+
+-&gt; 이건 결국 사용자가 최초에 휴휴로 입력한 내역의 일부가 캐시 처럼 남아서 다음 입력에 영향을 준다는거야?
+
+5\. 새 계산값을 전달하는 위치가 일관되지 않습니다. 비휴휴 사전 저장도 점검 대상입니다.
+
+-&gt; 이건 사용자가 처음에는 휴휴로 입력한게 jorgeh에 저장되어있다가 나중에 마음을 바꾸서 비휴휴로 입력하게 되면 기존에 jorgeh 삭제 과정이 있어야 하는데 그게 없다는거야?
+
+6\. 시차근무 B는 양일 여부 판정에서 빠져 있습니다.
+
+-&gt; 이부분은 나도 정책을 찾아봐야해. 일단 시차근무자들은 별도로 시차실비를 지급 받아. 그래서 모든 양일 요일이 0.5인걸로 알고있어. 이부분은 확인할게
+
+우선 지금 내가 이해를 제대로 하고있는지 분석해줘
+
+
+
+
+
+</div></article><article id="M013" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M013 · AI</b><span>commentary</span><span>2026-10-31T11:44:08.561000+09:00</span><button class="copy" data-copy="M013">원문 복사</button></div><div class="message-body">`zhr5-business-qa` 스킬로 여섯 항목을 다시 대조하겠습니다. 이번에는 정산 전 최초 저장값에 초점을 맞추고, 제가 든 10＋6시간 사례와 말씀하신 8＋6시간 사례를 구분하겠습니다. 휴휴를 비휴휴로 변경할 때 기존 `JORGEH`가 실제로 지워지는지도 저장 경로별로 확인하겠습니다.
+</div></article><article id="M014" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M014 · AI</b><span>commentary</span><span>2026-10-31T11:45:42.393000+09:00</span><button class="copy" data-copy="M014">원문 복사</button></div><div class="message-body">다시 확인하니 제가 2·3번의 적용 조건을 충분히 설명하지 않았습니다. 토요일과 일요일은 날짜 키가 달라 서로 덮어쓰지 않고, 일반 A 유형의 휴일 행은 제가 예로 든 기준시간 분할도 건너뜁니다. 5번도 웹 저장에서는 새 `JORGEH`를 복사하는 처리가 있어서, “휴휴를 비휴휴로 바꾸면 기존 금액이 무조건 남는다”는 뜻으로 설명하면 부정확합니다.
+</div></article><article id="M015" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M015 · AI</b><span>commentary</span><span>2026-10-31T11:46:46.071000+09:00</span><button class="copy" data-copy="M015">원문 복사</button></div><div class="message-body">4번은 비유하신 “남은 값이 다음 입력에 영향을 주는 현상”이 맞습니다. 다만 메모리 캐시가 아니라 DB 임시 테이블의 잔여값이며, 같은 사번·날짜를 다시 조회할 때 문제가 될 수 있습니다. 이번 설명은 확정 전 오류에 초점을 맞추고, 분할 조건과 웹 수정 저장의 예외도 검토 기록에 반영하고 있습니다.
+</div></article><article id="M016" class="message assistant final_answer" data-role="assistant" data-phase="final_answer"><div class="message-head"><b>M016 · AI</b><span>final_answer</span><span>2026-10-31T11:48:46.457000+09:00</span><button class="copy" data-copy="M016">원문 복사</button></div><div class="message-body">**정산 전에 이미 금액이 틀렸으므로 입력·저장 경로부터 봐야 한다는 판단이 맞습니다.** 그리고 2·3·5번은 제가 적용 조건을 충분히 설명하지 않았습니다. 항목별로 바로잡겠습니다.
+
+**1. 정산 확정·취소 문제 — 말씀하신 구분이 맞습니다.**
+
+확정 몇 달 전부터 `JORGEH`가 다르다면, 이번 정산의 확정·취소 처리를 그 선행 오류의 원인으로 설명할 수 없습니다.
+
+우선 **최초 저장부터 틀렸는지, 이후 수정 저장에서 바뀌었는지**를 구분해야 합니다. 확정·취소 문제는 별도 문제로 남겨두겠습니다.
+
+**2. 임시 금액 덮어쓰기 — 일요일이 토요일 금액을 덮는다는 뜻은 아닙니다.**
+
+임시 테이블 `ZHRDAEHUAMT`는 **사번＋날짜**로 구분합니다. 따라서 계산 결과가 `토요일 8시간`, `일요일 6시간` 두 행이면 날짜가 달라 서로 덮어쓰지 않습니다.
+
+제가 의심한 것은 **토요일이 내부적으로 두 행으로 나뉜 경우**입니다. 예를 들어 토요일 10시간을 8시간과 2시간으로 나누었다면, 토요일 금액을 먼저 기록하고 같은 토요일 키에 다시 기록하면서 마지막 2시간분만 남을 수 있다는 뜻입니다. 현재 쓰기에는 날짜별 합산이 없습니다. [SRC-17, F03 L5775–5781](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5775&gt;)
+
+즉, **모든 휴휴 입력에서 앞 날짜 금액이 없어지는 문제는 아닙니다.**
+
+**3. 갑자기 등장한 토요일 2시간 — 원래 토요일 10시간에 포함된 시간입니다.**
+
+두 사례를 구분해야 합니다. 아래는 계산 대상 시간을 기준으로 한 예입니다.
+
+| 원래 시간 | 내부 계산 행 예시 |
+|---|---|
+| 토8＋일6＝14시간 | 토8, 일6 |
+| 토10＋일6＝16시간 | 분할 조건을 충족하면 토8, 일6, 토2 |
+
+두 번째 사례에서는 기존 토요일 행을 8시간으로 줄이고, 나머지 2시간을 테이블 **맨 뒤에 `APPEND`**합니다. 그래서 `토→일→토` 순서가 될 수 있습니다. 새로운 2시간이 생기는 것이 아닙니다.
+
+또한 **이 분할 자체가 모든 휴휴에 적용되지 않습니다.** 코드상 `ZGUBUN=A`이고 휴일(`DAYS=0`)이면 해당 분할을 건너뜁니다. 다른 분할 대상도 기준시간과 일별 누계 처리 조건을 확인해야 합니다. 일별 기준이 8시간이고 매일 누계를 초기화한다면, 말씀하신 8＋6에서는 이 이유로 세 번째 행이 생기지 않습니다. [SRC-17, DAILY L550–598·L819](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap:550&gt;)
+
+따라서 3번은 **실제로 `토→일→토` 배열이 만들어진 경우, 날짜가 두 개인데 인접 그룹을 세 개로 세는 문제**입니다. 단순한 8＋6 입력에 그대로 적용한 설명은 부정확합니다.
+
+**4. 남은 값이 다음 입력에 영향 — 이해하신 방향이 맞습니다.**
+
+다만 메모리 캐시가 아니라 **DB 임시 테이블에 남은 금액**입니다.
+
+저장할 때 읽은 날짜만 삭제하므로 다른 날짜의 금액이 남을 수 있습니다. 이후 **같은 사번·같은 날짜**를 조회하는 신청이 들어오고, 새 계산이 그 임시값을 갱신하지 않으면 과거 금액을 가져올 가능성이 있습니다. 아무 다음 신청에나 영향을 주는 것은 아닙니다. [SRC-17, SAVE L165–169](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:165&gt;)
+
+**5. 휴휴→비휴휴 변경 시 기존 금액 삭제 누락 — 그렇게 단정하면 안 됩니다.**
+
+확인한 **웹 변경 저장 경로에는 새로 계산한 `JORGEH`를 기존 값에 덮어쓰는 처리**가 있습니다. 새 계산값이 0이면 기존 값도 0으로 바뀝니다. 따라서 별도의 `CLEAR`가 없다는 이유만으로 예전 금액이 남는다고 볼 수 없습니다. [SRC-17, F06 L1027–1062](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap:1027&gt;)
+
+제가 지적했어야 하는 것은 다음 세 현상의 구분입니다.
+
+- 일부 경로에서 새 계산값을 복사하지 않아 **기존 값이 남는 경우**
+- 비휴휴인데도 계산기가 **새로운 비영 금액을 생성하는 경우**
+- 새 계산값을 **4번의 잔여 임시 금액이 다시 대체하는 경우**
+
+비휴휴 행에 `JORGEH`가 있다는 사실만으로 첫 번째라고 확정할 수 없습니다. 관리자 경로의 결과 복사 목록에는 `JORGEH`가 없어 그 경로는 추가 확인 대상입니다.
+
+**6. 시차근무 B — 정책 확인 전에는 오류로 분류하지 않겠습니다.**
+
+말씀하신 별도 시차실비 정책이 맞다면, 검토한 사례에서 양일 모두 0.5배로 계산되는 분기는 의도된 처리일 수 있습니다. **B가 양일 판정 조건에 없다는 코드 차이만으로 업무 오류라고 판단해서는 안 됩니다.**
+
+이번 정정은 [검토 기록](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/knowledge/processes/huhu-jorgeh-investigation.md&gt;)과 회귀 조건에 반영했습니다. 소스 조건과 호출 경로를 대조한 결과이며, 실제 오류 건의 SAP 실행 재현은 아직 하지 않았습니다.</div><details><summary>이 메시지에서 인용한 로컬 근거 열기</summary><div class="file-list"><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap&amp;line=5775">LZHR008_2F03.abap · L5775</a><a href="source-viewer.html?file=source/evidence/knowledge/processes/huhu-jorgeh-investigation.md">huhu-jorgeh-investigation.md</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source%20code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap&amp;line=550">ZHR_52TM_CALC_WORK_TIME_DAYILY.abap · L550</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_GET_OVERTIME_SAVE/Source%20code/ZHR_52TM_GET_OVERTIME_SAVE.abap&amp;line=165">ZHR_52TM_GET_OVERTIME_SAVE.abap · L165</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap&amp;line=1027">LZHR008_2F06.abap · L1027</a></div></details></article><article id="M017" class="message user user" data-role="user" data-phase="user"><div class="message-head"><b>M017 · 사용자</b><span>user</span><span>2026-10-31T12:51:29.292000+09:00</span><button class="copy" data-copy="M017">원문 복사</button></div><div class="message-body">2\. 임시 금액 덮어쓰기 — 일요일이 토요일 금액을 덮는다는 뜻은 아닙니다.
+
+-&gt; 토요일 10시간을 갑자기 왜 8시간 2시간으로 나누느냐는 뚯이야. 그런 로직이 있어? 같은날인데도 2개로 나눈다고?
+
+3. 결국 이것도 2번의 의문이 풀려야 이해가 되는 로직이야
+4. 남은 값이 다음 입력엥 영향
+
+-&gt; 이부분은 코드로 수정 가능해보여 clear나 refresh를 통해서 해소 될거 같은데
+
+5. 휴휴→비휴휴 변경 시 기존 금액 삭제 누락 — 그렇게 단정하면 안 됩니다
+
+-&gt; 비휴휴인데 jorgeh를 건드린다고? 나는 휴휴일때만 jorgeh를 수정하는걸로 알고 있는데 비휴휴일경우도 이 값을 건드리는 내가 모르는 로직이 있어?
+
+</div></article><article id="M018" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M018 · AI</b><span>commentary</span><span>2026-10-31T12:51:56.738000+09:00</span><button class="copy" data-copy="M018">원문 복사</button></div><div class="message-body">같은 날짜를 두 행으로 나누는 실제 조건과 호출 경로를 다시 확인하겠습니다. `zhr5-business-qa`와 `zhr5-change-impact` 스킬을 적용해 비휴휴의 `JORGEH` 대입 여부, 임시 DB 금액에 `CLEAR`·`REFRESH`가 효과가 있는지도 구분해서 설명하겠습니다.
+</div></article><article id="M019" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M019 · AI</b><span>commentary</span><span>2026-10-31T12:52:27.174000+09:00</span><button class="copy" data-copy="M019">원문 복사</button></div><div class="message-body">같은 날을 나누는 실행 코드가 있습니다. 공통 시간 계산 함수가 정상근무와 초과근로 구간을 나눈 뒤, 휴일이면 두 행 모두에 휴일 표시를 붙이며 다시 합치지는 않습니다. 또 `ZTOMO=X` 조건은 임시 DB 기록만 감싸고 있습니다. 그 아래 계산 결과의 `JORGEH` 대입과 웹 저장 구조로의 복사에는 휴휴 조건이 없습니다.
+</div></article><article id="M020" class="message assistant final_answer" data-role="assistant" data-phase="final_answer"><div class="message-head"><b>M020 · AI</b><span>final_answer</span><span>2026-10-31T12:54:15.753000+09:00</span><button class="copy" data-copy="M020">원문 복사</button></div><div class="message-body">**같은 날을 두 계산 행으로 나누는 로직은 실제로 있습니다. 비휴휴에서도 `JORGEH`를 계산·대입하는 경로가 확인됩니다.** 이번에는 그 근거를 직접 짚겠습니다.
+
+**2·3번 — 같은 토요일을 왜 8시간과 2시간으로 나누나?**
+
+`ZHR_52TM_CALC_WORK_TIME_DAYILY`는 날짜를 나누는 것 외에도 **정상근무 구간과 초과근로 구간을 구분하는 공통 함수**입니다.
+
+기준시간을 `ZTHR0101`에서 읽고, 분할 대상의 근무시간이 그 기준을 넘으면 다음 처리를 합니다.
+
+| 실제 코드 위치 | 처리 |
+|---|---|
+| L744–757 | 앞 구간을 `REGTP=&#x27;N&#x27;`으로 설정하고 기존 행을 `MODIFY` |
+| L762–819 | 뒤 구간을 `REGTP=&#x27;M&#x27;`으로 설정하고 **같은 날짜로 `APPEND`** |
+| L840–842 | 비교대 휴일이면 각 행을 다시 휴일근무 `TMTYP=&#x27;H&#x27;`로 표시 |
+
+마지막 단계는 휴일 표시만 바꾸며 **앞에서 나눈 두 행을 다시 합치지 않습니다.** [SRC-17, DAILY 실행 코드](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap:744&gt;)
+
+따라서 **분할 대상이고 기준시간이 8시간이면**, 토요일 10시간이 내부 계산용으로 다음처럼 나뉠 수 있습니다.
+
+</div><button class="copy" data-copy="M020-code-1">이 코드 복사</button><pre>토요일 10시간
+   → 토요일 앞 구간 8시간
+   → 토요일 뒤 구간 2시간
+</pre><div class="message-body">
+
+`NORM_OT_PAY`에도 이를 전제로 한 주석이 있습니다.
+
+&gt; D-당번특근자도 양일이아닌(하루인) 경우 라인이 2개로 쪼개짐 10 = 8 +2
+
+[SRC-17, NORM L281–284](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_NORM_OT_PAY/Source code/ZHR_52TM_CALC_NORM_OT_PAY.abap:281&gt;)
+
+다만 **`ZGUBUN=A`인 휴일은 이 분할을 건너뜁니다.** 따라서 “모든 휴휴 10시간을 8＋2로 나눈다”는 뜻은 아닙니다. 또한 이는 **내부 계산 행 분리**이지, 사용자가 같은 날짜 신청을 두 개 등록한다는 뜻도 아닙니다.
+
+3번은 이 분할에 따라 생기는 문제입니다. 원래 `토10, 일6`이 있었다면 토요일 뒤 구간을 맨 뒤에 추가하여 `토8, 일6, 토2`가 될 수 있고, 그 순서를 날짜별로 묶는 후속 코드가 문제 되는 것입니다.
+
+**4번 — 코드 수정은 가능하지만 `CLEAR`·`REFRESH`만으로는 해결되지 않습니다.**
+
+여기에는 이름이 비슷한 서로 다른 대상이 있습니다.
+
+| 대상 | 위치 | 초기화·삭제의 의미 |
+|---|---|---|
+| `ls_zhrdaehuamt` | 메모리 작업 영역 | `CLEAR`로 현재 작업값 초기화 |
+| `lt_zhrdaehuamt` | 메모리 내부 테이블 | `REFRESH`로 내부 행 초기화 |
+| `ZHRDAEHUAMT` | **DB 테이블** | DB 행을 없애려면 해당 행을 `DELETE` |
+
+문제가 의심되는 금액은 다음 코드로 **DB에 기록됩니다.**
+
+</div><button class="copy" data-copy="M020-code-3">이 코드 복사</button><pre>MODIFY zhrdaehuamt FROM ls_zhrdaehuamt.
+</pre><div class="message-body">
+
+따라서 작업 영역이나 내부 테이블을 초기화해도, 다음 `SELECT`에서 DB의 과거 금액을 다시 읽습니다.
+
+현재 저장 함수에도 **읽은 날짜를 삭제하는 `DELETE`는 이미 있습니다.** 보완할 부분은 미소비 날짜의 금액 처리와 비휴휴에서 그 금액을 읽는 조건입니다. 양일 금액을 모두 사용하기 전에 뒤 날짜 금액을 지워버리지 않도록 삭제 시점도 함께 봐야 합니다. [SRC-17, SAVE L165–169·L208–212](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:165&gt;)
+
+**5번 — 네, 확인한 코드에는 비휴휴에서도 `JORGEH`를 건드리는 경로가 있습니다.**
+
+혼동하기 쉬운 부분은 **임시 DB에 기록하는 조건과 `JORGEH`에 대입하는 조건이 다르다**는 점입니다.
+
+- F03 L5775의 `IF ...-ZTOMO = &#x27;X&#x27;`는 **임시 테이블에 기록하는 부분만** 감쌉니다.
+- 그 조건은 L5782에서 끝납니다.
+- 아래 L5918에서는 휴휴 여부를 검사하지 않고 다음 대입을 합니다.
+
+</div><button class="copy" data-copy="M020-code-5">이 코드 복사</button><pre>cs_overtime_data-jorgeh = lv_zjorgehamt * 100.
+</pre><div class="message-body">
+
+[SRC-17, F03 L5918](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5918&gt;)
+
+**0만 대입하는 것도 아닙니다.** 예를 들어 `A` 유형의 **하루짜리 휴일근무**, 대휴 발생, 계산 대상 6시간이라는 조건에서도 NORM L317–328은 `ZJORGEHAMT`를 계산합니다. 이 분기에는 “두 날짜 모두 휴일이어야 한다”는 제한이 없습니다.
+
+이 값은 웹 저장 전 F06 L1062에서 `ps_zthrbs01-jorgeh`로 복사됩니다. 정상 저장되고 임시값으로 대체되지 않는 조건이면 최종 `ZTHRBS01`까지 전달되는 경로입니다. [SRC-17, F06 L1048–1062](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap:1048&gt;)
+
+따라서 **“비휴휴는 입력할 때 `JORGEH`를 건드리지 않는다”는 업무 의도와, 확인한 웹 저장 코드 사이에는 차이가 있습니다.** 다만 단일 휴일에서는 그 금액이 기존 실비×2와 같을 수 있으므로, 이 차이만으로 정산액 오류까지 확정할 수는 없습니다.
+
+이 설명을 검토 기록과 회귀 조건에 보완했습니다. ABAP은 수정하지 않았으며, 여기까지는 소스 대조 결과이고 SAP 실행 재현은 미수행입니다.</div><details><summary>이 메시지에서 인용한 로컬 근거 열기</summary><div class="file-list"><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source%20code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap&amp;line=744">ZHR_52TM_CALC_WORK_TIME_DAYILY.abap · L744</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap&amp;line=1048">LZHR008_2F06.abap · L1048</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_GET_OVERTIME_SAVE/Source%20code/ZHR_52TM_GET_OVERTIME_SAVE.abap&amp;line=165">ZHR_52TM_GET_OVERTIME_SAVE.abap · L165</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_CALC_NORM_OT_PAY/Source%20code/ZHR_52TM_CALC_NORM_OT_PAY.abap&amp;line=281">ZHR_52TM_CALC_NORM_OT_PAY.abap · L281</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap&amp;line=5918">LZHR008_2F03.abap · L5918</a></div></details></article><article id="M021" class="message user user" data-role="user" data-phase="user"><div class="message-head"><b>M021 · 사용자</b><span>user</span><span>2026-10-31T13:02:53.370000+09:00</span><button class="copy" data-copy="M021">원문 복사</button></div><div class="message-body">zgubun이 A인게 무슨의미인지 정확히 기억이 안나; 그럼 모든 선택근무자가 휴휴로 입력하면 ZGUBUN이 A인지부터 확인해줘. A라면 2·3번은 이번 오류와 무관한 거잖아. 그러면 정상근무 구간과 초과근무 구간으로 나눈다고 했는데 왜 굳이 정산근무 8시간을 나누게 되는지 이해가 안가. 그냥 통채로 10시간 넣으면 되는데 게다가 휴일인데 정상근무라는게 무슨의미지? 휴일에 일한거면 의미상 다 초과근무 10시간 아니야? 굳이 기준시간을 8시간을 zthr0101에 넣어놓고 가져오는 이유가 뭐야?
+그리고 ztomo는 익일 여부 체크로 알고있어. 맞는지 확인해줘.
+</div></article><article id="M022" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M022 · AI</b><span>commentary</span><span>2026-10-31T13:02:56.091000+09:00</span><button class="copy" data-copy="M022">원문 복사</button></div><div class="message-body">`ZGUBUN=A`의 정의와 선택근무자의 휴휴 입력·저장 경로부터 확인하겠습니다. 그 결과로 2·3번이 이번 조사에 해당하는지 판단하고, 휴일에도 기준시간 분할을 거치는 이유와 `ZTOMO`의 실제 의미를 코드 근거로 구분해 설명하겠습니다.
+</div></article><article id="M023" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M023 · AI</b><span>commentary</span><span>2026-10-31T13:03:19.929000+09:00</span><button class="copy" data-copy="M023">원문 복사</button></div><div class="message-body">`ZGUBUN=A`는 사전 정의상 “통상근무”입니다. 선택근무를 뜻하는 코드는 별도의 `Z52WKTP=0110`입니다. 선택 입력에서는 공통 시간 계산 함수를 호출하면서 기준시간 분할 옵션을 켜지 않는 경로가 확인되어, A 여부보다 실제 호출 경로가 2·3번의 적용 여부를 판단하는 핵심으로 보입니다.
+</div></article><article id="M024" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M024 · AI</b><span>commentary</span><span>2026-10-31T13:04:07.427000+09:00</span><button class="copy" data-copy="M024">원문 복사</button></div><div class="message-body">확인한 선택 실적 입력·대휴 생성 경로는 `I_OPT=&#x27;X&#x27;`를 전달하지 않아, 8＋2 분할 전에 함수 처리를 끝냅니다. 따라서 이 경로에는 제가 제시한 2·3번을 원인으로 적용할 수 없습니다. 휴일 8시간을 정상근무로 지급한다는 설명도 부정확했습니다. 별도 시간외 경로에서 분할되더라도 비교대 휴일은 마지막에 두 구간 모두 휴일근로로 분류합니다.
+</div></article><article id="M025" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M025 · AI</b><span>commentary</span><span>2026-10-31T13:05:52.106000+09:00</span><button class="copy" data-copy="M025">원문 복사</button></div><div class="message-body">`ZTOMO`는 DDIC에도 “익일여부”로 정의되어 있고, 실제 코드에서도 다음 날짜와 자정 구간을 만드는 데 사용됩니다. `ZTHR0101`의 기준시간은 공통 계산에서 평일의 정상·초과 시간을 구분하는 용도가 확인됩니다. 다만 일부 유형의 휴일에도 그 분할을 유지해야 하는 업무상 이유는 아직 확인되지 않았으므로, 필수 정책처럼 설명하지 않겠습니다.
+</div></article><article id="M026" class="message assistant final_answer" data-role="assistant" data-phase="final_answer"><div class="message-head"><b>M026 · AI</b><span>final_answer</span><span>2026-10-31T13:06:53.174000+09:00</span><button class="copy" data-copy="M026">원문 복사</button></div><div class="message-body">**확인한 선택 실적 입력·대휴 생성 경로에서는 2·3번을 오류 원인에서 제외해야 합니다.** 이유는 “선택근무자가 모두 A여서”가 아니라, **선택 경로에서는 해당 8＋2 분할 기능을 켜지 않기 때문**입니다. 제가 시간외 공통 함수의 위험을 선택근무에 먼저 연결한 설명을 정정합니다.
+
+**1. `ZGUBUN=A`는 선택근무를 뜻하지 않습니다.**
+
+사전 정의상 두 필드는 다른 분류입니다.
+
+| 필드 | 값 | 의미 |
+|---|---|---|
+| `ZGUBUN` — 입력구분 | A | 통상근무 |
+| 〃 | B / D / T | 시차근무 / 당번특근 / 해외출장 |
+| `Z52WKTP` — 근로유형 | 0110 | 4주 선택근무 |
+
+[입력구분 정의 — SRC-17, ZBSGUBUN1 L70–120](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/Dictionary Object/Domain/ZBSGUBUN1/definition.xml:70&gt;)
+
+선택 입력 구조 `ZSHR0141`에는 `ZGUBUN` 필드가 없습니다. 선택의 일일 시간 계산에서는 임시 계산 구조를 만들고, **시차 대상일 때만 `ZGUBUN=B`를 넣습니다. 일반 선택 입력을 A로 일괄 설정하는 처리가 아닙니다.** 이는 계산 함수에 넘기는 값에 대한 확인이며, 실제 보정 대상 `ZTHRBS01` 행들의 값을 전수 조회한 결과는 아닙니다.
+
+**2. 선택 경로에서 8＋2 분할이 실행되지 않는 것을 확인했습니다.**
+
+선택 입력의 `D_CW_GET_DATA` 호출부는 다음과 같습니다.
+
+</div><button class="copy" data-copy="M026-code-1">이 코드 복사</button><pre>CALL FUNCTION &#x27;ZHR_52TM_CALC_WORK_TIME_DAYILY&#x27;
+  EXPORTING
+    is_day = ls_zshr0115
+*   i_opt  = &#x27;X&#x27;
+    i_ngt  = lv_ngt
+</pre><div class="message-body">
+
+`I_OPT=&#x27;X&#x27;`가 **주석 처리되어 있습니다.** 선택 대휴 계산·생성의 다른 호출부들도 이 옵션을 전달하지 않습니다. [SRC-17, 선택 F02 L390–424](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Include/LZHR008_3F02.abap:390&gt;)
+
+호출받는 함수는 날짜 분리·휴게 계산 이후 다음 조건을 만납니다.
+
+</div><button class="copy" data-copy="M026-code-3">이 코드 복사</button><pre>CHECK i_opt = &#x27;X&#x27;.
+</pre><div class="message-body">
+
+`I_OPT`의 기본값도 X가 아니므로, 선택 경로는 여기서 처리를 끝냅니다. **그 아래 기준시간 조회와 정상/초과 구간 분할까지 내려가지 않습니다.** [SRC-17, DAILY L516](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap:516&gt;)
+
+따라서 **확인한 선택 경로에서 토요일 10시간이 이 로직 때문에 8＋2로 나뉘고, 그 결과 덮어쓰기나 토→일→토 문제가 생긴다는 설명은 적용되지 않습니다.**
+
+**3. 휴일인데 왜 정상근무 8시간인가 — 그 8시간을 정상근무로 지급한다는 뜻은 아닙니다.**
+
+말씀하신 의문이 맞습니다. **휴일 10시간 중 8시간은 평일 정상근무이고 2시간만 휴일근무라는 의미가 아닙니다.**
+
+별도 시간외 경로에서는 공통 함수가 먼저 정상/초과 계산 구간을 나눕니다. 그러나 비교대 휴일이면 마지막에 모든 구간을 다음처럼 바꿉니다.
+
+</div><button class="copy" data-copy="M026-code-5">이 코드 복사</button><pre>t_day_time-regtp = &#x27;M&#x27;.  &quot;초과근로시간
+t_day_time-tmtyp = &#x27;H&#x27;.  &quot;휴일근로 시간
+</pre><div class="message-body">
+
+즉, 분할된 경우에도 **8시간과 2시간 모두 최종적으로 휴일근로**입니다. [SRC-17, DAILY L840–842](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap:840&gt;)
+
+여기서 구분할 것은 다음입니다.
+
+- **코드가 일부 휴일 유형도 먼저 분할한다:** 확인했습니다.
+- **휴일 계산을 위해 반드시 그렇게 분할해야 한다:** 업무상 근거는 확인하지 못했습니다.
+
+A의 휴일은 분할에서 제외하면서 D·T·B 등에는 공통 분할 처리가 남아 있는 구조입니다. 이를 “휴일에도 정상근무 8시간이 필요해서”라고 설명하면 부정확합니다.
+
+선택근무에서 기간 소정시간이 부족할 때 휴일시간으로 충당하는 처리는 별도로 있으며, 이것도 **하루를 무조건 8＋2로 자르는 처리와는 다릅니다.**
+
+**4. `ZTHR0101`에서 기준시간을 가져오는 이유는 무엇인가?**
+
+`ZTHR0101`은 **유연근무 상수값 관리 테이블**입니다. 이 함수는 일반 기준 `ZNORHR`, 해외출장 기준 `ZTRPHR` 중 하나를 골라 **해당 근무일에 유효한 기준시간**을 읽습니다.
+
+공통 평일 계산에서는 이 기준으로 정상근무와 초과근무를 구분할 수 있습니다. 예를 들어 기준이 8시간이면 계산 대상 10시간을 8시간과 2시간으로 구분하는 용도입니다. 날짜별 유효기간을 조회하므로 코드에 8을 고정하는 것과도 다릅니다.
+
+다만 **이 기준값이 존재한다는 사실이 휴일도 반드시 분할해야 한다는 근거는 아닙니다.** 실제 운영 상수값이 언제나 8인지도 이번에는 조회하지 않았습니다.
+
+**5. `ZTOMO`는 말씀하신 익일 여부가 맞습니다.**
+
+DDIC 명칭이 **“익일여부”**이고, 코드에서도 체크된 경우 당일 자정과 다음 날 구간으로 나눕니다.
+
+- `ZTOMO`: 근무 종료가 익일로 이어지는지
+- `ZTOMOH`: 익휴
+- 휴휴 여부: 당일과 익일이 **모두 휴일인지 추가 판단**
+
+따라서 `ZTOMO`만으로는 평평·평휴·휴평·휴휴를 구분할 수 없습니다. [SRC-17, ZSHR0131 L828·L3666](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/Dictionary Object/Structures/ZSHR0131/definition.xml:828&gt;)
+
+[검토 기록](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/knowledge/processes/huhu-jorgeh-investigation.md&gt;)에도 선택 경로의 2·3번 제외를 반영했습니다. 아직 남은 핵심은 **실제 보정 대상 행이 선택 대휴 생성 경로에서 만들어졌는지, 별도 시간외 입력·관리자 수정 경로를 거쳤는지**입니다. 앞서 확인한 NORM·F06의 `JORGEH` 저장을 선택 실적 입력에도 그대로 적용해서는 안 됩니다.</div><details><summary>이 메시지에서 인용한 로컬 근거 열기</summary><div class="file-list"><a href="source-viewer.html?file=source/evidence/knowledge/processes/huhu-jorgeh-investigation.md">huhu-jorgeh-investigation.md</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/Dictionary%20Object/Domain/ZBSGUBUN1/definition.xml&amp;line=70">definition.xml · L70</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Include/LZHR008_3F02.abap&amp;line=390">LZHR008_3F02.abap · L390</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source%20code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap&amp;line=516">ZHR_52TM_CALC_WORK_TIME_DAYILY.abap · L516</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source%20code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap&amp;line=840">ZHR_52TM_CALC_WORK_TIME_DAYILY.abap · L840</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/Dictionary%20Object/Structures/ZSHR0131/definition.xml&amp;line=828">definition.xml · L828</a></div></details></article><article id="M027" class="message user user" data-role="user" data-phase="user"><div class="message-head"><b>M027 · 사용자</b><span>user</span><span>2026-10-31T13:37:17.226000+09:00</span><button class="copy" data-copy="M027">원문 복사</button></div><div class="message-body">그래 선택근무는 분할 대상자체가 아니라는거 알았어. 그러면 통상근무 A와 와 D T B 가 문제인데 통상근무 A는 너말대로면 지금 8+2로 분할 안된느거고 나머지는 분할된다는 뜻이야? 그럼 나머지 D T B 가 뭔지를 알아봐줘. 그리고 비휴휴가 orgeh를 건드린다는 거에 대해 아직 설명이 충분하지 않아. 비휴휴가 orgeh를 왜건드리는지 설명 안했어
+</div></article><article id="M028" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M028 · AI</b><span>commentary</span><span>2026-10-31T13:38:00.617000+09:00</span><button class="copy" data-copy="M028">원문 복사</button></div><div class="message-body">D·T·B의 정의와 분할 조건을 정리하겠습니다. 비휴휴 `JORGEH`는 일반 휴일 하루 입력을 예로 들어, 어떤 조건 때문에 계산되고 저장까지 전달되는지 확인하겠습니다. 코드가 그렇게 동작하는 이유와 업무상 의도는 구분하겠습니다.
+</div></article><article id="M029" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M029 · AI</b><span>commentary</span><span>2026-10-31T13:38:53.333000+09:00</span><button class="copy" data-copy="M029">원문 복사</button></div><div class="message-body">비휴휴가 계산되는 직접 원인을 확인했습니다. NORM의 해당 분기는 “휴휴인가”를 공통 진입 조건으로 검사하지 않습니다. A 유형의 하루짜리 휴일 대휴도 이 분기로 들어가 시간 조건을 충족하면 `ZJORGEHAMT`를 계산하고, 웹 저장은 그 값을 복사합니다. 다만 이 동작을 의도한 업무상 이유는 확인되지 않았습니다.
+</div></article><article id="M030" class="message assistant final_answer" data-role="assistant" data-phase="final_answer"><div class="message-head"><b>M030 · AI</b><span>final_answer</span><span>2026-10-31T13:40:28.632000+09:00</span><button class="copy" data-copy="M030">원문 복사</button></div><div class="message-body">**휴일 시간외 입력을 기준으로, A는 분할 제외이고 D·T·B는 조건에 따라 분할될 수 있다는 이해가 맞습니다.** 다만 D·T·B가 모두 항상 8＋2로 나뉘는 것은 아닙니다.
+
+| `ZGUBUN` | 의미 | 휴일의 기준시간 분할 |
+|---|---|---|
+| A | 통상근무 | 분할을 건너뜀 |
+| D | **당번특근** | `ZNORHR` 기준으로 분할될 수 있음 |
+| T | **해외출장** | `ZTRPHR` 기준으로 분할될 수 있음 |
+| B | **시차근무** | `ZNORHR` 기준으로 분할될 수 있음 |
+
+정의는 [입력구분 도메인](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/Dictionary Object/Domain/ZBSGUBUN1/definition.xml:70&gt;), 분할 조건은 [DAILY L550–610](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap:550&gt;)에서 확인했습니다.
+
+실제로는 분할 옵션, 기준시간 초과 여부, 양일 누계 처리까지 충족해야 합니다. **A도 평일은 분할될 수 있고, D·T·B도 기준시간을 넘지 않으면 추가 분할되지 않습니다.** 분할 대상이라는 사실만으로 금액 오류가 확정되는 것도 아닙니다.
+
+**비휴휴가 `JORGEH`를 건드리는 직접 원인은, 휴휴용 계산 분기의 진입 조건에 ‘휴휴만’이라는 제한이 없기 때문입니다.**
+
+이전에는 대입 위치만 설명했고, **왜 그 위치까지 들어가는지**를 충분히 설명하지 않았습니다. 다음 사례로 보면 명확합니다.
+
+&gt; **A 유형, 토요일 하루만 근무, 휴게 제외 계산시간 6시간, 대휴 발생, 익일 체크 없음**을 가정하겠습니다.
+
+NORM에서 다음 순서로 처리됩니다.
+
+1. **휴일이고 대휴가 있으므로**, 6시간을 대휴 금액 계산 대상 시간에 넣습니다.
+2. 다음 분기는 **“T·D·B 중 하나이면서 양일 판정이 없는가?”**입니다.  
+   A는 여기에 해당하지 않으므로 **하루짜리 입력이어도 `ELSE`로 들어갑니다.**
+3. 그 `ELSE` 안에서는 **계산 행의 시간이 4.5시간 이상인지**를 검사합니다. 6시간이므로 다음 두 금액을 계산합니다.
+   - 입력 당시 대휴 실비: `6시간 × 단가 × 0.5`
+   - `ZJORGEHAMT`: `6시간 × 단가 × 1`
+4. **이 계산 앞에 “날짜가 두 개이고, 두 날짜 모두 휴일인가?”를 공통 진입 조건으로 검사하는 처리가 없습니다.**
+
+이것이 **하루짜리 일반 휴일 대휴도 휴휴용으로 주석이 달린 계산을 타는 이유**입니다. [SRC-17, NORM L123–135·L284–328](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_NORM_OT_PAY/Source code/ZHR_52TM_CALC_NORM_OT_PAY.abap:284&gt;)
+
+계산한 값은 F03에서 `JORGEH`에 넣고, F06에서 저장 구조로 복사합니다. **익일 체크가 없으면 임시 DB 기록만 건너뛰며, 이 두 대입은 건너뛰지 않습니다.** 잔여 임시값이 없고 저장이 정상 완료되면 최종 테이블까지 전달될 수 있습니다. [F03 L5918](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5918&gt;), [F06 L1062](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap:1062&gt;)
+
+따라서 이 사례는 **예전 휴휴 금액이 남아서가 아니라, 비휴휴 입력에서 새 금액을 계산해서 넣는 경우**입니다.
+
+다만 **개발자가 왜 비휴휴까지 사전 저장하도록 만들었는지에 대한 업무상 의도는 확인되지 않았습니다.** 말씀하신 “휴휴만 사전 저장”이라는 의도에 비추어 보면, 현재 코드는 계산·저장 대상을 제한하는 조건이 빠진 후보입니다.
+
+또한 위 6시간 사례는 사전 계산값과 일반 정산의 `실비×2`가 같습니다.
+
+</div><button class="copy" data-copy="M030-code-1">이 코드 복사</button><pre>사전 계산: 6 × 단가 × 1
+일반 정산: (6 × 단가 × 0.5) × 2
+</pre><div class="message-body">
+
+그래서 **비휴휴에 `JORGEH`가 들어간다는 사실은 확인되지만, 그것만으로 금액이 틀렸다고 단정할 수는 없습니다.** 실제 반복 보정 원인인지 여부는 별도 대조가 필요합니다.
+
+설명을 [검토 기록](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/knowledge/processes/huhu-jorgeh-investigation.md&gt;)과 회귀 Q99·Q100에 보완했습니다. 소스 대조 결과이며 SAP 실행 재현은 미수행입니다.</div><details><summary>이 메시지에서 인용한 로컬 근거 열기</summary><div class="file-list"><a href="source-viewer.html?file=source/evidence/knowledge/processes/huhu-jorgeh-investigation.md">huhu-jorgeh-investigation.md</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source%20code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap&amp;line=550">ZHR_52TM_CALC_WORK_TIME_DAYILY.abap · L550</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap&amp;line=5918">LZHR008_2F03.abap · L5918</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/Dictionary%20Object/Domain/ZBSGUBUN1/definition.xml&amp;line=70">definition.xml · L70</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_CALC_NORM_OT_PAY/Source%20code/ZHR_52TM_CALC_NORM_OT_PAY.abap&amp;line=284">ZHR_52TM_CALC_NORM_OT_PAY.abap · L284</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap&amp;line=1062">LZHR008_2F06.abap · L1062</a></div></details></article><article id="M031" class="message user user" data-role="user" data-phase="user"><div class="message-head"><b>M031 · 사용자</b><span>user</span><span>2026-10-31T13:44:59.418000+09:00</span><button class="copy" data-copy="M031">원문 복사</button></div><div class="message-body">지금 까지 얘기한 기준을 가지고 앞서 너가 언급한 오류 예상 후보 6개가 어떤의미인지  다시한번 반영해서 정리해줘
+</div></article><article id="M032" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M032 · AI</b><span>commentary</span><span>2026-10-31T13:45:02.221000+09:00</span><button class="copy" data-copy="M032">원문 복사</button></div><div class="message-body">앞서 말씀드린 여섯 후보를 같은 번호로 다시 정리하겠습니다. 이번에 확인한 선택근무 경로 제외, 유형별 분할 조건, 확정 전 오차라는 시점을 반영해 각 후보의 의미와 적용 범위를 구분하겠습니다.
+</div></article><article id="M033" class="message assistant final_answer" data-role="assistant" data-phase="final_answer"><div class="message-head"><b>M033 · AI</b><span>final_answer</span><span>2026-10-31T13:47:27.331000+09:00</span><button class="copy" data-copy="M033">원문 복사</button></div><div class="message-body">지금까지 확인한 내용을 반영하면 **1번은 정산 이후의 별도 문제, 2·3번은 확인한 선택근무 경로에서 제외, 4·5번은 입력·저장 경로를 확인해 조사할 후보, 6번은 정책 확인이 필요한 항목**입니다. 앞서 서로 다른 경로의 위험을 이번 선택근무 오류와 연결해 설명한 부분은 정정하겠습니다.
+
+기존 여섯 번호를 그대로 유지해서 설명드리겠습니다.
+
+**1. 정산 확정 때 사전 금액이 없어지고, 취소해도 복구되지 않는 문제**
+
+정산에서 **사용한 대휴로 차감되는 건**은 `JORGEH`를 0으로 만들어 저장합니다. 이후 확정을 취소해도 원래 입력 때 계산했던 금액은 복구하지 않습니다. 재정산하면 0을 보고 일반 계산인 `ZD_MONEY × 2`를 적용할 수 있다는 문제입니다. 모든 대휴 금액을 일괄 0으로 만든다는 뜻은 아닙니다.  
+근거: [정산 계산 및 0원 처리, SRC-17 L531–549](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH415F01/source/ZRPTH415F01.abap:531&gt;).
+
+**현재 판단:** 별도로 고쳐야 할 문제 후보지만, 말씀하신 **“이번 정산 확정 몇 달 전부터 이미 금액이 다르다”는 현상의 직접 원인으로 설명할 수 없습니다.**
+
+**2. 같은 날짜의 계산금액이 임시 테이블에서 덮어써지는 문제**
+
+일요일 금액이 토요일 금액을 덮는다는 뜻이 아닙니다. **같은 사번·같은 날짜에 계산 행이 여러 개 생겼을 때**, 날짜별 합계를 저장하지 않고 마지막 행의 금액을 저장한다는 뜻입니다.
+
+분할 적용 범위는 다음처럼 좁혀야 합니다.
+
+| 구분 | 이번에 확인한 기준시간 분할 |
+|---|---|
+| 선택근무의 확인된 CW 경로 | 분할 옵션을 전달하지 않으므로 해당 분할을 하지 않음 |
+| A: 통상근무 | **휴일 행은** 해당 분할을 건너뜀 |
+| D: 당번특근 | 나머지 조건이 맞으면 분할 가능 |
+| T: 해외출장 | 해외출장 기준시간에 따라 분할 가능 |
+| B: 시차근무 | 나머지 조건이 맞으면 분할 가능. 금액 영향은 별도 확인 |
+
+따라서 D 등의 휴일 10시간이 실제로 8시간과 2시간으로 나뉘고 두 행에 정산금액이 계산됐다면, 임시 테이블에는 두 금액의 합계 대신 **뒤의 2시간분만 남을 수 있다**는 의미입니다. 기준시간은 설정값이므로 항상 8시간인 것도 아닙니다.  
+근거: [분할 조건, SRC-17 L550–601](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap:550&gt;), [행별 임시 저장, SRC-17 L5775–5781](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5775&gt;).
+
+**현재 판단:** 확인한 **선택근무 및 A의 휴일 경로에서는 이 분할을 원인으로 삼지 않습니다.** D/T/B에서도 실제 분할 행과 계산금액을 확인해야 하며, 분할된다는 사실만으로 최종 저장액 오류를 확정하지 않습니다.
+
+**3. 실제 이틀인데 날짜 묶음을 세 번으로 판단하는 문제**
+
+이것도 2번의 **같은 날짜 추가 분할이 실제로 발생하는 경우**에 연결되는 후보입니다.
+
+예를 들어 토요일 10시간·일요일 6시간이 다음 순서로 만들어지는 경우입니다.
+
+`토요일 8시간 → 일요일 6시간 → 토요일 나머지 2시간`
+
+뒤의 2시간은 토요일 10시간에 포함된 시간입니다. **토요일 8시간·일요일 6시간에 갑자기 2시간을 추가한다는 뜻이 아닙니다.**
+
+저장 함수는 날짜순으로 정렬하지 않고 연속해서 나타나는 날짜를 묶습니다. 위 배열은 `토 → 일 → 토`라는 세 묶음이므로, “두 날짜이면 나누어 저장”하는 분기를 건너뛸 수 있습니다. 그 결과 날짜별 대휴와 금액을 나누는 처리가 달라질 수 있습니다.  
+근거: [날짜 묶음과 2건 분기, SRC-17 L119–174](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:119&gt;).
+
+**현재 판단:** 2번과 마찬가지로 **확인한 선택근무 경로에는 이 분할 원인을 적용하지 않습니다.** 분할 대상 경로에서 실제 배열 순서가 위처럼 만들어지는지 확인해야 하는 후보입니다.
+
+**4. 사용하지 않은 임시 금액이 이후 신청에 섞이는 문제**
+
+이 부분은 단순 메모리 캐시가 아니라 **DB 테이블 `ZHRDAEHUAMT`에 남은 행**의 문제입니다.
+
+다음 조건이 겹치면 발생할 수 있습니다.
+
+- 이전 계산에서 특정 사번·날짜의 임시 금액이 남습니다.
+- 이후 신청이 **동일한 사번·동일한 날짜**의 임시 금액을 조회합니다.
+- 새 계산이 그 임시 금액을 올바르게 교체하지 않은 상태입니다.
+
+이때 이전 신청의 금액을 현재 신청의 `JORGEH`로 가져올 수 있습니다. 아무 다음 입력에나 영향을 준다는 뜻은 아닙니다. 저장 함수는 읽은 날짜만 삭제하며, 조회에 현재 신청을 식별하는 번호나 휴휴 조건이 없습니다.  
+근거: [임시 금액 조회·삭제, SRC-17 L163–169, L206–212](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:163&gt;).
+
+**현재 판단:** 정산 전 금액 오차를 조사할 후보입니다. 다만 **`CLEAR`나 `REFRESH`만으로는 DB에 남은 행을 없앨 수 없습니다.** 기존 조회·삭제 과정에서 어떤 날짜의 금액을 언제 소비하고 정리하는지 확인해야 합니다. 실제 선택근무 보정 건이 이 경로를 거쳤는지도 아직 확인이 필요합니다.
+
+**5. 새 계산값 전달이 경로마다 다르고, 비휴휴도 JORGEH를 계산할 수 있는 문제**
+
+이 항목은 두 가지를 구분해야 합니다.
+
+**첫째, 재계산한 금액을 저장 구조로 전달하는 방식이 다릅니다.** 공통 저장 함수 등의 복사 목록에는 새 `JORGEH`가 빠져 있지만, 확인한 시간외 웹 변경 저장에서는 새 값을 명시적으로 복사합니다. 새 값이 0이면 0도 복사합니다. 따라서 **“휴휴를 비휴휴로 바꾸면 기존 금액이 무조건 남는다”는 설명은 맞지 않습니다.**  
+근거: [공통 저장의 결과 복사, SRC-17 L62–83](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:62&gt;), [웹 변경 저장의 JORGEH 복사, SRC-17 L1062](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap:1062&gt;).
+
+**둘째, 비휴휴에서도 새로운 정산금액을 계산하는 경로가 있습니다.** 예를 들어 시간외 입력의 **A·단일 휴일·대휴 표시·계산시간 6시간**은 다음처럼 처리됩니다.
+
+`NORM에서 정산금액 계산 → F03에서 JORGEH 대입 → 시간외 웹 저장에서 새 값 복사`
+
+그 이유는 해당 계산 분기에 **“양일이 모두 휴일인 경우만 실행”하는 제한이 없기 때문**입니다. `ZTOMO=X` 조건은 임시 DB 기록을 제한할 뿐, 뒤의 `JORGEH` 대입 전체를 제한하지 않습니다. 과거 휴휴 입력이 없어도 비휴휴에서 새 값이 만들어질 수 있습니다.  
+근거: [NORM 계산 분기, SRC-17 L284–328](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_NORM_OT_PAY/Source code/ZHR_52TM_CALC_NORM_OT_PAY.abap:284&gt;).
+
+**현재 판단:** 말씀하신 “휴휴만 사전 저장”이라는 업무 의도와 대조할 후보입니다. 다만 단일 6시간의 사전값은 일반 `ZD_MONEY×2` 결과와 같을 수 있으므로, **비휴휴에 JORGEH가 있다는 사실만으로 금액 오류나 중복 지급을 뜻하지는 않습니다.** 왜 이렇게 개발했는지의 승인된 업무 의도도 미확인입니다.
+
+**6. 시차근무 B가 양일 판정에서 빠지는 문제**
+
+양일 여부를 설정하는 조건에는 T/D만 있고, 이후 별도 계산 분기에는 T/D/B가 들어 있습니다. 따라서 B는 실제 양일 근무여도 그 별도 분기로 들어가며, 확인한 대휴 조건에서는 **양일 모두 0.5배이고 사전 정산금액은 계산하지 않는 결과**가 나옵니다.  
+근거: [양일 판정 대상, SRC-17 L79–92](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_NORM_OT_PAY/Source code/ZHR_52TM_CALC_NORM_OT_PAY.abap:79&gt;).
+
+**현재 판단:** 말씀하신 **“시차실비를 별도로 받으므로 양일 모두 0.5배”**가 정책상 맞다면 의도된 처리일 수 있습니다. 따라서 현재는 오류로 확정하거나 수정 대상으로 잡지 않고 **시차 정책 확인 항목**으로 남기는 것이 맞습니다.
+
+이번 보정 건에서는 **실제 생성·수정 경로와 연결되는지 확인한 뒤 4·5번을 조사하는 것**이 우선입니다. 2·3번을 제외했다고 4·5번이 원인으로 확정되는 것은 아닙니다. 위 판단은 추출 소스 기준이며, 실제 보정 대상의 저장 전후 값과 SAP 실행 결과로 원인을 확인한 단계는 아닙니다.</div><details><summary>이 메시지에서 인용한 로컬 근거 열기</summary><div class="file-list"><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH415F01/source/ZRPTH415F01.abap&amp;line=531">ZRPTH415F01.abap · L531</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap&amp;line=5775">LZHR008_2F03.abap · L5775</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_GET_OVERTIME_SAVE/Source%20code/ZHR_52TM_GET_OVERTIME_SAVE.abap&amp;line=119">ZHR_52TM_GET_OVERTIME_SAVE.abap · L119</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source%20code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap&amp;line=550">ZHR_52TM_CALC_WORK_TIME_DAYILY.abap · L550</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_CALC_NORM_OT_PAY/Source%20code/ZHR_52TM_CALC_NORM_OT_PAY.abap&amp;line=284">ZHR_52TM_CALC_NORM_OT_PAY.abap · L284</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap&amp;line=1062">LZHR008_2F06.abap · L1062</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_GET_OVERTIME_SAVE/Source%20code/ZHR_52TM_GET_OVERTIME_SAVE.abap&amp;line=163">ZHR_52TM_GET_OVERTIME_SAVE.abap · L163</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_GET_OVERTIME_SAVE/Source%20code/ZHR_52TM_GET_OVERTIME_SAVE.abap&amp;line=62">ZHR_52TM_GET_OVERTIME_SAVE.abap · L62</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_CALC_NORM_OT_PAY/Source%20code/ZHR_52TM_CALC_NORM_OT_PAY.abap&amp;line=79">ZHR_52TM_CALC_NORM_OT_PAY.abap · L79</a></div></details></article><article id="M034" class="message user user" data-role="user" data-phase="user"><div class="message-head"><b>M034 · 사용자</b><span>user</span><span>2026-10-31T13:58:21.740000+09:00</span><button class="copy" data-copy="M034">원문 복사</button></div><div class="message-body">좋아 여기서 다음단계로 확인해볼게 있어. 
+2,3.우선 D T B 가 특정조건에서 분할되어 8+2가 된다면 8과 2가 각각 어떤식으로 휴일실비로 계산되는지 확인해줘. 이게 그냥 10시간을 통으로 계산하는거랑 무슨 차이가 있는지 알아야 개선방향을 알수있을거 같아.
+5번에서 첫쨰가 무슨소리인지 모르겠어. 예시를 들어줘. 두번쨰는 양일이 모두 휴일인 경우만 실행하는 제한이 없다는건 알겠어. 근데 어차피 하루에 속하는 대휴이면 단가가 곱하기 0.5라서 orgeh에 값이 들어간다고 금액이 오류나지는 않을거 같아
+이 부분들에 대해 좀더 자세히 설명해줘
+</div></article><article id="M035" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M035 · AI</b><span>commentary</span><span>2026-10-31T13:58:24.988000+09:00</span><button class="copy" data-copy="M035">원문 복사</button></div><div class="message-body">D/T/B에서 분할된 각 구간에 어떤 배율이 적용되는지 확인하고, 같은 시간을 한 행으로 계산했을 때와 비교하겠습니다. 5번 첫째는 새 계산값이 저장까지 전달되는 과정을 숫자 예시로 설명하겠습니다.
+</div></article><article id="M036" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M036 · AI</b><span>commentary</span><span>2026-10-31T13:58:46.665000+09:00</span><button class="copy" data-copy="M036">원문 복사</button></div><div class="message-body">하루 10시간에 대휴가 발생한 D/T/B는, 8시간과 2시간으로 나뉘어도 두 구간 모두 0.5배로 계산됩니다. 이 조건에서는 휴일실비 합계가 10시간을 통으로 계산한 값과 같습니다. 이제 양일 근무에서의 배율과, 계산된 금액이 저장되는 과정의 차이를 구분해 확인하겠습니다.
+</div></article><article id="M037" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M037 · AI</b><span>commentary</span><span>2026-10-31T14:00:24.265000+09:00</span><button class="copy" data-copy="M037">원문 복사</button></div><div class="message-body">양일 근무에서도, 토요일 10시간이 8+2로 나뉘면 뒤의 2시간은 토요일 대휴 표시를 받아 0.5배가 됩니다. 확인한 예시에서는 실비 합계가 통계산과 같고, 차이는 이후 날짜별 정산금액을 저장하는 과정에서 생길 수 있습니다.
+
+또 말씀하신 대로 단일 대휴의 사전금액이 현재 시간·단가로 정확히 계산됐다면 일반 ×2 결과와 같습니다. 비휴휴에 값이 있다는 사실 자체는 오류 후보에서 제외하고 설명하겠습니다.
+</div></article><article id="M038" class="message assistant final_answer" data-role="assistant" data-phase="final_answer"><div class="message-head"><b>M038 · AI</b><span>final_answer</span><span>2026-10-31T14:02:19.667000+09:00</span><button class="copy" data-copy="M038">원문 복사</button></div><div class="message-body">확인한 산식에서는 **같은 단가·같은 인정시간·같은 대휴 발생일을 전제로 하면, 8+2로 나눠도 휴일실비 합계는 통으로 계산한 값과 같습니다.** 문제 후보는 그 뒤의 정산금액 저장과 날짜 묶음 처리입니다.
+
+아래 금액은 이해를 돕기 위해 **시간외 단가 10,000원, 시간은 휴게 반영 후**라고 가정하겠습니다.
+
+**1. D/T/B가 하루에만 근무하고 대휴가 발생한 경우**
+
+D 당번특근의 휴일 10시간이 8+2로 나뉘었다면 다음처럼 계산됩니다.
+
+| 계산 방법 | 휴일실비 |
+|---|---:|
+| 앞 8시간 | 8 × 10,000 × 0.5 = 40,000원 |
+| 뒤 2시간 | 2 × 10,000 × 0.5 = 10,000원 |
+| 분할 계산 합계 | **50,000원** |
+| 10시간 통계산 | 10 × 10,000 × 0.5 = **50,000원** |
+
+**뒤의 2시간도 0.5배입니다.** 이 단일일 분기에서는 개별 구간의 2시간만 보고 판단하지 않고, 합계시간을 기준으로 대휴수당을 계산하기 때문입니다.
+
+또한 앞의 8시간을 내부적으로 ‘정상근무’라고 나눴더라도, 최종적으로는 **8시간과 2시간 모두 휴일근로로 분류**됩니다. 앞 8시간을 평일 정상근무 배율로 지급하는 구조가 아닙니다.  
+근거: [DAILY L840–842](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap:840&gt;), [NORM L284–299, SRC-17](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_NORM_OT_PAY/Source code/ZHR_52TM_CALC_NORM_OT_PAY.abap:284&gt;).
+
+유형별로는 다음과 같습니다.
+
+- **D 당번특근, B 시차근무:** 실제로 8+2로 분할되는 조건이라면 위 계산과 같습니다.
+- **T 해외출장:** 기준시간이 9시간인 예시라면 11시간을 9+2로 나눕니다. `45,000 + 10,000 = 55,000원`으로, 통11시간 × 0.5와 같습니다. 실제 기준시간은 설정값 확인이 필요합니다.
+
+이 단일일 분기에서는 **새 사전 정산금액을 계산하지 않습니다.** 따라서 “하루 10시간이 8+2로 나뉜다”는 사실만으로 앞서 말한 비영 `JORGEH` 덮어쓰기 문제까지 성립하지는 않습니다.
+
+**2. D/T가 휴휴 양일에 근무한 경우에도, 같은 날짜의 뒤 2시간은 0.5배입니다**
+
+이번에는 **토요일 10시간·일요일 6시간이고 양일 모두 대휴가 발생했다**고 하겠습니다. 실제 계산 행이 `토8 → 일6 → 토2`로 만들어진 조건입니다.
+
+| 계산 행 | 휴일실비 | 해당 행에서 계산한 사전 정산금액 |
+|---|---:|---:|
+| 토요일 앞 8시간 | 40,000원 | 80,000원 |
+| 일요일 6시간 | 30,000원 | 60,000원 |
+| 토요일 뒤 2시간 | 10,000원 | 20,000원 |
+| 합계 | **80,000원** | **160,000원** |
+
+토요일 뒤 2시간에도 **“토요일에 대휴가 발생했다”는 표시가 붙습니다.** 그래서 짧은 구간이더라도 0.5배 실비와 1배 사전 정산금액을 계산합니다. 해당 보완 분기가 NORM에 들어 있습니다.  
+근거: [발생일에 속한 행의 대휴 표시, F03 L5754–5764](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5754&gt;), [짧은 구간의 대휴 계산, NORM L331–343, SRC-17](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_NORM_OT_PAY/Source code/ZHR_52TM_CALC_NORM_OT_PAY.abap:331&gt;).
+
+분할하지 않고 토10·일6으로 계산해도 실비는 `50,000 + 30,000 = 80,000원`, 사전 정산금액은 `100,000 + 60,000 = 160,000원`입니다.
+
+**따라서 이 예시에서 계산금액 자체는 같습니다. 차이가 생길 수 있는 곳이 기존 후보 2·3번입니다.**
+
+- **2번:** 토요일 사전금액 80,000원을 임시 저장한 뒤, 토요일 뒤 구간의 20,000원으로 덮어씁니다. 토요일 합계 100,000원이 보존되지 않는 문제입니다.
+- **3번:** 저장 단계에서 `토 → 일 → 토`를 세 묶음으로 세어, 두 날짜로 나누는 처리를 건너뛸 수 있습니다.
+
+위 표의 160,000원은 **계산 행들의 합계**입니다. 실제 최종 `ZTHRBS01-JORGEH`에 그 합계가 저장된다는 뜻은 아닙니다.
+
+B는 양일이어도 별도 분기로 들어가, 확인한 대휴 조건에서는 각 구간 0.5배이고 새 사전 정산금액을 계산하지 않습니다. 따라서 **D/T의 비영 정산금액 덮어쓰기 예시를 B에 그대로 적용하면 안 됩니다.**
+
+개선 방향도 좁혀집니다. 이 예시의 휴일실비 산식에서는 8+2 분할의 필수성을 찾지 못했습니다. 다만 공통 분할을 제거하기 전에, **기존 분할 결과의 날짜별 금액 합산과 날짜 묶음 처리를 바로잡는 방안**을 먼저 검토할 수 있습니다. 분할 제거는 평일·출장·휴게 계산에 미치는 영향까지 확인해야 합니다.
+
+**3. 5번 첫째는 “새 금액을 계산했는데 저장할 칸에 옮기지 않는 경우”라는 뜻입니다**
+
+예를 들어 A의 단일 휴일 대휴를 **8시간에서 6시간으로 수정**했다고 하겠습니다.
+
+공통 저장 함수 입구에 기존 `JORGEH=80,000원`이 그대로 전달됐고, 해당 날짜의 임시 금액도 없다는 **조건부 예시**입니다.
+
+| 단계 | 대휴실비 `ZD_MONEY` | 사전 정산금액 `JORGEH` |
+|---|---:|---:|
+| 이전 8시간의 값 | 40,000원 | 80,000원 |
+| 수정한 6시간의 새 계산 결과 | 30,000원 | 60,000원 |
+| 공통 저장 함수에서 값 복사 후 | **30,000원** | **80,000원** |
+
+마지막 행이 이렇게 되는 이유는 다음과 같습니다.
+
+1. 저장 함수는 새 조건으로 재계산해 **60,000원이라는 결과를 받습니다.**
+2. 저장할 구조는 호출자가 넘긴 기존 값을 복사해 만듭니다.
+3. 그 구조의 `ZD_MONEY`는 새 30,000원으로 바꾸지만, **`JORGEH`를 새 60,000원으로 바꾸는 복사가 빠져 있습니다.**
+4. 임시 금액 조회로도 교체되지 않으면 기존 80,000원이 남습니다.
+
+이 조건에서는 현재 6시간에 맞는 정산액 60,000원과 저장할 값 80,000원이 달라집니다.  
+근거: [GET_OVERTIME_SAVE L40–83, SRC-17](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:40&gt;).
+
+**다만 확인한 시간외 웹 변경 저장은 앞 단계에서 새 60,000원을 복사합니다.** 따라서 공통 저장 함수에 들어오는 값부터 60,000원이고, 위 80,000원 잔존 예시는 성립하지 않습니다. 새 계산값이 0이면 0도 복사합니다.  
+근거: [F06 L1027–1062, SRC-17](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap:1027&gt;).
+
+즉, **복사가 빠진 구문은 확인했지만, 실제 어떤 입력 경로가 이전 금액을 그대로 넘겨서 오차를 만드는지는 아직 확인해야 합니다.** 모든 웹 수정이 잘못된다는 의미는 아닙니다.
+
+**4. 5번 둘째에 대한 말씀은 맞습니다**
+
+현재 시간·단가로 정확하게 계산된 단일 대휴라면 다음 두 결과는 같습니다.
+
+- 사전 정산금액 사용: `6시간 × 10,000원 = 60,000원`
+- 일반 정산 계산: `대휴실비 30,000원 × 2 = 60,000원`
+
+따라서 **비휴휴에 `JORGEH`가 들어 있다는 사실 자체는 금액 오류의 독립적인 근거에서 제외하는 것이 맞습니다.** 조사할 것은 그 값이 **현재 입력 조건과 일치하는지**, 수정 전 값이나 다른 신청의 임시 금액이 섞였는지입니다.
+
+이번 비교는 [검토 문서](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/knowledge/processes/huhu-jorgeh-investigation.md:127&gt;)와 회귀 사례 Q101–Q103에 반영했습니다. 소스 대조와 예시 산술을 확인했으며, 실제 SAP 입력·저장 재현과 ABAP 수정은 수행하지 않았습니다.</div><details><summary>이 메시지에서 인용한 로컬 근거 열기</summary><div class="file-list"><a href="source-viewer.html?file=source/evidence/knowledge/processes/huhu-jorgeh-investigation.md">huhu-jorgeh-investigation.md</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap&amp;line=1027">LZHR008_2F06.abap · L1027</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source%20code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap&amp;line=840">ZHR_52TM_CALC_WORK_TIME_DAYILY.abap · L840</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_CALC_NORM_OT_PAY/Source%20code/ZHR_52TM_CALC_NORM_OT_PAY.abap&amp;line=284">ZHR_52TM_CALC_NORM_OT_PAY.abap · L284</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap&amp;line=5754">LZHR008_2F03.abap · L5754</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_CALC_NORM_OT_PAY/Source%20code/ZHR_52TM_CALC_NORM_OT_PAY.abap&amp;line=331">ZHR_52TM_CALC_NORM_OT_PAY.abap · L331</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_GET_OVERTIME_SAVE/Source%20code/ZHR_52TM_GET_OVERTIME_SAVE.abap&amp;line=40">ZHR_52TM_GET_OVERTIME_SAVE.abap · L40</a><a href="source-viewer.html?file=source/evidence/knowledge/processes/huhu-jorgeh-investigation.md&amp;line=127">huhu-jorgeh-investigation.md · L127</a></div></details></article><article id="M039" class="message user user" data-role="user" data-phase="user"><div class="message-head"><b>M039 · 사용자</b><span>user</span><span>2026-10-31T14:18:15.453000+09:00</span><button class="copy" data-copy="M039">원문 복사</button></div><div class="message-body">좋아 우선 확실하게 맥락이 잡힌 부문만 먼저 수정 진행할거야. 일단 오류 시나리오 6개 중
+
+1. 정산 확정 때 사전 금액이 없어지고, 취소해도 복구되지 않는 문제 -&gt; 건드리지마 그대로 둬
+
+&amp;#x20; 2\. 같은 날짜의 계산금액이 임시 테이블에서 덮어써지는 문제 -&gt; 분할이 되더라도 대휴 최종 금액에는 영향이 없는 거 같아.
+
+그래서 사실 분할할 이유도 없어. 그래서 분할 안하는 방향으로 가고 싶겠지만 이것도 일단 건드리지마. 그대로 분할하게 냅둬
+
+&amp;#x20; 3\. 실제 이틀인데 날짜 묶음을 세 번으로 판단하는 문제 -&gt; 이거는 고쳐야해. 너말대로 토 8 -&gt; 일 6 -&gt; 토 2 로 이렇게 그룹이 3개 생긴다고 해도 최종 대휴 금액은 하나만 반영되는게 아니라 3개의 합계가 반영되게 수정되어야해
+
+4\. 사용하지 않은 임시 금액이 이후 신청에 섞이는 문제 -&gt; 이것도 무조건 고쳐야해. 솔직이 이 4번이 대부분의 오류일수도 있다는 생각조차 들어. 이후 신청에는 어떤식으로든 이전 신청이 영향을 주면 안돼.
+
+5. 새 계산값 전달이 경로마다 다르고, 비휴휴도 JORGEH를 계산할 수 있는 문제&amp;#x20;
+
+-&gt; 새금액을 계산하면 제대로 저장할 칸에 반영되어야해. 즉 너가 말한 사례를 보면 그 구조의 `ZD_MONEY`는 새 30,000원으로 바꾸지만, **`JORGEH`를 새 60,000원으로 바꾸는 복사가 빠져 있습니다. 라고 했어. jorgeh도 60000으로 바꾸는 복사가 이루어져야해. 단 시간외 웹 변경 저장은 앞 단계에서 새 60,000원을 복사한다고 했어. 이건 신규입력이 아닌 수정입력을 했을때는 괜찮다는 거야? 그리고 5번의 단일 대휴라도 금액이 우선은 같아 보이니 수정하지마.**
+
+이것들에 대한 너의 검토의견을 말해봐
+
+</div></article><article id="M040" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M040 · AI</b><span>commentary</span><span>2026-10-31T14:18:18.898000+09:00</span><button class="copy" data-copy="M040">원문 복사</button></div><div class="message-body">지정하신 수정 범위를 기준으로 검토하겠습니다. 특히 3번의 합계를 어느 대휴에 귀속시켜야 하는지, 4번의 신청 간 금액 섞임을 기존 저장 흐름에서 어떻게 막을지 확인하겠습니다. 웹 저장의 새 금액 복사가 신규·수정 중 어디에 적용되는지도 짚겠습니다.
+</div></article><article id="M041" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M041 · AI</b><span>commentary</span><span>2026-10-31T14:19:02.197000+09:00</span><button class="copy" data-copy="M041">원문 복사</button></div><div class="message-body">웹 저장은 신규와 수정 모두 새 `JORGEH`를 복사하는 것으로 확인됐습니다. 수정일 때만 하는 처리는 기존 신청 조회이고, 재계산과 금액 복사는 그 조건 밖에서 공통으로 실행됩니다.
+
+3번은 날짜 정렬만으로 끝내면 안 됩니다. 세 구간의 금액을 빠짐없이 합산하되 토요일 대휴와 일요일 대휴에 각각 배분해야 합니다. 이 합계를 현재 신청의 계산 결과에서 직접 전달하면 4번의 이전 신청 금액 혼입도 함께 막는 방향이 됩니다.
+</div></article><article id="M042" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M042 · AI</b><span>commentary</span><span>2026-10-31T14:20:32.228000+09:00</span><button class="copy" data-copy="M042">원문 복사</button></div><div class="message-body">5번에도 함께 볼 부분이 있습니다. 양일 신청을 하루씩 나눈 뒤 다시 계산하는 과정에서는 D/T의 사전 정산금액이 0이 될 수 있습니다. 따라서 3·4·5번을 함께 보완하면서, 이번 양일 계산에서 나온 날짜별 금액을 보존해 각 대휴의 저장값으로 넘겨야 합니다. 현재는 검토 의견만 정리했으며 ABAP 소스는 변경하지 않았습니다.
+</div></article><article id="M043" class="message assistant final_answer" data-role="assistant" data-phase="final_answer"><div class="message-head"><b>M043 · AI</b><span>final_answer</span><span>2026-10-31T14:21:06.908000+09:00</span><button class="copy" data-copy="M043">원문 복사</button></div><div class="message-body">제 의견은 **시간 분할과 지급 산식은 유지하고, 3·4·5번의 금액 집계·전달·저장을 함께 보완하는 방향**입니다. 다만 2번과 3번 사이에 연결된 문제가 있어 범위를 정확히 구분해야 합니다.
+
+| 항목 | 이번 검토 범위 |
+|---|---|
+| 1. 확정·취소 | 그대로 유지 |
+| 2. 8+2 등의 시간 분할 | 그대로 유지 |
+| 3. 날짜 묶음·금액 합계 | 수정 |
+| 4. 이전 신청의 임시 금액 혼입 | 수정 |
+| 5. 새 JORGEH 전달 | 수정. 비휴휴 사전계산 산식은 유지 |
+| 6. 시차 B | 기존처럼 정책 확인 대기 |
+
+**3번은 세 구간의 금액을 모두 반영하되, 발생한 대휴별로 나눠 저장해야 합니다.**
+
+설명용 단가가 10,000원이고 토요일·일요일에 각각 대휴가 발생했다면 목표는 다음과 같습니다.
+
+| 계산 구간 | 계산된 정산금액 | 최종 귀속 |
+|---|---:|---|
+| 토요일 앞 8시간 | 80,000원 | 토요일 대휴 |
+| 일요일 6시간 | 60,000원 | 일요일 대휴 |
+| 토요일 뒤 2시간 | 20,000원 | 토요일 대휴 |
+| 최종 결과 | **합계 160,000원** | **토요일 100,000원 + 일요일 60,000원** |
+
+이렇게 해야 세 구간이 빠짐없이 반영되고, 원래의 대휴 두 개도 유지됩니다.
+
+여기서 앞선 설명을 분명히 하겠습니다. **분할 전후 휴일실비 합계가 같다는 것과, JORGEH가 끝까지 정확히 저장된다는 것은 별개입니다.** 현재 임시 테이블에서 토요일 80,000원이 20,000원으로 덮어써졌다면, 날짜순으로 정렬하는 것만으로 100,000원을 복원할 수 없습니다.
+
+따라서 **8+2 분할은 유지하면서, 덮어쓰기 전의 이번 계산 결과에서 날짜별 금액을 확보해야 합니다.** 2번의 임시 금액 전달까지 완전히 그대로 둔 채 3번을 정렬만으로 해결할 수 있다고 말씀드릴 수는 없습니다.  
+근거: [F03의 임시 저장 L5775–5781](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5775&gt;), [SAVE의 날짜 묶음 L119–174, SRC-17](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:119&gt;).
+
+또한 현재 대휴 상세에는 같은 계산 행을 두 번 담을 수 있는 구간이 있습니다. 합계는 **원래 계산 행을 한 번씩 반영**하도록 해야 하며, 상세 테이블 전체를 무조건 더하면 안 됩니다.
+
+**4번은 “이번 신청의 계산 결과만 이번 저장에 사용한다”는 방향을 권합니다.**
+
+현재처럼 사번·날짜만으로 공유 임시 DB를 읽으면, 그 금액이 이번 신청에서 만들어진 것인지 확실히 구분하기 어렵습니다. 시작과 끝에서 삭제하는 방식만으로는 중간 오류나 같은 사번·날짜의 겹친 처리까지 분리했다고 보장하기 어렵습니다.
+
+제가 권하는 흐름은 다음과 같습니다.
+
+`이번 신청 계산 → 이번 계산의 날짜별 금액 보관 → 같은 저장 호출에 직접 전달 → 해당 대휴에 저장`
+
+기존 계산·저장 함수를 활용하고, **계산 결과를 돌려주는 부분을 필요한 만큼 보완하는 방식**입니다. 다른 신청이 남긴 DB 금액을 현재 신청의 정산금액으로 가져오는 의존성을 없애는 것이 핵심입니다.
+
+이 방향이면 3번에서 확보한 날짜별 합계를 그대로 사용할 수 있어, 3번과 4번을 함께 해결하기에 적합합니다. 다만 4번이 실제 오차의 대부분인지는 보정 사례를 대조하기 전에는 확정할 수 없습니다.
+
+**5번의 웹 저장은 신규와 수정 모두 새 JORGEH를 복사합니다.**
+
+이 부분은 제가 앞서 ‘웹 변경 저장’을 강조해서 설명이 불충분했습니다.
+
+확인한 시간외 웹 `SAVE` 경로에서는 다음과 같습니다.
+
+- **수정일 때만:** DB에서 기존 신청을 읽습니다.
+- **신규·수정 모두:** 입력 조건으로 재계산하고 새 `JORGEH`를 복사합니다.
+
+기존 신청 조회의 `IF i_mode = &#x27;M&#x27;`은 먼저 끝나고, 그 밖에서 공통 재계산·복사 루틴을 호출합니다. 따라서 **“수정은 복사하지만 신규는 복사하지 않는다”는 구조가 아닙니다.**  
+근거: [MOBILE L132–148](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_MOBILE_OVERTIME_APPR/Source code/ZHR_52TM_MOBILE_OVERTIME_APPR.abap:132&gt;), [F06 L1027–1062, SRC-17](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap:1027&gt;).
+
+공통 저장 등의 전달 누락은 말씀하신 원칙대로 보완해야 합니다. 단일 대휴를 재계산한 결과가 60,000원이면 저장할 `JORGEH`도 60,000원이어야 합니다.
+
+다만 양일 처리에는 주의할 지점이 하나 있습니다. **양일 신청을 하루씩 나눈 뒤 재계산하는 D/T 분기에서는 사전 정산금액이 0으로 나올 수 있습니다.** 그 마지막 값만 무조건 복사하면, 앞서 양일 맥락으로 계산한 올바른 금액을 지울 수 있습니다. 따라서 3·4번에서 보존한 **이번 신청의 해당 날짜 금액**을 최종 저장값으로 전달해야 합니다.  
+근거: [F05의 분할 후 재계산 L168–197, SRC-17](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F05.abap:168&gt;).
+
+이번 수정의 완료 기준은 **“현재 신청에서 계산한 정산금액이 누락·중복·다른 신청의 혼입 없이, 각 대휴의 JORGEH에 저장된다”**로 잡는 것이 적절합니다. 비휴휴의 기존 계산 방식과 확정·취소 처리는 유지합니다.
+
+검토 범위는 [문서에 반영](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/knowledge/processes/huhu-jorgeh-investigation.md:176&gt;)했으며, 현재 ABAP 소스는 변경하지 않았습니다.</div><details><summary>이 메시지에서 인용한 로컬 근거 열기</summary><div class="file-list"><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap&amp;line=5775">LZHR008_2F03.abap · L5775</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_GET_OVERTIME_SAVE/Source%20code/ZHR_52TM_GET_OVERTIME_SAVE.abap&amp;line=119">ZHR_52TM_GET_OVERTIME_SAVE.abap · L119</a><a href="source-viewer.html?file=source/evidence/knowledge/processes/huhu-jorgeh-investigation.md">huhu-jorgeh-investigation.md</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap&amp;line=1027">LZHR008_2F06.abap · L1027</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_MOBILE_OVERTIME_APPR/Source%20code/ZHR_52TM_MOBILE_OVERTIME_APPR.abap&amp;line=132">ZHR_52TM_MOBILE_OVERTIME_APPR.abap · L132</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F05.abap&amp;line=168">LZHR008_2F05.abap · L168</a><a href="source-viewer.html?file=source/evidence/knowledge/processes/huhu-jorgeh-investigation.md&amp;line=176">huhu-jorgeh-investigation.md · L176</a></div></details></article><article id="M044" class="message user user" data-role="user" data-phase="user"><div class="message-head"><b>M044 · 사용자</b><span>user</span><span>2026-10-31T14:25:53.880000+09:00</span><button class="copy" data-copy="M044">원문 복사</button></div><div class="message-body">좋아. 기존 시간 분할, 정산 확정·취소, 비휴휴 계산은 그대로 두고 3·4·5번을 네가 말한 방향으로 수정한다고  하면 최소한으로 로컬 소스에 반영한다고 했을때 코드의 어떤 부문이 수정되어야 하는지 말해줘.
+</div></article><article id="M045" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M045 · AI</b><span>commentary</span><span>2026-10-31T14:25:56.598000+09:00</span><button class="copy" data-copy="M045">원문 복사</button></div><div class="message-body">최소 수정에 필요한 함수와 구간을 확인하겠습니다. 기존 대휴 상세 반환값을 재사용할 수 있는지, 금액 전달값을 추가해야 하는지부터 살펴보고 각 변경이 필요한 이유를 정리하겠습니다.
+</div></article><article id="M046" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M046 · AI</b><span>commentary</span><span>2026-10-31T14:27:17.662000+09:00</span><button class="copy" data-copy="M046">원문 복사</button></div><div class="message-body">기존 반환값을 재사용하면 수정 범위를 두 곳으로 줄일 수 있어 보입니다. `GET_OVERTIME_DATA`가 이미 신청 전체의 `JORGEH`와 대휴 상세의 구간별 금액을 함께 돌려주고 있습니다.
+
+상세에 같은 행이 두 번 담기는 부분을 정리하고 전체 합계를 계산하면, 저장 함수에서 그 값을 바로 사용할 수 있습니다. 이 방식은 새 함수나 DB 테이블, 함수 매개변수 추가 없이 구성할 수 있습니다.
+</div></article><article id="M047" class="message assistant final_answer" data-role="assistant" data-phase="final_answer"><div class="message-head"><b>M047 · AI</b><span>final_answer</span><span>2026-10-31T14:29:26.311000+09:00</span><button class="copy" data-copy="M047">원문 복사</button></div><div class="message-body">현재 소스 기준으로는 **핵심 로직 두 곳을 수정하는 안**으로 구성할 수 있습니다.
+
+1. `LZHR008_2F03`의 `CALC_WORK_TIME_DAILY`
+2. `ZHR_52TM_GET_OVERTIME_SAVE`
+
+기존 반환값에 **신청 전체의 `JORGEH`와 상세 행별 `ZJORGEHAMT`가 이미 있으므로**, 새 함수·DB 테이블·함수 매개변수를 추가하지 않고 활용할 수 있습니다.
+
+**1. F03: 이번 신청의 계산금액을 빠짐없이 반환하도록 수정**
+
+대상: [LZHR008_2F03 — CALC_WORK_TIME_DAILY](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5487&gt;)
+
+| 현재 구간 | 수정 내용 | 목적 |
+|---|---|---|
+| FORM 시작·지역변수 선언 | 반환할 상세와 금액 누계를 호출마다 초기화 | 이전 호출 결과가 남지 않도록 처리 |
+| **5775–5781행** | `ZHRDAEHUAMT`에 금액을 쓰는 부분 제거 | 공유 임시 DB를 통한 금액 전달 중단 |
+| **5845–5860행** | 같은 계산 행을 두 번 `APPEND`하지 않도록 조건 통합 | 중복 합산 방지 |
+| **5850행** | 마지막 행 금액을 대입하는 처리를 **계산 행 전체의 금액 합산**으로 변경 | 신청 전체 정산금액 보존 |
+| **5906–5918행** | 기존 반올림·금액 변환·`JORGEH` 반환 흐름 활용 | 합산한 새 금액 전달 |
+
+여기서 **토요일 8시간과 2시간은 서로 다른 계산 행이므로 둘 다 유지**합니다. 없애는 것은 동일한 행이 두 조건에 걸려 두 번 들어가는 중복입니다.
+
+반환 결과는 다음 두 가지가 됩니다.
+
+- 신청 전체 정산금액: 예를 들어 **160,000원**
+- 계산 상세: **토8시간 80,000원 / 일6시간 60,000원 / 토2시간 20,000원**
+
+시간을 분할하는 함수와 0.5·1.5배를 계산하는 함수는 수정하지 않습니다.
+
+**2. GET_OVERTIME_SAVE: 반환받은 금액을 발생 대휴에 맞게 저장하도록 수정**
+
+대상: [ZHR_52TM_GET_OVERTIME_SAVE](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:40&gt;)
+
+**① 62–83행: 새 `JORGEH` 복사 추가**
+
+기존 `ZD_MONEY` 등의 복사 목록에 정상 재계산 결과의 `JORGEH`도 넣습니다.
+
+따라서 단일 대휴를 재계산한 값이 60,000원이면 저장 구조도 60,000원으로 바뀝니다. 정상 계산 결과가 0인 경우도 반영합니다.
+
+**② 119–150행: 기존 날짜 묶음 처리 보완**
+
+상세를 날짜·시작시각 순으로 정렬하고, 같은 날짜의 정산금액을 더합니다.
+
+`토8 → 일6 → 토2`를 처리하면 다음과 같이 됩니다.
+
+- 토요일: 80,000 + 20,000 = **100,000원**
+- 일요일: **60,000원**
+
+이때 **날짜 묶음 수와 실제 발생한 대휴 수를 구분**해야 합니다. 이틀에 걸쳐 근무했어도 대휴는 하나일 수 있기 때문입니다.
+
+**③ 163–170행, 206–213행: 임시 DB 조회·삭제를 현재 계산값 사용으로 교체**
+
+현재의 `ZHRDAEHUAMT SELECT / DELETE`를 없애고, 이번 호출에서 받은 금액을 사용합니다.
+
+- **대휴가 하나:** 신청 전체 정산금액을 그 대휴에 반영
+- **대휴가 두 개:** 각 날짜에 귀속되는 정산금액을 각각 반영
+
+이렇게 하면 이전 신청이 임시 DB에 남긴 금액을 읽어 오는 경로가 사라집니다.
+
+**④ F05 호출 이후, 실제 저장 이전: 해당 대휴의 금액을 최종 대입**
+
+기존 `SPLIT_OVERTIME_DATA` 호출은 유지합니다. 그 처리가 끝난 뒤, 저장 함수가 보관하고 있는 **이번 신청의 해당 대휴 금액**을 최종 `JORGEH`에 넣습니다.
+
+이 위치에서 처리하면 하루씩 재계산하면서 나온 0이나 상속된 금액 때문에 원래 양일 정산금액이 사라지는 것을 막을 수 있습니다.
+
+**다른 프로그램을 추가로 수정하지 않아도 되는 이유**
+
+| 대상 | 이번 안에서의 처리 |
+|---|---|
+| `GET_OVERTIME_DATA` | 기존 전체 금액·대휴 상세 반환을 그대로 이용 |
+| `F05` | 기존 분할 후 재계산 유지. 호출자인 SAVE에서 최종 JORGEH 설정 |
+| `F06`·웹 신규/수정 | 이미 새 JORGEH를 복사하므로 유지 |
+| 관리자 프로그램 | 최종 저장에 공통 SAVE를 사용하므로 별도 계산 추가 불필요 |
+| 시간 분할·NORM 산식·정산 확정/취소 | 변경하지 않음 |
+
+즉, 변경 흐름은 다음과 같습니다.
+
+**기존 계산 → 전체·상세 금액 반환 → 날짜별 합산 → 발생 대휴별 JORGEH 저장**
+
+로컬 파일 수는 한 가지 구분이 필요합니다. SAVE 함수 본문과 `LZHR008_2U39.abap`가 현재 동일한 중복 추출본입니다. 둘을 함께 동기화한다면 **수정 로직은 두 곳, ABAP 파일은 세 개**입니다. 함수 인터페이스나 DDIC 변경은 필요하지 않은 안입니다.
+
+이 최소 수정안을 [검토 문서](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/knowledge/processes/huhu-jorgeh-investigation.md:211&gt;)에 정리했습니다. **아직 ABAP 소스는 수정하지 않았으며**, 구현 후에는 양일 두 대휴뿐 아니라 3+2 합산 대휴, 익일에만 발생한 대휴, 연속 신청도 함께 검증해야 합니다.</div><details><summary>이 메시지에서 인용한 로컬 근거 열기</summary><div class="file-list"><a href="source-viewer.html?file=source/evidence/knowledge/processes/huhu-jorgeh-investigation.md">huhu-jorgeh-investigation.md</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_GET_OVERTIME_SAVE/Source%20code/ZHR_52TM_GET_OVERTIME_SAVE.abap&amp;line=40">ZHR_52TM_GET_OVERTIME_SAVE.abap · L40</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap&amp;line=5487">LZHR008_2F03.abap · L5487</a><a href="source-viewer.html?file=source/evidence/knowledge/processes/huhu-jorgeh-investigation.md&amp;line=211">huhu-jorgeh-investigation.md · L211</a></div></details></article><article id="M048" class="message user user" data-role="user" data-phase="user"><div class="message-head"><b>M048 · 사용자</b><span>user</span><span>2026-10-31T14:38:47.980000+09:00</span><button class="copy" data-copy="M048">원문 복사</button></div><div class="message-body">좋아 그럼 원본은 건드리지 말고 두 소스의 수정부문을 코드로 작성해줘. 수정은  SAP BASIS 700 버전의 ERP ABAP코드로 짜는거고 초급 개발자도 알아보기 쉬운 수준으로 작성해. 그리고 수정 전후 결과를 좌우로 놔두고 비교 표와 상세설명(이번 논의 방향에서 어떤 의사결정으로 이부문을 고치고 수정내용과 목적이 무엇인지 등)을 상세하게 설명하고 주석도 달아야 해. 이 수정 전후 비교 보고서를 html로 만들고 코드 복사도 가능하게 해줘. 코드 전체를 다보여줄 필요는 없어 수정되는 부문 근처만 비교 해서 작성해줘. 당연히 원본 코드는 건드리지말고
+</div></article><article id="M049" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M049 · AI</b><span>commentary</span><span>2026-10-31T14:38:52.229000+09:00</span><button class="copy" data-copy="M049">원문 복사</button></div><div class="message-body">원본 소스는 읽기만 하고, 수정 구간의 ABAP 코드와 좌우 비교 HTML 보고서를 별도 파일로 만들겠습니다. SAP_BASIS 700 문법과 기존 처리 흐름을 따르며, 각 구간에 변경 이유·목적·한글 주석과 코드 복사 버튼을 넣겠습니다.
+</div></article><article id="M050" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M050 · AI</b><span>commentary</span><span>2026-10-31T14:40:25.185000+09:00</span><button class="copy" data-copy="M050">원문 복사</button></div><div class="message-body">수정안은 8개 비교 구간으로 구성하고 있습니다. 전체 합계와 날짜별 금액을 구분해 전달하고, 저장 함수가 하루별 재계산을 마친 뒤 올바른 `JORGEH`를 넣도록 작성하겠습니다. 계산이 오류로 끝났을 때는 새 금액을 저장하지 않도록 기존 오류 코드와 문구를 그대로 반환하는 보완도 명시하겠습니다.
+</div></article><article id="M051" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M051 · AI</b><span>commentary</span><span>2026-10-31T14:43:00.182000+09:00</span><button class="copy" data-copy="M051">원문 복사</button></div><div class="message-body">보고서 초안을 만들었고, 수정 코드의 문법과 금액 전달 사례를 검사하고 있습니다. 보고서에는 ‘계산 행의 금액이 올바르게 전달되는지’에 대한 로컬 검사와, F05 재계산 이후 대휴 표시까지 확인해야 하는 SAP 검증 항목을 구분해 적었습니다.
+</div></article><article id="M052" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M052 · AI</b><span>commentary</span><span>2026-10-31T14:45:37.287000+09:00</span><button class="copy" data-copy="M052">원문 복사</button></div><div class="message-body">두 소스의 수정안을 8개 구간으로 나눠 보고서에 담았습니다. 현재 로컬 문법 검사와 코드 복사 기능 검사를 통과했으며, 긴 코드 구간도 끝까지 읽을 수 있도록 화면을 다듬고 있습니다. 원본 소스는 변경하지 않았습니다.
+</div></article><article id="M053" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M053 · AI</b><span>commentary</span><span>2026-10-31T14:46:47.539000+09:00</span><button class="copy" data-copy="M053">원문 복사</button></div><div class="message-body">긴 수정 구간을 잘리지 않게 표시하고, 수정 전후 동작 비교표도 추가했습니다. 원본 5,077개 파일의 해시가 모두 일치합니다. 보고서에는 이번 금액 전달 수정의 범위와, F05 재계산 이후 대휴 표시·실비를 SAP에서 확인해야 하는 항목도 구분해 두었습니다.
+</div></article><article id="M054" class="message assistant final_answer" data-role="assistant" data-phase="final_answer"><div class="message-head"><b>M054 · AI</b><span>final_answer</span><span>2026-10-31T14:47:32.408000+09:00</span><button class="copy" data-copy="M054">원문 복사</button></div><div class="message-body">[**수정 전후 HTML 비교 보고서 열기**](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/proposals/20261031-huhu-jorgeh-comparison/report.html&gt;)
+
+두 소스의 수정 구간 8개를 담았습니다.
+
+- 수정 전·후 코드 좌우 비교와 구간별 **코드 복사**
+- 변경 의사결정·목적·상세 설명과 한글 주석
+- 금액 예시, 유지하는 로직, 추가 검증 항목
+
+**원본 코드는 변경하지 않았습니다.** SAP_BASIS 700 대상 로컬 문법 검사와 HTML 기능 검사를 통과했습니다. 실제 SAP 구문검사·실행은 미수행이며, F05 이후 확인할 사항도 보고서에 명시했습니다.</div><details><summary>이 메시지에서 인용한 로컬 근거 열기</summary><div class="file-list"><a href="source-viewer.html?file=source/proposal/report.html">report.html</a></div></details></article><article id="M055" class="message user user" data-role="user" data-phase="user"><div class="message-head"><b>M055 · 사용자</b><span>user</span><span>2026-10-31T18:37:09.715000+09:00</span><button class="copy" data-copy="M055">원문 복사</button></div><div class="message-body">너가 수정한 코드를 보면 내가 기존에 만든 zhrdaehuamt 임시 테이블을 사용해서 대휴 금액을 저장하고 활용했던 곳을 다 삭제하거나 대체한거 같아. 내가 기존에 이런식으로 임시테이블을 만들어 운영하는 방식이 문제가 되었다는거야? 그럼 어떤 부문에서 그런 임시 테이블 운용이 문제가 되어서 너가 지금 메모리 기능을 이용해서 새로 코딩한 신규 수정 방식으로 변경되건지 설명해줘봐
+</div></article><article id="M056" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M056 · AI</b><span>commentary</span><span>2026-10-31T18:37:13.440000+09:00</span><button class="copy" data-copy="M056">원문 복사</button></div><div class="message-body">기존 임시 테이블을 쓰고 읽는 조건을 수정안과 다시 대조하겠습니다. 테이블 자체의 문제인지, 신청별 값을 구분하고 정리하는 방식의 문제인지 나눠 설명드리겠습니다.
+</div></article><article id="M057" class="message assistant final_answer" data-role="assistant" data-phase="final_answer"><div class="message-head"><b>M057 · AI</b><span>final_answer</span><span>2026-10-31T18:38:17.779000+09:00</span><button class="copy" data-copy="M057">원문 복사</button></div><div class="message-body">**임시 테이블을 만들어 사용한 것 자체가 잘못이라는 뜻은 아닙니다.** 제가 문제로 본 것은 현재 코드에서 **“지금 읽는 금액이 이번 신청에서 계산한 금액인가?”를 확실하게 구분하지 못하는 부분**입니다. 그래서 기존 함수의 반환값으로 금액을 직접 전달하도록 제안했습니다.
+
+기존 방식의 목적부터 보면 이해되는 구조입니다. 양일을 함께 계산한 대휴 정산금액을 보관했다가, 저장 단계에서 날짜별로 나누어 `JORGEH`에 넣으려는 것입니다. 실제 테이블 설명도 **“휴일-휴일 양일 대휴 정산 금액 배분을 위한 테이블”**입니다. 특히 저장 도중 F05에서 하루씩 재계산하므로, 원래 양일 계산금액을 별도로 보관할 필요는 있습니다. **수정안도 이 보관 목적은 유지합니다.**  
+근거: [ZHRDAEHUAMT 정의](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/Dictionary Object/DBtable/ZHRDAEHUAMT/definition.xml:19&gt;).
+
+현재 운용에서 문제가 될 수 있는 지점은 다음과 같습니다.
+
+| 지점 | 기존 코드의 동작 | 문제가 되는 조건 |
+|---|---|---|
+| **신청 구분** | 임시 테이블 키가 `PERNR + DATUM`, 즉 사번·날짜입니다. | 같은 직원의 같은 날짜라면 이전 신청, 수정 전 계산, 현재 계산을 테이블 행만으로 구별하지 못합니다. |
+| **쓰기와 읽기 조건** | F03에서는 `ZTOMO = X`일 때 기록합니다. SAVE에서는 해당 저장 분기에 들어오면 사번·날짜로 조회합니다. | 현재 입력이 익일 입력이 아니어서 새 값을 쓰지 않았는데도, SAVE가 과거의 잔존 금액을 읽을 수 있습니다. |
+| **삭제 범위** | 조회에 성공하면 **읽은 사번·날짜의 행만** 삭제합니다. | 계산할 때 두 날짜를 기록하고 저장할 때 한 날짜만 소비했다면, 다른 날짜의 행은 이 삭제로 없어지지 않습니다. |
+| **같은 날짜의 여러 계산 행** | 각 계산 행을 `MODIFY`합니다. 날짜별 합산 후 저장하지 않습니다. | 토8·일6·토2가 있으면 토요일 앞 금액을 뒤 금액으로 덮어쓸 수 있습니다. 시간 분할 자체와는 별개의 전달 문제입니다. |
+
+쓰기와 읽기·삭제 조건은 각각 [F03 원본 L5774–5782](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5774&gt;)과 [SAVE 원본 L163–170](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:163&gt;)에서 확인했습니다. 두 날짜 저장 분기에도 같은 조회·삭제가 있습니다.
+
+예를 들어 **이전 신청의 일요일 금액 20,000원이 임시 테이블에 남아 있다**고 가정하면 다음과 같은 일이 가능합니다.
+
+| 순서 | 처리 |
+|---|---|
+| ① | 같은 직원이 그 일요일의 다른 시간대에, 익일로 넘어가지 않는 대휴 대상 근무를 입력합니다. |
+| ② | 현재 조건으로 계산한 정산금액은 60,000원입니다. |
+| ③ | 이번 입력은 `ZTOMO`가 공란이므로 F03에서 임시 테이블을 새 금액으로 갱신하지 않습니다. |
+| ④ | SAVE가 같은 사번·일요일로 조회하여 **남아 있던 20,000원을 `JORGEH`에 넣습니다.** |
+| ⑤ | 읽은 20,000원 행은 삭제됩니다. 저장 후 임시 테이블을 보면 이미 없어졌을 수 있습니다. |
+
+이 경우에는 **계산식이 60,000원을 정확히 계산했어도 저장 과정에서 20,000원으로 바뀝니다.** 앞 단계에서 웹이 새 금액을 제대로 복사했더라도 뒤의 임시 테이블 조회가 다시 덮어쓸 수 있습니다.
+
+다만 이것은 잔존 행과 조회 조건이 맞는 경우의 시나리오입니다. 모든 다음 입력에 영향을 준다는 뜻은 아니며, 실제 잔존·확정 여부는 SAP의 트랜잭션과 운영 데이터를 확인해야 합니다.
+
+제가 기존 반환값을 이용한 이유는 **SAVE가 이미 저장할 때 현재 입력으로 계산 함수를 다시 호출하고, 그 결과를 직접 받고 있기 때문**입니다.
+
+원본에도 다음 두 통로가 있습니다.
+
+- `ES_OVERTIME_DATA`: 신청의 계산 결과 구조.
+- `T_ZDAEH`: 날짜별 대휴 상세. 금액 필드도 포함합니다.
+
+[SAVE 원본 L40–59](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:40&gt;)에서 이미 두 결과를 받고 있습니다. 따라서 별도 메모리 저장 기능을 새로 만든 것이 아니라, **기존 함수 인수와 내부 테이블을 금액 전달에도 활용하도록 보완한 것**입니다.
+
+| 기존 방식 | 제안 방식 |
+|---|---|
+| 양일 계산 → 임시 DB 기록 → 사번·날짜로 다시 조회 → JORGEH 반영 → 임시 행 삭제 | 양일 계산 → 기존 반환 구조·내부 테이블로 전달 → 날짜별 합산·배분 → JORGEH 반영 |
+
+제안 방식에서는 SAVE가 받은 **이번 호출의 전체 금액과 날짜별 상세**를 보관합니다. F05가 하루씩 재계산한 뒤에도 그 보관값으로 최종 `JORGEH`를 설정합니다. 저장할 때 다시 계산하므로 화면을 열어 둔 동안 메모리에 금액을 계속 유지할 필요도 없습니다. 최종 금액은 기존대로 `ZTHRBS01`에 저장됩니다.
+
+또한 `CLEAR`·`REFRESH`로 비우는 대상은 이번 호출의 내부 테이블입니다. 기존 DB 테이블의 남은 행을 지우는 명령은 아닙니다. 수정안은 **해당 경로에서 과거 DB 행을 더 이상 읽지 않도록 하여 혼입을 차단**합니다.
+
+**임시 DB를 유지하면서 고치는 것도 가능합니다.** 그 경우에는 날짜별 합산 저장, 이번 신청 금액임을 확인하는 방법, 미소비 행 정리, 중단·동시 처리 시의 조회·삭제 범위를 함께 보완해야 합니다. 이번에는 기존 반환 통로가 이미 있으므로, 그 통로를 활용하는 편이 신청 간 금액 혼입을 막는 조건을 더 단순하게 만들 수 있다고 판단했습니다.
+
+현재 제안은 이 두 소스의 금액 전달 경로를 바꾼 것입니다. 테이블 정의나 기존 DB 데이터를 삭제한 것은 아니며, **임시 테이블 운용이 실제 반기 보정 오류의 주원인이었다고 확정한 상태도 아닙니다.**</div><details><summary>이 메시지에서 인용한 로컬 근거 열기</summary><div class="file-list"><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap&amp;line=5774">LZHR008_2F03.abap · L5774</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_GET_OVERTIME_SAVE/Source%20code/ZHR_52TM_GET_OVERTIME_SAVE.abap&amp;line=163">ZHR_52TM_GET_OVERTIME_SAVE.abap · L163</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_GET_OVERTIME_SAVE/Source%20code/ZHR_52TM_GET_OVERTIME_SAVE.abap&amp;line=40">ZHR_52TM_GET_OVERTIME_SAVE.abap · L40</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/Dictionary%20Object/DBtable/ZHRDAEHUAMT/definition.xml&amp;line=19">definition.xml · L19</a></div></details></article><article id="M058" class="message user user" data-role="user" data-phase="user"><div class="message-head"><b>M058 · 사용자</b><span>user</span><span>2026-10-31T18:44:15.695000+09:00</span><button class="copy" data-copy="M058">원문 복사</button></div><div class="message-body">즉 사고 시나리오로 생각해보면 기존에 휴휴로 입력하고 있다가 사용자가 다시 마음을 바꿔서 입력하는 경우, 그리고 통상근무가 아닌 해외출장, 시차근무, 당번특근 같은 사람들이 8시간 이상 기준 시간을 휴일에 입력해서 쪼개 지는 경우들도 그렇고 내가 만든 zhrdaehuamt의 테이블이 이런 사용자들의 유연한 변경을 정확히 수정해서 반영하지 못하고 계속 기존 입력분의 잔재가 남아있게되어 혹은 영향을 미치게 되어 값이 틀어지거나 덮어써지는 시나리오라는거네?
+</div></article><article id="M059" class="message assistant final_answer" data-role="assistant" data-phase="final_answer"><div class="message-head"><b>M059 · AI</b><span>final_answer</span><span>2026-10-31T18:44:30.637000+09:00</span><button class="copy" data-copy="M059">원문 복사</button></div><div class="message-body">**네, 큰 방향은 맞습니다. 다만 두 가지 사고 시나리오를 구분하면 더 정확합니다.**
+
+1. **사용자가 입력을 바꾸면서 이전 금액이 영향을 주는 경우**
+
+   처음 휴휴로 계산하면서 임시 테이블에 금액을 기록했는데, 이후 날짜·시간·익일 여부 등을 바꿨을 때 **이전 계산에서 남은 행이 현재 입력에 맞게 갱신되거나 정리되지 않는 경우**입니다.
+
+   이후 SAVE가 같은 사번·날짜로 그 행을 읽으면, 현재 계산금액 대신 이전 금액이 `JORGEH`에 들어갈 수 있습니다. **마음을 바꿨다는 사실만으로 오류가 나는 것은 아니고**, 잔존 행과 조회 조건이 맞아야 합니다. 새 값으로 정상 갱신되거나 삭제됐다면 이 문제는 없습니다.
+
+2. **한 번의 입력 안에서 같은 날짜 금액이 덮어써지는 경우**
+
+   당번특근·해외출장·시차근무가 분할 조건을 충족하여 `토8 → 일6 → 토2`처럼 계산되면, 임시 테이블에는 토요일을 구분하는 칸이 하나뿐입니다.
+
+   따라서 토요일 8시간분을 기록한 뒤 토요일 2시간분으로 **교체**합니다. 필요한 것은 두 금액의 **합산**인데 그렇게 처리하지 않는 것입니다. 이 문제는 **사용자가 입력을 변경하지 않아도 한 번의 계산에서 발생할 수 있습니다.**
+
+여기서 분할 기준은 모두 ‘8시간 이상’으로 고정된 것은 아닙니다. 유형별 기준시간을 **초과**하고 다른 분할 조건도 충족해야 하며, 앞서 확인한 선택근무 경로와 통상 A의 휴일 행은 이 분할 사례에서 제외됩니다.
+
+따라서 정확한 이해는 **“현재 임시 테이블 운용에는 이전 신청과 현재 신청을 구분하는 문제, 같은 신청의 여러 계산 행을 합산하는 문제가 함께 있다”**입니다. 이번 수정안은 현재 호출의 계산 결과만 직접 전달하고 날짜별로 합산하여 두 문제를 막으려는 것입니다. 실제 반기 보정 건이 어느 시나리오에 해당하는지는 운영 데이터로 확인해야 합니다.</div></article><article id="M060" class="message user user" data-role="user" data-phase="user"><div class="message-head"><b>M060 · 사용자</b><span>user</span><span>2026-10-31T18:46:19.474000+09:00</span><button class="copy" data-copy="M060">원문 복사</button></div><div class="message-body">현재 임시 테이블 운용에는 이전 신청과 현재 신청을 구분하는 문제, 같은 신청의 여러 계산 행을 합산하는 문제가 함께 있다” -&gt; 이거의 큰원인은 zhrdaehuamt 의 키가 사번과 날짜뿐인게 가장큰 문제였던거고 맞지? 애초에 나는 사용자가 한 화면에서 여러번 변경하면서 까지 입력할거라고 상정하지 않았떤거 같아
+</div></article><article id="M061" class="message assistant final_answer" data-role="assistant" data-phase="final_answer"><div class="message-head"><b>M061 · AI</b><span>final_answer</span><span>2026-10-31T18:46:36.140000+09:00</span><button class="copy" data-copy="M061">원문 복사</button></div><div class="message-body">네. **이전 신청과 현재 신청을 구분하지 못한다는 점에서는 `사번 + 날짜`만 있는 키 구성이 핵심 원인 중 하나입니다.** 같은 직원·같은 날짜이면 어떤 신청에서, 어떤 입력 조건으로 계산한 금액인지 구별할 수 없으니까요.
+
+다만 **키만 바꾸면 두 문제가 모두 해결되는 것은 아닙니다.**
+
+| 문제 | 키와의 관계 | 함께 필요한 처리 |
+|---|---|---|
+| 이전 계산금액이 현재 신청에 섞임 | 사번·날짜만으로 이전/현재 계산을 구분하지 못함 | 이번 계산의 값임을 보장하고, 남은 값의 조회·정리를 관리 |
+| 같은 신청의 토8·토2 금액이 덮어써짐 | 날짜별 한 행을 저장하는 키 자체는 사용할 수 있음 | 토요일 금액을 **합산해서 저장**해야 함 |
+
+예를 들어 **신청번호를 키에 추가해도**, 같은 신청 안의 토8·토2는 여전히 같은 키입니다. 지금처럼 각 행을 `MODIFY`하면 뒤 금액이 앞 금액을 덮습니다.
+
+말씀하신 당시 생각을 기준으로 보면, 기존 방식은 다음 전제를 두었던 것으로 이해할 수 있습니다.
+
+- 한 직원·한 날짜의 계산금액은 한 건이다.
+- 계산해서 임시 저장한 금액은 곧바로 읽고 삭제한다.
+- 그 사이 입력 조건이 달라져도 이전 값이 남아 소비되는 경우는 없다.
+
+사용자의 반복 변경이나 같은 날짜의 계산 행 분할은 이 전제를 깨뜨릴 수 있습니다. **다만 반복 변경이 없어도 분할 행 덮어쓰기는 발생할 수 있으므로, ‘사용자가 여러 번 수정할 것을 예상하지 못한 것’만이 원인은 아닙니다.**
+
+그래서 이번 수정안은 키를 늘리는 대신, 기존 함수 반환값을 활용해 **이번 계산의 결과만 전달하고, 같은 날짜의 금액은 합산**하도록 구성한 것입니다. 실제 오류에서 각 원인이 차지한 비중은 아직 확인되지 않았습니다.</div></article><article id="M062" class="message user user" data-role="user" data-phase="user"><div class="message-head"><b>M062 · 사용자</b><span>user</span><span>2026-10-31T18:48:28.352000+09:00</span><button class="copy" data-copy="M062">원문 복사</button></div><div class="message-body">나는 너말대로 계산해서 임시 저장한 금액은 곧바로 읽고 삭제한다.라고 생각했었어. 그런데 한화면에서 계속 작업하면 이게 삭제되는게 아니고 남아있었던거야?
+</div></article><article id="M063" class="message assistant commentary" data-role="assistant" data-phase="commentary"><div class="message-head"><b>M063 · AI</b><span>commentary</span><span>2026-10-31T18:48:30.825000+09:00</span><button class="copy" data-copy="M063">원문 복사</button></div><div class="message-body">화면에서 반복 계산할 때와 실제 저장할 때 임시 테이블을 어떻게 처리하는지 확인하겠습니다. 삭제 코드의 실행 시점과 DB에 값이 남는 조건을 구분해서 설명드리겠습니다.
+</div></article><article id="M064" class="message assistant final_answer" data-role="assistant" data-phase="final_answer"><div class="message-head"><b>M064 · AI</b><span>final_answer</span><span>2026-10-31T18:49:01.868000+09:00</span><button class="copy" data-copy="M064">원문 복사</button></div><div class="message-body">**그럴 수 있는 구조입니다. 코드상으로는 ‘계산해서 임시 저장할 때마다 곧바로 읽고 삭제’하지 않습니다.** 임시 테이블에 **쓰는 시점과 읽고 삭제하는 시점이 다릅니다.**
+
+| 사용자 작업 | 기존 코드의 처리 |
+|---|---|
+| 화면에서 시간·대휴 선택 등을 바꾸어 재계산 | 계산 함수를 호출하고, `ZTOMO = X`이면 임시 테이블에 금액을 기록합니다. **이 화면 계산 경로에는 대응하는 삭제가 없습니다.** |
+| 다시 같은 날짜를 익일 조건으로 재계산 | 해당 날짜의 금액을 새 값으로 덮어쓸 수 있습니다. 모든 기존 행을 먼저 비우는 것은 아닙니다. |
+| 익일을 해제하거나 계산 대상 날짜를 변경 | 새 계산에서 기록하지 않는 날짜의 기존 행을 이 쓰기 구간이 정리해 주지는 않습니다. |
+| 실제 저장 처리 | SAVE의 특정 분기에서 임시 금액을 조회하고, **조회한 날짜의 행만 삭제**합니다. |
+
+화면 재계산 호출은 [F06 L570–591](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap:570&gt;), 임시 기록은 [F03 L5775–5782](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5775&gt;), 조회 후 삭제는 [SAVE L165–169](&lt;/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:165&gt;)에 있습니다.
+
+따라서 이전 쓰기 결과가 다음 화면 요청까지 유지된다는 조건에서는 다음 순서가 가능합니다.
+
+1. 사용자가 휴휴로 입력해 화면 계산 → 토요일·일요일 임시 금액 기록.
+2. 저장하기 전에 익일을 해제하고 당일 근무로 변경 → 임시 테이블 쓰기를 건너뜀. **앞의 금액을 삭제하는 것도 아님.**
+3. 저장 버튼 클릭 → 현재 조건으로 다시 계산하지만, 뒤의 임시 테이블 조회에서 이전 금액을 가져올 수 있음.
+4. 그 금액을 `JORGEH`에 넣고 나서 해당 임시 행을 삭제.
+
+즉, **‘읽고 삭제’가 실행되더라도 이미 잘못된 이전 금액을 가져온 뒤일 수 있습니다.** 나중에 임시 테이블을 확인했을 때 비어 있다고 해서, 이전 값이 영향을 주지 않았다고 판단할 수는 없습니다.
+
+다만 **실제 화면 작업에서 그 행이 계속 남아 있었는지는 아직 확정하지 않았습니다.** 화면 요청 사이의 DB 확정·취소 처리를 확인해야 합니다. 현재 소스로 확실히 확인한 것은 **화면 계산에서도 쓰기가 발생할 수 있고, 삭제는 매 계산 직후가 아니라 저장의 특정 분기에서만 수행된다는 점**입니다.</div><details><summary>이 메시지에서 인용한 로컬 근거 열기</summary><div class="file-list"><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap&amp;line=5775">LZHR008_2F03.abap · L5775</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function%20Module/ZHR_52TM_GET_OVERTIME_SAVE/Source%20code/ZHR_52TM_GET_OVERTIME_SAVE.abap&amp;line=165">ZHR_52TM_GET_OVERTIME_SAVE.abap · L165</a><a href="source-viewer.html?file=source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap&amp;line=570">LZHR008_2F06.abap · L570</a></div></details></article><article id="M065" class="message user user" data-role="user" data-phase="user"><div class="message-head"><b>M065 · 사용자</b><span>user</span><span>2026-10-31T18:55:26.302000+09:00</span><button class="copy" data-copy="M065">원문 복사</button></div><div class="message-body">좋아 이때까지 우리가 대화한 내역을 모두 ai 에이전트 활용 사례의 교육자료로 사용하고 싶어.  그래서 이 방에서 일어난 모든 대화 전문과 내가 캡쳐해서 올린 이미지 파일들 그리고 너가 새로 추가한 그리고 수정한 코드들이 필요해. 특히 신규 코드와 수정된 코드들은 html파일로 만들어서 보고서 형태로 어떤 부문이 추가되었고 수정되었는지 코드와 라인번호까지 붙여서 만들어줬으면 좋겠어. 더불어 각 수정 코드 부문에 내가 오해한 부문으로 발생한 버그와 너가 그부문을 어떻게 캐치해서 수정사항을 권했는지에 대한 과정이 각 코드에 직과적으로 명시 설명 되면 좋겠어. 특히 시각적으로 대휴의 휴일-휴일이 단가 요율이 달라지고 금액이 바뀌는 시나리오 상황 예시와 토8-&gt;일2-&gt;토2 같은 예시들이 어떤문제인지 시각적인 표현 예시가 필요해. 왜냐하면 지금 여기 대화에 나온 내용들이 너무 전문적이고 일반인들은 이해하기어려워. 특히 코드 수정부문은 일반인도 이해하기 쉬울 수준으로 이미지 요소를 통한 설명이 필요해. 이 모든 소스들을 정리해서 압축파일로 만들어줘. 그럼 내가 교육사이트 관리 에이전트한테 이 압축파일을 던지고 페이지를 구성해달라고 할거야
+</div></article><footer><span>2026.10.31 · 원본 보존 · 제안 사본 · 담당자 검토 대기</span><span>SAP 구문검사·실행·활성화 미수행</span></footer></main><div id="toast" class="toast" role="status" aria-live="polite"></div><script>window.COPY_DATA={"M001": "선택근무는 반기별로 대휴를 정산하게 되어있어. 대휴실비는 보통은 시간외 발생금액 zthrbs01테이블을 참조하고 거기 금액에서 곱하기2를 해서 정산해. 반기별로 말이야. 그런데 대충 3년전부터 휴일-휴일에 걸쳐서 대휴가 발생하는 경우 단순히 곱하기 2를 하면 안된는 문제가 있어. 왜냐하면 앞에 휴일과 뒤에 휴일을 각각 토요일 일요일이라고 한다면 양일에 걸쳐서 시간외 근무를 할 수있는거야. 그럼 토요일 5시간이 넘으면서 토요일 대휴로 생성될수도 있고 일요일 5시간이 넘으면 일요일 대휴로 생성될수도있고 둘다 5시간 넘으면 대휴가 2개 각각 생성되고 토요일 3시간 일요일 2시간이면 토요일 대휴로 또 1개 대휴를 만들어 주게 되어있어. 그리고 원래 휴일근무는 시간외 단가  곱하기 1.5해서 주고 있어. 그런데 토요일에 생기면 토요일 분은 곱하기 0.5이고 일요일분은 1.5배야. 이런식으로 굉장히 복잡하게 돌아가고 있고 이 로직이 z..norm..pay? 이런 코드에 들어가 있어. 이걸 휴휴 대휴정산이라고해. 그리고 휴휴 대휴 정산 금액은 사용자가 입력할때 계산해서 zthrbs01테이블 jorgeh 필드에 들어갈거야. 우선 이 절차가 맞는지 확인해주고 내가 말한 내용이 맞는지 세밀하게 검토해줘 \n", "M002": "`zhr5-business-qa` 스킬로 관련 업무 문서와 실제 코드를 대조하겠습니다. 휴일→휴일 근무의 대휴 생성 조건, 금액 계산, `ZTHRBS01-JORGEH` 저장, 반기 정산에서 사용하는 경로를 나눠 확인하겠습니다.\n", "M003": "말씀하신 함수는 `ZHR_52TM_CALC_NORM_OT_PAY`가 맞습니다. 반기 정산에서도 `JORGEH`에 금액이 있으면 그 값을 쓰고, 없으면 `ZD_MONEY × 2`를 계산하는 분기를 찾았습니다. 다만 선택근무의 대휴 생성 경로가 이 함수와 연결되는지, “5시간”이 코드의 휴게 차감 후 “4.5시간”과 어떻게 대응하는지는 더 확인하고 있습니다.\n", "M004": "중요한 차이가 확인됐습니다. 말씀하신 0.5배·1.5배 계산과 `JORGEH` 사전 저장은 통상 시간외 입력 경로에서 확인됩니다. 선택근무는 별도의 대휴 생성 프로그램이 `ZD_MONEY`를 만들고, 그 저장 구간에는 `JORGEH` 대입이 없습니다. 또 휴휴 합산 1건의 정산액을 날짜별로 저장·회수하는 부분에 금액 누락 가능성이 보여, 계산 의도와 실제 저장 결과를 구분해 검토하겠습니다.\n", "M005": "**말씀하신 휴휴 정산의 핵심 원리와 함수·필드 이름은 맞습니다. 다만, “선택근무의 처리 경로”, “5시간 기준”, “JORGEH에 정확한 금액이 저장되는지”는 구분해야 합니다.** 특히 현재 소스에는 합산 대휴의 정산액이 일부만 저장될 수 있는 의심 구간도 있습니다.\n\n확인 기준은 **2026-10-22 KSP/300 추출 소스(SRC-17)**입니다. 실제 운영 데이터로 재현한 결과는 아닙니다.\n\n**반기 정산과 ×2 처리는 확인됩니다.**\n\n`ZRPTH415F01`은 `ZTHRBS01`에서 승인 상태이고, 지정한 대휴 사용종료일에 해당하는 미정산 대휴를 조회합니다. 통상·선택·탄력의 보상 대상 금액은 다음처럼 정합니다.\n\n| 조건 | 정산금액 처리 |\n|---|---|\n| `JORGEH`가 초기값 | `ZD_MONEY × 2` |\n| `JORGEH`에 금액이 있음 | 기존 `JORGEH` 사용 |\n\n따라서 말씀하신 “시간외 발생금액의 두 배”는 정확히는 **대휴 실비 금액인 `ZD_MONEY`의 두 배**입니다. 연장·야간 등을 포함한 시간외 총액 전체의 두 배가 아닙니다. 사용한 대휴 개수를 반영한 뒤 보상 대상을 계산하는 과정도 있습니다. [SRC-17 · ZRPTH415F01 L119–127, L460–549](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH415F01/source/ZRPTH415F01.abap:504\u003e)\n\n일반 직원의 선택 대휴는 **선택기간 종료일**을 기준으로 상반기 종료분은 그해 12월 31일, 하반기 종료분은 다음 해 6월 30일을 사용종료일로 설정합니다. 반기 정산은 이 만료일을 기준으로 이해하는 것이 정확합니다. [SRC-17 · ZRPTH410F01 L1222–1227](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH410F01/source/ZRPTH410F01.abap:1222\u003e), [ZRPTH409F01 L508–562](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH409F01/source/ZRPTH409F01.abap:508\u003e)\n\n**말씀하신 휴휴 계산 함수는 `ZHR_52TM_CALC_NORM_OT_PAY`가 맞습니다.**\n\n이 함수의 일반 휴휴 분기에는 말씀하신 경우들이 실제로 구현돼 있습니다. 아래 시간은 **휴게를 반영한 계산시간**이며, 중복 대휴 등 다른 제한이 없는 경우입니다.\n\n| 토요일 계산시간 | 일요일 계산시간 | 대휴 발생 | 최초 지급하는 휴일분 | 미사용 대휴 추가 정산의 계산 취지 |\n|---|---|---|---|---|\n| 4.5시간 이상 | 4.5시간 이상 | 각 날짜에 1개씩 | 양일 각각 단가×시간×0.5 | 각 날짜에 단가×시간×1.0 |\n| 4.5시간 이상 | 4.5시간 미만 | 토요일 1개 | 토요일 0.5배, 일요일 1.5배 | 토요일 시간분 1.0배 |\n| 4.5시간 미만 | 4.5시간 이상 | 일요일 1개 | 토요일 1.5배, 일요일 0.5배 | 일요일 시간분 1.0배 |\n| 각각 4.5시간 미만, 합계 4.5시간 이상 | ← | 시작일에 1개 | 양일 합계에 0.5배 | 양일 합계에 1.0배 |\n| 양일 합계도 4.5시간 미만 | ← | 없음 | 양일 합계에 1.5배 | 없음 |\n\n따라서 **토요일 3시간＋일요일 2시간으로 시작일에 대휴 1개를 만드는 설명도 맞습니다.** 다만 코드의 정확한 경계는 **`4.5시간 이상`**입니다. “5시간 근무 중 휴게 30분”이라면 대응하지만, 모든 입력에서 “5시간 초과”와 같은 조건은 아닙니다. [SRC-17 · CHECK_ZDAEH L54–100](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CHECK_ZDAEH/Source code/ZHR_52TM_CHECK_ZDAEH.abap:54\u003e), [NORM_OT_PAY L259–350](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_NORM_OT_PAY/Source code/ZHR_52TM_CALC_NORM_OT_PAY.abap:259\u003e)\n\n**×2가 틀어지는 핵심은 한 금액 안에 0.5배분과 1.5배분이 섞이는 경우입니다.**\n\n예를 들어 휴게 반영 후 토요일 6시간·일요일 2시간, 설명용 단가 8,400원이라면 다음과 같습니다.\n\n- 최초 휴일분: `6×8,400×0.5 ＋ 2×8,400×1.5 = 50,400원`\n- 토요일 대휴 미사용 추가 정산: `6×8,400×1.0 = 50,400원`\n- 최초 금액 전체를 두 배로 하면 `100,800원`이므로 과다 계산됩니다.\n\n반면 **양일 모두 대휴가 발생해 각각 0.5배를 지급한 경우**, 또는 **양일 합산 1개에 전체 0.5배를 지급한 경우**에는 해당 금액의 ×2가 산술적으로 맞습니다. 즉 휴휴 전체에서 ×2가 틀리는 것이 아니라, **무엇을 합친 금액에 ×2를 하는지가 중요합니다.**\n\n**다만, 선택근무와 통상 시간외의 저장 경로는 다릅니다.**\n\n현재 추출본에서 확인한 연결은 다음과 같습니다.\n\n| 구분 | 계산·저장 경로 |\n|---|---|\n| 통상 시간외의 휴휴 처리 | `CALC_NORM_OT_PAY`에서 금액 계산 → `ZHRDAEHUAMT`에 날짜별 임시 저장 → 저장 함수가 `ZTHRBS01-JORGEH`에 전달 |\n| 선택근무 대휴 생성 | `ZRPTH410` → `CW_CAL_AND_DAEH`의 C 분기 → 대휴 생성 → `ZTHRBS01-ZD_MONEY`에 대휴시간×단가×0.5 저장 |\n\n**선택근무의 `MAKE_ZTHRBS01`에는 `JORGEH`를 넣는 구문이 없습니다.** 따라서 “선택근무자가 실적을 입력할 때 NORM 함수로 휴휴 정산금액을 계산하여 JORGEH에 저장한다”는 연결은 현재 확인한 선택근무 표준 경로와 일치하지 않습니다. 선택근무는 소정 부족시간 충당 여부도 대휴 발생에 영향을 줍니다. [SRC-17 · ZRPTH410F01 L1263–1302, L1661–1667](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH410F01/source/ZRPTH410F01.abap:1263\u003e), [CW_CAL_AND_DAEH L1898–1933](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Function Module/ZHR_52TM_CW_CAL_AND_DAEH/Source code/ZHR_52TM_CW_CAL_AND_DAEH.abap:1898\u003e)\n\n**또한, “사전 계산하는 구조가 있다”와 “현재 저장액이 정확하다”는 별개입니다. 실제로 두 지점이 의심됩니다.**\n\n- **합계를 누적하지 않는 구문:** `LZHR008_2F03`의 “대휴정산 실비 합계” 아래는 `lv_zjorgehamt = ls_result-zjorgehamt`입니다. 반복문마다 덮어쓰므로 마지막 계산 행의 금액이 남습니다. 다만 저장 단계에서 날짜별 임시 금액으로 다시 대체하므로, 이 구문만으로 최종 저장액 오류를 단정할 수는 없습니다. [SRC-17 · L5849–5850, L5918](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5849\u003e)\n- **합산 대휴 1개인데 시작일 금액만 가져오는 구문:** 임시 금액은 날짜별로 저장하지만, 대휴 1건 저장 분기는 `RDATE`에 해당하는 날짜의 금액 하나만 읽습니다. 따라서 **3＋2시간 합산 대휴에서는 필요한 5시간분 대신 시작일 3시간분만 가져갈 가능성**이 있습니다. 일요일에만 대휴가 발생하는 역방향 사례도 발생일과 조회일을 대조해야 합니다. 이는 정적 추적에서 발견한 오류 후보이며 SAP 재현은 아직 하지 않았습니다. [SRC-17 · 날짜별 임시 저장 L5774–5781](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5774\u003e), [GET_OVERTIME_SAVE L152–170](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:152\u003e)\n\n시점에 관한 기억도 근거가 있습니다. 계산 함수에는 **2022-08-18 요청 주석**, 날짜별 금액 저장에는 **2023-11-16 주석**, 대휴 1건의 금액 회수에는 **2025-10-29 주석**이 있습니다. “2023년 무렵부터 보완해 온 문제”라는 설명과 부합하지만, 주석 날짜를 최초 운영 적용일로 확정할 수는 없습니다.\n\n남은 핵심 확인은 **실제 문제 건이 선택 생성분(`ZSOURFLEX='S'`)인지 통상 입력분인지**, 그리고 **3＋2·6＋2·2＋6·양일 각각 발생 사례의 `ZD_MONEY`, `JORGEH`, 발생일·입력일이 어떻게 저장되는지**입니다. 현재 단계에서는 계산 취지와 저장 경로까지 확인했으며, 운영 금액의 정상 여부나 오류 수정 완료까지 확인한 것은 아닙니다.", "M006": "안그래도 인사 담당자가 우리한테 반기별로 jorgeh를 보정한 금액을 보내와. 그럼 우리는  그게 틀어진 원인이 파악안되어서 그걸 수동으로 jorgeh에 반영 해주고 있어. 그래서 그렇게 틀어지는 오류를 찾아 보고 싶었어. jorgeh는 이처럼 휴휴로 입력되는 경우의 대휴 금액을 사용자가 입력하고 저장할때 계산해서 넣어놓도록 되어있어. 휴휴가 아닌 다른 대휴 실비는 이렇게 안해. 대휴 정산 메뉴에서 그냥 실시간으로 곱하기 2하도록 되어있어. 너는 현재 저장액이 정확하다”는 별개입니다. 실제로 두 지점이 의심된다고했어 이거말고도 의심되는 부문이 있는지 보고 구체적으로 어떤 부문이 왜 문제가 의심되는지 설명해줘\n", "M007": "`zhr5-business-qa`와 `zhr5-change-impact` 스킬로 계산부터 임시 저장, 최종 `JORGEH` 저장, 반기 정산·취소까지 추적하겠습니다. 인사부 보정액을 수동 반영한다는 운영 설명도 기록하고, 각 의심 지점의 발생 조건과 금액이 틀어지는 이유를 구체적인 사례로 설명하겠습니다.\n", "M008": "추가로, 날짜별 임시 테이블의 키가 사번·날짜뿐이라는 점을 확인했습니다. 같은 날의 계산 결과가 여러 행으로 나뉘면 금액을 합산하지 않고 마지막 행으로 덮어씁니다. 또 대휴 1개를 저장한 뒤 다음 날 임시 금액이 남는 경로가 있어, 이후 다른 신청에서 그 값을 읽을 가능성도 확인하고 있습니다. 반기 정산에서 금액을 지우거나 보존하는 방식도 함께 살펴보겠습니다.\n", "M009": "정산 후 취소·재정산 과정에서도 원인을 찾았습니다. 사용 개수에 따라 정산에서 제외된 대휴는 `JORGEH`를 0으로 저장하고, 취소할 때 원래 사전 계산액을 복원하지 않습니다. 다음 정산에서는 그 0을 “사전 계산액 없음”으로 보고 `ZD_MONEY × 2`로 되돌아갈 수 있습니다. 이때 금액뿐 아니라 차감 순서도 바뀔 수 있어, 수동 보정이 반복되는 현상과 직접 대조할 후보입니다.\n", "M010": "기존 두 지점 외에 같은 날짜 금액 덮어쓰기, 날짜 순서에 따른 분할 누락, 임시 금액의 다음 신청 혼입, 확정취소 후 사전 금액 소실 등을 확인했습니다. 정상인 반례를 포함해 12개 조건부 사례를 로컬 모형으로 대조했고, 시차근무처럼 업무 예외 확인이 필요한 후보는 따로 표시했습니다. 상세 근거와 재현 조건을 문서에 정리했으며 SAP 원본 코드는 수정하지 않았습니다.\n", "M011": "**추가로 의심되는 곳이 있습니다. 특히 “임시 금액이 다른 계산 행·신청에 섞이는 문제”와 “정산 확정 과정에서 원래 사전 계산액이 없어지는 문제”를 우선 확인해야 합니다.** 둘 다 인사부 보정이 반복되는 현상을 설명할 수 있는 후보입니다.\n\n말씀하신 **휴휴는 입력·저장 시 사전 계산, 일반 대휴는 정산 시 ×2**라는 운영 의도를 기준으로 검토했습니다. 아래는 SRC-17 추출 소스에서 확인한 조건과 그에 따른 재현 가설이며, 실제 운영 건의 원인을 확정한 결과는 아닙니다.\n\n**1. 정산 확정 때 휴휴 사전 금액을 0으로 저장하고, 취소 후에는 복구하지 않습니다.**\n\n이번에 추가로 발견한 것 중 가장 먼저 확인할 부분입니다.\n\n`ZRPTH415F01`은 다음 순서로 처리합니다.\n\n1. `JORGEH` 또는 `ZD_MONEY × 2` 금액으로 대휴를 정렬합니다.\n2. 사용한 대휴 개수만큼 앞쪽 대휴의 `JORGEH`를 0으로 만듭니다.\n3. 확정하면 그 **0을 실제 BS01에 저장**합니다.\n4. 확정취소는 `JORGEH_TXT`만 지웁니다.\n5. 재정산하면 0이 된 휴휴를 “사전 금액 없음”으로 판단하여 다시 ×2합니다.\n\n예를 들어 같은 직원에게 다음 두 대휴가 있고, 사용 개수가 1개라고 가정하겠습니다. 설명용 단가는 8,400원입니다.\n\n| 대휴 | 최초 정산 기준금액 | 최초 정산 결과 | 취소 후 재정산 결과 |\n|---|---:|---:|---:|\n| 휴휴: 토6시간＋일2시간 | 사전 `JORGEH` 50,400원 | 먼저 차감 → **0원 저장** | 사전액 소실 → `ZD_MONEY 50,400 × 2` = **100,800원** |\n| 일반 대휴: 7시간 | `ZD_MONEY 29,400 × 2` = 58,800원 | **58,800원** | 이제 금액이 작은 쪽이므로 차감 → 0원 |\n| 합계 | | **58,800원** | **100,800원** |\n\n**시간·단가·사용 개수가 그대로인데도 확정취소와 재정산만으로 금액과 차감 순서가 바뀔 수 있습니다.** 정상적으로 확정·취소가 완료되고 다른 예외가 없다는 조건의 모형입니다.\n\n“취소할 때 JORGEH를 보존한다”는 조치만으로는 부족합니다. **확정할 때 이미 원래 금액을 0으로 덮어썼기 때문입니다.**  \n[SRC-17 · ZRPTH415F01 L531–549, L1460–1468, L1658–1664](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH415F01/source/ZRPTH415F01.abap:531\u003e)\n\n**2. 같은 날의 금액이 여러 계산 행으로 나뉘면 임시 테이블에서 마지막 금액만 남습니다.**\n\n앞서 지적한 `lv_zjorgehamt` 변수 덮어쓰기와는 **별개의 DB 저장 문제**입니다.\n\n`ZHRDAEHUAMT`의 키는 **사번＋날짜**입니다. 그런데 계산 결과를 날짜별로 합산하지 않고 행마다 다음처럼 저장합니다.\n\n```abap\nls_zhrdaehuamt-datum = ls_result-datum.\nls_zhrdaehuamt-zjorgehamt = ls_result-zjorgehamt * 100.\nMODIFY zhrdaehuamt FROM ls_zhrdaehuamt.\n```\n\n당번특근 등에서는 하루 10시간이 **8시간＋2시간**으로 나뉠 수 있습니다. 해당 날짜의 정산액도 두 행으로 계산되면 다음처럼 됩니다.\n\n- 첫 행: 8시간분 저장\n- 두 번째 행: 같은 사번·날짜에 2시간분 저장\n- 결과: **10시간분이 아닌 2시간분만 남음**\n\n이것은 중간 변수 합계를 고쳐도 남는 문제입니다. 실제 최종 저장액은 아래 3번의 분할 처리까지 함께 봐야 합니다.  \n[SRC-17 · F03 L5775–5781](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5775\u003e), [ZHRDAEHUAMT 키 정의](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/Dictionary Object/DBtable/ZHRDAEHUAMT/definition.xml:62\u003e)\n\n**3. 날짜 순서가 섞이면 실제로는 이틀인데 ‘3건’으로 판단하여 양일 분할을 건너뛸 수 있습니다.**\n\n시간 계산 함수는 하루의 초과 구간을 테이블 **맨 뒤에 추가**합니다. 따라서 다음 순서가 생길 수 있습니다.\n\n```text\n토요일 8시간 → 일요일 6시간 → 토요일 초과 2시간\n```\n\n그런데 저장 함수는 날짜순으로 정렬하지 않고 `AT END OF DATUM`으로 **연속해서 붙어 있는 날짜끼리** 묶습니다.\n\n```text\n토요일 그룹 → 일요일 그룹 → 토요일 그룹 = 3개\n```\n\n이후 코드는 그룹 수가 **정확히 2개일 때만** 양일 분할 저장을 합니다. 3개면 그 분기를 통과하지 못할 수 있습니다.\n\n따라서 이 후보는 금액만이 아니라 **“양일 모두 대휴 조건을 충족했는데 저장행이나 대휴가 하나로 남는다”**는 증상과도 대조해야 합니다.  \n[SRC-17 · 일일 계산 L744–819](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap:744\u003e), [저장 함수 L119–174](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:119\u003e)\n\n**4. 소비하지 않은 임시 금액이 다음 신청으로 넘어갈 수 있습니다.**\n\n앞선 답변의 “합산 대휴인데 시작일 금액만 읽는다”는 문제에서 파생됩니다.\n\n구체적으로 다음 흐름이 가능합니다.\n\n- 토요일 3시간＋일요일 2시간으로 토요일 대휴 1개 생성\n- 임시 테이블에는 토요일 3시간분·일요일 2시간분 저장\n- 저장 함수가 토요일 금액만 읽고 삭제\n- **일요일 2시간분은 임시 테이블에 남음**\n- 이후 같은 직원이 일요일의 다른 시간대에 단일 휴일근무 6시간을 신청\n- 이번에는 익일근무가 아니므로 임시 금액을 새로 쓰지 않음\n- 저장 함수가 남아 있던 **일요일 2시간분을 JORGEH로 읽음**\n\n즉, **휴휴가 아닌 새 대휴에 이전 휴휴의 금액이 들어갈 수 있는 경로**입니다. 이전 근무와 시간이 겹치지 않고, 기존 대휴 발생일은 토요일이라는 조건입니다.\n\n임시 테이블에 신청 순번이나 원 신청 식별자가 없고, 읽는 곳에도 “이번 휴휴 계산에서 만든 값인가”를 확인하는 조건이 없습니다.  \n[SRC-17 · 저장 함수 L152–170](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:152\u003e)\n\n또한 화면에서 시간·휴게를 계산할 때도 이 임시 테이블을 쓰는 함수가 호출됩니다. **저장하지 않고 화면을 닫았을 때도 값이 남는지**는 별도로 트랜잭션을 확인해야 합니다. 이 부분은 아직 확정하지 않았습니다.\n\n**5. 새 계산값을 전달하는 위치가 일관되지 않습니다. 비휴휴 사전 저장도 점검 대상입니다.**\n\n웹 저장 전 처리인 `F06`은 계산 결과의 `JORGEH`를 입력 구조에 복사합니다. 반면 다음 두 곳의 재계산 결과 복사 목록에는 `JORGEH`가 없습니다.\n\n- `GET_OVERTIME_SAVE`\n- 양일 분할 처리 `SPLIT_OVERTIME_DATA`\n\n따라서 임시 금액을 읽지 못하는 경로에서는 **새 계산값 대신 입력 구조에 들어 있던 예전 값이 남을 수 있습니다.**\n\n또 하나는, NORM의 정산액 계산 구간과 F06의 복사 구문에 **명시적인 ‘휴휴일 때만’ 조건이 없다는 점**입니다. 일반 A 유형의 단일 휴일 6시간도 계산 출력에 6시간분 정산액이 만들어질 수 있습니다.\n\n이 금액은 처음에는 ×2 결과와 같아서 정상으로 보일 수 있습니다. 하지만 말씀하신 운영 의도와 실제 저장 조건이 일치하는지, 수정·재상신 때 오래된 값이 남는지는 확인해야 합니다. **사용자의 업무 설명을 잘못됐다고 보는 것이 아니라, 구현이 그 의도를 지키는지 점검하는 항목입니다.**  \n[SRC-17 · F06 L1048–1063](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap:1048\u003e), [분할 결과 복사 L179–197](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F05.abap:179\u003e)\n\n**6. 시차근무 B는 양일 여부 판정에서 빠져 있습니다.**\n\nNORM에서 `LV_ZBOTH`를 설정하는 대상은 **T·D**인데, 뒤에서 이 변수를 검사하는 조건은 **T·D·B**입니다.\n\n따라서 B는 실제로 이틀에 걸쳐 근무해도 `LV_ZBOTH`가 비어 있어 별도 분기로 들어갑니다. 토6＋일2 사례라면 그 분기에서는:\n\n- 양일 모두 0.5배 적용\n- `ZJORGEHAMT` 계산 생략\n\n으로 처리됩니다.\n\n**시차 B에도 일반 휴휴의 0.5배·1.5배 구분을 적용해야 한다면 결함 후보**입니다. 다만 시차에 별도 업무 예외가 있는지는 확인해야 하므로 앞의 후보들과 같은 확실도로 단정하지 않았습니다.  \n[SRC-17 · NORM L86–92, L284–299](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR_52TM_CALC_NORM_OT_PAY/Source code/ZHR_52TM_CALC_NORM_OT_PAY.abap:86\u003e)\n\n앞서 지적한 변수 덮어쓰기는 **단순히 누적 합산으로 바꾸면 해결된다고 볼 수 없습니다.** 날짜별 임시값이 정상 금액을 보완하는 경우도 있고, 위처럼 임시값 자체가 잘못되거나 정산 확정 후 원래 값이 사라지는 경우도 있습니다.\n\n실제 보정 자료에서는 우선 **① 최초 저장 직후부터 틀렸는지, ② 확정·취소 후 틀어졌는지, ③ 직전 익일 신청의 잔여 금액과 일치하는지**를 나누어 보면 원인을 빠르게 좁힐 수 있습니다. 보정 후 값뿐 아니라 **보정 전 JORGEH**가 특히 중요합니다.\n\n[상세 검토서와 재현 조건](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/knowledge/processes/huhu-jorgeh-investigation.md\u003e)에 기록하고 회귀 사례 Q85–Q88을 추가했습니다. 조건부 모형 12건을 확인했으며, **SAP 실행과 실제 보정 건 대사는 미수행**입니다. 추출 파일 2,543개는 변경되지 않았습니다.", "M011-code-1": "ls_zhrdaehuamt-datum = ls_result-datum.\nls_zhrdaehuamt-zjorgehamt = ls_result-zjorgehamt * 100.\nMODIFY zhrdaehuamt FROM ls_zhrdaehuamt.\n", "M011-code-3": "토요일 8시간 → 일요일 6시간 → 토요일 초과 2시간\n", "M011-code-5": "토요일 그룹 → 일요일 그룹 → 토요일 그룹 = 3개\n", "M012": "1\\. 정산 확정 때 휴휴 사전 금액을 0으로 저장하고, 취소 후에는 복구하지 않습니다.\n\n-\u003e 맞아 이부분도 문제긴해. 하지만 지금 시급한건 이 정산 확정 작업 하기 몇달전에 우리한테 제공한 orgeh가 안맞아. 그러니 이미 정산 전에 값이 잘못들어간걸로보여\n\n2\\. 같은 날의 금액이 여러 계산 행으로 나뉘면 임시 테이블에서 마지막 금액만 남습니다.\n\n-\u003e 이 문제라면 심각한대? 그럼 지금 휴휴 양일을 입력하면 아예 앞날짜건은 덮어져서 금액이 반영 안된다는 소리야?\n\n3. 날짜 순서가 섞이면 실제로는 이틀인데 ‘3건’으로 판단하여 양일 분할을 건너뛸 수 있습니다.\n\n-\u003e 이건 조금 이해가 안가; 지금 토요일8시간 일요일 6시간해서 총 14시간을 입력하면 토요일8, 일요일6 두 행만 가지고 루프돌면서계산하는걸로 알고있어. 근데 갑자기 토요일 초과분 2시간? 이건 어디서 나온거고 이게 왜 뒤에 붙는다는거야?\n\n4\\. 소비하지 않은 임시 금액이 다음 신청으로 넘어갈 수 있습니다.\n\n-\u003e 이건 결국 사용자가 최초에 휴휴로 입력한 내역의 일부가 캐시 처럼 남아서 다음 입력에 영향을 준다는거야?\n\n5\\. 새 계산값을 전달하는 위치가 일관되지 않습니다. 비휴휴 사전 저장도 점검 대상입니다.\n\n-\u003e 이건 사용자가 처음에는 휴휴로 입력한게 jorgeh에 저장되어있다가 나중에 마음을 바꾸서 비휴휴로 입력하게 되면 기존에 jorgeh 삭제 과정이 있어야 하는데 그게 없다는거야?\n\n6\\. 시차근무 B는 양일 여부 판정에서 빠져 있습니다.\n\n-\u003e 이부분은 나도 정책을 찾아봐야해. 일단 시차근무자들은 별도로 시차실비를 지급 받아. 그래서 모든 양일 요일이 0.5인걸로 알고있어. 이부분은 확인할게\n\n우선 지금 내가 이해를 제대로 하고있는지 분석해줘\n\n\n\n\n\n", "M013": "`zhr5-business-qa` 스킬로 여섯 항목을 다시 대조하겠습니다. 이번에는 정산 전 최초 저장값에 초점을 맞추고, 제가 든 10＋6시간 사례와 말씀하신 8＋6시간 사례를 구분하겠습니다. 휴휴를 비휴휴로 변경할 때 기존 `JORGEH`가 실제로 지워지는지도 저장 경로별로 확인하겠습니다.\n", "M014": "다시 확인하니 제가 2·3번의 적용 조건을 충분히 설명하지 않았습니다. 토요일과 일요일은 날짜 키가 달라 서로 덮어쓰지 않고, 일반 A 유형의 휴일 행은 제가 예로 든 기준시간 분할도 건너뜁니다. 5번도 웹 저장에서는 새 `JORGEH`를 복사하는 처리가 있어서, “휴휴를 비휴휴로 바꾸면 기존 금액이 무조건 남는다”는 뜻으로 설명하면 부정확합니다.\n", "M015": "4번은 비유하신 “남은 값이 다음 입력에 영향을 주는 현상”이 맞습니다. 다만 메모리 캐시가 아니라 DB 임시 테이블의 잔여값이며, 같은 사번·날짜를 다시 조회할 때 문제가 될 수 있습니다. 이번 설명은 확정 전 오류에 초점을 맞추고, 분할 조건과 웹 수정 저장의 예외도 검토 기록에 반영하고 있습니다.\n", "M016": "**정산 전에 이미 금액이 틀렸으므로 입력·저장 경로부터 봐야 한다는 판단이 맞습니다.** 그리고 2·3·5번은 제가 적용 조건을 충분히 설명하지 않았습니다. 항목별로 바로잡겠습니다.\n\n**1. 정산 확정·취소 문제 — 말씀하신 구분이 맞습니다.**\n\n확정 몇 달 전부터 `JORGEH`가 다르다면, 이번 정산의 확정·취소 처리를 그 선행 오류의 원인으로 설명할 수 없습니다.\n\n우선 **최초 저장부터 틀렸는지, 이후 수정 저장에서 바뀌었는지**를 구분해야 합니다. 확정·취소 문제는 별도 문제로 남겨두겠습니다.\n\n**2. 임시 금액 덮어쓰기 — 일요일이 토요일 금액을 덮는다는 뜻은 아닙니다.**\n\n임시 테이블 `ZHRDAEHUAMT`는 **사번＋날짜**로 구분합니다. 따라서 계산 결과가 `토요일 8시간`, `일요일 6시간` 두 행이면 날짜가 달라 서로 덮어쓰지 않습니다.\n\n제가 의심한 것은 **토요일이 내부적으로 두 행으로 나뉜 경우**입니다. 예를 들어 토요일 10시간을 8시간과 2시간으로 나누었다면, 토요일 금액을 먼저 기록하고 같은 토요일 키에 다시 기록하면서 마지막 2시간분만 남을 수 있다는 뜻입니다. 현재 쓰기에는 날짜별 합산이 없습니다. [SRC-17, F03 L5775–5781](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5775\u003e)\n\n즉, **모든 휴휴 입력에서 앞 날짜 금액이 없어지는 문제는 아닙니다.**\n\n**3. 갑자기 등장한 토요일 2시간 — 원래 토요일 10시간에 포함된 시간입니다.**\n\n두 사례를 구분해야 합니다. 아래는 계산 대상 시간을 기준으로 한 예입니다.\n\n| 원래 시간 | 내부 계산 행 예시 |\n|---|---|\n| 토8＋일6＝14시간 | 토8, 일6 |\n| 토10＋일6＝16시간 | 분할 조건을 충족하면 토8, 일6, 토2 |\n\n두 번째 사례에서는 기존 토요일 행을 8시간으로 줄이고, 나머지 2시간을 테이블 **맨 뒤에 `APPEND`**합니다. 그래서 `토→일→토` 순서가 될 수 있습니다. 새로운 2시간이 생기는 것이 아닙니다.\n\n또한 **이 분할 자체가 모든 휴휴에 적용되지 않습니다.** 코드상 `ZGUBUN=A`이고 휴일(`DAYS=0`)이면 해당 분할을 건너뜁니다. 다른 분할 대상도 기준시간과 일별 누계 처리 조건을 확인해야 합니다. 일별 기준이 8시간이고 매일 누계를 초기화한다면, 말씀하신 8＋6에서는 이 이유로 세 번째 행이 생기지 않습니다. [SRC-17, DAILY L550–598·L819](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap:550\u003e)\n\n따라서 3번은 **실제로 `토→일→토` 배열이 만들어진 경우, 날짜가 두 개인데 인접 그룹을 세 개로 세는 문제**입니다. 단순한 8＋6 입력에 그대로 적용한 설명은 부정확합니다.\n\n**4. 남은 값이 다음 입력에 영향 — 이해하신 방향이 맞습니다.**\n\n다만 메모리 캐시가 아니라 **DB 임시 테이블에 남은 금액**입니다.\n\n저장할 때 읽은 날짜만 삭제하므로 다른 날짜의 금액이 남을 수 있습니다. 이후 **같은 사번·같은 날짜**를 조회하는 신청이 들어오고, 새 계산이 그 임시값을 갱신하지 않으면 과거 금액을 가져올 가능성이 있습니다. 아무 다음 신청에나 영향을 주는 것은 아닙니다. [SRC-17, SAVE L165–169](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:165\u003e)\n\n**5. 휴휴→비휴휴 변경 시 기존 금액 삭제 누락 — 그렇게 단정하면 안 됩니다.**\n\n확인한 **웹 변경 저장 경로에는 새로 계산한 `JORGEH`를 기존 값에 덮어쓰는 처리**가 있습니다. 새 계산값이 0이면 기존 값도 0으로 바뀝니다. 따라서 별도의 `CLEAR`가 없다는 이유만으로 예전 금액이 남는다고 볼 수 없습니다. [SRC-17, F06 L1027–1062](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap:1027\u003e)\n\n제가 지적했어야 하는 것은 다음 세 현상의 구분입니다.\n\n- 일부 경로에서 새 계산값을 복사하지 않아 **기존 값이 남는 경우**\n- 비휴휴인데도 계산기가 **새로운 비영 금액을 생성하는 경우**\n- 새 계산값을 **4번의 잔여 임시 금액이 다시 대체하는 경우**\n\n비휴휴 행에 `JORGEH`가 있다는 사실만으로 첫 번째라고 확정할 수 없습니다. 관리자 경로의 결과 복사 목록에는 `JORGEH`가 없어 그 경로는 추가 확인 대상입니다.\n\n**6. 시차근무 B — 정책 확인 전에는 오류로 분류하지 않겠습니다.**\n\n말씀하신 별도 시차실비 정책이 맞다면, 검토한 사례에서 양일 모두 0.5배로 계산되는 분기는 의도된 처리일 수 있습니다. **B가 양일 판정 조건에 없다는 코드 차이만으로 업무 오류라고 판단해서는 안 됩니다.**\n\n이번 정정은 [검토 기록](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/knowledge/processes/huhu-jorgeh-investigation.md\u003e)과 회귀 조건에 반영했습니다. 소스 조건과 호출 경로를 대조한 결과이며, 실제 오류 건의 SAP 실행 재현은 아직 하지 않았습니다.", "M017": "2\\. 임시 금액 덮어쓰기 — 일요일이 토요일 금액을 덮는다는 뜻은 아닙니다.\n\n-\u003e 토요일 10시간을 갑자기 왜 8시간 2시간으로 나누느냐는 뚯이야. 그런 로직이 있어? 같은날인데도 2개로 나눈다고?\n\n3. 결국 이것도 2번의 의문이 풀려야 이해가 되는 로직이야\n4. 남은 값이 다음 입력엥 영향\n\n-\u003e 이부분은 코드로 수정 가능해보여 clear나 refresh를 통해서 해소 될거 같은데\n\n5. 휴휴→비휴휴 변경 시 기존 금액 삭제 누락 — 그렇게 단정하면 안 됩니다\n\n-\u003e 비휴휴인데 jorgeh를 건드린다고? 나는 휴휴일때만 jorgeh를 수정하는걸로 알고 있는데 비휴휴일경우도 이 값을 건드리는 내가 모르는 로직이 있어?\n\n", "M018": "같은 날짜를 두 행으로 나누는 실제 조건과 호출 경로를 다시 확인하겠습니다. `zhr5-business-qa`와 `zhr5-change-impact` 스킬을 적용해 비휴휴의 `JORGEH` 대입 여부, 임시 DB 금액에 `CLEAR`·`REFRESH`가 효과가 있는지도 구분해서 설명하겠습니다.\n", "M019": "같은 날을 나누는 실행 코드가 있습니다. 공통 시간 계산 함수가 정상근무와 초과근로 구간을 나눈 뒤, 휴일이면 두 행 모두에 휴일 표시를 붙이며 다시 합치지는 않습니다. 또 `ZTOMO=X` 조건은 임시 DB 기록만 감싸고 있습니다. 그 아래 계산 결과의 `JORGEH` 대입과 웹 저장 구조로의 복사에는 휴휴 조건이 없습니다.\n", "M020": "**같은 날을 두 계산 행으로 나누는 로직은 실제로 있습니다. 비휴휴에서도 `JORGEH`를 계산·대입하는 경로가 확인됩니다.** 이번에는 그 근거를 직접 짚겠습니다.\n\n**2·3번 — 같은 토요일을 왜 8시간과 2시간으로 나누나?**\n\n`ZHR_52TM_CALC_WORK_TIME_DAYILY`는 날짜를 나누는 것 외에도 **정상근무 구간과 초과근로 구간을 구분하는 공통 함수**입니다.\n\n기준시간을 `ZTHR0101`에서 읽고, 분할 대상의 근무시간이 그 기준을 넘으면 다음 처리를 합니다.\n\n| 실제 코드 위치 | 처리 |\n|---|---|\n| L744–757 | 앞 구간을 `REGTP='N'`으로 설정하고 기존 행을 `MODIFY` |\n| L762–819 | 뒤 구간을 `REGTP='M'`으로 설정하고 **같은 날짜로 `APPEND`** |\n| L840–842 | 비교대 휴일이면 각 행을 다시 휴일근무 `TMTYP='H'`로 표시 |\n\n마지막 단계는 휴일 표시만 바꾸며 **앞에서 나눈 두 행을 다시 합치지 않습니다.** [SRC-17, DAILY 실행 코드](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap:744\u003e)\n\n따라서 **분할 대상이고 기준시간이 8시간이면**, 토요일 10시간이 내부 계산용으로 다음처럼 나뉠 수 있습니다.\n\n```text\n토요일 10시간\n   → 토요일 앞 구간 8시간\n   → 토요일 뒤 구간 2시간\n```\n\n`NORM_OT_PAY`에도 이를 전제로 한 주석이 있습니다.\n\n\u003e D-당번특근자도 양일이아닌(하루인) 경우 라인이 2개로 쪼개짐 10 = 8 +2\n\n[SRC-17, NORM L281–284](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_NORM_OT_PAY/Source code/ZHR_52TM_CALC_NORM_OT_PAY.abap:281\u003e)\n\n다만 **`ZGUBUN=A`인 휴일은 이 분할을 건너뜁니다.** 따라서 “모든 휴휴 10시간을 8＋2로 나눈다”는 뜻은 아닙니다. 또한 이는 **내부 계산 행 분리**이지, 사용자가 같은 날짜 신청을 두 개 등록한다는 뜻도 아닙니다.\n\n3번은 이 분할에 따라 생기는 문제입니다. 원래 `토10, 일6`이 있었다면 토요일 뒤 구간을 맨 뒤에 추가하여 `토8, 일6, 토2`가 될 수 있고, 그 순서를 날짜별로 묶는 후속 코드가 문제 되는 것입니다.\n\n**4번 — 코드 수정은 가능하지만 `CLEAR`·`REFRESH`만으로는 해결되지 않습니다.**\n\n여기에는 이름이 비슷한 서로 다른 대상이 있습니다.\n\n| 대상 | 위치 | 초기화·삭제의 의미 |\n|---|---|---|\n| `ls_zhrdaehuamt` | 메모리 작업 영역 | `CLEAR`로 현재 작업값 초기화 |\n| `lt_zhrdaehuamt` | 메모리 내부 테이블 | `REFRESH`로 내부 행 초기화 |\n| `ZHRDAEHUAMT` | **DB 테이블** | DB 행을 없애려면 해당 행을 `DELETE` |\n\n문제가 의심되는 금액은 다음 코드로 **DB에 기록됩니다.**\n\n```abap\nMODIFY zhrdaehuamt FROM ls_zhrdaehuamt.\n```\n\n따라서 작업 영역이나 내부 테이블을 초기화해도, 다음 `SELECT`에서 DB의 과거 금액을 다시 읽습니다.\n\n현재 저장 함수에도 **읽은 날짜를 삭제하는 `DELETE`는 이미 있습니다.** 보완할 부분은 미소비 날짜의 금액 처리와 비휴휴에서 그 금액을 읽는 조건입니다. 양일 금액을 모두 사용하기 전에 뒤 날짜 금액을 지워버리지 않도록 삭제 시점도 함께 봐야 합니다. [SRC-17, SAVE L165–169·L208–212](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:165\u003e)\n\n**5번 — 네, 확인한 코드에는 비휴휴에서도 `JORGEH`를 건드리는 경로가 있습니다.**\n\n혼동하기 쉬운 부분은 **임시 DB에 기록하는 조건과 `JORGEH`에 대입하는 조건이 다르다**는 점입니다.\n\n- F03 L5775의 `IF ...-ZTOMO = 'X'`는 **임시 테이블에 기록하는 부분만** 감쌉니다.\n- 그 조건은 L5782에서 끝납니다.\n- 아래 L5918에서는 휴휴 여부를 검사하지 않고 다음 대입을 합니다.\n\n```abap\ncs_overtime_data-jorgeh = lv_zjorgehamt * 100.\n```\n\n[SRC-17, F03 L5918](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5918\u003e)\n\n**0만 대입하는 것도 아닙니다.** 예를 들어 `A` 유형의 **하루짜리 휴일근무**, 대휴 발생, 계산 대상 6시간이라는 조건에서도 NORM L317–328은 `ZJORGEHAMT`를 계산합니다. 이 분기에는 “두 날짜 모두 휴일이어야 한다”는 제한이 없습니다.\n\n이 값은 웹 저장 전 F06 L1062에서 `ps_zthrbs01-jorgeh`로 복사됩니다. 정상 저장되고 임시값으로 대체되지 않는 조건이면 최종 `ZTHRBS01`까지 전달되는 경로입니다. [SRC-17, F06 L1048–1062](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap:1048\u003e)\n\n따라서 **“비휴휴는 입력할 때 `JORGEH`를 건드리지 않는다”는 업무 의도와, 확인한 웹 저장 코드 사이에는 차이가 있습니다.** 다만 단일 휴일에서는 그 금액이 기존 실비×2와 같을 수 있으므로, 이 차이만으로 정산액 오류까지 확정할 수는 없습니다.\n\n이 설명을 검토 기록과 회귀 조건에 보완했습니다. ABAP은 수정하지 않았으며, 여기까지는 소스 대조 결과이고 SAP 실행 재현은 미수행입니다.", "M020-code-1": "토요일 10시간\n   → 토요일 앞 구간 8시간\n   → 토요일 뒤 구간 2시간\n", "M020-code-3": "MODIFY zhrdaehuamt FROM ls_zhrdaehuamt.\n", "M020-code-5": "cs_overtime_data-jorgeh = lv_zjorgehamt * 100.\n", "M021": "zgubun이 A인게 무슨의미인지 정확히 기억이 안나; 그럼 모든 선택근무자가 휴휴로 입력하면 ZGUBUN이 A인지부터 확인해줘. A라면 2·3번은 이번 오류와 무관한 거잖아. 그러면 정상근무 구간과 초과근무 구간으로 나눈다고 했는데 왜 굳이 정산근무 8시간을 나누게 되는지 이해가 안가. 그냥 통채로 10시간 넣으면 되는데 게다가 휴일인데 정상근무라는게 무슨의미지? 휴일에 일한거면 의미상 다 초과근무 10시간 아니야? 굳이 기준시간을 8시간을 zthr0101에 넣어놓고 가져오는 이유가 뭐야?\n그리고 ztomo는 익일 여부 체크로 알고있어. 맞는지 확인해줘.\n", "M022": "`ZGUBUN=A`의 정의와 선택근무자의 휴휴 입력·저장 경로부터 확인하겠습니다. 그 결과로 2·3번이 이번 조사에 해당하는지 판단하고, 휴일에도 기준시간 분할을 거치는 이유와 `ZTOMO`의 실제 의미를 코드 근거로 구분해 설명하겠습니다.\n", "M023": "`ZGUBUN=A`는 사전 정의상 “통상근무”입니다. 선택근무를 뜻하는 코드는 별도의 `Z52WKTP=0110`입니다. 선택 입력에서는 공통 시간 계산 함수를 호출하면서 기준시간 분할 옵션을 켜지 않는 경로가 확인되어, A 여부보다 실제 호출 경로가 2·3번의 적용 여부를 판단하는 핵심으로 보입니다.\n", "M024": "확인한 선택 실적 입력·대휴 생성 경로는 `I_OPT='X'`를 전달하지 않아, 8＋2 분할 전에 함수 처리를 끝냅니다. 따라서 이 경로에는 제가 제시한 2·3번을 원인으로 적용할 수 없습니다. 휴일 8시간을 정상근무로 지급한다는 설명도 부정확했습니다. 별도 시간외 경로에서 분할되더라도 비교대 휴일은 마지막에 두 구간 모두 휴일근로로 분류합니다.\n", "M025": "`ZTOMO`는 DDIC에도 “익일여부”로 정의되어 있고, 실제 코드에서도 다음 날짜와 자정 구간을 만드는 데 사용됩니다. `ZTHR0101`의 기준시간은 공통 계산에서 평일의 정상·초과 시간을 구분하는 용도가 확인됩니다. 다만 일부 유형의 휴일에도 그 분할을 유지해야 하는 업무상 이유는 아직 확인되지 않았으므로, 필수 정책처럼 설명하지 않겠습니다.\n", "M026": "**확인한 선택 실적 입력·대휴 생성 경로에서는 2·3번을 오류 원인에서 제외해야 합니다.** 이유는 “선택근무자가 모두 A여서”가 아니라, **선택 경로에서는 해당 8＋2 분할 기능을 켜지 않기 때문**입니다. 제가 시간외 공통 함수의 위험을 선택근무에 먼저 연결한 설명을 정정합니다.\n\n**1. `ZGUBUN=A`는 선택근무를 뜻하지 않습니다.**\n\n사전 정의상 두 필드는 다른 분류입니다.\n\n| 필드 | 값 | 의미 |\n|---|---|---|\n| `ZGUBUN` — 입력구분 | A | 통상근무 |\n| 〃 | B / D / T | 시차근무 / 당번특근 / 해외출장 |\n| `Z52WKTP` — 근로유형 | 0110 | 4주 선택근무 |\n\n[입력구분 정의 — SRC-17, ZBSGUBUN1 L70–120](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/Dictionary Object/Domain/ZBSGUBUN1/definition.xml:70\u003e)\n\n선택 입력 구조 `ZSHR0141`에는 `ZGUBUN` 필드가 없습니다. 선택의 일일 시간 계산에서는 임시 계산 구조를 만들고, **시차 대상일 때만 `ZGUBUN=B`를 넣습니다. 일반 선택 입력을 A로 일괄 설정하는 처리가 아닙니다.** 이는 계산 함수에 넘기는 값에 대한 확인이며, 실제 보정 대상 `ZTHRBS01` 행들의 값을 전수 조회한 결과는 아닙니다.\n\n**2. 선택 경로에서 8＋2 분할이 실행되지 않는 것을 확인했습니다.**\n\n선택 입력의 `D_CW_GET_DATA` 호출부는 다음과 같습니다.\n\n```abap\nCALL FUNCTION 'ZHR_52TM_CALC_WORK_TIME_DAYILY'\n  EXPORTING\n    is_day = ls_zshr0115\n*   i_opt  = 'X'\n    i_ngt  = lv_ngt\n```\n\n`I_OPT='X'`가 **주석 처리되어 있습니다.** 선택 대휴 계산·생성의 다른 호출부들도 이 옵션을 전달하지 않습니다. [SRC-17, 선택 F02 L390–424](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Include/LZHR008_3F02.abap:390\u003e)\n\n호출받는 함수는 날짜 분리·휴게 계산 이후 다음 조건을 만납니다.\n\n```abap\nCHECK i_opt = 'X'.\n```\n\n`I_OPT`의 기본값도 X가 아니므로, 선택 경로는 여기서 처리를 끝냅니다. **그 아래 기준시간 조회와 정상/초과 구간 분할까지 내려가지 않습니다.** [SRC-17, DAILY L516](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap:516\u003e)\n\n따라서 **확인한 선택 경로에서 토요일 10시간이 이 로직 때문에 8＋2로 나뉘고, 그 결과 덮어쓰기나 토→일→토 문제가 생긴다는 설명은 적용되지 않습니다.**\n\n**3. 휴일인데 왜 정상근무 8시간인가 — 그 8시간을 정상근무로 지급한다는 뜻은 아닙니다.**\n\n말씀하신 의문이 맞습니다. **휴일 10시간 중 8시간은 평일 정상근무이고 2시간만 휴일근무라는 의미가 아닙니다.**\n\n별도 시간외 경로에서는 공통 함수가 먼저 정상/초과 계산 구간을 나눕니다. 그러나 비교대 휴일이면 마지막에 모든 구간을 다음처럼 바꿉니다.\n\n```abap\nt_day_time-regtp = 'M'.  \"초과근로시간\nt_day_time-tmtyp = 'H'.  \"휴일근로 시간\n```\n\n즉, 분할된 경우에도 **8시간과 2시간 모두 최종적으로 휴일근로**입니다. [SRC-17, DAILY L840–842](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap:840\u003e)\n\n여기서 구분할 것은 다음입니다.\n\n- **코드가 일부 휴일 유형도 먼저 분할한다:** 확인했습니다.\n- **휴일 계산을 위해 반드시 그렇게 분할해야 한다:** 업무상 근거는 확인하지 못했습니다.\n\nA의 휴일은 분할에서 제외하면서 D·T·B 등에는 공통 분할 처리가 남아 있는 구조입니다. 이를 “휴일에도 정상근무 8시간이 필요해서”라고 설명하면 부정확합니다.\n\n선택근무에서 기간 소정시간이 부족할 때 휴일시간으로 충당하는 처리는 별도로 있으며, 이것도 **하루를 무조건 8＋2로 자르는 처리와는 다릅니다.**\n\n**4. `ZTHR0101`에서 기준시간을 가져오는 이유는 무엇인가?**\n\n`ZTHR0101`은 **유연근무 상수값 관리 테이블**입니다. 이 함수는 일반 기준 `ZNORHR`, 해외출장 기준 `ZTRPHR` 중 하나를 골라 **해당 근무일에 유효한 기준시간**을 읽습니다.\n\n공통 평일 계산에서는 이 기준으로 정상근무와 초과근무를 구분할 수 있습니다. 예를 들어 기준이 8시간이면 계산 대상 10시간을 8시간과 2시간으로 구분하는 용도입니다. 날짜별 유효기간을 조회하므로 코드에 8을 고정하는 것과도 다릅니다.\n\n다만 **이 기준값이 존재한다는 사실이 휴일도 반드시 분할해야 한다는 근거는 아닙니다.** 실제 운영 상수값이 언제나 8인지도 이번에는 조회하지 않았습니다.\n\n**5. `ZTOMO`는 말씀하신 익일 여부가 맞습니다.**\n\nDDIC 명칭이 **“익일여부”**이고, 코드에서도 체크된 경우 당일 자정과 다음 날 구간으로 나눕니다.\n\n- `ZTOMO`: 근무 종료가 익일로 이어지는지\n- `ZTOMOH`: 익휴\n- 휴휴 여부: 당일과 익일이 **모두 휴일인지 추가 판단**\n\n따라서 `ZTOMO`만으로는 평평·평휴·휴평·휴휴를 구분할 수 없습니다. [SRC-17, ZSHR0131 L828·L3666](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/Dictionary Object/Structures/ZSHR0131/definition.xml:828\u003e)\n\n[검토 기록](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/knowledge/processes/huhu-jorgeh-investigation.md\u003e)에도 선택 경로의 2·3번 제외를 반영했습니다. 아직 남은 핵심은 **실제 보정 대상 행이 선택 대휴 생성 경로에서 만들어졌는지, 별도 시간외 입력·관리자 수정 경로를 거쳤는지**입니다. 앞서 확인한 NORM·F06의 `JORGEH` 저장을 선택 실적 입력에도 그대로 적용해서는 안 됩니다.", "M026-code-1": "CALL FUNCTION 'ZHR_52TM_CALC_WORK_TIME_DAYILY'\n  EXPORTING\n    is_day = ls_zshr0115\n*   i_opt  = 'X'\n    i_ngt  = lv_ngt\n", "M026-code-3": "CHECK i_opt = 'X'.\n", "M026-code-5": "t_day_time-regtp = 'M'.  \"초과근로시간\nt_day_time-tmtyp = 'H'.  \"휴일근로 시간\n", "M027": "그래 선택근무는 분할 대상자체가 아니라는거 알았어. 그러면 통상근무 A와 와 D T B 가 문제인데 통상근무 A는 너말대로면 지금 8+2로 분할 안된느거고 나머지는 분할된다는 뜻이야? 그럼 나머지 D T B 가 뭔지를 알아봐줘. 그리고 비휴휴가 orgeh를 건드린다는 거에 대해 아직 설명이 충분하지 않아. 비휴휴가 orgeh를 왜건드리는지 설명 안했어\n", "M028": "D·T·B의 정의와 분할 조건을 정리하겠습니다. 비휴휴 `JORGEH`는 일반 휴일 하루 입력을 예로 들어, 어떤 조건 때문에 계산되고 저장까지 전달되는지 확인하겠습니다. 코드가 그렇게 동작하는 이유와 업무상 의도는 구분하겠습니다.\n", "M029": "비휴휴가 계산되는 직접 원인을 확인했습니다. NORM의 해당 분기는 “휴휴인가”를 공통 진입 조건으로 검사하지 않습니다. A 유형의 하루짜리 휴일 대휴도 이 분기로 들어가 시간 조건을 충족하면 `ZJORGEHAMT`를 계산하고, 웹 저장은 그 값을 복사합니다. 다만 이 동작을 의도한 업무상 이유는 확인되지 않았습니다.\n", "M030": "**휴일 시간외 입력을 기준으로, A는 분할 제외이고 D·T·B는 조건에 따라 분할될 수 있다는 이해가 맞습니다.** 다만 D·T·B가 모두 항상 8＋2로 나뉘는 것은 아닙니다.\n\n| `ZGUBUN` | 의미 | 휴일의 기준시간 분할 |\n|---|---|---|\n| A | 통상근무 | 분할을 건너뜀 |\n| D | **당번특근** | `ZNORHR` 기준으로 분할될 수 있음 |\n| T | **해외출장** | `ZTRPHR` 기준으로 분할될 수 있음 |\n| B | **시차근무** | `ZNORHR` 기준으로 분할될 수 있음 |\n\n정의는 [입력구분 도메인](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/Dictionary Object/Domain/ZBSGUBUN1/definition.xml:70\u003e), 분할 조건은 [DAILY L550–610](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap:550\u003e)에서 확인했습니다.\n\n실제로는 분할 옵션, 기준시간 초과 여부, 양일 누계 처리까지 충족해야 합니다. **A도 평일은 분할될 수 있고, D·T·B도 기준시간을 넘지 않으면 추가 분할되지 않습니다.** 분할 대상이라는 사실만으로 금액 오류가 확정되는 것도 아닙니다.\n\n**비휴휴가 `JORGEH`를 건드리는 직접 원인은, 휴휴용 계산 분기의 진입 조건에 ‘휴휴만’이라는 제한이 없기 때문입니다.**\n\n이전에는 대입 위치만 설명했고, **왜 그 위치까지 들어가는지**를 충분히 설명하지 않았습니다. 다음 사례로 보면 명확합니다.\n\n\u003e **A 유형, 토요일 하루만 근무, 휴게 제외 계산시간 6시간, 대휴 발생, 익일 체크 없음**을 가정하겠습니다.\n\nNORM에서 다음 순서로 처리됩니다.\n\n1. **휴일이고 대휴가 있으므로**, 6시간을 대휴 금액 계산 대상 시간에 넣습니다.\n2. 다음 분기는 **“T·D·B 중 하나이면서 양일 판정이 없는가?”**입니다.  \n   A는 여기에 해당하지 않으므로 **하루짜리 입력이어도 `ELSE`로 들어갑니다.**\n3. 그 `ELSE` 안에서는 **계산 행의 시간이 4.5시간 이상인지**를 검사합니다. 6시간이므로 다음 두 금액을 계산합니다.\n   - 입력 당시 대휴 실비: `6시간 × 단가 × 0.5`\n   - `ZJORGEHAMT`: `6시간 × 단가 × 1`\n4. **이 계산 앞에 “날짜가 두 개이고, 두 날짜 모두 휴일인가?”를 공통 진입 조건으로 검사하는 처리가 없습니다.**\n\n이것이 **하루짜리 일반 휴일 대휴도 휴휴용으로 주석이 달린 계산을 타는 이유**입니다. [SRC-17, NORM L123–135·L284–328](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_NORM_OT_PAY/Source code/ZHR_52TM_CALC_NORM_OT_PAY.abap:284\u003e)\n\n계산한 값은 F03에서 `JORGEH`에 넣고, F06에서 저장 구조로 복사합니다. **익일 체크가 없으면 임시 DB 기록만 건너뛰며, 이 두 대입은 건너뛰지 않습니다.** 잔여 임시값이 없고 저장이 정상 완료되면 최종 테이블까지 전달될 수 있습니다. [F03 L5918](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5918\u003e), [F06 L1062](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap:1062\u003e)\n\n따라서 이 사례는 **예전 휴휴 금액이 남아서가 아니라, 비휴휴 입력에서 새 금액을 계산해서 넣는 경우**입니다.\n\n다만 **개발자가 왜 비휴휴까지 사전 저장하도록 만들었는지에 대한 업무상 의도는 확인되지 않았습니다.** 말씀하신 “휴휴만 사전 저장”이라는 의도에 비추어 보면, 현재 코드는 계산·저장 대상을 제한하는 조건이 빠진 후보입니다.\n\n또한 위 6시간 사례는 사전 계산값과 일반 정산의 `실비×2`가 같습니다.\n\n```text\n사전 계산: 6 × 단가 × 1\n일반 정산: (6 × 단가 × 0.5) × 2\n```\n\n그래서 **비휴휴에 `JORGEH`가 들어간다는 사실은 확인되지만, 그것만으로 금액이 틀렸다고 단정할 수는 없습니다.** 실제 반복 보정 원인인지 여부는 별도 대조가 필요합니다.\n\n설명을 [검토 기록](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/knowledge/processes/huhu-jorgeh-investigation.md\u003e)과 회귀 Q99·Q100에 보완했습니다. 소스 대조 결과이며 SAP 실행 재현은 미수행입니다.", "M030-code-1": "사전 계산: 6 × 단가 × 1\n일반 정산: (6 × 단가 × 0.5) × 2\n", "M031": "지금 까지 얘기한 기준을 가지고 앞서 너가 언급한 오류 예상 후보 6개가 어떤의미인지  다시한번 반영해서 정리해줘\n", "M032": "앞서 말씀드린 여섯 후보를 같은 번호로 다시 정리하겠습니다. 이번에 확인한 선택근무 경로 제외, 유형별 분할 조건, 확정 전 오차라는 시점을 반영해 각 후보의 의미와 적용 범위를 구분하겠습니다.\n", "M033": "지금까지 확인한 내용을 반영하면 **1번은 정산 이후의 별도 문제, 2·3번은 확인한 선택근무 경로에서 제외, 4·5번은 입력·저장 경로를 확인해 조사할 후보, 6번은 정책 확인이 필요한 항목**입니다. 앞서 서로 다른 경로의 위험을 이번 선택근무 오류와 연결해 설명한 부분은 정정하겠습니다.\n\n기존 여섯 번호를 그대로 유지해서 설명드리겠습니다.\n\n**1. 정산 확정 때 사전 금액이 없어지고, 취소해도 복구되지 않는 문제**\n\n정산에서 **사용한 대휴로 차감되는 건**은 `JORGEH`를 0으로 만들어 저장합니다. 이후 확정을 취소해도 원래 입력 때 계산했던 금액은 복구하지 않습니다. 재정산하면 0을 보고 일반 계산인 `ZD_MONEY × 2`를 적용할 수 있다는 문제입니다. 모든 대휴 금액을 일괄 0으로 만든다는 뜻은 아닙니다.  \n근거: [정산 계산 및 0원 처리, SRC-17 L531–549](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH415F01/source/ZRPTH415F01.abap:531\u003e).\n\n**현재 판단:** 별도로 고쳐야 할 문제 후보지만, 말씀하신 **“이번 정산 확정 몇 달 전부터 이미 금액이 다르다”는 현상의 직접 원인으로 설명할 수 없습니다.**\n\n**2. 같은 날짜의 계산금액이 임시 테이블에서 덮어써지는 문제**\n\n일요일 금액이 토요일 금액을 덮는다는 뜻이 아닙니다. **같은 사번·같은 날짜에 계산 행이 여러 개 생겼을 때**, 날짜별 합계를 저장하지 않고 마지막 행의 금액을 저장한다는 뜻입니다.\n\n분할 적용 범위는 다음처럼 좁혀야 합니다.\n\n| 구분 | 이번에 확인한 기준시간 분할 |\n|---|---|\n| 선택근무의 확인된 CW 경로 | 분할 옵션을 전달하지 않으므로 해당 분할을 하지 않음 |\n| A: 통상근무 | **휴일 행은** 해당 분할을 건너뜀 |\n| D: 당번특근 | 나머지 조건이 맞으면 분할 가능 |\n| T: 해외출장 | 해외출장 기준시간에 따라 분할 가능 |\n| B: 시차근무 | 나머지 조건이 맞으면 분할 가능. 금액 영향은 별도 확인 |\n\n따라서 D 등의 휴일 10시간이 실제로 8시간과 2시간으로 나뉘고 두 행에 정산금액이 계산됐다면, 임시 테이블에는 두 금액의 합계 대신 **뒤의 2시간분만 남을 수 있다**는 의미입니다. 기준시간은 설정값이므로 항상 8시간인 것도 아닙니다.  \n근거: [분할 조건, SRC-17 L550–601](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap:550\u003e), [행별 임시 저장, SRC-17 L5775–5781](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5775\u003e).\n\n**현재 판단:** 확인한 **선택근무 및 A의 휴일 경로에서는 이 분할을 원인으로 삼지 않습니다.** D/T/B에서도 실제 분할 행과 계산금액을 확인해야 하며, 분할된다는 사실만으로 최종 저장액 오류를 확정하지 않습니다.\n\n**3. 실제 이틀인데 날짜 묶음을 세 번으로 판단하는 문제**\n\n이것도 2번의 **같은 날짜 추가 분할이 실제로 발생하는 경우**에 연결되는 후보입니다.\n\n예를 들어 토요일 10시간·일요일 6시간이 다음 순서로 만들어지는 경우입니다.\n\n`토요일 8시간 → 일요일 6시간 → 토요일 나머지 2시간`\n\n뒤의 2시간은 토요일 10시간에 포함된 시간입니다. **토요일 8시간·일요일 6시간에 갑자기 2시간을 추가한다는 뜻이 아닙니다.**\n\n저장 함수는 날짜순으로 정렬하지 않고 연속해서 나타나는 날짜를 묶습니다. 위 배열은 `토 → 일 → 토`라는 세 묶음이므로, “두 날짜이면 나누어 저장”하는 분기를 건너뛸 수 있습니다. 그 결과 날짜별 대휴와 금액을 나누는 처리가 달라질 수 있습니다.  \n근거: [날짜 묶음과 2건 분기, SRC-17 L119–174](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:119\u003e).\n\n**현재 판단:** 2번과 마찬가지로 **확인한 선택근무 경로에는 이 분할 원인을 적용하지 않습니다.** 분할 대상 경로에서 실제 배열 순서가 위처럼 만들어지는지 확인해야 하는 후보입니다.\n\n**4. 사용하지 않은 임시 금액이 이후 신청에 섞이는 문제**\n\n이 부분은 단순 메모리 캐시가 아니라 **DB 테이블 `ZHRDAEHUAMT`에 남은 행**의 문제입니다.\n\n다음 조건이 겹치면 발생할 수 있습니다.\n\n- 이전 계산에서 특정 사번·날짜의 임시 금액이 남습니다.\n- 이후 신청이 **동일한 사번·동일한 날짜**의 임시 금액을 조회합니다.\n- 새 계산이 그 임시 금액을 올바르게 교체하지 않은 상태입니다.\n\n이때 이전 신청의 금액을 현재 신청의 `JORGEH`로 가져올 수 있습니다. 아무 다음 입력에나 영향을 준다는 뜻은 아닙니다. 저장 함수는 읽은 날짜만 삭제하며, 조회에 현재 신청을 식별하는 번호나 휴휴 조건이 없습니다.  \n근거: [임시 금액 조회·삭제, SRC-17 L163–169, L206–212](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:163\u003e).\n\n**현재 판단:** 정산 전 금액 오차를 조사할 후보입니다. 다만 **`CLEAR`나 `REFRESH`만으로는 DB에 남은 행을 없앨 수 없습니다.** 기존 조회·삭제 과정에서 어떤 날짜의 금액을 언제 소비하고 정리하는지 확인해야 합니다. 실제 선택근무 보정 건이 이 경로를 거쳤는지도 아직 확인이 필요합니다.\n\n**5. 새 계산값 전달이 경로마다 다르고, 비휴휴도 JORGEH를 계산할 수 있는 문제**\n\n이 항목은 두 가지를 구분해야 합니다.\n\n**첫째, 재계산한 금액을 저장 구조로 전달하는 방식이 다릅니다.** 공통 저장 함수 등의 복사 목록에는 새 `JORGEH`가 빠져 있지만, 확인한 시간외 웹 변경 저장에서는 새 값을 명시적으로 복사합니다. 새 값이 0이면 0도 복사합니다. 따라서 **“휴휴를 비휴휴로 바꾸면 기존 금액이 무조건 남는다”는 설명은 맞지 않습니다.**  \n근거: [공통 저장의 결과 복사, SRC-17 L62–83](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:62\u003e), [웹 변경 저장의 JORGEH 복사, SRC-17 L1062](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap:1062\u003e).\n\n**둘째, 비휴휴에서도 새로운 정산금액을 계산하는 경로가 있습니다.** 예를 들어 시간외 입력의 **A·단일 휴일·대휴 표시·계산시간 6시간**은 다음처럼 처리됩니다.\n\n`NORM에서 정산금액 계산 → F03에서 JORGEH 대입 → 시간외 웹 저장에서 새 값 복사`\n\n그 이유는 해당 계산 분기에 **“양일이 모두 휴일인 경우만 실행”하는 제한이 없기 때문**입니다. `ZTOMO=X` 조건은 임시 DB 기록을 제한할 뿐, 뒤의 `JORGEH` 대입 전체를 제한하지 않습니다. 과거 휴휴 입력이 없어도 비휴휴에서 새 값이 만들어질 수 있습니다.  \n근거: [NORM 계산 분기, SRC-17 L284–328](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_NORM_OT_PAY/Source code/ZHR_52TM_CALC_NORM_OT_PAY.abap:284\u003e).\n\n**현재 판단:** 말씀하신 “휴휴만 사전 저장”이라는 업무 의도와 대조할 후보입니다. 다만 단일 6시간의 사전값은 일반 `ZD_MONEY×2` 결과와 같을 수 있으므로, **비휴휴에 JORGEH가 있다는 사실만으로 금액 오류나 중복 지급을 뜻하지는 않습니다.** 왜 이렇게 개발했는지의 승인된 업무 의도도 미확인입니다.\n\n**6. 시차근무 B가 양일 판정에서 빠지는 문제**\n\n양일 여부를 설정하는 조건에는 T/D만 있고, 이후 별도 계산 분기에는 T/D/B가 들어 있습니다. 따라서 B는 실제 양일 근무여도 그 별도 분기로 들어가며, 확인한 대휴 조건에서는 **양일 모두 0.5배이고 사전 정산금액은 계산하지 않는 결과**가 나옵니다.  \n근거: [양일 판정 대상, SRC-17 L79–92](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_NORM_OT_PAY/Source code/ZHR_52TM_CALC_NORM_OT_PAY.abap:79\u003e).\n\n**현재 판단:** 말씀하신 **“시차실비를 별도로 받으므로 양일 모두 0.5배”**가 정책상 맞다면 의도된 처리일 수 있습니다. 따라서 현재는 오류로 확정하거나 수정 대상으로 잡지 않고 **시차 정책 확인 항목**으로 남기는 것이 맞습니다.\n\n이번 보정 건에서는 **실제 생성·수정 경로와 연결되는지 확인한 뒤 4·5번을 조사하는 것**이 우선입니다. 2·3번을 제외했다고 4·5번이 원인으로 확정되는 것은 아닙니다. 위 판단은 추출 소스 기준이며, 실제 보정 대상의 저장 전후 값과 SAP 실행 결과로 원인을 확인한 단계는 아닙니다.", "M034": "좋아 여기서 다음단계로 확인해볼게 있어. \n2,3.우선 D T B 가 특정조건에서 분할되어 8+2가 된다면 8과 2가 각각 어떤식으로 휴일실비로 계산되는지 확인해줘. 이게 그냥 10시간을 통으로 계산하는거랑 무슨 차이가 있는지 알아야 개선방향을 알수있을거 같아.\n5번에서 첫쨰가 무슨소리인지 모르겠어. 예시를 들어줘. 두번쨰는 양일이 모두 휴일인 경우만 실행하는 제한이 없다는건 알겠어. 근데 어차피 하루에 속하는 대휴이면 단가가 곱하기 0.5라서 orgeh에 값이 들어간다고 금액이 오류나지는 않을거 같아\n이 부분들에 대해 좀더 자세히 설명해줘\n", "M035": "D/T/B에서 분할된 각 구간에 어떤 배율이 적용되는지 확인하고, 같은 시간을 한 행으로 계산했을 때와 비교하겠습니다. 5번 첫째는 새 계산값이 저장까지 전달되는 과정을 숫자 예시로 설명하겠습니다.\n", "M036": "하루 10시간에 대휴가 발생한 D/T/B는, 8시간과 2시간으로 나뉘어도 두 구간 모두 0.5배로 계산됩니다. 이 조건에서는 휴일실비 합계가 10시간을 통으로 계산한 값과 같습니다. 이제 양일 근무에서의 배율과, 계산된 금액이 저장되는 과정의 차이를 구분해 확인하겠습니다.\n", "M037": "양일 근무에서도, 토요일 10시간이 8+2로 나뉘면 뒤의 2시간은 토요일 대휴 표시를 받아 0.5배가 됩니다. 확인한 예시에서는 실비 합계가 통계산과 같고, 차이는 이후 날짜별 정산금액을 저장하는 과정에서 생길 수 있습니다.\n\n또 말씀하신 대로 단일 대휴의 사전금액이 현재 시간·단가로 정확히 계산됐다면 일반 ×2 결과와 같습니다. 비휴휴에 값이 있다는 사실 자체는 오류 후보에서 제외하고 설명하겠습니다.\n", "M038": "확인한 산식에서는 **같은 단가·같은 인정시간·같은 대휴 발생일을 전제로 하면, 8+2로 나눠도 휴일실비 합계는 통으로 계산한 값과 같습니다.** 문제 후보는 그 뒤의 정산금액 저장과 날짜 묶음 처리입니다.\n\n아래 금액은 이해를 돕기 위해 **시간외 단가 10,000원, 시간은 휴게 반영 후**라고 가정하겠습니다.\n\n**1. D/T/B가 하루에만 근무하고 대휴가 발생한 경우**\n\nD 당번특근의 휴일 10시간이 8+2로 나뉘었다면 다음처럼 계산됩니다.\n\n| 계산 방법 | 휴일실비 |\n|---|---:|\n| 앞 8시간 | 8 × 10,000 × 0.5 = 40,000원 |\n| 뒤 2시간 | 2 × 10,000 × 0.5 = 10,000원 |\n| 분할 계산 합계 | **50,000원** |\n| 10시간 통계산 | 10 × 10,000 × 0.5 = **50,000원** |\n\n**뒤의 2시간도 0.5배입니다.** 이 단일일 분기에서는 개별 구간의 2시간만 보고 판단하지 않고, 합계시간을 기준으로 대휴수당을 계산하기 때문입니다.\n\n또한 앞의 8시간을 내부적으로 ‘정상근무’라고 나눴더라도, 최종적으로는 **8시간과 2시간 모두 휴일근로로 분류**됩니다. 앞 8시간을 평일 정상근무 배율로 지급하는 구조가 아닙니다.  \n근거: [DAILY L840–842](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap:840\u003e), [NORM L284–299, SRC-17](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_NORM_OT_PAY/Source code/ZHR_52TM_CALC_NORM_OT_PAY.abap:284\u003e).\n\n유형별로는 다음과 같습니다.\n\n- **D 당번특근, B 시차근무:** 실제로 8+2로 분할되는 조건이라면 위 계산과 같습니다.\n- **T 해외출장:** 기준시간이 9시간인 예시라면 11시간을 9+2로 나눕니다. `45,000 + 10,000 = 55,000원`으로, 통11시간 × 0.5와 같습니다. 실제 기준시간은 설정값 확인이 필요합니다.\n\n이 단일일 분기에서는 **새 사전 정산금액을 계산하지 않습니다.** 따라서 “하루 10시간이 8+2로 나뉜다”는 사실만으로 앞서 말한 비영 `JORGEH` 덮어쓰기 문제까지 성립하지는 않습니다.\n\n**2. D/T가 휴휴 양일에 근무한 경우에도, 같은 날짜의 뒤 2시간은 0.5배입니다**\n\n이번에는 **토요일 10시간·일요일 6시간이고 양일 모두 대휴가 발생했다**고 하겠습니다. 실제 계산 행이 `토8 → 일6 → 토2`로 만들어진 조건입니다.\n\n| 계산 행 | 휴일실비 | 해당 행에서 계산한 사전 정산금액 |\n|---|---:|---:|\n| 토요일 앞 8시간 | 40,000원 | 80,000원 |\n| 일요일 6시간 | 30,000원 | 60,000원 |\n| 토요일 뒤 2시간 | 10,000원 | 20,000원 |\n| 합계 | **80,000원** | **160,000원** |\n\n토요일 뒤 2시간에도 **“토요일에 대휴가 발생했다”는 표시가 붙습니다.** 그래서 짧은 구간이더라도 0.5배 실비와 1배 사전 정산금액을 계산합니다. 해당 보완 분기가 NORM에 들어 있습니다.  \n근거: [발생일에 속한 행의 대휴 표시, F03 L5754–5764](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5754\u003e), [짧은 구간의 대휴 계산, NORM L331–343, SRC-17](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_NORM_OT_PAY/Source code/ZHR_52TM_CALC_NORM_OT_PAY.abap:331\u003e).\n\n분할하지 않고 토10·일6으로 계산해도 실비는 `50,000 + 30,000 = 80,000원`, 사전 정산금액은 `100,000 + 60,000 = 160,000원`입니다.\n\n**따라서 이 예시에서 계산금액 자체는 같습니다. 차이가 생길 수 있는 곳이 기존 후보 2·3번입니다.**\n\n- **2번:** 토요일 사전금액 80,000원을 임시 저장한 뒤, 토요일 뒤 구간의 20,000원으로 덮어씁니다. 토요일 합계 100,000원이 보존되지 않는 문제입니다.\n- **3번:** 저장 단계에서 `토 → 일 → 토`를 세 묶음으로 세어, 두 날짜로 나누는 처리를 건너뛸 수 있습니다.\n\n위 표의 160,000원은 **계산 행들의 합계**입니다. 실제 최종 `ZTHRBS01-JORGEH`에 그 합계가 저장된다는 뜻은 아닙니다.\n\nB는 양일이어도 별도 분기로 들어가, 확인한 대휴 조건에서는 각 구간 0.5배이고 새 사전 정산금액을 계산하지 않습니다. 따라서 **D/T의 비영 정산금액 덮어쓰기 예시를 B에 그대로 적용하면 안 됩니다.**\n\n개선 방향도 좁혀집니다. 이 예시의 휴일실비 산식에서는 8+2 분할의 필수성을 찾지 못했습니다. 다만 공통 분할을 제거하기 전에, **기존 분할 결과의 날짜별 금액 합산과 날짜 묶음 처리를 바로잡는 방안**을 먼저 검토할 수 있습니다. 분할 제거는 평일·출장·휴게 계산에 미치는 영향까지 확인해야 합니다.\n\n**3. 5번 첫째는 “새 금액을 계산했는데 저장할 칸에 옮기지 않는 경우”라는 뜻입니다**\n\n예를 들어 A의 단일 휴일 대휴를 **8시간에서 6시간으로 수정**했다고 하겠습니다.\n\n공통 저장 함수 입구에 기존 `JORGEH=80,000원`이 그대로 전달됐고, 해당 날짜의 임시 금액도 없다는 **조건부 예시**입니다.\n\n| 단계 | 대휴실비 `ZD_MONEY` | 사전 정산금액 `JORGEH` |\n|---|---:|---:|\n| 이전 8시간의 값 | 40,000원 | 80,000원 |\n| 수정한 6시간의 새 계산 결과 | 30,000원 | 60,000원 |\n| 공통 저장 함수에서 값 복사 후 | **30,000원** | **80,000원** |\n\n마지막 행이 이렇게 되는 이유는 다음과 같습니다.\n\n1. 저장 함수는 새 조건으로 재계산해 **60,000원이라는 결과를 받습니다.**\n2. 저장할 구조는 호출자가 넘긴 기존 값을 복사해 만듭니다.\n3. 그 구조의 `ZD_MONEY`는 새 30,000원으로 바꾸지만, **`JORGEH`를 새 60,000원으로 바꾸는 복사가 빠져 있습니다.**\n4. 임시 금액 조회로도 교체되지 않으면 기존 80,000원이 남습니다.\n\n이 조건에서는 현재 6시간에 맞는 정산액 60,000원과 저장할 값 80,000원이 달라집니다.  \n근거: [GET_OVERTIME_SAVE L40–83, SRC-17](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:40\u003e).\n\n**다만 확인한 시간외 웹 변경 저장은 앞 단계에서 새 60,000원을 복사합니다.** 따라서 공통 저장 함수에 들어오는 값부터 60,000원이고, 위 80,000원 잔존 예시는 성립하지 않습니다. 새 계산값이 0이면 0도 복사합니다.  \n근거: [F06 L1027–1062, SRC-17](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap:1027\u003e).\n\n즉, **복사가 빠진 구문은 확인했지만, 실제 어떤 입력 경로가 이전 금액을 그대로 넘겨서 오차를 만드는지는 아직 확인해야 합니다.** 모든 웹 수정이 잘못된다는 의미는 아닙니다.\n\n**4. 5번 둘째에 대한 말씀은 맞습니다**\n\n현재 시간·단가로 정확하게 계산된 단일 대휴라면 다음 두 결과는 같습니다.\n\n- 사전 정산금액 사용: `6시간 × 10,000원 = 60,000원`\n- 일반 정산 계산: `대휴실비 30,000원 × 2 = 60,000원`\n\n따라서 **비휴휴에 `JORGEH`가 들어 있다는 사실 자체는 금액 오류의 독립적인 근거에서 제외하는 것이 맞습니다.** 조사할 것은 그 값이 **현재 입력 조건과 일치하는지**, 수정 전 값이나 다른 신청의 임시 금액이 섞였는지입니다.\n\n이번 비교는 [검토 문서](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/knowledge/processes/huhu-jorgeh-investigation.md:127\u003e)와 회귀 사례 Q101–Q103에 반영했습니다. 소스 대조와 예시 산술을 확인했으며, 실제 SAP 입력·저장 재현과 ABAP 수정은 수행하지 않았습니다.", "M039": "좋아 우선 확실하게 맥락이 잡힌 부문만 먼저 수정 진행할거야. 일단 오류 시나리오 6개 중\n\n1. 정산 확정 때 사전 금액이 없어지고, 취소해도 복구되지 않는 문제 -\u003e 건드리지마 그대로 둬\n\n\u0026#x20; 2\\. 같은 날짜의 계산금액이 임시 테이블에서 덮어써지는 문제 -\u003e 분할이 되더라도 대휴 최종 금액에는 영향이 없는 거 같아.\n\n그래서 사실 분할할 이유도 없어. 그래서 분할 안하는 방향으로 가고 싶겠지만 이것도 일단 건드리지마. 그대로 분할하게 냅둬\n\n\u0026#x20; 3\\. 실제 이틀인데 날짜 묶음을 세 번으로 판단하는 문제 -\u003e 이거는 고쳐야해. 너말대로 토 8 -\u003e 일 6 -\u003e 토 2 로 이렇게 그룹이 3개 생긴다고 해도 최종 대휴 금액은 하나만 반영되는게 아니라 3개의 합계가 반영되게 수정되어야해\n\n4\\. 사용하지 않은 임시 금액이 이후 신청에 섞이는 문제 -\u003e 이것도 무조건 고쳐야해. 솔직이 이 4번이 대부분의 오류일수도 있다는 생각조차 들어. 이후 신청에는 어떤식으로든 이전 신청이 영향을 주면 안돼.\n\n5. 새 계산값 전달이 경로마다 다르고, 비휴휴도 JORGEH를 계산할 수 있는 문제\u0026#x20;\n\n-\u003e 새금액을 계산하면 제대로 저장할 칸에 반영되어야해. 즉 너가 말한 사례를 보면 그 구조의 `ZD_MONEY`는 새 30,000원으로 바꾸지만, **`JORGEH`를 새 60,000원으로 바꾸는 복사가 빠져 있습니다. 라고 했어. jorgeh도 60000으로 바꾸는 복사가 이루어져야해. 단 시간외 웹 변경 저장은 앞 단계에서 새 60,000원을 복사한다고 했어. 이건 신규입력이 아닌 수정입력을 했을때는 괜찮다는 거야? 그리고 5번의 단일 대휴라도 금액이 우선은 같아 보이니 수정하지마.**\n\n이것들에 대한 너의 검토의견을 말해봐\n\n", "M040": "지정하신 수정 범위를 기준으로 검토하겠습니다. 특히 3번의 합계를 어느 대휴에 귀속시켜야 하는지, 4번의 신청 간 금액 섞임을 기존 저장 흐름에서 어떻게 막을지 확인하겠습니다. 웹 저장의 새 금액 복사가 신규·수정 중 어디에 적용되는지도 짚겠습니다.\n", "M041": "웹 저장은 신규와 수정 모두 새 `JORGEH`를 복사하는 것으로 확인됐습니다. 수정일 때만 하는 처리는 기존 신청 조회이고, 재계산과 금액 복사는 그 조건 밖에서 공통으로 실행됩니다.\n\n3번은 날짜 정렬만으로 끝내면 안 됩니다. 세 구간의 금액을 빠짐없이 합산하되 토요일 대휴와 일요일 대휴에 각각 배분해야 합니다. 이 합계를 현재 신청의 계산 결과에서 직접 전달하면 4번의 이전 신청 금액 혼입도 함께 막는 방향이 됩니다.\n", "M042": "5번에도 함께 볼 부분이 있습니다. 양일 신청을 하루씩 나눈 뒤 다시 계산하는 과정에서는 D/T의 사전 정산금액이 0이 될 수 있습니다. 따라서 3·4·5번을 함께 보완하면서, 이번 양일 계산에서 나온 날짜별 금액을 보존해 각 대휴의 저장값으로 넘겨야 합니다. 현재는 검토 의견만 정리했으며 ABAP 소스는 변경하지 않았습니다.\n", "M043": "제 의견은 **시간 분할과 지급 산식은 유지하고, 3·4·5번의 금액 집계·전달·저장을 함께 보완하는 방향**입니다. 다만 2번과 3번 사이에 연결된 문제가 있어 범위를 정확히 구분해야 합니다.\n\n| 항목 | 이번 검토 범위 |\n|---|---|\n| 1. 확정·취소 | 그대로 유지 |\n| 2. 8+2 등의 시간 분할 | 그대로 유지 |\n| 3. 날짜 묶음·금액 합계 | 수정 |\n| 4. 이전 신청의 임시 금액 혼입 | 수정 |\n| 5. 새 JORGEH 전달 | 수정. 비휴휴 사전계산 산식은 유지 |\n| 6. 시차 B | 기존처럼 정책 확인 대기 |\n\n**3번은 세 구간의 금액을 모두 반영하되, 발생한 대휴별로 나눠 저장해야 합니다.**\n\n설명용 단가가 10,000원이고 토요일·일요일에 각각 대휴가 발생했다면 목표는 다음과 같습니다.\n\n| 계산 구간 | 계산된 정산금액 | 최종 귀속 |\n|---|---:|---|\n| 토요일 앞 8시간 | 80,000원 | 토요일 대휴 |\n| 일요일 6시간 | 60,000원 | 일요일 대휴 |\n| 토요일 뒤 2시간 | 20,000원 | 토요일 대휴 |\n| 최종 결과 | **합계 160,000원** | **토요일 100,000원 + 일요일 60,000원** |\n\n이렇게 해야 세 구간이 빠짐없이 반영되고, 원래의 대휴 두 개도 유지됩니다.\n\n여기서 앞선 설명을 분명히 하겠습니다. **분할 전후 휴일실비 합계가 같다는 것과, JORGEH가 끝까지 정확히 저장된다는 것은 별개입니다.** 현재 임시 테이블에서 토요일 80,000원이 20,000원으로 덮어써졌다면, 날짜순으로 정렬하는 것만으로 100,000원을 복원할 수 없습니다.\n\n따라서 **8+2 분할은 유지하면서, 덮어쓰기 전의 이번 계산 결과에서 날짜별 금액을 확보해야 합니다.** 2번의 임시 금액 전달까지 완전히 그대로 둔 채 3번을 정렬만으로 해결할 수 있다고 말씀드릴 수는 없습니다.  \n근거: [F03의 임시 저장 L5775–5781](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5775\u003e), [SAVE의 날짜 묶음 L119–174, SRC-17](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:119\u003e).\n\n또한 현재 대휴 상세에는 같은 계산 행을 두 번 담을 수 있는 구간이 있습니다. 합계는 **원래 계산 행을 한 번씩 반영**하도록 해야 하며, 상세 테이블 전체를 무조건 더하면 안 됩니다.\n\n**4번은 “이번 신청의 계산 결과만 이번 저장에 사용한다”는 방향을 권합니다.**\n\n현재처럼 사번·날짜만으로 공유 임시 DB를 읽으면, 그 금액이 이번 신청에서 만들어진 것인지 확실히 구분하기 어렵습니다. 시작과 끝에서 삭제하는 방식만으로는 중간 오류나 같은 사번·날짜의 겹친 처리까지 분리했다고 보장하기 어렵습니다.\n\n제가 권하는 흐름은 다음과 같습니다.\n\n`이번 신청 계산 → 이번 계산의 날짜별 금액 보관 → 같은 저장 호출에 직접 전달 → 해당 대휴에 저장`\n\n기존 계산·저장 함수를 활용하고, **계산 결과를 돌려주는 부분을 필요한 만큼 보완하는 방식**입니다. 다른 신청이 남긴 DB 금액을 현재 신청의 정산금액으로 가져오는 의존성을 없애는 것이 핵심입니다.\n\n이 방향이면 3번에서 확보한 날짜별 합계를 그대로 사용할 수 있어, 3번과 4번을 함께 해결하기에 적합합니다. 다만 4번이 실제 오차의 대부분인지는 보정 사례를 대조하기 전에는 확정할 수 없습니다.\n\n**5번의 웹 저장은 신규와 수정 모두 새 JORGEH를 복사합니다.**\n\n이 부분은 제가 앞서 ‘웹 변경 저장’을 강조해서 설명이 불충분했습니다.\n\n확인한 시간외 웹 `SAVE` 경로에서는 다음과 같습니다.\n\n- **수정일 때만:** DB에서 기존 신청을 읽습니다.\n- **신규·수정 모두:** 입력 조건으로 재계산하고 새 `JORGEH`를 복사합니다.\n\n기존 신청 조회의 `IF i_mode = 'M'`은 먼저 끝나고, 그 밖에서 공통 재계산·복사 루틴을 호출합니다. 따라서 **“수정은 복사하지만 신규는 복사하지 않는다”는 구조가 아닙니다.**  \n근거: [MOBILE L132–148](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_MOBILE_OVERTIME_APPR/Source code/ZHR_52TM_MOBILE_OVERTIME_APPR.abap:132\u003e), [F06 L1027–1062, SRC-17](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap:1027\u003e).\n\n공통 저장 등의 전달 누락은 말씀하신 원칙대로 보완해야 합니다. 단일 대휴를 재계산한 결과가 60,000원이면 저장할 `JORGEH`도 60,000원이어야 합니다.\n\n다만 양일 처리에는 주의할 지점이 하나 있습니다. **양일 신청을 하루씩 나눈 뒤 재계산하는 D/T 분기에서는 사전 정산금액이 0으로 나올 수 있습니다.** 그 마지막 값만 무조건 복사하면, 앞서 양일 맥락으로 계산한 올바른 금액을 지울 수 있습니다. 따라서 3·4번에서 보존한 **이번 신청의 해당 날짜 금액**을 최종 저장값으로 전달해야 합니다.  \n근거: [F05의 분할 후 재계산 L168–197, SRC-17](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F05.abap:168\u003e).\n\n이번 수정의 완료 기준은 **“현재 신청에서 계산한 정산금액이 누락·중복·다른 신청의 혼입 없이, 각 대휴의 JORGEH에 저장된다”**로 잡는 것이 적절합니다. 비휴휴의 기존 계산 방식과 확정·취소 처리는 유지합니다.\n\n검토 범위는 [문서에 반영](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/knowledge/processes/huhu-jorgeh-investigation.md:176\u003e)했으며, 현재 ABAP 소스는 변경하지 않았습니다.", "M044": "좋아. 기존 시간 분할, 정산 확정·취소, 비휴휴 계산은 그대로 두고 3·4·5번을 네가 말한 방향으로 수정한다고  하면 최소한으로 로컬 소스에 반영한다고 했을때 코드의 어떤 부문이 수정되어야 하는지 말해줘.\n", "M045": "최소 수정에 필요한 함수와 구간을 확인하겠습니다. 기존 대휴 상세 반환값을 재사용할 수 있는지, 금액 전달값을 추가해야 하는지부터 살펴보고 각 변경이 필요한 이유를 정리하겠습니다.\n", "M046": "기존 반환값을 재사용하면 수정 범위를 두 곳으로 줄일 수 있어 보입니다. `GET_OVERTIME_DATA`가 이미 신청 전체의 `JORGEH`와 대휴 상세의 구간별 금액을 함께 돌려주고 있습니다.\n\n상세에 같은 행이 두 번 담기는 부분을 정리하고 전체 합계를 계산하면, 저장 함수에서 그 값을 바로 사용할 수 있습니다. 이 방식은 새 함수나 DB 테이블, 함수 매개변수 추가 없이 구성할 수 있습니다.\n", "M047": "현재 소스 기준으로는 **핵심 로직 두 곳을 수정하는 안**으로 구성할 수 있습니다.\n\n1. `LZHR008_2F03`의 `CALC_WORK_TIME_DAILY`\n2. `ZHR_52TM_GET_OVERTIME_SAVE`\n\n기존 반환값에 **신청 전체의 `JORGEH`와 상세 행별 `ZJORGEHAMT`가 이미 있으므로**, 새 함수·DB 테이블·함수 매개변수를 추가하지 않고 활용할 수 있습니다.\n\n**1. F03: 이번 신청의 계산금액을 빠짐없이 반환하도록 수정**\n\n대상: [LZHR008_2F03 — CALC_WORK_TIME_DAILY](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5487\u003e)\n\n| 현재 구간 | 수정 내용 | 목적 |\n|---|---|---|\n| FORM 시작·지역변수 선언 | 반환할 상세와 금액 누계를 호출마다 초기화 | 이전 호출 결과가 남지 않도록 처리 |\n| **5775–5781행** | `ZHRDAEHUAMT`에 금액을 쓰는 부분 제거 | 공유 임시 DB를 통한 금액 전달 중단 |\n| **5845–5860행** | 같은 계산 행을 두 번 `APPEND`하지 않도록 조건 통합 | 중복 합산 방지 |\n| **5850행** | 마지막 행 금액을 대입하는 처리를 **계산 행 전체의 금액 합산**으로 변경 | 신청 전체 정산금액 보존 |\n| **5906–5918행** | 기존 반올림·금액 변환·`JORGEH` 반환 흐름 활용 | 합산한 새 금액 전달 |\n\n여기서 **토요일 8시간과 2시간은 서로 다른 계산 행이므로 둘 다 유지**합니다. 없애는 것은 동일한 행이 두 조건에 걸려 두 번 들어가는 중복입니다.\n\n반환 결과는 다음 두 가지가 됩니다.\n\n- 신청 전체 정산금액: 예를 들어 **160,000원**\n- 계산 상세: **토8시간 80,000원 / 일6시간 60,000원 / 토2시간 20,000원**\n\n시간을 분할하는 함수와 0.5·1.5배를 계산하는 함수는 수정하지 않습니다.\n\n**2. GET_OVERTIME_SAVE: 반환받은 금액을 발생 대휴에 맞게 저장하도록 수정**\n\n대상: [ZHR_52TM_GET_OVERTIME_SAVE](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:40\u003e)\n\n**① 62–83행: 새 `JORGEH` 복사 추가**\n\n기존 `ZD_MONEY` 등의 복사 목록에 정상 재계산 결과의 `JORGEH`도 넣습니다.\n\n따라서 단일 대휴를 재계산한 값이 60,000원이면 저장 구조도 60,000원으로 바뀝니다. 정상 계산 결과가 0인 경우도 반영합니다.\n\n**② 119–150행: 기존 날짜 묶음 처리 보완**\n\n상세를 날짜·시작시각 순으로 정렬하고, 같은 날짜의 정산금액을 더합니다.\n\n`토8 → 일6 → 토2`를 처리하면 다음과 같이 됩니다.\n\n- 토요일: 80,000 + 20,000 = **100,000원**\n- 일요일: **60,000원**\n\n이때 **날짜 묶음 수와 실제 발생한 대휴 수를 구분**해야 합니다. 이틀에 걸쳐 근무했어도 대휴는 하나일 수 있기 때문입니다.\n\n**③ 163–170행, 206–213행: 임시 DB 조회·삭제를 현재 계산값 사용으로 교체**\n\n현재의 `ZHRDAEHUAMT SELECT / DELETE`를 없애고, 이번 호출에서 받은 금액을 사용합니다.\n\n- **대휴가 하나:** 신청 전체 정산금액을 그 대휴에 반영\n- **대휴가 두 개:** 각 날짜에 귀속되는 정산금액을 각각 반영\n\n이렇게 하면 이전 신청이 임시 DB에 남긴 금액을 읽어 오는 경로가 사라집니다.\n\n**④ F05 호출 이후, 실제 저장 이전: 해당 대휴의 금액을 최종 대입**\n\n기존 `SPLIT_OVERTIME_DATA` 호출은 유지합니다. 그 처리가 끝난 뒤, 저장 함수가 보관하고 있는 **이번 신청의 해당 대휴 금액**을 최종 `JORGEH`에 넣습니다.\n\n이 위치에서 처리하면 하루씩 재계산하면서 나온 0이나 상속된 금액 때문에 원래 양일 정산금액이 사라지는 것을 막을 수 있습니다.\n\n**다른 프로그램을 추가로 수정하지 않아도 되는 이유**\n\n| 대상 | 이번 안에서의 처리 |\n|---|---|\n| `GET_OVERTIME_DATA` | 기존 전체 금액·대휴 상세 반환을 그대로 이용 |\n| `F05` | 기존 분할 후 재계산 유지. 호출자인 SAVE에서 최종 JORGEH 설정 |\n| `F06`·웹 신규/수정 | 이미 새 JORGEH를 복사하므로 유지 |\n| 관리자 프로그램 | 최종 저장에 공통 SAVE를 사용하므로 별도 계산 추가 불필요 |\n| 시간 분할·NORM 산식·정산 확정/취소 | 변경하지 않음 |\n\n즉, 변경 흐름은 다음과 같습니다.\n\n**기존 계산 → 전체·상세 금액 반환 → 날짜별 합산 → 발생 대휴별 JORGEH 저장**\n\n로컬 파일 수는 한 가지 구분이 필요합니다. SAVE 함수 본문과 `LZHR008_2U39.abap`가 현재 동일한 중복 추출본입니다. 둘을 함께 동기화한다면 **수정 로직은 두 곳, ABAP 파일은 세 개**입니다. 함수 인터페이스나 DDIC 변경은 필요하지 않은 안입니다.\n\n이 최소 수정안을 [검토 문서](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/knowledge/processes/huhu-jorgeh-investigation.md:211\u003e)에 정리했습니다. **아직 ABAP 소스는 수정하지 않았으며**, 구현 후에는 양일 두 대휴뿐 아니라 3+2 합산 대휴, 익일에만 발생한 대휴, 연속 신청도 함께 검증해야 합니다.", "M048": "좋아 그럼 원본은 건드리지 말고 두 소스의 수정부문을 코드로 작성해줘. 수정은  SAP BASIS 700 버전의 ERP ABAP코드로 짜는거고 초급 개발자도 알아보기 쉬운 수준으로 작성해. 그리고 수정 전후 결과를 좌우로 놔두고 비교 표와 상세설명(이번 논의 방향에서 어떤 의사결정으로 이부문을 고치고 수정내용과 목적이 무엇인지 등)을 상세하게 설명하고 주석도 달아야 해. 이 수정 전후 비교 보고서를 html로 만들고 코드 복사도 가능하게 해줘. 코드 전체를 다보여줄 필요는 없어 수정되는 부문 근처만 비교 해서 작성해줘. 당연히 원본 코드는 건드리지말고\n", "M049": "원본 소스는 읽기만 하고, 수정 구간의 ABAP 코드와 좌우 비교 HTML 보고서를 별도 파일로 만들겠습니다. SAP_BASIS 700 문법과 기존 처리 흐름을 따르며, 각 구간에 변경 이유·목적·한글 주석과 코드 복사 버튼을 넣겠습니다.\n", "M050": "수정안은 8개 비교 구간으로 구성하고 있습니다. 전체 합계와 날짜별 금액을 구분해 전달하고, 저장 함수가 하루별 재계산을 마친 뒤 올바른 `JORGEH`를 넣도록 작성하겠습니다. 계산이 오류로 끝났을 때는 새 금액을 저장하지 않도록 기존 오류 코드와 문구를 그대로 반환하는 보완도 명시하겠습니다.\n", "M051": "보고서 초안을 만들었고, 수정 코드의 문법과 금액 전달 사례를 검사하고 있습니다. 보고서에는 ‘계산 행의 금액이 올바르게 전달되는지’에 대한 로컬 검사와, F05 재계산 이후 대휴 표시까지 확인해야 하는 SAP 검증 항목을 구분해 적었습니다.\n", "M052": "두 소스의 수정안을 8개 구간으로 나눠 보고서에 담았습니다. 현재 로컬 문법 검사와 코드 복사 기능 검사를 통과했으며, 긴 코드 구간도 끝까지 읽을 수 있도록 화면을 다듬고 있습니다. 원본 소스는 변경하지 않았습니다.\n", "M053": "긴 수정 구간을 잘리지 않게 표시하고, 수정 전후 동작 비교표도 추가했습니다. 원본 5,077개 파일의 해시가 모두 일치합니다. 보고서에는 이번 금액 전달 수정의 범위와, F05 재계산 이후 대휴 표시·실비를 SAP에서 확인해야 하는 항목도 구분해 두었습니다.\n", "M054": "[**수정 전후 HTML 비교 보고서 열기**](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/proposals/20261031-huhu-jorgeh-comparison/report.html\u003e)\n\n두 소스의 수정 구간 8개를 담았습니다.\n\n- 수정 전·후 코드 좌우 비교와 구간별 **코드 복사**\n- 변경 의사결정·목적·상세 설명과 한글 주석\n- 금액 예시, 유지하는 로직, 추가 검증 항목\n\n**원본 코드는 변경하지 않았습니다.** SAP_BASIS 700 대상 로컬 문법 검사와 HTML 기능 검사를 통과했습니다. 실제 SAP 구문검사·실행은 미수행이며, F05 이후 확인할 사항도 보고서에 명시했습니다.", "M055": "너가 수정한 코드를 보면 내가 기존에 만든 zhrdaehuamt 임시 테이블을 사용해서 대휴 금액을 저장하고 활용했던 곳을 다 삭제하거나 대체한거 같아. 내가 기존에 이런식으로 임시테이블을 만들어 운영하는 방식이 문제가 되었다는거야? 그럼 어떤 부문에서 그런 임시 테이블 운용이 문제가 되어서 너가 지금 메모리 기능을 이용해서 새로 코딩한 신규 수정 방식으로 변경되건지 설명해줘봐\n", "M056": "기존 임시 테이블을 쓰고 읽는 조건을 수정안과 다시 대조하겠습니다. 테이블 자체의 문제인지, 신청별 값을 구분하고 정리하는 방식의 문제인지 나눠 설명드리겠습니다.\n", "M057": "**임시 테이블을 만들어 사용한 것 자체가 잘못이라는 뜻은 아닙니다.** 제가 문제로 본 것은 현재 코드에서 **“지금 읽는 금액이 이번 신청에서 계산한 금액인가?”를 확실하게 구분하지 못하는 부분**입니다. 그래서 기존 함수의 반환값으로 금액을 직접 전달하도록 제안했습니다.\n\n기존 방식의 목적부터 보면 이해되는 구조입니다. 양일을 함께 계산한 대휴 정산금액을 보관했다가, 저장 단계에서 날짜별로 나누어 `JORGEH`에 넣으려는 것입니다. 실제 테이블 설명도 **“휴일-휴일 양일 대휴 정산 금액 배분을 위한 테이블”**입니다. 특히 저장 도중 F05에서 하루씩 재계산하므로, 원래 양일 계산금액을 별도로 보관할 필요는 있습니다. **수정안도 이 보관 목적은 유지합니다.**  \n근거: [ZHRDAEHUAMT 정의](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/Dictionary Object/DBtable/ZHRDAEHUAMT/definition.xml:19\u003e).\n\n현재 운용에서 문제가 될 수 있는 지점은 다음과 같습니다.\n\n| 지점 | 기존 코드의 동작 | 문제가 되는 조건 |\n|---|---|---|\n| **신청 구분** | 임시 테이블 키가 `PERNR + DATUM`, 즉 사번·날짜입니다. | 같은 직원의 같은 날짜라면 이전 신청, 수정 전 계산, 현재 계산을 테이블 행만으로 구별하지 못합니다. |\n| **쓰기와 읽기 조건** | F03에서는 `ZTOMO = X`일 때 기록합니다. SAVE에서는 해당 저장 분기에 들어오면 사번·날짜로 조회합니다. | 현재 입력이 익일 입력이 아니어서 새 값을 쓰지 않았는데도, SAVE가 과거의 잔존 금액을 읽을 수 있습니다. |\n| **삭제 범위** | 조회에 성공하면 **읽은 사번·날짜의 행만** 삭제합니다. | 계산할 때 두 날짜를 기록하고 저장할 때 한 날짜만 소비했다면, 다른 날짜의 행은 이 삭제로 없어지지 않습니다. |\n| **같은 날짜의 여러 계산 행** | 각 계산 행을 `MODIFY`합니다. 날짜별 합산 후 저장하지 않습니다. | 토8·일6·토2가 있으면 토요일 앞 금액을 뒤 금액으로 덮어쓸 수 있습니다. 시간 분할 자체와는 별개의 전달 문제입니다. |\n\n쓰기와 읽기·삭제 조건은 각각 [F03 원본 L5774–5782](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5774\u003e)과 [SAVE 원본 L163–170](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:163\u003e)에서 확인했습니다. 두 날짜 저장 분기에도 같은 조회·삭제가 있습니다.\n\n예를 들어 **이전 신청의 일요일 금액 20,000원이 임시 테이블에 남아 있다**고 가정하면 다음과 같은 일이 가능합니다.\n\n| 순서 | 처리 |\n|---|---|\n| ① | 같은 직원이 그 일요일의 다른 시간대에, 익일로 넘어가지 않는 대휴 대상 근무를 입력합니다. |\n| ② | 현재 조건으로 계산한 정산금액은 60,000원입니다. |\n| ③ | 이번 입력은 `ZTOMO`가 공란이므로 F03에서 임시 테이블을 새 금액으로 갱신하지 않습니다. |\n| ④ | SAVE가 같은 사번·일요일로 조회하여 **남아 있던 20,000원을 `JORGEH`에 넣습니다.** |\n| ⑤ | 읽은 20,000원 행은 삭제됩니다. 저장 후 임시 테이블을 보면 이미 없어졌을 수 있습니다. |\n\n이 경우에는 **계산식이 60,000원을 정확히 계산했어도 저장 과정에서 20,000원으로 바뀝니다.** 앞 단계에서 웹이 새 금액을 제대로 복사했더라도 뒤의 임시 테이블 조회가 다시 덮어쓸 수 있습니다.\n\n다만 이것은 잔존 행과 조회 조건이 맞는 경우의 시나리오입니다. 모든 다음 입력에 영향을 준다는 뜻은 아니며, 실제 잔존·확정 여부는 SAP의 트랜잭션과 운영 데이터를 확인해야 합니다.\n\n제가 기존 반환값을 이용한 이유는 **SAVE가 이미 저장할 때 현재 입력으로 계산 함수를 다시 호출하고, 그 결과를 직접 받고 있기 때문**입니다.\n\n원본에도 다음 두 통로가 있습니다.\n\n- `ES_OVERTIME_DATA`: 신청의 계산 결과 구조.\n- `T_ZDAEH`: 날짜별 대휴 상세. 금액 필드도 포함합니다.\n\n[SAVE 원본 L40–59](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:40\u003e)에서 이미 두 결과를 받고 있습니다. 따라서 별도 메모리 저장 기능을 새로 만든 것이 아니라, **기존 함수 인수와 내부 테이블을 금액 전달에도 활용하도록 보완한 것**입니다.\n\n| 기존 방식 | 제안 방식 |\n|---|---|\n| 양일 계산 → 임시 DB 기록 → 사번·날짜로 다시 조회 → JORGEH 반영 → 임시 행 삭제 | 양일 계산 → 기존 반환 구조·내부 테이블로 전달 → 날짜별 합산·배분 → JORGEH 반영 |\n\n제안 방식에서는 SAVE가 받은 **이번 호출의 전체 금액과 날짜별 상세**를 보관합니다. F05가 하루씩 재계산한 뒤에도 그 보관값으로 최종 `JORGEH`를 설정합니다. 저장할 때 다시 계산하므로 화면을 열어 둔 동안 메모리에 금액을 계속 유지할 필요도 없습니다. 최종 금액은 기존대로 `ZTHRBS01`에 저장됩니다.\n\n또한 `CLEAR`·`REFRESH`로 비우는 대상은 이번 호출의 내부 테이블입니다. 기존 DB 테이블의 남은 행을 지우는 명령은 아닙니다. 수정안은 **해당 경로에서 과거 DB 행을 더 이상 읽지 않도록 하여 혼입을 차단**합니다.\n\n**임시 DB를 유지하면서 고치는 것도 가능합니다.** 그 경우에는 날짜별 합산 저장, 이번 신청 금액임을 확인하는 방법, 미소비 행 정리, 중단·동시 처리 시의 조회·삭제 범위를 함께 보완해야 합니다. 이번에는 기존 반환 통로가 이미 있으므로, 그 통로를 활용하는 편이 신청 간 금액 혼입을 막는 조건을 더 단순하게 만들 수 있다고 판단했습니다.\n\n현재 제안은 이 두 소스의 금액 전달 경로를 바꾼 것입니다. 테이블 정의나 기존 DB 데이터를 삭제한 것은 아니며, **임시 테이블 운용이 실제 반기 보정 오류의 주원인이었다고 확정한 상태도 아닙니다.**", "M058": "즉 사고 시나리오로 생각해보면 기존에 휴휴로 입력하고 있다가 사용자가 다시 마음을 바꿔서 입력하는 경우, 그리고 통상근무가 아닌 해외출장, 시차근무, 당번특근 같은 사람들이 8시간 이상 기준 시간을 휴일에 입력해서 쪼개 지는 경우들도 그렇고 내가 만든 zhrdaehuamt의 테이블이 이런 사용자들의 유연한 변경을 정확히 수정해서 반영하지 못하고 계속 기존 입력분의 잔재가 남아있게되어 혹은 영향을 미치게 되어 값이 틀어지거나 덮어써지는 시나리오라는거네?\n", "M059": "**네, 큰 방향은 맞습니다. 다만 두 가지 사고 시나리오를 구분하면 더 정확합니다.**\n\n1. **사용자가 입력을 바꾸면서 이전 금액이 영향을 주는 경우**\n\n   처음 휴휴로 계산하면서 임시 테이블에 금액을 기록했는데, 이후 날짜·시간·익일 여부 등을 바꿨을 때 **이전 계산에서 남은 행이 현재 입력에 맞게 갱신되거나 정리되지 않는 경우**입니다.\n\n   이후 SAVE가 같은 사번·날짜로 그 행을 읽으면, 현재 계산금액 대신 이전 금액이 `JORGEH`에 들어갈 수 있습니다. **마음을 바꿨다는 사실만으로 오류가 나는 것은 아니고**, 잔존 행과 조회 조건이 맞아야 합니다. 새 값으로 정상 갱신되거나 삭제됐다면 이 문제는 없습니다.\n\n2. **한 번의 입력 안에서 같은 날짜 금액이 덮어써지는 경우**\n\n   당번특근·해외출장·시차근무가 분할 조건을 충족하여 `토8 → 일6 → 토2`처럼 계산되면, 임시 테이블에는 토요일을 구분하는 칸이 하나뿐입니다.\n\n   따라서 토요일 8시간분을 기록한 뒤 토요일 2시간분으로 **교체**합니다. 필요한 것은 두 금액의 **합산**인데 그렇게 처리하지 않는 것입니다. 이 문제는 **사용자가 입력을 변경하지 않아도 한 번의 계산에서 발생할 수 있습니다.**\n\n여기서 분할 기준은 모두 ‘8시간 이상’으로 고정된 것은 아닙니다. 유형별 기준시간을 **초과**하고 다른 분할 조건도 충족해야 하며, 앞서 확인한 선택근무 경로와 통상 A의 휴일 행은 이 분할 사례에서 제외됩니다.\n\n따라서 정확한 이해는 **“현재 임시 테이블 운용에는 이전 신청과 현재 신청을 구분하는 문제, 같은 신청의 여러 계산 행을 합산하는 문제가 함께 있다”**입니다. 이번 수정안은 현재 호출의 계산 결과만 직접 전달하고 날짜별로 합산하여 두 문제를 막으려는 것입니다. 실제 반기 보정 건이 어느 시나리오에 해당하는지는 운영 데이터로 확인해야 합니다.", "M060": "현재 임시 테이블 운용에는 이전 신청과 현재 신청을 구분하는 문제, 같은 신청의 여러 계산 행을 합산하는 문제가 함께 있다” -\u003e 이거의 큰원인은 zhrdaehuamt 의 키가 사번과 날짜뿐인게 가장큰 문제였던거고 맞지? 애초에 나는 사용자가 한 화면에서 여러번 변경하면서 까지 입력할거라고 상정하지 않았떤거 같아\n", "M061": "네. **이전 신청과 현재 신청을 구분하지 못한다는 점에서는 `사번 + 날짜`만 있는 키 구성이 핵심 원인 중 하나입니다.** 같은 직원·같은 날짜이면 어떤 신청에서, 어떤 입력 조건으로 계산한 금액인지 구별할 수 없으니까요.\n\n다만 **키만 바꾸면 두 문제가 모두 해결되는 것은 아닙니다.**\n\n| 문제 | 키와의 관계 | 함께 필요한 처리 |\n|---|---|---|\n| 이전 계산금액이 현재 신청에 섞임 | 사번·날짜만으로 이전/현재 계산을 구분하지 못함 | 이번 계산의 값임을 보장하고, 남은 값의 조회·정리를 관리 |\n| 같은 신청의 토8·토2 금액이 덮어써짐 | 날짜별 한 행을 저장하는 키 자체는 사용할 수 있음 | 토요일 금액을 **합산해서 저장**해야 함 |\n\n예를 들어 **신청번호를 키에 추가해도**, 같은 신청 안의 토8·토2는 여전히 같은 키입니다. 지금처럼 각 행을 `MODIFY`하면 뒤 금액이 앞 금액을 덮습니다.\n\n말씀하신 당시 생각을 기준으로 보면, 기존 방식은 다음 전제를 두었던 것으로 이해할 수 있습니다.\n\n- 한 직원·한 날짜의 계산금액은 한 건이다.\n- 계산해서 임시 저장한 금액은 곧바로 읽고 삭제한다.\n- 그 사이 입력 조건이 달라져도 이전 값이 남아 소비되는 경우는 없다.\n\n사용자의 반복 변경이나 같은 날짜의 계산 행 분할은 이 전제를 깨뜨릴 수 있습니다. **다만 반복 변경이 없어도 분할 행 덮어쓰기는 발생할 수 있으므로, ‘사용자가 여러 번 수정할 것을 예상하지 못한 것’만이 원인은 아닙니다.**\n\n그래서 이번 수정안은 키를 늘리는 대신, 기존 함수 반환값을 활용해 **이번 계산의 결과만 전달하고, 같은 날짜의 금액은 합산**하도록 구성한 것입니다. 실제 오류에서 각 원인이 차지한 비중은 아직 확인되지 않았습니다.", "M062": "나는 너말대로 계산해서 임시 저장한 금액은 곧바로 읽고 삭제한다.라고 생각했었어. 그런데 한화면에서 계속 작업하면 이게 삭제되는게 아니고 남아있었던거야?\n", "M063": "화면에서 반복 계산할 때와 실제 저장할 때 임시 테이블을 어떻게 처리하는지 확인하겠습니다. 삭제 코드의 실행 시점과 DB에 값이 남는 조건을 구분해서 설명드리겠습니다.\n", "M064": "**그럴 수 있는 구조입니다. 코드상으로는 ‘계산해서 임시 저장할 때마다 곧바로 읽고 삭제’하지 않습니다.** 임시 테이블에 **쓰는 시점과 읽고 삭제하는 시점이 다릅니다.**\n\n| 사용자 작업 | 기존 코드의 처리 |\n|---|---|\n| 화면에서 시간·대휴 선택 등을 바꾸어 재계산 | 계산 함수를 호출하고, `ZTOMO = X`이면 임시 테이블에 금액을 기록합니다. **이 화면 계산 경로에는 대응하는 삭제가 없습니다.** |\n| 다시 같은 날짜를 익일 조건으로 재계산 | 해당 날짜의 금액을 새 값으로 덮어쓸 수 있습니다. 모든 기존 행을 먼저 비우는 것은 아닙니다. |\n| 익일을 해제하거나 계산 대상 날짜를 변경 | 새 계산에서 기록하지 않는 날짜의 기존 행을 이 쓰기 구간이 정리해 주지는 않습니다. |\n| 실제 저장 처리 | SAVE의 특정 분기에서 임시 금액을 조회하고, **조회한 날짜의 행만 삭제**합니다. |\n\n화면 재계산 호출은 [F06 L570–591](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap:570\u003e), 임시 기록은 [F03 L5775–5782](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap:5775\u003e), 조회 후 삭제는 [SAVE L165–169](\u003c/Users/naviolgu/Documents/ZHR5 근로시간 에이전트/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap:165\u003e)에 있습니다.\n\n따라서 이전 쓰기 결과가 다음 화면 요청까지 유지된다는 조건에서는 다음 순서가 가능합니다.\n\n1. 사용자가 휴휴로 입력해 화면 계산 → 토요일·일요일 임시 금액 기록.\n2. 저장하기 전에 익일을 해제하고 당일 근무로 변경 → 임시 테이블 쓰기를 건너뜀. **앞의 금액을 삭제하는 것도 아님.**\n3. 저장 버튼 클릭 → 현재 조건으로 다시 계산하지만, 뒤의 임시 테이블 조회에서 이전 금액을 가져올 수 있음.\n4. 그 금액을 `JORGEH`에 넣고 나서 해당 임시 행을 삭제.\n\n즉, **‘읽고 삭제’가 실행되더라도 이미 잘못된 이전 금액을 가져온 뒤일 수 있습니다.** 나중에 임시 테이블을 확인했을 때 비어 있다고 해서, 이전 값이 영향을 주지 않았다고 판단할 수는 없습니다.\n\n다만 **실제 화면 작업에서 그 행이 계속 남아 있었는지는 아직 확정하지 않았습니다.** 화면 요청 사이의 DB 확정·취소 처리를 확인해야 합니다. 현재 소스로 확실히 확인한 것은 **화면 계산에서도 쓰기가 발생할 수 있고, 삭제는 매 계산 직후가 아니라 저장의 특정 분기에서만 수행된다는 점**입니다.", "M065": "좋아 이때까지 우리가 대화한 내역을 모두 ai 에이전트 활용 사례의 교육자료로 사용하고 싶어.  그래서 이 방에서 일어난 모든 대화 전문과 내가 캡쳐해서 올린 이미지 파일들 그리고 너가 새로 추가한 그리고 수정한 코드들이 필요해. 특히 신규 코드와 수정된 코드들은 html파일로 만들어서 보고서 형태로 어떤 부문이 추가되었고 수정되었는지 코드와 라인번호까지 붙여서 만들어줬으면 좋겠어. 더불어 각 수정 코드 부문에 내가 오해한 부문으로 발생한 버그와 너가 그부문을 어떻게 캐치해서 수정사항을 권했는지에 대한 과정이 각 코드에 직과적으로 명시 설명 되면 좋겠어. 특히 시각적으로 대휴의 휴일-휴일이 단가 요율이 달라지고 금액이 바뀌는 시나리오 상황 예시와 토8-\u003e일2-\u003e토2 같은 예시들이 어떤문제인지 시각적인 표현 예시가 필요해. 왜냐하면 지금 여기 대화에 나온 내용들이 너무 전문적이고 일반인들은 이해하기어려워. 특히 코드 수정부문은 일반인도 이해하기 쉬울 수준으로 이미지 요소를 통한 설명이 필요해. 이 모든 소스들을 정리해서 압축파일로 만들어줘. 그럼 내가 교육사이트 관리 에이전트한테 이 압축파일을 던지고 페이지를 구성해달라고 할거야\n"};window.MESSAGE_COUNT=65;</script><script src="assets/site.js"></script></body></html>

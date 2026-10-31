@@ -1,0 +1,119 @@
+{
+  "global_audit_exit": 1,
+  "global_missing_or_anchor": 11,
+  "maps_broken": 0,
+  "evidence_errors": 0,
+  "affected_file_link_errors": [
+    {
+      "from": "docs/SOURCE_REGISTER.md",
+      "line": "38",
+      "label": "sources/original/SRC-01.pdf",
+      "target": "../sources/original/SRC-01.pdf",
+      "syntax": "markdown",
+      "status": "MISSING",
+      "resolved": "sources/original/SRC-01.pdf",
+      "note": ""
+    },
+    {
+      "from": "docs/SOURCE_REGISTER.md",
+      "line": "44",
+      "label": "sources/original/SRC-02.pdf",
+      "target": "../sources/original/SRC-02.pdf",
+      "syntax": "markdown",
+      "status": "MISSING",
+      "resolved": "sources/original/SRC-02.pdf",
+      "note": ""
+    },
+    {
+      "from": "docs/SOURCE_REGISTER.md",
+      "line": "50",
+      "label": "sources/original/SRC-03.pdf",
+      "target": "../sources/original/SRC-03.pdf",
+      "syntax": "markdown",
+      "status": "MISSING",
+      "resolved": "sources/original/SRC-03.pdf",
+      "note": ""
+    },
+    {
+      "from": "docs/SOURCE_REGISTER.md",
+      "line": "56",
+      "label": "sources/original/SRC-04.pdf",
+      "target": "../sources/original/SRC-04.pdf",
+      "syntax": "markdown",
+      "status": "MISSING",
+      "resolved": "sources/original/SRC-04.pdf",
+      "note": ""
+    },
+    {
+      "from": "docs/SOURCE_REGISTER.md",
+      "line": "62",
+      "label": "sources/original/SRC-05.txt",
+      "target": "../sources/original/SRC-05.txt",
+      "syntax": "markdown",
+      "status": "MISSING",
+      "resolved": "sources/original/SRC-05.txt",
+      "note": ""
+    },
+    {
+      "from": "docs/SOURCE_REGISTER.md",
+      "line": "68",
+      "label": "sources/original/SRC-06.txt",
+      "target": "../sources/original/SRC-06.txt",
+      "syntax": "markdown",
+      "status": "MISSING",
+      "resolved": "sources/original/SRC-06.txt",
+      "note": ""
+    },
+    {
+      "from": "docs/SOURCE_REGISTER.md",
+      "line": "74",
+      "label": "sources/original/SRC-07.txt",
+      "target": "../sources/original/SRC-07.txt",
+      "syntax": "markdown",
+      "status": "MISSING",
+      "resolved": "sources/original/SRC-07.txt",
+      "note": ""
+    },
+    {
+      "from": "docs/SOURCE_REGISTER.md",
+      "line": "80",
+      "label": "sources/original/SRC-08.txt",
+      "target": "../sources/original/SRC-08.txt",
+      "syntax": "markdown",
+      "status": "MISSING",
+      "resolved": "sources/original/SRC-08.txt",
+      "note": ""
+    },
+    {
+      "from": "docs/SOURCE_REGISTER.md",
+      "line": "86",
+      "label": "sources/original/SRC-09.txt",
+      "target": "../sources/original/SRC-09.txt",
+      "syntax": "markdown",
+      "status": "MISSING",
+      "resolved": "sources/original/SRC-09.txt",
+      "note": ""
+    },
+    {
+      "from": "docs/SOURCE_REGISTER.md",
+      "line": "92",
+      "label": "sources/original/SRC-10.txt",
+      "target": "../sources/original/SRC-10.txt",
+      "syntax": "markdown",
+      "status": "MISSING",
+      "resolved": "sources/original/SRC-10.txt",
+      "note": ""
+    },
+    {
+      "from": "docs/SOURCE_REGISTER.md",
+      "line": "98",
+      "label": "sources/original/SRC-11.txt",
+      "target": "../sources/original/SRC-11.txt",
+      "syntax": "markdown",
+      "status": "MISSING",
+      "resolved": "sources/original/SRC-11.txt",
+      "note": ""
+    }
+  ],
+  "note": "Global audit exit 1 includes historical baseline differences; this is not the new report source check."
+}

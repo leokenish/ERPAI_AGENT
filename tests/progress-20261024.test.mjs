@@ -67,7 +67,15 @@ test('오프라인 미리보기는 모든 압축 조각을 순서대로 복원�
  for(const p of parts){assert.ok((await stat(new URL(p,root))).size<100*1024*1024);vm.runInNewContext(await read(p),scope);}
  assert.equal(scope.erpPreviewParts.length,parts.length);
  const code=gunzipSync(Buffer.concat(scope.erpPreviewParts.map(x=>Buffer.from(x,'base64')))).toString();
- assert.ok(code.includes('globalThis.erpPreviewFiles='));assert.ok(code.includes('kbs-weekly-work-timeline'));assert.ok(code.includes('kbs-smart-erp-main'));
+ assert.ok(code.includes('globalThis.erpPreviewFiles='));
+ const files=JSON.parse(code.match(/^globalThis\.erpPreviewFiles=(.*);\n/)[1]);
+ for(const key of ['huhu','rate','compare','retro','retired','cancel','halfday']){
+  const report=Buffer.from(files[`assets/worktime-modernization/${key}/report.html`].split(',')[1],'base64').toString();
+  assert.ok(report.includes('<style>'));assert.ok(report.includes('<script>'));
+  assert.doesNotMatch(report,/(?:src|href)="report\.(css|js)"/);
+ }
+ assert.ok(code.includes('URL.createObjectURL(new Blob([bytes]'));
+assert.ok(code.includes('kbs-weekly-work-timeline'));assert.ok(code.includes('kbs-smart-erp-main'));
  assert.doesNotMatch(code,/^import .+ from /m);
  assert.ok((await stat(new URL('preview.html',root))).size<100*1024*1024);
  assert.equal((await readdir(new URL('preview-data/',root))).filter(x=>/^part-\d+\.js$/.test(x)).length,parts.length);

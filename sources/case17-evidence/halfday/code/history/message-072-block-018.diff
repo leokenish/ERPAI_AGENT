@@ -1,0 +1,31 @@
+       IF  l_daynr <> '6' AND l_daynr <> '7' AND lv_holiday <> 'X'.
+
++* 기존에 허용하던 반일 근태는 차단 검사에서 제외한다.
++        IF p_zgubun = '1' OR
++           p_zgubun = 'A' OR
++           p_zgubun = 'B'.
++
++          IF ( ls_zthr0080-gunart = '10'
++               AND ( ls_zthr0080-guntype = '13'
++                  OR ls_zthr0080-guntype = '15' ) )
++          OR ( ls_zthr0080-gunart = '30'
++               AND ( ls_zthr0080-guntype = '43'
++                  OR ls_zthr0080-guntype = '44' ) )
++          OR ( ls_zthr0080-gunart = '40'
++               AND ( ls_zthr0080-guntype = '28'
++                  OR ls_zthr0080-guntype = '29' ) ).
++
++* 시작시간 안내는 통상근무에만 적용한다.
++            IF p_zgubun = 'A'.
++              lv_halfday_notice = 'X'.
++            ENDIF.
++
++* 다른 차단 근태가 있는지 다음 근태를 계속 검사한다.
++            CONTINUE.
++
++          ENDIF.
++        ENDIF.
++
+         LOOP AT lt_zcal INTO ls_zcal WHERE zdate BETWEEN lv_begda AND lv_endda.
+           SELECT SINGLE * INTO ls_zthrbs08
+             FROM zthrbs08

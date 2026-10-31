@@ -1,0 +1,22 @@
+[
+  {
+    "file": "images/attachment-01.png",
+    "sha256": "7312d0e01c0cf560a7843d4a2aabf868ebd7921f4b051f1207efd683c98cfae9",
+    "source": "채팅 로그 내 첨부 이미지(전달 해상도)"
+  },
+  {
+    "file": "images/attachment-02.png",
+    "sha256": "a0b7836febe6b638d0934c500f23a758c90ab4d314d6d547ce5d846713290846",
+    "source": "채팅 로그 내 첨부 이미지(전달 해상도)"
+  },
+  {
+    "file": "images/codex-clipboard-b4a24630-7376-476f-b323-7a00df1b99db.png",
+    "sha256": "fdf2f0800e410a65d096b456704720bb3c938e011b84558d8846b25b6b993c3d",
+    "source": "사용자 첨부 로컬 원본 파일"
+  },
+  {
+    "file": "images/codex-clipboard-c3a7b28b-4134-4b4f-96fe-3a0cc97ba06a.png",
+    "sha256": "a0b7836febe6b638d0934c500f23a758c90ab4d314d6d547ce5d846713290846",
+    "source": "사용자 첨부 로컬 원본 파일"
+  }
+]

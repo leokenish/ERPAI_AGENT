@@ -1,0 +1,8 @@
+   DATA : lv_begda   TYPE datum,
+          lv_endda   TYPE datum,
+          lv_flag(1) TYPE c.
++
++* 통상근무자의 반일 근태 안내 여부
++  DATA: lv_halfday_notice TYPE c.
++
+   DATA: rol_count TYPE i.

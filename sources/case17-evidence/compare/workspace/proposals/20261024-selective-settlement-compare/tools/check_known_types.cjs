@@ -1,0 +1,44 @@
+/* Partial local type check using exported field datatypes. Unknown SAP
+ * dependencies are deliberately unresolved; this is not activation proof. */
+const fs = require('fs');
+const path = require('path');
+const crypto = require('crypto');
+const core = require(process.env.ABAPLINT_CORE || '@abaplint/core');
+const out = path.resolve(__dirname, '..');
+const root = path.resolve(out, '../..');
+const config = new core.Config(JSON.stringify({
+  global: {files: '/src/**/*.*'},
+  syntax: {version: 'v700', errorNamespace: '^$'},
+  rules: {check_syntax: true},
+}));
+const reg = new core.Registry(config);
+reg.addFile(new core.MemoryFile('zrpth411_compare.prog.abap',
+  fs.readFileSync(path.join(out, 'ZRPTH411_COMPARE.abap'), 'utf8')));
+const testSource = fs.readFileSync(path.join(out, 'tests/ZRPTH411_COMPARE_TEST.abap'), 'utf8');
+reg.addFile(new core.MemoryFile('zrpth411_compare_test.prog.abap', testSource));
+const loaded = [];
+const needed = ['ZTHR0112','ZTHR0113','ZTHR0132','ZSHR0141','ZSHR0143',
+  'ZSHR0145','ZSHR0146','ZSHR0111','ZSHR0115','ZSHR0137','ZTHRCOST',
+  'ZTHREDITCOST'];
+for (const name of needed) {
+  for (const kind of ['DBtable','Structures']) {
+    const f = path.join(root, 'exports/ZHR5/packages/ZHR5/Dictionary Object', kind, name, 'definition.xml');
+    if (!fs.existsSync(f)) continue;
+    let xml = fs.readFileSync(f, 'utf8').replace(/<\?xml[^>]*\?>/, '');
+    xml = xml.replaceAll('DD02V_WA', 'DD02V').replaceAll('DD03P_TAB', 'DD03P_TABLE');
+    // Use recorded DATATYPE/LENG/DECIMALS; do not invent data element metadata.
+    xml = xml.replace(/<COMPTYPE>E<\/COMPTYPE>/g, '<COMPTYPE/>');
+    reg.addFile(new core.MemoryFile(name.toLowerCase() + '.tabl.xml', '<abapGit>' + xml + '</abapGit>'));
+    loaded.push(name);
+    break;
+  }
+}
+reg.parse();
+const issues = reg.findIssues().map(i => ({file:i.getFilename(), line:i.getStart().getRow(), message:i.getMessage()}));
+const report = {scope: 'partial known-field type analysis; unknown dependencies skipped',
+  source_sha256: crypto.createHash('sha256').update(fs.readFileSync(path.join(out, 'ZRPTH411_COMPARE.abap'))).digest('hex'),
+  test_source_sha256: crypto.createHash('sha256').update(testSource).digest('hex'),
+  loaded, issues};
+fs.writeFileSync(path.join(out, 'known-types-check.json'), JSON.stringify(report, null, 2) + '\n');
+console.log(JSON.stringify(report, null, 2));
+process.exitCode = issues.length ? 1 : 0;

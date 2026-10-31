@@ -1,0 +1,35 @@
+{
+  "as_of": "2026-10-26",
+  "review_status": "pending_business_review",
+  "request": "Different colors for before/after comparison amount, leave count and related columns.",
+  "scope": "ALV field catalog and legend only; main summary and both details. No calculation, selection or database change.",
+  "before": {
+    "file": "proposals/20261024-selective-settlement-compare/revisions/20261026-column-colors/before-ZRPTH411_COMPARE.abap",
+    "sha256": "fd75b6d93d6400e64272e4818a4b211f5a9ddef6958232d86838db58a52396fc"
+  },
+  "after": {
+    "file": "proposals/20261024-selective-settlement-compare/ZRPTH411_COMPARE.abap",
+    "sha256": "6487e6d6198bc2be4a1a25430d5c7fa4a9a886891291bf1d741a9a4d7f3fa748"
+  },
+  "patch_sha256": "f78a92b8a441a00e41f7663cd50c11b27e91db36f2a45951715c5f8e4740ccff",
+  "palette": {
+    "settled": "C410",
+    "current": "C210",
+    "recalculated": "C510",
+    "difference": "C310"
+  },
+  "validation": {
+    "grammar_v700": "PASS",
+    "partial_types": "PASS",
+    "static_contracts_21": "PASS",
+    "generated_core_unchanged": "PASS",
+    "exports_2534_unchanged_since_start": "PASS",
+    "sap_gui_visual_check": "NOT_RUN",
+    "sap_11_employee_recalculation": "NOT_RUN"
+  },
+  "validation_hashes": {
+    "grammar-check.json": "aa2541c2b950c10990d5c0f9550ec072d156af7ea1a31c264c7d679265511dbd",
+    "known-types-check.json": "addbaedf70483fa917e5d378200859ae23288d764ca5977c61bed1ada2cf7bdb",
+    "contract-check.json": "8bab37d8403ac0c0c56e127a6af2e47f7a1d8ddfa01dd13e46b1a2ab36d8eaa0"
+  }
+}

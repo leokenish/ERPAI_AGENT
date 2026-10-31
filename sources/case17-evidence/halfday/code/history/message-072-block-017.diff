@@ -1,0 +1,12 @@
+      WHERE pernr EQ p_pernr
+        AND begda       <= lv_endda
+        AND endda       >= lv_begda
+        AND state       IN ('0','D')
+        AND zaccept     NE 'N'
+-       AND NOT ( ( gunart = '10'
+-                   AND ( guntype = '13' OR guntype = '15' ) )
+-              OR ( gunart = '30'
+-                   AND ( guntype = '43' OR guntype = '44' ) )
+-              OR ( gunart = '40'
+-                   AND ( guntype = '28' OR guntype = '29' ) ) )
+        AND zuhyung     EQ ''.

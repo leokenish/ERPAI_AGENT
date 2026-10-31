@@ -1,0 +1,41 @@
+{
+  "status": "local_static_checks_only_sap_not_run",
+  "report": "ZRPTH411_RET_DEL",
+  "date": "2026-10-28",
+  "sha256": "2b57fcb38c3db5f681490edd68847c3a0c4cf6f7c718c4f0a51e889263c77447",
+  "line_count": 301,
+  "statement_delimiters_and_if_form_loop_balance": "pass_not_a_syntax_compiler",
+  "modern_abap_construct_scan": "none_detected_not_a_basis_700_compile",
+  "referenced_custom_ddic_fields": "present_in_export",
+  "exports_changed": 0,
+  "sap_syntax_check": "not_run",
+  "sap_runtime_tests": "not_run",
+  "manual_sap_test_plan": "README.md",
+  "dependencies_unverified": [
+    "PA2010/P2010 standard DDIC",
+    "standard function bodies",
+    "HR authorization and change-document configuration",
+    "noncooperating concurrent writers"
+  ],
+  "design_review": {
+    "one_employee_parameter": true,
+    "settlement_month_resolved_via_zthr0113": true,
+    "wage_type_8050": true,
+    "confirm_default_no": true,
+    "current_retiree_check": false,
+    "voucher_guard": true,
+    "recheck_after_lock": true,
+    "full_record_keys_for_hr_delete": true,
+    "no_commit_until_all_function_calls_succeed": true,
+    "post_commit_database_read": true,
+    "sap_hr_authorization_not_bypassed": true,
+    "employment_status_not_restricted": true
+  },
+  "link_audit": {
+    "missing_or_anchor": 13,
+    "maps_broken": 0,
+    "evidence_errors": 0,
+    "protected_changes_count": 285
+  },
+  "revision_check": "PA0000/STAT2 removed; delete/unlock FORM unchanged; IF/LOOP/FORM balance checked"
+}

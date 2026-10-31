@@ -1,0 +1,6 @@
+2026-10-30
+PASS: 주요 HTML 로컬 링크 존재 확인
+PASS: MANIFEST SHA256 대조
+PASS: 대화 role=user/assistant 필터 확인
+PASS: ZIP CRC 검사
+NOT_RUN: 브라우저 시각 렌더링 및 SAP 구문/실행

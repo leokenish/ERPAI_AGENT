@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-31",
+  "feedback": "FB-20261031-003",
+  "scope": "선택 CW 실제 호출과 시간외 NORM 후보의 적용 범위 정정",
+  "status": "LOCAL_SOURCE_CHECKS_PASS",
+  "sap_execution": "NOT_RUN",
+  "operating_cause": "REVIEW_REQUIRED",
+  "selective_daily_calls": [
+    {
+      "path": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Function Module/ZHR_52TM_CW_CAL_AND_DAEH/Source code/ZHR_52TM_CW_CAL_AND_DAEH.abap",
+      "line": 1075,
+      "i_opt": "omitted"
+    },
+    {
+      "path": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Function Module/ZHR_52TM_CW_CAL_AND_DAEH/Source code/ZHR_52TM_CW_CAL_AND_DAEH.abap",
+      "line": 1354,
+      "i_opt": "omitted"
+    },
+    {
+      "path": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Include/LZHR008_3F02.abap",
+      "line": 414,
+      "i_opt": "omitted"
+    },
+    {
+      "path": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Include/LZHR008_3F03.abap",
+      "line": 1278,
+      "i_opt": "omitted"
+    },
+    {
+      "path": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Include/LZHR008_3F04.abap",
+      "line": 639,
+      "i_opt": "omitted"
+    },
+    {
+      "path": "exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Include/LZHR008_3F04.abap",
+      "line": 902,
+      "i_opt": "omitted"
+    }
+  ],
+  "i_opt_optional_without_default": "PASS",
+  "ddic_A_and_ztomo": "PASS",
+  "Q85_to_Q98_unique": "PASS",
+  "source_preservation": {
+    "status": "PASS",
+    "files": 2543
+  },
+  "diff_check": 0,
+  "qa_review": "소스 대조 후 평가 기준 작성·AI 자체 검토; 독립 자동 업무평가 NOT_RUN",
+  "scoped_links": {
+    "status": "PASS",
+    "checked": 13
+  },
+  "repository_audit": {
+    "status": "FAIL",
+    "exit_code": 1,
+    "maps_broken": 0,
+    "evidence_errors": 0,
+    "missing_or_anchor": 298,
+    "protected_changes": 286,
+    "note": "기존 전체 감사 누락 링크·보호 스냅샷 차이 유지. 이번 관련 링크 오류0, 기준/스냅샷 수정 없음."
+  }
+}

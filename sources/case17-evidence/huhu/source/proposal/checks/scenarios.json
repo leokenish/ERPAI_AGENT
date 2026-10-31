@@ -1,0 +1,98 @@
+[
+  {
+    "id": "S01",
+    "name": "토8 / 일6 / 토2, 양일 대휴",
+    "expected_label": "토 100,000 + 일 60,000원",
+    "status": "PASS"
+  },
+  {
+    "id": "S02",
+    "name": "계산 행 순서가 바뀜",
+    "expected_label": "날짜별 금액과 합계 동일",
+    "status": "PASS"
+  },
+  {
+    "id": "S03",
+    "name": "대휴X와 특근상세 조건 동시 충족",
+    "expected_label": "상세 3행, 날짜 2묶음",
+    "status": "PASS"
+  },
+  {
+    "id": "S04",
+    "name": "3+2, 다른 날짜가 상세에서 빠짐",
+    "expected_label": "한 대휴 금액 50,000원",
+    "status": "PASS"
+  },
+  {
+    "id": "S05",
+    "name": "3+2, 날짜 상세는 두 묶음",
+    "expected_label": "대휴일 50,000 / 다른 날 0원",
+    "status": "PASS"
+  },
+  {
+    "id": "S06",
+    "name": "2+6, 익일에만 대휴 발생",
+    "expected_label": "익일 대휴 금액 60,000원",
+    "status": "PASS"
+  },
+  {
+    "id": "S07",
+    "name": "6+2, 첫날에만 대휴 발생",
+    "expected_label": "첫날 대휴 금액 60,000원",
+    "status": "PASS"
+  },
+  {
+    "id": "S08",
+    "name": "이전8만원 → 현재6시간 재계산",
+    "expected_label": "새 금액 60,000원 사용",
+    "status": "PASS"
+  },
+  {
+    "id": "S09",
+    "name": "정상 계산값이 0",
+    "expected_label": "이전 비영금액 대신 0원",
+    "status": "PASS"
+  },
+  {
+    "id": "S10",
+    "name": "시차B에서 새J가 계산되지 않은 행",
+    "expected_label": "양일 J 0 유지",
+    "status": "PASS"
+  },
+  {
+    "id": "S11",
+    "name": "D/T 단일일 분할, 새J 0",
+    "expected_label": "한 날짜 J 0 유지",
+    "status": "PASS"
+  },
+  {
+    "id": "S12",
+    "name": "동일 사번·날짜에 임시금액 잔존 가정",
+    "expected_label": "현재 금액 60,000 / 잔존값 미참조",
+    "status": "PASS"
+  },
+  {
+    "id": "S13",
+    "name": "대휴 상세가 없는 입력",
+    "expected_label": "기본 저장 구조의 새J 0",
+    "status": "PASS"
+  },
+  {
+    "id": "S14",
+    "name": "최초 GET_DATA가 E 반환",
+    "expected_label": "금액 저장 단계로 진행하지 않음",
+    "status": "PASS"
+  },
+  {
+    "id": "S15",
+    "name": "날짜별 상세 금액의 단위 변환",
+    "expected_label": "토 100,000원, ×100 한 번",
+    "status": "PASS"
+  },
+  {
+    "id": "S16",
+    "name": "다음 호출에서 새 초기화",
+    "expected_label": "앞 호출의 160,000원이 남지 않음",
+    "status": "PASS"
+  }
+]

@@ -1,0 +1,93 @@
+--- before/ZRPTH411_COMPARE.abap
++++ after/ZRPTH411_COMPARE.abap
+@@ -2,6 +2,7 @@
+ * Title: 선택근무 정산 전후 변경 비교
+ * New read-only report. SAP_BASIS 700. No changes to original objects.
+ * Basis: SRC-17 KSP/300 export 2026-10-22. See accompanying README.md.
++* 2026-10-26: accept AWART's known empty-result return; preserve other errors.
+ * No database INSERT/UPDATE/MODIFY/DELETE, COMMIT, SUBMIT or save callback.
+ * Amounts shown in won. Stored period CURR values are multiplied by 100;
+ * BS01-ZD_MONEY is already in the generation routine's external won unit.
+@@ -276,6 +277,8 @@
+         ls_calc TYPE zthr0113,
+         ls_rate TYPE zshr0143,
+         ls_return TYPE bapireturn1,
++        lv_awart_empty_text TYPE bapireturn1-message,
++        lv_awart_blocked TYPE c,
+         ls_manual TYPE zthreditcost,
+         lv_error TYPE ty_note,
+         lv_index TYPE sy-tabix,
+@@ -352,12 +355,21 @@
+     PERFORM add_note USING lv_error CHANGING ps_out-note.
+     RETURN.
+   ENDIF.
++  CLEAR ls_return.
+   CALL FUNCTION 'ZHR_52TM_AWART_LIST'
+     EXPORTING i_pernr = ps_old-pernr i_begda = ps_old-begda
+               i_endda = ps_old-endda i_zsangsin = 'X'
+     IMPORTING e_return = ls_return
+     TABLES t_data = lt_awart.
+-  IF ls_return-type = 'E' OR ls_return-type = 'A'.
++* AWART_LIST returns E/M01 for a valid empty auxiliary attendance list.
++* Empty AWART does not mean that the employee has no working-time actuals.
++  DESCRIBE TABLE lt_awart LINES lv_rows.
++  IF ls_return-type = 'E' AND lv_rows = 0.
++    PERFORM get_awart_empty_text CHANGING lv_awart_empty_text.
++  ENDIF.
++  PERFORM check_awart_result USING ls_return lv_rows lv_awart_empty_text
++                            CHANGING lv_awart_blocked.
++  IF lv_awart_blocked = 'X'.
+     PERFORM add_note USING ls_return-message CHANGING ps_out-note.
+     RETURN.
+   ENDIF.
+@@ -474,6 +486,50 @@
+   ps_out-calc_state = '계산 완료'.
+   IF ps_out-note IS NOT INITIAL.
+     ps_out-calc_state = '확인 필요'.
++  ENDIF.
++ENDFORM.
++
++FORM get_awart_empty_text CHANGING pv_text TYPE bapireturn1-message.
++  STATICS: lv_loaded TYPE c,
++           lv_text TYPE bapireturn1-message.
++  DATA: lt_text TYPE STANDARD TABLE OF textpool,
++        ls_text TYPE textpool.
++  IF lv_loaded IS INITIAL.
++* Match the function group's own M01 text in the current logon language.
++    READ TEXTPOOL 'SAPLZHR008_2' INTO lt_text LANGUAGE sy-langu.
++    IF sy-subrc = 0.
++      READ TABLE lt_text INTO ls_text WITH KEY id = 'I' key = 'M01'.
++      IF sy-subrc = 0 AND ls_text-entry IS NOT INITIAL.
++        lv_text = ls_text-entry.
++      ENDIF.
++    ENDIF.
++    IF lv_text IS INITIAL.
++* Exact Korean fallback verified in SRC-17 and the supplied test result.
++      lv_text = '해당 데이터가 없습니다.'.
++    ENDIF.
++    lv_loaded = 'X'.
++  ENDIF.
++  pv_text = lv_text.
++ENDFORM.
++
++FORM check_awart_result USING ps_return TYPE bapireturn1
++                              pv_rows TYPE i
++                              pv_empty_text TYPE bapireturn1-message
++                       CHANGING pv_blocked TYPE c.
++  DATA ls_empty_return TYPE bapireturn1.
++  CLEAR pv_blocked.
++  IF ps_return-type = 'E' OR ps_return-type = 'A'.
++    pv_blocked = 'X'.
++  ENDIF.
++* SRC-17 AWART_LIST sets only TYPE=E and MESSAGE=M01 for zero results.
++* Compare the entire return structure so other codes/log details stay errors.
++  IF ps_return-type = 'E' AND pv_rows = 0
++    AND pv_empty_text IS NOT INITIAL.
++    ls_empty_return-type = 'E'.
++    ls_empty_return-message = pv_empty_text.
++    IF ps_return = ls_empty_return.
++      CLEAR pv_blocked.
++    ENDIF.
+   ENDIF.
+ ENDFORM.
+ 

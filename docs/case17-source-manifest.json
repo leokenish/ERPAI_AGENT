@@ -1,0 +1,2122 @@
+[
+  {
+    "path": "sources/case17-evidence/huhu/manifest.json",
+    "sha256": "d8a2c23e51e57a694a9ded3cc8b5cc75b25225b6e89f16bf3b769353f7198df7",
+    "bytes": 28298
+  },
+  {
+    "path": "sources/case17-evidence/huhu/transcript.html",
+    "sha256": "83e3d1f8bd266a63c900f0e4e4c05e86d08a1b1f7d6097f3dae2fc4b817ca5a7",
+    "bytes": 273956
+  },
+  {
+    "path": "sources/case17-evidence/huhu/code-review.html",
+    "sha256": "ea9584edb4225ce5ee3c7cac76d2ba7c90dfe4fe2b96a33957d24d5b1ab19e19",
+    "bytes": 65698
+  },
+  {
+    "path": "sources/case17-evidence/huhu/scenarios.html",
+    "sha256": "6c54d9343931456e1968746c98a42662150feecee311ef821657b209c6f020e0",
+    "bytes": 14851
+  },
+  {
+    "path": "sources/case17-evidence/huhu/README.md",
+    "sha256": "ae53c2bdc8ec6de540c282285e6db5f3c487eb220b49b6bf689a5ba70222455f",
+    "bytes": 4910
+  },
+  {
+    "path": "sources/case17-evidence/huhu/index.html",
+    "sha256": "9c51b7e9ffa24df6cf3f696d9b7aff4e1f54a78acd88cfac6930a82c0eb430ca",
+    "bytes": 10405
+  },
+  {
+    "path": "sources/case17-evidence/huhu/files.html",
+    "sha256": "2d7b0370cdb3204e3bbcefffe293b050dde35b2e73b1b3b267a26520231eb9f4",
+    "bytes": 12374
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source-viewer.html",
+    "sha256": "ec2f614ad113aeee6abf8db27ab44ff80a78e2f7b887b3dd34a64aebd885f524",
+    "bytes": 1741
+  },
+  {
+    "path": "sources/case17-evidence/huhu/PORTAL_HANDOFF.md",
+    "sha256": "c57b35cea9e753b24aee9da0953c72ba38ff24d919463b4d77bf8ef451117e35",
+    "bytes": 6449
+  },
+  {
+    "path": "sources/case17-evidence/huhu/SHA256SUMS.txt",
+    "sha256": "957b3f659ed65094a6d72870dd28b68b51a8f61b9e81ad639bf47e3eb8b3f3c1",
+    "bytes": 14894
+  },
+  {
+    "path": "sources/case17-evidence/huhu/attachments/README.md",
+    "sha256": "4e9875242d2cfec146dba9077ff6bac894185daa19189b8c0fa3773f82051fca",
+    "bytes": 336
+  },
+  {
+    "path": "sources/case17-evidence/huhu/attachments/inventory.json",
+    "sha256": "347241e8e002dad2ce4afe17aadaefbdb9a7e252f51c9539c94b4d343a682714",
+    "bytes": 375
+  },
+  {
+    "path": "sources/case17-evidence/huhu/conversation/transcript.md",
+    "sha256": "183d770ae3ed967de4ffc2855f51a8c5d72e29ef78692a5780a22d5080b7413c",
+    "bytes": 119105
+  },
+  {
+    "path": "sources/case17-evidence/huhu/conversation/transcript.txt",
+    "sha256": "183d770ae3ed967de4ffc2855f51a8c5d72e29ef78692a5780a22d5080b7413c",
+    "bytes": 119105
+  },
+  {
+    "path": "sources/case17-evidence/huhu/conversation/local-link-map.json",
+    "sha256": "5d6cf8310347ae33158ce9b57b0bfdbc924d49ccf4ad454aa0b9adf35d2f2c71",
+    "bytes": 18323
+  },
+  {
+    "path": "sources/case17-evidence/huhu/conversation/messages.json",
+    "sha256": "b5b09ddfedb4222f1dc22a2e4efaa4fcbee9c8c6813c985b49a76788d92f0ec9",
+    "bytes": 135126
+  },
+  {
+    "path": "sources/case17-evidence/huhu/tools/build_visuals.py",
+    "sha256": "765ddb04315613ee5c87294e9bd20f8321d1c07b85b94133f4888adf2060b4a5",
+    "bytes": 10047
+  },
+  {
+    "path": "sources/case17-evidence/huhu/tools/export_sources.py",
+    "sha256": "d95f631835b69b2f36099c29a487c17b5f750f70f0e20c1e3202ad460c594880",
+    "bytes": 8892
+  },
+  {
+    "path": "sources/case17-evidence/huhu/tools/lesson_content.py",
+    "sha256": "f6f930fd83574b5ad19008759f1883a1b10ad6c689d354336bdef2cd1d6506a6",
+    "bytes": 13693
+  },
+  {
+    "path": "sources/case17-evidence/huhu/tools/finalize_package.py",
+    "sha256": "92d79aa5ad8e2bab4d2b66f488c1383c14bbf0cb0802f8c051d59706e62b2a24",
+    "bytes": 10377
+  },
+  {
+    "path": "sources/case17-evidence/huhu/tools/check_site.cjs",
+    "sha256": "5aea2f762192116e0a9bbb1dfbcd256b0d6a14cc39bfc9afd6b53a7ba7a8eab3",
+    "bytes": 6849
+  },
+  {
+    "path": "sources/case17-evidence/huhu/tools/build_site.py",
+    "sha256": "37a0f7a4e6025f7f452ff94ce83a5865f5d5ff14846884ff2b3a812cada6add2",
+    "bytes": 28849
+  },
+  {
+    "path": "sources/case17-evidence/huhu/assets/site.css",
+    "sha256": "0d4015636955c0db17746240c02fc954ce7042782e489a51f9cd05a7d70cdcea",
+    "bytes": 11376
+  },
+  {
+    "path": "sources/case17-evidence/huhu/assets/source-data.js",
+    "sha256": "47d7da5a0bfe21ec1072f125e405662e1ce5efc55872aaa15d79c5b41c3901a3",
+    "bytes": 2050728
+  },
+  {
+    "path": "sources/case17-evidence/huhu/assets/site.js",
+    "sha256": "3d144707450fad184a466efe0b817392ca6be36a20c93ffeb2f260e446ebdc24",
+    "bytes": 7531
+  },
+  {
+    "path": "sources/case17-evidence/huhu/data/change-stories.json",
+    "sha256": "0fd0c16e0bb8e292c17b2b0c911e05bf8c0612c374ca904653750e5348ae9e63",
+    "bytes": 24644
+  },
+  {
+    "path": "sources/case17-evidence/huhu/data/case-study.json",
+    "sha256": "9df4e2ed7bf956e0e96e2a225193b043865a3e891f6636b5973af71b2f681175",
+    "bytes": 14874
+  },
+  {
+    "path": "sources/case17-evidence/huhu/data/INSTRUCTOR_NOTES.md",
+    "sha256": "cfdca102fa81fa49579dbb3d9638b0bde9ecab4ebb431599fdf494d9fdf11e50",
+    "bytes": 3075
+  },
+  {
+    "path": "sources/case17-evidence/huhu/evidence/package-check.json",
+    "sha256": "22ddaa2f8fde719dbcd4e95dc58dc936fdb967ee60addc01981c6e50afb1a2c7",
+    "bytes": 1047
+  },
+  {
+    "path": "sources/case17-evidence/huhu/evidence/copied-files.json",
+    "sha256": "f7e9477b6b008e7aa0928ae3c7863f22b1ec18e3ed947ea771cd88533dafc755",
+    "bytes": 18803
+  },
+  {
+    "path": "sources/case17-evidence/huhu/evidence/conversation-coverage.json",
+    "sha256": "91ed96c19d80fccc7c9641f45121fa6b7594640df00dccafb0acb061d311d261",
+    "bytes": 938
+  },
+  {
+    "path": "sources/case17-evidence/huhu/evidence/app-thread-receipt.json",
+    "sha256": "560ee47c2356772314d5fb621e0f87998b1e68a7b6242122e348e7ff6ce040dc",
+    "bytes": 23878
+  },
+  {
+    "path": "sources/case17-evidence/huhu/evidence/workspace-map-audit.json",
+    "sha256": "bf3d89953786f62e7df88895f1cff91ada964f31cfbe965ccd203dfdeba24e89",
+    "bytes": 607
+  },
+  {
+    "path": "sources/case17-evidence/huhu/evidence/browser-check.json",
+    "sha256": "f491d2c14d8b4170194697f37424f84e093a20ff61fdec98e33807d3c808ce20",
+    "bytes": 1193
+  },
+  {
+    "path": "sources/case17-evidence/huhu/evidence/preview-code.png",
+    "sha256": "5cf1b69c0f9a733512af24a78f2f393a7cb51ac01e291977245a0ea8b2c8474e",
+    "bytes": 216552
+  },
+  {
+    "path": "sources/case17-evidence/huhu/evidence/preview-mobile.png",
+    "sha256": "405e506bcf29edbf1fbbd93724e31ea3e3743529062dccdd6978b49b5322d80c",
+    "bytes": 83002
+  },
+  {
+    "path": "sources/case17-evidence/huhu/evidence/historical-link-issues.json",
+    "sha256": "89007c92b728155bb37360117bd86b690d6bc320bbc66cd418978c5bfe9995e5",
+    "bytes": 850
+  },
+  {
+    "path": "sources/case17-evidence/huhu/evidence/preview-rates.png",
+    "sha256": "2923d4ea945bda70a14eb9d805a0120466c7bed61cc24126503dfc6010281f62",
+    "bytes": 231267
+  },
+  {
+    "path": "sources/case17-evidence/huhu/evidence/preview-index.png",
+    "sha256": "c457bdc96c748f4934dd5e1d31a628426674494319432ef807fbc6d2a53a04f4",
+    "bytes": 148086
+  },
+  {
+    "path": "sources/case17-evidence/huhu/conversation/code-blocks/M020-3.abap",
+    "sha256": "56d19498aa2f14bd25ee8fe80392f73d9344fc3f734bbed4f464402c8e6187b8",
+    "bytes": 47
+  },
+  {
+    "path": "sources/case17-evidence/huhu/conversation/code-blocks/index.json",
+    "sha256": "8a7afd170975cd5df919956931dfc4ba2bcc8524a4063c574fb6716091d3f42e",
+    "bytes": 2499
+  },
+  {
+    "path": "sources/case17-evidence/huhu/conversation/code-blocks/M020-2.abap",
+    "sha256": "80cf36021442c6316920fa4a3f0aa8be86c93f3204c71fc6a32b47f109993d5a",
+    "bytes": 40
+  },
+  {
+    "path": "sources/case17-evidence/huhu/conversation/code-blocks/M011-1.abap",
+    "sha256": "83759c64ac3d3427a947036ce628e5ef759734a40210d01a7a9fd627c033fc7e",
+    "bytes": 136
+  },
+  {
+    "path": "sources/case17-evidence/huhu/conversation/code-blocks/M011-3.txt",
+    "sha256": "ffc085ba2475dc722b3d1e08299cc7325350aa6eab49843d4e97d50be82cf226",
+    "bytes": 66
+  },
+  {
+    "path": "sources/case17-evidence/huhu/conversation/code-blocks/M026-3.abap",
+    "sha256": "96906aa01e33f1dbee077c796c6f1ff4b5d4273ff3292cb599ed3f9fb2b3e140",
+    "bytes": 91
+  },
+  {
+    "path": "sources/case17-evidence/huhu/conversation/code-blocks/M026-1.abap",
+    "sha256": "fc76b16d803a389bf4125c178c23077c1085067ab876bcaf24de752a4cb2834d",
+    "bytes": 121
+  },
+  {
+    "path": "sources/case17-evidence/huhu/conversation/code-blocks/M020-1.txt",
+    "sha256": "7557ff070ee2ac9066a76bc283233d50a4f4b6b8ed48c73b3628eb8265fc8dab",
+    "bytes": 91
+  },
+  {
+    "path": "sources/case17-evidence/huhu/conversation/code-blocks/M026-2.abap",
+    "sha256": "60ab2654bdfb82c6d989aa98a6012ea9f77c5942a7707a74e23cd3f2a6855fd6",
+    "bytes": 19
+  },
+  {
+    "path": "sources/case17-evidence/huhu/conversation/code-blocks/M030-1.txt",
+    "sha256": "48a31af79d4edc49c63886444a59c263d0e8f790be29629d73bea6a2fb3fd4ff",
+    "bytes": 73
+  },
+  {
+    "path": "sources/case17-evidence/huhu/conversation/code-blocks/M011-2.txt",
+    "sha256": "c0c6925983db60581365260de094dca2416f7c50bd77e356b109e8f53098f6b7",
+    "bytes": 69
+  },
+  {
+    "path": "sources/case17-evidence/huhu/research/reviews/check_scenarios.py",
+    "sha256": "ba54b13ac10fdfa1751396e80a4f33f0fd5c9c922ac58a94ba279bf553927bc1",
+    "bytes": 6873
+  },
+  {
+    "path": "sources/case17-evidence/huhu/research/reviews/scenario-results.json",
+    "sha256": "0372f7779cc96ca36b965319939969dce21fbd5e6dee04a26bf80eb0e3944abb",
+    "bytes": 5921
+  },
+  {
+    "path": "sources/case17-evidence/huhu/research/reviews/verification-split-pay.json",
+    "sha256": "b41bdbb6227e94d222a25d17c710d3b76cf8bc50d29a913998578f84039b66d8",
+    "bytes": 2535
+  },
+  {
+    "path": "sources/case17-evidence/huhu/research/reviews/verification-nonhuhu-reason.json",
+    "sha256": "c361469eb68a2802efdff40ba51b15b7633024e9b7783a56d4fbb3997e828c98",
+    "bytes": 1005
+  },
+  {
+    "path": "sources/case17-evidence/huhu/research/reviews/verification-followup.json",
+    "sha256": "93d57b4d6bb7713986988af189481bb0778411bd7c7a072e4fe4ec7a9a3533ad",
+    "bytes": 2292
+  },
+  {
+    "path": "sources/case17-evidence/huhu/research/reviews/verification-selective-scope.json",
+    "sha256": "7171984905879e5c2035b5248daff2373452c1e7c634858e72926de3090ea39a",
+    "bytes": 2044
+  },
+  {
+    "path": "sources/case17-evidence/huhu/research/reviews/verification-scope-review.json",
+    "sha256": "c1bfe6b98043bcfb7a5b4f77aa2b1d7da614a1d1877d1dd56eb63209bf98efb3",
+    "bytes": 1219
+  },
+  {
+    "path": "sources/case17-evidence/huhu/research/reviews/verification.json",
+    "sha256": "5c7b137cd1c16082cecc5a06cd68a3b78463ddca45ea347aed7ae475b8645c44",
+    "bytes": 1411
+  },
+  {
+    "path": "sources/case17-evidence/huhu/research/workspace/docs/EXPORT_GUIDE.md",
+    "sha256": "3b52d937cb42debca52c69890c9db26823039cd9138762598afdd7fb215720de",
+    "bytes": 6754
+  },
+  {
+    "path": "sources/case17-evidence/huhu/research/workspace/knowledge/OPEN_QUESTIONS.md",
+    "sha256": "30f0b9d4c5794db82eeee2754f1dc4b983beb4ab15ec707b1de843cffc7b8220",
+    "bytes": 16518
+  },
+  {
+    "path": "sources/case17-evidence/huhu/research/workspace/knowledge/processes/huhu-jorgeh-investigation.md",
+    "sha256": "580275a8d9c6cbbbce76089b021da9c6562b7bfc71532ea9d7cbf4b208449ffd",
+    "bytes": 51094
+  },
+  {
+    "path": "sources/case17-evidence/huhu/research/workspace/knowledge/reference/erp-environment.md",
+    "sha256": "e7214bc056aaa9a11dcbe912642482cad7483e59c16c323e1fcaf802a77c9903",
+    "bytes": 2308
+  },
+  {
+    "path": "sources/case17-evidence/huhu/research/workspace/harness/feedback/FB-20261031-001.md",
+    "sha256": "965c90b3168854df212c94044cc0a205ba0c838a9466908e51a7462b34474dd1",
+    "bytes": 2336
+  },
+  {
+    "path": "sources/case17-evidence/huhu/research/workspace/harness/feedback/FB-20261031-006.md",
+    "sha256": "3e7209da826bd304c54162d47d7ea61ce9e2bb074bac1199f71bcd02c87e7a42",
+    "bytes": 2259
+  },
+  {
+    "path": "sources/case17-evidence/huhu/research/workspace/harness/feedback/FB-20261031-002.md",
+    "sha256": "f0f9bccb1bce65929afbbdcce9d6f6d208429ae31a1d9d32fb8e096b048a0c42",
+    "bytes": 4074
+  },
+  {
+    "path": "sources/case17-evidence/huhu/research/workspace/harness/feedback/FB-20261031-004.md",
+    "sha256": "793c9ce96b68486398633abbc90dea5faf9dac4437b927f8cfb3e66f339ee25e",
+    "bytes": 2323
+  },
+  {
+    "path": "sources/case17-evidence/huhu/research/workspace/harness/feedback/FB-20261031-003.md",
+    "sha256": "164a6c78b3dbc006e07335f6bf145afd01e634be050bc410ab6853030aab3d9a",
+    "bytes": 2907
+  },
+  {
+    "path": "sources/case17-evidence/huhu/research/workspace/harness/feedback/FB-20261031-005.md",
+    "sha256": "bb7d5abfacaa86fd3521e72fb39dfe91ecc07d81c983bbce534f912196c0fd72",
+    "bytes": 2349
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/changes.json",
+    "sha256": "f0c841533ae52de785b2906ed7dcefd78f256fceef01cfc11dd090a5399736fa",
+    "bytes": 16012
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/F03.patch",
+    "sha256": "6951d49480294e3b53091a5060e0a9c6082014a3a16cefa1090d31f485903315",
+    "bytes": 2770
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/README.md",
+    "sha256": "90f60d3366e0cd6d5bb99ec0a5b05c17ae7f52d017cca34ae276b550f5c703b6",
+    "bytes": 3590
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/source-hashes-before.json",
+    "sha256": "2b89e010106bde31464ab69b7f02feb5e96d95b64a583d0acb666ec62514748b",
+    "bytes": 903524
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/SAVE.patch",
+    "sha256": "67a1c8cf74a61c432500dfde99dd631ab21a8ddfddda6d5a35ceb8534d07fe14",
+    "bytes": 6167
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/report.html",
+    "sha256": "a1016c14d87711c73ed15504c50665dfda934a15d34215ef7bd0c2dbd6b93486",
+    "bytes": 77161
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/proposed/ZHR_52TM_GET_OVERTIME_SAVE.abap",
+    "sha256": "a309f67617a37d14216cb46e3d06befaf22142d526610c25695d76f1db49db2c",
+    "bytes": 14044
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/proposed/LZHR008_2F03.abap",
+    "sha256": "3736dae7298751cdcdfa2b9cf49deb9dda05741150a93db1f335785f81e42b8c",
+    "bytes": 222156
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/checks/validation.json",
+    "sha256": "ef6e569d7a6b0448c3a552cc3d829ae97309309ed6e1184d6c4e403e73bbceee",
+    "bytes": 551
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/checks/report-desktop.png",
+    "sha256": "ee226a4def80e1fb18e75c0ec279d04002f3580d3fbddf785e532b7db9435e28",
+    "bytes": 166289
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/checks/code-hashes.json",
+    "sha256": "77fda0cce574649954a8b7c578ad88ebf1136f5f278c204d20a77331612e106b",
+    "bytes": 439
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/checks/html.json",
+    "sha256": "e776b84e03fabf6e8bee9cb57c667452ba946f7a11b07c194b36a9ddb1dd5e40",
+    "bytes": 494
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/checks/scenarios.json",
+    "sha256": "edaac214ae2f05eb05076613318f8aaae5efcd6d78f6ce45bf26688409f86dbc",
+    "bytes": 2471
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/checks/report-mobile.png",
+    "sha256": "5da3b00d01726057518ac4a0e2d68b076c956c852e7a2193d2cb2889f0c862e7",
+    "bytes": 68856
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/checks/links.json",
+    "sha256": "25f02c76c8c616d03f76f5d8b73fad66574ba7f72906ebc53a7ca182edea33b7",
+    "bytes": 347
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/checks/grammar.json",
+    "sha256": "9f54c5879be15040c3b39b5f117fc80af00570d5be1e52fb89eb02b4eb6e086d",
+    "bytes": 204
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/checks/report-comparison.png",
+    "sha256": "4792bb485799840d81b155a7035db5b59d50bb99490bf657d1a59e36ab64a600",
+    "bytes": 308198
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/tools/build_report.py",
+    "sha256": "91b5d643e1c43aa0ca88cea54e6d6d42caaa96fab784d3c846a4c53e57b9afc9",
+    "bytes": 28082
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/tools/report.js",
+    "sha256": "7deb9ada65d06fafed79f85061d3cd269fefbc737b4352149b28a1c9c79df77d",
+    "bytes": 2160
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/tools/report.css",
+    "sha256": "226e284ff5c6864d113627010c6f1d5fb78294834aac60935caabfe2dc507cf2",
+    "bytes": 9472
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/tools/check_html.cjs",
+    "sha256": "4fc0079e4a02d754e2901d410fde3c6e6d7f8bdb1b5925f1e62d296cb9853c13",
+    "bytes": 4305
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/tools/check_abap.cjs",
+    "sha256": "a937b9a71de93c3fc1a1b5504843fad2d5531d45a0c4e0aa10f0d0d3a6ca1d16",
+    "bytes": 1653
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/tools/verify.py",
+    "sha256": "c712629ad5b2c4804ee6e2dc7acbe452115faa8d9f68a79ed6997b5f8d77d627",
+    "bytes": 7201
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/originals/ZHR_52TM_GET_OVERTIME_SAVE.abap",
+    "sha256": "03decc75281958df2e7ae8ca7565c1d39b9f23b0128646d8cac2baafc247e630",
+    "bytes": 12774
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/originals/LZHR008_2F03.abap",
+    "sha256": "56315f03face19a05fe2f133a0ce12f74add846d9a92cfa555f6ae31b1853493",
+    "bytes": 222272
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/snippets/SAVE-03.abap",
+    "sha256": "abc55abc4a2b145001af668a7b88e1972e0deddcd09b807a1909b0d7c59e6fcf",
+    "bytes": 1713
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/snippets/F03-02.abap",
+    "sha256": "f7eff258ad03467c353ab2be3f8c32dd9d4ed5f08e3abe6b656bdb655b87d502",
+    "bytes": 229
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/snippets/F03-03.abap",
+    "sha256": "6432a532163817189833c4ff6d68be8189bbc57b8ccd6051135449e388c83cf7",
+    "bytes": 506
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/snippets/SAVE-02.abap",
+    "sha256": "fc8f8cd7f3d727c3b8cdc929d77413ab33927aa191f833ed2a455616a0251dc3",
+    "bytes": 397
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/snippets/SAVE-05.abap",
+    "sha256": "9d28c7b0a88e761aac0b35e1e62e503f3c54efd555a3ee276242cfbd9837d48a",
+    "bytes": 619
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/snippets/F03-01.abap",
+    "sha256": "112dac78d3a417e341ed4482d1565c5e82835791230122a45233177e85766f3f",
+    "bytes": 257
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/snippets/SAVE-01.abap",
+    "sha256": "12461d319bae94d3e2c1028a11438e1e4c537e253e3ecb37c6f72f5345d1b3f3",
+    "bytes": 350
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/proposal/snippets/SAVE-04.abap",
+    "sha256": "e6ac174687300b5e6f62199f46e70039fb31de5be90236c601bdd1a84c610d3f",
+    "bytes": 314
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/evidence/knowledge/processes/huhu-jorgeh-investigation.md",
+    "sha256": "580275a8d9c6cbbbce76089b021da9c6562b7bfc71532ea9d7cbf4b208449ffd",
+    "bytes": 51094
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/evidence/exports/ZHR5/packages/ZHR5/Dictionary Object/Structures/ZSHR0131/definition.xml",
+    "sha256": "74058e9bf5cfec64e9449de270d1419f1666c7aa227c29e0f193dc553daf8fbc",
+    "bytes": 128365
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/evidence/exports/ZHR5/packages/ZHR5/Dictionary Object/Domain/ZBSGUBUN1/definition.xml",
+    "sha256": "1bb73eecf6d1029e3ac62d53d8857c52377fe597e2a0e4eed6a4d0ff8bdbf9eb",
+    "bytes": 3895
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/evidence/exports/ZHR5/packages/ZHR5/Dictionary Object/DBtable/ZHRDAEHUAMT/definition.xml",
+    "sha256": "1875732ca7afc2976f51767f110a289432639b31a73e441b162e2272ee762fdd",
+    "bytes": 7036
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/evidence/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH410F01/source/ZRPTH410F01.abap",
+    "sha256": "930833523b09f20689a2eb8030158d1e7f158954645c0c5a1e230d197c08708c",
+    "bytes": 53710
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/evidence/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH409F01/source/ZRPTH409F01.abap",
+    "sha256": "4b917b4c04876d9999f1303d8b227f9f2df417ed7aff77efff2a37f4e8f02ece",
+    "bytes": 45249
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/evidence/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH415F01/source/ZRPTH415F01.abap",
+    "sha256": "e986d6dfb3e60c01b03f42a3ac50b5835b3da392c3a72115b1b5ef960137a39b",
+    "bytes": 57100
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F06.abap",
+    "sha256": "763ece2e049a59bd7488a984194937b400ef7e8ee7c7858ac04459196ce0c119",
+    "bytes": 61486
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F03.abap",
+    "sha256": "56315f03face19a05fe2f133a0ce12f74add846d9a92cfa555f6ae31b1853493",
+    "bytes": 222272
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Include/LZHR008_2F05.abap",
+    "sha256": "4f3f0781f414755abd3906cd6e0dce86c7726b5fd01f67aa4a05b741324579ac",
+    "bytes": 7802
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_NORM_OT_PAY/Source code/ZHR_52TM_CALC_NORM_OT_PAY.abap",
+    "sha256": "2d4857ba97b3d161d8521abe34bb3e2c4c298d8238d01171744c5732cea4775c",
+    "bytes": 13785
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_MOBILE_OVERTIME_APPR/Source code/ZHR_52TM_MOBILE_OVERTIME_APPR.abap",
+    "sha256": "405138af417e2abb0e9b1e0429bfe17e6eb091de5e4f6702808a7734932eb92e",
+    "bytes": 14898
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap",
+    "sha256": "426e7edcf50c124466d59dfdde120aab0c258662931fd8827dc08baa586cc23d",
+    "bytes": 26188
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CHECK_ZDAEH/Source code/ZHR_52TM_CHECK_ZDAEH.abap",
+    "sha256": "419baac81feb216cccf852021463cad37292bc12c9547522f692de95e5da5fc5",
+    "bytes": 7282
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_GET_OVERTIME_SAVE/Source code/ZHR_52TM_GET_OVERTIME_SAVE.abap",
+    "sha256": "03decc75281958df2e7ae8ca7565c1d39b9f23b0128646d8cac2baafc247e630",
+    "bytes": 12774
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Include/LZHR008_3F02.abap",
+    "sha256": "8ac0dde604058e2132f9d694f0a6d9c08c8c3743744ebfd24eaa516ef451b617",
+    "bytes": 20632
+  },
+  {
+    "path": "sources/case17-evidence/huhu/source/evidence/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Function Module/ZHR_52TM_CW_CAL_AND_DAEH/Source code/ZHR_52TM_CW_CAL_AND_DAEH.abap",
+    "sha256": "53a5eb0924859e46453d2f7148722b32a62949d6ed941825a472060d1070053d",
+    "bytes": 97609
+  },
+  {
+    "path": "sources/case17-evidence/huhu/assets/visuals/split-two.svg",
+    "sha256": "62a5d01f10f380a5cacf510ea7733be8e4fdb14c44a64167cc89f566f890d41c",
+    "bytes": 5505
+  },
+  {
+    "path": "sources/case17-evidence/huhu/assets/visuals/split-six.svg",
+    "sha256": "7f64b840e8a582b5701ddc88a6a4221ce42980c8e608505e926bac58eb928cb3",
+    "bytes": 5931
+  },
+  {
+    "path": "sources/case17-evidence/huhu/assets/visuals/error.svg",
+    "sha256": "90db51eb88b9e10cc4a848b9d35161535d292a197708fa9043edd723f1fa7cb2",
+    "bytes": 3632
+  },
+  {
+    "path": "sources/case17-evidence/huhu/assets/visuals/memory.svg",
+    "sha256": "3d1942aacdec9a67ea81a3ea10693e0cc98fb9b5989770de5cb9bc800974fe7b",
+    "bytes": 3256
+  },
+  {
+    "path": "sources/case17-evidence/huhu/assets/visuals/allocation.svg",
+    "sha256": "9c644105a587576bd763182c077183910ae25354aaa17b8df423b276f31728e8",
+    "bytes": 3241
+  },
+  {
+    "path": "sources/case17-evidence/huhu/assets/visuals/index.json",
+    "sha256": "6e063e7b2a7c1655c5a248c6915bde97efddf73f099830c4d6e1cafdba0cf1c3",
+    "bytes": 3879
+  },
+  {
+    "path": "sources/case17-evidence/huhu/assets/visuals/split-six.png",
+    "sha256": "39a14de4e2e1ec3d7e3aa6656bdc961e0a5e5207d81eb89d306cc0941f7dd81d",
+    "bytes": 87809
+  },
+  {
+    "path": "sources/case17-evidence/huhu/assets/visuals/rates.png",
+    "sha256": "0ac6e62f2f1ce965a8516c1ed2b6a298d1c0b692171c09630db20df7bebcf7c5",
+    "bytes": 84282
+  },
+  {
+    "path": "sources/case17-evidence/huhu/assets/visuals/allocation.png",
+    "sha256": "cf3daf51d0be9eaf11b75ea999bf7eb1cad4b7aa46637a4a49a6d48d8d90503a",
+    "bytes": 90592
+  },
+  {
+    "path": "sources/case17-evidence/huhu/assets/visuals/copy.png",
+    "sha256": "d625ec06aef20a94a1c1874d0ea493bfc0a5d28002387b80c44caf0d8d42dc2c",
+    "bytes": 88095
+  },
+  {
+    "path": "sources/case17-evidence/huhu/assets/visuals/error.png",
+    "sha256": "3819a9bc0f361b3f424e35fb3fa25e40809012ec17059df6fb1d0c66d06eaeea",
+    "bytes": 83899
+  },
+  {
+    "path": "sources/case17-evidence/huhu/assets/visuals/rates.svg",
+    "sha256": "040cd9a5d9ceee29f0f0500ca32277b03bc7f5d5ac52b0e45c9c6772759e50db",
+    "bytes": 3797
+  },
+  {
+    "path": "sources/case17-evidence/huhu/assets/visuals/memory.png",
+    "sha256": "1087b93a5f220d74d965ef71331fae41e49b5e59b9684e2f511002012aaa12cd",
+    "bytes": 94461
+  },
+  {
+    "path": "sources/case17-evidence/huhu/assets/visuals/split-two.png",
+    "sha256": "e7259bea90fb779fe24bcddcf1c170a2fb0d3a9dd472f76a04952e3d068a61ca",
+    "bytes": 86802
+  },
+  {
+    "path": "sources/case17-evidence/huhu/assets/visuals/duplicate.svg",
+    "sha256": "1e708f8e01025b9ac29f13032256c97c36e08149b0af9cd246555bf8f4ce82c2",
+    "bytes": 3233
+  },
+  {
+    "path": "sources/case17-evidence/huhu/assets/visuals/lifecycle.svg",
+    "sha256": "545503e073d51f4edf1fa23b32e6f845c915a5e3655e9fcad79e5f7ad4b0ca76",
+    "bytes": 4920
+  },
+  {
+    "path": "sources/case17-evidence/huhu/assets/visuals/copy.svg",
+    "sha256": "c74c9649f53a6bb7b895088415bcd98cd2612ee8785a258bcc145e945bd44581",
+    "bytes": 3665
+  },
+  {
+    "path": "sources/case17-evidence/huhu/assets/visuals/duplicate.png",
+    "sha256": "8199c1eeb9638ced634aeadd975be694198113fd3a0200bc3b878a3e53112b59",
+    "bytes": 92103
+  },
+  {
+    "path": "sources/case17-evidence/huhu/assets/visuals/lifecycle.png",
+    "sha256": "79805c336757e6cbacdd1bf6ace8c5d669d947f3d442073c9ea5d543adacb8b7",
+    "bytes": 88856
+  },
+  {
+    "path": "sources/case17-evidence/rate/package-check.json",
+    "sha256": "0f8729de410eee41dc75c2a806b3fcf629c050880f7c697ae2d0cfabb8c2059f",
+    "bytes": 351
+  },
+  {
+    "path": "sources/case17-evidence/rate/manifest.json",
+    "sha256": "f1c505ff688510b07f1310b013b8ceff404e1ca095dcb93e08b1e41b5ee6f1da",
+    "bytes": 13326
+  },
+  {
+    "path": "sources/case17-evidence/rate/README.md",
+    "sha256": "b05a595e92db5e3c8757e5c223fd37eaad4305e9d6fb4083fee2d80b0e2f0984",
+    "bytes": 2947
+  },
+  {
+    "path": "sources/case17-evidence/rate/index.html",
+    "sha256": "05a7b098e4bf6e7c9655c0da4cc00b78217e77168d2a7238901fc957792cb4b3",
+    "bytes": 6275
+  },
+  {
+    "path": "sources/case17-evidence/rate/PORTAL_HANDOFF.md",
+    "sha256": "2682e5222f4c5bbb06a374b8e45e6a6ae2d8dc2969719c58870c1160bf3d2e39",
+    "bytes": 1917
+  },
+  {
+    "path": "sources/case17-evidence/rate/SHA256SUMS.txt",
+    "sha256": "0da16e0c49f75a4aa3c395cf5f388cc48155491867ba1b20a0f13f91cd66427b",
+    "bytes": 6126
+  },
+  {
+    "path": "sources/case17-evidence/rate/conversation/transcript.md",
+    "sha256": "afcdb42004121b7980e3257c074506c19c44713cebc8ed290848767990d25521",
+    "bytes": 26276
+  },
+  {
+    "path": "sources/case17-evidence/rate/conversation/transcript.html",
+    "sha256": "30b9fdfeba7dd471a5da9b3c45b35ac9ce38261cf620d3f4716dbfad91d74d5d",
+    "bytes": 34282
+  },
+  {
+    "path": "sources/case17-evidence/rate/conversation/user-workspace-context.json",
+    "sha256": "d26745811b3a0d821fb3998b8d0e9cb1d7eeb3d99b7d742efd4a1a4b44e320fa",
+    "bytes": 13193
+  },
+  {
+    "path": "sources/case17-evidence/rate/conversation/messages.json",
+    "sha256": "25ef3039ec8e02bb10339e6c2de44176e5cb38015a0d44836c485b9d625016ba",
+    "bytes": 34173
+  },
+  {
+    "path": "sources/case17-evidence/rate/reference/code-comparison-complete.html",
+    "sha256": "8512afcda929a24967c1264a3e1d141c4fd06246661f3811b06bbf0994d1e18d",
+    "bytes": 286143
+  },
+  {
+    "path": "sources/case17-evidence/rate/reports/full-source.html",
+    "sha256": "a170c94cb0bbee39d8f82af075d637964a538803615d58eac472014f11f4dc7b",
+    "bytes": 227499
+  },
+  {
+    "path": "sources/case17-evidence/rate/reports/static-qa.json",
+    "sha256": "3935966bbf8f43a91e016d77459551133ceb6c77025616abc065027615c444f0",
+    "bytes": 456
+  },
+  {
+    "path": "sources/case17-evidence/rate/reports/code-comparison-complete.html",
+    "sha256": "582582c046e921f790e9a6a365b8def613ed76e5fc9732635c16f7bb9d5c1387",
+    "bytes": 803839
+  },
+  {
+    "path": "sources/case17-evidence/rate/reports/change-index.json",
+    "sha256": "0c6f0819191046bd79fbd199aee5f20ee7dca996665be5da83e050382f832082",
+    "bytes": 136466
+  },
+  {
+    "path": "sources/case17-evidence/rate/reports/read-only-evidence.html",
+    "sha256": "5c024185f53e88d8b20eef42ae591b6bc6fa4360a6acb1bae9535cd5506d4034",
+    "bytes": 16630
+  },
+  {
+    "path": "sources/case17-evidence/rate/tools/build_training_package.py",
+    "sha256": "c2bcdbc80b32753627f9158f221198fb38e612037c8c8cede1fc2d178ea6e077",
+    "bytes": 29382
+  },
+  {
+    "path": "sources/case17-evidence/rate/tools/check_package.py",
+    "sha256": "7983f9b2f7dc3f81b64971eecadb6845c774ffb0703f99de853e1f517499ab62",
+    "bytes": 2866
+  },
+  {
+    "path": "sources/case17-evidence/rate/assets/image-01-original.jpg",
+    "sha256": "0bfff19ade756061ec4ac66a1e9c6966eb58793d874460b2a854888dcc879d18",
+    "bytes": 26870
+  },
+  {
+    "path": "sources/case17-evidence/rate/assets/image-01-transmitted.jpg",
+    "sha256": "0bfff19ade756061ec4ac66a1e9c6966eb58793d874460b2a854888dcc879d18",
+    "bytes": 26870
+  },
+  {
+    "path": "sources/case17-evidence/rate/evidence/read-only-code-excerpts.json",
+    "sha256": "266b835e96fbc7b66e11453ba6e8cc27f312d569d66bded5d5aa4f05144a9045",
+    "bytes": 13397
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/current/daeh-rate-check/ZHR_DAEH_RATE_CHECK.abap",
+    "sha256": "1a7748c30080d632e8c65f666ac0175976f6f92314682eae20dd38f9c359eded",
+    "bytes": 14075
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/current/daeh-rate-check/README.md",
+    "sha256": "d5283c3e2cab5d31f5325d563610be40daa5285146d0c52ac902baca24a18a1e",
+    "bytes": 12679
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/current/daeh-rate-check/verification.json",
+    "sha256": "dd8e063d0252744fde1d8cea2c8461b2aad7d7223cea2d3840a70b2ddb3300ab",
+    "bytes": 700
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/current/daeh-rate-check/tools/check_local.py",
+    "sha256": "32d2a626f8e8dce5a64899c0265d13742153d15bd9f39e43f2f8e31a4e7a8bfd",
+    "bytes": 8175
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/current/daeh-rate-check/revisions/20261030-persk-rate/hashes.json",
+    "sha256": "e475d1cd24677cddaacceaa1765db479c05323f7709f4cb24c6d0f754ef4e3de",
+    "bytes": 292
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/current/daeh-rate-check/revisions/20261030-persk-rate/ZHR_DAEH_RATE_CHECK.abap",
+    "sha256": "73ed1fe315aa09d8a3074d76e6315954202e79ab2ac90473058ef76ad7a8806a",
+    "bytes": 10428
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/current/daeh-rate-check/revisions/20261030-persk-rate/change.patch",
+    "sha256": "691f60456c75d43e46ed919bc0605045c528a991fc3e462c6d58b5444c50ec16",
+    "bytes": 7465
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/current/daeh-rate-check/revisions/20261030-basis700-condition/hashes.json",
+    "sha256": "929c8c1e9f6336cbcf5e4c25124eb8c2a7c1da907ed10187275532fb7a945e2a",
+    "bytes": 304
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/current/daeh-rate-check/revisions/20261030-basis700-condition/ZHR_DAEH_RATE_CHECK.abap",
+    "sha256": "3936ee85ccf2b9ed4d0aa4cabd39a5035c4fa8fc0fc8465ccf9e234f7cce6c5a",
+    "bytes": 10053
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/current/daeh-rate-check/revisions/20261030-basis700-condition/change.patch",
+    "sha256": "9237b01baeab743ce26ebdf3e133dc476e0f0bf5ac06e2bbdc6142fc910b4218",
+    "bytes": 971
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/current/daeh-rate-check/revisions/20261030-money-unit/hashes.json",
+    "sha256": "ab1fe63573d513923b76ebf2531a5029f2ab1e74f776b5fc928a9e0b000f22a9",
+    "bytes": 303
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/current/daeh-rate-check/revisions/20261030-money-unit/ZHR_DAEH_RATE_CHECK.abap",
+    "sha256": "9af8caea6617fad40263c1841e1aed3810725e9eac45caed002206203c1a21c5",
+    "bytes": 10278
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/current/daeh-rate-check/revisions/20261030-money-unit/change.patch",
+    "sha256": "b802df81ea9b144adc211d72da6c67fd84d59ec4bc81a41104622b30853e39e6",
+    "bytes": 1177
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/versions/checker01/check_local.py",
+    "sha256": "a12fb6770c11c50aa6df90490ee70f80855923964aad6d0a1462fe7c952e4a48",
+    "bytes": 3658
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/versions/03-money-unit-fixed/ZHR_DAEH_RATE_CHECK.abap",
+    "sha256": "73ed1fe315aa09d8a3074d76e6315954202e79ab2ac90473058ef76ad7a8806a",
+    "bytes": 10428
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/versions/04-persk-final/ZHR_DAEH_RATE_CHECK.abap",
+    "sha256": "1a7748c30080d632e8c65f666ac0175976f6f92314682eae20dd38f9c359eded",
+    "bytes": 14075
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/versions/checker02/check_local.py",
+    "sha256": "7e07c5a2b1e1c45ea9786d03b09ac23dbcaaa022fbcae03448d05c33ffb6c603",
+    "bytes": 5499
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/versions/01-first-delivered/ZHR_DAEH_RATE_CHECK.abap",
+    "sha256": "3936ee85ccf2b9ed4d0aa4cabd39a5035c4fa8fc0fc8465ccf9e234f7cce6c5a",
+    "bytes": 10053
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/versions/02-basis700-fixed/ZHR_DAEH_RATE_CHECK.abap",
+    "sha256": "9af8caea6617fad40263c1841e1aed3810725e9eac45caed002206203c1a21c5",
+    "bytes": 10278
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/versions/00-initial-local/ZHR_DAEH_RATE_CHECK.abap",
+    "sha256": "d4f1058ba020666c208e303cae2e188e43838614a38091dddac258b8c0028ecc",
+    "bytes": 9776
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/versions/00-initial-local/README.md",
+    "sha256": "a4b97f8a83bfc361cffccc9744460b5dc9ac87ac397c7c4970bda986b5c873b1",
+    "bytes": 6858
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/versions/00-initial-local/check_local.py",
+    "sha256": "6a1f50fe3b795ddda652a96f3290aaabc814886bdbd5089b4598c51e59c190d0",
+    "bytes": 2411
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/versions/checker03/check_local.py",
+    "sha256": "32d2a626f8e8dce5a64899c0265d13742153d15bd9f39e43f2f8e31a4e7a8bfd",
+    "bytes": 8175
+  },
+  {
+    "path": "sources/case17-evidence/rate/source/versions/checker00/check_local.py",
+    "sha256": "6a1f50fe3b795ddda652a96f3290aaabc814886bdbd5089b4598c51e59c190d0",
+    "bytes": 2411
+  },
+  {
+    "path": "sources/case17-evidence/rate/evidence/docs/BUSINESS_FEEDBACK_POLICY.md",
+    "sha256": "c51bb20b5a4128ce73eab79f23292fd2a7f50bb06532792fc35f7f1481bde295",
+    "bytes": 10862
+  },
+  {
+    "path": "sources/case17-evidence/rate/evidence/docs/EXPORT_GUIDE.md",
+    "sha256": "3b52d937cb42debca52c69890c9db26823039cd9138762598afdd7fb215720de",
+    "bytes": 6754
+  },
+  {
+    "path": "sources/case17-evidence/rate/evidence/docs/SOURCE_REGISTER.md",
+    "sha256": "f4c67aeb7a3b7216bdc695c047f5e7b6e8f7fa500f8e4f218cb401b66c05a548",
+    "bytes": 35876
+  },
+  {
+    "path": "sources/case17-evidence/rate/evidence/tests/business-qa.md",
+    "sha256": "24f0b86711cc0ca1b0b1ef1006bdce7683317e83e7c7b065b02eac9c8c7355d1",
+    "bytes": 40788
+  },
+  {
+    "path": "sources/case17-evidence/rate/evidence/knowledge/OPEN_QUESTIONS.md",
+    "sha256": "3647b700cccc8d376dd5132407f78875ff6d69184d219b377e3e90c7e63eac76",
+    "bytes": 14124
+  },
+  {
+    "path": "sources/case17-evidence/rate/evidence/knowledge/INDEX.md",
+    "sha256": "9bc1ef8acc13d9a691f4290705f45068b37df0361b0ae7ff12999c7a140382df",
+    "bytes": 9908
+  },
+  {
+    "path": "sources/case17-evidence/rate/evidence/maps/topics/rest.md",
+    "sha256": "b2a411ca94bfd78dfcd56df9afe4f023215a9de619a2a16e4a7a37a52459ff40",
+    "bytes": 12246
+  },
+  {
+    "path": "sources/case17-evidence/rate/evidence/knowledge/policies/overtime-rate-20260901.md",
+    "sha256": "aee46d813ece5850d80ea8701b756e12ec79036a36c9ff519693d64d39f8e5c4",
+    "bytes": 7811
+  },
+  {
+    "path": "sources/case17-evidence/rate/evidence/knowledge/processes/selective-rate-boundary-review.md",
+    "sha256": "8e8b94a448c4742c56444ca5537a7c5d8fddf94ab22be04c31a6520b3d08fd1e",
+    "bytes": 17569
+  },
+  {
+    "path": "sources/case17-evidence/rate/evidence/knowledge/code-map/working-time.md",
+    "sha256": "2d340161b72de419df37e498c44bfde6b092e04df4239f52a76115299bfb47fa",
+    "bytes": 13359
+  },
+  {
+    "path": "sources/case17-evidence/rate/evidence/harness/feedback/FB-20261030-004.md",
+    "sha256": "17be0354adf8b6290eb925826a55d382e8fb841f046382f5841115aa2d060a62",
+    "bytes": 1701
+  },
+  {
+    "path": "sources/case17-evidence/rate/evidence/harness/feedback/FB-20261030-003.md",
+    "sha256": "21384635578435c0b8e1c17dd6ba22384c1af1c870a423cbe5b74a0512a2ee94",
+    "bytes": 1442
+  },
+  {
+    "path": "sources/case17-evidence/rate/evidence/harness/feedback/FB-20261030-005.md",
+    "sha256": "a605aebc04a2c5a02935873f6375499277a988b4c7e5259d8b8fc276cb2b75e9",
+    "bytes": 1654
+  },
+  {
+    "path": "sources/case17-evidence/compare/manifest.json",
+    "sha256": "e36e528285ee2a162f87774d82f210070b3704912d76cce21c0f4f78c9d2b7dc",
+    "bytes": 17583
+  },
+  {
+    "path": "sources/case17-evidence/compare/README.md",
+    "sha256": "b7f2591be24bb3538534cd9db7ec5a423145f02220aa63dc5cb8b4df1314ec4f",
+    "bytes": 1422
+  },
+  {
+    "path": "sources/case17-evidence/compare/index.html",
+    "sha256": "ec95ef42f6416027c61f6fa7d9c4240035cc2837e34872f6eb83b4f8697d6db0",
+    "bytes": 6737
+  },
+  {
+    "path": "sources/case17-evidence/compare/PORTAL_HANDOFF.md",
+    "sha256": "d5241bfeb3ae19e002485943c8affd53d4a64e57ef489e068b0ce2b8d6eae0bd",
+    "bytes": 2778
+  },
+  {
+    "path": "sources/case17-evidence/compare/SHA256SUMS.txt",
+    "sha256": "8cf71c1125c84b65cd75a5e33069625d8f2735e06d2e241240e6b1f864775f1f",
+    "bytes": 11552
+  },
+  {
+    "path": "sources/case17-evidence/compare/attachments/MISSING_ORIGINALS.md",
+    "sha256": "6ae57a15c79053bd337331f2821e41c552ca2194f961a64b5b4b7fe881775932",
+    "bytes": 505
+  },
+  {
+    "path": "sources/case17-evidence/compare/attachments/reference-code-comparison-complete.html",
+    "sha256": "8512afcda929a24967c1264a3e1d141c4fd06246661f3811b06bbf0994d1e18d",
+    "bytes": 286143
+  },
+  {
+    "path": "sources/case17-evidence/compare/attachments/inventory.json",
+    "sha256": "47463197c02c975f55d7c3bccdfe2abae467026d95b87e1fb76a96ab1c8b51a7",
+    "bytes": 1175
+  },
+  {
+    "path": "sources/case17-evidence/compare/conversation/transcript.md",
+    "sha256": "321fd3389d4384b70a5925d48df06bf51b238ec1b72009f07ec501117e58655c",
+    "bytes": 106353
+  },
+  {
+    "path": "sources/case17-evidence/compare/conversation/transcript.txt",
+    "sha256": "321fd3389d4384b70a5925d48df06bf51b238ec1b72009f07ec501117e58655c",
+    "bytes": 106353
+  },
+  {
+    "path": "sources/case17-evidence/compare/conversation/transcript.html",
+    "sha256": "220f69365130bb7674df85b061962a72a90efa6b7e5242c51d9d3b6935ef128c",
+    "bytes": 230691
+  },
+  {
+    "path": "sources/case17-evidence/compare/conversation/messages.json",
+    "sha256": "1405accb6909c32d4132f59f52231dc0d5057f77eaac62174d84a6105aff0106",
+    "bytes": 225464
+  },
+  {
+    "path": "sources/case17-evidence/compare/reports/code-comparison.html",
+    "sha256": "edf5410aeaec4d21bc6c28c563b867b5c6ad7068fda38080a5d6fedd35b4b66f",
+    "bytes": 608932
+  },
+  {
+    "path": "sources/case17-evidence/compare/reports/decisions.html",
+    "sha256": "487eebcb01c98440b35312f91a38fa6273639d096d75548bcfd5c8e2258865e7",
+    "bytes": 52924
+  },
+  {
+    "path": "sources/case17-evidence/compare/reports/change-map.json",
+    "sha256": "4a6b9fed636f273d7e07423e169e1f54842350167cf87c9271afeae24d2b5b1f",
+    "bytes": 801503
+  },
+  {
+    "path": "sources/case17-evidence/compare/tools/build_package.py",
+    "sha256": "b3bee224b69f9526ac61ccbb40d847f05731a1847a5cca4f0a4382fe7d6ec57a",
+    "bytes": 36364
+  },
+  {
+    "path": "sources/case17-evidence/compare/tools/finalize_package.py",
+    "sha256": "70432e3bcf185d2be9bd0e26a80ce1b0bfc629b087b4dd300eaab421c603edad",
+    "bytes": 4885
+  },
+  {
+    "path": "sources/case17-evidence/compare/tools/check_report.cjs",
+    "sha256": "0c9784abcf702a237b68d1c1057e16b455b3ec54f84724595b37a388cb2eb480",
+    "bytes": 4726
+  },
+  {
+    "path": "sources/case17-evidence/compare/evidence/coverage.json",
+    "sha256": "c2e70382e2c30613752b399f953cdd82ea11ef456f3465eb031b32c17e9bc3e0",
+    "bytes": 1413
+  },
+  {
+    "path": "sources/case17-evidence/compare/evidence/package-validation.json",
+    "sha256": "335d2bd75e1c8fcab222c1459ec909cddd3bc0656c79dad2716cbd0d7f6c520a",
+    "bytes": 1300
+  },
+  {
+    "path": "sources/case17-evidence/compare/evidence/ui-validation.json",
+    "sha256": "b41caa28ae3812cbb2a02992a15e2b0bf6f700df2f575aea6e7dedbb8c9c2202",
+    "bytes": 620
+  },
+  {
+    "path": "sources/case17-evidence/compare/evidence/preview-mobile.png",
+    "sha256": "a96dbacac2f94b25eda6c5b1992aa81132d2ecd97ea7ce6d3427b26f6b3f298d",
+    "bytes": 141483
+  },
+  {
+    "path": "sources/case17-evidence/compare/evidence/thread-receipt.json",
+    "sha256": "fef8dfbebdf2e515fc9292ab22696791811ceda72170cacd547c9e90ffed17d6",
+    "bytes": 2447
+  },
+  {
+    "path": "sources/case17-evidence/compare/evidence/source-hashes.json",
+    "sha256": "46a5575cae21938831b403fd56e62cba32b09952bae23c9751dbea4fd88fa020",
+    "bytes": 10115
+  },
+  {
+    "path": "sources/case17-evidence/compare/evidence/preview-code-comparison.png",
+    "sha256": "537aaec5623b95b29ddd3b0d16995edac962558ace5a042ab701bc425e59ba39",
+    "bytes": 175278
+  },
+  {
+    "path": "sources/case17-evidence/compare/evidence/preview-index.png",
+    "sha256": "df35657d3e34c340d40d8ee4a8aee1e4de4c1af55e964398f5ac04afb35e4eb4",
+    "bytes": 145558
+  },
+  {
+    "path": "sources/case17-evidence/compare/attachments/images/README.md",
+    "sha256": "3495764d4225a8ade61908712966d87d249151c8b01f370233514ac81226b5be",
+    "bytes": 248
+  },
+  {
+    "path": "sources/case17-evidence/compare/conversation/code-blocks/index.json",
+    "sha256": "74cee11919ee569157ddb33c964116246d8eef03e4551d7a34b9f5dffd9d0240",
+    "bytes": 190
+  },
+  {
+    "path": "sources/case17-evidence/compare/conversation/code-blocks/message-010-1.abap",
+    "sha256": "6487e6d6198bc2be4a1a25430d5c7fa4a9a886891291bf1d741a9a4d7f3fa748",
+    "bytes": 77083
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/ZRPTH411_COMPARE.abap",
+    "sha256": "6487e6d6198bc2be4a1a25430d5c7fa4a9a886891291bf1d741a9a4d7f3fa748",
+    "bytes": 77083
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/link-check.json",
+    "sha256": "ab5ad489f55e29d48f3fe3b4ddd8c87b93f29d4b9ab8af6a102370cf65afb42d",
+    "bytes": 3461
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/source-baseline.json",
+    "sha256": "f0bbde8b331a3916144133c430fcbede23eaad926a76df8b251b33de31d12ea8",
+    "bytes": 434936
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/known-types-check.json",
+    "sha256": "addbaedf70483fa917e5d378200859ae23288d764ca5977c61bed1ada2cf7bdb",
+    "bytes": 474
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/grammar-check.json",
+    "sha256": "aa2541c2b950c10990d5c0f9550ec072d156af7ea1a31c264c7d679265511dbd",
+    "bytes": 333
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/README.md",
+    "sha256": "186ca8434b84059dc99d2aeea49b22f6578171be210cc53fafd1968e745b8e83",
+    "bytes": 22874
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/.gitignore",
+    "sha256": "29dac85a09bc24f1f4bdbde6a3616e09bd6b457ae054dcade1f9349936d8ed89",
+    "bytes": 19
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/contract-check.json",
+    "sha256": "8bab37d8403ac0c0c56e127a6af2e47f7a1d8ddfa01dd13e46b1a2ab36d8eaa0",
+    "bytes": 1584
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/tools/check_contract.py",
+    "sha256": "5c67858da0c18babfe73b0d67f49077c62b90379789846e4aac9b5b33f4d0465",
+    "bytes": 4614
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/tools/check_known_types.cjs",
+    "sha256": "20e8cf27cbec7ebaad8270b97fc9dbe61517f7beda59118eb4821cf57cf4ec21",
+    "bytes": 2403
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/tools/build_core.py",
+    "sha256": "86b04298e5532a7beccbff93acd8243cf4491abb91ab946615a20e8ab858f2b7",
+    "bytes": 5984
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/tools/check_abap.cjs",
+    "sha256": "ddce1ec0bb2d6c592a764a903109a7cd0c30abe534ae43a280ff30a6605e80c9",
+    "bytes": 1501
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/tests/ZRPTH411_COMPARE_TEST.abap",
+    "sha256": "b010f47325631678962b250a42a663a24dac098486465aefa4f419d8aebede70",
+    "bytes": 2949
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/revisions/20261026-column-colors/link-check.json",
+    "sha256": "58d0c217e515b8b59bcd2960f8abc153cf850809065d410957a344aee796b658",
+    "bytes": 322
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/revisions/20261026-column-colors/source-baseline.json",
+    "sha256": "bd5746b08cd5c98a15a36f3e64b13666bec5386c3c2c72cfc5f17c37f063beca",
+    "bytes": 434942
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/revisions/20261026-column-colors/before-grammar-check.json",
+    "sha256": "a85d16db01edbf63afa37a4c7475b350255fd801878dd4d7f9eee532374b887a",
+    "bytes": 333
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/revisions/20261026-column-colors/column-colors.patch",
+    "sha256": "f78a92b8a441a00e41f7663cd50c11b27e91db36f2a45951715c5f8e4740ccff",
+    "bytes": 5033
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/revisions/20261026-column-colors/before-contract-check.json",
+    "sha256": "a497e010a48800d8939fe0d498f4a31c7fa8f3a3dc3a417b1b5ea7a1dbc1f6bb",
+    "bytes": 1582
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/revisions/20261026-column-colors/known-types-check.json",
+    "sha256": "addbaedf70483fa917e5d378200859ae23288d764ca5977c61bed1ada2cf7bdb",
+    "bytes": 474
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/revisions/20261026-column-colors/grammar-check.json",
+    "sha256": "aa2541c2b950c10990d5c0f9550ec072d156af7ea1a31c264c7d679265511dbd",
+    "bytes": 333
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/revisions/20261026-column-colors/change-record.json",
+    "sha256": "34386f83d93deb3c3cce2b283f010bb17d632c0cf70d88cc91d5c4748eef5820",
+    "bytes": 1523
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/revisions/20261026-column-colors/before-ZRPTH411_COMPARE.abap",
+    "sha256": "fd75b6d93d6400e64272e4818a4b211f5a9ddef6958232d86838db58a52396fc",
+    "bytes": 74739
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/revisions/20261026-column-colors/before-known-types-check.json",
+    "sha256": "0bfdd8d3169be1cdc0f9000a97051275fc205b7d5fddb3193ae9c1d2de6a3817",
+    "bytes": 474
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/revisions/20261026-column-colors/contract-check.json",
+    "sha256": "8bab37d8403ac0c0c56e127a6af2e47f7a1d8ddfa01dd13e46b1a2ab36d8eaa0",
+    "bytes": 1584
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/revisions/20261026-awart-empty/link-check.json",
+    "sha256": "be1febbb0120ea3790c7c6de69e28c59d70aa43045546f09ad518266718f046e",
+    "bytes": 397
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/revisions/20261026-awart-empty/source-baseline.json",
+    "sha256": "bc648132f716029d63a893f3dc2653fde6332af4c7768a36d93f0b3c4ddafadf",
+    "bytes": 434947
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/revisions/20261026-awart-empty/before-grammar-check.json",
+    "sha256": "e8a032f16779446e5ffce6caa486df19ba6adb52a0a85c26c2a97bbd8208de3d",
+    "bytes": 241
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/revisions/20261026-awart-empty/before-contract-check.json",
+    "sha256": "2727bc6e4ab45b7d90036a11eae0daa748c1e073df390cb9b837769138a4c765",
+    "bytes": 1302
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/revisions/20261026-awart-empty/awart-empty.patch",
+    "sha256": "c8267b52fba2ed83a60a864ea5d18b5dea27e6d05561171416d1657eba8093fa",
+    "bytes": 3633
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/revisions/20261026-awart-empty/change-record.json",
+    "sha256": "cfd0dc81719a2a2c3395972cc1047e47113496b02ba91a7a6d8a01635e474b79",
+    "bytes": 2490
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/revisions/20261026-awart-empty/before-ZRPTH411_COMPARE.abap",
+    "sha256": "9bdc987d2167a72ce2ffddac01aa075eec05de7c6a000242f3aed893aed0eb2e",
+    "bytes": 72568
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/proposals/20261024-selective-settlement-compare/revisions/20261026-awart-empty/before-known-types-check.json",
+    "sha256": "b65cef9dbc06b0d949df8ade2546f44a02bc6189392ceb137340dfa5e623d192",
+    "bytes": 382
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/knowledge/policies/overtime-rate-20260901.md",
+    "sha256": "aee46d813ece5850d80ea8701b756e12ec79036a36c9ff519693d64d39f8e5c4",
+    "bytes": 7811
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/knowledge/processes/selective-rate-boundary-review.md",
+    "sha256": "8e8b94a448c4742c56444ca5537a7c5d8fddf94ab22be04c31a6520b3d08fd1e",
+    "bytes": 17569
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/knowledge/processes/selective-post-settlement-rebuild.md",
+    "sha256": "0646aaa56ac5adb38530e8bf4728995a8774cf5e835bb6f99e5a33b0270dc156",
+    "bytes": 12194
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/harness/feedback/FB-20261029-003.md",
+    "sha256": "f593f5b90452042522d43fbc05412ca265f2e8cb54c94736c2e65adee07d1b72",
+    "bytes": 2221
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/harness/feedback/FB-20261026-001.md",
+    "sha256": "940607553e0827921c7b0113ce03952185d3d5d3ada5439009c73936653d9fd8",
+    "bytes": 3430
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/harness/feedback/FB-20261029-001.md",
+    "sha256": "4ae564c23b1b8a511de2989997009d353b87a59d5c538e323eaa155b2dd50913",
+    "bytes": 2915
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH410F01/source/ZRPTH410F01.abap",
+    "sha256": "930833523b09f20689a2eb8030158d1e7f158954645c0c5a1e230d197c08708c",
+    "bytes": 53710
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH411F02/source/ZRPTH411F02.abap",
+    "sha256": "3b755df3d51241529fc0a1ab1cd5e0a6736829703a5cb57d30b9c030e255b1bc",
+    "bytes": 20736
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH411F01/source/ZRPTH411F01.abap",
+    "sha256": "6788433a0d928fe90db65240c18ec9980802710d7a7dcfa657ab75f8095f3b41",
+    "bytes": 50943
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/exports/ZHR5/packages/ZHR5/programs/PROG/ZRPTH411/source/ZRPTH411.abap",
+    "sha256": "4e1d1e9e705964101520179b917c0234d44a980991179829298793c1b1728f42",
+    "bytes": 6724
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_AWART_LIST/Source code/ZHR_52TM_AWART_LIST.abap",
+    "sha256": "cc0ed09b3d5e5c3e49f199a152c309847f7bcb05326d95944535216d71fbdb03",
+    "bytes": 16939
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_2/Function Module/ZHR_52TM_CALC_WORK_TIME_DAYILY/Source code/ZHR_52TM_CALC_WORK_TIME_DAYILY.abap",
+    "sha256": "426e7edcf50c124466d59dfdde120aab0c258662931fd8827dc08baa586cc23d",
+    "bytes": 26188
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Include/LZHR008_3F03.abap",
+    "sha256": "72289f88338a170d788f73af2ae2b677a09849eb4e0a532c030ffcb7998cc247",
+    "bytes": 43805
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Include/LZHR008_3F02.abap",
+    "sha256": "8ac0dde604058e2132f9d694f0a6d9c08c8c3743744ebfd24eaa516ef451b617",
+    "bytes": 20632
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Include/LZHR008_3F04.abap",
+    "sha256": "d7a9772eb55947232b5bd92632985033d17ca594f58e034d44a589c57685dd19",
+    "bytes": 35984
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Function Module/ZHR_52TM_CW_CAL_AND_DAEH/Source code/ZHR_52TM_CW_CAL_AND_DAEH.abap",
+    "sha256": "53a5eb0924859e46453d2f7148722b32a62949d6ed941825a472060d1070053d",
+    "bytes": 97609
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Function Module/ZHR_52TM_CW_PAYMENT_WKPRD/Source code/ZHR_52TM_CW_PAYMENT_WKPRD.abap",
+    "sha256": "600b5be48d445133a569a0d970cc6972b7bf48ccb284ad14308892333b110252",
+    "bytes": 4793
+  },
+  {
+    "path": "sources/case17-evidence/compare/workspace/exports/ZHR5/packages/ZHR5/function-groups/FUGR/ZHR008_3/Function Module/ZHR_52TM_CW_SET_ITEM/Source code/ZHR_52TM_CW_SET_ITEM.abap",
+    "sha256": "fb364e655765042030e8e7cc611eabdb0377e3365b08649c711a8f7aa07c5a05",
+    "bytes": 4389
+  },
+  {
+    "path": "sources/case17-evidence/compare/reports/patches/change-6.patch",
+    "sha256": "b3cfdc82a11afcf30434739771326ac7b51a1d4c1c98ead7736b5120aee8907b",
+    "bytes": 4820
+  },
+  {
+    "path": "sources/case17-evidence/compare/reports/patches/change-1.patch",
+    "sha256": "fd6164c99e748c9908ecfecd1068e916721aea608e1f5f35e6822f83100c1204",
+    "bytes": 79114
+  },
+  {
+    "path": "sources/case17-evidence/compare/reports/patches/change-3.patch",
+    "sha256": "6ae05e7e9e69be8db390f0b8e8d608fd0371ede17127c432bcb4b765a51714b2",
+    "bytes": 5176
+  },
+  {
+    "path": "sources/case17-evidence/compare/reports/patches/change-2.patch",
+    "sha256": "156f01fec86dd01d39702669597fed3b6b9de9040a00118211817c43bf2b3488",
+    "bytes": 3814
+  },
+  {
+    "path": "sources/case17-evidence/compare/reports/patches/change-5.patch",
+    "sha256": "dec5c09f974b9ea72233e0aeb13091a4888938efb0f1d8693c43658785ad0750",
+    "bytes": 6231
+  },
+  {
+    "path": "sources/case17-evidence/compare/reports/patches/change-7.patch",
+    "sha256": "8d172fa704140103c1e6202b296b09f13b414d10242d9c37430dcce9d9a3c70f",
+    "bytes": 1643
+  },
+  {
+    "path": "sources/case17-evidence/compare/reports/patches/change-8.patch",
+    "sha256": "e44fce2129512a143d6523ffafd8217e06b140972c4549e05ffdaaf579ebe639",
+    "bytes": 2568
+  },
+  {
+    "path": "sources/case17-evidence/compare/reports/patches/change-4.patch",
+    "sha256": "735956f273dc165d137c5f1ad1749ed67620485e418c10657e4c1644288d0833",
+    "bytes": 3156
+  },
+  {
+    "path": "sources/case17-evidence/retro/README.md",
+    "sha256": "b971f26be94a48e690c10c3d1bef563f29ee7d759f8293e83468788f1ee65cbe",
+    "bytes": 3932
+  },
+  {
+    "path": "sources/case17-evidence/retro/index.html",
+    "sha256": "95c018e4d191f615107024c2cee161832cd0f083ff90c034ad48ab1f8c6ee383",
+    "bytes": 5470
+  },
+  {
+    "path": "sources/case17-evidence/retro/conversation/transcript.md",
+    "sha256": "61ed48e178a197ced3f6850108b6c8bb444455fd0e2a5039d84df226acb7fda6",
+    "bytes": 83276
+  },
+  {
+    "path": "sources/case17-evidence/retro/conversation/transcript.html",
+    "sha256": "0d01cde9db4eb64fb36b2fd824fd44d6fabdd1604f538c2860291d917d8e7dbd",
+    "bytes": 88529
+  },
+  {
+    "path": "sources/case17-evidence/retro/conversation/messages.json",
+    "sha256": "46aac64f4441bb17eecc40e5a095b9cf0e31668b9465b4044b9cf0da9adc0d70",
+    "bytes": 89073
+  },
+  {
+    "path": "sources/case17-evidence/retro/reference/user-attached-code-comparison-complete.html",
+    "sha256": "8512afcda929a24967c1264a3e1d141c4fd06246661f3811b06bbf0994d1e18d",
+    "bytes": 286143
+  },
+  {
+    "path": "sources/case17-evidence/retro/metadata/manifest.json",
+    "sha256": "c7122396ec9e70bbb8c7ff2d76a9bc59dd0531f7b72fa2ae63814b50352eec37",
+    "bytes": 6575
+  },
+  {
+    "path": "sources/case17-evidence/retro/metadata/stages.json",
+    "sha256": "b7b9e867999cf47ba5898cecfc34ecebed89276edaf9fb267bc79bf204e63911",
+    "bytes": 721
+  },
+  {
+    "path": "sources/case17-evidence/retro/metadata/final-code-comparison.json",
+    "sha256": "174b31ba8dc8f98dd820e90e32677c7a5417ed5e3e66b9f5a4c08c24f8f456d0",
+    "bytes": 313235
+  },
+  {
+    "path": "sources/case17-evidence/retro/metadata/package.json",
+    "sha256": "8cac32fea59ffc54c593ee208b264d0de58c39be3df8d2a1fba2c921488311d0",
+    "bytes": 2536
+  },
+  {
+    "path": "sources/case17-evidence/retro/images/codex-clipboard-3f262c6d-577e-4d5f-8654-3146de37f882.jpg",
+    "sha256": "f86f8662b966ffab0e2eeccad4e5b2ec91ad7dd5bcd8ee8b1add98e9b64c10d4",
+    "bytes": 47709
+  },
+  {
+    "path": "sources/case17-evidence/retro/reports/final-code-report.html",
+    "sha256": "cbb9c3c9817f5c43e2634062d748b330e6fdf2318ebbf8a2116af2595c0ed486",
+    "bytes": 275508
+  },
+  {
+    "path": "sources/case17-evidence/retro/reports/history/01-first-incomplete.html",
+    "sha256": "3a816f8075421892b10c5b3b9b22c435c7467471fbfecee5b8b91b3fec167fd6",
+    "bytes": 114989
+  },
+  {
+    "path": "sources/case17-evidence/retro/reports/history/04-latest-display-additional.html",
+    "sha256": "2ddc79a3c206c1b67d10eb6c7c34108a581abd07b9794f389c72da08eddb73ee",
+    "bytes": 35925
+  },
+  {
+    "path": "sources/case17-evidence/retro/reports/history/03-additional-after-first.html",
+    "sha256": "f96a1642618e0b5a95f66666e5e2fbf39504ad649cb24af92f9b7d93cb1ee23c",
+    "bytes": 166364
+  },
+  {
+    "path": "sources/case17-evidence/retro/reports/history/02-complete-proposal.html",
+    "sha256": "8512afcda929a24967c1264a3e1d141c4fd06246661f3811b06bbf0994d1e18d",
+    "bytes": 286143
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/01-first-incomplete/ZRPTH411F01.abap",
+    "sha256": "6678cefec083cb39e41ee6ff617624bb8551c112b6a47fdef8a691ab89141900",
+    "bytes": 53115
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/01-first-incomplete/ZHR_52TM_CW_PAYMENT_WKPRD.abap",
+    "sha256": "b8d4976160bb7c9edf2c497357e88580cc2a09cca01c00296d6ef07ebf29201d",
+    "bytes": 5068
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/01-first-incomplete/ZRPTH411TOP.abap",
+    "sha256": "fd657e362d15991e51f0712c5e19333477b4a3b2963f25a1d29d72b950095c6c",
+    "bytes": 9287
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/01-first-incomplete/ZRPTH411F02.abap",
+    "sha256": "0318f0e24c2183fff8175d5c35412a0057fab0203c4326ed9d211cb31b455a59",
+    "bytes": 21498
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/01-first-incomplete/ZRPTH411.abap",
+    "sha256": "b87d9b8935f9a25ae157adc2e9a90f260b5b93999911d28ed6b9773b4020d185",
+    "bytes": 6781
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/00-original/ZRPTH411F01.abap",
+    "sha256": "6788433a0d928fe90db65240c18ec9980802710d7a7dcfa657ab75f8095f3b41",
+    "bytes": 50943
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/00-original/ZHR_52TM_CW_PAYMENT_WKPRD.abap",
+    "sha256": "600b5be48d445133a569a0d970cc6972b7bf48ccb284ad14308892333b110252",
+    "bytes": 4793
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/00-original/ZRPTH411TOP.abap",
+    "sha256": "103b7f5fdec0b860456d116165bfab1c7b3cb7c83fbcf17113a3cbf353525c9b",
+    "bytes": 8528
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/00-original/ZRPTH411F02.abap",
+    "sha256": "3b755df3d51241529fc0a1ab1cd5e0a6736829703a5cb57d30b9c030e255b1bc",
+    "bytes": 20736
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/00-original/ZRPTH411.abap",
+    "sha256": "4e1d1e9e705964101520179b917c0234d44a980991179829298793c1b1728f42",
+    "bytes": 6724
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/04-latest-proposal/ZRPTH411F01.abap",
+    "sha256": "17e578f32dea5ae992c86324e7d6e727382528b0f2d1c605ef26933cf9e4e260",
+    "bytes": 57535
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/04-latest-proposal/ZHR_52TM_CW_PAYMENT_WKPRD.abap",
+    "sha256": "b8d4976160bb7c9edf2c497357e88580cc2a09cca01c00296d6ef07ebf29201d",
+    "bytes": 5068
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/04-latest-proposal/ZRPTH411TOP.abap",
+    "sha256": "290d0c6700596ce293ae5362b19d9d0e3e82c560e2a2b30a330c204dcb01f52b",
+    "bytes": 9283
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/04-latest-proposal/ZRPTH411F02.abap",
+    "sha256": "6effb592a150ee1dec4bedee5e1f3505a0294f30904b2e6e82424e7fd3c7cb38",
+    "bytes": 21667
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/04-latest-proposal/ZRPTH411.abap",
+    "sha256": "7bd9adda8801f211ee050abf3c4b1da78c55a9fa12b34799f532c874458d5c2c",
+    "bytes": 6926
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/02-complete-proposal/ZRPTH411F01.abap",
+    "sha256": "7ac25ad2bd003b65883ff268ef8d1755ea4fa9e1e3bddede3d1255ec1273a29a",
+    "bytes": 59051
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/02-complete-proposal/ZHR_52TM_CW_PAYMENT_WKPRD.abap",
+    "sha256": "b8d4976160bb7c9edf2c497357e88580cc2a09cca01c00296d6ef07ebf29201d",
+    "bytes": 5068
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/02-complete-proposal/ZRPTH411TOP.abap",
+    "sha256": "290d0c6700596ce293ae5362b19d9d0e3e82c560e2a2b30a330c204dcb01f52b",
+    "bytes": 9283
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/02-complete-proposal/ZRPTH411F02.abap",
+    "sha256": "0318f0e24c2183fff8175d5c35412a0057fab0203c4326ed9d211cb31b455a59",
+    "bytes": 21498
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/02-complete-proposal/ZRPTH411.abap",
+    "sha256": "7bd9adda8801f211ee050abf3c4b1da78c55a9fa12b34799f532c874458d5c2c",
+    "bytes": 6926
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/03-applied-additional/ZRPTH411F01.abap",
+    "sha256": "aa4c0cd145b4dc26eb9c9c32e15e00a770cf53da787ea0dbfa5836381188e428",
+    "bytes": 58987
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/03-applied-additional/ZHR_52TM_CW_PAYMENT_WKPRD.abap",
+    "sha256": "b8d4976160bb7c9edf2c497357e88580cc2a09cca01c00296d6ef07ebf29201d",
+    "bytes": 5068
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/03-applied-additional/ZRPTH411TOP.abap",
+    "sha256": "290d0c6700596ce293ae5362b19d9d0e3e82c560e2a2b30a330c204dcb01f52b",
+    "bytes": 9283
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/03-applied-additional/ZRPTH411F02.abap",
+    "sha256": "0318f0e24c2183fff8175d5c35412a0057fab0203c4326ed9d211cb31b455a59",
+    "bytes": 21498
+  },
+  {
+    "path": "sources/case17-evidence/retro/code/03-applied-additional/ZRPTH411.abap",
+    "sha256": "7bd9adda8801f211ee050abf3c4b1da78c55a9fa12b34799f532c874458d5c2c",
+    "bytes": 6926
+  },
+  {
+    "path": "sources/case17-evidence/retired/manifest.json",
+    "sha256": "fbc4086042af634c0df0ee2b952b05d6a14d61d1787be39ac51132a159b46ca7",
+    "bytes": 2604
+  },
+  {
+    "path": "sources/case17-evidence/retired/README.md",
+    "sha256": "25848a5cd0829efabc262732fb06cf600e90505443d0829b4b6defd3581bc9c3",
+    "bytes": 1702
+  },
+  {
+    "path": "sources/case17-evidence/retired/index.html",
+    "sha256": "dfd04ad3daf6783cceb4dcaff1378f395f2683a12f5168dbfa89ee4705c9401d",
+    "bytes": 3797
+  },
+  {
+    "path": "sources/case17-evidence/retired/conversation/transcript.txt",
+    "sha256": "d11bdd2369d1327459f65af04701781354ebfd337e78fbdebfa30970bd4a3d2c",
+    "bytes": 14365
+  },
+  {
+    "path": "sources/case17-evidence/retired/conversation/transcript.html",
+    "sha256": "9180a2831f02669867564977bf534e81fac75501d430a51ad73cd215036a380b",
+    "bytes": 19278
+  },
+  {
+    "path": "sources/case17-evidence/retired/conversation/messages.json",
+    "sha256": "5969bb9855588b4c54c0b23326e4e0e044ec97e36c6f9b6f80091cb23f03a34a",
+    "bytes": 17116
+  },
+  {
+    "path": "sources/case17-evidence/retired/reference/code-comparison-complete.html",
+    "sha256": "8512afcda929a24967c1264a3e1d141c4fd06246661f3811b06bbf0994d1e18d",
+    "bytes": 286143
+  },
+  {
+    "path": "sources/case17-evidence/retired/images/README.txt",
+    "sha256": "1e2a92bd5c74de550c3827076505ede526cd9d331ff3ca5384f4fd782c22a8ca",
+    "bytes": 270
+  },
+  {
+    "path": "sources/case17-evidence/retired/reports/code-comparison.html",
+    "sha256": "f89936f719003ac36430bc2d0b80d5e6c97eb0b216d3284fb5378af64808f7a0",
+    "bytes": 99298
+  },
+  {
+    "path": "sources/case17-evidence/retired/reports/change-map.json",
+    "sha256": "966fd690d8a4ded081a11e050ea8942bedb7212af0b851a7c279dfd338cd043c",
+    "bytes": 1346
+  },
+  {
+    "path": "sources/case17-evidence/retired/tools/build.py",
+    "sha256": "9cd6dbcaf9e90d717b1ad3e51d8198dd8f03f177cdae4379463f5f81e97efe4c",
+    "bytes": 10169
+  },
+  {
+    "path": "sources/case17-evidence/retired/evidence/hashes.json",
+    "sha256": "c59e448c46d14ee7baaddb8e8501b5efc89fbe8b1a7938fa6c93457c69e51401",
+    "bytes": 176
+  },
+  {
+    "path": "sources/case17-evidence/retired/evidence/README.md",
+    "sha256": "ab6e675ec824300ff7160faabaea95201eededdcee05993191b7a97e16a2072b",
+    "bytes": 13302
+  },
+  {
+    "path": "sources/case17-evidence/retired/evidence/change.patch",
+    "sha256": "2437f79f03b4ed7619a1c09d2e1e13bcc82a9277b79a5bd39624b6432ecf872c",
+    "bytes": 3316
+  },
+  {
+    "path": "sources/case17-evidence/retired/evidence/verification.json",
+    "sha256": "778399ad911ab86a23bf30341d218a7921b83042da479556d7be42251c229900",
+    "bytes": 1491
+  },
+  {
+    "path": "sources/case17-evidence/retired/code/before/ZRPTH411_RET_DEL.abap",
+    "sha256": "20e5efb1b6dcbd9f73987d18a2c2490235cc06581a896e4ff5df3e1756d18cd4",
+    "bytes": 11424
+  },
+  {
+    "path": "sources/case17-evidence/retired/code/after/ZRPTH411_RET_DEL.abap",
+    "sha256": "2b57fcb38c3db5f681490edd68847c3a0c4cf6f7c718c4f0a51e889263c77447",
+    "bytes": 10817
+  },
+  {
+    "path": "sources/case17-evidence/cancel/manifest.json",
+    "sha256": "7107890341b8482f91da6958918fa4583bf6cdb36d75186e06c67676628c7aba",
+    "bytes": 939
+  },
+  {
+    "path": "sources/case17-evidence/cancel/code-report.html",
+    "sha256": "4e98d75be4da6ca36e1b218592bc85cd8795ddf43532196ebcbcb222cc394296",
+    "bytes": 148141
+  },
+  {
+    "path": "sources/case17-evidence/cancel/package-validation.json",
+    "sha256": "c46518abda3221afb60e1e14f584b07f1d32fd20254fb0de1b3082aba153a87d",
+    "bytes": 517
+  },
+  {
+    "path": "sources/case17-evidence/cancel/checksums.json",
+    "sha256": "46e16f121a12b7b55edb9b9a9a1fb1928baa2895d6b4a39483475cec653ca4e7",
+    "bytes": 2954
+  },
+  {
+    "path": "sources/case17-evidence/cancel/index.html",
+    "sha256": "a655ec04a5bf10618c18eab8004d95a5d0e1f8d2590a92cb70671652dd544463",
+    "bytes": 2445
+  },
+  {
+    "path": "sources/case17-evidence/cancel/PORTAL_HANDOFF.md",
+    "sha256": "277b80bf99cb10b2515ad52586d1c2781336882c5d5eafd8b6ceeaa170f35e60",
+    "bytes": 2509
+  },
+  {
+    "path": "sources/case17-evidence/cancel/conversation/transcript.md",
+    "sha256": "ca667613ef78a1c144211f85d4c46a7a7c11cc1c80a680644803d126de5d7c84",
+    "bytes": 28607
+  },
+  {
+    "path": "sources/case17-evidence/cancel/conversation/transcript.html",
+    "sha256": "32651bb57797601cad15ba00b109be61acc1a3f9d0943f914abbad70962e52ac",
+    "bytes": 30917
+  },
+  {
+    "path": "sources/case17-evidence/cancel/conversation/user-supplied-context.json",
+    "sha256": "a20920fb9b4f27d974ef2f01a0c7eac6bf1bf48d2f2f133b3673c89a116e8cfb",
+    "bytes": 25581
+  },
+  {
+    "path": "sources/case17-evidence/cancel/conversation/messages.json",
+    "sha256": "05e031278b51e31b56eb7c126130bf2717b92b894528ed46542d75c59e59240d",
+    "bytes": 31247
+  },
+  {
+    "path": "sources/case17-evidence/cancel/reference/code-comparison-complete.html",
+    "sha256": "8512afcda929a24967c1264a3e1d141c4fd06246661f3811b06bbf0994d1e18d",
+    "bytes": 286143
+  },
+  {
+    "path": "sources/case17-evidence/cancel/reports/v2-delivered-three-tables.html",
+    "sha256": "9cd6cd5bc61774d75654a7df2f39ecae78fbc5750358299935f8be0808cd9603",
+    "bytes": 41339
+  },
+  {
+    "path": "sources/case17-evidence/cancel/reports/v1-working-draft-not-delivered.html",
+    "sha256": "2f1e9dd1791d783c455b670ee8727134d5265cf2cfcb0a583acb4c47cd63e02a",
+    "bytes": 43295
+  },
+  {
+    "path": "sources/case17-evidence/cancel/reports/v3-current-two-tables.html",
+    "sha256": "1d7e2c14b3e90d7f3a430fd4ac29ffb966dda9d4dc0a05f43b5bc6b14b4c24e9",
+    "bytes": 35019
+  },
+  {
+    "path": "sources/case17-evidence/cancel/tools/validate_package.py",
+    "sha256": "5a34f637ee79148e14ea851ba0776b2883dd6d7c9530b592b1194c1c72c7c737",
+    "bytes": 2237
+  },
+  {
+    "path": "sources/case17-evidence/cancel/tools/build_package.py",
+    "sha256": "915add3302b214dc272abe778b88adeb65921ef7dfa3a900cd45b364a1ac144d",
+    "bytes": 15946
+  },
+  {
+    "path": "sources/case17-evidence/cancel/sources/proposal/ZHR_CW_MEMBER_DEL.abap",
+    "sha256": "1be8ca5a1c2c7d6d45a67857af9c64182ae8b97020fef0ec0846e82b762d65ea",
+    "bytes": 10580
+  },
+  {
+    "path": "sources/case17-evidence/cancel/sources/proposal/README.md",
+    "sha256": "cb0dca2cc4ac3cb42fb593bd4290a1c89b7b5cb012a85050b8f17fe9d37b6356",
+    "bytes": 3815
+  },
+  {
+    "path": "sources/case17-evidence/cancel/sources/proposal/verification.json",
+    "sha256": "f5ca16b4c1c6e3706c54bceda4a8811fb568225312e01a663c9289c23378663e",
+    "bytes": 506
+  },
+  {
+    "path": "sources/case17-evidence/cancel/sources/versions/v1-working-draft-not-delivered.abap",
+    "sha256": "bd10a3130f17b12acb94381ec15b22be4149745195cc61e308b1d5fea45188c3",
+    "bytes": 12963
+  },
+  {
+    "path": "sources/case17-evidence/cancel/sources/versions/v2-delivered-three-tables.abap",
+    "sha256": "f3c2f86fb91a359535cd7bfef54c44763bf704e8f1fc5cda5c251a05a8ba885a",
+    "bytes": 12532
+  },
+  {
+    "path": "sources/case17-evidence/cancel/sources/versions/user-pasted-snippet.txt",
+    "sha256": "28567d06160c152668d46cbbd874105dab13d91b86048c6363fb7c7043515afb",
+    "bytes": 3514
+  },
+  {
+    "path": "sources/case17-evidence/cancel/sources/versions/v3-current-two-tables.abap",
+    "sha256": "1be8ca5a1c2c7d6d45a67857af9c64182ae8b97020fef0ec0846e82b762d65ea",
+    "bytes": 10580
+  },
+  {
+    "path": "sources/case17-evidence/cancel/sources/proposal/revisions/20261029-two-tables/hashes.json",
+    "sha256": "1d37062f03d4b2537f435dc8c465e2cce85e62dbdb67b5d20128a087298b41dc",
+    "bytes": 317
+  },
+  {
+    "path": "sources/case17-evidence/cancel/sources/proposal/revisions/20261029-two-tables/ZHR_CW_MEMBER_DEL.abap",
+    "sha256": "f3c2f86fb91a359535cd7bfef54c44763bf704e8f1fc5cda5c251a05a8ba885a",
+    "bytes": 12532
+  },
+  {
+    "path": "sources/case17-evidence/cancel/sources/proposal/revisions/20261029-two-tables/README-before.md",
+    "sha256": "52a99677398b67961d6effc1d853100223c10e079480183930ae2c44307d7d77",
+    "bytes": 6376
+  },
+  {
+    "path": "sources/case17-evidence/cancel/sources/proposal/revisions/20261029-two-tables/change.patch",
+    "sha256": "580c09ab260977819344af8a79a2e62691a753e9fdb5e3f09ce749f401e876f6",
+    "bytes": 6981
+  },
+  {
+    "path": "sources/case17-evidence/cancel/assets/images/README.txt",
+    "sha256": "927de4960f93194a64ab3678964956969103f93c8aa42524877bcc70a72f04ee",
+    "bytes": 294
+  },
+  {
+    "path": "sources/case17-evidence/halfday/MANIFEST.json",
+    "sha256": "4471a6d1f559d7031f5dfa9fcdc136634fe19bdbd56fe78fb18c15dde9ad61d5",
+    "bytes": 9481
+  },
+  {
+    "path": "sources/case17-evidence/halfday/README.md",
+    "sha256": "055150856d8d7ee9a8db46bc0b10963a8dfe5ad5c005263168e5778a883df74d",
+    "bytes": 2542
+  },
+  {
+    "path": "sources/case17-evidence/halfday/index.html",
+    "sha256": "f481d01a9f0fb97ffae4954e4ad8886742356db1e10d411506ee746f4de9b90d",
+    "bytes": 3394
+  },
+  {
+    "path": "sources/case17-evidence/halfday/VALIDATION.txt",
+    "sha256": "3de309b3162e786c2cc5b04918232450c4826996bbebc0e4e443c574c19735de",
+    "bytes": 215
+  },
+  {
+    "path": "sources/case17-evidence/halfday/conversation/transcript.md",
+    "sha256": "c43e5740b853ed46ecf36f51ec1285198575de76448d81530dd309f6bf9a9194",
+    "bytes": 99892
+  },
+  {
+    "path": "sources/case17-evidence/halfday/conversation/transcript.html",
+    "sha256": "a157e8807eee00e3915c79df095e8f554d830899ceb3a439e05cf4aab06b2536",
+    "bytes": 109476
+  },
+  {
+    "path": "sources/case17-evidence/halfday/conversation/messages.json",
+    "sha256": "a2c9d0737ed91d7695f4a6a27e0dc19e2e17258c6cf7726059bb3a3c5d7ad7ec",
+    "bytes": 107361
+  },
+  {
+    "path": "sources/case17-evidence/halfday/reference/code-comparison-complete.html",
+    "sha256": "8512afcda929a24967c1264a3e1d141c4fd06246661f3811b06bbf0994d1e18d",
+    "bytes": 286143
+  },
+  {
+    "path": "sources/case17-evidence/halfday/images/manifest.json",
+    "sha256": "2765737f9c28cc8e9bcf4c7d5efc7ae8008019cf8467a52075caef71c98f71ae",
+    "bytes": 850
+  },
+  {
+    "path": "sources/case17-evidence/halfday/images/attachment-02.png",
+    "sha256": "a0b7836febe6b638d0934c500f23a758c90ab4d314d6d547ce5d846713290846",
+    "bytes": 271346
+  },
+  {
+    "path": "sources/case17-evidence/halfday/images/attachment-01.png",
+    "sha256": "7312d0e01c0cf560a7843d4a2aabf868ebd7921f4b051f1207efd683c98cfae9",
+    "bytes": 726789
+  },
+  {
+    "path": "sources/case17-evidence/halfday/images/codex-clipboard-b4a24630-7376-476f-b323-7a00df1b99db.png",
+    "sha256": "fdf2f0800e410a65d096b456704720bb3c938e011b84558d8846b25b6b993c3d",
+    "bytes": 780030
+  },
+  {
+    "path": "sources/case17-evidence/halfday/images/codex-clipboard-c3a7b28b-4134-4b4f-96fe-3a0cc97ba06a.png",
+    "sha256": "a0b7836febe6b638d0934c500f23a758c90ab4d314d6d547ce5d846713290846",
+    "bytes": 271346
+  },
+  {
+    "path": "sources/case17-evidence/halfday/documents/FB-20261029-004.md",
+    "sha256": "56b1ab957f159eaf0995af14185f709211dd4618e04de8144ec6ddd91168e498",
+    "bytes": 1361
+  },
+  {
+    "path": "sources/case17-evidence/halfday/documents/AGENTS.md",
+    "sha256": "5a717a336a0e9460ff6ff5dff677bfcbcc9df417760995f442d1b5d287d160bc",
+    "bytes": 10371
+  },
+  {
+    "path": "sources/case17-evidence/halfday/documents/halfday-notice-review.md",
+    "sha256": "c066ffb09db566f47c4a20de0c6c72f57683ac04d6ebfb81488df33093a7a11c",
+    "bytes": 16646
+  },
+  {
+    "path": "sources/case17-evidence/halfday/documents/overtime-start-time.md",
+    "sha256": "2024c5596f6d7c87f114865ba27b41035bf1205940c135bd41845ce89bfa5ae6",
+    "bytes": 13221
+  },
+  {
+    "path": "sources/case17-evidence/halfday/documents/FB-20261030-001.md",
+    "sha256": "3e7887c87d43f060f8b9f19f8f52432447a83d97c62bb9a858b2773e55a83727",
+    "bytes": 1007
+  },
+  {
+    "path": "sources/case17-evidence/halfday/documents/FB-20261030-002.md",
+    "sha256": "683bf3eb387b7c3dfcbbb1459c9e0cda04147ef4ffff0cc04e92435b405ade40",
+    "bytes": 819
+  },
+  {
+    "path": "sources/case17-evidence/halfday/documents/FB-20261029-002.md",
+    "sha256": "61c350eb43428ac5738026bd5b24c229edf20adf571a499560ec9c75652c2f66",
+    "bytes": 1517
+  },
+  {
+    "path": "sources/case17-evidence/halfday/documents/local-20261022-overtime-attendance.md",
+    "sha256": "fd85d6cdc505f63ddf391342192a02ee6fb46a3797409256792b60067a7e1536",
+    "bytes": 5989
+  },
+  {
+    "path": "sources/case17-evidence/halfday/reports/code-comparison.html",
+    "sha256": "681d141a3a4e2c00a88d16a9254e284b869f8bc756b442477863af6b0628d6bf",
+    "bytes": 164356
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/CHECK_ABSENCE_DATA_proposed.abap",
+    "sha256": "aff64458f489f28ab3f007d7333178c6af56a851d039b188335f327fb26e20ec",
+    "bytes": 4871
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/CHECK_ABSENCE_DATA.patch",
+    "sha256": "dfcb703fe1d6b4dd28acc97e5b87b16682d0d5c200651ff764ba0b69221a7bc0",
+    "bytes": 8067
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/CHECK_ABSENCE_DATA_before.abap",
+    "sha256": "59f62c818fcd0e79a5480f9e78ae8cbaea76aeec1bc8aaf932d464acc81d9723",
+    "bytes": 4364
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/reference/MZH4110F01.abap",
+    "sha256": "c1929b75eb9ce22e4a3dd9a49131e658d33e949c2d3f65eecf1292eabda0903f",
+    "bytes": 75390
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/reference/LZHR008_2F06.abap",
+    "sha256": "763ece2e049a59bd7488a984194937b400ef7e8ee7c7858ac04459196ce0c119",
+    "bytes": 61486
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/reference/ZHR_52TM_CHECK_INPUT_DATA.abap",
+    "sha256": "5adf53f05cb2a5502d186108bb8b8a650a56c8459e6c85ae479345dddcb7f208",
+    "bytes": 38991
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/reference/SAPLZHR008_2.xml",
+    "sha256": "25dd90632c19aae341eb53ed0a0479b5c140cef73579c925f306f4184e0910e8",
+    "bytes": 30176
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/reference/LZHR008_2F03.abap",
+    "sha256": "56315f03face19a05fe2f133a0ce12f74add846d9a92cfa555f6ae31b1853493",
+    "bytes": 222272
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/reference/MORD_OT_INSERT.htm",
+    "sha256": "7b2fc4592f17abef353f6a973dafb32d4a301098d18e1fed6b5e81935e1a07c7",
+    "bytes": 136019
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/reference/ZHR_52TM_MOBILE_OVERTIME_CHECK.abap",
+    "sha256": "9f589ea5163a1b540b117b2d39b38c12c6208db15a9ed6ded1315098b6e2f9b6",
+    "bytes": 11503
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/reference/ZHR_52TM_CHECK_INPUT_DATA_M.abap",
+    "sha256": "55cc2b98117cc6c930f754698da17895f16599ef20d46e860efaf8d5be8816a3",
+    "bytes": 18070
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/reference/ORD_OT_INSERT.htm",
+    "sha256": "db98ec0241529d849f9e4b4e31eeb4063321e51f7e5c0b321fca9604ce1525f5",
+    "bytes": 132415
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/history/message-072-block-017.diff",
+    "sha256": "1ad49ce139cda838c06874644b702c3ec7530bbcebc5e0c62a694a55887599c3",
+    "bytes": 493
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/history/message-028-block-005.abap",
+    "sha256": "ea17ca136c022e9bf12ac8cc983241d187fa1733ade1eef008205366a5cbeccc",
+    "bytes": 35
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/history/message-072-block-019.diff",
+    "sha256": "814ce8d5acf4c692cd2ac9e586403b4b7f62a38c25be1f890a6484b0bbeee345",
+    "bytes": 357
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/history/message-077-block-020.abap",
+    "sha256": "c5d9dd51b81181d59cfc08d318643b93e0a4480fc4a4d7a443f78b5c8a02e344",
+    "bytes": 179
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/history/message-024-block-003.abap",
+    "sha256": "a3a4f4d491e9ac6bc71435146eaa3619783ef32e8d41e93a01863e1dab523057",
+    "bytes": 2468
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/history/index.json",
+    "sha256": "7e2e3d578be6739db90dc88ed33129bb3fd9af2102a5ce8344efadc40ec8a809",
+    "bytes": 2233
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/history/message-072-block-016.diff",
+    "sha256": "722fab2c64df40bd34cec566f1e50d2a80fde4771d08cda54ec6fbbdac4916d4",
+    "bytes": 211
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/history/message-051-block-014.abap",
+    "sha256": "aff64458f489f28ab3f007d7333178c6af56a851d039b188335f327fb26e20ec",
+    "bytes": 4871
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/history/message-033-block-007.abap",
+    "sha256": "1ee1edc8de81fcd95d71df183b4c51e4d1099d394d2b5d49e67e38e99fb2bbaf",
+    "bytes": 129
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/history/message-033-block-006.abap",
+    "sha256": "81929bc8b3e453f4366930a0c2effec07a174128ac577c19478abd63c61ca972",
+    "bytes": 216
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/history/message-035-block-009.abap",
+    "sha256": "81929bc8b3e453f4366930a0c2effec07a174128ac577c19478abd63c61ca972",
+    "bytes": 216
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/history/message-024-block-004.abap",
+    "sha256": "1f3725c58585e1992aa743ef4a843143a60c648016fb81dac574ba98c93abd35",
+    "bytes": 1607
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/history/message-072-block-018.diff",
+    "sha256": "29a635640080ab6ea3c91284b3fa8322f5c69f634224815b0590b6a403f00e26",
+    "bytes": 1112
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/history/message-035-block-011.abap",
+    "sha256": "948c4716131a906a5999ed1a3775a563f52dee03b17886ece02f9320ee5d1d43",
+    "bytes": 1934
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/history/message-024-block-001.abap",
+    "sha256": "33fcd31c7e2b0e9b14d01e7a1caab1929ca307da1d24602e4c28b53b15876687",
+    "bytes": 2333
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/history/message-035-block-010.abap",
+    "sha256": "a5c839fbd04f5845861a91f2816d6e187c33cee5de2d47ca0cd3c0519432f0ff",
+    "bytes": 146
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/history/message-024-block-002.abap",
+    "sha256": "c8810af788668ef6e541f5f3ee0bce0bc0834e5d65b90d51a9f9c80619588e41",
+    "bytes": 1232
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/history/message-077-block-021.txt",
+    "sha256": "8aced6e34fd3402730f3bab7e356e03107c2fa98a7dcae3d8015722e99c1f1a1",
+    "bytes": 294
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/history/message-033-block-008.abap",
+    "sha256": "948c4716131a906a5999ed1a3775a563f52dee03b17886ece02f9320ee5d1d43",
+    "bytes": 1934
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/history/message-049-block-013.abap",
+    "sha256": "3de6eb804d17a0bc6b229b9fe5c1c90510b813532bac469acb10a5badae5e880",
+    "bytes": 4906
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/history/message-040-block-012.abap",
+    "sha256": "9287f42704aabed4acc5f2fe6d4fecdcf2d4d2509bc784015700e29c3ef68553",
+    "bytes": 43
+  },
+  {
+    "path": "sources/case17-evidence/halfday/code/history/message-054-block-015.abap",
+    "sha256": "59f62c818fcd0e79a5480f9e78ae8cbaea76aeec1bc8aaf932d464acc81d9723",
+    "bytes": 4364
+  }
+]

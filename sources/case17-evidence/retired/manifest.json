@@ -1,0 +1,86 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1702,
+      "sha256": "25848a5cd0829efabc262732fb06cf600e90505443d0829b4b6defd3581bc9c3"
+    },
+    {
+      "path": "code/after/ZRPTH411_RET_DEL.abap",
+      "bytes": 10817,
+      "sha256": "2b57fcb38c3db5f681490edd68847c3a0c4cf6f7c718c4f0a51e889263c77447"
+    },
+    {
+      "path": "code/before/ZRPTH411_RET_DEL.abap",
+      "bytes": 11424,
+      "sha256": "20e5efb1b6dcbd9f73987d18a2c2490235cc06581a896e4ff5df3e1756d18cd4"
+    },
+    {
+      "path": "conversation/messages.json",
+      "bytes": 17116,
+      "sha256": "5969bb9855588b4c54c0b23326e4e0e044ec97e36c6f9b6f80091cb23f03a34a"
+    },
+    {
+      "path": "conversation/transcript.html",
+      "bytes": 19278,
+      "sha256": "9180a2831f02669867564977bf534e81fac75501d430a51ad73cd215036a380b"
+    },
+    {
+      "path": "conversation/transcript.txt",
+      "bytes": 14365,
+      "sha256": "d11bdd2369d1327459f65af04701781354ebfd337e78fbdebfa30970bd4a3d2c"
+    },
+    {
+      "path": "evidence/README.md",
+      "bytes": 13302,
+      "sha256": "ab6e675ec824300ff7160faabaea95201eededdcee05993191b7a97e16a2072b"
+    },
+    {
+      "path": "evidence/change.patch",
+      "bytes": 3316,
+      "sha256": "2437f79f03b4ed7619a1c09d2e1e13bcc82a9277b79a5bd39624b6432ecf872c"
+    },
+    {
+      "path": "evidence/hashes.json",
+      "bytes": 176,
+      "sha256": "c59e448c46d14ee7baaddb8e8501b5efc89fbe8b1a7938fa6c93457c69e51401"
+    },
+    {
+      "path": "evidence/verification.json",
+      "bytes": 1491,
+      "sha256": "778399ad911ab86a23bf30341d218a7921b83042da479556d7be42251c229900"
+    },
+    {
+      "path": "images/README.txt",
+      "bytes": 270,
+      "sha256": "1e2a92bd5c74de550c3827076505ede526cd9d331ff3ca5384f4fd782c22a8ca"
+    },
+    {
+      "path": "index.html",
+      "bytes": 3797,
+      "sha256": "dfd04ad3daf6783cceb4dcaff1378f395f2683a12f5168dbfa89ee4705c9401d"
+    },
+    {
+      "path": "reference/code-comparison-complete.html",
+      "bytes": 286143,
+      "sha256": "8512afcda929a24967c1264a3e1d141c4fd06246661f3811b06bbf0994d1e18d"
+    },
+    {
+      "path": "reports/change-map.json",
+      "bytes": 1346,
+      "sha256": "966fd690d8a4ded081a11e050ea8942bedb7212af0b851a7c279dfd338cd043c"
+    },
+    {
+      "path": "reports/code-comparison.html",
+      "bytes": 99298,
+      "sha256": "f89936f719003ac36430bc2d0b80d5e6c97eb0b216d3284fb5378af64808f7a0"
+    },
+    {
+      "path": "tools/build.py",
+      "bytes": 10169,
+      "sha256": "9cd6dbcaf9e90d717b1ad3e51d8198dd8f03f177cdae4379463f5f81e97efe4c"
+    }
+  ],
+  "images": 0,
+  "sap_validation": "not_run"
+}

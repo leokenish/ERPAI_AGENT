@@ -1,0 +1,10 @@
+{
+  "as_of": "2026-10-26",
+  "command": "python3 maps/tools/audit_links.py",
+  "exit_code": 1,
+  "maps_broken": 0,
+  "evidence_errors": 0,
+  "existing_missing_source_links": 11,
+  "historical_inventory_changes": 284,
+  "scope": "No new broken links. Existing SRC-01 through SRC-11 source files missing. Nonzero exit caused by historical inventory changes, not a SAP or ABAP validation failure."
+}

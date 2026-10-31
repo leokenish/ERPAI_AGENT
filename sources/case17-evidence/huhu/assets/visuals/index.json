@@ -1,0 +1,101 @@
+[
+  {
+    "id": "rates",
+    "title": "0.5배와 1.5배가 섞이면, 전체 ×2는 맞지 않을 수 있습니다",
+    "description": "설명용 단가 10,000원 / 휴게 반영 후 시간 / 일반 휴휴 분기 / 시차 B 제외",
+    "svg": "assets/visuals/rates.svg",
+    "png": "assets/visuals/rates.png",
+    "width": 1200,
+    "height": 760,
+    "origin": "new_educational_diagram",
+    "status": "conditional_model_not_sap_execution"
+  },
+  {
+    "id": "split-two",
+    "title": "토8 → 일2 → 토2 : 세 줄이 세 날짜는 아닙니다",
+    "description": "원래 토10 + 일2 / D·T의 해당 분할 조건 가정 / 일요일 행도 상세에 포함된 경우",
+    "svg": "assets/visuals/split-two.svg",
+    "png": "assets/visuals/split-two.png",
+    "width": 1200,
+    "height": 760,
+    "origin": "new_educational_diagram",
+    "status": "conditional_model_not_sap_execution"
+  },
+  {
+    "id": "split-six",
+    "title": "토8 → 일6 → 토2 : 세 줄이 세 날짜는 아닙니다",
+    "description": "원래 토10 + 일6 / D·T의 해당 분할 조건 가정 / 일요일 행도 상세에 포함된 경우",
+    "svg": "assets/visuals/split-six.svg",
+    "png": "assets/visuals/split-six.png",
+    "width": 1200,
+    "height": 760,
+    "origin": "new_educational_diagram",
+    "status": "conditional_model_not_sap_execution"
+  },
+  {
+    "id": "lifecycle",
+    "title": "‘삭제 코드가 있다’와 ‘매 계산 후 삭제된다’는 다릅니다",
+    "description": "이전 DB 쓰기가 다음 요청까지 유지된다는 전제의 사고 시나리오",
+    "svg": "assets/visuals/lifecycle.svg",
+    "png": "assets/visuals/lifecycle.png",
+    "width": 1200,
+    "height": 760,
+    "origin": "new_educational_diagram",
+    "status": "conditional_model_not_sap_execution"
+  },
+  {
+    "id": "copy",
+    "title": "계산기에 뜬 새 숫자가 장부에도 옮겨졌을까요?",
+    "description": "입구 구조에 이전 80,000원이 남아 있다는 조건부 예시",
+    "svg": "assets/visuals/copy.svg",
+    "png": "assets/visuals/copy.png",
+    "width": 1200,
+    "height": 760,
+    "origin": "new_educational_diagram",
+    "status": "conditional_model_not_sap_execution"
+  },
+  {
+    "id": "allocation",
+    "title": "두 날짜의 금액을 대휴 하나에 모을 때도 있습니다",
+    "description": "설명용 단가 10,000원 / 일반 휴휴 계산 결과의 전달 원칙",
+    "svg": "assets/visuals/allocation.svg",
+    "png": "assets/visuals/allocation.png",
+    "width": 1200,
+    "height": 760,
+    "origin": "new_educational_diagram",
+    "status": "conditional_model_not_sap_execution"
+  },
+  {
+    "id": "duplicate",
+    "title": "같은 영수증 두 장과, 서로 다른 영수증 두 장을 구별합니다",
+    "description": "F03-03 / 중복 APPEND 방지 + 전체 금액 합산",
+    "svg": "assets/visuals/duplicate.svg",
+    "png": "assets/visuals/duplicate.png",
+    "width": 1200,
+    "height": 760,
+    "origin": "new_educational_diagram",
+    "status": "conditional_model_not_sap_execution"
+  },
+  {
+    "id": "memory",
+    "title": "공유 서랍 대신, 이번 계산 종이를 바로 전달합니다",
+    "description": "F03-01 / 기존 반환 통로 재사용 / 새 DDIC·함수 인수 없음",
+    "svg": "assets/visuals/memory.svg",
+    "png": "assets/visuals/memory.png",
+    "width": 1200,
+    "height": 760,
+    "origin": "new_educational_diagram",
+    "status": "conditional_model_not_sap_execution"
+  },
+  {
+    "id": "error",
+    "title": "계산 실패를 정상 금액으로 저장하지 않도록",
+    "description": "SAVE-01 / 첫 계산의 기존 오류 반환 확인",
+    "svg": "assets/visuals/error.svg",
+    "png": "assets/visuals/error.png",
+    "width": 1200,
+    "height": 760,
+    "origin": "new_educational_diagram",
+    "status": "conditional_model_not_sap_execution"
+  }
+]

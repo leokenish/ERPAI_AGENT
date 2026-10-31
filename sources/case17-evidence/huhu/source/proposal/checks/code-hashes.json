@@ -1,0 +1,10 @@
+{
+  "LZHR008_2F03.abap": {
+    "original_sha256": "56315f03face19a05fe2f133a0ce12f74add846d9a92cfa555f6ae31b1853493",
+    "proposal_sha256": "3736dae7298751cdcdfa2b9cf49deb9dda05741150a93db1f335785f81e42b8c"
+  },
+  "ZHR_52TM_GET_OVERTIME_SAVE.abap": {
+    "original_sha256": "03decc75281958df2e7ae8ca7565c1d39b9f23b0128646d8cac2baafc247e630",
+    "proposal_sha256": "a309f67617a37d14216cb46e3d06befaf22142d526610c25695d76f1db49db2c"
+  }
+}
